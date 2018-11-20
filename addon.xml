@@ -16,8 +16,8 @@
 		<res width="1920" height="1080" aspect="16:9" default="true" folder="xml"/>
 	</extension>
 	<extension point="xbmc.addon.metadata">
-		<summary lang="en">Simplistic skin for Kodi 18.  Designed for use with Emby and other addons in mind</summary>
-		<description lang="en">Simple, customizable, designed for Emby</description>
+		<summary lang="en">That's no moon...</summary>
+		<description lang="en">Not a moon. Not a trap. Witness the firepower of this fully ARMED and OPERATIONAL skin!</description>
 		<platform>all</platform>
 		<assets>
 			<icon>icon.png</icon>

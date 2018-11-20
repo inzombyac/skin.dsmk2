@@ -87,25 +87,11 @@
             </control>
 			<control type="label">
                 <include>ControlID4</include>
-				<label>$INFO[Container(4003).CurrentItem,4003 Position: ,]$INFO[Container(4003).NumItems, of ,]</label>
-				 <visible>Control.HasFocus(4003)</visible>
+				<label>$INFO[ListItem.DBTYPE]</label>
             </control>
-            <control type="label">
-                <include>ControlID4</include>
-				<label>$INFO[Container(300).Position,300 Position: ,]$INFO[Container(300).NumItems, of ,]</label>
-				 <visible>Control.HasFocus(300)</visible>
-            </control>
-             <control type="label">
-                <include>ControlID4</include>
-                <label>$VAR[Studio]</label>
-            </control>
-            
             <control type="label">
                 <include>ControlID5</include>
-              <!--   <label>DBID: $INFO[ListItem.DBID],$INFO[ListItem.Property(DBID)]</label> -->
-              <!-- <label>$VAR[EmbyHomeSelectedTitle]</label> -->
-              <!-- <visible>Control.HasFocus(300)</visible> -->
-              <!-- <visible>Control.HasFocus(300)</visible> -->
+                <label>$VAR[Studio]</label>
             </control>
 		</control>
 	</include>

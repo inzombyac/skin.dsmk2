@@ -9,11 +9,6 @@
 	<onload condition="Pvr.HasTimer + !Skin.HasSetting(recording.shown) + !Skin.HasSetting(login.reset)">Notification(Next Recording,$VAR[LabelNextRecording],1500,indicator/recording.png)</onload>
 	<controls>
 		<include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
-		<control type="image">
-			<include>Dimensions_Fullscreen</include>
-			<texture colordiffuse="HeaderBG" border="2">diffuse/home-loading.png</texture>
-			<visible>!Control.IsVisible(4000)</visible>
-		</control>
 		<control type="group" description="Emby Home Menu">
 			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml)+ !Window.IsVisible(service-OpenELEC-Settings-getPasskey.xml) + !Window.IsVisible(service-OpenELEC-Settings-mainWindow.xml) + !Window.IsVisible(service-OpenELEC-Settings-wizard.xml) + !Window.IsVisible(service-LibreELEC-Settings-getPasskey.xml) + !Window.IsVisible(service-LibreELEC-Settings-mainWindow.xml) + !Window.IsVisible(service-LibreELEC-Settings-wizard.xml) + !Window.IsVisible(service-LibreELEC-Settings-mainWindow.xml) + !Window.IsVisible(DialogAddonInfo.xml)</visible>
 			<include condition="!Skin.HasSetting(login.reset)">HomeEmbyWidgetInfo</include>
