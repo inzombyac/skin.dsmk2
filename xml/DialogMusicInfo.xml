@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window>
+	<menucontrol>9000</menucontrol>
+	<defaultcontrol always="true">9001</defaultcontrol>
+	<zorder>0</zorder>
+	<onload>Skin.SetString(CurrentAlbumIcon,$ESCINFO[ListItem.Icon])</onload>
+	<onload>Skin.SetString(CurrentAlbumPath,$INFO[ListItem.DBID])</onload>
+	<onunload>Skin.Reset(CurrentAlbumIcon)</onunload>
+	<onunload>Skin.Reset(CurrentAlbumPath)</onunload>
+	<controls>
+		<control type="group">
+			<left>SidePad</left>
+			<top>180</top>
+			<animation effect="fade" end="100" start="0" time="200">WindowOpen</animation>
+			<control type="image">
+				<centertop>480</centertop>
+				<width>480</width>
+				<height>48</height>
+				<aspectratio>stretch</aspectratio>
+				<texture>diffuse/shadowspot.png</texture>
+				<visible>!String.IsEmpty(ListItem.Icon)</visible>
+			</control>
+			<!-- Icon -->
+			<control type="image">
+				<width>480</width>
+				<height>480</height>
+				<fadetime>200</fadetime>
+				<texture fallback="DefaultAddonAlbumInfo.png">$INFO[ListItem.Icon]</texture>
+				<aspectratio>scale</aspectratio>
+			</control>
+		</control>
+		<control type="group">
+			<left>600</left>
+			<top>180</top>
+			<width>1240</width>
+			<animation effect="fade" end="100" start="0" time="200" delay="400">WindowOpen</animation>
+			<!-- Description Box -->
+			<control type="textbox">
+				<top>5</top>
+				<height>390</height>
+				<left>15</left>
+				<right>15</right>
+				<align>left</align>
+				<font>TwentyEight</font>
+				<textcolor>Dark1</textcolor>
+				<label>$VAR[MusicInfoDescription]</label>
+			</control>
+			<!-- Button grouplist -->
+			<control id="9001" type="grouplist">
+				<left>10</left>
+				<top>414</top>
+				<width>1620</width>
+				<height>116</height>
+				<itemgap>10</itemgap>
+				<onleft>9000</onleft>
+				<onright>9001</onright>
+				<ondown condition="!Container.Content(albums)">50</ondown>
+				<ondown condition="Container.Content(albums)">5050</ondown>
+				<onup>300</onup>
+				<orientation>horizontal</orientation>
+				<defaultcontrol always="true">9009</defaultcontrol>
+				<!-- Dummy to always set focus to first visible button -->
+				<control id="9009" type="button">
+					<width>-10</width>
+					<height>0</height>
+					<label></label>
+					<onfocus>Right</onfocus>
+					<include>NoTextures</include>
+					<visible>!Control.HasFocus(1) + !Control.HasFocus(2) + !Control.HasFocus(6) + !Control.HasFocus(10) + !Control.HasFocus(7)</visible>
+					<onup>300</onup>
+				</control>
+				<!-- Play Button -->
+				<control type="button" id="1">
+					<description>Play/Browse</description>
+					<width>240</width>
+					<font>Button</font>
+					<texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
+					<texturenofocus colordiffuse="Light1" border="5">common/box.png</texturenofocus>
+					<onclick>PlayMedia($ESCINFO[ListItem.FileNameAndPath],1)</onclick>
+					<label>208</label>
+					<visible>!Container.Content(Artists)</visible>
+				</control>
+				<!-- Refresh Button -->
+				<control type="button" id="6">
+					<description>Refresh</description>
+					<width>240</width>
+					<font>Button</font>
+					<texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
+					<texturenofocus colordiffuse="Light1" border="5">common/box.png</texturenofocus>
+					<visible>!Container.Content(Songs)</visible>
+				</control>
+				<!-- Set Rating Button -->
+				<control type="button" id="7">
+					<description>Rating</description>
+					<width>240</width>
+					<font>Button</font>
+					<texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
+					<texturenofocus colordiffuse="Light1" border="5">common/box.png</texturenofocus>
+					<visible>String.IsEmpty(Container.PluginName) + Control.IsEnabled(7)</visible>
+				</control>
+				<!-- Youtube search -->
+				<control id="1006" type="button">
+					<description>YouTube</description>
+					<width>240</width>
+					<onclick condition="Player.HasMedia">PlayerControl(stop)</onclick>
+					<onclick>back</onclick>
+					<onclick>ActivateWindow(videos,$INFO[ListItem.Title,plugin://plugin.video.youtube/kodion/search/query/?q=],return)</onclick>
+					<font>Button</font>
+					<texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
+					<texturenofocus colordiffuse="Light1" border="5">common/box.png</texturenofocus>
+					<label>YouTube</label>
+				</control>
+			</control>
+		</control>
+		<!-- Full Screen Items -->
+		<control type="group">
+			<left>50</left>
+			<top>110</top>
+			<width>1820</width>
+			<!-- Albums / Compososers -->
+			<control type="group">
+				<left>0</left>
+				<top>600</top>
+				<!-- Music List label -->
+				<control type="label">
+					<left>20</left>
+					<width>1000</width>
+					<height>32</height>
+					<top>-40</top>
+					<font>MediumSmall</font>
+					<textcolor>Dark1</textcolor>
+					<label>$VAR[MusicInfoListLabel]</label>
+					<animation delay="400" effect="fade" end="100" start="0" time="200">Visible</animation>
+					<animation effect="fade" end="0" start="100" time="0">Hidden</animation>
+					<visible>!Container.Content(albums)</visible>
+				</control>
+				<control id="50" type="panel">
+					<height>325</height>
+					<onup>9001</onup>
+					<ondown>50</ondown>
+					<preloaditems>2</preloaditems>
+					<viewtype>list</viewtype>
+					<orientation>horizontal</orientation>
+					<scrolltime easing="inout" tween="sine">300</scrolltime>
+					<visible>!Container.Content(albums)</visible>
+					<animation delay="1000" effect="fade" end="100" start="0" time="200" >Visible</animation>
+					<animation effect="fade" end="0" start="100" time="0">Hidden</animation>
+					<animation effect="fade" end="100" start="0" time="200" delay="400">WindowOpen</animation>						
+					<itemlayout height="300" width="330">						
+						<control type="image">
+							<top>10</top>
+							<left>10</left>
+							<width>290</width>
+							<height>290</height>
+							<aspectratio align="center">scale</aspectratio>
+							<texture background="true" fallback="DefaultAlbumCover.png">$INFO[ListItem.Icon]</texture>
+						</control>
+						<control type="image">
+							<top>10</top>
+							<left>10</left>
+							<width>290</width>
+							<height>290</height>
+							<texture border="15" colordiffuse="Background">common/opaque.png</texture>
+						</control>
+						<control type="label">
+							<top>250</top>
+							<left>10</left>
+							<width>290</width>
+							<font>Tiny</font>
+							<align>center</align>
+							<textcolor>Dark1</textcolor>
+							<label>$VAR[MusicInfoContentLabel]</label>
+						</control>
+					</itemlayout>
+					<focusedlayout height="300" width="330">
+						<control type="image">
+							<top>10</top>
+							<left>10</left>
+							<width>290</width>
+							<height>290</height>
+							<aspectratio align="center">scale</aspectratio>
+							<texture background="true" fallback="DefaultAlbumCover.png">$INFO[ListItem.Icon]</texture>
+						</control>
+						<control type="image">
+							<top>10</top>
+							<left>10</left>
+							<width>290</width>
+							<height>35</height>
+							<texture border="15" colordiffuse="Background">common/opaque.png</texture>
+							<visible>Container.Content(songs)</visible>
+						</control>
+						<control type="label">
+							<top>10</top>
+							<left>10</left>
+							<width>290</width>
+							<font>Tiny</font>
+							<align>center</align>
+							<textcolor>Dark1</textcolor>
+							<label>$INFO[ListItem.Label]</label>
+							<visible>Container.Content(songs)</visible>
+						</control>
+						<control type="image">
+							<top>265</top>
+							<left>10</left>
+							<width>290</width>
+							<height>35</height>
+							<texture border="15" colordiffuse="Background">common/opaque.png</texture>
+						</control>
+						<control type="label">
+							<top>250</top>
+							<left>10</left>
+							<width>290</width>
+							<font>Tiny</font>
+							<align>center</align>
+							<textcolor>Dark1</textcolor>
+							<label>$VAR[MusicInfoContentLabel]</label>
+						</control>
+						<control type="image">
+							<top>10</top>
+							<left>10</left>
+							<width>290</width>
+							<height>290</height>
+							<texture colordiffuse="$VAR[ColorHighlight]" border="20">common/selectbox.png</texture>
+						</control>
+						<control type="image">
+							<bottom>40</bottom>
+							<right>40</right>
+							<width>60</width>
+							<height>60</height>
+							<texture>indicator/poster-inprogress.png</texture>
+							<visible>!String.IsEmpty(ListItem.FileNameAndPath)</visible>
+						</control>
+					</focusedlayout>
+				</control>
+			</control>
+			<control type="group">
+				<left>0</left>
+				<top>600</top>
+				<!-- Hidden list to grab data -->
+				<control id="50" type="list">
+					<visible>Container.Content(albums)</visible>
+					<itemlayout width="1" height="1">
+						<control type="button">
+							<onfocus>SetFocus(5050)</onfocus>
+						</control>
+					</itemlayout>
+					<focusedlayout width="1" height="1">
+						<control type="button">
+							<onfocus>SetFocus(5050)</onfocus>
+						</control>
+					</focusedlayout>
+				</control>
+				<!-- Music List label -->
+				<control type="label">
+					<left>20</left>
+					<width>1000</width>
+					<height>32</height>
+					<top>-40</top>
+					<font>MediumSmall</font>
+					<textcolor>Dark1</textcolor>
+					<label>$VAR[MusicInfoListLabel]</label>
+					<animation delay="400" effect="fade" end="100" start="0" time="200">Visible</animation>
+					<animation effect="fade" end="0" start="100" time="0">Hidden</animation>
+					<visible>Container.Content(albums)</visible>
+				</control>
+				<!-- Album Tracklist -->
+				<control id="5050" type="panel">
+					<height>325</height>
+					<onup>9001</onup>
+					<ondown>5050</ondown>
+					<preloaditems>2</preloaditems>
+					<viewtype>list</viewtype>
+					<orientation>horizontal</orientation>
+					<scrolltime easing="inout" tween="sine">300</scrolltime>
+					<visible>Container.Content(albums)</visible>
+					<animation delay="1000" effect="fade" end="100" start="0" time="200">Visible</animation>
+					<animation effect="fade" end="0" start="100" time="0">Hidden</animation>
+					<animation effect="fade" end="100" start="0" time="200" delay="400">WindowOpen</animation>
+					<itemlayout height="300" width="330">						
+						<control type="image">
+							<top>10</top>
+							<left>10</left>
+							<width>290</width>
+							<height>290</height>
+							<aspectratio align="center">scale</aspectratio>
+							<texture background="true" fallback="DefaultAlbumCover.png">$INFO[ListItem.Icon]</texture>
+						</control>
+						<control type="image">
+							<top>10</top>
+							<left>10</left>
+							<width>290</width>
+							<height>290</height>
+							<texture border="15" colordiffuse="Background">common/opaque.png</texture>
+						</control>
+						<control type="label">
+							<top>110</top>
+							<left>10</left>
+							<width>290</width>
+							<font>EpisodeNumber</font>
+							<align>center</align>
+							<textcolor>Dark1</textcolor>
+							<label>$VAR[MusicInfoTrackLabel]</label>
+						</control>
+						<control type="label">
+							<top>250</top>
+							<left>10</left>
+							<width>290</width>
+							<font>Tiny</font>
+							<align>center</align>
+							<textcolor>Dark1</textcolor>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+					</itemlayout>
+					<focusedlayout height="300" width="330">
+						<control type="image">
+							<top>10</top>
+							<left>10</left>
+							<width>290</width>
+							<height>290</height>
+							<aspectratio align="center">scale</aspectratio>
+							<texture background="true" fallback="DefaultAlbumCover.png">$INFO[ListItem.Icon]</texture>
+						</control>
+						<control type="image">
+							<top>265</top>
+							<left>10</left>
+							<width>290</width>
+							<height>35</height>
+							<texture border="15" colordiffuse="Background">common/opaque.png</texture>
+						</control>
+						<control type="label">
+							<top>110</top>
+							<left>10</left>
+							<width>290</width>
+							<font>EpisodeNumber</font>
+							<align>center</align>
+							<textcolor>Dark1</textcolor>
+							<label>$VAR[MusicInfoTrackLabel]</label>
+						</control>
+						<control type="label">
+							<top>250</top>
+							<left>10</left>
+							<width>290</width>
+							<font>Tiny</font>
+							<align>center</align>
+							<textcolor>Dark1</textcolor>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+						<control type="image">
+							<top>10</top>
+							<left>10</left>
+							<width>290</width>
+							<height>290</height>
+							<texture colordiffuse="$VAR[ColorHighlight]" border="20">common/selectbox.png</texture>
+						</control>
+					</focusedlayout>
+					<include>MusicInfoTracklist</include>
+				</control>
+			</control>
+		</control>
+		<control type="grouplist">
+			<top>40</top>
+			<left>20</left>
+			<orientation>horizontal</orientation>
+			<itemgap>24</itemgap>
+			<onleft condition="!Skin.HasSetting(global.kioskmode)">9000</onleft>
+			<ondown>9001</ondown>
+			<onright>9001</onright>
+			<control type="grouplist">
+				<orientation>horizontal</orientation>
+				<itemgap>0</itemgap>
+				<width>80</width>
+				<height>80</height>
+				<control type="button" id="300">
+					<width>80</width>
+					<height>80</height>
+					<onclick>Back</onclick>
+					<font>Button</font>
+					<texturefocus colordiffuse="$VAR[ColorHighlight]">common/back.png</texturefocus>
+					<texturenofocus>special://skin/extras/icons/back.png</texturenofocus>
+				</control>
+			</control>
+			<control type="group" description="iconbox">
+				<width>80</width>
+				<height>80</height>
+				<control type="image">
+					<width>80</width>
+					<height>80</height>
+					<texture colordiffuse="Panel" border="0">common/circle.png</texture>
+				</control>
+				<control id="8308" type="image">
+					<width>80</width>
+					<height>80</height>
+					<texture colordiffuse="PanelWhite100" border="0" diffuse="common/circle.png" >special://skin/extras/icons/info.png</texture>
+					<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
+				</control>
+			</control>
+		</control>
+        <include>Furniture_Clock</include>
+        <include>Furniture_Logo</include>
+		<include>Furniture_OverlayInfo</include>
+        <include>Furniture_NowPlaying</include>
+		<control type="group">
+			<include>Animation.FadeIn</include>
+			<include>Animation.FadeOut</include>
+			<visible>ControlGroup(9000).HasFocus()</visible>
+			<include>GlobalOverlay</include>
+		</control>
+		<control type="group">
+            <include>Def9000SideBladeLeft</include>
+            <control type="grouplist" id="9000">
+                <left>20</left>
+				<top>115</top>
+				<width>455</width>
+				<height>1080</height>
+				<onleft>9000</onleft>			
+				<onup>9000</onup>
+				<ondown>9000</ondown>
+				<onback>9001</onback>
+				<onright>9001</onright>
+				<itemgap>0</itemgap>
+				<animation effect="slide" start="-440,0" end="0,0" time="400" tween="quadratic" easing="out">Visible</animation>
+				<control type="label" id="200">
+					<height>42</height>
+					<textoffsetx>15</textoffsetx>
+					<font>Home</font>
+					<label>Music Info Actions</label>
+					<textcolor>$VAR[ColorHighlight]</textcolor>
+					<aligny>center</aligny>
+				</control>
+                <control type="button" id="9050">
+					<description>Now Playing</description>
+					<include>DefContextButton2</include>
+					<label>Now Playing</label>
+					<align>left</align>
+					<onclick>dialog.close(all,true)</onclick>
+					<onclick>FullScreen</onclick>
+					<visible>Player.HasMedia</visible>
+				</control>
+				<control type="button" id="9051">
+					<description>Now Playing</description>
+					<include>DefContextButton2</include>
+					<label>13350</label>
+					<align>left</align>
+					<onclick>ActivateWindow(MusicPlaylist)</onclick>
+					<visible>Integer.IsGreater(Playlist.Length(music),1)</visible>
+				</control>
+				<control type="button" id="9052">
+					<description>Playlist</description>
+					<include>DefContextButton2</include>
+					<align>left</align>
+					<label>136</label>
+					<onclick>SetFocus(5050)</onclick>
+					<visible>!String.IsEqual(Container.FolderPath,special://musicplaylists/)</visible>
+				</control>
+				<control type="button" id="9053">
+                    <description>Global Search</description>
+                    <include>DefContextButton2</include>
+                    <align>left</align>
+                    <label>137</label>
+                    <onclick>RunScript(script.globalsearch,artists=true&amp;albums=true&amp;songs=true)</onclick>
+                </control>
+                <control type="radiobutton" id="16">
+                    <description>PartyMode</description>
+                    <include>DefContextButton2</include>
+                    <align>left</align>
+                    <label>589</label>
+                </control>
+				<control type="label" id="201">
+					<height>42</height>
+					<textoffsetx>15</textoffsetx>
+					<font>Home</font>
+					<label>Metadata</label>
+					<textcolor>$VAR[ColorHighlight]</textcolor>
+					<aligny>center</aligny>
+				</control>
+				<!-- Get Thumb Button -->
+				<control type="button" id="10">
+					<include>DefContextButton2</include>
+					<align>left</align>
+				</control>
+				<!-- Get Fanart Button -->
+				<control type="button" id="12">
+					<include>DefContextButton2</include>
+					<align>left</align>
+					<visible>!Container.Content(songs)</visible>
+				</control>
+            </control>
+        </control>
+	</controls>
+</window>

@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<includes>
+	<!-- Game Browser-->
+	<include name="View_59_GameBrowser">
+		<description>Game View (id=59)</description>
+		<control type="group">
+			<include>Animation.Common</include>
+			<visible>Control.IsVisible(59)</visible>
+			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml)</visible>
+			<control type="group">
+				<width>705</width>
+				<height>850</height>
+				<left>70</left>
+				<control type="list" id="59">
+					<top>300</top>
+					<onright>5051</onright>
+					<height>700</height>		
+					<onleft condition="Control.IsVisible(60)">60</onleft>
+					<onleft condition="!Control.IsVisible(60)">9000</onleft>
+					<!-- <onright condition="String.IsEqual(Container(5051).CurrentItem,2)">Control.Move(5051,-1)</onright> -->
+					<onright>Control.SetFocus(5051,0)</onright>
+					<onright>59</onright>
+					<onup condition="Player.HasMedia">7788</onup>
+					<onup condition="!Player.HasMedia">59</onup>
+					<ondown>59</ondown>
+					<pagecontrol>60</pagecontrol>
+					<viewtype label="31008">list</viewtype>
+					<scrolltime tween="quadratic">400</scrolltime>
+					<itemlayout width="700" height="64">
+						<include>59itemlayout</include>
+					</itemlayout>
+					<focusedlayout width="700" height="64">
+						<control type="group">
+							<visible>Control.HasFocus(59)</visible>
+							<include>59focuslayout</include>
+						</control>
+						<control type="group">
+							<visible>!Control.HasFocus(59)</visible>
+							<include>59itemlayout</include>
+						</control>
+					</focusedlayout>
+				</control>
+			</control>
+			<control type="image">
+				<left>780</left>
+				<right>0</right>
+				<top>160</top>
+				<bottom>80</bottom>
+				<width>1100</width>
+				<texture colordiffuse="HeaderBG">common/white.png</texture>
+				<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
+				<visible>Control.IsVisible(59)</visible>
+				<visible>!String.IsEmpty(ListItem.Label)</visible>
+			</control>
+			<control type="scrollbar" id="60">
+				<onleft>3634</onleft>
+				<onback>59</onback>
+				<centerleft>55</centerleft>
+				<posy>300</posy>
+				<height>700</height>
+				<width>8</width>
+				<onright>59</onright>
+				<texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
+				<texturesliderbar border="4" colordiffuse="$VAR[ColorHighlight]">scrollbar/scrollv.png</texturesliderbar>
+				<texturesliderbarfocus border="4" colordiffuse="$VAR[ColorHighlight]">scrollbar/scrollv.png</texturesliderbarfocus>
+				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
+				<animation effect="slide" end="-30,0" time="400" condition="Control.HasFocus(60)">Conditional</animation>
+			</control>
+			<control type="group" description="Banner">
+				<width>700</width>
+				<left>70</left>
+				<top>160</top>
+				<visible>Control.IsVisible(59)</visible>
+				<control type="image">
+					<height>130</height>
+					<fadetime>100</fadetime>
+					<aspectratio align="center" aligny="top" scalediffuse="false">stretch</aspectratio>
+					<texture background="true">$VAR[ClearLogoBanner]</texture>
+				</control>
+			</control>
+			<control type="button" id="5050">
+				<texturefocus></texturefocus>
+				<texturenofocus></texturenofocus>
+				<onfocus>Skin.ToggleSetting(59game.resetpanel)</onfocus>
+				<onfocus condition="String.IsEqual(Container(5051).CurrentItem,2)">Control.Move(5051,-1)</onfocus>
+				<onfocus condition="String.IsEqual(Container(5051).CurrentItem,3)">Control.Move(5051,-2)</onfocus>
+				<onfocus condition="String.IsEqual(Container(5051).CurrentItem,4)">Control.Move(5051,-3)</onfocus>
+				<onfocus condition="String.IsEqual(Container(5051).CurrentItem,5)">Control.Move(5051,-4)</onfocus>
+				<onfocus condition="String.IsEqual(Container(5051).CurrentItem,6)">Control.Move(5051,-5)</onfocus>
+				<onfocus condition="String.IsEqual(Container(5051).CurrentItem,7)">Control.Move(5051,-6)</onfocus>
+				<onfocus condition="String.IsEqual(Container(5051).CurrentItem,8)">Control.Move(5051,-7)</onfocus>
+				<onfocus condition="String.IsEqual(Container(5051).CurrentItem,9)">Control.Move(5051,-8)</onfocus>
+				<onfocus>SetFocus(59)</onfocus>
+			</control>
+			<include>59ArtPanel</include>
+			<control type="group">
+				<control type="grouplist">
+					<left>800</left>
+					<right>30</right>
+					<top>665</top>
+					<height>400</height>
+					<width>1040</width>
+					<orientation>vertical</orientation>
+					<control type="label">
+						<aligny>center</aligny>
+						<height>42</height>
+						<font>MediumBold</font>
+						<textcolor>Dark1</textcolor>
+						<selectedcolor>Dark1</selectedcolor>
+						<label>$VAR[LabelDirector]</label>
+					</control>
+					<control type="label">
+						<height>34</height>
+						<aligny>center</aligny>
+						<font>TwentyEight</font>
+						<textcolor>Dark1</textcolor>
+						<selectedcolor>Dark1</selectedcolor>
+						<label>$VAR[LabelGenre]</label>
+					</control>
+					<control type="textbox">
+						<align>justify</align>
+						<font>TwentyEight</font>
+						<textcolor>Dark1</textcolor>
+						<selectedcolor>Dark1</selectedcolor>
+						<label>$VAR[LabelPlotBox]</label>
+						<height>236</height>
+					</control>
+				</control>
+			</control>
+		</control>
+	</include>
+	<include name="59focuslayout">
+		<control type="button">
+			<texturefocus></texturefocus>
+			<texturenofocus></texturenofocus>
+		</control>
+		<control type="image">
+			<width>100%</width>
+			<height>100%</height>
+			<texture border="8" colordiffuse="Dark1">common/box.png</texture>
+			<bordertexture colordiffuse="$VAR[ColorHighlight]">common/white.png</bordertexture>
+			<bordersize>6,0,0,0</bordersize>
+		</control>
+		<control type="image">
+			<left>6</left>
+			<width>1</width>
+			<texture colordiffuse="Light1">common/black.png</texture>
+		</control>
+		<control type="label">
+			<posx>30</posx>
+			<width>auto</width>
+			<aligny>center</aligny>
+			<height>64</height>
+			<font>Flag</font>
+			<textcolor>Light1</textcolor>
+			<selectedcolor>Light1</selectedcolor>
+			<label>$INFO[ListItem.Label]</label>
+			<scroll>true</scroll>
+		</control>
+	</include>
+	<include name="59itemlayout">
+		<control type="label">
+			<posx>30</posx>
+			<width>auto</width>
+			<aligny>center</aligny>
+			<height>64</height>
+			<font>Flag</font>
+			<label>$INFO[ListItem.Label]</label>
+			<textcolor>Dark1</textcolor>
+			<selectedcolor>Dark1</selectedcolor>
+		</control>
+	</include>
+	<include name="59ArtworkLayout">
+		<control type="group">
+			<visible>Control.IsVisible(59)</visible>
+			<control type="image">
+				<height>334</height>
+				<width>500</width>
+				<aspectratio align="center" aligny="top">stretch</aspectratio>
+				<texture background="true">$INFO[ListItem.Icon]</texture>
+				<animation effect="fade" start="100" end="70" condition="true">Conditional</animation>
+				<visible>!String.StartsWith(ListItem.Label,Poster) + !String.StartsWith(ListItem.Label,Box) + !String.StartsWith(ListItem.Label,Cartridge) + !String.StartsWith(ListItem.Label,Clear)</visible>
+			</control>
+			<control type="image">
+				<height>85%</height>
+				<width>500</width>
+				<aspectratio align="center" aligny="top">keep</aspectratio>
+				<texture background="true">$INFO[ListItem.Icon]</texture>
+				<animation effect="fade" start="100" end="70" condition="true">Conditional</animation>
+				<visible>String.StartsWith(ListItem.Label,Box) |  String.StartsWith(ListItem.Label,Cartridge) | String.StartsWith(ListItem.Label,Poster) | String.StartsWith(ListItem.Label,Clear)</visible>
+			</control>
+			<control type="image">
+				<description>Title overlay</description>
+				<bottom>0</bottom>
+				<width>500</width>
+				<height>60</height>
+				<texture border="15" colordiffuse="Overlay">common/opaque.png</texture>
+			</control>
+			<control type="label">
+				<bottom>0</bottom>
+				<aligny>center</aligny>
+				<align>center</align>
+				<height>64</height>
+				<font>Flag</font>
+				<label>$INFO[ListItem.Label]</label>
+				<textcolor>Dark1</textcolor>
+			</control>
+		</control>
+	</include>
+	<include name="59FocusedArtworkLayout">
+		<control type="group">
+			<visible>Control.IsVisible(59)</visible>
+			<control type="image">
+				<height>334</height>
+				<width>500</width>
+				<aspectratio align="center" aligny="top">stretch</aspectratio>
+				<texture background="true">$INFO[ListItem.Icon]</texture>
+				<animation effect="fade" start="100" end="40" condition="Container(5051).HasFocus(1)">Conditional</animation>
+				<visible>!String.StartsWith(ListItem.Label,Poster) + !String.StartsWith(ListItem.Label,Box) + !String.StartsWith(ListItem.Label,Cartridge) + !String.StartsWith(ListItem.Label,Clear)</visible>
+			</control>
+			<control type="image">
+				<height>85%</height>
+				<width>500</width>
+				<aspectratio align="center" aligny="top">keep</aspectratio>
+				<texture background="true">$INFO[ListItem.Icon]</texture>
+				<animation effect="fade" start="100" end="40" condition="Container(5051).HasFocus(1)">Conditional</animation>
+				<visible>String.StartsWith(ListItem.Label,Box) | String.StartsWith(ListItem.Label,Cartridge) | String.StartsWith(ListItem.Label,Poster) | String.StartsWith(ListItem.Label,Clear)</visible>
+			</control>
+			<control type="image">
+				<width>200</width>
+				<height>200</height>
+				<top>80</top>
+				<centerleft>50%</centerleft>
+				<aspectratio>keep</aspectratio>
+				<texture colordiffuse="$VAR[ColorHighlight]">common/playring.png</texture>
+				<visible>Container(5051).HasFocus(1)</visible>
+			</control>
+			<control type="image">
+				<description>Title overlay</description>
+				<bottom>0</bottom>
+				<width>500</width>
+				<height>60</height>
+				<texture border="15" colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
+			</control>
+			<control type="label">
+				<bottom>0</bottom>
+				<aligny>center</aligny>
+				<align>center</align>
+				<height>64</height>
+				<font>Flag</font>
+				<label>$INFO[ListItem.Label]</label>
+				<textcolor>Light1</textcolor>
+			</control>
+		</control>
+	</include>
+	<include name="59ArtPanel">
+		<control type="group">
+			<visible>Control.IsVisible(59)</visible>
+			<control id="5051" type="list">	
+				<onleft>59</onleft>
+				<onright>5051</onright>
+				<ondown>5050</ondown>
+				<!-- <ondown>Control.Move(59,1)</ondown> -->
+				<onup>5050</onup>
+				<!-- <onup>Control.Move(59,-1)</onup> -->
+				<orientation>horizontal</orientation>
+				<scrolltime easing="inout" tween="sine">300</scrolltime>
+				<animation effect="fade" end="100" start="0" time="300">Visible</animation>
+				<animation effect="fade" end="0" start="100" time="300">Hidden</animation>
+				<animation effect="fade" end="100" start="0" time="200" delay="400">WindowOpen</animation>
+				<visible>!Container(59).Scrolling</visible>
+				<top>170</top>
+				<left>800</left>
+				<width>1020</width>
+				<height>480</height>
+				<itemlayout height="480" width="510">		
+					<include>59ArtworkLayout</include>
+				</itemlayout>
+				<focusedlayout height="480" width="510">
+					<control type="group">
+						<visible>Control.HasFocus(5051)</visible>
+						<include>59FocusedArtworkLayout</include>
+					</control>
+					<control type="group">
+						<visible>!Control.HasFocus(5051)</visible>
+						<include>59ArtworkLayout</include>
+					</control>
+				</focusedlayout>
+				<include>GameArtworkList</include>
+			</control>
+		</control>
+	</include>
+</includes>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window>
+	<menucontrol>9000</menucontrol>
+	<background>0</background>
+	<defaultcontrol always="true">10</defaultcontrol>
+	<views>10</views>
+	<controls>
+		<include>PVRBackground</include>
+		<include>Furniture_Header</include>
+		<include>Furniture_Clock</include>
+		<include>PVRChannelNumberInput</include>
+		<control type="group" id="50">
+			<control type="group">
+				<!-- <visible>!Player.HasVideo</visible> -->
+				<include>Animation.Common</include>
+				<left>SidePad</left>
+				<right>SidePad</right>
+				<include condition="!Player.HasVideo">EPGNormalGrid</include>
+				<include condition="Player.HasVideo">EPGMiniGrid</include>
+				<control type="image">
+					<top>-10</top>
+					<left>-8</left>
+					<right>-8</right>
+					<bottom>-10</bottom>
+					<texture colordiffuse="Light2" border="16">common/rounded-shadow8.png</texture>
+				</control>
+				<include>PVREPGGrid</include>
+				<control type="group">
+					<visible>!Player.HasVideo</visible>
+					<top>680</top>
+					<bottom>10</bottom>
+					<right>30</right>
+					<control type="image">
+						<top>0</top>
+						<left>2</left>
+						<width>300</width>
+						<height>170</height>
+						<texture>$INFO[Container(10).ListItem.Icon]</texture>
+						<aspectratio>keep</aspectratio>
+						<visible>String.IsEmpty(Container(10).ListItem.Icon)</visible>
+					</control>
+					<control type="image">
+						<top>0</top>
+						<left>2</left>
+						<width>300</width>
+						<height>200</height>
+						<texture >$INFO[ListItem.Icon]</texture>
+						<aspectratio>keep</aspectratio>
+						<visible>!String.IsEmpty(Container(10).ListItem.Icon)</visible>
+					</control>
+					<control type="label">
+						<top>-10</top>
+						<left>340</left>
+						<aligny>center</aligny>
+						<height>32</height>
+						<font>SmallBold</font>
+						<textcolor>$VAR[ColorHighlight]</textcolor>
+						<selectedcolor>$VAR[ColorHighlight]</selectedcolor>
+						<label>$INFO[ListItem.Label]$INFO[ListItem.EpisodeName, (,)]</label>
+						<visible>String.IsEmpty(ListItem.Season)</visible>
+					</control>
+					<control type="label">
+						<top>-10</top>
+						<left>340</left>
+						<aligny>center</aligny>
+						<height>32</height>
+						<font>SmallBold</font>
+						<textcolor>$VAR[ColorHighlight]</textcolor>
+						<selectedcolor>$VAR[ColorHighlight]</selectedcolor>
+						<label>$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,,. ]$INFO[ListItem.Label]$INFO[ListItem.EpisodeName, (,)]</label>
+						<visible>!String.IsEmpty(ListItem.Season)</visible>
+					</control>
+					<control type="label">
+						<top>26</top>
+						<left>340</left>
+						<aligny>center</aligny>
+						<height>26</height>
+						<font>TinyBold</font>
+						<textcolor>PanelWhite70</textcolor>
+						<selectedcolor>PanelWhite70</selectedcolor>
+						<label>$INFO[ListItem.StartTime]$INFO[ListItem.EndTime, - ]$INFO[ListItem.Genre, • ]</label>
+					</control>
+					<control type="textbox">
+						<top>50</top>
+						<left>340</left>
+						<height>110</height>
+						<align>justify</align>
+						<font>TwentyEight</font>
+						<textcolor>Dark1</textcolor>
+						<selectedcolor>Dark1</selectedcolor>
+						<label>$INFO[ListItem.Plot]</label>
+					</control>
+				</control>
+			</control>
+		</control>
+		<include>PVRSideBlade</include>
+	</controls>
+</window>

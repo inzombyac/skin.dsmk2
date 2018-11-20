@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window id="10000">
+	<defaultcontrol always="true">5050</defaultcontrol>
+	<menucontrol>9000</menucontrol>
+	<onload condition="System.HasAddon(script.favourites)">RunScript(script.favourites)</onload>
+	<onload condition="String.IsEmpty(Skin.String(focuscolor.name))">Skin.SetString(focuscolor.name,FF0fd39e)</onload>
+	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=300&amp;group=mainmenu|movieshub|episodeshub)</onload>
+	<onload condition="Pvr.HasTimer + !Skin.HasSetting(recording.shown) + !Skin.HasSetting(login.reset)">Notification(Next Recording,$VAR[LabelNextRecording],1500,indicator/recording.png)</onload>
+	<controls>
+		<include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
+		<control type="image">
+			<include>Dimensions_Fullscreen</include>
+			<texture colordiffuse="HeaderBG" border="2">diffuse/home-loading.png</texture>
+			<visible>!Control.IsVisible(4000)</visible>
+		</control>
+		<control type="group" description="Emby Home Menu">
+			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml)+ !Window.IsVisible(service-OpenELEC-Settings-getPasskey.xml) + !Window.IsVisible(service-OpenELEC-Settings-mainWindow.xml) + !Window.IsVisible(service-OpenELEC-Settings-wizard.xml) + !Window.IsVisible(service-LibreELEC-Settings-getPasskey.xml) + !Window.IsVisible(service-LibreELEC-Settings-mainWindow.xml) + !Window.IsVisible(service-LibreELEC-Settings-wizard.xml) + !Window.IsVisible(service-LibreELEC-Settings-mainWindow.xml) + !Window.IsVisible(DialogAddonInfo.xml)</visible>
+			<include condition="!Skin.HasSetting(login.reset)">HomeEmbyWidgetInfo</include>
+			<control type="button" id="5050">
+				<texturefocus></texturefocus>
+				<texturenofocus></texturenofocus>
+				<!-- Localized strings workaround when using login screen-->
+				<onfocus condition="Skin.HasSetting(login.reset)">AlarmClock(RefreshHome,ReloadSkin(),00:02,silent)</onfocus>
+				<onfocus condition="Skin.HasSetting(login.reset)">ActivateWindow(busydialog)</onfocus>
+				<onfocus>Skin.reset(login.reset)</onfocus>
+				<onfocus>AlarmClock(ClearRecording,Skin.SetBool(recording.shown),00:15,silent)</onfocus>
+				<!-- Set default control -->
+				<onfocus condition="Control.IsVisible(300)">Control.SetFocus(300,0)</onfocus>
+				<onfocus>SetFocus(3999)</onfocus>
+				<onright>3999</onright>
+				<onleft>9000</onleft>
+				<onup>3999</onup>
+				<ondown>3999</ondown>
+				<onback>300</onback>
+			</control>
+		</control>
+		<include>Furniture_Header</include>
+		<include>Furniture_Clock</include>
+		<include>Furniture_NowPlaying</include>
+		<include>Furniture_RSS</include>
+		<include>DebugGridHome</include>
+		<control type="group">
+			<include>Animation.FadeIn</include>
+			<include>Animation.FadeOut</include>
+			<visible>ControlGroup(9000).HasFocus() | ControlGroup(9096).HasFocus() | Control.HasFocus(9091) | Control.HasFocus(9095)</visible>
+			<include>GlobalOverlay</include>
+		</control>
+		<control type="group" description="Side Menu">
+			<include>Def9000SideBladeLeft</include>
+			<control type="grouplist" id="9000">
+				<left>20</left>
+				<top>100</top>
+				<height>1080</height>
+				<onright>Control.SetFocus(300,0)</onright>
+				<onright>3999</onright>
+				<onup>9091</onup>
+				<onleft>9000</onleft>
+				<onback>3999</onback>
+				<include>Def9000HomeMenuTop</include>
+				<defaultcontrol always="true">300</defaultcontrol>
+			</control>
+		</control>
+	</controls>
+</window>

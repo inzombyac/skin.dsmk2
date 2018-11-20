@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window id="2">
+    <defaultcontrol always="true">50</defaultcontrol>
+	<menucontrol>9000</menucontrol>
+    <views>50,53,59,500,517</views>
+    <controls>
+        <include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
+        <include>Furniture_Header</include>
+        <include>Furniture_NowPlaying</include>
+        <include>Furniture_Clock</include>
+        <include>View_50_List</include>
+        <include>View_53_Poster</include>
+        <include>View_59_GameBrowser</include>
+        <include>View_500_Thumbnails</include>
+        <include>View_517_Wall_Info</include>
+        <control type="group">
+            <include>Animation.FadeIn</include>
+            <include>Animation.FadeOut</include>
+            <visible>ControlGroup(9000).HasFocus()</visible>
+            <include>GlobalOverlay</include>
+        </control>
+       <control type="group">
+            <include>Def9000SideBladeLeft</include>
+            <control type="grouplist" id="9000">
+                <include>Def9000GroupList</include>
+                <control type="label" id="201">
+                    <width>455</width>
+                    <height>42</height>
+                    <textoffsetx>15</textoffsetx>
+                    <font>Home</font>
+                    <label>Picture Actions</label>
+                    <textcolor>$VAR[ColorHighlight]</textcolor>
+                    <aligny>center</aligny>
+                </control>
+                <control type="button" id="9326">
+                    <description>View</description>
+                    <include>DefContextButton2</include>
+                    <align>left</align>
+                    <label>View: $INFO[Container.Viewmode]</label>
+                    <onclick>Container.NextViewMode</onclick>
+                </control>
+                <control type="button" id="3">
+                    <description>Sort</description>
+                    <include>DefContextButton</include>
+                    <align>left</align>
+                </control>
+                <control type="togglebutton" id="4">
+                    <description>Ascending</description>
+                    <include>DefContextButton</include>
+                    <align>left</align>
+                    <label>584</label>
+                    <altlabel>585</altlabel>
+                </control>
+                <control type="radiobutton" id="9002" description="No Wrap (53)">
+                    <include>DefContextButton2</include>
+                    <align>left</align>
+                    <label>31148</label>
+                    <selected>!Skin.HasSetting(53poster.nowrap)</selected>
+                    <onclick>Skin.ToggleSetting(53poster.nowrap)</onclick>
+                    <onclick>ReloadSkin()</onclick>
+                    <visible>Control.IsVisible(53)</visible>
+                </control>
+                <control type="button" id="6">
+                    <description>Slideshow</description>
+                    <include>DefContextButton</include>
+                    <align>left</align>
+                    <label>108</label>
+                    <visible>!ListItem.IsFolder</visible>
+                </control>
+                <control type="button" id="7">
+                    <description>Recursive Slideshow</description>
+                    <include>DefContextButton</include>
+                    <align>left</align>
+                    <label>108</label>
+                    <visible>ListItem.IsFolder</visible>
+                </control>
+                <control type="radiobutton" id="9">
+                    <description>Randomise</description>
+                    <include>DefContextButton</include>
+                    <align>left</align>
+                    <label>13319</label>
+                </control>
+				<control type="label" id="203">
+                    <width>455</width>
+                    <height>42</height>
+                    <textoffsetx>15</textoffsetx>
+                    <font>Home</font>
+                    <label>Misc Actions</label>
+                    <textcolor>$VAR[ColorHighlight]</textcolor>
+                    <aligny>center</aligny>
+                </control>
+				<control type="button" id="9092">
+					<description>Set Custom Widget</description>
+					<include>DefContextButton2</include>
+					<align>left</align>
+					<label>31222</label>
+					<onclick>Back</onclick>
+					<onclick>ActivateWindow(1106)</onclick>
+				</control>
+            </control>
+        </control>
+    </controls>
+</window>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window>
+    <defaultcontrol always="true">9315</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+    <controls>
+        <control type="button" id="9315">
+            <visible allowhiddenfocus="true">false</visible>
+			<!-- Workaround -->
+			<onfocus condition="Skin.HasSetting(login.reset)">AlarmClock(RefreshHome,ReloadSkin(),00:02,silent)</onfocus>
+			<onfocus>ReplaceWindow($INFO[System.StartupWindow])</onfocus>
+			<onfocus>Skin.reset(recording.shown)</onfocus>
+			<texturenofocus></texturenofocus>
+			<texturefocus></texturefocus>
+        </control>
+    </controls>
+</window>

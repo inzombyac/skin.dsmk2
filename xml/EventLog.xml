@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window>
+	<defaultcontrol always="true">570</defaultcontrol>
+	<menucontrol>9000</menucontrol>
+	<!-- <onload condition="!Skin.HasSetting(FirstTimeRun)">ActivateWindow(1112)</onload> -->
+	<views>570</views>
+	<controls>
+		<include>Furniture_Header</include>
+		<include>Furniture_NowPlaying</include>
+		<include>Furniture_Clock</include>
+		<control type="group">
+			<include>Animation.FadeIn</include>
+			<include>Animation.FadeOut</include>
+			<visible>ControlGroup(9000).HasFocus()</visible>
+			<include>GlobalOverlay</include>
+		</control>
+		<control type="group">
+			<centerleft>50%</centerleft>
+			<width>1080</width>
+			<posy>PosterPad</posy>
+			<height>PosterH</height>
+			<control type="image">
+				<texture border="16" colordiffuse="White100">common/rounded-shadow8.png</texture>
+				<left>-8</left>
+				<right>-8</right>
+				<top>-8</top>
+				<bottom>-8</bottom>
+			</control>
+			<visible>Control.IsVisible(570)</visible>
+			<control type="list" id="570">
+				<onleft>9000</onleft>
+				<onright>60</onright>
+				<onup>570</onup>
+				<ondown>570</ondown>
+				<viewtype label="535">list</viewtype>
+				<pagecontrol>60</pagecontrol>
+				<scrolltime>200</scrolltime>
+				<itemlayout height="100" width="1080">
+					<control type="image">
+						<left>8</left>
+						<top>2</top>
+						<width>90</width>
+						<height>90</height>
+						<texture background="true">$INFO[Listitem.Icon]</texture>
+						<aspectratio>keep</aspectratio>
+					</control>
+					<control type="label">
+						<left>110</left>
+						<top>5</top>
+						<width>870</width>
+						<height>30</height>
+						<font>SmallBold</font>
+						<textcolor>Dark1</textcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+					<control type="textbox">
+						<left>110</left>
+						<top>45</top>
+						<width>870</width>
+						<height>48</height>
+						<font>Small</font>
+						<textcolor>Dark2</textcolor>
+						<align>left</align>
+						<label>$INFO[ListItem.Property(Event.Description)]</label>
+					</control>
+					<control type="label">
+						<left>110</left>
+						<top>5</top>
+						<right>10</right>
+						<height>30</height>
+						<font>Small</font>
+						<textcolor>Dark1</textcolor>
+						<align>right</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Label2]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout height="100" width="1080">
+					<control type="image">
+						<width>100%</width>
+						<height>100%</height>
+						<texture border="8" colordiffuse="Dark1">common/box.png</texture>
+						<bordertexture colordiffuse="$VAR[ColorHighlight]">common/white.png</bordertexture>
+						<bordersize>6,0,0,0</bordersize>
+					</control>
+					<control type="image">
+						<left>6</left>
+						<width>1</width>
+						<texture colordiffuse="Light1">common/white.png</texture>
+					</control>
+					<control type="image">
+						<left>8</left>
+						<top>2</top>
+						<width>90</width>
+						<height>90</height>
+						<texture background="true">$INFO[Listitem.Icon]</texture>
+						<aspectratio>keep</aspectratio>
+					</control>
+					<control type="label">
+						<left>110</left>
+						<top>5</top>
+						<width>870</width>
+						<height>30</height>
+						<font>SmallBold</font>
+						<textcolor>Light1</textcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+					<control type="textbox">
+						<left>110</left>
+						<top>45</top>
+						<width>870</width>
+						<height>48</height>
+						<font>Small</font>
+						<textcolor>Light2</textcolor>
+						<align>left</align>
+						<label>$INFO[ListItem.Property(Event.Description)]</label>
+					</control>
+					<control type="label">
+						<left>110</left>
+						<top>5</top>
+						<right>10</right>
+						<height>30</height>
+						<font>Small</font>
+						<textcolor>Light1</textcolor>
+						<align>right</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Label2]</label>
+					</control>
+				</focusedlayout>
+			</control>
+		</control>
+		<control type="group">
+			<include>Def9000SideBladeLeft</include>
+			<control type="grouplist" id="9000">
+				<left>0</left>
+				<top>115</top>
+				<width>455</width>
+				<height>1080</height>
+				<onleft>9000</onleft>
+				<onright>ClearProperty(MediaMenu,Home)</onright>
+				<onright>570</onright>
+				<onup>9000</onup>
+				<ondown>9000</ondown>
+				<onback>570</onback>
+				<itemgap>0</itemgap>
+				<control type="label" id="200">
+					<height>42</height>
+					<textoffsetx>15</textoffsetx>
+					<font>Home</font>
+					<label>Event Log Actions</label>
+					<textcolor>$VAR[ColorHighlight]</textcolor>
+					<aligny>center</aligny>
+				</control>
+				<control type="togglebutton" id="4">
+					<description>Ascending</description>
+					<include>DefContextButton2</include>
+					<align>left</align>
+					<label>Sort: $LOCALIZE[584]</label>
+					<altlabel>Sort: $LOCALIZE[585]</altlabel>
+				</control>
+				<control type="button" id="21">
+					<description>Level button</description>
+					<include>DefContextButton2</include>
+					<align>left</align>
+				</control>
+				<control type="radiobutton" id="22">
+					<description>Only show current level</description>
+					<align>left</align>
+					<include>DefContextButton2</include>
+				</control>
+				<control type="button" id="20">
+					<description>Clear button</description>
+					<include>DefContextButton2</include>
+					<align>left</align>
+					<label>192</label>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

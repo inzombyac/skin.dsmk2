@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<includes>
+	<include name="View_50_List">
+		<description>Default View (id=50)</description>
+		<control type="group">
+			<include>Animation.Common</include>
+			<visible>Control.IsVisible(50)</visible>
+			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml)</visible>
+			<control type="group">
+				<control type="list" id="50">
+					<top>160</top>
+					<height>820</height>
+					<left>ListX</left>
+					<right>120</right>
+					<onleft condition="[[container.content(movies) | container.content(sets) | container.content(tvshows) | container.content(seasons) | container.content(albums) | container.content(artists) | container.content(songs) | Container.content(episodes) | Container.content(programs) | Container.content(addons)] | !String.IsEmpty(ListItem.Trailer)]">65</onleft>
+					<onleft condition="![[container.content(movies) | container.content(sets) | container.content(tvshows) | container.content(seasons) | container.content(albums) | container.content(artists) | container.content(songs) | Container.content(episodes) | Container.content(programs) | Container.content(addons)] | !String.IsEmpty(ListItem.Trailer)]">9000</onleft>
+					<onright condition="String.IsEqual(Container.SortMethod, $LOCALIZE[369]) | String.IsEqual(Container.SortMethod, $LOCALIZE[551]) | String.IsEqual(Container.SortMethod, $LOCALIZE[36918]) | String.IsEqual(Container.SortMethod, $LOCALIZE[36916])">61</onright>
+					<onright condition="!String.IsEqual(Container.SortMethod, $LOCALIZE[369]) + !String.IsEqual(Container.SortMethod, $LOCALIZE[551]) + !String.IsEqual(Container.SortMethod, $LOCALIZE[36918]) + !String.IsEqual(Container.SortMethod, $LOCALIZE[36916])">61</onright>
+					<onup condition="Player.HasMedia">7788</onup>
+					<onup condition="!Player.HasMedia">50</onup>
+					<ondown>50</ondown>
+					<pagecontrol>60</pagecontrol>
+					<viewtype label="31032">list</viewtype>
+					<scrolltime tween="quadratic">400</scrolltime>
+					<itemlayout width="ListW" height="64">
+						<include>50itemlayout</include>
+					</itemlayout>
+					<focusedlayout width="ListW" height="64">
+						<control type="group">
+							<visible>Control.HasFocus(50) + !Window.IsVisible(DialogVideoInfo.xml)</visible>
+							<include>50focuslayout</include>
+						</control>
+						<control type="group">
+							<visible>!Control.HasFocus(50) | Window.IsVisible(DialogVideoInfo.xml)</visible>
+							<include>50itemlayout</include>
+						</control>
+					</focusedlayout>
+				</control>
+				<include>Furniture_Scrollbar_List</include>
+			</control>
+			<include>50PosterView</include>
+			<include>50PanelButtons</include>
+		</control>
+	</include>
+	<include name="50focuslayout">
+		<control type="button">
+			<texturefocus></texturefocus>
+			<texturenofocus></texturenofocus>
+			<onfocus condition="Container.Content(movies)">ClearProperty(TVShowID,home)</onfocus>
+			<onfocus>Skin.SetString(LastIcon,$VAR[PosterImage])</onfocus>
+			<onfocus condition="Container.Content(tvshows)">SetProperty(TVShowID,$INFO[ListItem.DBID],home)</onfocus>
+		</control>
+		<control type="image">
+			<width>100%</width>
+			<height>100%</height>
+			<texture border="8" colordiffuse="Dark1">common/box.png</texture>
+			<bordertexture colordiffuse="$VAR[ColorHighlight]">common/white.png</bordertexture>
+			<bordersize>6,0,0,0</bordersize>
+		</control>
+		<control type="image">
+			<left>6</left>
+			<width>1</width>
+			<texture colordiffuse="Light1">common/black.png</texture>
+		</control>
+		<control type="label">
+			<posx>30</posx>
+			<width>auto</width>
+			<aligny>center</aligny>
+			<height>64</height>
+			<font>SmallBold</font>
+			<textcolor>Light1</textcolor>
+			<selectedcolor>Light1</selectedcolor>
+			<label>$INFO[ListItem.Label]</label>
+			<visible>!Container.Content(episodes) + !Container.Content(tvshows)</visible>
+		</control>
+		<control type="label">
+			<posx>30</posx>
+			<width>auto</width>
+			<aligny>center</aligny>
+			<height>64</height>
+			<font>SmallBold</font>
+			<textcolor>Light1</textcolor>
+			<selectedcolor>Light1</selectedcolor>
+			<label>$VAR[ListItemTVShowTitle]</label>
+			<visible>Container.Content(tvshows)</visible>
+		</control>
+		<control type="label">
+			<posx>30</posx>
+			<width>auto</width>
+			<aligny>center</aligny>
+			<height>64</height>
+			<font>SmallBold</font>
+			<textcolor>Light1</textcolor>
+			<selectedcolor>Light1</selectedcolor>
+			<label>$VAR[LabelSeasonZero]$INFO[ListItem.Season]$VAR[LabelEpisodeZero2]$INFO[ListItem.Episode,, • ]$INFO[ListItem.Title]</label>
+			<visible>Container.Content(episodes)</visible>
+		</control>
+		<control type="label">
+			<right>10</right>
+			<width>500</width>
+			<aligny>center</aligny>
+			<height>64</height>
+			<align>right</align>
+			<font>Small</font>
+			<textcolor>Light1</textcolor>
+			<selectedcolor>Light1</selectedcolor>
+			<label>$VAR[LabelListDetails]</label>
+			<animation effect="slide" start="0" end="-70" time="0" condition="Container.Content(tvshows) | Container.Content(seasons)">Conditional</animation>
+			<animation effect="slide" start="0" end="-100" time="0" condition="Container.Content(movies) | Container.Content(files)">Conditional</animation>
+		</control>
+		<control type="progress">
+			<centerright>36</centerright>
+			<centertop>32</centertop>
+			<width>67</width>
+			<height>19</height>
+			<reveal>true</reveal>
+			<texturebg>pvr/progress-back.png</texturebg>
+			<lefttexture colordiffuse="$VAR[ColorHighlight]">pvr/progress-leftright.png</lefttexture>
+			<midtexture colordiffuse="$VAR[ColorHighlight]">pvr/progress-mid.png</midtexture>
+			<righttexture colordiffuse="$VAR[ColorHighlight]">pvr/progress-leftright.png</righttexture>
+			<info>ListItem.PercentPlayed</info>
+			<colordiffuse>Light1</colordiffuse>
+			<visible>Integer.IsGreater(ListItem.PercentPlayed,0)</visible>
+		</control>
+		<control type="group">
+			<visible>Integer.IsGreater(ListItem.Property(UnwatchedEpisodes),0)</visible>
+			<control type="image">
+				<centerright>32</centerright>
+				<centertop>32</centertop>
+				<height>40</height>
+				<width>40</width>
+				<texture colordiffuse="$VAR[ColorHighlight2]">common/circle.png</texture>
+				<aspectratio align="center" aligny="center">keep</aspectratio>
+			</control>
+			<control type="label">
+				<centerright>32</centerright>
+				<centertop>32</centertop>
+				<height>40</height>
+				<width>40</width>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>$INFO[ListItem.Property(UnwatchedEpisodes)]</label>
+				<font>Tiny</font>
+				<textcolor>White</textcolor>
+			</control>
+		</control>
+		<control type="image">
+			<centerright>32</centerright>
+			<centertop>32</centertop>
+			<height>40</height>
+			<width>40</width>
+			<texture colordiffuse="$VAR[ColorHighlight2]">indicator/checkmark.png</texture>
+			<aspectratio align="center" aligny="center">keep</aspectratio>
+			<visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png) + !Integer.IsGreater(ListItem.PercentPlayed,0) + !Container.Content(tvshows) + !Container.Content(seasons)</visible>
+		</control>
+		<control type="image">
+			<centerright>32</centerright>
+			<centertop>32</centertop>
+			<height>40</height>
+			<width>40</width>
+			<texture colordiffuse="$VAR[ColorHighlight2]">indicator/update.png</texture>
+			<aspectratio align="center" aligny="center">keep</aspectratio>
+			<visible>Window.IsVisible(AddonBrowser.xml) + ListItem.Property(Addon.HasUpdate) + Container.Content(addons)</visible>
+		</control>
+		<control type="image">
+			<centerright>32</centerright>
+			<centertop>32</centertop>
+			<height>40</height>
+			<width>40</width>
+			<texture colordiffuse="red">indicator/disabled.png</texture>
+			<aspectratio align="center" aligny="center">keep</aspectratio>
+			<visible>Window.IsVisible(AddonBrowser.xml) + !ListItem.Property(Addon.IsEnabled) + Container.Content(addons) + ListItem.Property(Addon.IsInstalled)</visible>
+		</control>
+		<control type="image">
+			<centerright>32</centerright>
+			<centertop>32</centertop>
+			<height>40</height>
+			<width>40</width>
+			<texture colordiffuse="red">indicator/poster-unwatched.png</texture>
+			<aspectratio align="center" aligny="center">keep</aspectratio>
+			<visible>Window.IsVisible(AddonBrowser.xml) + ListItem.Property(Addon.Orphaned) + Container.Content(addons)</visible>
+		</control>
+	</include>
+	<include name="50itemlayout">
+		<control type="label">
+			<left>30</left>
+			<width>800</width>
+			<aligny>center</aligny>
+			<height>64</height>
+			<font>SmallBold</font>
+			<label>$INFO[ListItem.Label]</label>
+			<textcolor>Dark1</textcolor>
+			<selectedcolor>Dark1</selectedcolor>
+			<visible>!Container.Content(episodes) + !Container.Content(tvshows)</visible>
+		</control>
+		<control type="label">
+			<left>30</left>
+			<width>800</width>
+			<aligny>center</aligny>
+			<height>64</height>
+			<font>SmallBold</font>
+			<textcolor>Dark1</textcolor>
+			<selectedcolor>Dark1</selectedcolor>
+			<label>$VAR[ListItemTVShowTitle]</label>
+			<visible>Container.Content(tvshows)</visible>
+		</control>
+		<control type="label">
+			<left>30</left>
+			<width>800</width>
+			<aligny>center</aligny>
+			<height>64</height>
+			<font>SmallBold</font>
+			<textcolor>Dark1</textcolor>
+			<selectedcolor>Dark1</selectedcolor>
+			<label>$VAR[LabelSeasonZero]$INFO[ListItem.Season]$VAR[LabelEpisodeZero2]$INFO[ListItem.Episode,, • ]$INFO[ListItem.Title]</label>
+			<visible>Container.Content(episodes)</visible>
+		</control>
+		<control type="label">
+			<right>10</right>
+			<width>500</width>
+			<aligny>center</aligny>
+			<height>64</height>
+			<align>right</align>
+			<font>Small</font>
+			<textcolor>Dark1</textcolor>
+			<selectedcolor>Dark1</selectedcolor>
+			<label>$VAR[LabelListDetails]</label>
+			<animation effect="slide" start="0" end="-70" time="0" condition="Container.Content(tvshows) | Container.Content(seasons)">Conditional</animation>
+			<animation effect="slide" start="0" end="-100" time="0" condition="Container.Content(movies) | Container.Content(files)">Conditional</animation>
+		</control>
+		<control type="progress">
+			<centerright>36</centerright>
+			<centertop>32</centertop>
+			<width>67</width>
+			<height>19</height>
+			<reveal>true</reveal>
+			<texturebg>pvr/progress-back.png</texturebg>
+			<lefttexture colordiffuse="$VAR[ColorHighlight]">pvr/progress-leftright.png</lefttexture>
+			<midtexture colordiffuse="$VAR[ColorHighlight]">pvr/progress-mid.png</midtexture>
+			<righttexture colordiffuse="$VAR[ColorHighlight]">pvr/progress-leftright.png</righttexture>
+			<info>ListItem.PercentPlayed</info>
+			<colordiffuse>Dark1</colordiffuse>
+			<visible>Integer.IsGreater(ListItem.PercentPlayed,0)</visible>
+		</control>
+		<control type="group">
+			<visible>Integer.IsGreater(ListItem.Property(UnwatchedEpisodes),0)</visible>
+			<control type="image">
+				<centerright>32</centerright>
+				<centertop>32</centertop>
+				<height>40</height>
+				<width>40</width>
+				<texture colordiffuse="$VAR[ColorHighlight2]">common/circle.png</texture>
+				<aspectratio align="center" aligny="center">keep</aspectratio>
+			</control>
+			<control type="label">
+				<centerright>32</centerright>
+				<centertop>32</centertop>
+				<height>40</height>
+				<width>40</width>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>$INFO[ListItem.Property(UnwatchedEpisodes)]</label>
+				<font>Tiny</font>
+				<textcolor>White</textcolor>
+			</control>
+		</control>
+		<control type="image">
+			<centerright>32</centerright>
+			<centertop>32</centertop>
+			<height>40</height>
+			<width>40</width>
+			<texture colordiffuse="$VAR[ColorHighlight2]">indicator/checkmark.png</texture>
+			<aspectratio align="center" aligny="center">keep</aspectratio>
+			<visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png) + !Integer.IsGreater(ListItem.PercentPlayed,0) + !Container.Content(tvshows) + !Container.Content(seasons)</visible>
+		</control>
+		<control type="image">
+			<centerright>32</centerright>
+			<centertop>32</centertop>
+			<height>40</height>
+			<width>40</width>
+			<texture colordiffuse="$VAR[ColorHighlight2]">indicator/update.png</texture>
+			<aspectratio align="center" aligny="center">keep</aspectratio>
+			<visible>Window.IsVisible(AddonBrowser.xml) + ListItem.Property(Addon.HasUpdate) + Container.Content(addons)</visible>
+		</control>
+		<control type="image">
+			<centerright>32</centerright>
+			<centertop>32</centertop>
+			<height>40</height>
+			<width>40</width>
+			<texture colordiffuse="red">indicator/disabled.png</texture>
+			<aspectratio align="center" aligny="center">keep</aspectratio>
+			<visible>Window.IsVisible(AddonBrowser.xml) + !ListItem.Property(Addon.IsEnabled) + Container.Content(addons) + ListItem.Property(Addon.IsInstalled)</visible>
+		</control>
+		<control type="image">
+			<centerright>32</centerright>
+			<centertop>32</centertop>
+			<height>40</height>
+			<width>40</width>
+			<texture colordiffuse="red">indicator/poster-unwatched.png</texture>
+			<aspectratio align="center" aligny="center">keep</aspectratio>
+			<visible>Window.IsVisible(AddonBrowser.xml) + ListItem.Property(Addon.Orphaned) + Container.Content(addons)</visible>
+		</control>
+	</include>
+	<include name="50PosterView">
+		<control type="group" description="Poster">
+			<visible>Control.IsVisible(50) | Control.IsVisible(517)</visible>
+			<left>10</left>
+			<width>PosterPanel</width>
+			<top>160</top>
+			<bottom>80</bottom>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<bottom>0</bottom>
+				<texture colordiffuse="HeaderBG">common/white.png</texture>
+				<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
+				<visible>Control.IsVisible(50) | Control.IsVisible(517)</visible>
+				<visible>!String.IsEmpty(ListItem.Label)</visible>
+			</control>
+			<control type="group">
+				<left>70</left>
+				<top>10</top>
+				<animation effect="slide" start="0" end="45,0" time="0" condition="!Control.IsVisible(65)">Conditional</animation>
+				<control type="image">
+					<left>10</left>
+					<bottom>483</bottom>
+					<width>470</width>
+					<height>500</height>
+					<aspectratio align="left" aligny="bottom" scalediffuse="false">keep</aspectratio>
+					<texture background="true">$VAR[LandscapeImage]</texture>
+					<visible>Container.Content(episodes)</visible>
+					<animation effect="slide" start="0" end="-40,0" time="0" condition="true">Conditional</animation>
+				</control>
+				<control type="image">
+					<left>40</left>
+					<top>455</top>
+					<width>PosterW</width>
+					<height>500</height>
+					<fadetime>100</fadetime>
+					<aspectratio align="left" aligny="center" scalediffuse="false">keep</aspectratio>
+					<texture flipy="true" diffuse="diffuse/listposter-ref.png">$VAR[PosterImage]</texture>
+					<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
+					<visible>Skin.HasSetting(show.reflections)</visible>
+					<visible>!Container.Content(episodes)</visible>
+				</control>
+				<control type="image">
+					<left>40</left>
+					<top>480</top>
+					<width>320</width>
+					<height>48</height>
+					<aspectratio align="left" scalediffuse="false">stretch</aspectratio>
+					<texture background="true">diffuse/shadowspot.png</texture>
+					<visible>Container.Content(tvshows) | Container.Content(movies) | Container.Content(seasons)</visible>
+					<visible>!String.IsEqual(ListItem.Label,..)</visible>
+				</control>
+				<control type="image">
+					<left>40</left>
+					<width>PosterW</width>
+					<height>500</height>
+					<fadetime>100</fadetime>
+					<aspectratio align="left" aligny="center" scalediffuse="false">keep</aspectratio>
+					<texture>$VAR[PosterImage]</texture>
+					<visible>!Container.Content(episodes)</visible>
+				</control>
+			</control>
+		</control>
+	</include>
+	<include name="50PanelButtons">
+		<control type="grouplist" id="65">
+			<visible>[Control.IsVisible(50) | Control.IsVisible(517)] + [[container.content(movies) | container.content(sets)| container.content(tvshows) | container.content(seasons) | container.content(albums) | container.content(artists) | container.content(songs) | Container.content(episodes) | Container.content(programs) | Container.content(addons)] | !String.IsEmpty(ListItem.Trailer)]</visible>
+			<visible>!String.IsEmpty(ListItem.Label) + !String.IsEqual(ListItem.Label,..) + !String.IsEqual(ListItem.Label,Update all)</visible>
+			<visible>!Skin.HasSetting(furniture.hidemediabuttons)</visible>
+			<animation effect="fade" start="25" end="100" delay="25" time="150" reversible="false">Visible</animation>
+			<animation effect="slide" start="0" end="-30,50" time="0" condition="container.content(movies) | container.content(sets) | container.content(tvshows) | container.content(seasons)">Conditional</animation>
+			<animation effect="slide" start="0" end="15,70" time="0" condition="container.content(albums) | container.content(artists) | container.content(songs) | Container.content(programs) | Container.content(addons)">Conditional</animation>
+			<visible>!String.IsEqual(ListItem.Label, * All Seasons)</visible>
+			<visible>!String.IsEqual(ListItem.Label, * All Artists)</visible>
+			<top>170</top>
+			<left>550</left>
+			<height>400</height>
+			<width>180</width>
+			<orientation>vertical</orientation>
+			<align>center</align>
+			<onright>50</onright>
+			<onleft>9000</onleft>
+			<itemgap>10</itemgap>
+			<defaultcontrol always="false">7006</defaultcontrol>
+			<control type="button" id="7006">		
+				<label>$VAR[PanelPlayLabel]</label>
+				<font>Button</font>
+				<texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
+				<texturenofocus colordiffuse="Light1" border="5">common/box.png</texturenofocus>
+				<onclick>right</onclick>
+				<onclick condition="!Container.content(movies) + !Container.content(sets) + !Container.content(episodes) + !Container.content(tvshows) + !Container.content(seasons) + !Container.content(albums) + !Container.content(songs) + !Container.content(artists) + !Container.content(musicvideos)">Action(select)</onclick>
+				<onclick condition="Container.content(movies) | Container.content(sets) | Container.content(episodes) | Container.content(tvshows) | Container.content(seasons) | Container.content(albums) | Container.content(artists) | Container.content(songs) | Container.content(musicvideos) | Container.content(videos)">Action(PlayPause)</onclick>
+			</control>
+			<control type="button" id="7009">		
+				<label>29915</label>
+				<font>Button</font>
+				<texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
+				<texturenofocus colordiffuse="Light1" border="5">common/box.png</texturenofocus>
+				<onclick>right</onclick>
+				<onclick>Action(info)</onclick>
+				<visible>!String.IsEqual(ListItem.Label, * All Albums) + !Container.content(sets)</visible>
+			</control>
+			<control type="button" id="7008">		
+				<label>$LOCALIZE[20410]</label>
+				<font>Button</font>
+				<texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
+				<texturenofocus colordiffuse="Light1" border="5">common/box.png</texturenofocus>
+				<onclick condition="!String.IsEmpty(ListItem.Trailer)">PlayMedia($INFO[ListItem.Trailer])</onclick>
+				<onclick condition="String.IsEmpty(ListItem.Trailer)">ActivateWindow(videos,$INFO[ListItem.Label,plugin://plugin.video.youtube/kodion/search/query/?q=,trailer])</onclick>
+				<visible>!String.IsEmpty(ListItem.Trailer) | Container.Content(movies)</visible>
+			</control>
+			<control type="button" id="7010">		
+				<label>•••</label>
+				<font>LargeBold</font>
+				<texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
+				<texturenofocus colordiffuse="Light1" border="5">common/box.png</texturenofocus>
+				<onclick>right</onclick>
+				<onclick>Action(contextmenu)</onclick>
+				<visible>!String.IsEqual(ListItem.Label, * All Albums)</visible>
+			</control>
+			<!-- <control type="radiobutton" id="7011">		
+				<label></label>
+				<font>Button</font>
+				<texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
+				<texturenofocus colordiffuse="Light1" border="5">common/box.png</texturenofocus>
+				<radioposx>75</radioposx>
+				<radioposy>20</radioposy>
+				<selected>String.IsEqual(ListItem.Overlay,OverlayWatched.png)</selected>
+				<onclick>right</onclick>
+				<onclick>Action(ToggleWatched)</onclick>
+				<visible>Container.content(movies) | Container.content(episodes) | Container.content(tvshows) | Container.content(seasons)</visible>
+			</control> -->
+		</control>
+		<control type="group">
+			<visible>[Control.IsVisible(50) | Control.IsVisible(517)]</visible>
+			<control type="grouplist">
+				<left>30</left>
+				<top>690</top>
+				<height>390</height>
+				<width>700</width>
+				<animation effect="slide" start="0" end="0,-100" time="0" condition="container.content(episodes)">Conditional</animation> -->
+				<orientation>vertical</orientation>
+				<control type="label">
+					<aligny>center</aligny>
+					<height>36</height>
+					<font>MediumBold</font>
+					<textcolor>Dark1</textcolor>
+					<selectedcolor>Dark1</selectedcolor>
+					<label>$VAR[LabelDirector]</label>
+				</control>
+				<control type="label">
+					<height>49</height>
+					<aligny>center</aligny>
+					<font>TwentyEight</font>
+					<textcolor>Dark1</textcolor>
+					<selectedcolor>Dark1</selectedcolor>
+					<label>$VAR[LabelGenre]</label>
+				</control>
+				<control type="textbox">
+					<align>justify</align>
+					<font>TwentyEight</font>
+					<textcolor>Dark1</textcolor>
+					<selectedcolor>Dark1</selectedcolor>
+					<label>$VAR[LabelPlotBox]</label>
+					<height>190</height>
+				</control>
+			</control>
+		</control>
+	</include>
+</includes>

@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<includes>
+    <variable name="LabelEpisodeZero2">
+        <value condition="Control.HasFocus(301) + !Integer.IsGreater(Container(301).ListItem.Episode,9) + !String.Contains(Container(301).ListItem.Episode,S) + !String.IsEmpty(Container(301).ListItem.Episode)">E$NUMBER[0]</value>
+        <value condition="Control.HasFocus(9500) + !Integer.IsGreater(Container(9500).ListItem.Episode,9) + !String.Contains(Container(9500).ListItem.Episode,S) + !String.IsEmpty(Container(9500).ListItem.Episode)">E$NUMBER[0]</value>
+		<value condition="Control.HasFocus(4001) + !Integer.IsGreater(Container(4001).ListItem.Episode,9) + !String.Contains(Container(4001).ListItem.Episode,S) + !String.IsEmpty(Container(4001).ListItem.Episode) +  !String.Contains(Container(4001).ListItem.Episode,E)">E$NUMBER[0]</value>
+		<value condition="Control.HasFocus(4001) + Integer.IsGreater(Container(4001).ListItem.Episode,9) + !String.Contains(Container(4001).ListItem.Episode,S) + !String.IsEmpty(Container(4001).ListItem.Episode) +  !String.Contains(Container(4001).ListItem.Episode,E)">E</value>	
+		<value condition="Control.HasFocus(4002) + !Integer.IsGreater(Container(4002).ListItem.Episode,9) + !String.Contains(Container(4002).ListItem.Episode,S) + !String.IsEmpty(Container(4002).ListItem.Episode) +  !String.Contains(Container(4002).ListItem.Episode,E)">E$NUMBER[0]</value>
+		<value condition="Control.HasFocus(4002) + Integer.IsGreater(Container(4002).ListItem.Episode,9) + !String.Contains(Container(4002).ListItem.Episode,S) + !String.IsEmpty(Container(4002).ListItem.Episode) +  !String.Contains(Container(4002).ListItem.Episode,E)">E</value>	
+		<value condition="Control.HasFocus(4003) + !Integer.IsGreater(Container(4003).ListItem.Episode,9) + !String.Contains(Container(4003).ListItem.Episode,S) + !String.IsEmpty(Container(4003).ListItem.Episode) +  !String.Contains(Container(4003).ListItem.Episode,E)">E$NUMBER[0]</value>
+		<value condition="Control.HasFocus(4003) + Integer.IsGreater(Container(4003).ListItem.Episode,9) + !String.Contains(Container(4003).ListItem.Episode,S) + !String.IsEmpty(Container(4003).ListItem.Episode) +  !String.Contains(Container(4003).ListItem.Episode,E)">E</value>
+		 <value condition="Control.HasFocus(301) + Integer.IsGreater(Container(301).ListItem.Episode,9) + !String.Contains(Container(301).ListItem.Episode,S) + !String.IsEmpty(Container(301).ListItem.Episode)">E</value>
+        <value condition="Control.HasFocus(9500) + Integer.IsGreater(Container(9500).ListItem.Episode,9) + !String.Contains(Container(9500).ListItem.Episode,S) + !String.IsEmpty(Container(9500).ListItem.Episode)">E</value>
+		<value condition="!VideoPlayer.HasInfo + !Integer.IsGreater(ListItem.Episode,9) + !String.Contains(ListItem.Episode,S) + !String.IsEmpty(ListItem.Episode)">E$NUMBER[0]</value>
+        <value condition="VideoPlayer.HasInfo + !Integer.IsGreater(VideoPlayer.Episode,9) + !String.Contains(VideoPlayer.Episode,S) + !String.IsEmpty(VideoPlayer.Episode)">E$NUMBER[0]</value>
+		<value condition="!VideoPlayer.HasInfo + Integer.IsGreater(ListItem.Episode,9) + !String.Contains(ListItem.Episode,S) + !String.IsEmpty(ListItem.Episode)">E</value>
+        <value condition="VideoPlayer.HasInfo + Integer.IsGreater(VideoPlayer.Episode,9) + !String.Contains(VideoPlayer.Episode,S) + !String.IsEmpty(VideoPlayer.Episode)">E</value>
+    </variable>  
+    <variable name="LabelSeasonZero">
+        <value condition="!VideoPlayer.HasInfo + !Integer.IsGreater(ListItem.Season,9) + !String.Contains(ListItem.Season,S) + !String.IsEmpty(ListItem.Season)">S$NUMBER[0]</value>
+        <value condition="Control.HasFocus(301) + !Integer.IsGreater(Container(301).ListItem.Season,9) + !String.Contains(Container(301).ListItem.Season,S) + !String.IsEmpty(Container(301).ListItem.Season)">S$NUMBER[0]</value>
+        <value condition="Control.HasFocus(9500) + !Integer.IsGreater(Container(9500).ListItem.Season,9) + !String.Contains(Container(9500).ListItem.Season,S) + !String.IsEmpty(Container(9500).ListItem.Season)">S$NUMBER[0]</value>
+		<value condition="Control.HasFocus(4001) + !Integer.IsGreater(Container(4001).ListItem.Season,9) + !String.Contains(Container(4001).ListItem.Season,S) + !String.IsEmpty(Container(4001).ListItem.Season)">S$NUMBER[0]</value>
+		<value condition="Control.HasFocus(4001) + Integer.IsGreater(Container(4001).ListItem.Season,9) + !String.Contains(Container(4001).ListItem.Season,S) + !String.IsEmpty(Container(4001).ListItem.Season)">S</value>
+        <value condition="Control.HasFocus(4002) + !Integer.IsGreater(Container(4002).ListItem.Season,9) + !String.Contains(Container(4002).ListItem.Season,S) + !String.IsEmpty(Container(4002).ListItem.Season)">S$NUMBER[0]</value>
+		<value condition="Control.HasFocus(4002) + Integer.IsGreater(Container(4002).ListItem.Season,9) + !String.Contains(Container(4002).ListItem.Season,S) + !String.IsEmpty(Container(4002).ListItem.Season)">S</value>
+		<value condition="Control.HasFocus(4003) + !Integer.IsGreater(Container(4003).ListItem.Season,9) + !String.Contains(Container(4003).ListItem.Season,S) + !String.IsEmpty(Container(4003).ListItem.Season)">S$NUMBER[0]</value>
+		<value condition="Control.HasFocus(4003) + Integer.IsGreater(Container(4003).ListItem.Season,9) + !String.Contains(Container(4003).ListItem.Season,S) + !String.IsEmpty(Container(4003).ListItem.Season)">S</value>
+		<value condition="Control.HasFocus(4004) + !Integer.IsGreater(Container(4004).ListItem.Season,9) + !String.Contains(Container(4004).ListItem.Season,S) + !String.IsEmpty(Container(4004).ListItem.Season)">S$NUMBER[0]</value>
+		<value condition="Integer.IsGreater(ListItem.Season,9) + !String.Contains(ListItem.Season,S) + !String.IsEmpty(ListItem.Season)">S</value>
+        <value condition="VideoPlayer.HasInfo + !Integer.IsGreater(VideoPlayer.Season,9) + !String.Contains(VideoPlayer.Season,S) + !String.IsEmpty(VideoPlayer.Season)">S$NUMBER[0]</value>
+		 <value condition="VideoPlayer.HasInfo + Integer.IsGreater(VideoPlayer.Season,9) + !String.Contains(VideoPlayer.Season,S) + !String.IsEmpty(VideoPlayer.Season)">S</value>
+    </variable>    
+	<variable name="LabelDirector">
+		<value condition="Container.IsUpdating"></value>
+		<value condition="Container.Content(movies)">$INFO[ListItem.Label]</value>
+		<value condition="Container.Content(songs)">$INFO[ListItem.Label]</value>
+		<value condition="Container.Content(albums)">$INFO[ListItem.Artist]</value>
+		<value condition="Container.Content(artists)">$INFO[ListItem.Artist]</value>
+		<value condition="Container.Content(tvshows) + String.IsEmpty(ListItem.TvShowTitle)">$INFO[ListItem.Label]</value>
+		<value condition="Container.Content(episodes) | Container.Content(seasons) | Container.Content(tvshows)">$INFO[ListItem.TvShowTitle]</value>
+		<value condition="String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.)">$INFO[ListItem.Label]</value>
+		<value condition="!String.IsEmpty(ListItem.Director)">$INFO[ListItem.Director]</value>
+		<value condition="!String.IsEmpty(Window(home).Property(Set.Movies.Director))">$INFO[Window(home).Property(Set.Movies.Director)]</value>
+		<value condition="Window.IsVisible(DialogBusy.xml)"></value>
+		<!-- <value condition="!String.IsEmpty(Container.Content)">$INFO[Container.FolderName]</value> -->
+		<!-- <value>$LOCALIZE[19055]</value> -->
+	</variable>
+	<variable name="LabelGenre">
+		<value condition="Container.IsUpdating"></value>
+		<value condition="Container.Content(albums)">$INFO[ListItem.Album]</value>
+		<value condition="Container.Content(tvshows) | Container.Content(seasons)">$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20360]]$INFO[ListItem.Property(UnWatchedEpisodes), • , $LOCALIZE[16101]]$INFO[ListItem.Studio, • ]</value>
+		<value condition="Container.Content(episodes)">$INFO[ListItem.Season,$LOCALIZE[20373] ,]$INFO[ListItem.Episode, • $LOCALIZE[20359] ,]$INFO[ListItem.Premiered, • ,][COLOR gray][/COLOR]</value>
+		<value condition="!String.IsEmpty(ListItem.Genre) + String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.)">$INFO[ListItem.Studio]$INFO[ListItem.Genre, • ,][COLOR gray]$INFO[ListItem.Property(esrb), • ,][/COLOR]</value>
+		<value condition="!String.IsEmpty(ListItem.Genre) + Container.Content(movies) + !String.IsEmpty(ListItem.Year)">$INFO[ListItem.Year,(,) • ]$INFO[ListItem.Genre][COLOR gray][/COLOR]</value>
+		<value condition="!String.IsEmpty(ListItem.Genre) + Container.Content(movies)">$INFO[ListItem.Genre][COLOR gray][/COLOR]</value>
+		<value condition="!String.IsEmpty(ListItem.Genre)">$INFO[ListItem.Genre]</value>
+		<value condition="!String.IsEmpty(Window(home).Property(Set.Movies.Genre))">$INFO[Window(home).Property(Set.Movies.Genre)]</value>
+		<value condition="!String.IsEmpty(ListItem.Property(Artist_Genre))">$INFO[ListItem.Property(Artist_Genre)]</value>
+		<value condition="Window.IsVisible(DialogBusy.xml)"></value>
+		<!-- <value>$LOCALIZE[19055]</value> -->
+	</variable>
+	<variable name="LabelPlotBox">
+		<value condition="!String.IsEmpty(Window(home).Property(Set.Movies.ExtendedPlot)) + [Container.Content(Sets) | String.StartsWith(ListItem.Path,videodb://movies/sets)]">$INFO[Window(home).Property(Set.Movies.ExtendedPlot)]</value>
+		<value condition="!String.IsEmpty(ListItem.Property(Artist_Description))">$INFO[ListItem.Property(Artist_Description)]</value>
+		<value condition="!String.IsEmpty(ListItem.Property(Album_Description))">$INFO[ListItem.Property(Album_Description)]</value>
+		<value condition="!String.IsEmpty(ListItem.AddonDescription)">$INFO[ListItem.AddonDescription]</value>
+		<value condition="Container.Content(songs)">$INFO[ListItem.Artist,[B],[/B][CR]]$INFO[ListItem.Album]$INFO[ListItem.Year, (,)]</value>
+		<value condition="Container.Content(episodes) + system.getbool(videolibrary.showunwatchedplots) ">$INFO[ListItem.Title,[B],[/B][CR],]$INFO[ListItem.Plot]</value>
+		<value condition="!String.IsEmpty(ListItem.Plot) + !system.getbool(videolibrary.showunwatchedplots)  + Container.Content(episodes) + [String.IsEqual(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]">$INFO[ListItem.Title,[B],[/B][CR],]...</value>
+		<value condition="!String.IsEmpty(ListItem.Plot) + !system.getbool(videolibrary.showunwatchedplots)  + Container.Content(episodes) + ![String.IsEqual(ListItem.Overlay,OverlayUnWatched.png) + ListItem.IsResumable]">$INFO[ListItem.Title,[B],[/B][CR],]$INFO[ListItem.Plot]</value>
+		<value condition="!String.IsEmpty(ListItem.Plot)">$INFO[ListItem.Plot]</value>
+		<value condition="!String.IsEmpty(ListItem.AddonSummary)">$INFO[ListItem.AddonSummary]</value>
+	</variable>
+	<variable name="LabelOverlayPlot">
+		<value condition="!String.IsEmpty(Window(home).Property(Set.Movies.ExtendedPlot)) + [Container.Content(Sets) | String.StartsWith(ListItem.Path,videodb://movies/sets)]">$INFO[Window(home).Property(Set.Movies.ExtendedPlot)]</value>
+		<value condition="!String.IsEmpty(ListItem.Property(Artist_Description))">$INFO[ListItem.Property(Artist_Description)]</value>
+		<value condition="!String.IsEmpty(ListItem.Property(Album_Description))">$INFO[ListItem.Property(Album_Description)]</value>
+		<value condition="!String.IsEmpty(ListItem.AddonDescription)">$INFO[ListItem.AddonDescription]</value>
+		<value condition="Container.Content(songs)">$INFO[ListItem.Artist,[B],[/B][CR]]$INFO[ListItem.Album]$INFO[ListItem.Year,  (,)]</value>
+		<value condition="Container.Content(episodes)">$INFO[ListItem.Title,[B],[/B][CR][CR],]$INFO[ListItem.Plot]</value>
+		<value>$INFO[ListItem.Tagline,[B],[/B][CR][CR]]$INFO[ListItem.Plot]</value>
+	</variable>
+	<variable name="LabelOverlayTitle">
+		<value condition="[Container.Content(episodes) | Container.Content(seasons)] + !String.IsEmpty(ListItem.TvShowTitle)">$INFO[ListItem.TvShowTitle]</value>
+		<value>$INFO[ListItem.Label]</value>
+	</variable>
+	<variable name="Label_SettingsHeader">
+		<value condition="Window.IsActive(systeminfo)">$LOCALIZE[130]</value>
+		<value condition="Window.IsActive(weathersettings)">$LOCALIZE[8]</value>
+		<value condition="Window.IsActive(systemsettings)">$LOCALIZE[13000]</value>
+		<value condition="Window.IsActive(pvrsettings)">$LOCALIZE[19020]</value>
+		<value condition="Window.IsActive(skinsettings)">$LOCALIZE[166]</value>
+		<value condition="Window.IsActive(picturessettings)">$LOCALIZE[1]</value>
+		<value condition="Window.IsActive(addonbrowser)">$LOCALIZE[24001]</value>
+		<value condition="Window.IsActive(musicsettings)">$LOCALIZE[2]</value>
+		<value condition="Window.IsActive(profiles)">$LOCALIZE[13200]</value>
+		<value condition="Window.IsActive(videossettings)">$LOCALIZE[157]</value>
+		<value condition="Window.IsActive(servicesettings)">$LOCALIZE[14036]</value>
+		<value condition="Window.IsActive(gamesettings)">$LOCALIZE[15016]</value>
+		<value>$LOCALIZE[480]</value>
+	</variable>
+	<variable name="LabelListDetails">
+		<value condition="Container.IsUpdating"></value>
+		<value condition="Container.Content(albums)">$INFO[ListItem.Artist]</value>
+		<value condition="Container.Content(tvshows) | Container.Content(seasons)">$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20360]]</value>
+		<!-- <value condition="Container.Content(episodes)">$INFO[ListItem.Premiered,,]</value> -->
+		<value condition="Container.Content(episodes)"></value>
+		<value condition="Container.Content(addons)"></value>
+		<value condition="Container.Content(movies)">$INFO[ListItem.Year]</value>
+		<value condition="Container.Content(sets)"></value>
+		<value condition="String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.)">$INFO[ListItem.Year]</value>
+		<value>$INFO[ListItem.Label2]</value>
+	</variable>
+	<variable name="EmbyHomeWidget1Label">
+		<value condition="!String.IsEmpty(Container(300).ListItemAbsolute(1).Property(widgetName))">$INFO[Container(300).ListItemAbsolute(1).Property(widgetName)]</value>
+		<value>$INFO[Container(300).ListItemAbsolute(1).Label]</value>
+	</variable>
+	<variable name="EmbyHomeWidget2Label">
+		<value condition="!String.IsEmpty(Container(300).ListItemAbsolute(2).Property(widgetName))">$INFO[Container(300).ListItemAbsolute(2).Property(widgetName)]</value>
+		<value>$INFO[Container(300).ListItemAbsolute(2).Label]</value>
+	</variable>
+	<variable name="EmbyHomeWidget3Label">
+		<value condition="!String.IsEmpty(Container(300).ListItemAbsolute(3).Property(widgetName))">$INFO[Container(300).ListItemAbsolute(3).Property(widgetName)]</value>
+		<value>$INFO[Container(300).ListItemAbsolute(3).Label]</value>
+	</variable>
+	<variable name="EmbyHomeWidget4Label">
+		<value condition="!String.IsEmpty(Container(300).ListItemAbsolute(4).Property(widgetName))">$INFO[Container(300).ListItemAbsolute(4).Property(widgetName)]</value>
+		<value>$INFO[Container(300).ListItemAbsolute(4).Label]</value>
+	</variable>
+	<variable name="EmbyHomeWidget5Label">
+		<value condition="!String.IsEmpty(Container(300).ListItemAbsolute(5).Property(widgetName))">$INFO[Container(300).ListItemAbsolute(5).Property(widgetName)]</value>
+		<value>$INFO[Container(300).ListItemAbsolute(5).Label]</value>
+	</variable>
+	<variable name="EmbyHomeWidget6Label">
+		<value condition="!String.IsEmpty(Container(300).ListItemAbsolute(6).Property(widgetName))">$INFO[Container(300).ListItemAbsolute(6).Property(widgetName)]</value>
+		<value>$INFO[Container(300).ListItemAbsolute(6).Label]</value>
+	</variable>
+	<variable name="EmbyHomeWidget7Label">
+		<value condition="!String.IsEmpty(Container(300).ListItemAbsolute(7).Property(widgetName))">$INFO[Container(300).ListItemAbsolute(7).Property(widgetName)]</value>
+		<value>$INFO[Container(300).ListItemAbsolute(7).Label]</value>
+	</variable>
+	<variable name="EmbyHomeWidget8Label">
+		<value condition="!String.IsEmpty(Container(300).ListItemAbsolute(8).Property(widgetName))">$INFO[Container(300).ListItemAbsolute(8).Property(widgetName)]</value>
+		<value>$INFO[Container(300).ListItemAbsolute(8).Label]</value>
+	</variable>
+	<variable name="EmbyHomeWidget9Label">
+		<value condition="!String.IsEmpty(Container(300).ListItemAbsolute(9).Property(widgetName))">$INFO[Container(300).ListItemAbsolute(9).Property(widgetName)]</value>
+		<value>$INFO[Container(300).ListItemAbsolute(9).Label]</value>
+	</variable>
+	<variable name="EmbyHomeWidget10Label">
+		<value condition="!String.IsEmpty(Container(300).ListItemAbsolute(10).Property(widgetName))">$INFO[Container(300).ListItemAbsolute(10).Property(widgetName)]</value>
+		<value>$INFO[Container(300).ListItemAbsolute(10).Label]</value>
+	</variable>
+	<variable name="EmbyWidget1ContentLabel">
+		<value condition="Container(300).Scrolling">[CR]</value>
+		<value condition="!String.IsEqual(ListItem.Label, Get more...) + !String.IsEmpty(ListItem.TVShowTitle)">$INFO[ListItem.TVShowTitle,  ,]</value>
+		<value condition="!String.IsEqual(ListItem.Label, Get more...)">$INFO[ListItem.Label,  ,]</value>
+		<value>[CR]</value>
+	</variable>
+	<variable name="EmbyFooterLabel">
+		<value condition="Container(4000).Scrolling">[CR]</value>
+		<value condition="String.IsEqual(Container(4000).ListItem.Property(defaultID),tvshows)">$INFO[Window(Home).Property(TVShows.Count)] shows • [COLOR=$VAR[ColorHighlight]]$INFO[Window(Home).Property(TVShows.UnWatched)] unwatched[/COLOR] • $INFO[Window(Home).Property(Episodes.Count)] episodes  • [COLOR=$VAR[ColorHighlight2]]$INFO[Window(Home).Property(Episodes.UnWatched)] unwatched[/COLOR]</value>
+		<value condition="String.IsEqual(Container(4000).ListItem.Property(defaultID),movies)">$INFO[Window(Home).Property(Movies.Count)] movies • [COLOR=$VAR[ColorHighlight]] $INFO[Window(Home).Property(Movies.UnWatched)] unwatched[/COLOR]</value>
+		<value condition="String.IsEqual(Container(4000).ListItem.Property(defaultID),livetv)">$INFO[Pvr.BackendChannels] channels • [COLOR=$VAR[ColorHighlight]]$INFO[Pvr.BackendRecordings] recordings[/COLOR]</value>
+		<value condition="String.IsEqual(Container(4000).ListItem.Property(defaultID),music)">$INFO[Window(Home).Property(Music.ArtistsCount)] artists • [COLOR=$VAR[ColorHighlight]]$INFO[Window(Home).Property(Music.AlbumsCount)] albums[/COLOR] • $INFO[Window(Home).Property(Music.SongsCount)] songs</value>
+		<value condition="String.IsEqual(Container(4000).ListItem.Property(defaultID),collection)">$INFO[Window(Home).Property(Movies.Count)] movies • [COLOR=$VAR[ColorHighlight]] $INFO[Window(Home).Property(Movies.UnWatched)] unwatched[/COLOR]</value>
+		<value condition="String.Contains(Container(4000).ListItem.Property(Path),library://video/Emby) + String.IsEqual(Container(4000).ListItem.Property(type),tvshows)">$INFO[Window(Home).Property(TVShows.Count)] shows • [COLOR=$VAR[ColorHighlight]]$INFO[Window(Home).Property(TVShows.UnWatched)] unwatched[/COLOR] • $INFO[Window(Home).Property(Episodes.Count)] episodes  • [COLOR=$VAR[ColorHighlight]]$INFO[Window(Home).Property(Episodes.UnWatched)] unwatched[/COLOR]</value>
+		<value condition="String.Contains(Container(4000).ListItem.Property(Path),library://video/Emby) + String.IsEqual(Container(4000).ListItem.Label2,tvshows)">$INFO[Window(Home).Property(TVShows.Count)] shows • [COLOR=$VAR[ColorHighlight]]$INFO[Window(Home).Property(TVShows.UnWatched)] unwatched[/COLOR] • $INFO[Window(Home).Property(Episodes.Count)] episodes  • [COLOR=$VAR[ColorHighlight]]$INFO[Window(Home).Property(Episodes.UnWatched)] unwatched[/COLOR]</value>
+		<value condition="String.Contains(Container(4000).ListItem.Property(Path),library://video/Emby) + String.IsEqual(Container(4000).ListItem.Property(type),movies)">$INFO[Window(Home).Property(Movies.Count)] movies • [COLOR=$VAR[ColorHighlight]] $INFO[Window(Home).Property(Movies.UnWatched)] unwatched[/COLOR]</value>
+		<value condition="String.Contains(Container(4000).ListItem.Property(Path),library://video/Emby) + String.IsEqual(Container(4000).ListItem.Label2,movies)">$INFO[Window(Home).Property(Movies.Count)] movies • [COLOR=$VAR[ColorHighlight]] $INFO[Window(Home).Property(Movies.UnWatched)] unwatched[/COLOR]</value>
+		<value></value>
+	</variable>
+	<variable name="EmbyHomeSelectedTitle">
+		<!-- Widget 1 -->
+		<value condition="Control.HasFocus(4001) + String.IsEqual(Container(4001).ListItem.Property(type),weather)">[UPPERCASE]$INFO[Window(Weather).Property(Day0.Title)]:[/UPPERCASE] [COLOR=$VAR[ColorHighlight]]$INFO[Window(Weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits][/COLOR] $INFO[Window(Weather).Property(Day0.HighTemp),(,)] $INFO[System.TemperatureUnits] / $INFO[Window(Weather).Property(Day0.LowTemp)] $INFO[System.TemperatureUnits,,)][COLOR=$VAR[ColorHighlight2]]$INFO[Window(Weather).Property(Current.Condition), • ,][/COLOR]$INFO[Window(Weather).Property(Current.Humidity), • , Humidity]$INFO[Window(Weather).Property(Current.Wind), • ,]</value>
+		<value condition="Control.HasFocus(4001) + String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),$LOCALIZE[10007])">$INFO[System.FriendlyName] •[COLOR=$VAR[ColorHighlight]]$INFO[System.BuildVersion][/COLOR] $INFO[System.BuildDate, (,)]$INFO[System.AddonTitle(skin.DSMK2), • ,]$INFO[System.AddonVersion(skin.DSMK2), (,)]</value>
+		<value condition="Control.HasFocus(4001) + String.IsEqual(Container(4001).ListItem.Property(type),tvshow)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4001).ListItem.Label,,][/COLOR]$INFO[Container(4001).ListItem.Property(TotalSeasons), • , Seasons]$INFO[Container(4001).ListItem.Property(TotalEpisodes), • , Episodes][COLOR=$VAR[ColorHighlight2]]$INFO[Container(4001).ListItem.Premiered, • ][/COLOR]</value>
+		<value condition="Control.HasFocus(4001) + String.IsEqual(Container(4001).ListItem.Property(type),episode)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4001).ListItem.TVShowTitle,,][/COLOR] $INFO[Container(4001).ListItem.Premiered, • , •] $VAR[LabelSeasonZero]$INFO[Container(4001).ListItem.Season]$VAR[LabelEpisodeZero2]$INFO[Container(4001).ListItem.Episode,, • ][COLOR=$VAR[ColorHighlight2]]$INFO[Container(4001).ListItem.Title][/COLOR]</value>
+		<value condition="Control.HasFocus(4001) + String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),embycontv)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4001).ListItem.TVShowTitle,,][/COLOR] $INFO[Container(4001).ListItem.Premiered, • , •] $VAR[LabelSeasonZero]$INFO[Container(4001).ListItem.Season]$VAR[LabelEpisodeZero2]$INFO[Container(4001).ListItem.Episode,, • ][COLOR=$VAR[ColorHighlight2]]$INFO[Container(4001).ListItem.Title][/COLOR]</value>
+		<value condition="Control.HasFocus(4001) + String.IsEqual(Container(4001).ListItem.Property(type),movie)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4001).ListItem.Label,, •][/COLOR] $INFO[Container(4001).ListItem.Year]</value>
+		<value condition="Control.HasFocus(4001) + String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),latestembycon)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4001).ListItem.Label,, •][/COLOR] $INFO[Container(4001).ListItem.Year]</value>
+		<value condition="Control.HasFocus(4001) + String.Contains(Container(4001).ListItem.Property(type),music)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4001).ListItem.Artist,, •][/COLOR] $INFO[Container(4001).ListItem.Label,,]$INFO[Container(4001).ListItem.Year, • ,]</value>
+		<value condition="Control.HasFocus(4001) + String.Contains(Container(300).ListItemAbsolute(1).Property(defaultID),music)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4001).ListItem.Artist,, •][/COLOR] $INFO[Container(4001).ListItem.Label,,]$INFO[Container(4001).ListItem.Year, • ,]</value>
+		<value condition="Control.HasFocus(4001) + String.Contains(Container(300).ListItemAbsolute(1).Property(defaultID),livetv)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4001).ListItem.Label]$INFO[Container(4001).ListItem.ChannelNumberLabel, • , ][/COLOR]$INFO[Container(4001).ListItem.Title, • ,]</value>
+		<value condition="Control.HasFocus(4001) + String.Contains(Container(4001).ListItem.Property(type),recording)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4001).ListItem.Label]$INFO[Container(4001).ListItem.ChannelNumberLabel, • , ][/COLOR]</value>
+		<value condition="Control.HasFocus(4001) + !String.IsEmpty(Container(4001).ListItem.TVShowTitle)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4001).ListItem.Label,,][/COLOR]$INFO[Container(4001).ListItem.Season, • , Seasons]$INFO[Container(4001).ListItem.Episode, • , Episodes]</value>
+		<value condition="Control.HasFocus(4001)">$INFO[Container(4001).ListItem.Label]</value>
+		<!-- Widget 2 -->
+		<value condition="Control.HasFocus(4002) + String.IsEqual(Container(4002).ListItem.Property(type),weather)">[UPPERCASE]$INFO[Window(Weather).Property(Day0.Title)]:[/UPPERCASE] [COLOR=$VAR[ColorHighlight]]$INFO[Window(Weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits][/COLOR] $INFO[Window(Weather).Property(Day0.HighTemp),(,)] $INFO[System.TemperatureUnits] / $INFO[Window(Weather).Property(Day0.LowTemp)] $INFO[System.TemperatureUnits,,)][COLOR=$VAR[ColorHighlight2]]$INFO[Window(Weather).Property(Current.Condition), • ,][/COLOR]$INFO[Window(Weather).Property(Current.Humidity), • , Humidity]$INFO[Window(Weather).Property(Current.Wind), • ,]</value>
+		<value condition="Control.HasFocus(4002) + String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),$LOCALIZE[10007])">$INFO[System.FriendlyName] •[COLOR=$VAR[ColorHighlight]]$INFO[System.BuildVersion][/COLOR] $INFO[System.BuildDate, (,)]$INFO[System.AddonTitle(skin.DSMK2), • ,]$INFO[System.AddonVersion(skin.DSMK2), (,)]</value>
+		<value condition="Control.HasFocus(4002) + String.IsEqual(Container(4002).ListItem.Property(type),tvshow)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4002).ListItem.Label,,][/COLOR]$INFO[Container(4002).ListItem.Property(TotalSeasons), • , Seasons]$INFO[Container(4002).ListItem.Property(TotalEpisodes), • , Episodes][COLOR=$VAR[ColorHighlight2]]$INFO[Container(4002).ListItem.Premiered, • ][/COLOR]</value>
+		<value condition="Control.HasFocus(4002) + String.IsEqual(Container(4002).ListItem.Property(type),episode)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4002).ListItem.TVShowTitle,,][/COLOR] $INFO[Container(4002).ListItem.Premiered, • , •] $VAR[LabelSeasonZero]$INFO[Container(4002).ListItem.Season]$VAR[LabelEpisodeZero2]$INFO[Container(4002).ListItem.Episode,, • ][COLOR=$VAR[ColorHighlight2]]$INFO[Container(4002).ListItem.Title][/COLOR]</value>
+		<value condition="Control.HasFocus(4002) + String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),embycontv)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4002).ListItem.TVShowTitle,,][/COLOR] $INFO[Container(4002).ListItem.Premiered, • , •] $VAR[LabelSeasonZero]$INFO[Container(4002).ListItem.Season]$VAR[LabelEpisodeZero2]$INFO[Container(4002).ListItem.Episode,, • ][COLOR=$VAR[ColorHighlight2]]$INFO[Container(4002).ListItem.Title][/COLOR]</value>
+		<value condition="Control.HasFocus(4002) + String.IsEqual(Container(4002).ListItem.Property(type),movie)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4002).ListItem.Label,, •][/COLOR] $INFO[Container(4002).ListItem.Year]</value>
+		<value condition="Control.HasFocus(4002) + String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),latestembycon)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4002).ListItem.Label,, •][/COLOR] $INFO[Container(4002).ListItem.Year]</value>
+		<value condition="Control.HasFocus(4002) + String.Contains(Container(4002).ListItem.Property(type),music)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4002).ListItem.Artist,, •][/COLOR] $INFO[Container(4002).ListItem.Label,,]$INFO[Container(4002).ListItem.Year, • ,]</value>
+		<value condition="Control.HasFocus(4002) + String.Contains(Container(300).ListItemAbsolute(2).Property(defaultID),music)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4002).ListItem.Artist,, •][/COLOR] $INFO[Container(4002).ListItem.Label,,]$INFO[Container(4002).ListItem.Year, • ,]</value>
+		<value condition="Control.HasFocus(4002) + String.Contains(Container(300).ListItemAbsolute(2).Property(defaultID),livetv)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4002).ListItem.Label]$INFO[Container(4002).ListItem.ChannelNumberLabel, • , ][/COLOR]$INFO[Container(4002).ListItem.Title, • ,]</value>
+		<value condition="Control.HasFocus(4002) + String.Contains(Container(4002).ListItem.Property(type),recording)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4002).ListItem.Label]$INFO[Container(4002).ListItem.ChannelNumberLabel, • , ][/COLOR]</value>
+		<value condition="Control.HasFocus(4002) + !String.IsEmpty(Container(4002).ListItem.TVShowTitle)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4002).ListItem.Label,,][/COLOR]$INFO[Container(4002).ListItem.Season, • , Seasons]$INFO[Container(4002).ListItem.Episode, • , Episodes]</value>
+		<value condition="Control.HasFocus(4002)">$INFO[Container(4002).ListItem.Label]</value>
+		<!-- Widget 3 -->
+		<value condition="Control.HasFocus(4003) + String.IsEqual(Container(4003).ListItem.Property(type),weather)">[UPPERCASE]$INFO[Window(Weather).Property(Day0.Title)]:[/UPPERCASE] [COLOR=$VAR[ColorHighlight]]$INFO[Window(Weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits][/COLOR] $INFO[Window(Weather).Property(Day0.HighTemp),(,)] $INFO[System.TemperatureUnits] / $INFO[Window(Weather).Property(Day0.LowTemp)] $INFO[System.TemperatureUnits,,)][COLOR=$VAR[ColorHighlight2]]$INFO[Window(Weather).Property(Current.Condition), • ,][/COLOR]$INFO[Window(Weather).Property(Current.Humidity), • , Humidity]$INFO[Window(Weather).Property(Current.Wind), • ,]</value>
+		<value condition="Control.HasFocus(4003) + String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),$LOCALIZE[10007])">$INFO[System.FriendlyName] •[COLOR=$VAR[ColorHighlight]]$INFO[System.BuildVersion][/COLOR] $INFO[System.BuildDate, (,)]$INFO[System.AddonTitle(skin.DSMK2), • ,]$INFO[System.AddonVersion(skin.DSMK2), (,)]</value>
+		<value condition="Control.HasFocus(4003) + String.IsEqual(Container(4003).ListItem.Property(type),tvshow)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4003).ListItem.Label,,][/COLOR]$INFO[Container(4003).ListItem.Property(TotalSeasons), • , Seasons]$INFO[Container(4003).ListItem.Property(TotalEpisodes), • , Episodes][COLOR=$VAR[ColorHighlight2]]$INFO[Container(4003).ListItem.Premiered, • ][/COLOR]</value>
+		<value condition="Control.HasFocus(4003) + String.IsEqual(Container(4003).ListItem.Property(type),episode)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4003).ListItem.TVShowTitle,,][/COLOR] $INFO[Container(4003).ListItem.Premiered, • , •] $VAR[LabelSeasonZero]$INFO[Container(4003).ListItem.Season]$VAR[LabelEpisodeZero2]$INFO[Container(4003).ListItem.Episode,, • ][COLOR=$VAR[ColorHighlight2]]$INFO[Container(4003).ListItem.Title][/COLOR]</value>
+		<value condition="Control.HasFocus(4003) + String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),embycontv)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4003).ListItem.TVShowTitle,,][/COLOR] $INFO[Container(4003).ListItem.Premiered, • , •] $VAR[LabelSeasonZero]$INFO[Container(4003).ListItem.Season]$VAR[LabelEpisodeZero2]$INFO[Container(4003).ListItem.Episode,, • ][COLOR=$VAR[ColorHighlight2]]$INFO[Container(4003).ListItem.Title][/COLOR]</value>
+		<value condition="Control.HasFocus(4003) + String.IsEqual(Container(4003).ListItem.Property(type),movie)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4003).ListItem.Label,, •][/COLOR] $INFO[Container(4003).ListItem.Year]</value>
+		<value condition="Control.HasFocus(4003) + String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),latestembycon)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4003).ListItem.Label,, •][/COLOR] $INFO[Container(4003).ListItem.Year]</value>
+		<value condition="Control.HasFocus(4003) + String.Contains(Container(4003).ListItem.Property(type),music)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4003).ListItem.Artist,, •][/COLOR] $INFO[Container(4003).ListItem.Label,,]$INFO[Container(4003).ListItem.Year, • ,]</value>
+		<value condition="Control.HasFocus(4003) + String.Contains(Container(300).ListItemAbsolute(3).Property(defaultID),music)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4003).ListItem.Artist,, •][/COLOR] $INFO[Container(4003).ListItem.Label,,]$INFO[Container(4003).ListItem.Year, • ,]</value>
+		<value condition="Control.HasFocus(4003) + String.Contains(Container(300).ListItemAbsolute(3).Property(defaultID),livetv)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4003).ListItem.Label]$INFO[Container(4003).ListItem.ChannelNumberLabel, • , ][/COLOR]$INFO[Container(4003).ListItem.Title, • ,]</value>
+		<value condition="Control.HasFocus(4003) + String.Contains(Container(4003).ListItem.Property(type),recording)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4003).ListItem.Label]$INFO[Container(4003).ListItem.ChannelNumberLabel, • , ][/COLOR]</value>
+		<value condition="Control.HasFocus(4003) + !String.IsEmpty(Container(4003).ListItem.TVShowTitle)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4003).ListItem.Label,,][/COLOR]$INFO[Container(4003).ListItem.Season, • , Seasons]$INFO[Container(4003).ListItem.Episode, • , Episodes]</value>
+		<value condition="Control.HasFocus(4003)">$INFO[Container(4003).ListItem.Label]</value>
+		<!-- Widget 4 -->
+		<value condition="Control.HasFocus(4004) + String.IsEqual(Container(4004).ListItem.Property(type),weather)">[UPPERCASE]$INFO[Window(Weather).Property(Day0.Title)]:[/UPPERCASE] [COLOR=$VAR[ColorHighlight]]$INFO[Window(Weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits][/COLOR] $INFO[Window(Weather).Property(Day0.HighTemp),(,)] $INFO[System.TemperatureUnits] / $INFO[Window(Weather).Property(Day0.LowTemp)] $INFO[System.TemperatureUnits,,)][COLOR=$VAR[ColorHighlight2]]$INFO[Window(Weather).Property(Current.Condition), • ,][/COLOR]$INFO[Window(Weather).Property(Current.Humidity), • , Humidity]$INFO[Window(Weather).Property(Current.Wind), • ,]</value>
+		<value condition="Control.HasFocus(4004) + String.IsEqual(Container(300).ListItemAbsolute(4).Property(defaultID),$LOCALIZE[10007])">$INFO[System.FriendlyName] •[COLOR=$VAR[ColorHighlight]]$INFO[System.BuildVersion][/COLOR] $INFO[System.BuildDate, (,)]$INFO[System.AddonTitle(skin.DSMK2), • ,]$INFO[System.AddonVersion(skin.DSMK2), (,)]</value>
+		<value condition="Control.HasFocus(4004) + String.IsEqual(Container(4004).ListItem.Property(type),tvshow)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4004).ListItem.Label,,][/COLOR]$INFO[Container(4004).ListItem.Property(TotalSeasons), • , Seasons]$INFO[Container(4004).ListItem.Property(TotalEpisodes), • , Episodes][COLOR=$VAR[ColorHighlight2]]$INFO[Container(4004).ListItem.Premiered, • ][/COLOR]</value>
+		<value condition="Control.HasFocus(4004) + String.IsEqual(Container(4004).ListItem.Property(type),episode)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4004).ListItem.TVShowTitle,,][/COLOR] $INFO[Container(4004).ListItem.Premiered, • , •] $VAR[LabelSeasonZero]$INFO[Container(4004).ListItem.Season]$VAR[LabelEpisodeZero2]$INFO[Container(4004).ListItem.Episode,, • ][COLOR=$VAR[ColorHighlight2]]$INFO[Container(4004).ListItem.Title][/COLOR]</value>
+		<value condition="Control.HasFocus(4004) + String.IsEqual(Container(300).ListItemAbsolute(4).Property(defaultID),embycontv)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4004).ListItem.TVShowTitle,,][/COLOR] $INFO[Container(4004).ListItem.Premiered, • , •] $VAR[LabelSeasonZero]$INFO[Container(4004).ListItem.Season]$VAR[LabelEpisodeZero2]$INFO[Container(4004).ListItem.Episode,, • ][COLOR=$VAR[ColorHighlight2]]$INFO[Container(4004).ListItem.Title][/COLOR]</value>
+		<value condition="Control.HasFocus(4004) + String.IsEqual(Container(4004).ListItem.Property(type),movie)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4004).ListItem.Label,, •][/COLOR] $INFO[Container(4004).ListItem.Year]</value>
+		<value condition="Control.HasFocus(4004) + String.IsEqual(Container(300).ListItemAbsolute(4).Property(defaultID),latestembycon)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4004).ListItem.Label,, •][/COLOR] $INFO[Container(4004).ListItem.Year]</value>
+		<value condition="Control.HasFocus(4004) + String.Contains(Container(4004).ListItem.Property(type),music)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4004).ListItem.Artist,, •][/COLOR] $INFO[Container(4004).ListItem.Label,,]$INFO[Container(4004).ListItem.Year, • ,]</value>
+		<value condition="Control.HasFocus(4004) + String.Contains(Container(300).ListItemAbsolute(4).Property(defaultID),music)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4004).ListItem.Artist,, •][/COLOR] $INFO[Container(4004).ListItem.Label,,]$INFO[Container(4004).ListItem.Year, • ,]</value>
+		<value condition="Control.HasFocus(4004) + String.Contains(Container(300).ListItemAbsolute(4).Property(defaultID),livetv)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4004).ListItem.Label]$INFO[Container(4004).ListItem.ChannelNumberLabel, • , ][/COLOR]$INFO[Container(4004).ListItem.Title, • ,]</value>
+		<value condition="Control.HasFocus(4004) + String.Contains(Container(4004).ListItem.Property(type),recording)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4004).ListItem.Label]$INFO[Container(4004).ListItem.ChannelNumberLabel, • , ][/COLOR]</value>
+		<value condition="Control.HasFocus(4004) + !String.IsEmpty(Container(4004).ListItem.TVShowTitle)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4004).ListItem.Label,,][/COLOR]$INFO[Container(4004).ListItem.Season, • , Seasons]$INFO[Container(4004).ListItem.Episode, • , Episodes]</value>
+		<value condition="Control.HasFocus(4004)">$INFO[Container(4004).ListItem.Label]</value>
+		<!-- Widget 5 -->
+		<value condition="Control.HasFocus(4005) + String.IsEqual(Container(4005).ListItem.Property(type),weather)">[UPPERCASE]$INFO[Window(Weather).Property(Day0.Title)]:[/UPPERCASE] [COLOR=$VAR[ColorHighlight]]$INFO[Window(Weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits][/COLOR] $INFO[Window(Weather).Property(Day0.HighTemp),(,)] $INFO[System.TemperatureUnits] / $INFO[Window(Weather).Property(Day0.LowTemp)] $INFO[System.TemperatureUnits,,)][COLOR=$VAR[ColorHighlight2]]$INFO[Window(Weather).Property(Current.Condition), • ,][/COLOR]$INFO[Window(Weather).Property(Current.Humidity), • , Humidity]$INFO[Window(Weather).Property(Current.Wind), • ,]</value>
+		<value condition="Control.HasFocus(4005) + String.IsEqual(Container(300).ListItemAbsolute(5).Property(defaultID),$LOCALIZE[10007])">$INFO[System.FriendlyName] •[COLOR=$VAR[ColorHighlight]]$INFO[System.BuildVersion][/COLOR] $INFO[System.BuildDate, (,)]$INFO[System.AddonTitle(skin.DSMK2), • ,]$INFO[System.AddonVersion(skin.DSMK2), (,)]</value>
+		<value condition="Control.HasFocus(4005) + String.IsEqual(Container(4005).ListItem.Property(type),tvshow)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4005).ListItem.Label,,][/COLOR]$INFO[Container(4005).ListItem.Property(TotalSeasons), • , Seasons]$INFO[Container(4005).ListItem.Property(TotalEpisodes), • , Episodes][COLOR=$VAR[ColorHighlight2]]$INFO[Container(4005).ListItem.Premiered, • ][/COLOR]</value>
+		<value condition="Control.HasFocus(4005) + String.IsEqual(Container(4005).ListItem.Property(type),episode)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4005).ListItem.TVShowTitle,,][/COLOR] $INFO[Container(4005).ListItem.Premiered, • , •] $VAR[LabelSeasonZero]$INFO[Container(4005).ListItem.Season]$VAR[LabelEpisodeZero2]$INFO[Container(4005).ListItem.Episode,, • ][COLOR=$VAR[ColorHighlight2]]$INFO[Container(4005).ListItem.Title][/COLOR]</value>
+		<value condition="Control.HasFocus(4005) + String.IsEqual(Container(300).ListItemAbsolute(5).Property(defaultID),embycontv)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4005).ListItem.TVShowTitle,,][/COLOR] $INFO[Container(4005).ListItem.Premiered, • , •] $VAR[LabelSeasonZero]$INFO[Container(4005).ListItem.Season]$VAR[LabelEpisodeZero2]$INFO[Container(4005).ListItem.Episode,, • ][COLOR=$VAR[ColorHighlight2]]$INFO[Container(4005).ListItem.Title][/COLOR]</value>
+		<value condition="Control.HasFocus(4005) + String.IsEqual(Container(4005).ListItem.Property(type),movie)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4005).ListItem.Label,, •][/COLOR] $INFO[Container(4005).ListItem.Year]</value>
+		<value condition="Control.HasFocus(4005) + String.IsEqual(Container(300).ListItemAbsolute(5).Property(defaultID),latestembycon)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4005).ListItem.Label,, •][/COLOR] $INFO[Container(4005).ListItem.Year]</value>
+		<value condition="Control.HasFocus(4005) + String.Contains(Container(4005).ListItem.Property(type),music)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4005).ListItem.Artist,, •][/COLOR] $INFO[Container(4005).ListItem.Label,,]$INFO[Container(4005).ListItem.Year, • ,]</value>
+		<value condition="Control.HasFocus(4005) + String.Contains(Container(300).ListItemAbsolute(5).Property(defaultID),music)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4005).ListItem.Artist,, •][/COLOR] $INFO[Container(4005).ListItem.Label,,]$INFO[Container(4005).ListItem.Year, • ,]</value>
+		<value condition="Control.HasFocus(4005) + String.Contains(Container(300).ListItemAbsolute(5).Property(defaultID),livetv)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4005).ListItem.Label]$INFO[Container(4005).ListItem.ChannelNumberLabel, • , ][/COLOR]$INFO[Container(4005).ListItem.Title, • ,]</value>
+		<value condition="Control.HasFocus(4005) + String.Contains(Container(4005).ListItem.Property(type),recording)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4005).ListItem.Label]$INFO[Container(4005).ListItem.ChannelNumberLabel, • , ][/COLOR]</value>
+		<value condition="Control.HasFocus(4005) + !String.IsEmpty(Container(4005).ListItem.TVShowTitle)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4005).ListItem.Label,,][/COLOR]$INFO[Container(4005).ListItem.Season, • , Seasons]$INFO[Container(4005).ListItem.Episode, • , Episodes]</value>
+		<value condition="Control.HasFocus(4005)">$INFO[Container(4005).ListItem.Label]</value>
+		<!-- Widget 6 -->
+		<value condition="Control.HasFocus(4006) + String.IsEqual(Container(4006).ListItem.Property(type),weather)">[UPPERCASE]$INFO[Window(Weather).Property(Day0.Title)]:[/UPPERCASE] [COLOR=$VAR[ColorHighlight]]$INFO[Window(Weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits][/COLOR] $INFO[Window(Weather).Property(Day0.HighTemp),(,)] $INFO[System.TemperatureUnits] / $INFO[Window(Weather).Property(Day0.LowTemp)] $INFO[System.TemperatureUnits,,)][COLOR=$VAR[ColorHighlight2]]$INFO[Window(Weather).Property(Current.Condition), • ,][/COLOR]$INFO[Window(Weather).Property(Current.Humidity), • , Humidity]$INFO[Window(Weather).Property(Current.Wind), • ,]</value>
+		<value condition="Control.HasFocus(4006) + String.IsEqual(Container(300).ListItemAbsolute(6).Property(defaultID),$LOCALIZE[10007])">$INFO[System.FriendlyName] •[COLOR=$VAR[ColorHighlight]]$INFO[System.BuildVersion][/COLOR] $INFO[System.BuildDate, (,)]$INFO[System.AddonTitle(skin.DSMK2), • ,]$INFO[System.AddonVersion(skin.DSMK2), (,)]</value>
+		<value condition="Control.HasFocus(4006) + String.IsEqual(Container(4006).ListItem.Property(type),tvshow)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4006).ListItem.Label,,][/COLOR]$INFO[Container(4006).ListItem.Property(TotalSeasons), • , Seasons]$INFO[Container(4006).ListItem.Property(TotalEpisodes), • , Episodes][COLOR=$VAR[ColorHighlight2]]$INFO[Container(4006).ListItem.Premiered, • ][/COLOR]</value>
+		<value condition="Control.HasFocus(4006) + String.IsEqual(Container(4006).ListItem.Property(type),episode)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4006).ListItem.TVShowTitle,,][/COLOR] $INFO[Container(4006).ListItem.Premiered, • , •] $VAR[LabelSeasonZero]$INFO[Container(4006).ListItem.Season]$VAR[LabelEpisodeZero2]$INFO[Container(4006).ListItem.Episode,, • ][COLOR=$VAR[ColorHighlight2]]$INFO[Container(4006).ListItem.Title][/COLOR]</value>
+		<value condition="Control.HasFocus(4006) + String.IsEqual(Container(300).ListItemAbsolute(6).Property(defaultID),embycontv)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4006).ListItem.TVShowTitle,,][/COLOR] $INFO[Container(4006).ListItem.Premiered, • , •] $VAR[LabelSeasonZero]$INFO[Container(4006).ListItem.Season]$VAR[LabelEpisodeZero2]$INFO[Container(4006).ListItem.Episode,, • ][COLOR=$VAR[ColorHighlight2]]$INFO[Container(4006).ListItem.Title][/COLOR]</value>
+		<value condition="Control.HasFocus(4006) + String.IsEqual(Container(4006).ListItem.Property(type),movie)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4006).ListItem.Label,, •][/COLOR] $INFO[Container(4006).ListItem.Year]</value>
+		<value condition="Control.HasFocus(4006) + String.IsEqual(Container(300).ListItemAbsolute(6).Property(defaultID),latestembycon)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4006).ListItem.Label,, •][/COLOR] $INFO[Container(4006).ListItem.Year]</value>
+		<value condition="Control.HasFocus(4006) + String.Contains(Container(4006).ListItem.Property(type),music)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4006).ListItem.Artist,, •][/COLOR] $INFO[Container(4006).ListItem.Label,,]$INFO[Container(4006).ListItem.Year, • ,]</value>
+		<value condition="Control.HasFocus(4006) + String.Contains(Container(300).ListItemAbsolute(6).Property(defaultID),music)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4006).ListItem.Artist,, •][/COLOR] $INFO[Container(4006).ListItem.Label,,]$INFO[Container(4006).ListItem.Year, • ,]</value>
+		<value condition="Control.HasFocus(4006) + String.Contains(Container(300).ListItemAbsolute(6).Property(defaultID),livetv)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4006).ListItem.Label]$INFO[Container(4006).ListItem.ChannelNumberLabel, • , ][/COLOR]$INFO[Container(4006).ListItem.Title, • ,]</value>
+		<value condition="Control.HasFocus(4006) + String.Contains(Container(4006).ListItem.Property(type),recording)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4006).ListItem.Label]$INFO[Container(4006).ListItem.ChannelNumberLabel, • , ][/COLOR]</value>
+		<value condition="Control.HasFocus(4006) + !String.IsEmpty(Container(4006).ListItem.TVShowTitle)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4006).ListItem.Label,,][/COLOR]$INFO[Container(4006).ListItem.Season, • , Seasons]$INFO[Container(4006).ListItem.Episode, • , Episodes]</value>
+		<value condition="Control.HasFocus(4006)">$INFO[Container(4006).ListItem.Label]</value>
+		<!-- Widget 7 -->
+		<value condition="Control.HasFocus(4007) + String.IsEqual(Container(4007).ListItem.Property(type),weather)">[UPPERCASE]$INFO[Window(Weather).Property(Day0.Title)]:[/UPPERCASE] [COLOR=$VAR[ColorHighlight]]$INFO[Window(Weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits][/COLOR] $INFO[Window(Weather).Property(Day0.HighTemp),(,)] $INFO[System.TemperatureUnits] / $INFO[Window(Weather).Property(Day0.LowTemp)] $INFO[System.TemperatureUnits,,)][COLOR=$VAR[ColorHighlight2]]$INFO[Window(Weather).Property(Current.Condition), • ,][/COLOR]$INFO[Window(Weather).Property(Current.Humidity), • , Humidity]$INFO[Window(Weather).Property(Current.Wind), • ,]</value>
+		<value condition="Control.HasFocus(4007) + String.IsEqual(Container(300).ListItemAbsolute(7).Property(defaultID),$LOCALIZE[10007])">$INFO[System.FriendlyName] •[COLOR=$VAR[ColorHighlight]]$INFO[System.BuildVersion][/COLOR] $INFO[System.BuildDate, (,)]$INFO[System.AddonTitle(skin.DSMK2), • ,]$INFO[System.AddonVersion(skin.DSMK2), (,)]</value>
+		<value condition="Control.HasFocus(4007) + String.IsEqual(Container(4007).ListItem.Property(type),tvshow)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4007).ListItem.Label,,][/COLOR]$INFO[Container(4007).ListItem.Property(TotalSeasons), • , Seasons]$INFO[Container(4007).ListItem.Property(TotalEpisodes), • , Episodes][COLOR=$VAR[ColorHighlight2]]$INFO[Container(4007).ListItem.Premiered, • ][/COLOR]</value>
+		<value condition="Control.HasFocus(4007) + String.IsEqual(Container(4007).ListItem.Property(type),episode)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4007).ListItem.TVShowTitle,,][/COLOR] $INFO[Container(4007).ListItem.Premiered, • , •] $VAR[LabelSeasonZero]$INFO[Container(4007).ListItem.Season]$VAR[LabelEpisodeZero2]$INFO[Container(4007).ListItem.Episode,, • ][COLOR=$VAR[ColorHighlight2]]$INFO[Container(4007).ListItem.Title][/COLOR]</value>
+		<value condition="Control.HasFocus(4007) + String.IsEqual(Container(300).ListItemAbsolute(7).Property(defaultID),embycontv)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4007).ListItem.TVShowTitle,,][/COLOR] $INFO[Container(4007).ListItem.Premiered, • , •] $VAR[LabelSeasonZero]$INFO[Container(4007).ListItem.Season]$VAR[LabelEpisodeZero2]$INFO[Container(4007).ListItem.Episode,, • ][COLOR=$VAR[ColorHighlight2]]$INFO[Container(4007).ListItem.Title][/COLOR]</value>
+		<value condition="Control.HasFocus(4007) + String.IsEqual(Container(4007).ListItem.Property(type),movie)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4007).ListItem.Label,, •][/COLOR] $INFO[Container(4007).ListItem.Year]</value>
+		<value condition="Control.HasFocus(4007) + String.IsEqual(Container(300).ListItemAbsolute(7).Property(defaultID),latestembycon)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4007).ListItem.Label,, •][/COLOR] $INFO[Container(4007).ListItem.Year]</value>
+		<value condition="Control.HasFocus(4007) + String.Contains(Container(4007).ListItem.Property(type),music)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4007).ListItem.Artist,, •][/COLOR] $INFO[Container(4007).ListItem.Label,,]$INFO[Container(4007).ListItem.Year, • ,]</value>
+		<value condition="Control.HasFocus(4007) + String.Contains(Container(300).ListItemAbsolute(7).Property(defaultID),music)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4007).ListItem.Artist,, •][/COLOR] $INFO[Container(4007).ListItem.Label,,]$INFO[Container(4007).ListItem.Year, • ,]</value>
+		<value condition="Control.HasFocus(4007) + String.Contains(Container(300).ListItemAbsolute(7).Property(defaultID),livetv)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4007).ListItem.Label]$INFO[Container(4007).ListItem.ChannelNumberLabel, • , ][/COLOR]$INFO[Container(4007).ListItem.Title, • ,]</value>
+		<value condition="Control.HasFocus(4007) + String.Contains(Container(4007).ListItem.Property(type),recording)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4007).ListItem.Label]$INFO[Container(4007).ListItem.ChannelNumberLabel, • , ][/COLOR]</value>
+		<value condition="Control.HasFocus(4007) + !String.IsEmpty(Container(4007).ListItem.TVShowTitle)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4007).ListItem.Label,,][/COLOR]$INFO[Container(4007).ListItem.Season, • , Seasons]$INFO[Container(4007).ListItem.Episode, • , Episodes]</value>
+		<value condition="Control.HasFocus(4007)">$INFO[Container(4007).ListItem.Label]</value>
+		<!-- Widget 8 -->
+		<value condition="Control.HasFocus(4008) + String.IsEqual(Container(4008).ListItem.Property(type),weather)">[UPPERCASE]$INFO[Window(Weather).Property(Day0.Title)]:[/UPPERCASE] [COLOR=$VAR[ColorHighlight]]$INFO[Window(Weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits][/COLOR] $INFO[Window(Weather).Property(Day0.HighTemp),(,)] $INFO[System.TemperatureUnits] / $INFO[Window(Weather).Property(Day0.LowTemp)] $INFO[System.TemperatureUnits,,)][COLOR=$VAR[ColorHighlight2]]$INFO[Window(Weather).Property(Current.Condition), • ,][/COLOR]$INFO[Window(Weather).Property(Current.Humidity), • , Humidity]$INFO[Window(Weather).Property(Current.Wind), • ,]</value>
+		<value condition="Control.HasFocus(4008) + String.IsEqual(Container(300).ListItemAbsolute(8).Property(defaultID),$LOCALIZE[10007])">$INFO[System.FriendlyName] •[COLOR=$VAR[ColorHighlight]]$INFO[System.BuildVersion][/COLOR] $INFO[System.BuildDate, (,)]$INFO[System.AddonTitle(skin.DSMK2), • ,]$INFO[System.AddonVersion(skin.DSMK2), (,)]</value>
+		<value condition="Control.HasFocus(4008) + String.IsEqual(Container(4008).ListItem.Property(type),tvshow)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4008).ListItem.Label,,][/COLOR]$INFO[Container(4008).ListItem.Property(TotalSeasons), • , Seasons]$INFO[Container(4008).ListItem.Property(TotalEpisodes), • , Episodes][COLOR=$VAR[ColorHighlight2]]$INFO[Container(4008).ListItem.Premiered, • ][/COLOR]</value>
+		<value condition="Control.HasFocus(4008) + String.IsEqual(Container(4008).ListItem.Property(type),episode)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4008).ListItem.TVShowTitle,,][/COLOR] $INFO[Container(4008).ListItem.Premiered, • , •] $VAR[LabelSeasonZero]$INFO[Container(4008).ListItem.Season]$VAR[LabelEpisodeZero2]$INFO[Container(4008).ListItem.Episode,, • ][COLOR=$VAR[ColorHighlight2]]$INFO[Container(4008).ListItem.Title][/COLOR]</value>
+		<value condition="Control.HasFocus(4008) + String.IsEqual(Container(300).ListItemAbsolute(8).Property(defaultID),embycontv)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4008).ListItem.TVShowTitle,,][/COLOR] $INFO[Container(4008).ListItem.Premiered, • , •] $VAR[LabelSeasonZero]$INFO[Container(4008).ListItem.Season]$VAR[LabelEpisodeZero2]$INFO[Container(4008).ListItem.Episode,, • ][COLOR=$VAR[ColorHighlight2]]$INFO[Container(4008).ListItem.Title][/COLOR]</value>
+		<value condition="Control.HasFocus(4008) + String.IsEqual(Container(4008).ListItem.Property(type),movie)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4008).ListItem.Label,, •][/COLOR] $INFO[Container(4008).ListItem.Year]</value>
+		<value condition="Control.HasFocus(4008) + String.IsEqual(Container(300).ListItemAbsolute(8).Property(defaultID),latestembycon)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4008).ListItem.Label,, •][/COLOR] $INFO[Container(4008).ListItem.Year]</value>
+		<value condition="Control.HasFocus(4008) + String.Contains(Container(4008).ListItem.Property(type),music)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4008).ListItem.Artist,, •][/COLOR] $INFO[Container(4008).ListItem.Label,,]$INFO[Container(4008).ListItem.Year, • ,]</value>
+		<value condition="Control.HasFocus(4008) + String.Contains(Container(300).ListItemAbsolute(8).Property(defaultID),music)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4008).ListItem.Artist,, •][/COLOR] $INFO[Container(4008).ListItem.Label,,]$INFO[Container(4008).ListItem.Year, • ,]</value>
+		<value condition="Control.HasFocus(4008) + String.Contains(Container(300).ListItemAbsolute(8).Property(defaultID),livetv)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4008).ListItem.Label]$INFO[Container(4008).ListItem.ChannelNumberLabel, • , ][/COLOR]$INFO[Container(4008).ListItem.Title, • ,]</value>
+		<value condition="Control.HasFocus(4008) + String.Contains(Container(4008).ListItem.Property(type),recording)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4008).ListItem.Label]$INFO[Container(4008).ListItem.ChannelNumberLabel, • , ][/COLOR]</value>
+		<value condition="Control.HasFocus(4008) + !String.IsEmpty(Container(4008).ListItem.TVShowTitle)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4008).ListItem.Label,,][/COLOR]$INFO[Container(4008).ListItem.Season, • , Seasons]$INFO[Container(4008).ListItem.Episode, • , Episodes]</value>
+		<value condition="Control.HasFocus(4008)">$INFO[Container(4008).ListItem.Label]</value>
+		<!-- Widget 9 -->
+		<value condition="Control.HasFocus(4009) + String.IsEqual(Container(4009).ListItem.Property(type),weather)">[UPPERCASE]$INFO[Window(Weather).Property(Day0.Title)]:[/UPPERCASE] [COLOR=$VAR[ColorHighlight]]$INFO[Window(Weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits][/COLOR] $INFO[Window(Weather).Property(Day0.HighTemp),(,)] $INFO[System.TemperatureUnits] / $INFO[Window(Weather).Property(Day0.LowTemp)] $INFO[System.TemperatureUnits,,)][COLOR=$VAR[ColorHighlight2]]$INFO[Window(Weather).Property(Current.Condition), • ,][/COLOR]$INFO[Window(Weather).Property(Current.Humidity), • , Humidity]$INFO[Window(Weather).Property(Current.Wind), • ,]</value>
+		<value condition="Control.HasFocus(4009) + String.IsEqual(Container(300).ListItemAbsolute(9).Property(defaultID),$LOCALIZE[10007])">$INFO[System.FriendlyName] •[COLOR=$VAR[ColorHighlight]]$INFO[System.BuildVersion][/COLOR] $INFO[System.BuildDate, (,)]$INFO[System.AddonTitle(skin.DSMK2), • ,]$INFO[System.AddonVersion(skin.DSMK2), (,)]</value>
+		<value condition="Control.HasFocus(4009) + String.IsEqual(Container(4009).ListItem.Property(type),tvshow)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4009).ListItem.Label,,][/COLOR]$INFO[Container(4009).ListItem.Property(TotalSeasons), • , Seasons]$INFO[Container(4009).ListItem.Property(TotalEpisodes), • , Episodes][COLOR=$VAR[ColorHighlight2]]$INFO[Container(4009).ListItem.Premiered, • ][/COLOR]</value>
+		<value condition="Control.HasFocus(4009) + String.IsEqual(Container(4009).ListItem.Property(type),episode)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4009).ListItem.TVShowTitle,,][/COLOR] $INFO[Container(4009).ListItem.Premiered, • , •] $VAR[LabelSeasonZero]$INFO[Container(4009).ListItem.Season]$VAR[LabelEpisodeZero2]$INFO[Container(4009).ListItem.Episode,, • ][COLOR=$VAR[ColorHighlight2]]$INFO[Container(4009).ListItem.Title][/COLOR]</value>
+		<value condition="Control.HasFocus(4009) + String.IsEqual(Container(300).ListItemAbsolute(9).Property(defaultID),embycontv)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4009).ListItem.TVShowTitle,,][/COLOR] $INFO[Container(4009).ListItem.Premiered, • , •] $VAR[LabelSeasonZero]$INFO[Container(4009).ListItem.Season]$VAR[LabelEpisodeZero2]$INFO[Container(4009).ListItem.Episode,, • ][COLOR=$VAR[ColorHighlight2]]$INFO[Container(4009).ListItem.Title][/COLOR]</value>
+		<value condition="Control.HasFocus(4009) + String.IsEqual(Container(4009).ListItem.Property(type),movie)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4009).ListItem.Label,, •][/COLOR] $INFO[Container(4009).ListItem.Year]</value>
+		<value condition="Control.HasFocus(4009) + String.IsEqual(Container(300).ListItemAbsolute(9).Property(defaultID),latestembycon)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4009).ListItem.Label,, •][/COLOR] $INFO[Container(4009).ListItem.Year]</value>
+		<value condition="Control.HasFocus(4009) + String.Contains(Container(4009).ListItem.Property(type),music)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4009).ListItem.Artist,, •][/COLOR] $INFO[Container(4009).ListItem.Label,,]$INFO[Container(4009).ListItem.Year, • ,]</value>
+		<value condition="Control.HasFocus(4009) + String.Contains(Container(300).ListItemAbsolute(9).Property(defaultID),music)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4009).ListItem.Artist,, •][/COLOR] $INFO[Container(4009).ListItem.Label,,]$INFO[Container(4009).ListItem.Year, • ,]</value>
+		<value condition="Control.HasFocus(4009) + String.Contains(Container(300).ListItemAbsolute(9).Property(defaultID),livetv)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4009).ListItem.Label]$INFO[Container(4009).ListItem.ChannelNumberLabel, • , ][/COLOR]$INFO[Container(4009).ListItem.Title, • ,]</value>
+		<value condition="Control.HasFocus(4009) + String.Contains(Container(4009).ListItem.Property(type),recording)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4009).ListItem.Label]$INFO[Container(4009).ListItem.ChannelNumberLabel, • , ][/COLOR]</value>
+		<value condition="Control.HasFocus(4009) + !String.IsEmpty(Container(4009).ListItem.TVShowTitle)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4009).ListItem.Label,,][/COLOR]$INFO[Container(4009).ListItem.Season, • , Seasons]$INFO[Container(4009).ListItem.Episode, • , Episodes]</value>
+		<value condition="Control.HasFocus(4009)">$INFO[Container(4009).ListItem.Label]</value>
+		<!-- Widget 10 -->
+		<value condition="Control.HasFocus(4010) + String.IsEqual(Container(4010).ListItem.Property(type),weather)">[UPPERCASE]$INFO[Window(Weather).Property(Day0.Title)]:[/UPPERCASE] [COLOR=$VAR[ColorHighlight]]$INFO[Window(Weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits][/COLOR] $INFO[Window(Weather).Property(Day0.HighTemp),(,)] $INFO[System.TemperatureUnits] / $INFO[Window(Weather).Property(Day0.LowTemp)] $INFO[System.TemperatureUnits,,)][COLOR=$VAR[ColorHighlight2]]$INFO[Window(Weather).Property(Current.Condition), • ,][/COLOR]$INFO[Window(Weather).Property(Current.Humidity), • , Humidity]$INFO[Window(Weather).Property(Current.Wind), • ,]</value>
+		<value condition="Control.HasFocus(4010) + String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),$LOCALIZE[10007])">Kodi $INFO[System.BuildNumber]$INFO[System.AddonTitle(skin.DSMK2), • ,]$INFO[System.AddonVersion(skin.DSMK2), (,)]</value>
+		<value condition="Control.HasFocus(4010) + String.IsEqual(Container(4010).ListItem.Property(type),tvshow)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4010).ListItem.Label,,][/COLOR]$INFO[Container(4010).ListItem.Property(TotalSeasons), • , Seasons]$INFO[Container(4010).ListItem.Property(TotalEpisodes), • , Episodes][COLOR=$VAR[ColorHighlight2]]$INFO[Container(4010).ListItem.Premiered, • ][/COLOR]</value>
+		<value condition="Control.HasFocus(4010) + String.IsEqual(Container(4010).ListItem.Property(type),episode)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4010).ListItem.TVShowTitle,,][/COLOR] $INFO[Container(4010).ListItem.Premiered, • , •] $VAR[LabelSeasonZero]$INFO[Container(4010).ListItem.Season]$VAR[LabelEpisodeZero2]$INFO[Container(4010).ListItem.Episode,, • ][COLOR=$VAR[ColorHighlight2]]$INFO[Container(4010).ListItem.Title][/COLOR]</value>
+		<value condition="Control.HasFocus(4010) + String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),embycontv)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4010).ListItem.TVShowTitle,,][/COLOR] $INFO[Container(4010).ListItem.Premiered, • , •] $VAR[LabelSeasonZero]$INFO[Container(4010).ListItem.Season]$VAR[LabelEpisodeZero2]$INFO[Container(4010).ListItem.Episode,, • ][COLOR=$VAR[ColorHighlight2]]$INFO[Container(4010).ListItem.Title][/COLOR]</value>
+		<value condition="Control.HasFocus(4010) + String.IsEqual(Container(4010).ListItem.Property(type),movie)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4010).ListItem.Label,, •][/COLOR] $INFO[Container(4010).ListItem.Year]</value>
+		<value condition="Control.HasFocus(4010) + String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),latestembycon)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4010).ListItem.Label,, •][/COLOR] $INFO[Container(4010).ListItem.Year]</value>
+		<value condition="Control.HasFocus(4010) + String.Contains(Container(4010).ListItem.Property(type),music)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4010).ListItem.Artist,, •][/COLOR] $INFO[Container(4010).ListItem.Label,,]$INFO[Container(4010).ListItem.Year, • ,]</value>
+		<value condition="Control.HasFocus(4010) + String.Contains(Container(300).ListItemAbsolute(10).Property(defaultID),music)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4010).ListItem.Artist,, •][/COLOR] $INFO[Container(4010).ListItem.Label,,]$INFO[Container(4010).ListItem.Year, • ,]</value>
+		<value condition="Control.HasFocus(4010) + String.Contains(Container(300).ListItemAbsolute(10).Property(defaultID),livetv)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4010).ListItem.Label]$INFO[Container(4010).ListItem.ChannelNumberLabel, • , ][/COLOR]$INFO[Container(4010).ListItem.Title, • ,]</value>
+		<value condition="Control.HasFocus(4010) + String.Contains(Container(4010).ListItem.Property(type),recording)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4010).ListItem.Label]$INFO[Container(4010).ListItem.ChannelNumberLabel, • , ][/COLOR]</value>
+		<value condition="Control.HasFocus(4010) + !String.IsEmpty(Container(4010).ListItem.TVShowTitle)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4010).ListItem.Label,,][/COLOR]$INFO[Container(4010).ListItem.Season, • , Seasons]$INFO[Container(4010).ListItem.Episode, • , Episodes]</value>
+		<value condition="Control.HasFocus(4010)">$INFO[Container(4010).ListItem.Label]</value>
+	</variable>
+	<variable name="EmbyHomeMenuLabel">
+		<value condition="!String.IsEmpty(ListItem.label)">$INFO[ListItem.label]</value>
+		<value>$INFO[ListItem.label2]</value>
+	</variable>
+	<variable name="PVRInfoStatus">
+		<value condition="ListItem.IsRecording"> • $LOCALIZE[19158]</value>
+		<value condition="ListItem.HasTimer"> • $LOCALIZE[19058]</value>
+	</variable>
+	<variable name="PlayerStatus">
+		<value condition="Window.IsActive(GameOSD.xml)">$LOCALIZE[112] - $INFO[Player.Time] / $INFO[Player.Duration]</value>
+		<value condition="Player.Caching">$LOCALIZE[439] $INFO[Player.CacheLevel,,%]</value>
+		<value condition="Player.Forwarding32x">FF 32x</value>
+		<value condition="Player.Forwarding16x">FF 16x</value>
+		<value condition="Player.Forwarding8x">FF 8x</value>
+		<value condition="Player.Forwarding4x">FF 4x</value>
+		<value condition="Player.Forwarding2x">FF 2x</value>
+		<value condition="Player.Forwarding">FF</value>
+		<value condition="Player.Rewinding32x">RW 32x</value>
+		<value condition="Player.Rewinding16x">RW 16x</value>
+		<value condition="Player.Rewinding8x">RW 8x</value>
+		<value condition="Player.Rewinding4x">RW 4x</value>
+		<value condition="Player.Rewinding2x">RW 2x</value>
+		<value condition="Player.Rewinding">RW</value>
+		<value condition="[Player.Seeking | Player.DisplayAfterSeek] + !String.IsEmpty(Player.SeekOffset)">$LOCALIZE[773]$INFO[Player.SeekOffset, ,]</value>
+		<value condition="Player.Seeking + String.IsEmpty(Player.SeekOffset)">$LOCALIZE[773]$INFO[Player.SeekStepSize, ,]</value>
+		<value condition="Player.Paused">$LOCALIZE[112]</value>
+		<value condition="!Player.HasVideo + !String.IsEmpty(MusicPlayer.offset(1).Title)">[B]$LOCALIZE[209]:  [/B]$INFO[MusicPlayer.offset(1).Title]$INFO[MusicPlayer.offset(1).Artist, - ,]</value>
+		<value condition="Window.IsVisible(fullscreeninfo)"></value>
+		<value condition="Player.Playing">$LOCALIZE[31236]</value>
+		<value>$INFO[Player.FinishTime,$LOCALIZE[19127]: ,]</value>
+	</variable>
+	<variable name="LabelNextRecording">
+		<value condition="Pvr.HasTimer">[COLOR=$VAR[ColorHighlight]]$INFO[Pvr.NextRecordingTitle][/COLOR]$INFO[Pvr.NextRecordingDateTime, ,]</value>
+	</variable>
+	<variable name="PlayerTitle">
+		<value condition="!Player.HasVideo">$INFO[MusicPlayer.TrackNumber,,. ]$INFO[MusicPlayer.Title]</value>
+		<value condition="VideoPlayer.Content(livetv)">$INFO[VideoPlayer.ChannelNumberLabel,,. ]$INFO[VideoPlayer.ChannelName]</value>
+		<value condition="VideoPlayer.Content(movies) + !String.IsEmpty(VideoPlayer.Tagline)">$INFO[VideoPlayer.Tagline]</value>
+		<value condition="VideoPlayer.Content(movies) + !String.IsEmpty(VideoPlayer.PlotOutline)">$INFO[VideoPlayer.PlotOutline]</value>
+		<value condition="VideoPlayer.Content(movies) + !String.IsEmpty(PlotOutline)">$INFO[VideoPlayer.PlotOutline]</value>
+		<value condition="VideoPlayer.Content(movies)">$INFO[VideoPlayer.Year]</value>
+		<value condition="VideoPlayer.Content(episodes)">$VAR[LabelSeasonZero]$INFO[VideoPlayer.Season]$VAR[LabelEpisodeZero2]$INFO[VideoPlayer.Episode,, • ]$INFO[Player.Title]$INFO[VideoPlayer.Premiered, • ,] </value>
+		<!-- <value condition="String.Contains(Player.Filenameandpath,http)">$LOCALIZE[38031]</value> -->
+		<!-- <value>$LOCALIZE[291]</value> -->
+	</variable>
+	<variable name="PlayerBigTitle">
+		<value condition="!Player.HasVideo">$INFO[MusicPlayer.Artist]</value>
+		<value condition="VideoPlayer.Content(movies) + String.IsEmpty(VideoPlayer.Tagline) + String.IsEmpty(VideoPlayer.PlotOutline)">$INFO[VideoPlayer.Title]</value>
+		<value condition="VideoPlayer.Content(movies)">$INFO[VideoPlayer.Title]$INFO[VideoPlayer.Year, (,)]</value>
+		<value condition="VideoPlayer.Content(episodes)">$INFO[VideoPlayer.TvShowTitle]</value>
+		<value condition="VideoPlayer.Content(livetv)">$INFO[VideoPlayer.Season,,x]$INFO[VideoPlayer.Episode,,. ]$INFO[VideoPlayer.Title,[B],[/B]]$INFO[VideoPlayer.EpisodeName, (,)]</value>
+		<value>$INFO[VideoPlayer.Title]</value>
+	</variable>
+	<variable name="PlayerPlotBox">
+		<value condition="!Player.HasVideo">$INFO[MusicPlayer.Album,, ]$INFO[MusicPlayer.Year, (,)]</value>
+		<!-- <value condition="Player.HasVideo + !system.getbool(videolibrary.showunwatchedplots)  + VideoPlayer.Content(episodes)">...</value> -->
+		<value condition="Player.HasVideo + !String.IsEmpty(VideoPlayer.PlotOutline)">$INFO[VideoPlayer.PlotOutline]</value>
+		<value>$INFO[VideoPlayer.Plot]</value>
+	</variable>
+	<variable name="LabelNextAiredDetails">
+		<value condition="Container.Content(episodes) + !String.IsEmpty(ListItem.Premiered)">[COLOR=Dark1][B]$LOCALIZE[20416]:[/B][/COLOR] $INFO[ListItem.Premiered,,   ]</value>
+		<value condition="!String.IsEmpty(ListItem.Premiered)">[COLOR=Dark1][B]$LOCALIZE[31007]:[/B][/COLOR] $INFO[ListItem.Premiered,,   ]</value>
+		<value condition="!String.IsEmpty(Window(Home).Property(NextAired.NextDate))">[COLOR=Dark1][B]$INFO[Window(Home).Property(NextAired.NextTitle),, ][/B][/COLOR]$INFO[Window(Home).Property(NextAired.AirTime),, • ]$INFO[Window(Home).Property(NextAired.NextDate)]</value>
+		<value condition="String.IsEmpty(Window(Home).Property(NextAired.NextDate)) + !String.IsEmpty(Window(Home).Property(NextAired.LatestTitle))">[COLOR=Dark1][B]$INFO[Window(Home).Property(NextAired.LatestTitle),, ][/B][/COLOR]$INFO[Window(Home).Property(NextAired.Status),, • ]$INFO[Window(Home).Property(NextAired.LatestDate)]</value>
+	</variable>
+	<variable name="ColorHighlight">
+		<!-- <value condition="!String.IsEmpty(Window(home).Property(Home2.ComplimentaryColor))">$INFO[Window(home).Property(Home2.ComplimentaryColor)]</value>
+		<value condition="!String.IsEmpty(Window(home).Property(Home2.ImageColor))">$INFO[Window(home).Property(Home2.ImageColor)]</value> -->
+		<value condition="Skin.HasSetting(ColorHighlight)">$INFO[Skin.String(focuscolor.name)]</value>
+		<value condition="!Skin.HasSetting(ColorHighlight)">Highlight</value>
+	</variable>
+	<variable name="ColorHighlight2">
+		<value condition="Skin.HasSetting(ColorHighlight2)">$INFO[Skin.String(focuscolor2.name)]</value>
+		<value condition="!Skin.HasSetting(ColorHighlight2)">Highlight2</value>
+	</variable>
+	<variable name="ColourSelected">
+		<value condition="Skin.HasSetting(ColourSelected)">$INFO[Skin.String(selectedcolor.name)]</value>
+		<value condition="!Skin.HasSetting(ColourSelected)">Selected</value>
+	</variable>
+	<variable name="SimilarVideoLabel">
+		<value condition="Container.Content(movies)">Movies Similar to $INFO[ListItem.Label]</value>
+		<value condition="!String.IsEmpty(ListItem.TvShowTitle)">TV Shows Similar to $INFO[ListItem.TvShowTitle]</value>
+		<value>Similar to $INFO[ListItem.Title]</value>
+	</variable>
+	<variable name="FanartFadeLabel">
+		<value condition="String.IsEqual(Skin.String(FanartFade),Darkest)">FanartFade6</value>
+		<value condition="String.IsEqual(Skin.String(FanartFade),Dark)">FanartFade5</value>
+		<value condition="String.IsEqual(Skin.String(FanartFade),Normal)">FanartFade</value>
+		<value condition="String.IsEqual(Skin.String(FanartFade),Bright)">FanartFade2</value>
+		<value condition="String.IsEqual(Skin.String(FanartFade),Brighter)">FanartFade3</value>
+		<value condition="String.IsEqual(Skin.String(FanartFade),Brightest)">FanartFade4</value>
+		<value>FanartFade6</value>
+	</variable>
+	<variable name="MusicInfoDescription">
+		<value condition="Container.Content(songs) + !String.IsEmpty(ListItem.ContributorAndRole)">$INFO[ListItem.ContributorAndRole]</value>
+		<value condition="Container.Content(albums) + !String.IsEmpty(ListItem.Property(Album_Description))">$INFO[ListItem.Property(Album_Description)]</value>
+		<value condition="!String.IsEmpty(ListItem.Property(Artist_Description))">$INFO[ListItem.Property(Artist_Description)]</value>
+		<value>No description found</value>
+	</variable>
+	<variable name="EmbyEndTimeLabel">
+		<value condition="[!String.IsEmpty(Container(3012).ListItem.EndTime) + !String.IsEmpty(Container(3012).ListItem..Duration)+ Control.HasFocus(3012)]">$INFO[Container(3012).ListItem.EndTime(hh:mm)]</value>
+		<value condition="[!String.IsEmpty(Container(4001).ListItem.EndTime) + !String.IsEmpty(Container(4001).ListItem..Duration) + Control.HasFocus(4001)]">$INFO[Container(4001).ListItem.EndTime(hh:mm)]</value>
+		<value condition="[!String.IsEmpty(Container(4002).ListItem.EndTime) + !String.IsEmpty(Container(4002).ListItem..Duration)+ Control.HasFocus(4002)]">$INFO[Container(4002).ListItem.EndTime(hh:mm)]</value>
+		<value condition="[!String.IsEmpty(Container(4003).ListItem.EndTime) + !String.IsEmpty(Container(4003).ListItem..Duration)+ Control.HasFocus(4003)]">$INFO[Container(4003).ListItem.EndTime(hh:mm)]</value>
+		<value condition="[!String.IsEmpty(Container(4004).ListItem.EndTime) + !String.IsEmpty(Container(4004).ListItem..Duration) + Control.HasFocus(4004)]">$INFO[Container(4004).ListItem.EndTime(hh:mm)]</value>
+		<value condition="[!String.IsEmpty(Container(4005).ListItem.EndTime) + !String.IsEmpty(Container(4005).ListItem..Duration) + Control.HasFocus(4005)]">$INFO[Container(4005).ListItem.EndTime(hh:mm)]</value>
+		<value condition="[!String.IsEmpty(Container(4006).ListItem.EndTime) + !String.IsEmpty(Container(4006).ListItem..Duration) + Control.HasFocus(4006)]">$INFO[Container(4006).ListItem.EndTime(hh:mm)]</value>
+		<value condition="[!String.IsEmpty(Container(4007).ListItem.EndTime) + !String.IsEmpty(Container(4007).ListItem..Duration) + Control.HasFocus(4007)]">$INFO[Container(4007).ListItem.EndTime(hh:mm)]</value>
+		<value condition="[!String.IsEmpty(Container(4008).ListItem.EndTime) + !String.IsEmpty(Container(4008).ListItem..Duration) + Control.HasFocus(4008)]">$INFO[Container(4008).ListItem.EndTime(hh:mm)]</value>
+		<value condition="[!String.IsEmpty(Container(4009).ListItem.EndTime) + !String.IsEmpty(Container(4009).ListItem..Duration) + Control.HasFocus(4009)]">$INFO[Container(4009).ListItem.EndTime(hh:mm)]</value>
+		<value condition="[!String.IsEmpty(Container(4010).ListItem.EndTime) + !String.IsEmpty(Container(4010).ListItem..Duration) + Control.HasFocus(4010)]">$INFO[Container(4010).ListItem.EndTime(hh:mm)]</value>
+		<value condition="!container.content(tvshows) + !container.content(seasons) + !String.IsEmpty(ListItem.EndTime) + !String.IsEmpty(ListItem.Duration)">$INFO[ListItem.EndTime(hh:mm)]</value>
+		<value condition="Window.IsActive(VideoFullScreen.xml) + !String.IsEmpty(VideoPlayer.EndTime)">$INFO[VideoPlayer.EndTime(hh:mm)]</value>
+		<value condition="Window.IsActive(VideoFullScreen.xml) + !String.IsEmpty(Player.FinishTime)">$INFO[Player.FinishTime(hh:mm)]</value>
+	</variable>
+	<variable name="ListItemSeasonVar">
+		<value condition="!Integer.IsGreater(ListItem.Season,9)">$INFO[ListItem.Season,0]</value>
+		<value>$INFO[ListItem.Season]</value>
+	</variable>
+	<variable name="ListItemEpisodeVar">
+		<value condition="!Integer.IsGreater(ListItem.Episode,9)">$INFO[ListItem.Episode,0]</value>
+		<value>$INFO[ListItem.Episode]</value>
+	</variable>
+	<variable name="DurationLong">
+		<value condition="!String.IsEqual(ListItem.Duration(h),0) + !String.IsEqual(ListItem.Duration(m),0)">$INFO[ListItem.Duration(h),,h ]$INFO[ListItem.Duration(m),, $LOCALIZE[31102]]</value>
+		<value condition="!String.IsEqual(ListItem.Duration(h),0)">$INFO[ListItem.Duration(h),, h]</value>
+		<value condition="!String.IsEmpty(ListItem.Duration(m))">$INFO[ListItem.Duration(m),, $LOCALIZE[31102]]</value>
+	</variable>
+	<variable name="SkinShortcutPath">
+		<value condition="Control.HasFocus(312)">$VAR[EmbyHomeWidgetSelection]</value>
+		<value condition="Control.HasFocus(310)">$VAR[SkinShortcutsBackground]</value>
+		<value>$INFO[Container(211).ListItem.Property(path)]</value>
+	</variable>
+	<variable name="MusicInfoListLabel">
+		<value condition="Container.Content(albums) + Integer.IsGreater(Container(50).NumItems,0)">Tracklist for $INFO[ListItem.Album]</value>
+		<value condition="Container.Content(artists) + Integer.IsGreater(Container(50).NumItems,0)">Albums for $INFO[ListItem.Artist]</value>
+		<value condition="Integer.IsGreater(Container(50).NumItems,0)">$LOCALIZE[38045]</value>
+	</variable>
+	<variable name="MusicInfoTrackLabel">
+		<value condition="Integer.IsGreater(ListItem.Label2, 0) + Integer.IsLess(ListItem.Label2, 10)">$INFO[ListItem.Label2,0]</value>
+		<value>$INFO[ListItem.Label2]</value>
+	</variable>
+	<variable name="MusicInfoContentLabel">
+		<value condition="Container.Content(songs)">$INFO[ListItem.Label2]</value>
+		<value condition="Container.Content(artists) + Integer.IsGreater(ListItem.Label2,1000)">$INFO[ListItem.Label]$INFO[ListItem.Label2, (,)]</value>
+		<value>$INFO[ListItem.Label]</value>
+	</variable>
+	<variable name="AdvancedLauncherLabel">
+		<value condition="!String.IsEmpty(ListItem.Genre) + !String.IsEmpty(ListItem.Property(platform))">$INFO[ListItem.Genre,,]$INFO[ListItem.Year, • ,][COLOR gray]$INFO[ListItem.Studio, • ,][/COLOR]$INFO[ListItem.Property(nplayers), • ,]</value>
+		<value condition="!String.IsEmpty(ListItem.Property(platform))">$INFO[ListItem.Property(platform)]$INFO[ListItem.Year, • ,][COLOR gray]$INFO[ListItem.Studio, • ,][/COLOR]$INFO[ListItem.Property(nplayers), • ,]</value>
+		<value condition="!String.IsEmpty(ListItem.Genre) + [!String.IsEmpty(ListItem.Year) | !String.IsEmpty(ListItem.Studio)]">$INFO[ListItem.Genre,,]$INFO[ListItem.Year, • ,][COLOR gray]$INFO[ListItem.Studio, • ,][/COLOR]$INFO[ListItem.Property(nplayers), • ,]</value>
+	</variable>
+	<variable name="DebugControlLabel2">
+		<value condition="!String.IsEmpty(Player.Filenameandpath)">$INFO[Player.Filenameandpath,Path: ,]</value>
+		<value condition="!String.IsEmpty(Container.ListItem.FileNameAndPath)">$INFO[Container.ListItem.FileNameAndPath,Path: ,]</value>
+		<value condition="Control.HasFocus(4000)">$INFO[Container(4000).ListItem.Label2,]</value>
+		<value condition="Control.HasFocus(4001)">$INFO[Container(4001).ListItem.Path,Path: ,]</value>
+		<value condition="Control.HasFocus(4002)">$INFO[Container(4002).ListItem.Path,Path: ,]</value>
+		<value condition="Control.HasFocus(4003)">$INFO[Container(4003).ListItem.Path,Path: ,]</value>
+		<value condition="Control.HasFocus(4000)">$INFO[Container(4000).ListItem.Property(Path),Path: ,]</value>
+		<value condition="Control.HasFocus(300)">$INFO[Container(300).ListItem.Property(Path),Path: ,]</value>
+	</variable>
+	<variable name="VideoHWDecoder">
+        <value condition="Player.Process(videohwdecoder)">HW</value>
+        <value>SW</value>
+    </variable>
+    <variable name="OSDSubtitleOffest">
+        <value condition="VideoPlayer.SubtitlesEnabled">$INFO[Player.SubtitleDelay,Offset: ,]</value>
+        <value></value>
+    </variable>
+    <variable name="PanelPlayLabel">
+        <value condition="Container.Content(tvshows)">Play Next</value>
+        <value condition="Container.Content(seasons)">Play Next</value>
+        <value condition="Container.Content(movies)">Play</value>
+        <value condition="Container.Content(sets)">Play All</value>
+        <value condition="Container.Content(videos)">Play</value>
+        <value condition="Container.Content(songs)">Play</value>
+        <value condition="Container.Content(albums)">Play</value>
+        <value condition="Container.Content(artists)">Play</value>
+        <value condition="Container.Content(musicvideos)">Play</value>
+        <value condition="Container.Content(episodes)">Play</value>
+        <value>Select</value>
+    </variable>
+    <variable name="ListItemTVShowTitle">
+    	<value condition="!String.IsEmpty(ListItem.TVShowTitle)">$INFO[ListItem.TVShowTitle]</value>
+    	<value>$INFO[ListItem.Label]</value>
+    </variable>
+    <variable name="SkinShortcutsImageLabel">
+    	<value condition="String.IsEqual(Window.Property(groupname),mainmenu) + String.IsEqual(Container(211).ListItem.Property(defaultID),library)">Library</value>
+    	<value condition="String.IsEqual(Window.Property(groupname),mainmenu) + String.IsEqual(Container(211).ListItem.Property(defaultID),weather)">Weather Forecast</value>
+    	<value condition="String.IsEqual(Window.Property(groupname),mainmenu) + String.IsEqual(Container(211).ListItem.Property(defaultID),livetv)">TV Channels</value>
+    	<value condition="String.IsEqual(Window.Property(groupname),mainmenu) + String.IsEqual(Container(211).ListItem.Property(defaultID),10007)">$LOCALIZE[10007]</value>
+    	<value condition="String.IsEqual(Window.Property(groupname),mainmenu) + Integer.IsGreater(Container(211).Position,0) + !String.IsEmpty(Container(211).ListItem.Property(widgetName))">$INFO[Container(211).ListItem.Property(widgetName)]</value>
+    	<value condition="String.IsEqual(Window.Property(groupname),mainmenu) + Integer.IsGreater(Container(211).Position,0)">Widget</value>
+    	<value>$LOCALIZE[33068]</value>
+    </variable>
+</includes>

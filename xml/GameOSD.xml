@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window id="2901">
+	<zorder>0</zorder>
+	<defaultcontrol always="true">14</defaultcontrol>
+	<controls>
+		<!-- Background -->
+		<control type="group">
+			<height>140</height>
+			<width>100%</width>
+			<bottom>0</bottom>
+			<animation effect="slide" start="0" end="0,-74" time="150" condition="Window.IsVisible(GameOSD.xml)">Conditional</animation>
+ 			<animation type="WindowOpen">
+				<effect type="fade" start="0" end="100" time="150" delay="150" />
+			</animation>
+			<include>VideoBackgroundFade</include>
+			<control type="group">
+				<left>PosterW</left>
+				<width>1412</width>
+				<include>OSDInfoContent</include>
+			</control>
+        </control>
+		<control type="group">
+			<height>486</height>
+			<width>334</width>
+			<bottom>0</bottom>
+			<left>SidePad</left>
+			<animation effect="fade" start="0" end="100" delay="150" time="150">Visible</animation>
+			<animation effect="fade" start="0" end="100" delay="150" time="150">WindowOpen</animation> 
+			<control type="image">
+				<width>334</width>
+				<height>486</height>
+				<fadetime>100</fadetime>
+				<bottom>10</bottom>
+				<aspectratio align="center" aligny="bottom" scalediffuse="false">keep</aspectratio>
+				<texture diffuse="diffuse/listposter.png" background="false">$VAR[PlayerPosterOSD]</texture>
+				<include>Animation.FadeOut</include>
+			</control>
+        </control>
+		<!-- Controls -->
+		<!-- <control type="gamecontroller" id="1102">
+			<bottom>0</bottom>
+			<right>30</right>
+			<width>200</width>
+			<height>200</height>
+		</control> -->
+		<control type="group">
+			<height>94</height>
+			<bottom>0</bottom>
+			<control type="grouplist" id="101">
+				<top>13</top>
+				<width>100%</width>
+				<height>64</height>
+				<itemgap>16</itemgap>
+				<orientation>horizontal</orientation>
+				<align>left</align>
+				<onleft>12</onleft>
+				<onright>100</onright>
+				<left>425</left>
+				<include>OSDGameControls</include>
+			</control>
+			<control type="grouplist" id="100">
+				<top>13</top>
+				<left>1200</left>
+				<height>64</height>
+				<itemgap>16</itemgap>
+				<orientation>horizontal</orientation>
+				<align>left</align>
+				<onleft>101</onleft>
+				<onright>2</onright>
+				<include>DefOSDUpDown</include>
+				<usecontrolcoords>true</usecontrolcoords>
+				<control type="button" id="14102">
+					<description>Stretch mode button</description>
+					<align>left</align>
+					<width>48</width>
+					<height>64</height>
+					<onclick>ActivateWindow(GameStretchMode)</onclick>
+					<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/stretch.png</texturefocus>
+					<texturenofocus colordiffuse="Dark1">osd/stretch.png</texturenofocus>
+				</control>
+				<control type="button" id="14106">
+					<description>Video rotation button</description>
+					<align>left</align>
+					<width>48</width>
+					<height>64</height>
+					<onclick>ActivateWindow(GameVideoRotation)</onclick>
+					<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/rotate.png</texturefocus>
+					<texturenofocus colordiffuse="Dark1">osd/rotate.png</texturenofocus>
+				</control>
+				<control type="button" id="14104">
+					<description>Volume button</description>
+					<align>left</align>
+					<width>48</width>
+					<height>64</height>
+					<onclick>ActivateWindow(GameVolume)</onclick>
+					<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/visual-preset.png</texturefocus>
+					<texturenofocus colordiffuse="Dark1">osd/visual-preset.png</texturenofocus>
+				</control>
+				<control type="button" id="14103">
+					<description>Controller settings button</description>
+					<align>left</align>
+					<width>48</width>
+					<height>64</height>
+					<onclick>ActivateWindow(GameControllers)</onclick>
+					<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/controller.png</texturefocus>
+					<texturenofocus colordiffuse="Dark1">osd/controller.png</texturenofocus>
+				</control>
+				<control type="button" id="14105">
+					<description>Advanced settings</description>
+					<align>left</align>
+					<width>48</width>
+					<height>64</height>
+					<onclick>ActivateWindow(GameAdvancedSettings)</onclick>
+					<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/settings.png</texturefocus>
+					<texturenofocus colordiffuse="Dark1">osd/settings.png</texturenofocus>
+				</control>
+			</control>
+		</control>
+		<!-- Clock -->
+       	<!--  <include>Furniture_OSDClock</include> -->
+		<include>Furniture_Header</include>
+		<include>Furniture_Clock</include>
+        <include>Furniture_Logo</include>
+	</controls>
+</window>

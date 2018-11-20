@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<includes>
+	<include name="View_500_Thumbnails">
+		<control type="group">
+			<include>Animation.Common</include>
+			<visible>Control.IsVisible(500)</visible>
+			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml)</visible>
+			<control type="group">
+				<control type="panel" id="500">
+					<top>225</top>
+					<left>70</left>
+					<width>1780</width>
+					<height>660</height>
+					<onleft>9000</onleft>
+					<onup condition="String.IsEqual(Container.SortMethod, $LOCALIZE[369]) | String.IsEqual(Container.SortMethod, $LOCALIZE[551]) | String.IsEqual(Container.SortMethod, $LOCALIZE[36918]) | String.IsEqual(Container.SortMethod, $LOCALIZE[36916])">61</onup>
+					<onup condition="![String.IsEqual(Container.SortMethod, $LOCALIZE[369]) | String.IsEqual(Container.SortMethod, $LOCALIZE[551]) | String.IsEqual(Container.SortMethod, $LOCALIZE[36918]) | String.IsEqual(Container.SortMethod, $LOCALIZE[36916])] + Player.HasMedia">7788</onup>
+					<onup condition="![String.IsEqual(Container.SortMethod, $LOCALIZE[369]) | String.IsEqual(Container.SortMethod, $LOCALIZE[551]) | String.IsEqual(Container.SortMethod, $LOCALIZE[36918]) | String.IsEqual(Container.SortMethod, $LOCALIZE[36916])] + !Player.HasMedia">3634</onup>
+					<ondown>60</ondown>
+					<preloaditems>2</preloaditems>
+					<pagecontrol>60</pagecontrol>
+					<orientation>horizontal</orientation>
+					<viewtype label="21371">list</viewtype>
+					<scrolltime tween="quadratic">400</scrolltime>
+					<itemlayout height="330" width="445">
+						<control type="image">
+							<width>100%</width>
+							<height>100%</height>
+							<texture border="10">common/nofocus-shadow10.png</texture>
+						</control>
+						<control type="image">
+							<left>10</left>
+							<top>10</top>
+							<right>10</right>
+							<bottom>10</bottom>
+							<texture border="5" colordiffuse="Light2">common/box.png</texture>
+						</control>
+						<control type="label">
+							<left>20</left>
+							<right>20</right>
+							<bottom>10</bottom>
+							<height>50</height>
+							<aligny>center</aligny>
+							<font>Tiny</font>
+							<label>$INFO[ListItem.Label]</label>
+							<textcolor>Dark1</textcolor>
+						</control>
+						<control type="image">
+							<left>20</left>
+							<top>20</top>
+							<right>20</right>
+							<height>256</height>
+							<aspectratio scalediffuse="false" align="center" aligny="center">keep</aspectratio>
+							<texture diffuse="diffuse/wall.png" background="true">$VAR[LandscapeImage]</texture>
+							<visible>!Container.Content(albums) + !Container.Content(artists) + !Container.Content(songs)</visible>
+						</control>
+						<control type="image">
+							<left>20</left>
+							<top>20</top>
+							<right>20</right>
+							<height>256</height>
+							<aspectratio scalediffuse="false" align="center" aligny="center">scale</aspectratio>
+							<texture diffuse="diffuse/wall.png" background="true">$VAR[ThumbImage]</texture>
+							<visible>Container.Content(albums) | Container.Content(artists) | Container.Content(songs)</visible>
+						</control>
+						<control type="progress">
+							<width>405</width>
+							<height>10</height>
+							<left>20</left>
+							<bottom>55</bottom>
+							<info>ListItem.PercentPlayed</info>
+							<overlaytexture></overlaytexture>
+							<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
+							<lefttexture colordiffuse="$VAR[ColorHighlight]">osd/progress-end.png</lefttexture>
+							<midtexture colordiffuse="$VAR[ColorHighlight]">osd/progress-end.png</midtexture>
+							<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
+							<visible>ListItem.IsResumable</visible>
+						</control>
+						<control type="group">
+							<visible>Integer.IsGreater(ListItem.Property(UnwatchedEpisodes),0)</visible>
+							<control type="image">
+								<centerright>42</centerright>
+								<centertop>42</centertop>
+								<height>32</height>
+								<width>32</width>
+								<texture colordiffuse="$VAR[ColorHighlight2]">common/circle.png</texture>
+								<aspectratio align="center" aligny="center">keep</aspectratio>
+							</control>
+							<control type="label">
+								<centerright>42</centerright>
+								<centertop>42</centertop>
+								<height>32</height>
+								<width>32</width>
+								<align>center</align>
+								<aligny>center</aligny>
+								<label>$INFO[ListItem.Property(UnwatchedEpisodes)]</label>
+								<font>Micro</font>
+								<scroll>false</scroll>
+								<textcolor>White</textcolor>
+							</control>
+						</control>
+						<control type="image">
+							<centerright>42</centerright>
+							<centertop>42</centertop>
+							<height>32</height>
+							<width>32</width>
+							<texture colordiffuse="$VAR[ColorHighlight2]">indicator/checkmark.png</texture>
+							<aspectratio align="center" aligny="center">keep</aspectratio>
+							<visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png) + !Integer.IsGreater(ListItem.PercentPlayed,0) + !Container.Content(tvshows) + !Container.Content(seasons)</visible>
+						</control>
+					</itemlayout>
+					<focusedlayout height="330" width="445">
+						<control type="button">
+							<texturefocus></texturefocus>
+							<texturenofocus></texturenofocus>
+							<onfocus condition="Container.Content(movies)">ClearProperty(TVShowID,home)</onfocus>
+							<onfocus>Skin.SetString(LastIcon,$VAR[PosterImage])</onfocus>
+							<onfocus condition="Container.Content(tvshows)">SetProperty(TVShowID,$INFO[ListItem.DBID],home)</onfocus>
+						</control>
+						<control type="image">
+							<width>100%</width>
+							<height>100%</height>
+							<texture border="10">common/nofocus-shadow10.png</texture>
+						</control>
+						<control type="image">
+							<left>10</left>
+							<top>10</top>
+							<right>10</right>
+							<bottom>10</bottom>
+							<texture border="5" colordiffuse="$VAR[ColorHighlight]">common/box.png</texture>
+						</control>
+						<control type="label">
+							<left>20</left>
+							<right>20</right>
+							<bottom>10</bottom>
+							<height>50</height>
+							<aligny>center</aligny>
+							<font>Tiny</font>
+							<label>$INFO[ListItem.Label]</label>
+							<textcolor>$VAR[ColourSelected]</textcolor>
+						</control>
+						<control type="image">
+							<left>20</left>
+							<top>20</top>
+							<right>20</right>
+							<height>256</height>
+							<aspectratio scalediffuse="false" align="center" aligny="center">keep</aspectratio>
+							<texture background="true">$VAR[LandscapeImage]</texture>
+							<visible>!Container.Content(albums) + !Container.Content(artists) + !Container.Content(songs)</visible>
+						</control>
+						<control type="image">
+							<left>20</left>
+							<top>20</top>
+							<right>20</right>
+							<height>256</height>
+							<aspectratio scalediffuse="false" align="center" aligny="center">scale</aspectratio>
+							<texture background="true">$VAR[ThumbImage]</texture>
+							<visible>Container.Content(albums) | Container.Content(artists) | Container.Content(songs)</visible>
+						</control>
+						<control type="progress">
+							<width>405</width>
+							<height>10</height>
+							<left>20</left>
+							<bottom>55</bottom>
+							<info>ListItem.PercentPlayed</info>
+							<overlaytexture></overlaytexture>
+							<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
+							<lefttexture colordiffuse="$VAR[ColorHighlight]">osd/progress-end.png</lefttexture>
+							<midtexture colordiffuse="$VAR[ColorHighlight]">osd/progress-end.png</midtexture>
+							<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
+							<visible>ListItem.IsResumable</visible>
+						</control>
+						<control type="group">
+							<visible>Integer.IsGreater(ListItem.Property(UnwatchedEpisodes),0)</visible>
+							<control type="image">
+								<centerright>42</centerright>
+								<centertop>42</centertop>
+								<height>32</height>
+								<width>32</width>
+								<texture colordiffuse="$VAR[ColorHighlight2]">common/circle.png</texture>
+								<aspectratio align="center" aligny="center">keep</aspectratio>
+							</control>
+							<control type="label">
+								<centerright>42</centerright>
+								<centertop>42</centertop>
+								<height>32</height>
+								<width>32</width>
+								<align>center</align>
+								<aligny>center</aligny>
+								<label>$INFO[ListItem.Property(UnwatchedEpisodes)]</label>
+								<font>Micro</font>
+								<scroll>false</scroll>
+								<textcolor>White</textcolor>
+							</control>
+						</control>
+						<control type="image">
+							<centerright>42</centerright>
+							<centertop>42</centertop>
+							<height>32</height>
+							<width>32</width>
+							<texture colordiffuse="$VAR[ColorHighlight2]">indicator/checkmark.png</texture>
+							<aspectratio align="center" aligny="center">keep</aspectratio>
+							<visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png) + !Integer.IsGreater(ListItem.PercentPlayed,0) + !Container.Content(tvshows) + !Container.Content(seasons)</visible>
+						</control>
+					</focusedlayout>
+				</control>
+			</control>
+			<include>Furniture_Scrollbar_Wall</include>
+		</control>
+	</include>
+</includes>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window>
+    <defaultcontrol always="true">52</defaultcontrol>
+    <backgroundcolor>0</backgroundcolor>
+    <onload>Skin.SetBool(login.reset)</onload>
+    <controls>
+		<control type="group">
+            <include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
+            <control type="list" id="52">
+                <posx>635</posx>
+                <posy>180</posy>
+                <width>650</width>
+                <height>720</height>
+                <ondown>8</ondown>
+                <scrolltime tween="cubic" easing="out">500</scrolltime>
+                <itemlayout height="120">
+                    <control type="image">
+						<width>650</width>
+                        <height>120</height>
+						<texture colordiffuse="Light3" border="5" background="true">common/white.png</texture>
+					</control>
+					<control type="label">
+                        <posx>140</posx>
+                        <posy>22</posy>
+                        <width>490</width>
+                        <height>40</height>
+                        <textcolor>Dark1</textcolor>
+                        <font>SmallBold</font>
+                        <label>$INFO[ListItem.Label]</label>
+                    </control>
+                    <control type="label">
+                        <posx>140</posx>
+                        <posy>61</posy>
+                        <width>490</width>
+                        <height>40</height>
+                        <textcolor>Dark2</textcolor>
+                        <label>$INFO[ListItem.Label2]</label>
+                        <font>Font-ListInfo</font>
+                    </control>
+                </itemlayout>
+                <focusedlayout height="120">
+                    <control type="image">
+						<width>650</width>
+                        <height>120</height>
+						<texture colordiffuse="Light3" border="5" background="true">common/white.png</texture>
+					</control>
+					<control type="image">
+						<width>650</width>
+                        <height>120</height>
+						<texture colordiffuse="Light1" border="5">common/box.png</texture>
+						  <animation effect="slide" start="0,120" end="0,0" time="300" reversible="false" tween="back" easing="out" condition="Container(52).OnPrevious">Focus</animation>
+                        <animation effect="slide" start="0,-120" end="0,0" time="300" reversible="false" tween="back" easing="out" condition="Container(52).OnNext">Focus</animation>
+					</control>
+					<control type="image">                                
+                        <left>8</left>
+                        <centertop>50%</centertop>
+                        <width>111</width>
+                        <height>111</height>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <texture diffuse="diffuse/dialogselect.png" fallback="DefaultUser.png">$INFO[Listitem.Icon]</texture>
+                        <animation effect="slide" start="0,120" end="0,0" time="300" reversible="false" tween="back" easing="out" condition="Container(52).OnPrevious">Focus</animation>
+                        <animation effect="slide" start="0,-120" end="0,0" time="300" reversible="false" tween="back" easing="out" condition="Container(52).OnNext">Focus</animation>
+                    </control>
+                    <control type="group">
+                        <animation type="Focus" condition="Container(52).OnNext | Container(52).OnPrevious" reversible="false">
+                            <effect type="fade" start="50" end="100" time="300" tween="sine" easing="inout" />
+                        </animation>
+                        <animation effect="fade" start="100" end="50" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(52)">Conditional</animation>
+                        <control type="label">
+                            <posx>140</posx>
+                            <posy>22</posy>
+                            <width>490</width>
+                            <height>40</height>
+                            <font>SmallBold</font>
+                            <textcolor>Dark1</textcolor>
+                            <label>$INFO[ListItem.Label]</label>
+                        </control>
+                        <control type="label">
+                            <posx>140</posx>
+                            <posy>61</posy>
+                            <width>490</width>
+                            <height>40</height>
+                            <textcolor>Dark2</textcolor>
+                            <label>$INFO[ListItem.Label2]</label>
+                            <font>Font-ListInfo</font>
+                        </control>
+                    </control>
+                </focusedlayout>
+            </control>
+			<control type="button" id="8">
+				<onup>52</onup>
+				<bottom>100</bottom>
+				<left>635</left>
+				<width>650</width>
+				<height>70</height>
+				<texturenofocus colordiffuse="Light1" border="16">common/white.png</texturenofocus>
+				<texturefocus colordiffuse="$VAR[ColorHighlight]" border="16">common/white.png</texturefocus>
+				<label>33060</label>
+				<onclick>ActivateWindow(shutdownmenu)</onclick>
+				<align>center</align>
+			</control>
+        </control>
+    </controls>
+</window>

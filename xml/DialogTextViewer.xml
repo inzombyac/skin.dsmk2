@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window id="147">
+    <defaultcontrol>61</defaultcontrol>
+    <controls>
+        <include>GlobalOverlay</include>
+        <control type="group">
+			<include>Animation.FadeIn.Slide</include>
+			<include>Animation.FadeOut</include>
+			<posy>0</posy>
+			<width>1920</width>
+			<height>1080</height>
+			<control type="image">
+				<texture border="16" colordiffuse="White100">common/rounded-shadow8.png</texture>
+			</control>
+            <control type="image">
+                <height>92</height>
+                <texture border="16" colordiffuse="DialogHeader">common/rounded-shadow8.png</texture>
+            </control>           
+            <control type="label" id="1">
+                <description>header label</description>
+                <left>30</left>
+                <right>30</right>
+                <align>center</align>
+                <font>MediumBold</font>
+                <textcolor>Light1</textcolor>
+                <height>45</height>
+                <posy>20</posy>
+            </control>
+            <control type="textbox" id="5">
+                <description>textarea</description>
+                <left>60</left>
+                <right>90</right>
+                <posy>90</posy>
+                <height>970</height>
+                <align>justify</align>
+                <font>Tiny</font>
+            </control>
+            <control type="scrollbar" id="61">
+                <right>30</right>
+                <posy>100</posy>
+                <width>8</width>
+                <height>960</height>
+                <onleft>Close</onleft>
+                <onright>Close</onright>
+                <ondown>61</ondown>
+                <onup>61</onup>
+                <texturesliderbackground colordiffuse="Black12">common/white.png</texturesliderbackground>
+                <texturesliderbar colordiffuse="$VAR[ColorHighlight]">common/white.png</texturesliderbar>
+            </control>
+        </control>
+    </controls>
+</window>

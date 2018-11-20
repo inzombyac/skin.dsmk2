@@ -1,0 +1,699 @@
+# Kodi Media Center language file
+# Addon Name: DSMK2
+# Addon id: skin.DSMK2
+# Addon Provider: inzombyac
+msgid ""
+msgstr ""
+"Project-Id-Version: KODI Main\n"
+"Report-Msgid-Bugs-To: http://trac.kodi.tv/\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Kodi Translation Team\n"
+"Language-Team: English (United Kingdom) (http://www.transifex.com/projects/p/kodi-skins/language/en_GB/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en_GB\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31000"
+msgid "Lights Out (disable fanart background)"
+msgstr ""
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31001"
+msgid "Artwork"
+msgstr ""
+
+#: /16x9/AddonBrowser.xml
+msgctxt "#31002"
+msgid "Misc Options"
+msgstr ""
+
+#: views.xml
+msgctxt "#31003"
+msgid "Wall Info"
+msgstr ""
+
+#: /16x9/DialogVideoInfo.xml
+msgctxt "#31004"
+msgid "Video Extras"
+msgstr ""
+
+#: /16x9/Includes_Defs.xml
+msgctxt "#31005"
+msgid "Game settings"
+msgstr ""
+
+#: /16x9/Settings.xml
+msgctxt "#31006"
+msgid "[B]Configure Game Settings[/B][CR][CR] •     Configure autosave[CR] •     Rewind support settings"
+msgstr ""
+
+#: /16x9/Includes_Labels.xml
+msgctxt "#31007"
+msgid "Premiered"
+msgstr ""
+
+#: /extras/views.xml
+msgctxt "#31008"
+msgid "Gallery"
+msgstr ""
+
+#: /16x9/DialogPlayerProcessInfo.xml
+msgctxt "#31009"
+msgid "Video Decoder"
+msgstr ""
+
+#: /16x9/DialogPlayerProcessInfo.xml
+msgctxt "#31010"
+msgid "Pixel format"
+msgstr ""
+
+#: /16x9/DialogAddonInfo.xml
+msgctxt "#31011"
+msgid "Dependencies"
+msgstr ""
+
+#: /16x9/Includes_PVR.xml
+msgctxt "#31014"
+msgid " -- Show Aired Date"
+msgstr ""
+
+#: /16x9/Includes_PVR.xml
+msgctxt "#31015"
+msgid "Show EPG Art"
+msgstr ""
+
+#: /extras/views.xml
+msgctxt "#31016"
+msgid "Detail"
+msgstr ""
+
+#: /16x9/Custom_Debug_Overlay.xml
+msgctxt "#31017"
+msgid "DialogSettings.xml (MediaFilter)"
+msgstr ""
+
+#: /16x9/Custom_Debug_Overlay.xml
+msgctxt "#31018"
+msgid "DialogSettings.xml (OSDAudioDSPSettings)"
+msgstr ""
+
+#: /16x9/Custom_Debug_Overlay.xml
+msgctxt "#31019"
+msgid "DialogSettings.xml (OSDCMSSettings)"
+msgstr ""
+
+#: /16x9/Custom_Debug_Overlay.xml
+msgctxt "#31020"
+msgid "DialogSettings.xml (PVRTimerSetting)"
+msgstr ""
+
+#: /16x9/Custom_Debug_Overlay.xml
+msgctxt "#31021"
+msgid "DialogSettings.xml (OSDVideoSettings)"
+msgstr ""
+
+#: /16x9/Custom_Debug_Overlay.xml
+msgctxt "#31022"
+msgid "DialogSettings.xml (OSDAudioSettings)"
+msgstr ""
+
+#: /16x9/Custom_Debug_Overlay.xml
+msgctxt "#31023"
+msgid "DialogMusicScan.xml<"
+msgstr ""
+
+#: /16x9/Custom_Debug_Overlay.xml
+msgctxt "#31024"
+msgid "DialogSettings.xml (NetworkSetup)"
+msgstr ""
+
+#: /16x9/Custom_Debug_Overlay.xml
+msgctxt "#31025"
+msgid "DialogNumeric.xml"
+msgstr ""
+
+#: /16x9/Custom_Opacity_Selector.xml
+msgctxt "#31026"
+msgid "Select Opacity"
+msgstr ""
+
+#: /16x9/Custom_Opacity_Selector.xml
+msgctxt "#31027"
+msgid "Darkest"
+msgstr ""
+
+#: /16x9/Custom_Opacity_Selector.xml
+msgctxt "#31028"
+msgid "Dark"
+msgstr ""
+
+#: /16x9/Custom_Opacity_Selector.xml
+msgctxt "#31029"
+msgid "Bright"
+msgstr ""
+
+#: /16x9/Custom_Opacity_Selector.xml
+msgctxt "#31030"
+msgid "Brighter"
+msgstr ""
+
+#: /16x9/Custom_Opacity_Selector.xml
+msgctxt "#31031"
+msgid "Brightest"
+msgstr ""
+
+#: /extras/views.xml
+msgctxt "#31032"
+msgid "Default"
+msgstr ""
+
+#: /16x9/Includes_Defs.xml
+msgctxt "#31033"
+msgid "Hide media buttons"
+msgstr ""
+
+#: /16x9/script-skinshortcuts.xml
+msgctxt "#31035"
+msgid "Customize Home"
+msgstr ""
+
+#: Includes_Furniture.xml 914, 920, 921, 922, 923, 924
+msgctxt "#31101"
+msgid "items"
+msgstr ""
+
+#: Custom_Hub_Movies.xml 108, Custom_Hub_TV.xml 108 Includes_Furniture.xml700, Includes_Labels.xml 58, 70, 72, 74, 355, 356, 357 View_56_Detail.xml 162
+msgctxt "#31102"
+msgid "min"
+msgstr ""
+
+#: Includes_Furniture.xml 891 Includes_Labels.xml 259, 274 overrides.xml 30
+msgctxt "#31103"
+msgid "TV Hub"
+msgstr ""
+
+#: SettingsSystemInfo.xml 155
+msgctxt "#31104"
+msgid "Used Memory"
+msgstr ""
+
+#: MyWeather.xml 492
+msgctxt "#31105"
+msgid "Location:"
+msgstr ""
+
+#: SkinSettings.xml 335
+msgctxt "#31111"
+msgid "Show now playing video in background"
+msgstr ""
+
+#: SkinSettings.xml 361
+msgctxt "#31118"
+msgid "Show artist slideshow"
+msgstr ""
+
+#: SkinSettings.xml 371
+msgctxt "#31119"
+msgid "Show visualisation behind slideshow"
+msgstr ""
+
+#: SkinSettings.xml 380
+msgctxt "#31120"
+msgid "Animate artist slideshow"
+msgstr ""
+
+#: SkinSettings.xml 211
+msgctxt "#31132"
+msgid "Reset home to default"
+msgstr ""
+
+msgctxt "#31142"
+msgid "Use low list"
+msgstr ""
+
+msgctxt "#31143"
+msgid "Set weather fanart"
+msgstr ""
+
+msgctxt "#31144"
+msgid "Widgets"
+msgstr ""
+
+msgctxt "#31145"
+msgid "Show weather widget"
+msgstr ""
+
+msgctxt "#31146"
+msgid "Animate fanart"
+msgstr ""
+
+msgctxt "#31147"
+msgid "Extra Info"
+msgstr ""
+
+msgctxt "#31148"
+msgid "Wrap list"
+msgstr ""
+
+msgctxt "#31149"
+msgid "Replace widget fanart with slideshow"
+msgstr ""
+
+msgctxt "#31150"
+msgid "Set fallback image"
+msgstr ""
+
+msgctxt "#31151"
+msgid "Enable TV Tunes"
+msgstr ""
+
+msgctxt "#31152"
+msgid "Furniture"
+msgstr ""
+
+msgctxt "#31153"
+msgid "Show clock"
+msgstr ""
+
+msgctxt "#31154"
+msgid "Show media flags"
+msgstr ""
+
+msgctxt "#31155"
+msgid "Show now playing info"
+msgstr ""
+
+msgctxt "#31156"
+msgid "[B]Configure Appearance Settings[/B][CR][CR] •     Change the skin[CR] •     Set language and region[CR] •     Change file listing options[CR] •     Set up a screensaver"
+msgstr ""
+
+msgctxt "#31157"
+msgid "[B]Configure Player Settings[/B][CR][CR] •     Set video playback options[CR] •     Change skip settings[CR] •     Set language and subtitles"
+msgstr ""
+
+msgctxt "#31158"
+msgid "[B]Configure Media Settings[/B][CR][CR] •     Manage your library[CR] •     Set playback options[CR] •     Change listing options[CR] •     Setup song submission[CR] •     Set thumbnail options"
+msgstr ""
+
+msgctxt "#31159"
+msgid "[B]Configure Picture Settings[/B][CR][CR] •     Set picture listing options[CR] •     Configure slideshows"
+msgstr ""
+
+# Settings.xml:
+msgctxt "#31160"
+msgid "[B]Configure File Sources[/B][CR][CR] •     Add manual paths to Kodi"
+msgstr ""
+
+msgctxt "#31161"
+msgid "[B]Configure System Settings[/B][CR][CR] •     Setup and calibrate displays[CR] •     Configure audio output[CR] •     Setup remote controls[CR] •     Set power saving options[CR] •     Enable debugging[CR] •     Setup master lock"
+msgstr ""
+
+msgctxt "#31162"
+msgid "[B]Configure Add-Ons[/B][CR][CR] •     Manage your installed Add-ons[CR] •     Install Add-ons from kodi.tv[CR] •     Modify Add-on settings"
+msgstr ""
+
+msgctxt "#31163"
+msgid "[B]Configure TV Settings[/B][CR][CR] •     Change full screen info[CR] •     Manage EPG data settings"
+msgstr ""
+
+msgctxt "#31164"
+msgid "[B]Configure Service Settings[/B][CR][CR] •     Control via UPnP and HTTP[CR] •     Configure file sharing[CR] •     Enable Zeroconf[CR] •     Configure AirPlay"
+msgstr ""
+
+msgctxt "#31165"
+msgid "[B]Configure Profile Settings[/B][CR][CR] •     Setup user profiles[CR] •     Enable login screen[CR] •     Set master locks[CR] •     Control access to content"
+msgstr ""
+
+msgctxt "#31166"
+msgid "[B]Configure Skin Settings[/B][CR][CR] •     Customise the home screen[CR] •     Set background options[CR] •     Configure OSD options[CR] •     Enable add-on support[CR] •     Disable screen elements"
+msgstr ""
+
+msgctxt "#31167"
+msgid "[B]View System Information[/B][CR][CR] •     Summary[CR] •     Storage[CR] •     Network[CR] •     Video[CR] •     Hardware[CR] •     PVR Backend"
+msgstr ""
+
+msgctxt "#31168"
+msgid "Startup video"
+msgstr ""
+
+msgctxt "#31169"
+msgid "Extras"
+msgstr ""
+
+msgctxt "#31170"
+msgid "Cinema Experience"
+msgstr ""
+
+msgctxt "#31171"
+msgid "Video Extras"
+msgstr ""
+
+msgctxt "#31172"
+msgid "Show music visualisation in background"
+msgstr ""
+
+msgctxt "#31173"
+msgid "Recently added"
+msgstr ""
+
+msgctxt "#31174"
+msgid "Recently played"
+msgstr ""
+
+msgctxt "#31175"
+msgid "Play random"
+msgstr ""
+
+msgctxt "#31176"
+msgid "Delete Settings Shortcut"
+msgstr ""
+
+msgctxt "#31177"
+msgid "Are you sure you want to remove the settings shortcut?[CR]Please ensure that you have an alternative method of accessing settings before you remove this shortcut."
+msgstr ""
+
+msgctxt "#31178"
+msgid "Hub items"
+msgstr ""
+
+msgctxt "#31179"
+msgid "Show clearlogo"
+msgstr ""
+
+msgctxt "#31180"
+msgid "Update next aired on startup"
+msgstr ""
+
+msgctxt "#31181"
+msgid "Select icon"
+msgstr ""
+
+msgctxt "#31182"
+msgid "Movies hub playlist"
+msgstr ""
+
+msgctxt "#31183"
+msgid "TV hub playlist"
+msgstr ""
+
+msgctxt "#31184"
+msgid "Use classic widget style"
+msgstr ""
+
+msgctxt "#31185"
+msgid "Big poster"
+msgstr ""
+
+msgctxt "#31186"
+msgid "Use circular icons in dialogs"
+msgstr ""
+
+msgctxt "#31187"
+msgid "Random Albums"
+msgstr ""
+
+msgctxt "#31188"
+msgid "Recent Albums"
+msgstr ""
+
+msgctxt "#31189"
+msgid "Recommended Albums"
+msgstr ""
+
+msgctxt "#31190"
+msgid "Show icons"
+msgstr ""
+
+msgctxt "#31191"
+msgid "Directed by"
+msgstr ""
+
+msgctxt "#31192"
+msgid "Movie Hub"
+msgstr ""
+
+msgctxt "#31194"
+msgid "View Options"
+msgstr ""
+
+msgctxt "#31195"
+msgid "Reload Skin"
+msgstr ""
+
+msgctxt "#31196"
+msgid "Use dark theme"
+msgstr ""
+
+msgctxt "#31197"
+msgid "Show weather with clock"
+msgstr ""
+
+msgctxt "#31198"
+msgid "Cards"
+msgstr ""
+
+msgctxt "#31199"
+msgid "Kiosk mode"
+msgstr ""
+
+msgctxt "#31200"
+msgid "Only display widgets when pressing up"
+msgstr ""
+
+msgctxt "#31201"
+msgid "Show detailed info when video is paused"
+msgstr ""
+
+msgctxt "#31202"
+msgid "Use horizontal submenu"
+msgstr ""
+
+msgctxt "#31203"
+msgid "Artwork Downloader"
+msgstr ""
+
+msgctxt "#31204"
+msgid "Similar to"
+msgstr ""
+
+msgctxt "#31205"
+msgid "Released by"
+msgstr ""
+
+msgctxt "#31206"
+msgid "Similar"
+msgstr ""
+
+msgctxt "#31207"
+msgid "themoviedb.org"
+msgstr ""
+
+msgctxt "#31208"
+msgid "In Theaters"
+msgstr ""
+
+msgctxt "#31209"
+msgid "Upcoming"
+msgstr ""
+
+msgctxt "#31210"
+msgid "Popular"
+msgstr ""
+
+msgctxt "#31211"
+msgid "Top Rated"
+msgstr ""
+
+msgctxt "#31212"
+msgid "Airing"
+msgstr ""
+
+msgctxt "#31213"
+msgid "Today"
+msgstr ""
+
+msgctxt "#31214"
+msgid "Show plot"
+msgstr ""
+
+msgctxt "#31215"
+msgid "Unwatched"
+msgstr ""
+
+msgctxt "#31216"
+msgid "Busy loader animation"
+msgstr ""
+
+msgctxt "#31217"
+msgid "Show clearart"
+msgstr ""
+
+msgctxt "#31218"
+msgid "Show numeric rating"
+msgstr ""
+
+msgctxt "#31219"
+msgid "Show reflections"
+msgstr ""
+
+msgctxt "#31220"
+msgid "Next Aired"
+msgstr ""
+
+msgctxt "#31221"
+msgid "Select a custom widget to set as this path:"
+msgstr ""
+
+msgctxt "#31222"
+msgid "Set custom widget path"
+msgstr ""
+
+msgctxt "#31223"
+msgid "Upcoming Movies"
+msgstr ""
+
+msgctxt "#31224"
+msgid "Popular Movies"
+msgstr ""
+
+msgctxt "#31225"
+msgid "Top Rated Movies"
+msgstr ""
+
+msgctxt "#31226"
+msgid "Popular TV Shows"
+msgstr ""
+
+msgctxt "#31227"
+msgid "Top Rated TV Shows"
+msgstr ""
+
+msgctxt "#31228"
+msgid "On Air TV Shows"
+msgstr ""
+
+msgctxt "#31229"
+msgid "TV Shows Airing Today"
+msgstr ""
+
+msgctxt "#31230"
+msgid "Custom widget 3"
+msgstr ""
+
+msgctxt "#31231"
+msgid "Custom widget 4"
+msgstr ""
+
+msgctxt "#31232"
+msgid "Reset path"
+msgstr ""
+
+msgctxt "#31233"
+msgid "Use flat icons"
+msgstr ""
+
+msgctxt "#31234"
+msgid "Set weather icons"
+msgstr ""
+
+msgctxt "#31235"
+msgid "Double pane list"
+msgstr ""
+
+msgctxt "#31236"
+msgid "Playing..."
+msgstr ""
+
+msgctxt "#31237"
+msgid "Use minimal busy loader in header"
+msgstr ""
+
+msgctxt "#31242"
+msgid "Extended Info"
+msgstr ""
+
+msgctxt "#31254"
+msgid "Show plot overlay after 3 second delay"
+msgstr ""
+
+msgctxt "#31255"
+msgid "Show info overlay"
+msgstr ""
+
+msgctxt "#31759"
+msgid "Widget 1"
+msgstr ""
+
+msgctxt "#31760"
+msgid "Widget 2"
+msgstr ""
+
+msgctxt "#31761"
+msgid "Widget 3"
+msgstr ""
+
+msgctxt "#31762"
+msgid "Widget 4"
+msgstr ""
+
+msgctxt "#31763"
+msgid "Widget 5"
+msgstr ""
+
+msgctxt "#31764"
+msgid "Widget 6"
+msgstr ""
+
+msgctxt "#31765"
+msgid "Widget 7"
+msgstr ""
+
+msgctxt "#31766"
+msgid "Widget 8"
+msgstr ""
+
+msgctxt "#31767"
+msgid "Widget 9"
+msgstr ""
+
+msgctxt "#31768"
+msgid "Widget 10"
+msgstr ""
+
+msgctxt "#31769"
+msgid "Enable/Disable views"
+msgstr ""
+
+msgctxt "#31780"
+msgid "Configure background opacity"
+msgstr ""
+
+msgctxt "#31791"
+msgid "Wall"
+msgstr ""
+
+msgctxt "#31792"
+msgid "Poster"
+msgstr ""
+
+msgctxt "#31794"
+msgid "Wall Square"
+msgstr ""
+
+msgctxt "#31795"
+msgid "Wall Poster"
+msgstr ""
+
+# SmartPlaylistEditor.xml 224
+msgctxt "#31796"
+msgid "Order"
+msgstr ""
+
+# Include_Defs.xml 1172
+msgctxt "#31797"
+msgid "Emby Manual Sync"
+msgstr ""

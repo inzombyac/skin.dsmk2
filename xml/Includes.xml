@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation  -->
+<includes>
+	<include file="Defaults.xml" />
+	<!-- Views -->
+	<include file="View_50_List.xml" />
+	<include file="View_53_Poster.xml" />
+	<include file="View_55_Wall.xml" />
+	<include file="View_59_GameBrowser.xml" />
+	<include file="View_500_Thumbnails.xml" />
+	<include file="View_505_Wall_Square.xml" />
+	<include file="View_506_Wall_Info_Square.xml" />
+	<include file="View_517_WallInfo.xml" />
+	<include file="Includes_Furniture.xml" />
+	<include file="Includes_Home.xml" />
+	<include file="Includes_GlobalSearch.xml" />
+	<include file="Includes_NextAired.xml" />
+	<include file="Includes_Labels.xml" />
+	<include file="Includes_Images.xml" />
+	<include file="Includes_Animations.xml" />
+	<include file="Includes_Defs.xml" />
+	<include file="Includes_PVR.xml" />
+	<include file="Includes_OSD.xml" />
+	<!-- Skin Shortcuts -->
+	<include file="script-skinshortcuts-includes.xml" />
+	<include name="Dimensions_Fullscreen">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1920</width>
+		<height>1080</height>
+	</include>
+	<include name="WindowID">
+		<width>780</width>
+		<height>21</height>
+		<textcolor>White</textcolor>
+		<shadowcolor>Black</shadowcolor>
+		<align>left</align>
+	</include>
+	<include name="DialogID">
+		<width>780</width>
+		<height>21</height>
+		<textcolor>PanelWhite70</textcolor>
+		<shadowcolor>Black</shadowcolor>
+		<align>left</align>
+	</include>
+	<include name="PathID">
+		<posx>20r</posx>
+		<posy>15</posy>
+		<width>780</width>
+		<height>21</height>
+		<textcolor>EmbyGreen</textcolor>
+		<shadowcolor>Black</shadowcolor>
+		<align>right</align>
+	</include>
+	<include name="ControlID">
+		<posx>20r</posx>
+		<posy>48</posy>
+		<width>780</width>
+		<height>21</height>
+		<textcolor>Red</textcolor>
+		<shadowcolor>Black</shadowcolor>
+		<align>right</align>
+	</include>
+	<include name="ControlID2">
+		<posx>20r</posx>
+		<posy>81</posy>
+		<width>1920</width>
+		<height>21</height>
+		<textcolor>amber</textcolor>
+		<shadowcolor>Black</shadowcolor>
+		<align>right</align>
+	</include>
+	<include name="ControlID3">
+		<posx>20r</posx>
+		<posy>114</posy>
+		<width>1920</width>
+		<height>21</height>
+		<textcolor>Blue</textcolor>
+		<shadowcolor>EmbyGreen</shadowcolor>
+		<align>right</align>
+	</include>
+	<include name="ControlID4">
+		<posx>20r</posx>
+		<posy>147</posy>
+		<width>1920</width>
+		<height>21</height>
+		<textcolor>electric purple</textcolor>
+		<shadowcolor>Red</shadowcolor>
+		<align>right</align>
+	</include>
+	<include name="ControlID5">
+		<posx>20r</posx>
+		<posy>178</posy>
+		<width>1920</width>
+		<height>21</height>
+		<textcolor>White</textcolor>
+		<shadowcolor>Grey</shadowcolor>
+		<align>right</align>
+	</include>
+	<include name="GlobalOverlay">
+		<control type="image">
+			<include>Animation.FadeIn</include>
+			<include condition="!Window.IsVisible(DialogButtonMenu.xml)">Animation.FadeOut</include>
+			<include>Dimensions_Fullscreen</include>
+			<texture colordiffuse="Background" border="2">common/home-back.png</texture>
+		</control>
+	</include>
+	<variable name="GlobalFanart">
+		<!-- Skin Shortcuts -->
+		<value condition="Window.IsActive(DialogVideoInfo.xml) + !String.IsEmpty(ListItem.Art(Fanart))">$INFO[ListItem.Art(Fanart)]</value>
+		<value condition="Window.IsActive(DialogVideoInfo.xml) + !String.IsEmpty(ListItem.Property(Fanart_Image))">$INFO[ListItem.Property(Fanart_Image)]</value>
+		<!-- If no fanart and home show nothing -->
+		<value condition="Window.IsActive(DialogVideoInfo.xml) + Window.IsActive(home)">$VAR[BackgroundFallBack]</value>
+		<value condition="Window.IsActive(script-skinshortcuts.xml) + !String.IsEmpty(Container(211).ListItem.Property(Background))">$INFO[Container(211).ListItem.Property(background)]</value>
+		<value condition="Window.IsActive(script-skinshortcuts.xml) + String.IsEqual(Container(211).ListItem.Property(type),photos)">special://skin/extras/backgrounds/Photos.jpg</value>
+		<value condition="Window.IsActive(script-skinshortcuts.xml) + String.IsEqual(Container(211).ListItem.Property(type),homevideos)">special://skin/extras/backgrounds/video.jpg</value>
+		<!-- Home Screen -->
+		<value condition="Window.IsActive(home) + !String.IsEmpty(Skin.String(fanart.fallback))">$INFO[Skin.String(fanart.fallback)]</value>
+		<value condition="Window.IsActive(home) + !String.IsEmpty(Container(300).ListItemAbsolute(0).Property(Background))">$INFO[Container(300).ListItemAbsolute(0).Property(Background)]</value>
+		<value condition="Window.IsActive(home)">diffuse/home-loading.png</value>
+		<!-- Other windows -->
+		<value condition="Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRSearch.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRRecordings.xml)">special://skin/extras/backgrounds/Family.jpg</value>
+		<value condition="Window.IsVisible(weather) + !String.IsEmpty(Skin.String(weatherfanart.path)) + Skin.HasSetting(weatherfanart.multi)">$INFO[Skin.String(weatherfanart.path)]$INFO[Window(Weather).Property(Current.FanartCode)]/</value>
+		<value condition="Window.IsVisible(weather) + !String.IsEmpty(Skin.String(weatherfanart.path)) + !Skin.HasSetting(weatherfanart.multi)">$INFO[Skin.String(weatherfanart.path)]$INFO[Window(Weather).Property(Current.FanartCode)]$INFO[Skin.String(weatherfanart.ext)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
+		<value condition="!String.IsEmpty(Container(9500).ListItem.Art(fanart))">$INFO[Container(9500).ListItem.Art(fanart)]</value>
+		<value condition="!String.IsEmpty(Container(500).ListItem.Art(fanart))">$INFO[Container(500).ListItem.Art(fanart)]</value>
+		<value condition="!String.IsEmpty(ListItem.Property(Fanart_Image))">$INFO[ListItem.Property(Fanart_Image)]</value>
+		<value condition="!String.IsEmpty(Skin.String(fanart.fallback))">$INFO[Skin.String(fanart.fallback)]</value>
+		<!-- Skin Shortcuts -->
+		<value condition="Window.IsVisible(script-skinshortcuts.xml) + !String.IsEmpty(Container(211).ListItem.Property(Background))">$INFO[Container(211).ListItem.Property(Background)]</value>
+		<value>$VAR[BackgroundFallBack]</value>
+	</variable>
+	<include name="GlobalVideoWindow">
+		<control type="image" description="Background">
+			<include>Dimensions_Fullscreen</include>
+			<texture colordiffuse="Background">common/bg.jpg</texture>
+		</control>
+		<control type="image" description="Background">
+			<include>Dimensions_Fullscreen</include>
+			<texture colordiffuse="Black">common/white.png</texture>
+			<visible>Player.HasVideo + Skin.HasSetting(global.showvideo)</visible>
+		</control>
+		<control type="videowindow">
+			<visible>Skin.HasSetting(global.showvideo)</visible>
+			<include>Dimensions_Fullscreen</include>
+		</control>
+	</include>
+	<include name="GlobalVisualisation">
+		<control type="group">
+			<visible>Player.HasAudio + Skin.HasSetting(global.showvisualisation)</visible>
+			<control type="visualisation">
+				<description>visualisation</description>
+				<include>Dimensions_Fullscreen</include>
+			</control>
+		</control>
+	</include>
+	<include name="GlobalBackground">
+		<include>GlobalVideoWindow</include>
+		<include>GlobalVisualisation</include>
+		<control type="image" description="Background">
+			<include>Dimensions_Fullscreen</include>
+			<texture colordiffuse="Background">common/bg.jpg</texture>
+			<animation effect="fade" start="100" end="75" time="200" condition="Player.HasVideo + Skin.HasSetting(global.showvideo) | Player.HasAudio + Skin.HasSetting(global.showvisualisation)">Conditional</animation>
+		</control>
+		<control type="multiimage" description="Fanart">
+ 			<colordiffuse>$VAR[FanartFadeLabel]</colordiffuse>
+			<visible>!Player.HasMedia | [!Skin.HasSetting(global.showvideo) + Player.HasVideo] | [!Skin.HasSetting(global.showvisualisation) + Player.HasAudio]</visible>
+			<visible>!Skin.HasSetting(lights.out)</visible>
+			<include>Dimensions_Fullscreen</include>
+			<fadetime>600</fadetime>
+			<timeperimage>12000</timeperimage>
+			<randomize>true</randomize>
+			<aspectratio>scale</aspectratio>
+			<imagepath background="true">$VAR[GlobalFanart]</imagepath>
+		</control>
+	</include>
+	<include name="PVRBackground">
+		<include>GlobalVideoWindow</include>
+		<control type="multiimage" description="Fanart">
+ 			<colordiffuse>$VAR[FanartFadeLabel]</colordiffuse>
+			<visible>!Player.HasVideo</visible>
+			<include>Dimensions_Fullscreen</include>
+			<fadetime>600</fadetime>
+			<timeperimage>12000</timeperimage>
+			<randomize>true</randomize>
+			<aspectratio>scale</aspectratio>
+			<imagepath background="true">$VAR[GlobalFanart]</imagepath>
+		</control>
+	</include>
+	<!-- No textures -->
+	<include name="NoTextures">
+		<texturefocus></texturefocus>
+		<texturenofocus></texturenofocus>
+		<alttexturenofocus></alttexturenofocus>
+		<alttexturefocus></alttexturefocus>
+		<textureradioonfocus></textureradioonfocus>
+		<textureradioonnofocus></textureradioonnofocus>
+		<textureradioofffocus></textureradioofffocus>
+		<textureradiooffnofocus></textureradiooffnofocus>
+		<textureup></textureup>
+		<texturedown></texturedown>
+		<textureupfocus></textureupfocus>
+		<texturedownfocus></texturedownfocus>
+	</include>
+	<!-- MPAA Ratings -->
+	<include name="lib_Rating_MPAA">
+		<control type="image">
+			<centertop>50%</centertop>
+			<width>118</width>
+			<height>60</height>
+			<colordiffuse>Black100</colordiffuse>
+			<texture>flags/rating/MPAA_NC-17_Certificate_US.png</texture>
+			<visible>Container.Content(movies) + !String.IsEmpty(ListItem.Mpaa) + String.Contains(ListItem.mpaa,NC-17)</visible>
+		</control>
+		<control type="image">
+			<centertop>50%</centertop>
+			<width>118</width>
+			<height>50</height>
+			<colordiffuse>Black100</colordiffuse>
+			<texture>flags/rating/MPAA_PG-13_Certificate_US.png</texture>
+			<visible>Container.Content(movies) + !String.IsEmpty(ListItem.Mpaa) + String.Contains(ListItem.mpaa,PG-13)</visible>
+		</control>
+		<control type="image">
+			<centertop>50%</centertop>
+			<width>118</width>
+			<height>50</height>
+			<colordiffuse>Black100</colordiffuse>
+			<texture>flags/rating/MPAA_NR_Certificate_US.png</texture>
+			<visible>Container.Content(movies) + !String.IsEmpty(ListItem.Mpaa) + [String.Contains(ListItem.Mpaa,Unrated) | String.Contains(ListItem.Mpaa,Approved) | String.Contains(ListItem.Mpaa,Passed) | String.Contains(ListItem.Mpaa,USA:NR) | String.Contains(ListItem.Mpaa,US:NR) | String.IsEqual(ListItem.Mpaa,NR) | String.Contains(ListItem.Mpaa,Not Rated)]</visible>
+		</control>
+		<control type="image">
+			<centertop>50%</centertop>
+			<width>118</width>
+			<height>50</height>
+			<colordiffuse>Black100</colordiffuse>
+			<texture>flags/rating/MPAA_PG_Certificate_US.png</texture>
+			<visible>Container.Content(movies) + !String.IsEmpty(ListItem.Mpaa) + [String.Contains(ListItem.Mpaa,USA:PG) | String.Contains(ListItem.Mpaa,US:PG) | String.Contains(ListItem.mpaa,Rated PG) | String.IsEqual(ListItem.Mpaa,PG)] + !String.Contains(ListItem.Mpaa,PG-13)</visible>
+		</control>
+		<control type="image">
+			<centertop>50%</centertop>
+			<width>118</width>
+			<height>50</height>
+			<colordiffuse>Black100</colordiffuse>
+			<texture>flags/rating/MPAA_R_Certificate_US.png</texture>
+			<visible>Container.Content(movies) + !String.IsEmpty(ListItem.Mpaa) + [String.Contains(ListItem.mpaa,US:R) | String.Contains(ListItem.mpaa,USA:R) | String.Contains(ListItem.mpaa,Rated R) | String.IsEqual(ListItem.Mpaa,R)] </visible>
+		</control>
+		<control type="image">
+			<centertop>50%</centertop>
+			<width>118</width>
+			<height>50</height>
+			<colordiffuse>Black100</colordiffuse>
+			<texture>flags/rating/MPAA_G_Certificate_US.png</texture>
+			<visible>Container.Content(movies) + !String.IsEmpty(ListItem.Mpaa) + [String.Contains(ListItem.mpaa,US:G) | String.Contains(ListItem.mpaa,USA:G) | String.Contains(ListItem.mpaa,Rated G) | String.IsEqual(ListItem.Mpaa,G)] </visible>
+		</control>
+	</include>
+	<!-- MPAA Ratings -->
+	<!-- TV Ratings -->
+	<include name="lib_Rating_TV">
+		<control type="image">
+			<centertop>50%</centertop>
+			<width>58</width>
+			<height>50</height>
+			<colordiffuse>Black100</colordiffuse>
+			<texture>flags/rating/TV-14_Certificate_US.png</texture>
+			<visible>String.Contains(ListItem.mpaa,TV-14)</visible>
+		</control>
+		<control type="image">
+			<centertop>50%</centertop>
+			<width>118</width>
+			<height>62</height>
+			<texture>flags/rating/TV-G_Certificate_US.png</texture>
+			<visible>String.Contains(ListItem.mpaa,TV-G)</visible>
+		</control>
+		<control type="image">
+			<centertop>50%</centertop>
+			<width>58</width>
+			<height>50</height>
+			<colordiffuse>Black100</colordiffuse>
+			<texture>flags/rating/TV-PG_Certificate_US.png</texture>
+			<visible>String.Contains(ListItem.mpaa,TV-PG)</visible>
+		</control>
+		<control type="image">
+			<centertop>50%</centertop>
+			<width>58</width>
+			<height>50</height>
+			<colordiffuse>Black100</colordiffuse>
+			<texture>flags/rating/TV-MA_Certificate_US.png</texture>
+			<visible>String.Contains(ListItem.mpaa,TV-MA)</visible>
+		</control>
+		<control type="image">
+			<centertop>50%</centertop>
+			<width>58</width>
+			<height>50</height>
+			<colordiffuse>Black100</colordiffuse>
+			<texture>flags/rating/tv-y.png</texture>
+			<visible>String.Contains(ListItem.mpaa,TV-Y)</visible>
+		</control>
+		<control type="image">
+			<centertop>50%</centertop>
+			<width>58</width>
+			<height>50</height>
+			<colordiffuse>Black100</colordiffuse>
+			<texture>flags/rating/tv-y7.png</texture>
+			<visible>String.Contains(ListItem.mpaa,TV-Y7)</visible>
+		</control>
+	</include>
+	<include name="VideoBackgroundFade">
+		<control type="image">
+			<width>100%</width>
+			<height>240</height>
+			<texture colordiffuse="Dark3">common/black.png</texture>		
+			<include>Animation.FadeOut</include>
+		</control>
+		<control type="image" description="Background">
+			<width>100%</width>
+			<height>240</height>
+			<texture colordiffuse="Background">common/bg.jpg</texture>
+			<include>Animation.FadeOut</include>
+			<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
+		</control>
+	</include>
+</includes>

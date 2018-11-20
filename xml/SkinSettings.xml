@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window>
+	<defaultcontrol>30</defaultcontrol>
+	<menucontrol>9000</menucontrol>
+	<defaultcontrol always="true">9101</defaultcontrol>
+	<controls>
+		<include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
+		<include>Furniture_Header</include>
+		<include>Furniture_NowPlaying</include>
+		<include>Furniture_Clock</include>
+		<control type="group">
+			<include>Animation.Common</include>
+			<left>72</left>
+			<right>72</right>
+			<top>208</top>
+			<height>656</height>
+			<control type="image">
+				<width>100%</width>
+				<height>100%</height>
+				<texture border="16" colordiffuse="White100">common/rounded-shadow8.png</texture>
+			</control>
+			<control type="group">
+				<left>8</left>
+				<right>8</right>
+				<top>8</top>
+				<bottom>8</bottom>
+				<control type="image">
+					<width>453</width>
+					<height>638</height>
+					<texture border="5" colordiffuse="Dark3">common/box.png</texture>
+				</control>
+				<!-- Left Group -->
+				<control type="grouplist" id="9100">
+					<description>Button Area</description>
+					<width>450</width>
+					<top>140</top>
+					<bottom>0</bottom>
+					<itemgap>0</itemgap>
+					<onleft>9000</onleft>
+					<onright>9200</onright>
+					<onup>9100</onup>
+					<ondown>9100</ondown>
+					<orientation>vertical</orientation>
+					<control type="togglebutton" id="9101" description="Shortcuts">
+						<usealttexture>ControlGroup(9100).HasFocus(9101)</usealttexture>
+						<include>DefSettingsButton2</include>
+						<label>111</label>
+						<onclick>Right</onclick>
+					</control>
+					<control type="togglebutton" id="9104" description="Widgets">
+						<usealttexture>ControlGroup(9100).HasFocus(9104)</usealttexture>
+						<include>DefSettingsButton2</include>
+						<label>31144</label>
+						<onclick>Right</onclick>
+					</control>
+					<control type="togglebutton" id="9102" description="Artwork">
+						<usealttexture>ControlGroup(9100).HasFocus(9102)</usealttexture>
+						<include>DefSettingsButton2</include>
+						<label>$LOCALIZE[31001]</label>
+						<onclick>Right</onclick>
+					</control>
+					<control type="togglebutton" id="9106" description="Furniture">
+						<usealttexture>ControlGroup(9100).HasFocus(9106)</usealttexture>
+						<include>DefSettingsButton2</include>
+						<label>31152</label>
+						<onclick>Right</onclick>
+					</control>
+					<control type="togglebutton" id="9103" description="Visualisation">
+						<usealttexture>ControlGroup(9100).HasFocus(9103)</usealttexture>
+						<include>DefSettingsButton2</include>
+						<label>250</label>
+						<onclick>Right</onclick>
+					</control>
+					<control type="togglebutton" id="9107" description="Views">
+						<usealttexture>ControlGroup(9100).HasFocus(9107)</usealttexture>
+						<include>DefSettingsButton2</include>
+						<label>$LOCALIZE[31194]</label>
+						<onclick>Right</onclick>
+					</control>
+					<control type="togglebutton" id="9108" description="Colors">
+						<usealttexture>ControlGroup(9100).HasFocus(9108)</usealttexture>
+						<include>DefSettingsButton2</include>
+						<label>22032</label>
+						<onclick>Right</onclick>
+					</control>
+				</control>
+				<control type="image"> <!--focused background left edge -->
+					<top>140</top>
+					<width>6</width>
+					<height>70</height>
+					<texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
+					<visible>ControlGroup(9100).HasFocus(9101)</visible>
+				</control>
+				<control type="image">
+					<top>140</top>
+					<left>6</left>
+					<width>1</width>
+					<height>70</height>
+					<texture colordiffuse="Light1">common/black.png</texture>
+					<visible>ControlGroup(9100).HasFocus(9101)</visible>
+				</control>
+				<control type="image"> <!--focused background left edge -->
+					<top>210</top>
+					<width>6</width>
+					<height>70</height>
+					<texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
+					<visible>ControlGroup(9100).HasFocus(9104)</visible>
+				</control>
+				<control type="image">
+					<top>210</top>
+					<left>6</left>
+					<width>1</width>
+					<height>70</height>
+					<texture colordiffuse="Light1">common/black.png</texture>
+					<visible>ControlGroup(9100).HasFocus(9104)</visible>
+				</control>
+				<control type="image"> <!--focused background left edge -->
+					<top>280</top>
+					<width>6</width>
+					<height>70</height>
+					<texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
+					<visible>ControlGroup(9100).HasFocus(9102)</visible>
+				</control>
+				<control type="image">
+					<top>280</top>
+					<left>6</left>
+					<width>1</width>
+					<height>70</height>
+					<texture colordiffuse="Light1">common/black.png</texture>
+					<visible>ControlGroup(9100).HasFocus(9102)</visible>
+				</control>
+				<control type="image"> <!--focused background left edge -->
+					<top>350</top>
+					<width>6</width>
+					<height>70</height>
+					<texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
+					<visible>ControlGroup(9100).HasFocus(9106)</visible>
+				</control>
+				<control type="image">
+					<top>350</top>
+					<left>6</left>
+					<width>1</width>
+					<height>70</height>
+					<texture colordiffuse="Light1">common/black.png</texture>
+					<visible>ControlGroup(9100).HasFocus(9106)</visible>
+				</control>
+				<control type="image"> <!--focused background left edge -->
+					<top>420</top>
+					<width>6</width>
+					<height>70</height>
+					<texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
+					<visible>ControlGroup(9100).HasFocus(9103)</visible>
+				</control>
+				<control type="image">
+					<top>420</top>
+					<left>6</left>
+					<width>1</width>
+					<height>70</height>
+					<texture colordiffuse="Light1">common/black.png</texture>
+					<visible>ControlGroup(9100).HasFocus(9103)</visible>
+				</control>
+				<control type="image"> <!--focused background left edge -->
+					<top>490</top>
+					<width>6</width>
+					<height>70</height>
+					<texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
+					<visible>ControlGroup(9100).HasFocus(9107)</visible>
+				</control>
+				<control type="image">
+					<top>490</top>
+					<left>6</left>
+					<width>1</width>
+					<height>70</height>
+					<texture colordiffuse="Light1">common/black.png</texture>
+					<visible>ControlGroup(9100).HasFocus(9107)</visible>
+				</control>
+				<control type="image"> <!--focused background left edge -->
+					<top>560</top>
+					<width>6</width>
+					<height>70</height>
+					<texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
+					<visible>ControlGroup(9100).HasFocus(9108)</visible>
+				</control>
+				<control type="image">
+					<top>560</top>
+					<left>6</left>
+					<width>1</width>
+					<height>70</height>
+					<texture colordiffuse="Light1">common/black.png</texture>
+					<visible>ControlGroup(9100).HasFocus(9108)</visible>
+				</control>
+				<!-- Right Group -->
+				<control type="grouplist" id="9200">
+					<description>Control Area</description>
+					<left>460</left>
+					<right>0</right>
+					<top>140</top>
+					<bottom>10</bottom>
+					<itemgap>0</itemgap>
+					<onleft>9100</onleft>
+					<onright>9000</onright>
+					<onup>9200</onup>
+					<ondown>9200</ondown>
+					<orientation>vertical</orientation>
+					<!-- Shortcuts -->
+					<control type="button" id="9212" description="Customize Home">
+						<width>1310</width>
+						<visible>ControlGroup(9100).HasFocus(9101)</visible>
+						<include>DefSettingsButton2</include>
+						<label>$LOCALIZE[31035]</label>
+						<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)</onclick>
+					</control>
+					<control type="button" id="9213" description="Reset Home to Defaults">
+						<width>1310</width>
+						<visible>ControlGroup(9100).HasFocus(9101)</visible>
+						<include>DefSettingsButton2</include>
+						<label>31132</label>
+						<onclick>RunScript(script.skinshortcuts,type=resetall)</onclick>
+					</control>
+					<control type="button" id="92181" description="Select Movies Hub Widget">
+						<width>1310</width>
+						<visible>ControlGroup(9100).HasFocus(9101)</visible>
+						<include>DefSettingsButton2</include>
+						<label>31182</label>
+						<label2>[COLOR=$VAR[ColorHighlight2]]$INFO[Skin.String(MovieHubWidget)][/COLOR]</label2>
+						<onclick condition="String.IsEmpty(Skin.String(MovieHubWidget))">Skin.SetFile(MovieHubWidget,.xsp|.m3u,special://profile/playlists/video/)</onclick>
+						<onclick condition="!String.IsEmpty(Skin.String(MovieHubWidget))">Skin.Reset(MovieHubWidget)</onclick>
+					</control>
+					<control type="button" id="92182" description="Select Movies Hub Items">
+						<width>1310</width>
+						<visible>ControlGroup(9100).HasFocus(9101)</visible>
+						<include>DefSettingsButton2</include>
+						<label>$LOCALIZE[20342] [LOWERCASE]$LOCALIZE[31178][/LOWERCASE]</label>
+						<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=movieshub)</onclick>
+					</control>
+					<control type="button" id="92183" description="Select TV Shows Hub Widget">
+						<width>1310</width>
+						<visible>ControlGroup(9100).HasFocus(9101)</visible>
+						<include>DefSettingsButton2</include>
+						<label>31183</label>
+						<label2>[COLOR=$VAR[ColorHighlight2]]$INFO[Skin.String(TVHubWidget)][/COLOR]</label2>
+						<onclick condition="String.IsEmpty(Skin.String(TVHubWidget))">Skin.SetFile(TVHubWidget,.xsp|.m3u,special://profile/playlists/video/)</onclick>
+						<onclick condition="!String.IsEmpty(Skin.String(TVHubWidget))">Skin.Reset(TVHubWidget)</onclick>
+					</control>
+					<control type="button" id="92184" description="Select TV Hub Items">
+						<width>1310</width>
+						<visible>ControlGroup(9100).HasFocus(9101)</visible>
+						<include>DefSettingsButton2</include>
+						<label>$LOCALIZE[20343] [LOWERCASE]$LOCALIZE[31178][/LOWERCASE]</label>
+						<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=episodeshub)</onclick>
+					</control>
+					<!-- Artwork -->
+					<control type="button" id="92281" description="Fanart Opacity">
+						<width>1310</width>
+						<include>DefSettingsButton2</include>
+						<label>$LOCALIZE[31780]</label>
+						<label2>[COLOR=$VAR[ColorHighlight2]]$INFO[Skin.String(FanartFade)][/COLOR]</label2>
+						<visible>ControlGroup(9100).HasFocus(9102)</visible>
+						<visible>!Skin.HasSetting(lights.out)</visible>
+						<onclick>ActivateWindow(1109)</onclick>
+					</control>
+					<control type="button" id="9225" description="Set Fallback Image">
+						<width>1310</width>
+						<visible>ControlGroup(9100).HasFocus(9102)</visible>
+						<include>DefSettingsButton2</include>
+						<label>31150</label>
+						<label2>[COLOR=$VAR[ColorHighlight2]]$INFO[Skin.String(fanart.fallback)][/COLOR]</label2>
+						<onclick condition="String.IsEmpty(Skin.String(fanart.fallback))">Skin.SetImage(fanart.fallback)</onclick>
+						<onclick condition="!String.IsEmpty(Skin.String(fanart.fallback))">Skin.Reset(fanart.fallback)</onclick>
+						<visible>!Skin.HasSetting(lights.out)</visible>
+					</control>
+					<control type="radiobutton" id="9267" description="Reflections">
+						<width>1310</width>
+						<visible>ControlGroup(9100).HasFocus(9102)</visible>
+						<include>DefSettingsButton2</include>
+						<label>31219</label>
+						<selected>Skin.HasSetting(show.reflections)</selected>
+						<onclick>Skin.ToggleSetting(show.reflections)</onclick>
+					</control>
+					<control type="radiobutton" id="9201" description="Lights Out">
+						<width>1310</width>
+						<visible>ControlGroup(9100).HasFocus(9102)</visible>
+						<include>DefSettingsButton2</include>
+						<label>$LOCALIZE[31000]</label>
+						<selected>Skin.HasSetting(lights.out)</selected>
+						<onclick>Skin.ToggleSetting(lights.out)</onclick>
+					</control>
+					<control type="button" id="9229" description="Set Weather Icons">
+						<width>1310</width>
+						<visible>ControlGroup(9100).HasFocus(9102)</visible>
+						<include>DefSettingsButton2</include>
+						<label>31234</label>
+						<label2>[COLOR=$VAR[ColorHighlight2]]$INFO[Skin.String(weathericons.name)][/COLOR]</label2>
+						<onclick>RunScript(script.image.resource.select,property=weathericons&amp;type=resource.images.weathericons)</onclick>
+					</control>
+					<control type="button" id="9230" description="Set Weather Fanart">
+						<width>1310</width>
+						<visible>ControlGroup(9100).HasFocus(9102)</visible>
+						<include>DefSettingsButton2</include>
+						<label>31143</label>
+						<label2>[COLOR=$VAR[ColorHighlight2]]$INFO[Skin.String(weatherfanart.name)][/COLOR]</label2>
+						<onclick>RunScript(script.image.resource.select,property=weatherfanart&amp;type=resource.images.weatherfanart)</onclick>
+					</control>
+					<!-- Visualisation -->
+					<control type="radiobutton" id="9221" description="Show video in background">
+						<width>1310</width>
+						<visible>ControlGroup(9100).HasFocus(9103)</visible>
+						<include>DefSettingsButton2</include>
+						<label>31111</label>
+						<selected>Skin.HasSetting(global.showvideo)</selected>
+						<onclick>Skin.ToggleSetting(global.showvideo)</onclick>
+					</control>
+					<control type="radiobutton" id="9222" description="Show visualization in background">
+						<width>1310</width>
+						<visible>ControlGroup(9100).HasFocus(9103)</visible>
+						<include>DefSettingsButton2</include>
+						<label>31172</label>
+						<selected>Skin.HasSetting(global.showvisualisation)</selected>
+						<onclick>Skin.ToggleSetting(global.showvisualisation)</onclick>
+					</control>
+					<control type="radiobutton" id="9361" description="Plot Overlay">
+						<width>1310</width>
+						<visible>ControlGroup(9100).HasFocus(9103)</visible>
+						<include>DefSettingsButton2</include>
+						<label>31254</label>
+						<selected>Skin.HasSetting(furniture.overlayinfo)</selected>
+						<onclick>Skin.ToggleSetting(furniture.overlayinfo)</onclick>
+					</control>
+					<!-- Widgets -->
+					<control type="button" id="9246" description="Custom Widget 1">
+						<width>1310</width>
+						<visible>ControlGroup(9100).HasFocus(9104)</visible>
+						<include>DefSettingsButton2</include>
+						<label>31759</label>
+						<label2>[COLOR=$VAR[ColorHighlight2]]$INFO[Skin.String(CustomWidget1)][/COLOR]</label2>
+						<onclick>Skin.SetString(CustomWidget1)</onclick>
+					</control>
+					<control type="button" id="9247" description="Custom Widget 2">
+						<width>1310</width>
+						<visible>ControlGroup(9100).HasFocus(9104)</visible>
+						<include>DefSettingsButton2</include>
+						<label>31760</label>
+						<label2>[COLOR=$VAR[ColorHighlight2]]$INFO[Skin.String(CustomWidget2)][/COLOR]</label2>
+						<onclick>Skin.SetString(CustomWidget2)</onclick>
+					</control>
+					<control type="button" id="9248" description="Custom Widget 3">
+						<width>1310</width>
+						<visible>ControlGroup(9100).HasFocus(9104)</visible>
+						<include>DefSettingsButton2</include>
+						<label>31761</label>
+						<label2>[COLOR=$VAR[ColorHighlight2]]$INFO[Skin.String(CustomWidget3)][/COLOR]</label2>
+						<onclick>Skin.SetString(CustomWidget3)</onclick>
+					</control>
+					<control type="button" id="9249" description="Custom Widget 4">
+						<width>1310</width>
+						<visible>ControlGroup(9100).HasFocus(9104)</visible>
+						<include>DefSettingsButton2</include>
+						<label>31762</label>
+						<label2>[COLOR=$VAR[ColorHighlight2]]$INFO[Skin.String(CustomWidget4)][/COLOR]</label2>
+						<onclick>Skin.SetString(CustomWidget4)</onclick>
+					</control>
+					<control type="button" id="92491" description="Custom Widget 5">
+						<width>1310</width>
+						<visible>ControlGroup(9100).HasFocus(9104)</visible>
+						<include>DefSettingsButton2</include>
+						<label>31763</label>
+						<label2>[COLOR=$VAR[ColorHighlight2]]$INFO[Skin.String(CustomWidget5)][/COLOR]</label2>
+						<onclick>Skin.SetString(CustomWidget5)</onclick>
+					</control>
+					<control type="button" id="92492" description="Custom Widget 6">
+						<width>1310</width>
+						<visible>ControlGroup(9100).HasFocus(9104)</visible>
+						<include>DefSettingsButton2</include>
+						<label>31764</label>
+						<label2>[COLOR=$VAR[ColorHighlight2]]$INFO[Skin.String(CustomWidget6)][/COLOR]</label2>
+						<onclick>Skin.SetString(CustomWidget6)</onclick>
+					</control>
+					<control type="button" id="92493" description="Custom Widget 7">
+						<width>1310</width>
+						<visible>ControlGroup(9100).HasFocus(9104)</visible>
+						<include>DefSettingsButton2</include>
+						<label>31765</label>
+						<label2>[COLOR=$VAR[ColorHighlight2]]$INFO[Skin.String(CustomWidget7)][/COLOR]</label2>
+						<onclick>Skin.SetString(CustomWidget7)</onclick>
+					</control>
+					<control type="button" id="92494" description="Custom Widget 8">
+						<width>1310</width>
+						<visible>ControlGroup(9100).HasFocus(9104)</visible>
+						<include>DefSettingsButton2</include>
+						<label>31766</label>
+						<label2>[COLOR=$VAR[ColorHighlight2]]$INFO[Skin.String(CustomWidget8)][/COLOR]</label2>
+						<onclick>Skin.SetString(CustomWidget8)</onclick>
+					</control>
+					<control type="button" id="92495" description="Custom Widget 9">
+						<width>1310</width>
+						<visible>ControlGroup(9100).HasFocus(9104)</visible>
+						<include>DefSettingsButton2</include>
+						<label>31767</label>
+						<label2>[COLOR=$VAR[ColorHighlight2]]$INFO[Skin.String(CustomWidget9)][/COLOR]</label2>
+						<onclick>Skin.SetString(CustomWidget9)</onclick>
+					</control>
+					<control type="button" id="92496" description="Custom Widget 10">
+						<width>1310</width>
+						<visible>ControlGroup(9100).HasFocus(9104)</visible>
+						<include>DefSettingsButton2</include>
+						<label>31768</label>
+						<label2>[COLOR=$VAR[ColorHighlight2]]$INFO[Skin.String(CustomWidget10)][/COLOR]</label2>
+						<onclick>Skin.SetString(CustomWidget10)</onclick>
+					</control>
+					<!-- Furniture -->
+					<control type="radiobutton" id="92615" description="Hide indicators">
+						<width>1310</width>
+						<visible>ControlGroup(9100).HasFocus(9106)</visible>
+						<include>DefSettingsButton2</include>
+						<label>Hide all indicators</label>
+						<selected>Skin.HasSetting(furniture.hideindicators)</selected>
+						<onclick>Skin.ToggleSetting(furniture.hideindicators)</onclick>
+					</control>
+					<control type="radiobutton" id="92612" description="Resume indicator">
+						<width>1310</width>
+						<visible>ControlGroup(9100).HasFocus(9106)</visible>
+						<include>DefSettingsButton2</include>
+						<label>Do not show resume indicator</label>
+						<visible>!Skin.HasSetting(furniture.hideindicators)</visible>
+						<selected>Skin.HasSetting(furniture.hideresume)</selected>
+						<onclick>Skin.ToggleSetting(furniture.hideresume)</onclick>
+					</control>
+					<!-- View Settings -->
+					<control type="radiobutton" id="9272" description="Kiosk Mode">
+						<width>1310</width>
+						<visible>ControlGroup(9100).HasFocus(9107)</visible>
+						<include>DefSettingsButton2</include>
+						<label>31199</label>
+						<selected>Skin.HasSetting(global.kioskmode)</selected>
+						<onclick>Skin.ToggleSetting(global.kioskmode)</onclick>
+					</control>
+					<control type="radiobutton" id="9262" description="Debug mode">
+						<width>1310</width>
+						<visible>ControlGroup(9100).HasFocus(9107)</visible>
+						<include>DefSettingsButton2</include>
+						<label>Debug Mode</label>
+						<selected>Skin.HasSetting(DebugGrid)</selected>
+						<onclick>Skin.ToggleSetting(DebugGrid)</onclick>
+					</control>
+					<!-- Colors -->
+					<control type="radiobutton" id="9281">
+						<width>1310</width>
+						<include>DefSettingsButton2</include>
+						<selected>Skin.HasSetting(ColorHighlight)</selected>
+						<onclick>Skin.ToggleSetting(ColorHighlight)</onclick>
+						<onclick>ReloadSkin()</onclick>
+						<label>Change main highlight colour</label>
+						<visible>ControlGroup(9100).HasFocus(9108)</visible>
+					</control>
+					<control type="button" id="9282">
+						<width>1310</width>
+						<include>DefSettingsButton2</include>
+						<onclick>RunScript(script.skin.helper.colorpicker,skinstring=focuscolor.name)</onclick>
+						<label> - Set main highlight colour</label>
+						<label2>[COLOR=$VAR[ColorHighlight]]$INFO[Skin.String(focuscolor.name)][/COLOR]</label2>
+						<visible>Skin.HasSetting(ColorHighlight)</visible>
+						<visible>ControlGroup(9100).HasFocus(9108)</visible>
+					</control>
+					<control type="button" id="9283">
+						<width>1310</width>
+						<include>DefSettingsButton2</include>
+						<onclick>Skin.SetString(focuscolor.name,Highlight)</onclick>
+						<label> - $LOCALIZE[409]</label>
+						<visible>Skin.HasSetting(ColorHighlight)</visible>
+						<visible>ControlGroup(9100).HasFocus(9108)</visible>
+					</control>
+					<control type="radiobutton" id="9284">
+						<width>1310</width>
+						<include>DefSettingsButton2</include>
+						<selected>Skin.HasSetting(ColorHighlight2)</selected>
+						<onclick>Skin.ToggleSetting(ColorHighlight2)</onclick>
+						<onclick>ReloadSkin()</onclick>
+						<label>Change second highlight colour</label>
+						<visible>ControlGroup(9100).HasFocus(9108)</visible>
+					</control>
+					<control type="button" id="9285">
+						<width>1310</width>
+						<include>DefSettingsButton2</include>
+						<onclick>RunScript(script.skin.helper.colorpicker,skinstring=focuscolor2.name)</onclick>
+						<label> - Set second highlight colour</label>
+						<label2>[COLOR=$VAR[ColorHighlight2]]$INFO[Skin.String(focuscolor2.name)][/COLOR]</label2>
+						<visible>Skin.HasSetting(ColorHighlight2)</visible>
+						<visible>ControlGroup(9100).HasFocus(9108)</visible>
+					</control>
+					<control type="button" id="9286">
+						<width>1310</width>
+						<include>DefSettingsButton2</include>
+						<onclick>Skin.SetString(focuscolor2.name,Highlight2)</onclick>
+						<label> - $LOCALIZE[409]</label>
+						<visible>Skin.HasSetting(ColorHighlight2)</visible>
+						<visible>ControlGroup(9100).HasFocus(9108)</visible>
+					</control>
+					<control type="radiobutton" id="9287">
+						<width>1310</width>
+						<include>DefSettingsButton2</include>
+						<selected>Skin.HasSetting(ColourSelected)</selected>
+						<onclick>Skin.ToggleSetting(ColourSelected)</onclick>
+						<onclick>ReloadSkin()</onclick>
+						<label>Change the selected colour</label>
+						<visible>ControlGroup(9100).HasFocus(9108)</visible>
+					</control>
+					<control type="button" id="9288">
+						<width>1310</width>
+						<include>DefSettingsButton2</include>
+						<onclick>RunScript(script.skin.helper.colorpicker,skinstring=selectedcolor.name)</onclick>
+						<label> - Set selected colour</label>
+						<label2>[COLOR=$VAR[ColourSelected]]$INFO[Skin.String(selectedcolor.name)][/COLOR]</label2>
+						<visible>Skin.HasSetting(ColourSelected)</visible>
+						<visible>ControlGroup(9100).HasFocus(9108)</visible>
+					</control>
+					<control type="button" id="9289">
+						<width>1310</width>
+						<include>DefSettingsButton2</include>
+						<onclick>Skin.SetString(selectedcolor.name,Selected)</onclick>
+						<label> - $LOCALIZE[409]</label>
+						<visible>Skin.HasSetting(ColourSelected)</visible>
+						<visible>ControlGroup(9100).HasFocus(9108)</visible>
+					</control>
+				</control>
+				<!-- Header -->
+				<control type="label">
+					<left>30</left>
+					<width>390</width>
+					<posy>18</posy>
+					<font>MediumBold</font>
+					<label>5</label>
+					<textcolor>PanelWhite100</textcolor>
+				</control>
+				<control type="label">
+					<left>30</left>
+					<right>30</right>
+					<posy>77</posy>
+					<height>30</height>
+					<font>Tiny</font>
+					<textcolor>PanelWhite70</textcolor>
+					<scroll>true</scroll>
+					<align>left</align>
+					<textoffsetx>0</textoffsetx>
+					<label>$INFO[System.ProfileName]</label>
+				</control>
+				<control type="label">
+					<left>480</left>
+					<width>390</width>
+					<posy>18</posy>
+					<font>MediumBold</font>
+					<label>$VAR[Label_SettingsHeader]</label>
+					<textcolor>PanelWhite100</textcolor>
+				</control>
+				<control type="label">
+					<left>480</left>
+					<right>30</right>
+					<posy>77</posy>
+					<height>30</height>
+					<font>Tiny</font>
+					<textcolor>PanelWhite70</textcolor>
+					<scroll>true</scroll>
+					<label>20077</label>
+				</control>
+			</control>
+		</control>
+		<include>Def9000SettingsMenu</include>
+	</controls>
+</window>

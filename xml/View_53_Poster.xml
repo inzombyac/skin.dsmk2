@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<includes>
+	<include name="53Content">
+		<height>1080</height>
+		<posy>40</posy>
+		<posx>-190</posx>
+		<width>2300</width>
+		<onup condition="String.IsEqual(Container.SortMethod, $LOCALIZE[369]) | String.IsEqual(Container.SortMethod, $LOCALIZE[551]) | String.IsEqual(Container.SortMethod, $LOCALIZE[36918]) | String.IsEqual(Container.SortMethod, $LOCALIZE[36916])">61</onup>
+		<onup condition="![String.IsEqual(Container.SortMethod, $LOCALIZE[369]) | String.IsEqual(Container.SortMethod, $LOCALIZE[551]) | String.IsEqual(Container.SortMethod, $LOCALIZE[36918]) | String.IsEqual(Container.SortMethod, $LOCALIZE[36916])] + Player.HasMedia">7788</onup>
+		<onup condition="![String.IsEqual(Container.SortMethod, $LOCALIZE[369]) | String.IsEqual(Container.SortMethod, $LOCALIZE[551]) | String.IsEqual(Container.SortMethod, $LOCALIZE[36918]) | String.IsEqual(Container.SortMethod, $LOCALIZE[36916])] + !Player.HasMedia">3634</onup>
+		<ondown condition="Control.IsVisible(65)">65</ondown>
+		<ondown condition="!Control.IsVisible(65)">60</ondown>
+		<onleft>9000</onleft>
+		<focusposition>1</focusposition>
+		<preloaditems>0</preloaditems>
+		<pagecontrol>60</pagecontrol>
+		<orientation>horizontal</orientation>
+		<viewtype label="31792">list</viewtype>
+		<scrolltime tween="quadratic">400</scrolltime>
+		<itemlayout width="270">
+			<control type="group">
+				<animation effect="Conditional" condition="true">
+					<effect type="zoom" end="60" time="0" center="213,452" />
+				</animation>
+				<control type="image">
+					<top>PosterH</top>
+					<width>PosterW</width>
+					<height>PosterH</height>
+					<fadetime>100</fadetime>
+					<aspectratio align="center" aligny="top" scalediffuse="false">scale</aspectratio>
+					<texture flipy="true" diffuse="diffuse/listposter-ref.png" background="true">$VAR[PosterImage]</texture>
+					<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
+					<visible>Skin.HasSetting(show.reflections)</visible>
+					<visible>container.content(movies) | container.content(tvshows) | container.content(episodes) | container.content(seasons)</visible>
+				</control>
+				<control type="image">
+					<top>PosterH</top>
+					<width>PosterW</width>
+					<height>PosterH</height>
+					<fadetime>100</fadetime>
+					<aspectratio align="center" aligny="top" scalediffuse="false">keep</aspectratio>
+					<texture flipy="true" diffuse="diffuse/listposter-ref.png" background="true">$VAR[PosterImage]</texture>
+					<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
+					<visible>Skin.HasSetting(show.reflections)</visible>
+					<visible>!container.content(movies) + !container.content(tvshows) + !container.content(episodes) + !container.content(seasons)</visible>
+				</control>
+				<control type="image">
+					<centertop>PosterH</centertop>
+					<width>PosterW</width>
+					<height>48</height>
+					<aspectratio aligny="bottom">stretch</aspectratio>
+					<texture>diffuse/shadowspot.png</texture>
+				</control>
+				<control type="image">
+					<width>PosterW</width>
+					<height>PosterH</height>
+					<fadetime>100</fadetime>
+					<aspectratio align="center" aligny="bottom" scalediffuse="false">scale</aspectratio>
+					<texture diffuse="diffuse/listposter.png" background="true">$VAR[PosterImage]</texture>
+					<visible>container.content(movies) | container.content(tvshows) | container.content(episodes) | container.content(seasons)</visible>
+				</control>
+				<control type="image">
+					<width>PosterW</width>
+					<height>PosterH</height>
+					<fadetime>100</fadetime>
+					<aspectratio align="center" aligny="bottom" scalediffuse="false">keep</aspectratio>
+					<texture diffuse="diffuse/listposter.png" background="true">$VAR[PosterImage]</texture>
+					<visible>!container.content(movies) + !container.content(tvshows) + !container.content(episodes) + !container.content(seasons)</visible>
+				</control>
+				<control type="progress">
+					<centertop>PosterH</centertop>
+					<width>PosterW</width>
+					<height>10</height>
+					<info>ListItem.PercentPlayed</info>
+					<overlaytexture></overlaytexture>
+					<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
+					<lefttexture colordiffuse="$VAR[ColorHighlight]">osd/progress-end.png</lefttexture>
+					<midtexture colordiffuse="$VAR[ColorHighlight]">osd/progress-end.png</midtexture>
+					<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
+					<visible>ListItem.IsResumable</visible>
+				</control>
+				<control type="group">
+					<visible>!ListItem.IsParentFolder + !Window.IsVisible(MyMusicNav.xml)</visible>
+					<control type="image">
+						<left>378</left>
+						<centertop>40</centertop>
+						<width>40</width>
+						<height>40</height>
+						<aspectratio aligny="top">keep</aspectratio>
+						<texture background="true" colordiffuse="$VAR[ColorHighlight2]">$VAR[PosterPercentWatched]</texture>
+					</control>
+					<control type="group">
+						<visible>Integer.IsGreater(ListItem.Property(UnwatchedEpisodes),0)</visible>
+						<control type="image">
+							<left>378</left>
+							<centertop>40</centertop>
+							<height>40</height>
+							<width>40</width>
+							<texture colordiffuse="$VAR[ColorHighlight2]">common/circle.png</texture>
+							<aspectratio align="center" aligny="center">keep</aspectratio>
+						</control>
+						<control type="label">
+							<left>373</left>
+							<centertop>40</centertop>
+							<height>40</height>
+							<width>50</width>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Property(UnwatchedEpisodes)]</label>
+							<font>Small</font>
+							<textcolor>White</textcolor>
+						</control>
+					</control>
+				</control>
+			</control>
+		</itemlayout>
+		<focusedlayout width="300">
+			<control type="group">
+				<posy>120</posy>
+				<animation condition="Container(53).OnNext | Container(53).OnPrevious" effect="zoom" start="60" end="100" delay="0" time="350" tween="sine" easing="out" center="213,276">Focus</animation>
+				<animation condition="Container(53).OnNext | Container(53).OnPrevious" effect="zoom" start="100" end="60" delay="0" time="250" tween="sine" easing="out" center="213,276">UnFocus</animation>
+				<animation effect="Conditional" condition="true">
+					<effect type="zoom" end="95" time="0" center="213,452" />
+				</animation>
+				<control type="button">
+					<texturefocus></texturefocus>
+					<texturenofocus></texturenofocus>
+					<onfocus condition="Container.Content(movies)">ClearProperty(TVShowID,home)</onfocus>
+					<onfocus>Skin.SetString(LastIcon,$VAR[PosterImage])</onfocus>
+					<onfocus condition="Container.Content(tvshows)">SetProperty(TVShowID,$INFO[ListItem.DBID],home)</onfocus>
+				</control>
+				<control type="image">
+					<top>PosterH</top>
+					<width>PosterW</width>
+					<height>PosterH</height>
+					<fadetime>100</fadetime>
+					<aspectratio align="center" aligny="top" scalediffuse="false">scale</aspectratio>
+					<texture flipy="true" diffuse="diffuse/listposter-ref.png" background="true">$VAR[PosterImage]</texture>
+					<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
+					<visible>Skin.HasSetting(show.reflections)</visible>
+					<visible>container.content(movies) | container.content(tvshows) | container.content(episodes) | container.content(seasons)</visible>
+				</control>
+				<control type="image">
+					<top>PosterH</top>
+					<width>PosterW</width>
+					<height>PosterH</height>
+					<fadetime>100</fadetime>
+					<aspectratio align="center" aligny="top" scalediffuse="false">keep</aspectratio>
+					<texture flipy="true" diffuse="diffuse/listposter-ref.png" background="true">$VAR[PosterImage]</texture>
+					<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
+					<visible>Skin.HasSetting(show.reflections)</visible>
+					<visible>!container.content(movies) + !container.content(tvshows) + !container.content(episodes) + !container.content(seasons)</visible>
+				</control>
+				<control type="image">
+					<centertop>PosterH</centertop>
+					<width>PosterW</width>
+					<height>48</height>
+					<aspectratio aligny="bottom">stretch</aspectratio>
+					<texture>diffuse/shadowspot.png</texture>
+				</control>
+				<control type="image">
+					<width>PosterW</width>
+					<height>PosterH</height>
+					<fadetime>100</fadetime>
+					<aspectratio align="center" aligny="bottom" scalediffuse="false">keep</aspectratio>
+					<texture diffuse="diffuse/listposter.png" background="true">$VAR[PosterImage]</texture>
+					<visible>!container.content(movies) + !container.content(tvshows) + !container.content(episodes) + !container.content(seasons)</visible>
+				</control>
+				<control type="image">
+					<width>PosterW</width>
+					<height>PosterH</height>
+					<fadetime>100</fadetime>
+					<aspectratio align="center" aligny="bottom" scalediffuse="false">scale</aspectratio>
+					<texture diffuse="diffuse/listposter.png" background="true">$VAR[PosterImage]</texture>
+					<visible>container.content(movies) | container.content(tvshows) | container.content(episodes) | container.content(seasons)</visible>
+				</control>
+				<control type="progress">
+					<centertop>PosterH</centertop>
+					<width>PosterW</width>
+					<height>10</height>
+					<info>ListItem.PercentPlayed</info>
+					<overlaytexture></overlaytexture>
+					<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
+					<lefttexture colordiffuse="$VAR[ColorHighlight]">osd/progress-end.png</lefttexture>
+					<midtexture colordiffuse="$VAR[ColorHighlight]">osd/progress-end.png</midtexture>
+					<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
+					<visible>ListItem.IsResumable</visible>
+				</control>
+				<control type="group">
+					<visible>!ListItem.IsParentFolder</visible>
+					<control type="image">
+						<left>378</left>
+						<centertop>40</centertop>
+						<width>40</width>
+						<height>40</height>
+						<aspectratio aligny="top">keep</aspectratio>
+						<texture background="true" colordiffuse="$VAR[ColorHighlight2]">$VAR[PosterPercentWatched]</texture>
+					</control>
+					<control type="group">
+						<visible>Integer.IsGreater(ListItem.Property(UnwatchedEpisodes),0)</visible>
+						<control type="image">
+							<left>378</left>
+							<centertop>40</centertop>
+							<height>40</height>
+							<width>40</width>
+							<texture colordiffuse="$VAR[ColorHighlight2]">common/circle.png</texture>
+							<aspectratio align="center" aligny="center">keep</aspectratio>
+						</control>
+						<control type="label">
+							<left>374</left>
+							<centertop>39</centertop>
+							<height>40</height>
+							<width>50</width>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Property(UnwatchedEpisodes)]</label>
+							<font>Tiny</font>
+							<scroll>false</scroll>
+							<textcolor>White</textcolor>
+						</control>
+					</control>
+				</control>
+			</control>
+		</focusedlayout>
+	</include>
+	<include name="53Wrap">
+		<control type="wraplist" id="53">
+			<include>53Content</include>
+		</control>
+	</include>
+	<include name="53Fixed">
+		<control type="fixedlist" id="53">
+			<include>53Content</include>
+		</control>
+	</include>
+	<include name="View_53_Poster">
+		<description>List View (id=53)</description>
+		<control type="group">
+			<include>Animation.Common</include>
+			<visible>Control.IsVisible(53)</visible>
+			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml)</visible>
+			<control type="image">
+				<left>0</left>
+				<right>0</right>
+				<top>680</top>
+				<bottom>0</bottom>
+				<texture colordiffuse="HeaderBG">common/white.png</texture>
+				<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
+			</control>
+			<include condition="!Skin.HasSetting(53poster.nowrap)">53Wrap</include>
+			<include condition="Skin.HasSetting(53poster.nowrap)">53Fixed</include>
+			<control type="group">
+				<!-- <animation effect="fade" condition="!Control.HasFocus(60)" time="200" start="100" end="0">Conditional</animation> -->
+				<include>Furniture_Scrollbar_Wall</include>
+			</control>
+			<control type="grouplist">
+				<left>540</left>
+				<right>SidePad</right>
+				<top>690</top>
+				<orientation>vertical</orientation>
+				<visible>![Container(53).OnNext | Container(53).OnPrevious]</visible>
+				<animation effect="fade" start="0" end="100" delay="450" time="250" reversible="false">Visible</animation>
+				<control type="label">
+					<font>MediumSmallBold</font>
+					<label>$INFO[ListItem.Label]</label>
+					<textcolor>Dark1</textcolor>
+					<height>35</height>
+					<aligny>top</aligny>
+				</control>
+				<control type="label">
+					<font>Small</font>
+					<label>$INFO[ListItem.Year,,]$INFO[ListItem.Genre, • ,]</label>
+					<textcolor>Dark1</textcolor>
+					<height>42</height>
+					<aligny>top</aligny>
+				</control>
+				<control type="textbox">
+					<font>TwentyEight</font>
+					<label>$VAR[LabelPlotBox]</label>
+					<textcolor>Dark2</textcolor>
+					<height>160</height>
+					<align>justify</align>
+				</control>
+			</control>
+			<control type="grouplist" id="65">
+				<visible>![Container(53).OnNext | Container(53).OnPrevious]</visible>
+				<visible>Control.IsVisible(53) + ![container.content(movies) | !String.IsEmpty(ListItem.Trailer)]</visible>
+				<visible>!String.IsEmpty(ListItem.Label) + !ListItem.IsParentFolder</visible>
+				<visible>!Skin.HasSetting(furniture.hidemediabuttons)</visible>
+				<animation effect="fade" start="0" end="100" delay="450" time="250" reversible="false">Visible</animation>
+				<top>780</top>
+				<left>174</left>
+				<height>210</height>
+				<width>PosterW</width>
+				<orientation>vertical</orientation>
+				<align>center</align>
+				<onright>53</onright>
+				<onright>Control.Move(53,1)</onright>
+				<onleft>53</onleft>
+				<onleft>Control.Move(53,-1)</onleft>
+				<onup>53</onup>
+				<ondown>60</ondown>
+				<itemgap>10</itemgap>
+				<control type="button" id="707">		
+					<label>29915</label>
+					<width>240</width>
+					<font>Button</font>
+					<texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
+					<texturenofocus colordiffuse="Light1" border="5">common/box.png</texturenofocus>
+					<onclick>up</onclick>
+					<onclick>Action(info)</onclick>
+					<ondown condition="Control.IsVisible(708)">708</ondown>
+					<ondown condition="!Control.IsVisible(708)">60</ondown>
+				</control>
+			</control>
+			<control type="grouplist" id="65">
+				<visible>![Container(53).OnNext | Container(53).OnPrevious]</visible>
+				<visible>Control.IsVisible(53) + [container.content(movies) | !String.IsEmpty(ListItem.Trailer)]</visible>
+				<visible>!String.IsEmpty(ListItem.Label) + !ListItem.IsParentFolder</visible>
+				<animation effect="fade" start="0" end="100" delay="450" time="250" reversible="false">Visible</animation>
+				<top>780</top>
+				<left>174</left>
+				<height>210</height>
+				<width>PosterW</width>
+				<orientation>vertical</orientation>
+				<align>center</align>
+				<onright>53</onright>
+				<onright>Control.Move(53,1)</onright>
+				<onleft>53</onleft>
+				<onleft>Control.Move(53,-1)</onleft>
+				<onup>53</onup>
+				<ondown>60</ondown>
+				<itemgap>10</itemgap>
+				<control type="button" id="707">		
+					<label>29915</label>
+					<width>240</width>
+					<font>Button</font>
+					<texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
+					<texturenofocus colordiffuse="Light1" border="5">common/box.png</texturenofocus>
+					<onclick>up</onclick>
+					<onclick>Action(info)</onclick>
+				</control>
+				<control type="button" id="708">		
+					<label>Trailer</label>
+					<width>240</width>
+					<font>Button</font>
+					<texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
+					<texturenofocus colordiffuse="Light1" border="5">common/box.png</texturenofocus>
+					<onclick condition="!String.IsEmpty(ListItem.Trailer)">PlayMedia($INFO[ListItem.Trailer])</onclick>
+					<onclick condition="String.IsEmpty(ListItem.Trailer)">ActivateWindow(videos,$INFO[ListItem.Label,plugin://plugin.video.youtube/kodion/search/query/?q=,trailer])</onclick>
+				</control>
+			</control>
+		</control>
+	</include>
+</includes>

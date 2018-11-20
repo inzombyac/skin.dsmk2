@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<addon id="skin.dsmk2" version="1.0.0" name="DSMK2" provider-name="inzombyac">
+	<requires>
+		<import addon="xbmc.gui" version="5.13.0"/>
+		<import addon="script.skinshortcuts" version="0.4.0"/>
+		<import addon="script.skin.helper.colorpicker" version="0.0.1"/>
+		<import addon="script.tv.show.next.aired" version="6.0.14"/>
+		<import addon="resource.images.studios.white" version="0.0.1"/>
+		<import addon="resource.images.moviegenreicons.coloured" version="0.0.1"/>
+		<import addon="resource.images.musicgenreicons.text" version="0.0.1"/>
+		<import addon="resource.images.recordlabels.white" version="0.0.1"/>
+		<import addon="plugin.video.youtube" version="5.1.8"/>
+		<import addon="script.image.resource.select" version="0.0.1"/>
+	</requires>
+	<extension point="xbmc.gui.skin" effectslowdown="1.00" debugging="false">
+		<res width="1920" height="1080" aspect="16:9" default="true" folder="xml"/>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">Simplistic skin for Kodi 18.  Designed for use with Emby and other addons in mind</summary>
+		<description lang="en">Simple, customizable, designed for Emby</description>
+		<platform>all</platform>
+		<assets>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
+			<screenshot>_screenshots/screenshot001.jpg</screenshot>
+			<screenshot>_screenshots/screenshot002.jpg</screenshot>
+			<screenshot>_screenshots/screenshot003.jpg</screenshot>
+			<screenshot>_screenshots/screenshot004.jpg</screenshot>
+			<screenshot>_screenshots/screenshot005.jpg</screenshot>
+			<screenshot>_screenshots/screenshot006.jpg</screenshot>
+		</assets>
+	</extension>
+</addon>

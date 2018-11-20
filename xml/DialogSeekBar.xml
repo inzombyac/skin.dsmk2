@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window id="115">
+    <defaultcontrol always="true">901</defaultcontrol>
+    <visible>Window.IsActive(fullscreenvideo) + !Window.IsActive(script.pseudotv.TVOverlay.xml) + !Window.IsActive(script.pseudotv.live.TVOverlay.xml)</visible>
+    <zorder>0</zorder>
+    <controls>
+		<include>PVRChannelNumberInput</include>
+        <control type="group">
+			<height>140</height>
+			<width>100%</width>
+			<bottom>0</bottom>
+			<animation effect="slide" start="0" end="0,-74" time="150" condition="Window.IsVisible(videoosd)">Conditional</animation>
+			<visible>Window.IsVisible(fullscreeninfo) | Player.ShowInfo | Player.Paused  | Window.IsVisible(VideoOSD.xml)</visible>
+ 			<animation type="WindowOpen">
+				<effect type="fade" start="0" end="100" time="150" delay="150" />
+			</animation>
+			<include>VideoBackgroundFade</include>
+			<control type="group">
+				<left>PosterW</left>
+				<width>1412</width>
+				<include>OSDInfoContent</include>
+			</control>
+        </control>
+		<control type="group">
+			<height>486</height>
+			<width>334</width>
+			<bottom>0</bottom>
+			<left>SidePad</left>
+			<!-- <animation effect="slide" start="0" end="0,-74" time="150" condition="Window.IsVisible(videoosd)">Conditional</animation> -->
+			<visible>Window.IsVisible(fullscreeninfo) | Player.ShowInfo | Player.Paused  | Window.IsVisible(VideoOSD.xml)</visible>
+			<animation effect="fade" start="0" end="100" delay="150" time="150">Visible</animation>
+			<animation effect="fade" start="0" end="100" delay="150" time="150">WindowOpen</animation> 
+			<control type="image">
+				<width>334</width>
+				<height>486</height>
+				<fadetime>100</fadetime>
+				<bottom>10</bottom>
+				<aspectratio align="center" aligny="bottom" scalediffuse="false">keep</aspectratio>
+				<texture diffuse="diffuse/listposter.png" background="false">$VAR[PlayerPosterOSD]</texture>
+				<include>Animation.FadeOut</include>
+			</control>
+        </control>
+		<control type="group">
+			<height>100</height>
+			<bottom>0</bottom>
+            <animation effect="slide" start="0" end="0,-74" time="150" condition="Window.IsVisible(videoosd)">Conditional</animation>
+            <control type="group">
+                <visible>!Player.Paused</visible>
+                <visible>!Window.IsVisible(fullscreeninfo) + !Player.ShowInfo + !Window.IsVisible(videoosd)</visible>
+                <visible>Player.Seeking | Player.DisplayAfterSeek  | Player.Forwarding | Player.Rewinding | !Integer.IsGreater(Player.Time,3)</visible>
+                <animation effect="fade" start="0" end="100" delay="150" time="150">Visible</animation>
+                <animation effect="fade" start="0" end="100" delay="150" time="150">WindowOpen</animation>
+                <bottom>0</bottom>
+                <width>100%</width>
+				<include>VideoBackgroundFade</include>
+                <control type="group">
+                    <left>SidePad</left>
+                    <right>SidePad</right>
+                    <top>20</top>
+                    <bottom>20</bottom>              
+				   <control type="label" description="Finishes Time">
+                        <width>400</width>
+                        <bottom>30</bottom>
+                        <height>40</height>
+                        <font>Tiny</font>
+                        <textcolor>Dark1</textcolor>
+                        <label>$VAR[PlayerStatus]</label>
+                    </control>
+                    <control type="label" description="Duration Total Time">
+                        <right>0</right>
+                        <align>right</align>
+                        <width>400</width>
+                        <bottom>30</bottom>
+                        <height>40</height>
+                        <font>Tiny</font>
+                        <textcolor>Dark1</textcolor>
+                        <label>$INFO[Player.Time]$INFO[Player.Duration,  /  ,]</label>
+                    </control>
+                    <control type="progress" description="cachelevel">
+                        <description>Progress Bar</description>
+                        <width>100%</width>
+                        <bottom>10</bottom>
+						<left>0</left>
+                        <height>8</height>
+                        <info>Player.CacheLevel</info>
+                        <texturebg colordiffuse="00ffffff">osd/progress-bg.png</texturebg>
+                        <lefttexture colordiffuse="Dark3">osd/progress-end.png</lefttexture>
+                        <midtexture colordiffuse="Dark3">osd/progress-end.png</midtexture>
+                        <righttexture colordiffuse="Dark3">osd/progress-end.png</righttexture>
+                        <visible>Player.Seeking</visible>
+                    </control>
+                    <control type="progress" description="cache">
+                        <description>Progress Bar</description>
+                        <width>100%</width>
+                        <bottom>10</bottom>
+                        <height>8</height>
+						<left>0</left>
+                        <info>Player.ProgressCache</info>
+                        <reveal>true</reveal>
+                        <texturebg colordiffuse="00ffffff">osd/progress-bg.png</texturebg>
+                         <lefttexture colordiffuse="Dark3">osd/progress-end.png</lefttexture>
+                        <midtexture colordiffuse="Dark3">osd/progress-end.png</midtexture>
+                        <righttexture colordiffuse="Dark3">osd/progress-end.png</righttexture>
+                    </control>
+                    <control type="progress" id="23">
+                        <description>Progress Bar</description>
+                        <width>100%</width>
+                        <bottom>10</bottom>
+						<left>0</left>
+                        <height>8</height>
+                        <info>Player.Progress</info>
+                    </control>
+                </control>
+            </control>
+
+            <control type="group">
+                <visible>PVR.IsTimeshift</visible>
+                <visible>false</visible>
+                <animation effect="fade" start="0" end="100" delay="150" time="150">Visible</animation>
+                <animation effect="fade" start="0" end="100" delay="150" time="150">WindowOpen</animation>
+                <bottom>0</bottom>
+				<width>100%</width>
+				<include>VideoBackgroundFade</include>
+                <control type="group">
+                    <left>SidePad</left>
+                    <right>SidePad</right>
+                    <top>20</top>
+                    <bottom>20</bottom>
+                    <control type="label" description="Finishes Time">
+                        <width>400</width>
+                        <bottom>30</bottom>
+                        <height>40</height>
+                        <font>Tiny</font>
+                        <textcolor>Dark1</textcolor>
+                        <label>$INFO[PVR.TimeshiftEnd]</label>
+                    </control>
+                    <control type="label" description="Duration Total Time">
+                        <right>0</right>
+                        <align>right</align>
+                        <width>400</width>
+                        <bottom>30</bottom>
+                        <height>40</height>
+                        <font>Tiny</font>
+                        <textcolor>Dark1</textcolor>
+                        <label>$INFO[PVR.TimeshiftStart]</label>
+                    </control>
+                    <control type="progress" description="cachelevel">
+                        <description>Progress Bar</description>
+                        <width>100%</width>
+                        <bottom>10</bottom>
+                        <height>8</height>
+                        <info>Player.CacheLevel</info>
+                        <texturebg colordiffuse="00ffffff">osd/progress-bg.png</texturebg>
+                        <lefttexture colordiffuse="$VAR[ColorHighlight]">osd/progress-end.png</lefttexture>
+                        <midtexture colordiffuse="$VAR[ColorHighlight]">osd/progress-end.png</midtexture>
+                        <righttexture colordiffuse="$VAR[ColorHighlight]">osd/progress-end.png</righttexture>
+                        <visible>Player.Seeking</visible>
+                    </control>
+                    <control type="progress" description="cache">
+                        <description>Progress Bar</description>
+                        <width>100%</width>
+                        <bottom>10</bottom>
+                        <height>8</height>
+                        <info>PVR.TimeshiftCur</info>
+                        <reveal>true</reveal>
+                        <texturebg colordiffuse="00ffffff">osd/progress-bg.png</texturebg>
+                        <lefttexture colordiffuse="$VAR[ColorHighlight2]">osd/progress-end.png</lefttexture>
+                        <midtexture colordiffuse="$VAR[ColorHighlight2]">osd/progress-end.png</midtexture>
+                        <righttexture colordiffuse="$VAR[ColorHighlight2]">osd/progress-end.png</righttexture>
+                    </control>
+                    <control type="progress" id="23">
+                        <description>Progress Bar</description>
+                        <width>100%</width>
+                        <bottom>10</bottom>
+                        <height>8</height>
+                        <info>PVR.TimeshiftProgress</info>
+                    </control>
+                </control>
+            </control>
+        </control>
+        <!-- Clock -->
+       <!--  <include>Furniture_OSDClock</include> -->
+		<include>Furniture_Header</include>
+		<include>Furniture_Clock</include>
+        <include>Furniture_Logo</include>
+    </controls>
+</window>

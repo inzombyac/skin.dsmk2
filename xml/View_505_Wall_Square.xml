@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<includes>
+	<include name="View_505_Wall_No_Poster">
+		<!-- Wall No Poster -->
+		<control type="group">
+			<include>Animation.Common</include>
+			<visible>Control.IsVisible(505)</visible>
+			<control type="panel" id="505">
+				<top>206</top>
+				<right>70</right>
+				<left>70</left>
+				<height>900</height>
+				<width>1780</width>
+				<onleft>9000</onleft>
+				<onright>505</onright>
+				<onup condition="String.IsEqual(Container.SortMethod, $LOCALIZE[369]) | String.IsEqual(Container.SortMethod, $LOCALIZE[551]) | String.IsEqual(Container.SortMethod, $LOCALIZE[36918]) | String.IsEqual(Container.SortMethod, $LOCALIZE[36916])">61</onup>
+				<onup condition="![String.IsEqual(Container.SortMethod, $LOCALIZE[369]) | String.IsEqual(Container.SortMethod, $LOCALIZE[551]) | String.IsEqual(Container.SortMethod, $LOCALIZE[36918]) | String.IsEqual(Container.SortMethod, $LOCALIZE[36916])] + Player.HasMedia">7788</onup>
+				<onup condition="![String.IsEqual(Container.SortMethod, $LOCALIZE[369]) | String.IsEqual(Container.SortMethod, $LOCALIZE[551]) | String.IsEqual(Container.SortMethod, $LOCALIZE[36918]) | String.IsEqual(Container.SortMethod, $LOCALIZE[36916])] + !Player.HasMedia">3634</onup>
+				<ondown>60</ondown>
+				<preloaditems>2</preloaditems>
+				<pagecontrol>60</pagecontrol>
+				<viewtype label="31794">list</viewtype>
+				<scrolltime tween="quadratic">400</scrolltime>
+				<orientation>horizontal</orientation>
+				<itemlayout height="400" width="296">
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<right>0</right>
+						<height>296</height>
+						<texture border="10">common/nofocus-shadow10.png</texture>
+					</control>
+					<control type="image">
+						<left>10</left>
+						<top>10</top>
+						<right>10</right>
+						<height>296</height>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<texture background="true">$VAR[PosterImage]</texture>
+					</control>
+					<control type="image">
+						<description>Title overlay</description>
+						<top>267</top>
+						<left>10</left>
+						<height>40</height>
+						<width>276</width>
+						<texture border="15" colordiffuse="Background">common/opaque.png</texture>	
+						<include>Animation.FadeIn</include>		
+						<include>Animation.Focus</include>					
+					</control>
+					<control type="textbox">
+						<top>267</top>
+						<left>10</left>
+						<height>40</height>
+						<width>276</width>
+						<textcolor>Dark1</textcolor>
+						<font>Tiny</font>
+						<align>center</align>
+						<autoscroll>false</autoscroll>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout height="400" width="296">
+					<control type="button">
+						<texturefocus></texturefocus>
+						<texturenofocus></texturenofocus>
+						<onfocus condition="Container.Content(movies)">ClearProperty(TVShowID,home)</onfocus>
+							<onfocus>Skin.SetString(LastIcon,$VAR[PosterImage])</onfocus>
+						<onfocus condition="Container.Content(tvshows)">SetProperty(TVShowID,$INFO[ListItem.DBID],home)</onfocus>
+					</control>
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<right>0</right>
+						<height>296</height>
+						<texture border="10">common/nofocus-shadow10.png</texture>
+						<include>Animation.FadeIn</include>		
+						<!-- <include>Animation.Focus</include> -->
+					</control>
+					<control type="image">
+						<left>10</left>
+						<top>10</top>
+						<right>10</right>
+						<height>296</height>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<texture background="true">$VAR[PosterImage]</texture>
+						<include>Animation.FadeIn</include>		
+						<!-- <include>Animation.Focus</include> -->
+					</control>
+					<control type="image">
+						<description>Title overlay</description>
+						<top>267</top>
+						<left>10</left>
+						<height>43</height>
+						<width>276</width>
+						<texture border="15" colordiffuse="Background">common/opaque.png</texture>	
+						<include>Animation.FadeIn</include>		
+						<!-- <include>Animation.Focus</include> -->					
+					</control>
+					<control type="textbox">
+						<top>267</top>
+						<left>10</left>
+						<height>40</height>
+						<width>276</width>
+						<textcolor>Dark1</textcolor>
+						<font>Tiny</font>
+						<align>center</align>
+						<autoscroll>false</autoscroll>
+						<label>$INFO[ListItem.Label]</label>
+						<include>Animation.FadeIn</include>		
+						<!-- <include>Animation.Focus</include> -->
+					</control>
+					<control type="image">
+						<left>5</left>
+						<top>5</top>
+						<right>5</right>
+						<height>305</height>
+						<texture colordiffuse="$VAR[ColorHighlight]" border="20">common/selectbox.png</texture>
+						<include>Animation.FadeIn</include>		
+						<!-- <include>Animation.Focus</include> -->
+					</control>
+				</focusedlayout>
+			</control>
+			<include>Furniture_Scrollbar_Wall</include>
+		</control>
+	</include>
+</includes>

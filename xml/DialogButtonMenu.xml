@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window type="buttonMenu" id="111">
+    <menucontrol>111</menucontrol>
+	<defaultcontrol always="true">3110</defaultcontrol>
+    <zorder>10</zorder>
+    <controls>
+        <control type="group">
+            <include>Animation.SideSlideRight</include>
+            <include>GlobalOverlay</include>
+            <right>0</right>
+            <width>455</width>
+            <height>1080</height>
+            <control type="button">
+                <right>-10</right>
+                <top>-12</top>
+                <width>475</width>
+                <height>1104</height>
+                <texturefocus border="12">diffuse/sideblade.png</texturefocus>
+                <texturenofocus border="12">diffuse/sideblade.png</texturenofocus>
+                <colordiffuse>SideBlade</colordiffuse>
+            </control>
+            <control type="group">
+                <control type="image">
+                    <right>40</right>
+                    <top>25</top>
+                    <width>70</width>
+                    <height>70</height>
+                    <aligny>center</aligny>
+                    <texture colordiffuse="Panel" border="0">common/circle.png</texture>
+                </control>
+                <control type="image">
+                    <right>40</right>
+                    <top>25</top>
+                    <width>70</width>
+                    <height>70</height>
+                    <aligny>center</aligny>
+                    <texture colordiffuse="$VAR[ColorHighlight2]" border="0">special://skin/extras/icons/power.png</texture>
+                    <animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
+                    <aspectratio>stretch</aspectratio>
+                    <visible>!Control.HasFocus(3113)</visible>
+                    <align>left</align>
+                </control>
+                <control type="image">
+                    <right>40</right>
+                    <top>25</top>
+                    <width>70</width>
+                    <height>70</height>
+                    <aligny>center</aligny>
+                    <texture colordiffuse="$VAR[ColorHighlight]" border="0">special://skin/extras/icons/logout.png</texture>
+                    <animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
+                    <aspectratio>keep</aspectratio>
+                    <align>left</align>
+                    <visible>Control.HasFocus(3113)</visible>
+                </control>
+            </control>
+            <control type="grouplist" id="3110">
+                <description>grouplist for context buttons</description>
+                <right>0</right>
+                <left>20</left>
+                <itemgap>0</itemgap>
+                <top>100</top>
+                <onleft>dialog.close(all)</onleft>
+                <control type="label" id="200">
+                    <top>200</top>
+                    <height>48</height>
+                    <width>455</width>
+                    <font>Home</font>
+                    <label>$LOCALIZE[33060] $LOCALIZE[14230]</label>
+                    <textcolor>$VAR[ColorHighlight]</textcolor>
+                    <aligny>top</aligny>
+                    <align>left</align>
+                </control>
+                <control type="button" id="3120">
+                    <include>DefContextButton</include>
+                    <label>20183</label>
+                    <onclick>ReloadSkin()</onclick>
+                    <aligny>center</aligny>
+                    <align>left</align>
+                </control>
+                <control type="button" id="3118">
+                    <description>Reboot button</description>
+                    <include>DefContextButton</include>
+                    <label>13013</label>
+                    <onclick>XBMC.Reset()</onclick>
+                    <visible>System.CanReboot</visible>
+                    <aligny>center</aligny>
+                    <align>left</align>
+                </control>
+                <control type="button" id="3113">
+                    <description>LogOff Profile</description>
+                    <include>DefContextButton</include>
+                    <label>$LOCALIZE[20126] $INFO[system.profilename]</label>
+                    <onclick>dialog.close(all,true)</onclick>
+                    <onclick>System.LogOff</onclick>
+                    <visible>System.Loggedon + System.HasLoginScreen</visible>
+                    <aligny>center</aligny>
+                    <align>left</align>
+                </control>   
+                <control type="button" id="3111">
+                    <description>Exit XBMC button</description>
+                    <include>DefContextButton</include>
+                    <label>13012</label>
+                    <onclick>Quit()</onclick>
+                    <visible>System.ShowExitButton</visible>
+                    <aligny>center</aligny>
+                    <align>left</align>
+                </control>
+                 <control type="label" id="9260">
+                    <textoffsetx>15</textoffsetx>
+                    <font>Home</font>
+                    <label>System Power</label>
+                    <textcolor>$VAR[ColorHighlight]</textcolor>
+                    <aligny>center</aligny>
+                    <align>left</align>
+                </control>
+                <control type="button" id="3114">
+                    <description>Custom Shutdown Timer button</description>
+                    <include>DefContextButton</include>
+                    <label>20151</label>
+                    <onclick>XBMC.CancelAlarm(shutdowntimer)</onclick>
+                    <visible>System.HasAlarm(shutdowntimer)</visible>
+                    <aligny>center</aligny>
+                    <align>left</align>
+                </control>
+                <control type="button" id="3115">
+                    <description>Custom Shutdown Timer button</description>
+                    <include>DefContextButton</include>
+                    <label>20150</label>
+                    <onclick>XBMC.AlarmClock(shutdowntimer,XBMC.Shutdown())</onclick>
+                    <visible>!System.HasAlarm(shutdowntimer)</visible>
+                    <visible>System.CanPowerDown | System.CanSuspend | System.CanHibernate</visible>
+                    <aligny>center</aligny>
+                    <align>left</align>
+                </control>
+                <control type="label" id="3119">
+                    <textoffsetx>45</textoffsetx>
+                    <description>Alarm Time</description>
+                    <include>DefContextButton</include>
+                    <label>Shutdown in: [B]$INFO[System.Alarmpos][/B]</label>
+                    <visible>System.HasAlarm(shutdowntimer)</visible>
+                    <aligny>center</aligny>
+                    <align>left</align>
+                </control>     
+                <control type="button" id="3117">
+                    <description>Suspend xbmc</description>
+                    <include>DefContextButton</include>
+                    <label>13011</label>
+                    <onclick>XBMC.Suspend()</onclick>
+                    <visible>System.CanSuspend</visible>
+                    <aligny>center</aligny>
+                    <align>left</align>
+                </control>  
+                <control type="button" id="3116">
+                    <description>Shutdown</description>
+                    <include>DefContextButton</include>
+                    <label>13005</label>
+                    <onclick>Powerdown()</onclick>
+                    <visible>System.CanPowerDown</visible>
+                    <aligny>center</aligny>
+                    <align>left</align>
+                </control>      
+                <control type="label" id="9259">
+                    <textoffsetx>15</textoffsetx>
+                    <font>Home</font>
+                    <label>Misc Actions</label>
+                    <textcolor>$VAR[ColorHighlight]</textcolor>
+                    <aligny>center</aligny>
+                     <align>left</align>
+                </control>
+               <!--  <control type="button" id="9092" description="Emby Manual sync">
+                    <include>DefContextButton</include>
+                    <label>Manual Sync</label>
+                    <onclick>RunPlugin("plugin://plugin.video.emby/?mode=manualsync")</onclick>
+                    <onclick>left</onclick>
+                    <aligny>center</aligny>
+                    <align>left</align>
+                    <visible>System.HasAddon(plugin.video.emby)</visible>
+                </control> -->
+                <control type="button" id ="9093" description="Update library">
+                    <include>DefContextButton</include>
+                    <label>$LOCALIZE[653]</label>
+                    <onclick>UpdateLibrary(video)</onclick>
+                    <onclick>left</onclick>
+                    <aligny>center</aligny>
+                    <align>left</align>
+                </control>    
+                <control type="button" id="3121">
+                    <include>DefContextButton</include>
+                    <label>5</label>
+                    <onclick>ActivateWindow(settings)</onclick>
+                    <aligny>center</aligny>
+                    <align>left</align>
+                </control>
+                <control type="button" id="3112">
+                    <description>Master mode button</description>
+                    <include>DefContextButton2</include>
+                    <label>20046</label>
+                    <onclick>xbmc.mastermode</onclick>
+                    <visible>System.HasLocks</visible>
+                    <aligny>center</aligny>
+                    <align>left</align>
+                </control>    
+               <!--  <control type="button" id="3122">
+                    <include>DefContextButton</include>
+                    <label>130</label>
+                    <onclick>ActivateWindow(systeminfo)</onclick>
+                </control>    -->      
+               <!--  <control type="button" id="3123">
+                    <include>DefContextButton</include>
+                    <label>10003</label>
+                    <onclick>ActivateWindow(filemanager)</onclick>
+                </control> -->        
+            </control>
+        </control>
+    </controls>
+</window>

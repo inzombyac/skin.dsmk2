@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<includes>
+	<include name="View_506_Wall_Info_Square">
+		<control type="group">
+			<include>Animation.Common</include>
+			<visible>Control.IsVisible(506)</visible>
+			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml)</visible>
+			<control type="panel" id="506">
+				<visible>[container.content(addons) | container.content(programs) | container.content(music) | container.content(musicvideos) | container.content(artists) | container.content(albums) | container.content(songs)]</visible>
+				<top>206</top>
+				<left>ListX</left>
+				<width>1060</width>
+				<height>800</height>
+				<onleft condition="[[container.content(movies) | container.content(sets) | container.content(tvshows) | container.content(seasons) | container.content(albums) | container.content(artists) | container.content(songs) | Container.content(episodes) | Container.content(programs) | Container.content(addons)] | !String.IsEmpty(ListItem.Trailer)]">65</onleft>
+				<onleft condition="![[container.content(movies) | container.content(sets) | container.content(tvshows) | container.content(seasons) | container.content(albums) | container.content(artists) | container.content(songs) | Container.content(episodes) | Container.content(programs) | Container.content(addons)] | !String.IsEmpty(ListItem.Trailer)]">9000</onleft>
+				<onright>506</onright>
+				<onup condition="Player.HasMedia">7788</onup>
+				<onup condition="!Player.HasMedia">3634</onup>
+				<ondown>60</ondown>
+				<preloaditems>2</preloaditems>
+				<pagecontrol>60</pagecontrol>
+				<viewtype label="31795">list</viewtype>
+				<scrolltime tween="quadratic">400</scrolltime>
+				<orientation>horizontal</orientation>
+				<itemlayout height="400" width="296">
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<right>0</right>
+						<height>296</height>
+						<texture border="10">common/nofocus-shadow10.png</texture>
+					</control>
+					<control type="image">
+						<left>10</left>
+						<top>10</top>
+						<right>10</right>
+						<height>296</height>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<texture background="true">$VAR[PosterImage]</texture>
+					</control>
+					<control type="image">
+						<description>Title overlay</description>
+						<top>267</top>
+						<left>10</left>
+						<height>40</height>
+						<width>276</width>
+						<texture border="15" colordiffuse="Background">common/opaque.png</texture>	
+						<include>Animation.FadeIn</include>		
+						<include>Animation.Focus</include>					
+					</control>
+					<control type="textbox">
+						<top>267</top>
+						<left>10</left>
+						<height>40</height>
+						<width>276</width>
+						<textcolor>Dark1</textcolor>
+						<font>Tiny</font>
+						<align>center</align>
+						<autoscroll>false</autoscroll>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout height="400" width="296">
+					<control type="button">
+						<texturefocus></texturefocus>
+						<texturenofocus></texturenofocus>
+						<onfocus condition="Container.Content(movies)">ClearProperty(TVShowID,home)</onfocus>
+							<onfocus>Skin.SetString(LastIcon,$VAR[PosterImage])</onfocus>
+						<onfocus condition="Container.Content(tvshows)">SetProperty(TVShowID,$INFO[ListItem.DBID],home)</onfocus>
+					</control>
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<right>0</right>
+						<height>296</height>
+						<texture border="10">common/nofocus-shadow10.png</texture>
+						<include>Animation.FadeIn</include>		
+						<!-- <include>Animation.Focus</include> -->
+					</control>
+					<control type="image">
+						<left>10</left>
+						<top>10</top>
+						<right>10</right>
+						<height>296</height>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<texture background="true">$VAR[PosterImage]</texture>
+						<include>Animation.FadeIn</include>		
+						<!-- <include>Animation.Focus</include> -->
+					</control>
+					<control type="image">
+						<description>Title overlay</description>
+						<top>267</top>
+						<left>10</left>
+						<height>43</height>
+						<width>276</width>
+						<texture border="15" colordiffuse="Background">common/opaque.png</texture>	
+						<include>Animation.FadeIn</include>		
+						<!-- <include>Animation.Focus</include> -->					
+					</control>
+					<control type="textbox">
+						<top>267</top>
+						<left>10</left>
+						<height>40</height>
+						<width>276</width>
+						<textcolor>Dark1</textcolor>
+						<font>Tiny</font>
+						<align>center</align>
+						<autoscroll>false</autoscroll>
+						<label>$INFO[ListItem.Label]</label>
+						<include>Animation.FadeIn</include>		
+						<!-- <include>Animation.Focus</include> -->
+					</control>
+					<control type="image">
+						<left>5</left>
+						<top>5</top>
+						<right>5</right>
+						<height>305</height>
+						<texture colordiffuse="$VAR[ColorHighlight]" border="20">common/selectbox.png</texture>
+						<include>Animation.FadeIn</include>		
+						<!-- <include>Animation.Focus</include> -->
+					</control>
+				</focusedlayout>
+			</control>
+			<include>Furniture_Scrollbar_WallInfo</include>
+			<include>50PosterView</include>
+			<include>50PanelButtons</include>
+		</control>
+	</include>
+</includes>

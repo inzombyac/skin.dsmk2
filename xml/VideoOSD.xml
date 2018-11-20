@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window id="2901">
+	<zorder>0</zorder>
+	<include condition="!Player.PauseEnabled">OSDFocusStop</include>
+	<include condition="Player.PauseEnabled">OSDFocusPause</include>
+	<controls>
+		<control type="group">
+			<height>94</height>
+			<bottom>0</bottom>
+			<control type="group">
+				<left>424</left>
+				<right>SidePad</right>
+				<height>20</height>
+				<top>110r</top>
+				<width>1416</width>
+				<control type="slider" id="401">
+					<description>Seek Slider</description>
+					<width>100%</width>
+					<height>20</height>
+					<texturesliderbar colordiffuse="Dark4">osd/progress-end.png</texturesliderbar>
+					<textureslidernib>osd/progress-mid.png</textureslidernib>
+					<textureslidernibfocus>osd/progress-mid.png</textureslidernibfocus>
+					<action>seek</action>
+					<orientation>horizontal</orientation>
+				</control>
+				<visible>!Player.FrameAdvance</visible>
+			</control>
+			<!-- Sub Menu -->
+			<control type="group">
+				<visible allowhiddenfocus="true">ControlGroup(9300).HasFocus() | Control.HasFocus(3)</visible>
+				<include>Animation.SlideUp</include>
+				<include>Animation.FadeOut</include>
+				<bottom>72</bottom>
+				<centerleft>1225</centerleft>
+				<width>250</width>
+				<height>244</height>
+				<control type="image">
+					<description>background image</description>
+					<width>100%</width>
+					<height>152</height>
+					<colordiffuse>Light1</colordiffuse>
+					<texture border="16">common/rounded-shadow8.png</texture>
+					<bottom>38</bottom>
+					<visible>!VideoPlayer.SubtitlesEnabled</visible>
+				</control>
+				<control type="image">
+					<description>background image</description>
+					<width>100%</width>
+					<height>212</height>
+					<colordiffuse>Light1</colordiffuse>
+					<texture border="16">common/rounded-shadow8.png</texture>
+					<bottom>38</bottom>
+					<visible>VideoPlayer.SubtitlesEnabled</visible>
+				</control>
+				<control type="grouplist" id="9300">
+					<include>Animation.FadeIn.Delay</include>
+					<include>Animation.FadeOut</include>
+					<top>10</top>
+					<bottom>10</bottom>
+					<left>8</left>
+					<right>8</right>
+					<onup>3</onup>
+					<ondown>3</ondown>
+					<onleft>3</onleft>
+					<onright>1</onright>
+					<itemgap>0</itemgap>
+					<orientation>vertical</orientation>
+					<scrolltime>200</scrolltime>
+					<control type="button" id="9291">
+						<width>100%</width>
+						<height>60</height>
+						<textcolor>Dark1</textcolor>
+						<include>DefContextButton</include>
+						<label>$VAR[OSDSubtitleOffest]</label>
+						<onclick>SubtitleDelay</onclick>
+						<enable>VideoPlayer.HasSubtitles + VideoPlayer.SubtitlesEnabled</enable>
+					</control>
+					<control type="button" id="9301" description="Download">
+						<width>100%</width>
+						<height>60</height>
+						<textcolor>Dark1</textcolor>
+						<include>DefContextButton</include>
+						<label>33003</label>
+						<onclick>ActivateWindow(SubtitleSearch)</onclick>
+					</control>
+					<control type="togglebutton" id="9302" description="Enable Subs">
+						<width>100%</width>
+						<height>60</height>
+						<textcolor>Dark1</textcolor>
+						<include>DefContextButton</include>
+						<label>$LOCALIZE[305] $INFO[VideoPlayer.SubtitlesLanguage,[UPPERCASE],[/UPPERCASE]]</label>
+						<altlabel>13106</altlabel>
+						<onclick>NextSubtitle</onclick>
+						<usealttexture>!VideoPlayer.SubtitlesEnabled</usealttexture>
+					</control>
+				</control>
+			</control>
+			<!-- Audio Menu -->
+			<control type="group">
+				<visible allowhiddenfocus="true">ControlGroup(9400).HasFocus() | Control.HasFocus(1)</visible>
+				<include>Animation.SlideUp</include>
+				<include>Animation.FadeOut</include>
+				<bottom>72</bottom>
+				<centerleft>1290</centerleft>
+				<width>250</width>
+				<height>186</height>
+				<control type="image">
+					<description>background image</description>
+					<width>100%</width>
+					<height>152</height>
+					<colordiffuse>Light1</colordiffuse>
+					<texture border="16">common/rounded-shadow8.png</texture>
+					<bottom>38</bottom>
+				</control>
+				<control type="grouplist" id="9400">
+					<include>Animation.FadeIn.Delay</include>
+					<include>Animation.FadeOut</include>
+					<top>10</top>
+					<bottom>10</bottom>
+					<left>8</left>
+					<right>8</right>
+					<onup>1</onup>
+					<ondown>1</ondown>
+					<onleft>3</onleft>
+					<onright>2</onright>
+					<itemgap>0</itemgap>
+					<orientation>vertical</orientation>
+					<scrolltime>200</scrolltime>
+					<control type="button" id="9402" description="DSP Settings">
+						<width>100%</width>
+						<height>60</height>
+						<textcolor>Dark1</textcolor>
+						<include>DefContextButton</include>
+						<label>$LOCALIZE[201]</label>
+						<onclick>ActivateWindow(AudioDSPManager)</onclick>
+						<enable>ADSP.HasModes</enable>
+					</control>
+					<control type="togglebutton" id="9401" description="Cycle Language">
+						<width>100%</width>
+						<height>60</height>
+						<textcolor>Dark1</textcolor>
+						<include>DefContextButton</include>
+						<label>[UPPERCASE]$INFO[VideoPlayer.AudioLanguage][/UPPERCASE]</label>
+						<onclick>AudioNextLanguage</onclick>
+					</control>
+				</control>
+			</control>
+			<!-- Video menu -->
+			<control type="group">
+				<visible allowhiddenfocus="true">ControlGroup(9500).HasFocus() | Control.HasFocus(2)</visible>
+				<include>Animation.SlideUp</include>
+				<include>Animation.FadeOut</include>
+				<bottom>72</bottom>
+				<centerleft>1355</centerleft>
+				<width>250</width>
+				<height>186</height>
+				<control type="image">
+					<description>background image</description>
+					<width>100%</width>
+					<height>152</height>
+					<colordiffuse>Light1</colordiffuse>
+					<texture border="16">common/rounded-shadow8.png</texture>
+					<bottom>38</bottom>
+				</control>
+				<control type="grouplist" id="9500">
+					<include>Animation.FadeIn.Delay</include>
+					<include>Animation.FadeOut</include>
+					<top>10</top>
+					<bottom>10</bottom>
+					<left>8</left>
+					<right>8</right>
+					<onup>2</onup>
+					<ondown>2</ondown>
+					<onleft>1</onleft>
+					<onright>2</onright>
+					<itemgap>0</itemgap>
+					<orientation>vertical</orientation>
+					<scrolltime>200</scrolltime>
+					<control type="button" id="9503">
+						<width>100%</width>
+						<height>60</height>
+						<textcolor>Dark1</textcolor>
+						<include>DefContextButton</include>
+						<label>$LOCALIZE[21805]</label>
+						<onclick>PlayerResolutionSelect</onclick>
+						<visible>Player.HasResolutions</visible>
+					</control>
+					<control type="togglebutton" id="9502" description="3D Mode">
+						<width>100%</width>
+						<height>60</height>
+						<textcolor>Dark1</textcolor>
+						<include>DefContextButton</include>
+						<label>$LOCALIZE[14232]</label>
+						<onclick>StereoMode</onclick>
+						<enable>VideoPlayer.IsStereoscopic</enable>
+					</control>
+					<control type="button" id="9501" description="Bookmarks">
+						<width>100%</width>
+						<height>60</height>
+						<textcolor>Dark1</textcolor>
+						<include>DefContextButton</include>
+						<label>298</label>
+						<onclick>ActivateWindow(125)</onclick>
+					</control>
+				</control>
+			</control>
+			<control type="grouplist" id="101">
+				<top>13</top>
+				<width>100%</width>
+				<height>64</height>
+				<itemgap>16</itemgap>
+				<orientation>horizontal</orientation>
+				<align>left</align>
+				<onleft condition="!VideoPlayer.Content(LiveTV)">12</onleft>
+				<onleft condition="VideoPlayer.Content(LiveTV)">9003</onleft>
+				<onright>100</onright>
+				<left>425</left>
+				<include>OSDVideoControls</include>
+			</control>
+			<control type="grouplist" id="100">
+				<top>13</top>
+				<left>1200</left>
+				<height>64</height>
+				<itemgap>16</itemgap>
+				<orientation>horizontal</orientation>
+				<align>left</align>
+				<onleft>101</onleft>
+				<onright condition="VideoPlayer.Content(livetv)">6</onright>
+				<onright condition="!VideoPlayer.Content(livetv)">2</onright>
+				<include>DefOSDUpDown</include>
+				<usecontrolcoords>true</usecontrolcoords>
+				<control type="button" id="9020">
+					<description>Teletext</description>
+					<onup>9302</onup>
+					<ondown>9301</ondown>
+					<width>48</width>
+					<height>64</height>
+					<align>left</align>
+					<onclick>Dialog.Close(VideoOSD)</onclick>
+					<onclick>ActivateWindow(Teletext)</onclick>
+					<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/subtitles.png</texturefocus>
+					<texturenofocus colordiffuse="Dark1">osd/subtitles.png</texturenofocus>
+					<visible>VideoPlayer.Content(livetv) + VideoPlayer.HasTeletext</visible>
+				</control>
+				<control type="button" id="9021">
+					<description>Teletext</description>
+					<onup>9302</onup>
+					<ondown>9301</ondown>
+					<width>48</width>
+					<height>64</height>
+					<align>left</align>
+					<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/subtitles.png</texturefocus>
+					<texturenofocus colordiffuse="Light1">osd/subtitles.png</texturenofocus>
+					<visible>VideoPlayer.Content(livetv) + !VideoPlayer.HasTeletext</visible>
+					<enable>VideoPlayer.HasTeletext</enable>
+				</control>
+				<control type="button" id="3">
+					<description>Subtitles</description>
+					<onup>9302</onup>
+					<ondown>9301</ondown>
+					<width>48</width>
+					<height>64</height>
+					<label></label>
+					<align>left</align>
+					<label>$LOCALIZE[287]</label>
+					<onclick>Action(ShowSubtitles)</onclick>
+					<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/subtitles.png</texturefocus>
+					<texturenofocus colordiffuse="Dark1">osd/subtitles.png</texturenofocus>
+					<visible>!VideoPlayer.Content(livetv)</visible>
+				</control>
+				<control type="button" id="1">
+					<description>Audio</description>
+					<align>left</align>
+					<width>48</width>
+					<height>64</height>
+					<onclick>ActivateWindow(osdaudiosettings)</onclick>
+					<onup>9401</onup>
+					<ondown condition="ADSP.HasModes">9402</ondown>
+					<ondown condition="!ADSP.HasModes">9402</ondown>
+					<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/audio.png</texturefocus>
+					<texturenofocus colordiffuse="Dark1">osd/audio.png</texturenofocus>
+					<visible>!Player.Muted</visible>
+				</control>
+				<control type="button" id="9012">
+					<description>Audio</description>
+					<align>left</align>
+					<width>48</width>
+					<height>64</height>
+					<onclick>Mute</onclick>
+					<onclick>ActivateWindow(osdaudiosettings)</onclick>
+					<onup>9401</onup>
+					<ondown condition="ADSP.HasModes">9402</ondown>
+					<ondown condition="!ADSP.HasModes">9402</ondown>
+					<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/audio-mute.png</texturefocus>
+					<texturenofocus colordiffuse="Dark1">osd/audio-mute.png</texturenofocus>
+					<visible>Player.Muted</visible>
+				</control>
+				<control type="button" id="2">
+					<description>Video Settings</description>
+					<align>left</align>
+					<width>48</width>
+					<height>64</height>
+					<onclick>ActivateWindow(osdvideosettings)</onclick>
+					<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/video.png</texturefocus>
+					<texturenofocus colordiffuse="Dark1">osd/video.png</texturenofocus>
+					<onup>9501</onup>
+					<onright condition="VideoPlayer.Content(livetv)">4</onright>
+					<onright condition="!VideoPlayer.Content(livetv)">2</onright>
+					<ondown condition="VideoPlayer.IsStereoscopic">9502</ondown>
+					<ondown condition="!VideoPlayer.IsStereoscopic">9502</ondown>
+				</control>
+				<control type="button" id="4">
+					<description>Channels</description>
+					<align>left</align>
+					<width>48</width>
+					<height>64</height>
+					<onclick>ActivateWindow(pvrosdchannels)</onclick>
+					<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/livetv.png</texturefocus>
+					<texturenofocus colordiffuse="Dark1">osd/livetv.png</texturenofocus>
+					<visible>VideoPlayer.Content(livetv)</visible>
+				</control>
+				<control type="button" id="6">
+					<description>TV Guide</description>
+					<align>left</align>
+					<width>48</width>
+					<height>64</height>
+					<onclick>dialog.close(all,true)</onclick>
+					<onclick>ActivateWindow(tvguide)</onclick>
+					<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/guide.png</texturefocus>
+					<texturenofocus colordiffuse="Dark1">osd/guide.png</texturenofocus>
+					<visible>VideoPlayer.Content(livetv)</visible>
+					<onright>6</onright>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window type="dialog" id="1109">
+    <defaultcontrol always="true">3</defaultcontrol>
+	<controls>
+		<include>GlobalOverlay</include>
+		<control type="group" description="Fanart Opacity">
+            <animation effect="fade" start="100" end="90" condition="true">Conditional</animation>
+			<centerleft>50%</centerleft>
+            <posy>210</posy>
+            <width>600</width>
+            <height>640</height>
+            <include>DefDialogInfoPanel</include>
+            <control type="label">
+                <top>2</top>
+                <description>heading</description>
+                <label>$LOCALIZE[31026]</label>
+                <font>MediumBold</font>
+                <align>center</align>
+                <height>60</height>
+                <textcolor>Light1</textcolor>
+            </control>
+            <control type="grouplist" id="3">
+            	<orientation>vertical</orientation>
+            	<ondown>10</ondown>
+            	<top>80</top>
+	            <control type="button" id="4">
+					<include>DefSettingsButton3</include>
+					<label>$LOCALIZE[31027]</label>
+					<onclick>Skin.SetString(FanartFade,Darkest)</onclick>
+					<onclick>Back</onclick>
+				</control>
+				 <control type="button" id="5">
+					<include>DefSettingsButton3</include>
+					<label>$LOCALIZE[31028]</label>
+					<onclick>Skin.SetString(FanartFade,Dark)</onclick>
+					<onclick>Back</onclick>
+				</control>
+				 <control type="button" id="6">
+					<include>DefSettingsButton3</include>
+					<label>$LOCALIZE[630]</label>
+					<onclick>Skin.SetString(FanartFade,Normal)</onclick>
+					<onclick>Back</onclick>
+				</control>
+				 <control type="button" id="7">
+					<include>DefSettingsButton3</include>
+					<label>$LOCALIZE[31029]</label>
+					<onclick>Skin.SetString(FanartFade,Bright)</onclick>
+					<onclick>Back</onclick>
+				</control>
+				 <control type="button" id="8">
+					<include>DefSettingsButton3</include>
+					<label>$LOCALIZE[31030]</label>
+					<onclick>Skin.SetString(FanartFade,Brighter)</onclick>
+					<onclick>Back</onclick>
+				</control>
+				 <control type="button" id="9">
+					<include>DefSettingsButton3</include>
+					<label>$LOCALIZE[31031]</label>
+					<onclick>Skin.SetString(FanartFade,Brightest)</onclick>
+					<onclick>Back</onclick>
+				</control>
+			</control>
+			<control type="button" id="10">
+				<description>Cancel</description>
+				<height>70</height>
+				<align>center</align>
+				<label>$LOCALIZE[222]</label>
+				<onup>3</onup>
+				<font>Button</font>
+				<textcolor>Black70</textcolor>
+				<texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
+				<texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+				<left>20</left>
+				<right>20</right>
+				<bottom>20</bottom>
+				<onclick>Back</onclick>
+			</control>
+		</control>
+	</controls>
+</window>

@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<shortcuts>
+    <shortcut>
+        <label>Library</label>
+        <label2>Library</label2>
+        <defaultID>library</defaultID>
+        <icon>special://skin/extras/icons/kodi.png</icon>
+        <action>ActivateWindow(Videos,return)</action>
+    </shortcut>
+    <shortcut>
+        <label>Continue Watching</label>
+        <label2>Continue</label2>
+        <defaultID>continue</defaultID>
+        <icon>special://skin/extras/icons/kodi.png</icon>
+        <action>ActivateWindow(Videos,special://skin/extras/playlists/InProgress)</action>
+        <visible>Integer.IsGreater(Window(Home).Property(Movies.Count),0) | Integer.IsGreater(Window(Home).Property(TVShows.Count),0)</visible>
+    </shortcut>
+    <shortcut>
+        <label>In Progress Shows</label>
+        <label2>nextup</label2>
+        <defaultID>nextup</defaultID>
+        <icon>special://skin/extras/icons/tv.png</icon>
+        <action>ActivateWindow(Videos,videodb://inprogresstvshows,return)</action>
+        <visible>Integer.IsGreater(Window(Home).Property(TVShows.Count),0)</visible>
+    </shortcut>
+    <shortcut>
+        <label>Latest Movies</label>
+        <label2>recent</label2>
+        <defaultID>recent</defaultID>
+        <icon>special://skin/extras/icons/film.png</icon>
+        <action>ActivateWindows(Videos,videodb://recentlyaddedmovies/,return)</action>
+        <visible>Integer.IsGreater(Window(Home).Property(Movies.Count),0) | Integer.IsGreater(Window(Home).Property(TVShows.Count),0)</visible>
+    </shortcut>
+    <shortcut>
+        <label>Live TV Channels</label>
+        <label2>livetv</label2>
+        <defaultID>livetv</defaultID>
+        <icon>special://skin/extras/icons/livetv.png</icon>
+        <action>ActivateWindow(tvguide)</action>
+    </shortcut>
+    <shortcut>
+        <label>Recordings</label>
+        <label2>Recordings</label2>
+        <defaultID>recordings</defaultID>
+        <icon>special://skin/extras/icons/timer.png</icon>
+        <action>ActivateWindow(tvrecordings)</action>
+    </shortcut>
+	<shortcut>
+        <label>Music</label>
+        <label2>music</label2>
+        <defaultID>music</defaultID>
+        <icon>special://skin/extras/icons/songs.png</icon>
+        <action>ActivateWindow(Music,musicdb://songs/)</action>
+        <visible>Integer.IsGreater(Window(Home).Property(Music.SongsCount),0)</visible>
+    </shortcut>
+    <shortcut>
+        <label>Weather</label>
+        <label2>weather</label2>
+        <defaultID>weather</defaultID>
+        <icon>special://skin/extras/icons/sun.png</icon>
+        <action>ActivateWindow(Weather)</action>
+        <visible>!String.IsEmpty(Weather.Temperature)</visible>
+    </shortcut>
+</shortcuts>

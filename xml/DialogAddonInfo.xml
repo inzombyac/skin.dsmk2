@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window id="146">
+    <defaultcontrol always="true">9000</defaultcontrol>
+    <controls>
+        <!-- <include>GlobalOverlay</include> -->
+		<control type="group">
+			<left>SidePad</left>
+			<top>160</top>
+			<width>400</width>
+			<animation effect="fade" end="100" start="0" time="200">WindowOpen</animation>
+			<control type="image">
+				<centertop>340</centertop>
+				<width>340</width>
+				<height>48</height>
+				<aspectratio>stretch</aspectratio>
+				<texture>diffuse/shadowspot.png</texture>
+				<visible>!String.IsEmpty(ListItem.Icon)</visible>
+			</control>
+			<!-- Icon -->
+			<control type="image">
+				<width>340</width>
+				<height>340</height>
+				<fadetime>200</fadetime>
+				<texture>$INFO[ListItem.Icon]</texture>
+				<aspectratio>stretch</aspectratio>
+			</control>
+			<control type="grouplist" id="9000">
+                <top>360</top>
+				<width>340</width>
+                <height>500</height>
+                <itemgap>3</itemgap>
+                <onup>50</onup>
+                <ondown>9000</ondown>
+                <onright>50</onright>
+                <onleft>9000</onleft>
+                <orientation>vertical</orientation>
+                <control type="button" id="12">
+                    <description>Launch</description>
+                    <width>100%</width>
+                    <height>68</height>
+                    <texturenofocus colordiffuse="Light1" border="5">common/box.png</texturenofocus>
+                    <texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
+                    <include>DefDialogButtons</include>
+                    <label>518</label>
+                </control>
+                <control type="button" id="6">
+                    <description>Install/Uninstall Addon button</description>
+                    <width>100%</width>
+                    <height>68</height>
+                    <texturenofocus colordiffuse="Light1" border="5">common/box.png</texturenofocus>
+                    <texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
+                    <include>DefDialogButtons</include>
+                    <label>24022</label>
+                    <visible>!Skin.HasSetting(global.kioskmode)</visible>
+                </control>
+                <control type="button" id="7">
+                    <description>Enable/Disable Addon button</description>
+                    <width>100%</width>
+                    <height>68</height>
+                    <texturenofocus colordiffuse="Light1" border="5">common/box.png</texturenofocus>
+                    <texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
+                    <include>DefDialogButtons</include>
+                    <label>24021</label>   
+                    <visible>!Skin.HasSetting(global.kioskmode)</visible> 
+                </control>
+                <control type="button" id="9">
+                    <description>Addon Settings</description>
+                    <width>100%</width>
+                    <height>68</height>
+                    <texturenofocus colordiffuse="Light1" border="5">common/box.png</texturenofocus>
+                    <texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
+                    <include>DefDialogButtons</include>
+                    <label>24020</label>
+                    <visible>!Skin.HasSetting(global.kioskmode)</visible>
+                </control>
+                <control type="button" id="8">
+                    <description>Update Addon button</description>
+                    <width>100%</width>
+                    <height>68</height>
+                    <texturenofocus colordiffuse="Light1" border="5">common/box.png</texturenofocus>
+                    <texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
+                    <include>DefDialogButtons</include>
+                    <label>24069</label>
+                    <visible>!Skin.HasSetting(global.kioskmode)</visible>
+                </control>
+				<control type="button" id="10">
+                    <description>Dependencies</description>
+                    <width>100%</width>
+                    <height>68</height>
+                    <texturenofocus colordiffuse="Light1" border="5">common/box.png</texturenofocus>
+                    <texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
+                    <include>DefDialogButtons</include>
+                    <label>$LOCALIZE[31011]</label>
+                    <visible>!Skin.HasSetting(global.kioskmode)</visible>
+                </control>
+                <control type="radiobutton" id="13">
+                    <description>Auto-Update button</description>
+                    <radioposx>360</radioposx>
+					<width>100%</width>
+                    <height>68</height>
+                    <texturenofocus colordiffuse="Light1" border="5">common/box.png</texturenofocus>
+                    <texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
+					<include>DefDialogButtons</include>
+                    <label>21340</label>
+                    <visible>!Skin.HasSetting(global.kioskmode)</visible>
+                </control>
+            </control>
+		</control>
+        <control type="group">
+			<left>540</left>
+			<top>230</top>
+			<width>1300</width>
+			<control type="image">
+				<width>450</width>
+				<height>274</height>
+				<texture border="2" background="true">$INFO[ListItem.Art(fanart)]</texture>
+				<aspectratio>scale</aspectratio>
+				<visible>!Integer.IsGreater(Container(50).NumItems,0)</visible>
+			</control>
+			<control type="fixedlist" id="50">
+				<left>30</left>
+                <width>1515</width>
+                <height>274</height>
+				<ondown>9000</ondown>
+				<onleft>9000</onleft>
+				<orientation>horizontal</orientation>
+				<itemlayout height="274" width="505">
+					<control type="image">
+						<width>450</width>
+						<height>274</height>
+						<texture border="2" background="true">$INFO[ListItem.Icon]</texture>
+						<aspectratio>scale</aspectratio>
+					</control>
+				</itemlayout>
+				<focusedlayout height="274" width="505">
+					<control type="image">
+						<width>450</width>
+						<height>274</height>
+						<texture border="2" background="true">$INFO[ListItem.Icon]</texture>
+						<aspectratio>scale</aspectratio>
+						<include>Animation.Focus</include>
+					</control>
+					<control type="image">
+					<width>450</width>
+					<height>274</height>
+					<texture colordiffuse="$VAR[ColorHighlight]" border="20">common/selectbox.png</texture>
+					<visible>Control.HasFocus(50)</visible>
+					<include>Animation.Focus</include>
+				</control>
+				</focusedlayout>
+			</control>		
+            <control type="grouplist">
+                <height>445</height>
+                <top>300</top>
+                <orientation>vertical</orientation>
+                <usecontrolcoords>true</usecontrolcoords>             
+                <!-- Summary -->
+                <control type="textbox">
+					<top>25</top>
+					<width>100%</width>
+                    <height>500</height>
+                    <font>Small</font>
+                    <aligny>top</aligny>
+                    <label>$INFO[ListItem.AddonSummary,[B],[/B][CR]][COLOR=Dark2]$INFO[ListItem.AddonDescription][/COLOR][COLOR=Dark2][CR][/COLOR]$INFO[ListItem.AddonNews,[CR][CR]][CR]</label>
+					<autoscroll delay="5000" repeat="7500" time="5000">true</autoscroll>
+                </control>
+            </control>
+        </control>
+		<include>Furniture_Header</include>
+        <include>Furniture_Clock</include>
+		<include>Furniture_Flags</include>
+        <include>Furniture_Logo</include>
+		<include>Furniture_OverlayInfo</include>
+        <include>Furniture_NowPlaying</include>
+    </controls>
+</window>

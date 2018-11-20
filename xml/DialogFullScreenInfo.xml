@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window type="dialog" id="142">
+    <defaultcontrol always="true">603</defaultcontrol>
+    <controls>
+    	<control type="group">
+    		<animation effect="slide" start="0" end="0,-74" time="150" condition="Window.IsVisible(videoosd)">Conditional</animation>
+    		<left>PosterW</left>
+			<top>700</top>
+			<right>80</right>
+			<height>200</height>
+			<control type="image">
+				<width>100%</width>
+				<texture colordiffuse="Dark3">common/black.png</texture>		
+				<include>Animation.FadeOut</include>
+			</control>
+			<control type="image" description="Background">
+				<width>100%</width>
+				<texture colordiffuse="Background">common/bg.jpg</texture>
+				<include>Animation.FadeOut</include>
+				<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
+			</control>
+            <control type="textbox">
+				<left>10</left>
+				<right>10</right>
+				<height>95%</height>
+				<width>95%</width>
+				<label>$VAR[PlayerPlotBox]</label>
+				<align>justify</align>
+				<autoscroll delay="5000" repeat="7500" time="5000"></autoscroll>
+				<textcolor>Dark1</textcolor>
+				<include>Animation.FadeOut</include>
+				<font>Tiny</font>
+			</control>
+        </control>
+    </controls>
+</window>

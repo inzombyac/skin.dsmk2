@@ -1,0 +1,655 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window type="dialog" id="1198">
+    <zorder>2</zorder>
+    <visible>!Window.IsVisible(startup)</visible>
+    <visible>Skin.HasSetting(DebugGrid)</visible>
+    <controls>
+        <control type="group">
+            <!-- Window/Dialog debug -->
+            <control type="grouplist">
+                <left>20</left>
+                <top>20</top>
+                <width>780</width>
+                <height>450</height>
+                <itemgap>12</itemgap>
+
+                <!-- Window labels -->
+
+                <control type="label">
+                    <include>WindowID</include>
+                    <label>MyPlaylist.xml</label>
+                    <visible>Window.IsVisible(MyPlaylist.xml)</visible>
+                </control>
+				
+				<control type="label">
+                    <include>WindowID</include>
+                    <label>AddonBrowser.xml</label>
+                    <visible>Window.IsVisible(AddonBrowser.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>WindowID</include>
+                    <label>CustomSettings.xml</label>
+                    <visible>Window.IsVisible(CustomSettings.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>WindowID</include>
+                    <label>FileManager.xml</label>
+                    <visible>Window.IsVisible(FileManager.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>WindowID</include>
+                    <label>Home.xml</label>
+                    <visible>Window.IsVisible(Home)</visible>
+                </control>
+
+
+                <control type="label">
+                    <include>WindowID</include>
+                    <label>$INFO[System.ProfileName,LoginScreen.xml: ,]</label>
+                    <visible>Window.IsVisible(LoginScreen.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>WindowID</include>
+                    <label>MyMusicNav.xml</label>
+                    <visible>Window.IsVisible(MyMusicNav.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>WindowID</include>
+                    <label>MyMusicPlaylist.xml</label>
+                    <visible>Window.IsVisible(MyMusicPlaylist.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>WindowID</include>
+                    <label>MyMusicPlaylistEditor.xml</label>
+                    <visible>Window.IsVisible(MyMusicPlaylistEditor.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>WindowID</include>
+                    <label>MyMusicSongs.xml</label>
+                    <visible>Window.IsVisible(MyMusicSongs.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>WindowID</include>
+                    <label>MyPics.xml</label>
+                    <visible>Window.IsVisible(MyPics.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>WindowID</include>
+                    <label>MyPrograms.xml</label>
+                    <visible>Window.IsVisible(MyPrograms.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>WindowID</include>
+                    <label>MyPVRGuide.xml</label>
+                    <visible>Window.IsVisible(MyPVRGuide.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>WindowID</include>
+                    <label>MyPVRChannels.xml</label>
+                    <visible>Window.IsVisible(MyPVRChannels.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>WindowID</include>
+                    <label>MyPVRRecordings.xml</label>
+                    <visible>Window.IsVisible(MyPVRRecordings.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>WindowID</include>
+                    <label>MyVideoNav.xml</label>
+                    <visible>Window.IsVisible(MyVideoNav.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>WindowID</include>
+                    <label>MyGames.xml</label>
+                    <visible>Window.IsVisible(MyGames.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>WindowID</include>
+                    <label>MyVideoPlaylist.xml</label>
+                    <visible>Window.IsVisible(MyVideoPlaylist.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>WindowID</include>
+                    <label>MyWeather.xml</label>
+                    <visible>Window.IsVisible(MyWeather.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>WindowID</include>
+                    <label>Settings.xml</label>
+                    <visible>Window.IsVisible(Settings.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>WindowID</include>
+                    <label>SettingsCategory.xml</label>
+                    <visible>Window.IsVisible(SettingsCategory.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>WindowID</include>
+                    <label>SettingsProfile.xml</label>
+                    <visible>Window.IsVisible(SettingsProfile.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>WindowID</include>
+                    <label>VideoFullScreen.xml</label>
+                    <visible>Window.IsVisible(VideoFullScreen.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>WindowID</include>
+                    <label>script-globalsearch.xml</label>
+                    <visible>Window.IsVisible(script-globalsearch.xml)</visible>
+                </control>
+
+                <!-- Dialog labels -->
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>DialogAddonInfo.xml</label>
+                    <visible>Window.IsVisible(DialogAddonInfo.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>DialogAddonSettings.xml</label>
+                    <visible>Window.IsVisible(DialogAddonSettings.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>DialogMusicInfo.xml</label>
+                    <visible>Window.IsVisible(DialogMusicInfo.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>DialogBusy.xml</label>
+                    <visible>Window.IsVisible(DialogBusy.xml)</visible>
+                </control>
+
+                 <control type="label">
+                    <include>DialogID</include>
+                    <label>DialogConfirm.xml</label>
+                    <visible>Window.IsVisible(DialogConfirm.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>DialogButtonMenu.xml</label>
+                    <visible>Window.IsVisible(DialogButtonMenu.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>DialogContentSettings.xml</label>
+                    <visible>Window.IsVisible(DialogContentSettings)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>DialogSubtitles.xml</label>
+                    <visible>Window.IsVisible(DialogSubtitles)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>EventLog.xml</label>
+                    <visible>Window.IsVisible(EventLog)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>DialogContextMenu.xml</label>
+                    <visible>Window.IsVisible(DialogContextMenu.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>DialogFavourites.xml</label>
+                    <visible>Window.IsVisible(DialogFavourites.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>DialogFileStacking.xml</label>
+                    <visible>Window.IsVisible(DialogFileStacking.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>DialogFullScreenInfo.xml</label>
+                    <visible>Window.IsVisible(DialogFullScreenInfo.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>DialogKaiToast.xml</label>
+                    <visible>Window.IsVisible(DialogKaiToast.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>DialogKaraokeSongSelector.xml</label>
+                    <visible>Window.IsVisible(DialogKaraokeSongSelector.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>DialogKaraokeSongSelectorLarge.xml</label>
+                    <visible>Window.IsVisible(DialogKaraokeSongSelectorLarge.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>DialogKeyboard.xml</label>
+                    <visible>Window.IsVisible(DialogKeyboard.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>DialogMediaSource.xml</label>
+                    <visible>Window.IsVisible(DialogMediaSource.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>DialogPVRChannelManager.xml</label>
+                    <visible>Window.IsVisible(DialogPVRChannelManager.xml)</visible>
+                </control>
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>DialogPVRChannelsOSD.xml</label>
+                    <visible>Window.IsVisible(DialogPVRChannelsOSD.xml)</visible>
+                </control>
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>DialogPVRGroupManager.xml</label>
+                    <visible>Window.IsVisible(DialogPVRGroupManager.xml)</visible>
+                </control>
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>DialogPVRChannelGuide.xml</label>
+                    <visible>Window.IsVisible(DialogPVRChannelGuide.xml)</visible>
+                </control>
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>DialogPVRGuideSearch.xml</label>
+                    <visible>Window.IsVisible(DialogPVRGuideSearch.xml)</visible>
+                </control>
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>DialogPVRInfo.xml</label>
+                    <visible>Window.IsVisible(DialogPVRInfo.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>$LOCALIZE[31017]</label>
+                    <visible>Window.IsVisible(mediafilter)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>$LOCALIZE[31019]</label>
+                    <visible>Window.IsVisible(osdcmssettings)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>$LOCALIZE[31018]</label>
+                    <visible>Window.IsVisible(osdaudiodspsettings)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>$LOCALIZE[31020]</label>
+                    <visible>Window.IsVisible(pvrtimersetting)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>$LOCALIZE[31021]</label>
+                    <visible>Window.IsVisible(osdvideosettings)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>$LOCALIZE[31022]</label>
+                    <visible>Window.IsVisible(osdaudiosettings)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>DialogSettings.xml (osdsubtitlesettings)</label>
+                    <visible>Window.IsVisible(osdsubtitlesettings)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>$LOCALIZE[31023]</label>
+                    <visible>Window.IsVisible(DialogMusicScan.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>$LOCALIZE[31024]</label>
+                    <visible>Window.IsVisible(NetworkSetup)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>$LOCALIZE[31025]</label>
+                    <visible>Window.IsVisible(DialogNumeric.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>DialogOk.xml</label>
+                    <visible>Window.IsVisible(DialogOk.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>DialogPeripheralManager.xml</label>
+                    <visible>Window.IsVisible(DialogPeripheralManager.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>DialogSettings.xml (DialogPeripheralSettings)</label>
+                    <visible>Window.IsVisible(DialogPeripheralSettings)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>DialogPictureInfo.xml</label>
+                    <visible>Window.IsVisible(DialogPictureInfo.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>DialogExtendedProgressBar.xml</label>
+                    <visible>Window.IsVisible(DialogExtendedProgressBar.xml)</visible>
+                </control>
+
+                 <control type="label">
+                    <include>DialogID</include>
+                    <label>DialogProgress.xml</label>
+                    <visible>Window.IsVisible(DialogProgress.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>DialogSeekbar.xml</label>
+                    <visible>Window.IsVisible(DialogSeekbar.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>DialogSelect.xml</label>
+                    <visible>Window.IsVisible(DialogSelect.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>DialogSlider.xml</label>
+                    <visible>Window.IsVisible(DialogSlider.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>DialogSongInfo.xml</label>
+                    <visible>Window.IsVisible(DialogSongInfo.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>DialogTextViewer.xml</label>
+                    <visible>Window.IsVisible(DialogTextViewer.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>DialogVideoInfo.xml</label>
+                    <visible>Window.IsVisible(DialogVideoInfo.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>DialogVideoScan.xml</label>
+                    <visible>Window.IsVisible(DialogVideoScan.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>DialogVolumeBar.xml</label>
+                    <visible>Window.IsVisible(DialogVolumeBar.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>DialogGameControllers.xml</label>
+                    <visible>Window.IsVisible(DialogGameControllers.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>DialogYesNo.xml</label>
+                    <visible>Window.IsVisible(DialogYesNo.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>FileBrowser.xml</label>
+                    <visible>Window.IsVisible(FileBrowser.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>DialogSettings.xml (LockSettings)</label>
+                    <visible>Window.IsVisible(LockSettings)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>MusicKaraokeLyrics.xml</label>
+                    <visible>Window.IsVisible(MusicKaraokeLyrics.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>MusicOSD.xml</label>
+                    <visible>Window.IsVisible(MusicOSD.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>MusicOverlay.xml</label>
+                    <visible>Window.IsVisible(MusicOverlay.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>MusicVisualisation.xml</label>
+                    <visible>Window.IsVisible(MusicVisualisation.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>PlayerControls.xml</label>
+                    <visible>Window.IsVisible(PlayerControls.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>DialogSettings.xml (ProfileSettings)</label>
+                    <visible>Window.IsVisible(ProfileSettings)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>SettingsScreenCalibration.xml</label>
+                    <visible>Window.IsVisible(SettingsScreenCalibration.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>SettingsSystemInfo.xml</label>
+                    <visible>Window.IsVisible(SettingsSystemInfo.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>SlideShow.xml</label>
+                    <visible>Window.IsVisible(SlideShow.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>SmartPlaylistEditor.xml</label>
+                    <visible>Window.IsVisible(SmartPlaylistEditor.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>SmartPlaylistRule.xml</label>
+                    <visible>Window.IsVisible(SmartPlaylistRule.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>VideoOSD.xml</label>
+                    <visible>Window.IsVisible(VideoOSD.xml)</visible>
+                </control>
+
+                 <control type="label">
+                    <include>DialogID</include>
+                    <label>GameOSD.xml</label>
+                    <visible>Window.IsVisible(GameOSD.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>VideoOSDBookmarks.xml</label>
+                    <visible>Window.IsVisible(VideoOSDBookmarks.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>VideoOSDSettings.xml</label>
+                    <visible>Window.IsVisible(VideoOSDSettings.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>VideoOverlay.xml</label>
+                    <visible>Window.IsVisible(VideoOverlay.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>VisualisationPresetList.xml</label>
+                    <visible>Window.IsVisible(VisualisationPresetList.xml)</visible>
+                </control>
+				
+				<control type="label">
+                    <include>DialogID</include>
+                    <label>SkinSettings.xml</label>
+                    <visible>Window.IsVisible(SkinSettings.xml)</visible>
+                </control>
+				
+				<control type="label">
+                    <include>DialogID</include>
+                    <label>script-skinshortcuts.xml</label>
+                    <visible>Window.IsVisible(script-skinshortcuts.xml)</visible>
+                </control>				
+
+            </control>
+
+            <!-- Control label -->
+
+            <control type="label">
+                <include>PathID</include>
+                <label>$INFO[System.CurrentControl]</label>
+            </control>
+
+            <!-- Path label -->
+
+            <control type="label">
+                <include>ControlID</include>
+                <label>Folder Path: $INFO[Container.FolderPath]</label>
+                <visible>!Window.IsVisible(VideoFullScreen.xml) + !Window.IsVisible(Home.xml) + !Window.IsVisible(script-globalsearch.xml)</visible>
+            </control>
+            <control type="label">
+                <include>ControlID</include>
+                <label>$INFO[System.CurrentControlID, Control ID: ]</label>
+                <visible>Window.IsVisible(Home.xml)</visible>
+            </control>
+            <control type="label">
+                <include>ControlID</include>
+                <label>$INFO[Container(9000).Content,Group content: ]</label>
+                <visible>Window.IsVisible(script-globalsearch.xml)</visible>
+            </control>
+			<control type="label">
+                <include>ControlID2</include>
+                <label>$INFO[Container(50).Content,List content: ]</label>
+                <visible>Window.IsVisible(script-globalsearch.xml)</visible>
+            </control>
+            <control type="label">
+                <include>ControlID2</include>
+                <label>Path: $INFO[Container.ListItem.FileNameAndPath]</label>
+                <visible>!Window.IsVisible(VideoFullScreen.xml) + !Window.IsVisible(Home.xml) + !Window.IsVisible(script-globalsearch.xml)</visible>
+            </control>
+            <control type="label">
+                <include>ControlID2</include>
+                <label>Path: $INFO[Player.Filenameandpath]</label>
+                <visible>Window.IsVisible(VideoFullScreen.xml) + !Window.IsVisible(Home.xml) + !Window.IsVisible(script-globalsearch.xml)</visible>
+            </control>
+			<control type="label">
+                <include>ControlID3</include>
+                <label>Content: $INFO[Container.Content]</label>
+                <visible>!Window.IsVisible(VideoFullScreen.xml) + !Window.IsVisible(Home.xml) + !Window.IsVisible(script-globalsearch.xml)</visible>
+            </control>
+			<control type="label">
+                <include>ControlID4</include>
+                <label>Poster: $VAR[PlayerPosterOSD] / $INFO[Skin.String(LastIcon)]</label>
+				<visible>Window.IsVisible(VideoFullScreen.xml) + !Window.IsVisible(Home.xml) + !Window.IsVisible(script-globalsearch.xml)</visible>
+            </control>
+			<control type="label">
+                <include>ControlID4</include>
+                <label>TV: $INFO[ListItem.TVShowTitle],$INFO[Window(home).Property(TVShowID)] / CON: $INFO[Container.Content] / IMDB: $INFO[ListItem.IMDBNumber]</label>
+				<visible>Window.IsVisible(MyVideoNav.xml)  | Window.IsVisible(DialogVideoInfo.xml)</visible>
+            </control>
+			<control type="label">
+                <include>ControlID4</include>
+                <label>$ESCINFO[ListItem.FileNameAndPath]</label>
+				<visible>Window.IsVisible(DialogMusicInfo.xml)</visible>
+            </control>
+			<control type="label">
+                <include>ControlID5</include>
+                <label>$INFO[ListItem.Studio]</label>
+				<visible>Window.IsVisible(MyVideoNav.xml)</visible>
+            </control>
+        </control>
+    </controls>
+</window>

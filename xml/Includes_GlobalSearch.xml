@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<includes>
+    <include name="Global_Search_View_50_List">
+        <description>Default View (id=50)</description>
+        <control type="group">
+            <include>Animation.Common</include>
+            <control type="group">
+                <control type="panel" id="50">
+                    <top>160</top>
+                    <height>840</height>
+                    <left>440</left>
+                    <right>SidePad</right>
+                    <onleft>9000</onleft>
+                    <onup condition="Player.HasMedia">7788</onup>
+                    <onup condition="!Player.HasMedia">50</onup>
+                    <ondown>60</ondown>
+                    <pagecontrol>60</pagecontrol>
+                    <viewtype label="31032">list</viewtype>
+                    <orientation>horizontal</orientation>
+                    <width>1420</width>
+                    <scrolltime tween="quadratic">400</scrolltime>
+                    <itemlayout height="420" width="480" condition="Container.Content(episodes) | Container.Content(musicvideos)">
+                        <control type="group">
+                            <visible>Container.Content(episodes) | Container.Content(musicvideos)</visible>
+                             <control type="image">
+                                <texture border="15" colordiffuse="Overlay" diffuse="diffuse/home-fanart.png">common/opaque2.png</texture>
+                                <height>250</height>
+                                <width>380</width>
+                                <left>0</left>
+                                <top>0</top>
+                                <include>Animation.FadeIn</include>
+                                <include>Animation.FadeOut</include>
+                            </control>
+                            <control type="image">
+                                <left>0</left>
+                                <top>0</top>
+                                <width>380</width>
+                                <height>250</height>
+                                <texture background="true">$VAR[ThumbImage]</texture>
+                                <aspectratio scalediffuse="false">scale</aspectratio>
+                                <include>Animation.FadeIn</include>
+                                <include>Animation.FadeOut</include>
+                            </control>
+                            <control type="image">
+                                <description>Title overlay</description>
+                                <bottom>70</bottom>
+                                <height>100</height>
+                                <left>0</left>
+                                <width>380</width>
+                                <texture border="15" colordiffuse="Overlay">common/opaque.png</texture>
+                                <include>Animation.FadeIn</include>
+                                <include>Animation.FadeOut</include>
+                            </control>
+                            <control type="label">
+                                <left>10</left>
+                                <top>250</top>
+                                <width>360</width>
+                                <height>30</height>
+                                <font>Tiny</font>
+                                <align>center</align>
+                                <aligny>center</aligny>
+                                <textcolor>Dark1</textcolor>
+                                <selectedcolor>Dark1</selectedcolor>
+                                <label>$INFO[ListItem.TvShowTitle]</label>
+                                <visible>Container.Content(episodes)</visible>
+                                <include>Animation.FadeIn</include>
+                                <include>Animation.FadeOut</include>
+                            </control>
+                            <control type="label">
+                                <left>10</left>
+                                <top>250</top>
+                                <width>360</width>
+                                <height>29</height>
+                                <font>Tiny</font>
+                                <align>center</align>
+                                <aligny>center</aligny>
+                                <textcolor>Dark1</textcolor>
+                                <selectedcolor>Dark1</selectedcolor>
+                                <label>$INFO[ListItem.Artist]</label>
+                                <visible>Container.Content(musicvideos)</visible>
+                                <include>Animation.FadeIn</include>
+                                <include>Animation.FadeOut</include>
+                            </control>
+                            <control type="textbox">
+                                <left>10</left>
+                                <top>280</top>
+                                <width>360</width>
+                                <height>68</height>
+                                <font>Tiny</font>
+                                <align>center</align>
+                                <aligny>top</aligny>
+                                <textcolor>Dark2</textcolor>
+                                <selectedcolor>Dark2</selectedcolor>
+                                <label>$INFO[ListItem.Label]</label>
+                                <autoscroll time="10000">false</autoscroll>
+                                <include>Animation.FadeIn</include>
+                                <include>Animation.FadeOut</include>
+                            </control>
+                        </control>
+                    </itemlayout>
+                    <itemlayout height="420" width="285" condition="Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)">
+                        <control type="group">
+                            <visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)</visible>
+                            <control type="image">
+                                <texture border="15" colordiffuse="Overlay" diffuse="diffuse/home-fanart.png">common/opaque2.png</texture>
+                                <height>362</height>
+                                <width>256</width>
+                                <left>0</left>
+                                <top>0</top>
+                                <include>Animation.FadeIn</include>
+                                <include>Animation.FadeOut</include>
+                            </control>
+                            <control type="image">
+                                <left>0</left>
+                                <top>0</top>
+                                <width>256</width>
+                                <height>362</height>
+                                <texture fallback="common/null.png" background="true">$VAR[PosterImage]</texture>
+                                <aspectratio scalediffuse="false">scale</aspectratio>
+                                <include>Animation.FadeIn</include>
+                                <include>Animation.FadeOut</include>
+                            </control>
+                            <control type="image">
+                                <right>44</right>
+                                <centertop>32</centertop>
+                                <width>32</width>
+                                <height>32</height>
+                                <aspectratio aligny="top">keep</aspectratio>
+                                <texture background="true" colordiffuse="$VAR[ColorHighlight2]">$VAR[PosterPercentWatchedHome]</texture>
+                                <visible>!Integer.IsGreater(ListItem.Property(UnwatchedEpisodes),0)</visible>
+                                <include>Animation.FadeIn</include>
+                                <include>Animation.FadeOut</include>
+                            </control>
+                            <control type="image">
+                                <description>Title overlay</description>
+                                <bottom>58</bottom>
+                                <height>72</height>
+                                <left>0</left>
+                                <width>256</width>
+                                <texture border="15" colordiffuse="Overlay">common/opaque.png</texture>
+                                <include>Animation.FadeIn</include>
+                                <include>Animation.FadeOut</include>
+                            </control>
+                            <control type="textbox">
+                                <bottom>64</bottom>
+                                <align>center</align>
+                                <height>68</height>
+                                <left>5</left>
+                                <right>5</right>
+                                <width>256</width>
+                                <font>Tiny</font>
+                                <textcolor>Dark1</textcolor>
+                                <selectedcolor>Dark1</selectedcolor>
+                                <label>$INFO[ListItem.Label]</label>
+                                <include>Animation.FadeIn</include>
+                                <include>Animation.FadeOut</include>
+                                <autoscroll time="10000">false</autoscroll>
+                            </control>
+                        </control>
+                    </itemlayout>
+                    <itemlayout height="420" width="360" condition="!Container.Content(movies) + !Container.Content(tvshows) + !Container.Content(seasons) + !Container.Content(episodes) + !Container.Content(musicvideos)">
+                         <control type="group">
+                            <visible>!Container.Content(movies) + !Container.Content(tvshows) + !Container.Content(seasons) + !Container.Content(episodes) + !Container.Content(musicvideos)</visible>
+                            <control type="image">
+                                <texture border="15" colordiffuse="Overlay" diffuse="diffuse/home-fanart.png">common/opaque2.png</texture>
+                                <height>300</height>
+                                <width>300</width>
+                                <left>0</left>
+                                <top>0</top>
+                                <include>Animation.FadeIn</include>
+                                <include>Animation.FadeOut</include>
+                            </control>
+                            <control type="image">
+                                <left>0</left>
+                                <top>0</top>
+                                <width>300</width>
+                                <height>300</height>
+                                <texture background="true">$VAR[PosterImage]</texture>
+                                <aspectratio scalediffuse="false">scale</aspectratio>
+                                <include>Animation.FadeIn</include>
+                                <include>Animation.FadeOut</include>
+                            </control>
+                            <control type="image">
+                                <description>Title overlay</description>
+                                <top>300</top>
+                                <height>70</height>
+                                <left>0</left>
+                                <width>300</width>
+                                <texture border="15" colordiffuse="Overlay">common/opaque.png</texture>
+                                <include>Animation.FadeIn</include>
+                                <include>Animation.FadeOut</include>
+                            </control>
+                            <control type="textbox">
+                                <left>10</left>
+                                <top>300</top>
+                                <width>280</width>
+                                <height>70</height>
+                                <font>Tiny</font>
+                                <align>center</align>
+                                <aligny>top</aligny>
+                                <textcolor>Dark1</textcolor>
+                                <selectedcolor>Dark1</selectedcolor>
+                                <label>$INFO[ListItem.Label]</label>
+                                <visible>Container.Content(artists)</visible>
+                                <include>Animation.FadeIn</include>
+                                <include>Animation.FadeOut</include>
+                                <autoscroll time="10000">false</autoscroll>
+                            </control>
+                            <control type="label">
+                                <left>10</left>
+                                <top>300</top>
+                                <width>280</width>
+                                <height>29</height>
+                                <font>Tiny</font>
+                                <align>center</align>
+                                <aligny>top</aligny>
+                                <textcolor>Dark1</textcolor>
+                                <selectedcolor>Dark1</selectedcolor>
+                                <label>$INFO[ListItem.Artist]</label>
+                                <visible>Container.Content(albums) | Container.Content(songs)</visible>
+                                <include>Animation.FadeIn</include>
+                                <include>Animation.FadeOut</include>
+                            </control>
+                            <control type="label">
+                                <left>10</left>
+                                <top>300</top>
+                                <width>280</width>
+                                <height>29</height>
+                                <font>Tiny</font>
+                                <align>center</align>
+                                <aligny>top</aligny>
+                                <textcolor>Dark1</textcolor>
+                                <selectedcolor>Dark1</selectedcolor>
+                                <label>$INFO[ListItem.Property(ChannelName)]</label>
+                                <visible>Container.Content(livetv)</visible>
+                                <include>Animation.FadeIn</include>
+                                <include>Animation.FadeOut</include>
+                            </control>
+                            <control type="label">
+                                <left>10</left>
+                                <top>330</top>
+                                <width>280</width>
+                                <height>29</height>
+                                <font>Tiny</font>
+                                <align>center</align>
+                                <aligny>top</aligny>
+                                <textcolor>Dark2</textcolor>
+                                <selectedcolor>Dark2</selectedcolor>
+                                <label>$INFO[ListItem.Label]</label>
+                                <visible>!Container.Content(artists)</visible>
+                                <include>Animation.FadeIn</include>
+                                <include>Animation.FadeOut</include>
+                            </control>
+                        </control>
+                    </itemlayout>
+                    <focusedlayout height="420" width="285" condition="Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)">
+                        <control type="group">
+                            <visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)</visible>
+                            <control type="image">
+                                <texture border="15" colordiffuse="Overlay" diffuse="diffuse/home-fanart.png">common/opaque2.png</texture>
+                                <height>362</height>
+                                <width>256</width>
+                                <left>0</left>
+                                <top>0</top>
+                            </control>
+                            <control type="image">
+                                <left>0</left>
+                                <top>0</top>
+                                <width>256</width>
+                                <height>362</height>
+                                <texture fallback="common/null.png" background="true">$VAR[PosterImage]</texture>
+                                <aspectratio scalediffuse="false">scale</aspectratio>
+                            </control>
+                            <control type="image">
+                                <right>44</right>
+                                <centertop>32</centertop>
+                                <width>32</width>
+                                <height>32</height>
+                                <aspectratio aligny="top">keep</aspectratio>
+                                <texture background="true" colordiffuse="$VAR[ColorHighlight2]">$VAR[PosterPercentWatchedHome]</texture>
+                                <visible>!Integer.IsGreater(ListItem.Property(UnwatchedEpisodes),0)</visible>
+                            </control>
+                            <control type="image">
+                                <description>Title overlay</description>
+                                <bottom>58</bottom>
+                                <height>72</height>
+                                <left>0</left>
+                                <width>256</width>
+                                <texture border="15" colordiffuse="Overlay">common/opaque.png</texture>
+                            </control>
+                            <control type="textbox">
+                                <bottom>64</bottom>
+                                <align>center</align>
+                                <height>68</height>
+                                <left>5</left>
+                                <right>5</right>
+                                <width>256</width>
+                                <font>Tiny</font>
+                                <textcolor>Dark1</textcolor>
+                                <selectedcolor>Dark1</selectedcolor>
+                                <label>$INFO[ListItem.Label]</label>
+                                <autoscroll time="10000">false</autoscroll>
+                            </control>
+                            <control type="image">
+                                <left>0</left>
+                                <top>0</top>
+                                <width>256</width>
+                                <height>362</height>
+                                <texture colordiffuse="$VAR[ColorHighlight]" border="15" diffuse="diffuse/home-fanart.png">common/selectbox.png</texture>
+                            </control>
+                        </control>
+                    </focusedlayout>
+                    <focusedlayout height="420" width="350" condition="!Container.Content(movies) + !Container.Content(tvshows) + !Container.Content(seasons) + !Container.Content(episodes) + !Container.Content(musicvideos)">
+                        <control type="group">
+                            <visible>!Container.Content(movies) + !Container.Content(tvshows) + !Container.Content(seasons) + !Container.Content(episodes) + !Container.Content(musicvideos)</visible>
+                            <control type="image">
+                                <texture border="15" colordiffuse="Overlay" diffuse="diffuse/home-fanart.png">common/opaque2.png</texture>
+                                <height>300</height>
+                                <width>300</width>
+                                <left>0</left>
+                                <top>0</top>
+                            </control>
+                            <control type="image">
+                                <left>0</left>
+                                <top>0</top>
+                                <width>300</width>
+                                <height>300</height>
+                                <texture background="true">$VAR[PosterImage]</texture>
+                                <aspectratio scalediffuse="false">scale</aspectratio>
+                            </control>
+                            <control type="image">
+                                <description>Title overlay</description>
+                                <top>300</top>
+                                <height>70</height>
+                                <left>0</left>
+                                <width>300</width>
+                                <texture border="15" colordiffuse="Overlay">common/opaque.png</texture>
+                            </control>
+                            <control type="textbox">
+                                <left>10</left>
+                                <top>300</top>
+                                <width>280</width>
+                                <height>70</height>
+                                <font>Tiny</font>
+                                <align>center</align>
+                                <aligny>top</aligny>
+                                <textcolor>Dark1</textcolor>
+                                <selectedcolor>Dark1</selectedcolor>
+                                <label>$INFO[ListItem.Label]</label>
+                                <visible>Container.Content(artists)</visible>
+                                <autoscroll time="10000">false</autoscroll>
+                            </control>
+                            <control type="label">
+                                <left>10</left>
+                                <top>300</top>
+                                <width>280</width>
+                                <height>29</height>
+                                <font>Tiny</font>
+                                <align>center</align>
+                                <aligny>top</aligny>
+                                <textcolor>Dark1</textcolor>
+                                <selectedcolor>Dark1</selectedcolor>
+                                <label>$INFO[ListItem.Artist]</label>
+                                <visible>Container.Content(albums) | Container.Content(songs)</visible>
+                            </control>
+                            <control type="label">
+                                <left>10</left>
+                                <top>300</top>
+                                <width>280</width>
+                                <height>29</height>
+                                <font>Tiny</font>
+                                <align>center</align>
+                                <aligny>top</aligny>
+                                <textcolor>Dark1</textcolor>
+                                <selectedcolor>Dark1</selectedcolor>
+                                <label>$INFO[ListItem.Property(ChannelName)]</label>
+                                <visible>Container.Content(livetv)</visible>
+                            </control>
+                            <control type="label">
+                                <left>10</left>
+                                <top>330</top>
+                                <width>280</width>
+                                <height>29</height>
+                                <font>Tiny</font>
+                                <align>center</align>
+                                <aligny>top</aligny>
+                                <textcolor>Dark2</textcolor>
+                                <selectedcolor>Dark2</selectedcolor>
+                                <label>$INFO[ListItem.Label]</label>
+                                <visible>!Container.Content(artists)</visible>
+                            </control>
+                             <control type="image">
+                                <left>0</left>
+                                <top>0</top>
+                                <width>300</width>
+                                <height>370</height>
+                                <texture colordiffuse="$VAR[ColorHighlight]" border="15" diffuse="diffuse/home-fanart.png">common/selectbox.png</texture>
+                            </control>
+                        </control>
+                    </focusedlayout>
+                    <focusedlayout height="420" width="480" condition="Container.Content(episodes) | Container.Content(musicvideos)">
+                        <control type="group">
+                            <visible>Container.Content(episodes) | Container.Content(musicvideos)</visible>
+                             <control type="image">
+                                <texture border="15" colordiffuse="Overlay" diffuse="diffuse/home-fanart.png">common/opaque2.png</texture>
+                                <height>250</height>
+                                <width>380</width>
+                                <left>0</left>
+                                <top>0</top>
+                            </control>
+                            <control type="image">
+                                <left>0</left>
+                                <top>0</top>
+                                <width>380</width>
+                                <height>250</height>
+                                <texture background="true">$VAR[ThumbImage]</texture>
+                                <aspectratio scalediffuse="false">scale</aspectratio>
+                            </control>
+                            <control type="image">
+                                <description>Title overlay</description>
+                                <bottom>70</bottom>
+                                <height>100</height>
+                                <left>0</left>
+                                <width>380</width>
+                                <texture border="15" colordiffuse="Overlay">common/opaque.png</texture>
+                            </control>
+                            <control type="label">
+                                <left>10</left>
+                                <top>250</top>
+                                <width>360</width>
+                                <height>30</height>
+                                <font>Tiny</font>
+                                <align>center</align>
+                                <aligny>center</aligny>
+                                <textcolor>Dark1</textcolor>
+                                <selectedcolor>Dark1</selectedcolor>
+                                <label>$INFO[ListItem.TvShowTitle]</label>
+                                <visible>Container.Content(episodes)</visible>
+                            </control>
+                            <control type="label">
+                                <left>10</left>
+                                <top>250</top>
+                                <width>360</width>
+                                <height>29</height>
+                                <font>Tiny</font>
+                                <align>center</align>
+                                <aligny>center</aligny>
+                                <textcolor>Dark1</textcolor>
+                                <selectedcolor>Dark1</selectedcolor>
+                                <label>$INFO[ListItem.Artist]</label>
+                                <visible>Container.Content(musicvideos)</visible>
+                            </control>
+                            <control type="textbox">
+                                <left>10</left>
+                                <top>280</top>
+                                <width>360</width>
+                                <height>68</height>
+                                <font>Tiny</font>
+                                <align>center</align>
+                                <aligny>top</aligny>
+                                <textcolor>Dark2</textcolor>
+                                <selectedcolor>Dark2</selectedcolor>
+                                <label>$INFO[ListItem.Label]</label>
+                                <autoscroll time="10000">false</autoscroll>
+                            </control>
+                             <control type="image">
+                                <left>0</left>
+                                <top>0</top>
+                                <width>380</width>
+                                <height>350</height>
+                                <texture colordiffuse="$VAR[ColorHighlight]" border="15" diffuse="diffuse/home-fanart.png">common/selectbox.png</texture>
+                            </control>
+                        </control>
+                    </focusedlayout>
+                </control>
+                <control type="scrollbar" id="60">
+                    <onback>50</onback>
+                    <right>80</right>
+                    <width>1400</width>
+                    <bottom>80</bottom>
+                    <orientation>horizontal</orientation>
+                    <height>8</height>
+                    <onup>50</onup>
+                    <onleft>9000</onleft>
+                    <texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
+                    <texturesliderbar border="4" colordiffuse="$VAR[ColorHighlight]">scrollbar/scrollv.png</texturesliderbar>
+                    <texturesliderbarfocus border="4" colordiffuse="$VAR[ColorHighlight]">scrollbar/scrollv.png</texturesliderbarfocus>
+                    <animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
+                    <animation effect="slide" start="0" end="0,-10" time="400" condition="Control.HasFocus(60)">Conditional</animation>
+                </control>
+            </control>
+        </control>
+    </include>
+</includes>

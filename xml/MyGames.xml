@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window id="6">
+	<menucontrol>9000</menucontrol>
+	<defaultcontrol always="true">55</defaultcontrol>
+	<views>50,53,55,517,59,500</views>
+	<controls>
+		<include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
+		<include>View_50_List</include>
+		<include>View_53_Poster</include>
+		<include>View_55_Wall</include>
+		<include>View_517_Wall_Info</include>
+		<include>View_59_GameBrowser</include>
+		<include>View_500_Thumbnails</include>
+		<include>Furniture_Header</include>
+		<include>Furniture_NowPlaying</include>
+		<include>Furniture_Clock</include>
+		<include>Furniture_Flags</include>
+		<include>Furniture_Logo</include>
+		<include>Furniture_OverlayInfo</include>
+		<control type="group">
+			<include>Animation.FadeIn</include>
+			<include>Animation.FadeOut</include>
+			<visible>ControlGroup(9000).HasFocus()</visible>
+			<include>GlobalOverlay</include>
+		</control>
+		<control type="group">
+			<include>Def9000SideBladeLeft</include>
+			<control type="grouplist" id="9000">
+				<include>Def9000GameSide</include>
+			</control>
+		</control>
+	</controls>
+</window>

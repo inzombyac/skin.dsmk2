@@ -1,0 +1,10 @@
+<views>
+    <view id="Default" value="50" languageid="31032" type="all"/>
+	<view id="Poster" value="53" languageid="31792" type="all,!episodes" />
+    <view id="Wall" value="55" languageid="31791" type="movies,setmovies,tvshows,musicvideos,seasons,sets" />
+	<view id="Wall Square" value="505" languageid="31794" type="artists,albums,songs,programs,addons" />
+	<view id="Wall Poster" value="506" languageid="31795" type="artists,albums,songs,programs,addons" />
+    <view id="Wall Info" value="517" languageid="31003" type="all,!artists,!albums,!songs,!programs,!addons,!episodes" />
+    <view id="Gallery" value="59" languageid="31008" type="all,!pictures,!episodes" />
+    <view id="Thumbnail" value="500" languageid="21371" type="pictures,episodes" />
+</views>

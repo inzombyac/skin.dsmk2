@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window id="4">
+    <defaultcontrol always="true">9100</defaultcontrol>
+    <menucontrol>9000</menucontrol>
+    <controls>
+        <include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
+        <include>Furniture_Header</include>
+        <include>Furniture_Clock</include>
+        <include>Furniture_NowPlaying</include>
+        <control type="group">
+            <left>SidePad</left>
+            <width>1760</width>
+            <top>180</top>
+            <height>670</height>
+            <include>Animation.Common</include>
+            <control type="image">
+                <width>1170</width>
+                <height>100%</height>
+                <texture border="16" colordiffuse="White100">common/rounded-shadow8.png</texture>
+            </control>
+            <control type="group">
+                <right>10</right>
+                <left>1170</left>
+                <control type="image">
+                    <left>5</left>
+                    <texture border="16" colordiffuse="White70">common/rounded-shadow8.png</texture>
+                </control>
+                <control type="textbox">
+                    <top>30</top>
+                    <bottom>30</bottom>
+                    <right>30</right>
+                    <left>30</left>
+                    <align>left</align>
+                    <font>Tiny</font>
+                    <textcolor>PanelWhite100</textcolor>
+                    <label>$INFO[Container(9100).ListItem.Label2]</label>
+                </control>
+            </control>
+            <control type="group" description="lines">
+                <control type="image">
+                    <left>580</left>
+                    <width>1</width>
+                    <top>11</top>
+                    <bottom>11</bottom>
+                    <texture colordiffuse="Dark3">common/white.png</texture>
+                </control>
+            </control>
+            <control type="Panel" id="9100">
+                <left>10</left>
+                <width>1160</width>
+                <top>10</top>
+                <height>710</height>
+                <orientation>horizontal</orientation>
+                <itemlayout width="575" height="107">
+                    <control type="label">
+                        <top>0</top>
+                        <height>97</height>
+                        <aligny>center</aligny>
+                        <right>30</right>
+                        <left>130</left>
+                        <align>left</align>
+                        <font>SmallBold</font>
+                        <textcolor>PanelWhite100</textcolor>
+                        <label>$INFO[ListItem.Label]</label>
+                    </control>
+                    <control type="image">
+                        <left>10</left>
+                        <width>96</width>
+                        <height>96</height>
+                        <texture colordiffuse="PanelWhite100">$INFO[ListItem.Icon]</texture>
+                    </control>
+                </itemlayout>
+                <focusedlayout width="575" height="107">
+                    <control type="image">
+                        <left>0</left>
+                        <top>0</top>
+                        <right>10</right>
+                        <bottom>10</bottom>
+                        <texture border="5" colordiffuse="Dark1">common/white.png</texture>
+                        <bordertexture colordiffuse="$VAR[ColorHighlight]">common/white.png</bordertexture>
+                        <bordersize>6,0,0,0</bordersize>
+                    </control>
+                    <control type="image">
+                        <left>6</left>
+                        <top>0</top>
+                        <bottom>10</bottom>
+                        <width>1</width>
+                        <texture colordiffuse="Light1">common/black.png</texture>
+                    </control>
+                    <control type="label">
+                        <top>0</top>
+                        <height>97</height>
+                        <aligny>center</aligny>
+                        <right>30</right>
+                        <left>130</left>
+                        <align>left</align>
+                        <font>SmallBold</font>
+                        <textcolor>$VAR[ColourSelected]</textcolor>
+                        <label>$INFO[ListItem.Label]</label>
+                    </control>
+                    <control type="image">
+                        <left>10</left>
+                        <width>96</width>
+                        <height>96</height>
+                        <texture colordiffuse="$VAR[ColourSelected]">$INFO[ListItem.Icon]</texture>
+                    </control>
+                </focusedlayout>
+                <content>
+                    <item id="1">
+                        <label>24997</label>
+                        <label2>31156</label2>
+                        <icon>special://skin/extras/icons/appearance.png</icon>
+                        <onclick>activatewindow(AppearanceSettings)</onclick>
+                    </item>
+					 <item id="12">
+                        <label>20077</label>
+                        <label2>31166</label2>
+                        <icon>special://skin/extras/icons/dsmk2.png</icon>
+                        <onclick>activatewindow(SkinSettings)</onclick>
+                    </item>
+                    <item id="2">
+                        <label>14201</label>
+                        <label2>31157</label2>
+                        <icon>special://skin/extras/icons/player.png</icon>
+                        <onclick>activatewindow(PlayerSettings)</onclick>
+                    </item>
+                    <item id="3">
+                        <label>14212</label>
+                        <label2>31158</label2>
+                        <icon>special://skin/extras/icons/library.png</icon>
+                        <onclick>activatewindow(MediaSettings)</onclick>
+                    </item>
+					<item id="11">
+                        <label>19191</label>
+                        <label2>31163</label2>
+                        <icon>special://skin/extras/icons/livetv.png</icon>
+                        <onclick>activatewindow(pvrsettings)</onclick>
+                    </item>
+					<item id="13">
+                        <label>15016</label>
+                        <label2>$LOCALIZE[31006]</label2>
+                        <icon>special://skin/extras/icons/games.png</icon>
+                        <onclick>activatewindow(gamesettings)</onclick>
+                    </item>
+				   <item id="4">
+                        <label>24001</label>
+                        <label2>31162</label2>
+                        <icon>special://skin/extras/icons/addons.png</icon>
+                        <onclick>activatewindow(AddonBrowser)</onclick>
+                    </item>
+                    <item id="8">
+                        <label>13000</label>
+                        <label2>31161</label2>
+                        <icon>special://skin/extras/icons/configure.png</icon>
+                        <onclick>activatewindow(SystemSettings)</onclick>
+                    </item>
+                     <item id="9">
+                        <label>13200</label>
+                        <label2>31165</label2>
+                        <icon>special://skin/extras/icons/actor.png</icon>
+                        <onclick>activatewindow(Profiles)</onclick>
+                    </item>
+					<item id="7">
+                        <label>14208</label>
+                        <label2>31164</label2>
+                        <icon>special://skin/extras/icons/network.png</icon>
+                        <onclick>activatewindow(ServiceSettings)</onclick>
+                    </item>         
+                    <item id="10">
+                        <label>130</label>
+                        <label2>31167</label2>
+                        <icon>special://skin/extras/icons/sysinfo.png</icon>
+                        <onclick>activatewindow(7)</onclick>
+                    </item> 
+                    <item id="5">
+                        <label>10003</label>
+                        <label2>31160</label2>
+                        <icon>special://skin/extras/icons/files.png</icon>
+                        <onclick>activatewindow(filemanager)</onclick>
+                    </item>   
+                </content>
+            </control>
+        </control>
+		 <include>Def9000SettingsMenu</include>
+    </controls>
+</window>

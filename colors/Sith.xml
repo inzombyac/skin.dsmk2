@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<colors>
+	
+    <color name="Highlight">FFB42527</color>
+    <color name="Highlight2">FF535353</color>
+    
+   
+	<color name="Dark1">ffcccccc</color>
+	<color name="Dark2">b3cccccc</color>
+	<color name="Dark3">4dcccccc</color>
+	<color name="Dark4">1fcccccc</color>
+	<color name="Light1">ff333333</color>
+	<color name="Light2">b3333333</color>
+	<color name="Light3">4d333333</color>
+	<color name="Light4">1f333333</color>
+    
+    <color name="Background">ff1A1A1A</color>
+    <color name="HeaderBG">4d000000</color>
+    <color name="FanartFade">3Fffffff</color>
+    <color name="FloorFade">8F181818</color>   
+    
+    <color name="Panel">FF222222</color>
+    <color name="White100">FF333333</color>
+    <color name="Overlay">FF000000</color>
+    <color name="DialogHeader">FFF80404</color>
+    
+</colors>

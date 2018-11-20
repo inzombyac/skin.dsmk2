@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window>
+    <defaultcontrol always="true">9100</defaultcontrol>
+    <controls>
+        <include>GlobalOverlay</include>
+        <control type="group">
+            <include>Animation.FadeIn.Slide</include>
+            <centerleft>50%</centerleft>
+            <centertop>50%</centertop>
+            <width>1550</width>
+            <height>924</height>
+            <control type="image">
+                <description>background image</description>
+                <top>-8</top>
+                <bottom>-8</bottom>
+                <left>-8</left>
+                <right>-8</right>
+                <texture border="16" colordiffuse="White100">common/rounded-shadow8.png</texture>
+            </control>
+            <control type="image">
+                <top>-8</top>
+                <bottom>-8</bottom>
+                <left>-8</left>
+                <right>-8</right>
+                <height>100</height>
+                <texture border="16" colordiffuse="DialogHeader">common/rounded-shadow8.png</texture>
+            </control>
+            <control type="label">
+                <description>header label</description>
+                <left>22</left>
+                <right>22</right>
+                <top>5</top>
+                <align>center</align>
+                <font>MediumBold</font>
+                <textcolor>Light1</textcolor>
+                <label>$LOCALIZE[31035]</label>
+            </control>
+			<control type="label">
+                <description>Current Path</description>
+                <bottom>10</bottom>
+				<left>10</left>
+                <font>Tiny</font>
+                <align>left</align>
+                <textcolor>Black70</textcolor>
+				<label>$VAR[SkinShortcutPath]</label>
+            </control>
+            <!-- Left List: Current Shortcuts -->
+            <control type="list" id="211">
+                <description>Rules List Control</description>
+                <left>15</left>
+                <top>95</top>
+                <width>640</width>
+                <height>747</height>
+                <onup>211</onup>
+                <onleft>211</onleft>
+                <onright>9100</onright>
+                <ondown>211</ondown>
+                <itemlayout width="640" height="83">
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>100%</width>
+                        <height>80</height>
+                        <texture border="5" colordiffuse="Black12">common/box.png</texture>
+                    </control>
+                    <control type="label">
+                        <left>30</left>
+                        <right>30</right>
+                        <label>$INFO[ListItem.Label]</label>
+						<top>-10</top>
+                    </control>
+					 <control type="label">
+                        <left>30</left>
+                        <right>30</right>
+                        <label>$INFO[ListItem.Label2]</label>
+						<font>Micro</font>
+						<bottom>-5</bottom>
+                    </control>
+                    <control type="image">
+                        <right>0</right>
+                        <top>5</top>
+                        <width>66</width>
+                        <height>66</height>
+                        <texture colordiffuse="Black30">$INFO[ListItem.Icon]</texture>
+                        <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                    </control>
+                </itemlayout>
+                <focusedlayout width="640" height="83">
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>100%</width>
+                        <height>80</height>
+                        <texture border="5" colordiffuse="$VAR[ColorHighlight]">common/box.png</texture>
+                        <visible>Control.HasFocus(211)</visible>
+                    </control>
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>100%</width>
+                        <height>80</height>
+                        <texture colordiffuse="Dark1">common/white.png</texture>
+                        <visible>!Control.HasFocus(211)</visible>
+                    </control>
+                     <control type="label">
+                        <left>30</left>
+                        <right>30</right>
+                        <label>$INFO[ListItem.Label]</label>
+						<textcolor>$VAR[ColourSelected]</textcolor>
+						<top>-10</top>
+                    </control>
+					 <control type="label">
+                        <left>30</left>
+                        <right>30</right>
+                        <label>$INFO[ListItem.Label2]</label>
+						<textcolor>$VAR[ColourSelected]</textcolor>
+						<font>Micro</font>
+						<bottom>-5</bottom>
+                    </control>
+                    <control type="image">
+                        <right>0</right>
+                        <top>5</top>
+                        <width>66</width>
+                        <height>66</height>
+                        <texture colordiffuse="$VAR[ColourSelected]">$INFO[ListItem.Icon]</texture>
+                        <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                    </control>
+                </focusedlayout>
+            </control>
+			<!-- Far Right -->
+			<control type="group">
+				<height>860</height>
+				<right>15</right>
+				<width>460</width>
+				<top>95</top>			
+				<control type="button" id="308" description="Reset">
+                    <width>350</width>
+					<height>66</height>
+					<left>60</left>
+					<bottom>180</bottom>
+					<onup>308</onup>
+					<ondown condition="String.IsEqual(Window.Property(groupname),mainmenu)">8780</ondown>
+					<ondown condition="!String.IsEqual(Window.Property(groupname),mainmenu)">8781</ondown>
+					<onleft>9100</onleft>
+                    <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+                    <include>DefSettingsOKCancelButton</include>
+                </control>
+				<control type="button" id="8780" description="OK">
+					<onup>308</onup>
+					<ondown>8780</ondown>
+					<onleft>9100</onleft>
+					<bottom>104</bottom>
+					<label>OK</label>
+					<width>350</width>
+					<height>66</height>
+					<left>60</left>
+					<texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+					<include>DefSettingsOKCancelButton</include>
+					<onclick>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=300&amp;group=mainmenu|movieshub|episodeshub)</onclick>
+					<onclick>Back</onclick>
+					<onclick>ReloadSkin()</onclick>
+					<visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+				</control>
+				<control type="button" id="8781" description="Back Submenu">
+					<onup>308</onup>
+					<onleft>9100</onleft>
+					<bottom>104</bottom>
+					<label>Back</label>
+					<width>350</width>
+					<height>66</height>
+					<left>60</left>
+					<texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+					<include>DefSettingsOKCancelButton</include>
+					<onclick>Back</onclick>
+					<visible>!String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+				</control>
+				<control type="group">
+					<height>480</height>
+					<control type="label">
+						<description>header label</description>
+						<left>22</left>
+						<right>22</right>
+						<height>69</height>
+						<font>SmallBold</font>
+						<align>center</align>
+						<textcolor>Black70</textcolor>
+						<label>$VAR[SkinShortcutsImageLabel]</label>
+						<visible>!String.IsEmpty(Container(211).ListItem.Label)</visible>
+					</control>
+					<!-- Widget -->
+                    <control type="list" id="6000">
+                        <animation effect="slide" start="0,0" end="65,0" time="0" condition="String.IsEqual(Container(211).ListItem.Property(defaultID),movies) | String.IsEqual(Container(211).ListItem.Property(defaultID),recent) | String.IsEqual(Container(211).ListItem.Property(defaultID),latestembycon)">Conditional</animation>
+                        <autoscroll time="5000">true</autoscroll>
+                        <top>69</top>
+                        <left>45</left>
+                        <width>390</width>
+                        <content>
+                            <include content="WeatherWidget">
+                                <param name="is_weather">String.IsEqual(Container(211).ListItem.Property(defaultID),weather)</param>
+                            </include>
+                        </content>
+                        <content>
+                            <include content="SysInfoWidget">
+                                <param name="is_sys_info">String.IsEqual(Container(211).ListItem.Property(defaultID),$LOCALIZE[10007])</param>
+                            </include>
+                        </content>
+                        <content limit="25" target="videos" sortby="random">$VAR[SkinShortcutsContinueEpisodes]</content>
+                        <content limit="25" target="videos" sortby="random">$VAR[SkinShortcutsContinueMovies]</content>
+                        <content limit="25" target="videos" sortby="random">$VAR[SkinShortcutsContent]</content>
+                        <include content="EmbyHomeLayout">
+                            <param name="widget_width">390</param>
+                            <param name="item_width">380</param>
+                            <param name="widget_height">245</param>
+                            <param name="item_height">230</param>
+                            <param name="widget_movie_height">430</param>
+                            <param name="item_movie_height">430</param>
+                            <param name="widget_movie_width">390</param>
+                            <param name="item_movie_width">240</param>
+                            <param name="widget_square_width">390</param>
+                            <param name="item_square_width">380</param>
+                            <param name="widget_square_height">390</param>
+                            <param name="item_square_height">380</param>
+                            <param name="movie_view">String.IsEqual(Container(211).ListItem.Property(defaultID),movies) | String.IsEqual(Container(211).ListItem.Property(defaultID),recent) | String.IsEqual(Container(211).ListItem.Property(defaultID),latestembycon)</param>
+                            <param name="square_view">String.IsEqual(Container(211).ListItem.Property(defaultID),music) | String.IsEqual(Container(211).ListItem.Property(defaultID),songs) | String.IsEqual(Container(211).ListItem.Property(defaultID),albums)</param>
+                            <param name="channel_view">String.IsEqual(Container(211).ListItem.Property(defaultID),livetv)</param>
+                        </include>
+                    </control>
+                    <!-- background -->
+					<control type="image">
+						<top>69</top>
+						<height>220</height>
+						<aspectratio>keep</aspectratio>
+						<texture>$VAR[SkinShortcutsBackground]</texture>
+						<visible>!String.IsEqual(Window.Property(groupname),mainmenu) | !Integer.IsGreater(Container(211).Position,0)</visible>
+					</control>
+				</control>
+			</control>
+            <!-- Right Buttons -->
+            <control type="grouplist" id="9100">
+                <onleft>211</onleft>
+                <onright condition="String.IsEqual(Window.Property(groupname),mainmenu)">8780</onright>
+				<onright condition="!String.IsEqual(Window.Property(groupname),mainmenu)">8781</onright>
+                <onup>9100</onup>
+                <ondown>9100</ondown>
+                <left>675</left>
+                <top>95</top>
+                <width>400</width>
+                <height>759</height>
+                <orientation>vertical</orientation>
+                <itemgap>3</itemgap>       
+				<control type="button" id="9300" description="Set Library Items">
+                    <width>100%</width>
+                    <height>66</height>
+                    <label>Change Library Items</label>
+                    <visible>String.IsEqual(Window.Property(groupname),mainmenu) + String.IsEqual(Container(211).ListItem.Label2,library)</visible>
+                    <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+                    <include>DefDialogButtons</include>
+                    <onclick>RunScript(script.skinshortcuts,type=manage&amp;group=library)</onclick>
+                </control>
+                <control type="button" id="401" description="Alt chooser">
+                    <width>100%</width>
+                    <height>66</height>
+                    <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+                    <include>DefDialogButtons</include>
+                    <visible>!String.IsEqual(Container(211).ListItem.Label2,library)</visible>
+                </control>
+                <control type="button" id="307" description="Custom">
+                    <width>100%</width>
+                    <height>66</height>
+                    <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+                    <include>DefDialogButtons</include>
+                </control>
+                <control type="button" id="305" description="Set Label">
+                    <width>100%</width>
+                    <height>66</height>
+                    <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+                    <include>DefDialogButtons</include>
+                </control>
+                <control type="button" id="310" description="Background">
+                    <width>100%</width>
+                    <height>66</height>
+                    <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+					<visible>!String.IsEmpty(Container(211).ListItem.Label) + [[String.IsEqual(Window.Property(groupname),mainmenu) + !Integer.IsGreater(Container(211).Position,0)] | !String.IsEqual(Window.Property(groupname),mainmenu)]</visible>
+                    <include>DefDialogButtons</include>
+                </control>
+                <!-- Main widget -->
+				 <control type="button" id="312" description="Select Widget">
+					<width>100%</width>
+					<height>66</height>
+					<texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+					<include>DefDialogButtons</include>
+					<visible>!String.IsEmpty(Container(211).ListItem.Label) + String.IsEqual(Window.Property(groupname),mainmenu) + !String.IsEqual(Container(211).ListItem.Property(defaultID),Library) + !String.IsEqual(Container(211).ListItem.Property(defaultID),weather) + !String.IsEqual(Container(211).ListItem.Property(defaultID),$LOCALIZE[10007]) + !String.IsEqual(Container(211).ListItem.Property(defaultID),livetv)  + !String.IsEqual(Container(211).ListItem.Property(defaultID),continue)</visible>
+					<visible>Integer.IsLessOrEqual(Container(211).Position,10)</visible>
+					<onup>8780</onup>
+				</control>
+                <control type="button" id="9301" description="Set MovieHub">
+                    <width>100%</width>
+                    <height>66</height>
+                    <label>31178</label>
+                    <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                    <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+                    <include>DefDialogButtons</include>
+                    <visible>String.IsEqual(Container(211).ListItem.Label2,MovieHub)</visible>
+                    <onclick>RunScript(script.skinshortcuts,type=manage&amp;group=movieshub)</onclick>
+                </control>
+                <control type="button" id="9302" description="Set TVHub">
+                    <width>100%</width>
+                    <height>66</height>
+                    <label>31178</label>
+                    <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                    <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+                    <include>DefDialogButtons</include>
+                    <visible>String.IsEqual(Container(211).ListItem.Label2,TVHub)</visible>
+                    <onclick>RunScript(script.skinshortcuts,type=manage&amp;group=episodeshub)</onclick>
+                </control>
+                <control type="button" id="303" description="Up">
+                    <width>100%</width>
+                    <height>66</height>
+                    <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+                    <include>DefDialogButtons</include>
+                   <visible>!String.IsEqual(Window.Property(groupname),mainmenu) | [String.IsEqual(Window.Property(groupname),mainmenu) + Integer.IsGreater(Container(211).Position,1)]</visible>
+                </control>
+                <control type="button" id="304" description="Down">
+                    <width>100%</width>
+                    <height>66</height>
+                    <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+                    <include>DefDialogButtons</include>
+                    <visible>!String.IsEqual(Container(211).ListItem.Label2,library) | !String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                </control>
+                <control type="button" id="301" description="Add">
+                    <width>100%</width>
+                    <height>66</height>
+                    <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+                    <include>DefDialogButtons</include>
+                    <visible>Integer.IsLessOrEqual(Container(211).NumItems, 10) | !String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                </control>
+                <control type="button" id="302" description="Delete">
+                    <width>100%</width>
+                    <height>66</height>
+                    <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+                    <include>DefDialogButtons</include>
+                    <visible>!String.IsEqual(Container(211).ListItem.Label2,library) | !String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                </control> 
+            </control> 
+        </control>
+    </controls>
+</window>

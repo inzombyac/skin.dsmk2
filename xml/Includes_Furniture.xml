@@ -1,0 +1,1823 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<includes>
+	<include name="Furniture_Scrollbar">
+		<control type="scrollbar" id="60">
+			<onback>50</onback>
+			<centerright>60</centerright>
+			<posy>PosterPad</posy>
+			<height>PosterH</height>
+			<width>8</width>
+			<onleft condition="Control.IsVisible(50)">50</onleft>
+			<texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
+			<texturesliderbar border="4" colordiffuse="$VAR[ColorHighlight]">scrollbar/scrollv.png</texturesliderbar>
+			<texturesliderbarfocus border="4" colordiffuse="$VAR[ColorHighlight]">scrollbar/scrollv.png</texturesliderbarfocus>
+			<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
+			<animation effect="slide" end="5,0" time="400" condition="!Control.HasFocus(60)">Conditional</animation>
+		</control>
+	</include>
+	<include name="Furniture_Scrollbar_List">
+		<control type="scrollbar" id="60">
+			<onback>50</onback>
+			<centerright>60</centerright>
+			<posy>170</posy>
+			<height>810</height>
+			<width>8</width>
+			<onleft condition="String.IsEqual(Container.SortMethod, $LOCALIZE[369]) | String.IsEqual(Container.SortMethod, $LOCALIZE[551]) | String.IsEqual(Container.SortMethod, $LOCALIZE[36918]) | String.IsEqual(Container.SortMethod, $LOCALIZE[36916])">61</onleft>
+			<onleft condition="!String.IsEqual(Container.SortMethod, $LOCALIZE[369]) + !String.IsEqual(Container.SortMethod, $LOCALIZE[551]) + !String.IsEqual(Container.SortMethod, $LOCALIZE[36918]) + !String.IsEqual(Container.SortMethod, $LOCALIZE[36916])">50</onleft>
+			<texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
+			<texturesliderbar border="4" colordiffuse="$VAR[ColorHighlight]">scrollbar/scrollv.png</texturesliderbar>
+			<texturesliderbarfocus border="4" colordiffuse="$VAR[ColorHighlight]">scrollbar/scrollv.png</texturesliderbarfocus>
+			<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
+			<!-- <animation effect="slide" end="5,0" time="400" condition="!Control.HasFocus(60)">Conditional</animation> -->
+		</control>
+		<control type="grouplist" id="61">
+			<centerright>80</centerright>
+			<posy>170</posy>
+			<height>810</height>
+			<width>60</width>
+			<onback>50</onback>
+			<onleft>50</onleft>
+			<onright>60</onright>
+			<align>justify</align>
+			<visible>String.IsEqual(Container.SortMethod, $LOCALIZE[369]) | String.IsEqual(Container.SortMethod, $LOCALIZE[551]) | String.IsEqual(Container.SortMethod, $LOCALIZE[36918]) | String.IsEqual(Container.SortMethod, $LOCALIZE[36916])</visible>
+			<visible>Control.IsVisible(60)</visible>
+			<animation effect="fade" start="100" end="0" time="0" condition="String.IsEmpty(ListItem.Label)">Conditional</animation>
+			<control type="button" id="9600">
+				<label>#</label>
+				<onclick>left</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>right</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9600)">Conditional</animation>
+			</control>
+			<control type="button" id="9601">
+				<label>A</label>
+				<onclick>left</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>Action(JumpSMS2)</onclick>
+				<onclick>right</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9601)">Conditional</animation>
+			</control>
+			<control type="button" id="9602">
+				<label>B</label>
+				<onclick>left</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>Action(JumpSMS2)</onclick>
+				<onclick>Action(JumpSMS2)</onclick>
+				<onclick>right</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9602)">Conditional</animation>
+			</control>
+			<control type="button" id="9603">
+				<label>C</label>
+				<onclick>left</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>Action(JumpSMS2)</onclick>
+				<onclick>Action(JumpSMS2)</onclick>
+				<onclick>Action(JumpSMS2)</onclick>
+				<onclick>right</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9603)">Conditional</animation>
+			</control>
+			<control type="button" id="9604">
+				<label>D</label>
+				<onclick>left</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>Action(JumpSMS3)</onclick>
+				<onclick>right</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9604)">Conditional</animation>
+			</control>
+			<control type="button" id="9605">
+				<label>E</label>
+				<onclick>left</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>Action(JumpSMS3)</onclick>
+				<onclick>Action(JumpSMS3)</onclick>
+				<onclick>right</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9605)">Conditional</animation>
+			</control>
+			<control type="button" id="9606">
+				<label>F</label>
+				<onclick>left</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>Action(JumpSMS3)</onclick>
+				<onclick>Action(JumpSMS3)</onclick>
+				<onclick>Action(JumpSMS3)</onclick>
+				<onclick>right</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9606)">Conditional</animation>
+			</control>
+			<control type="button" id="9607">
+				<label>G</label>
+				<onclick>left</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>Action(JumpSMS4)</onclick>
+				<onclick>right</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9607)">Conditional</animation>
+			</control>
+			<control type="button" id="9608">
+				<label>H</label>
+				<onclick>left</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>Action(JumpSMS4)</onclick>
+				<onclick>Action(JumpSMS4)</onclick>
+				<onclick>right</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9608)">Conditional</animation>
+			</control>
+			<control type="button" id="9609">
+				<label>I</label>
+				<onclick>left</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>Action(JumpSMS4)</onclick>
+				<onclick>Action(JumpSMS4)</onclick>
+				<onclick>Action(JumpSMS4)</onclick>
+				<onclick>right</onclick>	
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9609)">Conditional</animation>
+			</control>
+			<control type="button" id="9610">
+				<label>J</label>
+				<onclick>left</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>Action(JumpSMS5)</onclick>
+				<onclick>right</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9610)">Conditional</animation>
+			</control>
+			<control type="button" id="9611">
+				<label>K</label>
+				<onclick>left</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>Action(JumpSMS5)</onclick>
+				<onclick>Action(JumpSMS5)</onclick>
+				<onclick>right</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9611)">Conditional</animation>
+			</control>
+			<control type="button" id="9612">
+				<label>L</label>
+				<onclick>left</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>Action(JumpSMS5)</onclick>
+				<onclick>Action(JumpSMS5)</onclick>
+				<onclick>Action(JumpSMS5)</onclick>
+				<onclick>right</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9612)">Conditional</animation>
+			</control>
+			<control type="button" id="9613">
+				<label>M</label>
+				<onclick>left</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>Action(JumpSMS6)</onclick>
+				<onclick>right</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9613)">Conditional</animation>
+			</control>
+			<control type="button" id="9614">
+				<label>N</label>
+				<onclick>left</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>Action(JumpSMS6)</onclick>
+				<onclick>Action(JumpSMS6)</onclick>
+				<onclick>right</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9614)">Conditional</animation>
+			</control>
+			<control type="button" id="9615">
+				<label>O</label>
+				<onclick>left</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>Action(JumpSMS6)</onclick>
+				<onclick>Action(JumpSMS6)</onclick>
+				<onclick>Action(JumpSMS6)</onclick>
+				<onclick>right</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9615)">Conditional</animation>
+			</control>
+			<control type="button" id="9616">
+				<label>P</label>
+				<onclick>left</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>Action(JumpSMS7)</onclick>
+				<onclick>right</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9616)">Conditional</animation>
+			</control>
+			<control type="button" id="9617">
+				<label>Q</label>
+				<onclick>left</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>Action(JumpSMS7)</onclick>
+				<onclick>Action(JumpSMS7)</onclick>
+				<onclick>right</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9617)">Conditional</animation>
+			</control>
+			<control type="button" id="9618">
+				<label>R</label>
+				<onclick>left</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>Action(JumpSMS7)</onclick>
+				<onclick>Action(JumpSMS7)</onclick>
+				<onclick>Action(JumpSMS7)</onclick>
+				<onclick>right</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9618)">Conditional</animation>
+			</control>
+			<control type="button" id="9619">
+				<label>S</label>
+				<onclick>left</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>Action(JumpSMS7)</onclick>
+				<onclick>Action(JumpSMS7)</onclick>
+				<onclick>Action(JumpSMS7)</onclick>
+				<onclick>Action(JumpSMS7)</onclick>
+				<onclick>right</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9619)">Conditional</animation>
+			</control>
+			<control type="button" id="9620">
+				<label>T</label>
+				<onclick>left</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>Action(JumpSMS8)</onclick>
+				<onclick>right</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9620)">Conditional</animation>
+			</control>
+			<control type="button" id="9621">
+				<label>U</label>
+				<onclick>left</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>Action(JumpSMS8)</onclick>
+				<onclick>Action(JumpSMS8)</onclick>
+				<onclick>right</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9621)">Conditional</animation>
+			</control>
+			<control type="button" id="9622">
+				<label>V</label>
+				<onclick>left</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>Action(JumpSMS8)</onclick>
+				<onclick>Action(JumpSMS8)</onclick>
+				<onclick>Action(JumpSMS8)</onclick>
+				<onclick>right</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9622)">Conditional</animation>
+			</control>		
+			<control type="button" id="9623">
+				<label>W</label>
+				<onclick>left</onclick>
+				<onclick>Action(JumpSMS9)</onclick>
+				<onclick>right</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9623)">Conditional</animation>
+			</control>
+			<control type="button" id="9624">
+				<label>X</label>
+				<onclick>left</onclick>
+				<onclick>Action(JumpSMS9)</onclick>
+				<onclick>Action(JumpSMS9)</onclick>
+				<onclick>right</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9624)">Conditional</animation>
+			</control>		
+			<control type="button" id="9625">
+				<label>Y</label>
+				<onclick>left</onclick>
+				<onclick>Action(JumpSMS9)</onclick>
+				<onclick>Action(JumpSMS9)</onclick>
+				<onclick>Action(JumpSMS9)</onclick>
+				<onclick>right</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9625)">Conditional</animation>
+			</control>
+			<control type="button" id="9626">
+				<label>Z</label>
+				<onclick>left</onclick>
+				<onclick>Action(JumpSMS9)</onclick>
+				<onclick>Action(JumpSMS9)</onclick>
+				<onclick>Action(JumpSMS9)</onclick>
+				<onclick>Action(JumpSMS9)</onclick>
+				<onclick>right</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9626)">Conditional</animation>
+			</control>										
+		</control>
+	</include>
+	<include name="Furniture_Scrollbar_Wall">
+		<control type="scrollbar" id="60">
+			<onback>50</onback>
+			<left>SidePad</left>
+			<width>1760</width>
+			<bottom>80</bottom>
+			<orientation>horizontal</orientation>
+			<height>8</height>
+			<onup condition="Control.IsVisible(65)">65</onup>
+			<onup condition="!Control.IsVisible(65) + Control.IsVisible(53)">53</onup>
+			<onup condition="!Control.IsVisible(65) + Control.IsVisible(55)">55</onup>
+			<onup condition="!Control.IsVisible(65) + Control.IsVisible(505)">505</onup>
+			<onup condition="!Control.IsVisible(65) + Control.IsVisible(500)">500</onup>
+			<texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
+			<texturesliderbar border="4" colordiffuse="$VAR[ColorHighlight]">scrollbar/scrollv.png</texturesliderbar>
+			<texturesliderbarfocus border="4" colordiffuse="$VAR[ColorHighlight]">scrollbar/scrollv.png</texturesliderbarfocus>
+			<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
+			<animation effect="slide" start="0" end="0,-5" time="200" condition="Control.HasFocus(60)">Conditional</animation>
+		</control>
+		<control type="grouplist" id="61">
+			<centertop>185</centertop>
+			<height>60</height>
+			<left>SidePad</left>
+			<right>SidePad</right>
+			<ondown condition="Control.IsVisible(53)">53</ondown>
+			<ondown condition="Control.IsVisible(55)">55</ondown>
+			<ondown condition="Control.IsVisible(505)">505</ondown>
+			<ondown condition="Control.IsVisible(500)">500</ondown>
+			<onup condition="Player.HasMedia">7788</onup>
+			<onup condition="!Player.HasMedia">3634</onup>
+			<align>justify</align>
+			<visible>String.IsEqual(Container.SortMethod, $LOCALIZE[369]) | String.IsEqual(Container.SortMethod, $LOCALIZE[551]) | String.IsEqual(Container.SortMethod, $LOCALIZE[36918]) | String.IsEqual(Container.SortMethod, $LOCALIZE[36916])</visible>
+			<visible>Control.IsVisible(60)</visible>
+			<orientation>horizontal</orientation>
+			<animation effect="fade" start="100" end="0" time="0" condition="String.IsEmpty(ListItem.Label)">Conditional</animation>
+			<control type="button" id="9600">
+				<label>#</label>
+				<onclick>down</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>DefOSDUpDown</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9600)">Conditional</animation>
+			</control>
+			<control type="button" id="9601">
+				<label>A</label>
+				<onclick>down</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>Action(JumpSMS2)</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9601)">Conditional</animation>
+			</control>
+			<control type="button" id="9602">
+				<label>B</label>
+				<onclick>down</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>Action(JumpSMS2)</onclick>
+				<onclick>Action(JumpSMS2)</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9602)">Conditional</animation>
+			</control>
+			<control type="button" id="9603">
+				<label>C</label>
+				<onclick>down</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>Action(JumpSMS2)</onclick>
+				<onclick>Action(JumpSMS2)</onclick>
+				<onclick>Action(JumpSMS2)</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9603)">Conditional</animation>
+			</control>
+			<control type="button" id="9604">
+				<label>D</label>
+				<onclick>down</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>Action(JumpSMS3)</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9604)">Conditional</animation>
+			</control>
+			<control type="button" id="9605">
+				<label>E</label>
+				<onclick>down</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>Action(JumpSMS3)</onclick>
+				<onclick>Action(JumpSMS3)</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9605)">Conditional</animation>
+			</control>
+			<control type="button" id="9606">
+				<label>F</label>
+				<onclick>down</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>Action(JumpSMS3)</onclick>
+				<onclick>Action(JumpSMS3)</onclick>
+				<onclick>Action(JumpSMS3)</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9606)">Conditional</animation>
+			</control>
+			<control type="button" id="9607">
+				<label>G</label>
+				<onclick>down</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>Action(JumpSMS4)</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9607)">Conditional</animation>
+			</control>
+			<control type="button" id="9608">
+				<label>H</label>
+				<onclick>down</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>Action(JumpSMS4)</onclick>
+				<onclick>Action(JumpSMS4)</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9608)">Conditional</animation>
+			</control>
+			<control type="button" id="9609">
+				<label>I</label>
+				<onclick>down</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>Action(JumpSMS4)</onclick>
+				<onclick>Action(JumpSMS4)</onclick>
+				<onclick>Action(JumpSMS4)</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9609)">Conditional</animation>
+			</control>
+			<control type="button" id="9610">
+				<label>J</label>
+				<onclick>down</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>Action(JumpSMS5)</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9610)">Conditional</animation>
+			</control>
+			<control type="button" id="9611">
+				<label>K</label>
+				<onclick>down</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>Action(JumpSMS5)</onclick>
+				<onclick>Action(JumpSMS5)</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9611)">Conditional</animation>
+			</control>
+			<control type="button" id="9612">
+				<label>L</label>
+				<onclick>down</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>Action(JumpSMS5)</onclick>
+				<onclick>Action(JumpSMS5)</onclick>
+				<onclick>Action(JumpSMS5)</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9612)">Conditional</animation>
+			</control>
+			<control type="button" id="9613">
+				<label>M</label>
+				<onclick>down</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>Action(JumpSMS6)</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9613)">Conditional</animation>
+			</control>
+			<control type="button" id="9614">
+				<label>N</label>
+				<onclick>down</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>Action(JumpSMS6)</onclick>
+				<onclick>Action(JumpSMS6)</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9614)">Conditional</animation>
+			</control>
+			<control type="button" id="9615">
+				<label>O</label>
+				<onclick>down</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>Action(JumpSMS6)</onclick>
+				<onclick>Action(JumpSMS6)</onclick>
+				<onclick>Action(JumpSMS6)</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9615)">Conditional</animation>
+			</control>
+			<control type="button" id="9616">
+				<label>P</label>
+				<onclick>down</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>Action(JumpSMS7)</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9616)">Conditional</animation>
+			</control>
+			<control type="button" id="9617">
+				<label>Q</label>
+				<onclick>down</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>Action(JumpSMS7)</onclick>
+				<onclick>Action(JumpSMS7)</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9617)">Conditional</animation>
+			</control>
+			<control type="button" id="9618">
+				<label>R</label>
+				<onclick>down</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>Action(JumpSMS7)</onclick>
+				<onclick>Action(JumpSMS7)</onclick>
+				<onclick>Action(JumpSMS7)</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9618)">Conditional</animation>
+			</control>
+			<control type="button" id="9619">
+				<label>S</label>
+				<onclick>down</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>Action(JumpSMS7)</onclick>
+				<onclick>Action(JumpSMS7)</onclick>
+				<onclick>Action(JumpSMS7)</onclick>
+				<onclick>Action(JumpSMS7)</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9619)">Conditional</animation>
+			</control>
+			<control type="button" id="9620">
+				<label>T</label>
+				<onclick>down</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>Action(JumpSMS8)</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9620)">Conditional</animation>
+			</control>
+			<control type="button" id="9621">
+				<label>U</label>
+				<onclick>down</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>Action(JumpSMS8)</onclick>
+				<onclick>Action(JumpSMS8)</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9621)">Conditional</animation>
+			</control>
+			<control type="button" id="9622">
+				<label>V</label>
+				<onclick>down</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>Action(JumpSMS8)</onclick>
+				<onclick>Action(JumpSMS8)</onclick>
+				<onclick>Action(JumpSMS8)</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9622)">Conditional</animation>
+			</control>		
+			<control type="button" id="9623">
+				<label>W</label>
+				<onclick>down</onclick>
+				<onclick>Action(JumpSMS9)</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9623)">Conditional</animation>
+			</control>
+			<control type="button" id="9624">
+				<label>X</label>
+				<onclick>down</onclick>
+				<onclick>Action(JumpSMS9)</onclick>
+				<onclick>Action(JumpSMS9)</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9624)">Conditional</animation>
+			</control>		
+			<control type="button" id="9625">
+				<label>Y</label>
+				<onclick>down</onclick>
+				<onclick>Action(JumpSMS9)</onclick>
+				<onclick>Action(JumpSMS9)</onclick>
+				<onclick>Action(JumpSMS9)</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9625)">Conditional</animation>
+			</control>
+			<control type="button" id="9626">
+				<label>Z</label>
+				<onclick>down</onclick>
+				<onclick>Action(JumpSMS9)</onclick>
+				<onclick>Action(JumpSMS9)</onclick>
+				<onclick>Action(JumpSMS9)</onclick>
+				<onclick>Action(JumpSMS9)</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9626)">Conditional</animation>
+			</control>										
+		</control>
+	</include>
+	<include name="Furniture_Scrollbar_WallInfo">
+		<control type="scrollbar" id="60">
+			<onback>50</onback>
+			<right>70</right>
+			<width>1135</width>
+			<bottom>80</bottom>
+			<orientation>horizontal</orientation>
+			<height>8</height>
+			<onup condition="!Control.IsVisible(65)">50</onup>
+			<onup condition="Control.IsVisible(65)">65</onup>
+			<texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
+			<texturesliderbar border="4" colordiffuse="$VAR[ColorHighlight]">scrollbar/scrollv.png</texturesliderbar>
+			<texturesliderbarfocus border="4" colordiffuse="$VAR[ColorHighlight]">scrollbar/scrollv.png</texturesliderbarfocus>
+			<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
+			<animation effect="slide" start="0" end="0,-10" time="400" condition="Control.HasFocus(60)">Conditional</animation>
+		</control>
+	</include>			
+	<include name="Furniture_NowPlaying">
+		<!-- Next Recording -->
+		<control type="group">
+			<top>10</top>
+			<left>560</left>
+			<width>800</width>
+			<height>100</height>
+			<include>Animation.FadeIn.Slide</include>
+			<include>Animation.FadeOut</include>
+			<visible>Player.HasMedia</visible>
+			<!-- <animation effect="zoom" start="100" end="85" condition="true">Conditional</animation> -->
+			<control type="image">
+				<description>background image</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>100%</width>
+				<height>100%</height>
+				<colordiffuse>Light1</colordiffuse>
+                <animation effect="fade" start="100" end="90" condition="true">Conditional</animation>
+                <texture border="16">common/rounded-shadow8.png</texture>
+			</control>
+			<control type="group">
+				<centertop>50%</centertop>
+				<centerleft>52</centerleft>
+				<height>100</height>
+				<width>100</width>
+				<control type="image" description="Play">
+					<left>0</left>
+					<centertop>50%</centertop>
+					<width>100</width>
+					<height>100</height>
+					<aspectratio align="center" aligny="center">keep</aspectratio>
+					<texture colordiffuse="Dark1">progress/play.png</texture>
+					<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
+					<visible>!Player.Paused + !Player.Muted</visible>
+				</control>
+				<control type="image" description="Pause">
+					<left>0</left>
+					<centertop>50%</centertop>
+					<width>100</width>
+					<height>100</height>
+					<aspectratio align="center" aligny="center">keep</aspectratio>
+					<texture colordiffuse="Dark1">progress/pause.png</texture>
+					<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
+					<visible>Player.Paused</visible>
+				</control>
+				<control type="image" description="Mute">
+					<left>0</left>
+					<centertop>50%</centertop>
+					<width>100</width>
+					<height>100</height>
+					<aspectratio align="center" aligny="center">keep</aspectratio>
+					<texture colordiffuse="Dark1">progress/mute.png</texture>
+					<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
+					<visible>Player.Muted + !Player.Paused</visible>
+				</control>
+				<control type="progress" id="9666">
+					<texturebg></texturebg>
+					<lefttexture></lefttexture>
+					<midtexture></midtexture>
+					<righttexture></righttexture>
+					<info>Player.Progress</info>
+					<visible>false</visible>
+				</control>
+				<control type="image">
+					<left>0</left>
+					<centertop>50%</centertop>
+					<width>100</width>
+					<height>100</height>
+					<texture >$INFO[Control.GetLabel(9666),progress/circle/p,.png]</texture>
+					<aspectratio align="center">keep</aspectratio>
+					<visible>!String.IsEmpty(Player.Duration)</visible>
+				</control>
+			</control>
+			<control type="group">
+				<left>104</left>
+				<width>690</width>
+				<posy>10</posy>
+				<control type="label">
+					<centertop>24</centertop>
+					<width>auto</width>
+					<font>SmallBold</font>
+					<align>left</align>
+					<textcolor>Dark1</textcolor>
+					<label>$INFO[Player.Title]</label>
+				</control>
+				<control type="label">
+					<centertop>58</centertop>
+					<align>left</align>
+					<font>Flag</font>
+					<width>auto</width>
+					<textcolor>Dark2</textcolor>
+					<label>$INFO[VideoPlayer.TvShowTitle,, ]$INFO[MusicPlayer.Artist,, ]$INFO[Player.Time]$INFO[Player.Duration, / ,]</label>
+				</control>
+				<control type="image">
+					<right>10</right>
+					<bottom>10</bottom>
+					<width>100</width>
+					<texture colordiffuse="$VAR[ColorHighlight2]">special://skin/extras/icons/equaliser.gif</texture>
+					<visible>!Player.Paused + Player.HasAudio</visible>
+				</control>
+				<control type="image">
+					<right>10</right>
+					<bottom>10</bottom>
+					<width>100</width>
+					<texture colordiffuse="$VAR[ColorHighlight2]">special://skin/extras/icons/equaliser_stop.gif</texture>
+					<visible>Player.Paused + Player.HasAudio</visible>
+				</control>
+				<control type="videowindow">
+					<visible>Player.HasVideo + !Skin.HasSetting(global.showvideo)</visible>
+					<right>10</right>
+					<bottom>10</bottom>
+					<width>180</width>
+				</control>
+				<control type="button" id="7788">
+					<top>-5</top>
+					<left>-100</left>
+					<width>792</width>
+					<height>90</height>
+					<disabledcolor>$VAR[OSDPanelWhite12]</disabledcolor>
+					<textcolor>$VAR[OSDPanelWhite30]</textcolor>
+					<focusedcolor>$VAR[ColorHighlight]</focusedcolor>
+					<texturefocus colordiffuse="$VAR[ColorHighlight]" border="20">common/selectbox.png</texturefocus>
+					<onclick>dialog.close(all,true)</onclick>
+					<onclick>FullScreen</onclick>
+					<onup>3634</onup>
+					<onleft>3634</onleft>
+					<ondown condition="Window.IsVisible(Home.xml)">4000</ondown>
+					<ondown condition="Control.IsVisible(50)">50</ondown>
+ 	 				<ondown condition="Control.IsVisible(52)">52</ondown>
+ 	 				<ondown condition="Control.IsVisible(53) + Control.IsVisible(61)">61</ondown>
+ 	 				<ondown condition="Control.IsVisible(53) + !Control.IsVisible(61)">53</ondown>
+ 	 				<ondown condition="Control.IsVisible(55) + Control.IsVisible(61)">61</ondown>
+ 	 				<ondown condition="Control.IsVisible(55) + !Control.IsVisible(61)">55</ondown>
+ 	 				<ondown condition="Control.IsVisible(59)">59</ondown>
+ 	 				<ondown condition="Control.IsVisible(500)">500</ondown>
+ 	 				<ondown condition="Control.IsVisible(505) + Control.IsVisible(61)">61</ondown>
+ 	 				<ondown condition="Control.IsVisible(505) + !Control.IsVisible(61)">505</ondown>
+ 	 				<ondown condition="Control.IsVisible(506)">506</ondown>
+	 				<ondown condition="Control.IsVisible(517)">517</ondown>
+				</control>
+			</control>
+		</control>
+	</include>
+	<!-- Flags -->
+	<variable name="Flagstar1">
+		<value condition="Integer.IsGreater(ListItem.UserRating,1) + !String.IsEmpty(ListItem.UserRating)">star10</value>
+		<value condition="Integer.IsGreater(ListItem.UserRating,0) + !String.IsEmpty(ListItem.UserRating)">star5</value>
+		<value condition="Integer.IsGreater(ListItem.Rating,1)">star10</value>
+		<value condition="Integer.IsGreater(ListItem.Rating,0)">star5</value>
+		<value condition="Integer.IsEqual(ListItem.Rating,0)"></value>
+		<value>star0</value>
+	</variable>
+	<variable name="Flagstar2">
+		<value condition="Integer.IsGreater(ListItem.UserRating,3) + !String.IsEmpty(ListItem.UserRating)">star10</value>
+		<value condition="Integer.IsGreater(ListItem.UserRating,2) + !String.IsEmpty(ListItem.UserRating)">star5</value>
+		<value condition="Integer.IsGreater(ListItem.Rating,3)">star10</value>
+		<value condition="Integer.IsGreater(ListItem.Rating,2)">star5</value>
+		<value condition="Integer.IsEqual(ListItem.Rating,0)"></value>
+		<value>star0</value>
+	</variable>
+	<variable name="Flagstar3">
+		<value condition="Integer.IsGreater(ListItem.UserRating,5) + !String.IsEmpty(ListItem.UserRating)">star10</value>
+		<value condition="Integer.IsGreater(ListItem.UserRating,4) + !String.IsEmpty(ListItem.UserRating)">star5</value>
+		<value condition="Integer.IsGreater(ListItem.Rating,5)">star10</value>
+		<value condition="Integer.IsGreater(ListItem.Rating,4)">star5</value>
+		<value condition="Integer.IsEqual(ListItem.Rating,0)"></value>
+		<value>star0</value>
+	</variable>
+	<variable name="Flagstar4">
+		<value condition="Integer.IsGreater(ListItem.UserRating,7) + !String.IsEmpty(ListItem.UserRating)">star10</value>
+		<value condition="Integer.IsGreater(ListItem.UserRating,6) + !String.IsEmpty(ListItem.UserRating)">star5</value>
+		<value condition="Integer.IsGreater(ListItem.Rating,7)">star10</value>
+		<value condition="Integer.IsGreater(ListItem.Rating,6)">star5</value>
+		<value condition="Integer.IsEqual(ListItem.Rating,0)"></value>
+		<value>star0</value>
+	</variable>
+	<variable name="Flagstar5">
+		<value condition="Integer.IsGreater(ListItem.UserRating,9) + !String.IsEmpty(ListItem.UserRating)">star10</value>
+		<value condition="Integer.IsGreater(ListItem.UserRating,8) + !String.IsEmpty(ListItem.UserRating)">star5</value>
+		<value condition="Integer.IsGreater(ListItem.Rating,9)">star10</value>
+		<value condition="Integer.IsGreater(ListItem.Rating,8)">star5</value>
+		<value condition="Integer.IsEqual(ListItem.Rating,0)"></value>
+		<value>star0</value>
+	</variable>
+	<variable name="HubFlagstar1">
+		<value condition="Integer.IsGreater(Container(9500).ListItem.UserRating,1) + !String.IsEmpty(Container(9500).ListItem.UserRating)">star10</value>
+		<value condition="Integer.IsGreater(Container(9500).ListItem.UserRating,0) + !String.IsEmpty(Container(9500).ListItem.UserRating)">star5</value>
+		<value condition="Integer.IsGreater(Container(9500).ListItem.Rating,1)">star10</value>
+		<value condition="Integer.IsGreater(Container(9500).ListItem.Rating,0)">star5</value>
+		<value>star0</value>
+	</variable>
+	<variable name="HubFlagstar2">
+		<value condition="Integer.IsGreater(Container(9500).ListItem.UserRating,3) + !String.IsEmpty(Container(9500).ListItem.UserRating)">star10</value>
+		<value condition="Integer.IsGreater(Container(9500).ListItem.UserRating,2) + !String.IsEmpty(Container(9500).ListItem.UserRating)">star5</value>
+		<value condition="Integer.IsGreater(Container(9500).ListItem.Rating,3)">star10</value>
+		<value condition="Integer.IsGreater(Container(9500).ListItem.Rating,2)">star5</value>
+		<value>star0</value>
+	</variable>
+	<variable name="HubFlagstar3">
+		<value condition="Integer.IsGreater(Container(9500).ListItem.UserRating,5) + !String.IsEmpty(Container(9500).ListItem.UserRating)">star10</value>
+		<value condition="Integer.IsGreater(Container(9500).ListItem.UserRating,4) + !String.IsEmpty(Container(9500).ListItem.UserRating)">star5</value>
+		<value condition="Integer.IsGreater(Container(9500).ListItem.Rating,5)">star10</value>
+		<value condition="Integer.IsGreater(Container(9500).ListItem.Rating,4)">star5</value>
+		<value>star0</value>
+	</variable>
+	<variable name="HubFlagstar4">
+		<value condition="Integer.IsGreater(Container(9500).ListItem.UserRating,7) + !String.IsEmpty(Container(9500).ListItem.UserRating)">star10</value>
+		<value condition="Integer.IsGreater(Container(9500).ListItem.UserRating,6) + !String.IsEmpty(Container(9500).ListItem.UserRating)">star5</value>
+		<value condition="Integer.IsGreater(Container(9500).ListItem.Rating,7)">star10</value>
+		<value condition="Integer.IsGreater(Container(9500).ListItem.Rating,6)">star5</value>
+		<value>star0</value>
+	</variable>
+	<variable name="HubFlagstar5">
+		<value condition="Integer.IsGreater(Container(9500).ListItem.UserRating,9) + !String.IsEmpty(Container(9500).ListItem.UserRating)">star10</value>
+		<value condition="Integer.IsGreater(Container(9500).ListItem.UserRating,8) + !String.IsEmpty(Container(9500).ListItem.UserRating)">star5</value>
+		<value condition="Integer.IsGreater(Container(9500).ListItem.Rating,9)">star10</value>
+		<value condition="Integer.IsGreater(Container(9500).ListItem.Rating,8)">star5</value>
+		<value>star0</value>
+	</variable>
+	<!-- MusicOSDFlags -->
+	<variable name="OSDMusicFlagstar5">
+		<value condition="!String.IsEmpty(MusicPlayer.UserRating) + Integer.IsGreater(MusicPlayer.UserRating,9)">star10</value>
+		<value condition="!String.IsEmpty(MusicPlayer.UserRating) + Integer.IsGreater(MusicPlayer.UserRating,8)">star5</value>
+		<value condition="Integer.IsGreater(MusicPlayer.Rating,9)">star10</value>
+		<value condition="Integer.IsGreater(MusicPlayer.Rating,8)">star5</value>
+		<value>star0</value>
+	</variable>
+	<variable name="OSDMusicFlagstar4">
+		<value condition="!String.IsEmpty(MusicPlayer.UserRating) + Integer.IsGreater(MusicPlayer.UserRating,7)">star10</value>
+		<value condition="!String.IsEmpty(MusicPlayer.UserRating) + Integer.IsGreater(MusicPlayer)">star5</value>
+		<value condition="Integer.IsGreater(MusicPlayer.Rating,7)">star10</value>
+		<value condition="Integer.IsGreater(MusicPlayer.Rating,6)">star5</value>
+		<value>star0</value>
+	</variable>
+	<variable name="OSDMusicFlagstar3">
+		<value condition="!String.IsEmpty(MusicPlayer.UserRating) + Integer.IsGreater(MusicPlayer.UserRating,5)">star10</value>
+		<value condition="!String.IsEmpty(MusicPlayer.UserRating) + Integer.IsGreater(MusicPlayer.UserRating,4)">star5</value>
+		<value condition="Integer.IsGreater(MusicPlayer.Rating,5)">star10</value>
+		<value condition="Integer.IsGreater(MusicPlayer.Rating,4)">star5</value>
+		<value>star0</value>
+	</variable>
+	<variable name="OSDMusicFlagstar2">
+		<value condition="!String.IsEmpty(MusicPlayer.UserRating) + Integer.IsGreater(MusicPlayer.UserRating,3)">star10</value>
+		<value condition="!String.IsEmpty(MusicPlayer.UserRating) + Integer.IsGreater(MusicPlayer.UserRating,2)">star5</value>
+		<value condition="Integer.IsGreater(MusicPlayer.Rating,3)">star10</value>
+		<value condition="Integer.IsGreater(MusicPlayer.Rating,2)">star5</value>
+		<value>star0</value>
+	</variable>
+	<variable name="OSDMusicFlagstar1">
+		<value condition="!String.IsEmpty(MusicPlayer.UserRating) + Integer.IsGreater(MusicPlayer.UserRating,1)">star10</value>
+		<value condition="!String.IsEmpty(MusicPlayer.UserRating) + Integer.IsGreater(MusicPlayer.UserRating,0)">star5</value>
+		<value condition="Integer.IsGreater(MusicPlayer.Rating,1)">star10</value>
+		<value condition="Integer.IsGreater(MusicPlayer.Rating,0)">star5</value>
+		<value>star0</value>
+	</variable>
+	<!-- VideoOSDFlags -->
+	<variable name="OSDVideoFlagstar5">
+		<value condition="!String.IsEmpty(VideoPlayer.UserRating) + Integer.IsGreater(VideoPlayer.UserRating,9)">star10</value>
+		<value condition="!String.IsEmpty(VideoPlayer.UserRating) + Integer.IsGreater(VideoPlayer.UserRating,8)">star5</value>
+		<value condition="Integer.IsGreater(VideoPlayer.Rating,9)">star10</value>
+		<value condition="Integer.IsGreater(VideoPlayer.Rating,8)">star5</value>
+		<value>star0</value>
+	</variable>
+	<variable name="OSDVideoFlagstar4">
+		<value condition="!String.IsEmpty(VideoPlayer.UserRating) + Integer.IsGreater(VideoPlayer.UserRating,7)">star10</value>
+		<value condition="!String.IsEmpty(VideoPlayer.UserRating) + Integer.IsGreater(VideoPlayer)">star5</value>
+		<value condition="Integer.IsGreater(VideoPlayer.Rating,7)">star10</value>
+		<value condition="Integer.IsGreater(VideoPlayer.Rating,6)">star5</value>
+		<value>star0</value>
+	</variable>
+	<variable name="OSDVideoFlagstar3">
+		<value condition="!String.IsEmpty(VideoPlayer.UserRating) + Integer.IsGreater(VideoPlayer.UserRating,5)">star10</value>
+		<value condition="!String.IsEmpty(VideoPlayer.UserRating) + Integer.IsGreater(VideoPlayer.UserRating,4)">star5</value>
+		<value condition="Integer.IsGreater(VideoPlayer.Rating,5)">star10</value>
+		<value condition="Integer.IsGreater(VideoPlayer.Rating,4)">star5</value>
+		<value>star0</value>
+	</variable>
+	<variable name="OSDVideoFlagstar2">
+		<value condition="!String.IsEmpty(VideoPlayer.UserRating) + Integer.IsGreater(VideoPlayer.UserRating,3)">star10</value>
+		<value condition="!String.IsEmpty(VideoPlayer.UserRating) + Integer.IsGreater(VideoPlayer.UserRating,2)">star5</value>
+		<value condition="Integer.IsGreater(VideoPlayer.Rating,3)">star10</value>
+		<value condition="Integer.IsGreater(VideoPlayer.Rating,2)">star5</value>
+		<value>star0</value>
+	</variable>
+	<variable name="OSDVideoFlagstar1">
+		<value condition="!String.IsEmpty(VideoPlayer.UserRating) + Integer.IsGreater(VideoPlayer.UserRating,1)">star10</value>
+		<value condition="!String.IsEmpty(VideoPlayer.UserRating) + Integer.IsGreater(VideoPlayer.UserRating,0)">star5</value>
+		<value condition="Integer.IsGreater(VideoPlayer.Rating,1)">star10</value>
+		<value condition="Integer.IsGreater(VideoPlayer.Rating,0)">star5</value>
+		<value>star0</value>
+	</variable>
+	<include name="Furniture_Flags">
+		<control type="grouplist">
+			<visible>Container.Content(movies) | Container.Content(sets) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(artists) | Container.Content(albums) | Container.Content(songs) | [String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.) + !String.IsEmpty(ListItem.Property(platform))] | Container.Content(games) | [Container.Content(addons) + Window.IsActive(games)] </visible>
+			<visible>!ListItem.IsParentFolder</visible>
+			<include>Animation.FadeIn</include>
+			<include>Animation.FadeOut</include>
+			<left>0</left>
+			<centerbottom>40</centerbottom>
+			<width>1920</width>
+			<height>120</height>
+			<orientation>horizontal</orientation>
+			<align>left</align>
+			<itemgap>10</itemgap>
+			<usecontrolcoords>true</usecontrolcoords>
+			<control type="image">
+				<posx>50</posx>
+				<width>64</width>
+				<height>64</height>
+				<centertop>50%</centertop>
+				<texture colordiffuse="Dark1">flags/$VAR[Flagstar1].png</texture>
+			</control>
+			<control type="image">
+				<posx>-48</posx>
+				<width>64</width>
+				<height>64</height>
+				<centertop>50%</centertop>
+				<texture colordiffuse="Dark1">flags/$VAR[Flagstar2].png</texture>
+			</control>
+			<control type="image">
+				<posx>-48</posx>
+				<width>64</width>
+				<height>64</height>
+				<centertop>50%</centertop>
+				<texture colordiffuse="Dark1">flags/$VAR[Flagstar3].png</texture>
+			</control>
+			<control type="image">
+				<posx>-48</posx>
+				<width>64</width>
+				<height>64</height>
+				<centertop>50%</centertop>
+				<texture colordiffuse="Dark1">flags/$VAR[Flagstar4].png</texture>
+			</control>
+			<control type="image">
+				<posx>-48</posx>
+				<width>64</width>
+				<height>64</height>
+				<centertop>50%</centertop>
+				<texture colordiffuse="Dark1">flags/$VAR[Flagstar5].png</texture>
+			</control>
+			<!-- Rotten Tomatoes -->
+			<!-- Only available in infodialogs now-->
+			<!-- <control type="group">
+				<centertop>50%</centertop>
+				<width>130</width>
+				<height>64</height>
+				<control type="image">
+					<height>50</height>
+					<centertop>50%</centertop>
+					<texture colordiffuse="Dark1">$VAR[RottenTomato]</texture>
+					<aspectratio align="left">keep</aspectratio>
+				</control>
+				<control type="label">
+					<left>57</left>
+					<centertop>50%</centertop>
+					<height>64</height>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>$INFO[RottenTomato,,%]</label>
+					<font>DurationFontSmall</font>
+					<textcolor>Dark1</textcolor>
+				</control>
+			</control> -->
+			<control type="image">
+				<width>48</width>
+				<height>64</height>
+				<centertop>50%</centertop>
+				<texture colordiffuse="Dark1">flags/airing.png</texture>
+				<aspectratio align="left">scale</aspectratio>
+				<visible>Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)</visible>
+			</control>
+			<control type="label">
+				<width min="128">auto</width>
+				<centertop>50%</centertop>
+				<height>64</height>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>$VAR[LabelNextAiredDetails]</label>
+				<font>Flag</font>
+				<textcolor>Dark2</textcolor>
+				<visible>Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)</visible>
+			</control>
+			<include>lib_Rating_TV</include>
+			<include>lib_Rating_MPAA</include>
+			<control type="image">
+				<width>130</width>
+				<height>50</height>
+				<centertop>50%</centertop>
+				<texture colordiffuse="Dark1">$VAR[HDSDImage]</texture>
+				<visible>!String.StartsWith(ListItem.Path,videodb://movies/sets)</visible>
+			</control>
+			<control type="image">
+				<width>108</width>
+				<height>50</height>
+				<centertop>50%</centertop>
+				<texture colordiffuse="Dark1">$INFO[ListItem.VideoAspect,flags/aspectratio/,.png]</texture>
+				<aspectratio align="left">keep</aspectratio>
+				<visible>!String.IsEmpty(ListItem.VideoAspect)</visible>
+			</control>
+			<control type="image">
+				<width>130</width>
+				<height>50</height>
+				<centertop>50%</centertop>
+				<texture colordiffuse="Dark1">$INFO[ListItem.VideoCodec,flags/video/,.png]</texture>
+				<aspectratio align="left">keep</aspectratio>
+				<visible>!String.IsEmpty(ListItem.VideoCodec)</visible>
+			</control>
+			<control type="image">
+				<width>130</width>
+				<height>50</height>
+				<centertop>50%</centertop>
+				<texture colordiffuse="Dark1">$INFO[ListItem.AudioCodec,flags/audio/,.png]</texture>
+				<aspectratio align="left">keep</aspectratio>
+				<visible>!String.IsEmpty(ListItem.AudioCodec)</visible>
+			</control>
+			<control type="image">
+				<width>130</width>
+				<height>50</height>
+				<centertop>50%</centertop>
+				<texture colordiffuse="Dark1">$INFO[ListItem.AudioChannels,flags/channels/,.png]</texture>
+				<aspectratio align="left">keep</aspectratio>
+				<visible>!String.IsEmpty(ListItem.AudioChannels)</visible>
+			</control>
+			<control type="group">
+				<centertop>50%</centertop>
+				<width>220</width>
+				<height>64</height>
+				<visible>!String.IsEmpty(ListItem.Duration)</visible>
+				<visible>!Container.Content(tvshows)</visible>
+				<visible>!String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.)</visible>
+				<control type="image">
+					<height>50</height>
+					<centertop>50%</centertop>
+					<texture colordiffuse="Dark1">flags/time.png</texture>
+					<aspectratio align="left">keep</aspectratio>
+				</control>
+				<control type="label">
+					<left>57</left>
+					<width>170</width>
+					<centertop>50%</centertop>
+					<height>64</height>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>$VAR[DurationLong]</label>
+					<font>DurationFontSmall</font>
+					<textcolor>Dark1</textcolor>
+				</control>
+			</control>
+			<control type="image">
+				<width>73</width>
+				<centertop>50%</centertop>
+				<height>50</height>
+				<texture colordiffuse="Dark1">flags/3D.png</texture>
+				<visible>ListItem.IsStereoscopic</visible>
+			</control>
+			<control type="image">
+				<width>73</width>
+				<centertop>50%</centertop>
+				<height>50</height>
+				<texture colordiffuse="Dark1">flags/bluray.png</texture>
+				<visible>[String.Contains(ListItem.FilenameAndPath,bluray) | String.Contains(ListItem.FilenameAndPath,bdrip) | String.Contains(ListItem.FilenameAndPath,bd25) | String.Contains(ListItem.FilenameAndPath,bd50)]</visible>
+			</control>
+			<control type="group">
+				<visible>!String.IsEmpty(ListItem.Top250)</visible>
+				<centertop>70%</centertop>
+				<height>120</height>
+				<width>64</width>
+				<control type="image">
+					<width>73</width>
+					<height>55</height>
+					<texture colordiffuse="Dark1">flags/imdb.png</texture>
+				</control>
+				<control type="label">
+					<top>24</top>
+					<width>auto</width>
+					<font>Flag</font>
+					<align>center</align>
+					<textcolor>Black700</textcolor>
+					<label>$INFO[ListItem.Top250,#,]</label>
+				</control>
+			</control>
+			<!-- Advanced Launcher -->
+			<control type="group">
+				<centertop>50%</centertop>
+				<left>-150</left>
+				<width>auto</width>
+				<height>64</height>
+				<visible>String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.) | Container.Content(games) | [Container.Content(addons) + Window.IsActive(games)]</visible>
+				<control type="image">
+					<width>100</width>
+					<height>64</height>
+					<texture>$VAR[AdvancedLauncherFurnitureIcon]</texture>
+					<aspectratio align="left" aligny="center">keep</aspectratio>
+				</control>
+				<control type="label">
+					<width min="128">auto</width>
+					<centertop>50%</centertop>
+					<height>64</height>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>$VAR[AdvancedLauncherLabel]</label>
+					<font>Flag</font>
+					<textcolor>White</textcolor>
+					<left>110</left>
+				</control>
+			</control>
+		</control>
+	</include>
+	<include name="Furniture_Hub_Flags">
+		<control type="grouplist">
+			<visible>!Container(9500).ListItem.IsParentFolder</visible>
+			<include>Animation.FadeIn</include>
+			<include>Animation.FadeOut</include>
+			<left>0</left>
+			<centerbottom>40</centerbottom>
+			<width>1920</width>
+			<height>120</height>
+			<orientation>horizontal</orientation>
+			<align>left</align>
+			<itemgap>10</itemgap>
+			<usecontrolcoords>true</usecontrolcoords>
+			<control type="image">
+				<posx>50</posx>
+				<width>64</width>
+				<height>64</height>
+				<centertop>50%</centertop>
+				<texture colordiffuse="Dark1">flags/$VAR[HubFlagstar1].png</texture>
+			</control>
+			<control type="image">
+				<posx>-48</posx>
+				<width>64</width>
+				<height>64</height>
+				<centertop>50%</centertop>
+				<texture colordiffuse="Dark1">flags/$VAR[HubFlagstar2].png</texture>
+			</control>
+			<control type="image">
+				<posx>-48</posx>
+				<width>64</width>
+				<height>64</height>
+				<centertop>50%</centertop>
+				<texture colordiffuse="Dark1">flags/$VAR[HubFlagstar3].png</texture>
+			</control>
+			<control type="image">
+				<posx>-48</posx>
+				<width>64</width>
+				<height>64</height>
+				<centertop>50%</centertop>
+				<texture colordiffuse="Dark1">flags/$VAR[HubFlagstar4].png</texture>
+			</control>
+			<control type="image">
+				<posx>-48</posx>
+				<width>64</width>
+				<height>64</height>
+				<centertop>50%</centertop>
+				<texture colordiffuse="Dark1">flags/$VAR[HubFlagstar5].png</texture>
+			</control>
+			<control type="image">
+				<width>120</width>
+				<height>50</height>
+				<centertop>50%</centertop>
+				<texture colordiffuse="Dark1">$INFO[Container(9500).ListItem.VideoAspect,flags/aspectratio/,.png]</texture>
+				<aspectratio align="left">keep</aspectratio>
+				<visible>!String.IsEmpty(Container(9500).ListItem.VideoAspect)</visible>
+			</control>
+			<control type="image">
+				<width>150</width>
+				<height>50</height>
+				<centertop>50%</centertop>
+				<texture colordiffuse="Dark1">$INFO[Container(9500).ListItem.VideoResolution,flags/resolution/,.png]</texture>
+				<aspectratio align="left">keep</aspectratio>
+				<visible>!String.IsEmpty(Container(9500).ListItem.VideoResolution)</visible>
+			</control>
+			<control type="image">
+				<width>150</width>
+				<height>50</height>
+				<centertop>50%</centertop>
+				<texture colordiffuse="Dark1">$INFO[Container(9500).ListItem.VideoCodec,flags/video/,.png]</texture>
+				<aspectratio align="left">keep</aspectratio>
+				<visible>!String.IsEmpty(Container(9500).ListItem.VideoCodec)</visible>
+			</control>
+			<control type="image">
+				<width>150</width>
+				<height>50</height>
+				<centertop>50%</centertop>
+				<texture colordiffuse="Dark1">$INFO[Container(9500).ListItem.AudioCodec,flags/audio/,.png]</texture>
+				<aspectratio align="left">keep</aspectratio>
+				<visible>!String.IsEmpty(Container(9500).ListItem.AudioCodec)</visible>
+			</control>
+			<control type="image">
+				<width>150</width>
+				<height>50</height>
+				<centertop>50%</centertop>
+				<texture colordiffuse="Dark1">flags/audio/dts.png</texture>
+				<aspectratio align="left">keep</aspectratio>
+				<visible>!String.IsEmpty(Container(9500).ListItem.AudioCodec) + String.Contains(Container(9500).ListItem.AudioCodec,dts) + !String.Contains(Container(9500).ListItem.AudioCodec,dtshd_hra) + !String.Contains(Container(9500).ListItem.AudioCodec,dtshd_ma) + !String.Contains(Container(9500).ListItem.AudioCodec,dtshdma)</visible>
+			</control>
+			<control type="image">
+				<width>150</width>
+				<height>50</height>
+				<centertop>50%</centertop>
+				<texture colordiffuse="Dark1">$INFO[Container(9500).ListItem.AudioChannels,flags/channels/,.png]</texture>
+				<aspectratio align="left">keep</aspectratio>
+				<visible>!String.IsEmpty(Container(9500).ListItem.AudioChannels)</visible>
+			</control>
+			<control type="group">
+				<centertop>50%</centertop>
+				<width>270</width>
+				<height>50</height>
+				<control type="image">
+					<width>270</width>
+					<height>50</height>
+					<centertop>50%</centertop>
+					<texture colordiffuse="Dark1">flags/time.png</texture>
+					<aspectratio align="left">keep</aspectratio>
+					<visible>!String.IsEmpty(Container(9500).ListItem.Duration)</visible>
+				</control>
+				<control type="label">
+					<left>55</left>
+					<width>165</width>
+					<centertop>50%</centertop>
+					<height>50</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label>$INFO[Container(9500).ListItem.Duration]</label>
+					<font>DurationFontSmall</font>
+					<textcolor>Dark1</textcolor>
+					<visible>!String.IsEmpty(Container(9500).ListItem.Duration)</visible>
+				</control>
+			</control>
+			<control type="image">
+				<width>73</width>
+				<centertop>50%</centertop>
+				<height>50</height>
+				<texture colordiffuse="Dark1">flags/3D.png</texture>
+				<aspectratio align="left">keep</aspectratio>
+				<visible>Container(9500).ListItem.IsStereoscopic</visible>
+			</control>
+			<control type="image">
+				<width>73</width>
+				<centertop>50%</centertop>
+				<height>50</height>
+				<texture colordiffuse="Dark1">flags/bluray.png</texture>
+				<aspectratio align="left">keep</aspectratio>
+				<visible>[String.Contains(Container(9500).ListItem.FilenameAndPath,bluray) | String.Contains(Container(9500).ListItem.FilenameAndPath,bdrip) | String.Contains(Container(9500).ListItem.FilenameAndPath,bd25) | String.Contains(Container(9500).ListItem.FilenameAndPath,bd50)]</visible>
+			</control>
+			<control type="image">
+				<width>73</width>
+				<centertop>50%</centertop>
+				<height>50</height>
+				<texture colordiffuse="Dark1">flags/imdb.png</texture>
+				<aspectratio align="left">keep</aspectratio>
+				<visible>!String.IsEmpty(Container(9500).ListItem.Top250)</visible>
+			</control>
+		</control>
+	</include>
+	<include name="Furniture_Logo">
+		<control type="group">
+			<visible>Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons)</visible>
+			<visible>!ListItem.IsParentFolder</visible>
+			<include>Animation.FadeIn</include>
+			<include>Animation.FadeOut</include>
+			<left>0</left>
+			<centerbottom>40</centerbottom>
+			<width>1920</width>
+			<height>60</height>
+			<control type="image">
+				<right>0</right>
+				<width>258</width>
+				<height>60</height>
+				<texture colordiffuse="Dark1">$VAR[Studio]</texture>
+				<aspectratio align="left" aligny="center">keep</aspectratio>
+			</control>
+		</control>
+	</include>
+	<include name="Furniture_Addons">
+		<control type="grouplist">
+			<include>Animation.FadeIn</include>
+			<include>Animation.FadeOut</include>
+			<left>40</left>
+			<centerbottom>40</centerbottom>
+			<width>1920</width>
+			<height>120</height>
+			<orientation>horizontal</orientation>
+			<align>left</align>
+			<itemgap>10</itemgap>
+			<usecontrolcoords>true</usecontrolcoords>
+			<visible>!String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.)</visible>
+			<control type="image">
+				<centertop>50%</centertop>
+				<width>60</width>
+				<texture>$VAR[AddonStatusIcon]</texture>
+				<aspectratio align="left" aligny="center">keep</aspectratio>
+				<height>60</height>
+				<visible>!ListItem.IsParentFolder + !String.IsEmpty(ListItem.Property(Addon.Status))</visible>
+			</control>
+			<control type="label">
+				<width min="128">auto</width>
+				<centertop>50%</centertop>
+				<height>64</height>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>$INFO[ListItem.AddonVersion]$INFO[ListItem.Property(Addon.Status),  •  ,]$INFO[ListItem.AddonCreator,  •  ,]$INFO[ListItem.AddonType,  •  ,]</label>
+				<font>Flag</font>
+				<textcolor>White</textcolor>
+			</control>
+		</control>
+	</include>
+	<variable name="HeaderIcon">
+		<value condition="Window.IsVisible(script-globalsearch.xml)">special://skin/extras/icons/search.png</value>
+		<value condition="Window.IsVisible(Home)">$VAR[SystemAvatar]</value>
+		<value condition="Player.Muted">special://skin/extras/icons/mute.png</value>
+		<value condition="Window.IsVisible(DialogButtonMenu.xml)">special://skin/extras/icons/power.png</value>
+		<value condition="Window.IsVisible(DialogFavourites.xml)">special://skin/extras/icons/favourites.png</value>
+		<value condition="Window.IsVisible(1101)">special://skin/extras/icons/film.png</value>
+		<value condition="Window.IsVisible(1102)">special://skin/extras/icons/tv.png</value>
+		<value condition="Player.HasAudio + [Window.IsVisible(fullscreenvideo) | Window.IsVisible(visualisation) | Window.IsVisible(home)]">special://skin/extras/icons/songs.png</value>
+		<value condition="Player.HasVideo + VideoPlayer.Content(livetv) + [Window.IsVisible(fullscreenvideo) | Window.IsVisible(visualisation) | Window.IsVisible(home)]">special://skin/extras/icons/livetv.png</value>
+		<value condition="Player.HasVideo + VideoPlayer.Content(movies) + [Window.IsVisible(fullscreenvideo) | Window.IsVisible(visualisation) | Window.IsVisible(home)]">special://skin/extras/icons/film.png</value>
+		<value condition="Player.HasVideo + VideoPlayer.Content(episodes) + [Window.IsVisible(fullscreenvideo) | Window.IsVisible(visualisation) | Window.IsVisible(home)]">special://skin/extras/icons/tv.png</value>
+		<value condition="Player.HasVideo + [Window.IsVisible(fullscreenvideo) | Window.IsVisible(visualisation) | Window.IsVisible(home)]">special://skin/extras/icons/appearance.png</value>
+		<value condition="Window.IsVisible(script-ExtendedInfo Script-YoutubeList.xml)">special://skin/extras/icons/youtube.png</value>
+		<value condition="Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(script-ExtendedInfo Script-VideoList.xml) | Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) | Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)">special://skin/extras/icons/info.png</value>
+		<value condition="Window.IsVisible(script-NextAired-TVGuide.xml) | Window.IsVisible(script-NextAired-TVGuide2.xml)">special://skin/extras/icons/tvguide.png</value>
+		<value condition="String.StartsWith(Container.FolderPath,sources://)">special://skin/extras/icons/files.png</value>
+		<value condition="String.StartsWith(Container.FolderPath,special://videoplaylists/)">special://skin/extras/icons/playlist.png</value>
+		<value condition="String.IsEqual(Container.FolderPath,special://profile/playlists/)">special://skin/extras/icons/playlist.png</value>
+		<value condition="String.IsEqual(Container.FolderPath,special://profile/playlists/video/)">special://skin/extras/icons/playlist.png</value>
+		<value condition="String.IsEqual(Container.FolderPath,special://profile/playlists/music/)">special://skin/extras/icons/playlist.png</value>
+		<value condition="String.IsEqual(Container.FolderPath,special://profile/playlists/mixed/)">special://skin/extras/icons/playlist.png</value>
+		<value condition="Window.IsVisible(MyMusicPlaylistEditor.xml) | Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(MyMusicSongs.xml)">special://skin/extras/icons/songs.png</value>
+		<value condition="String.StartsWith(Container.FolderPath,library://video/movies/)">special://skin/extras/icons/film.png</value>
+		<value condition="String.StartsWith(Container.FolderPath,library://video/tvshows/)">special://skin/extras/icons/tv.png</value>
+		<value condition="String.StartsWith(Container.FolderPath,videodb://movies/)">special://skin/extras/icons/film.png</value>
+		<value condition="String.StartsWith(Container.FolderPath,videodb://tvshows/)">special://skin/extras/icons/tv.png</value>
+		<value condition="String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.)">special://skin/extras/icons/games.png</value>
+		<value condition="String.StartsWith(Container.FolderPath,plugin://)">special://skin/extras/icons/video-addons.png</value>
+		<value condition="Container.Content(movies)">special://skin/extras/icons/film.png</value>
+		<value condition="Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)">special://skin/extras/icons/tv.png</value>
+		<value condition="Container.Content(songs)">special://skin/extras/icons/songs.png</value>
+		<value condition="Container.Content(livetv)">special://skin/extras/icons/livetv.png</value>
+		<value condition="Container.Content(files)">special://skin/extras/icons/files.png</value>
+		<value condition="Container.Content(plugins)">special://skin/extras/icons/video-addons.png</value>
+		<value condition="Container.Content(addons)">special://skin/extras/icons/addons.png</value>
+		<value condition="String.StartsWith(Container.FolderPath,videodb://musicvideos/)">special://skin/extras/icons/musicvideo.png</value>
+		<value condition="Window.IsVisible(ColorPicker.xml)">special://skin/extras/icons/wand.png</value>
+		<value condition="Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRSearch.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRRecordings.xml)">special://skin/extras/icons/livetv.png</value>
+		<value condition="Window.IsVisible(MyMusicPlaylistEditor.xml) | Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(MyMusicSongs.xml)">special://skin/extras/icons/songs.png</value>
+		<value condition="Window.IsVisible(MyPics.xml)">special://skin/extras/icons/pictures.png</value>
+		<value condition="Window.IsVisible(MyPrograms.xml) | Window.IsVisible(AddonBrowser.xml)">special://skin/extras/icons/addons.png</value>
+		<value condition="Window.IsVisible(weather)">special://skin/extras/icons/sun.png</value>
+		<value condition="Window.IsVisible(SettingsSystemInfo.xml) | Window.IsVisible(SettingsCategory.xml) | Window.IsVisible(settings) | Window.IsVisible(SkinSettings.xml)">special://skin/extras/icons/settings.png</value>
+		<value condition="Window.IsVisible(MyMusicPlaylist.xml)">special://skin/extras/icons/playlist.png</value>
+		<value condition="Window.IsVisible(FileManager.xml)">special://skin/extras/icons/database.png</value>
+		<value condition="Window.IsVisible(EventLog.xml)">special://skin/extras/icons/warning.png</value>
+		<value condition="Window.IsVisible(MyVideoNav.xml)">special://skin/extras/icons/video-addons.png</value>
+		<value condition="Window.IsVisible(MyGames.xml)">special://skin/extras/icons/games.png</value>
+		<value condition="Window.IsVisible(GameOSD.xml)">special://skin/extras/icons/games.png</value>
+		<value>special://skin/extras/icons/artist.png</value>
+	</variable>
+	<variable name="MainHeaderLabel">
+		<value condition="Window.IsVisible(script-globalsearch.xml)">Search Results $INFO[Container.NumItems,(,)]</value>
+		<value condition="Window.IsVisible(DialogAddonInfo.xml)">$INFO[ListItem.Label]</value>
+		<value condition="Window.IsVisible(DialogSeekBar.xml)">$VAR[PlayerBigTitle]</value>
+		<value condition="Window.IsVisible(MusicVisualisation.xml)">$INFO[MusicPlayer.Artist]</value>
+		<value condition="Window.IsVisible(ColorPicker.xml)">Select a Color</value>
+		<value condition="Window.IsVisible(MyMusicPlaylistEditor.xml)">$LOCALIZE[20011]</value>
+		<value condition="Window.IsVisible(DialogButtonMenu.xml)">$LOCALIZE[33060]</value>
+		<value condition="Window.IsVisible(DialogFavourites.xml)">$LOCALIZE[1036]</value>
+		<value condition="Window.IsVisible(script-ExtendedInfo Script-YoutubeList.xml)">YouTube</value>
+		<value condition="Window.IsVisible(DialogVideoInfo.xml) + String.IsEmpty(Container.Content)">$INFO[ListItem.Title]</value>
+		<value condition="Window.IsVisible(DialogVideoInfo.xml) + Container.Content(musicvideos) + !String.IsEmpty(ListItem.Artist)">$INFO[ListItem.Artist]</value>
+		<value condition="Window.IsVisible(DialogVideoInfo.xml) + !Container.Content(episodes) + !Container.Content(seasons) + !Container.Content(tvshows)">$INFO[ListItem.Title]$INFO[ListItem.Year,(,)]</value>
+		<value condition="Window.IsVisible(DialogVideoInfo.xml)">$INFO[ListItem.Title]</value>
+		<value condition="Window.IsVisible(DialogVideoInfo.xml) + Container.Content(episodes) + !String.IsEmpty(ListItem.TvShowTitle)">$INFO[ListItem.TvShowTitle]</value>
+		<value condition="Window.IsVisible(DialogMusicInfo.xml) + Container.Content(artists)">$INFO[ListItem.Label]</value>
+		<value condition="Window.IsVisible(DialogMusicInfo.xml) + Container.Content(albums)">$INFO[ListItem.Title] ($INFO[ListItem.Year])</value>
+		<value condition="Window.IsVisible(DialogMusicInfo.xml) + Container.Content(songs)">$INFO[ListItem.Label]</value>
+		<value condition="Window.IsVisible(DialogMusicInfo.xml)">$INFO[ListItem.Label]</value>
+		<value condition="Window.IsVisible(script-ExtendedInfo Script-VideoList.xml) | Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) | Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)">$LOCALIZE[29915]</value>		
+		<value condition="Window.IsVisible(MyVideoNav.xml) + Container.Content(seasons) + !String.IsEmpty(ListItem.TvShowTitle)">$INFO[ListItem.TvShowTitle]</value>
+		<value condition="Window.IsVisible(MyVideoNav.xml) + Container.Content(episodes) + !String.IsEmpty(ListItem.TvShowTitle)">$INFO[ListItem.TvShowTitle]$INFO[ListItem.Season, - Season ,]</value>
+		<value condition="Window.IsVisible(MyVideoNav.xml) + String.StartsWith(Container.FolderPath,videodb://movies/titles/)">$LOCALIZE[20342]</value>
+		<value condition="Window.IsVisible(MyVideoNav.xml) + String.StartsWith(Container.FolderPath,videodb://tvshows/titles/)">$LOCALIZE[20343]</value>
+		<value condition="Window.IsVisible(MyVideoNav.xml) + String.StartsWith(Container.FolderPath,videodb://movies/)">$INFO[Container.FolderName]</value>
+		
+		<value condition="Window.IsVisible(MyVideoNav.xml) + String.StartsWith(Container.FolderPath,videodb://tvshows/)">$INFO[Container.FolderName]</value>
+		<value condition="Window.IsVisible(MyVideoNav.xml) + !String.IsEmpty(Container.FolderName)">$INFO[Container.FolderName]</value>
+		<value condition="Window.IsVisible(MyVideoNav.xml)">$LOCALIZE[3]</value>
+		<value condition="Window.IsVisible(MyGames.xml)">$LOCALIZE[15016]</value>
+		<value condition="Window.IsVisible(MyPVRChannels.xml)">$LOCALIZE[19019]</value>
+		<value condition="Window.IsVisible(MyPVRGuide.xml)">$LOCALIZE[4]</value>
+		<value condition="Window.IsVisible(MyPVRRecordings.xml)">$LOCALIZE[19017]</value>
+		<value condition="Window.IsVisible(MyPVRTimers.xml)">$LOCALIZE[19040]</value>
+		<value condition="Window.IsVisible(MyPVRSearch.xml)">$LOCALIZE[137]</value>
+		<value condition="!String.IsEmpty(Container.FolderName) + [Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(MyMusicSongs.xml)]">$INFO[Container.FolderName]</value>
+		<value condition="Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(MyMusicSongs.xml)">$LOCALIZE[2]</value>
+		<value condition="Window.IsVisible(SettingsSystemInfo.xml) | Window.IsVisible(SettingsCategory.xml) | Window.IsVisible(settings) | Window.IsVisible(SkinSettings.xml)">$LOCALIZE[5]</value>
+		<value condition="Window.IsVisible(weather)">$LOCALIZE[8]</value>
+		<value condition="!String.IsEmpty(Container.FolderName) + Window.IsVisible(MyPics.xml)">$INFO[Container.FolderName]</value>
+		<value condition="Window.IsVisible(MyPics.xml)">$LOCALIZE[1]</value>
+		<value condition="Window.IsVisible(MyPrograms.xml) + String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.) + !String.IsEmpty(ListItem.Property(platform)) + !String.Contains(ListItem.Label,ROMS)">$INFO[ListItem.Property(platform)]</value>
+		<value condition="Window.IsVisible(MyPrograms.xml) + String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.)">$INFO[Container.FolderName]</value>
+		<value condition="Window.IsVisible(MyPrograms.xml)">$LOCALIZE[0]</value>
+		<value condition="Window.IsVisible(AddonBrowser.xml)">$LOCALIZE[24001]</value>
+		<value condition="Window.IsVisible(MyMusicPlaylist.xml)">$LOCALIZE[559]</value>
+		<value condition="Window.IsVisible(FileManager.xml)">$LOCALIZE[744]</value>
+		<value condition="Window.IsVisible(EventLog.xml)">Event Log</value>
+		<value condition="Window.IsVisible(1101)">$LOCALIZE[31192]</value>
+		<value condition="Window.IsVisible(1102)">$LOCALIZE[31103]</value>
+		<value>$LOCALIZE[10000]</value>
+	</variable>
+	<variable name="SubHeaderLabel">
+		<value condition="Window.IsActive(script-globalsearch.xml) + Control.HasFocus(9000)">$INFO[Container(9000).ListItem.Label]</value>
+		<value condition="Window.IsActive(script-globalsearch.xml)">$INFO[ListItem.Label]</value>
+		<value condition="Window.IsVisible(Home.xml)">$VAR[EmbyFooterLabel]</value>
+		<value condition="Window.IsVisible(DialogSeekBar.xml)">$VAR[PlayerTitle]</value>
+		<value condition="Window.IsVisible(MusicVisualisation.xml)">$INFO[MusicPlayer.TrackNumber,, • ]$INFO[MusicPlayer.Title]$INFO[MusicPlayer.Album, • ,]$INFO[MusicPlayer.Year, (,)]$INFO[MusicPlayer.Genre, • ,]</value>
+		<value condition="Window.IsVisible(Settings.xml)">$INFO[System.CurrentControl]</value>
+		<value condition="Window.IsVisible(DialogAddonInfo.xml)">[COLOR=Dark1]$INFO[ListItem.AddonVersion,Version: ,][/COLOR] by $INFO[ListItem.AddonCreator] $INFO[ListItem.Artist, • ]$INFO[ListItem.AddonType, • ,]</value>
+		<value condition="Window.IsVisible(DialogMusicInfo.xml) + Container.Content(artists)">$INFO[ListItem.Property(Artist_Genre)]</value>
+		<value condition="Window.IsVisible(DialogMusicInfo.xml) + Container.Content(albums)">$INFO[ListItem.AlbumArtist]$INFO[ListItem.Genre, • ,]</value>
+		<value condition="Window.IsVisible(1102)">$INFO[System.CurrentControl]</value>
+		<value condition="Window.IsVisible(1101)">$INFO[System.CurrentControl]</value>
+		<value condition="Container.Content(songs) + Integer.IsGreater(ListItem.TrackNumber, 0) + Integer.IsLess(ListItem.TrackNumber,10)">$INFO[ListItem.TrackNumber,0, • ]$INFO[ListItem.Title]$INFO[ListItem.Album, • ,]$INFO[ListItem.Year, (,)]$INFO[ListItem.Artist, • ]</value>
+		<value condition="Container.Content(songs) + !Integer.IsEqual(ListItem.TrackNumber, 0)">$INFO[ListItem.TrackNumber,, • ]$INFO[ListItem.Title]$INFO[ListItem.Album, • ,]$INFO[ListItem.Year, (,)]$INFO[ListItem.Artist, • ]</value>
+		<value condition="Container.Content(songs)">$INFO[ListItem.Title]$INFO[ListItem.Album, • ,]$INFO[ListItem.Year, (,)]$INFO[ListItem.Artist, • ]</value>
+		<value condition="Window.IsVisible(DialogMusicInfo.xml) + Container.Content(songs)">$INFO[ListItem.TrackNumber,, • ]$INFO[ListItem.Album]$INFO[ListItem.Year, (,)]$INFO[ListItem.Artist, • ,]$INFO[ListItem.Genre, • ,]</value>
+		<value condition="Window.IsVisible(script-ExtendedInfo Script-YoutubeList.xml)">$INFO[Window.Property(Filter_Label),, ]$INFO[Window.Property(TotalItems),, $LOCALIZE[31101]]</value>
+		<value condition="Window.IsVisible(script-ExtendedInfo Script-VideoList.xml) | Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) | Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)">$LOCALIZE[31242]</value>
+		<value condition="Window.IsVisible(DialogVideoInfo.xml) + Container.Content(movies)">$INFO[ListItem.TagLine]</value>
+		<value condition="Window.IsVisible(DialogVideoInfo.xml) + Container.Content(episodes)">$VAR[ListItemSeasonVar,S]-$VAR[ListItemEpisodeVar,E] • [COLOR Black300]Premiered:[/COLOR] $INFO[ListItem.Premiered]</value>
+		<value condition="Window.IsVisible(DialogVideoInfo.xml) + Container.Content(tvshows)">[COLOR Black300]Premiered:[/COLOR] $INFO[ListItem.Premiered]</value>
+		<value condition="Window.IsVisible(LoginScreen.xml)">$LOCALIZE[10029]</value>
+		<value condition="[Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRSearch.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRRecordings.xml)]">[COLOR=$VAR[ColorHighlight]]$INFO[Container.NumItems,,[/COLOR] $LOCALIZE[31101]]$INFO[Control.GetLabel(3), • ,]$INFO[Control.GetLabel(28), • ,]</value>
+		<!-- <value condition="!String.IsEmpty(Container.NumItems) + !Window.IsVisible(home) + Window.IsVisible(MyVideoNav.xml) + Integer.IsGreater(Container.TotalUnWatched,0) + !Window.IsVisible(DialogVideoInfo.xml)">[COLOR=$VAR[ColorHighlight]]$INFO[Container.CurrentItem] / $INFO[Container.NumItems][/COLOR] $LOCALIZE[31101] • [COLOR=$VAR[ColorHighlight]]$INFO[Container.TotalUnWatched,, [/COLOR] $LOCALIZE[31215]] [COLOR=$VAR[ColorHighlight2]]$INFO[Control.GetLabel(3), • ,][/COLOR]</value> -->
+		<value condition="!String.IsEmpty(Container.NumItems) + !Window.IsVisible(home) + Window.IsVisible(MyVideoNav.xml) + Integer.IsGreater(Container.TotalUnWatched,0) + !Window.IsVisible(DialogVideoInfo.xml) + !Container.Content(seasons) + !Container.Content(episodes)">[COLOR=$VAR[ColorHighlight]]$INFO[Container.CurrentItem] / $INFO[Container.NumItems][/COLOR] $LOCALIZE[31101] • [COLOR=$VAR[ColorHighlight]]$INFO[Container.TotalUnWatched,, [/COLOR] $LOCALIZE[31215]]</value>
+		<value condition="!String.IsEmpty(Container.NumItems) + !Window.IsVisible(home) + Window.IsVisible(MyVideoNav.xml) + Integer.IsGreater(Container.TotalUnWatched,0) + !Window.IsVisible(DialogVideoInfo.xml)">[COLOR=$VAR[ColorHighlight]]$INFO[Container.CurrentItem] / $INFO[Container.NumItems][/COLOR] $LOCALIZE[31101]</value>
+		<value condition="!String.IsEmpty(Container.NumItems) + !Window.IsVisible(home) + Window.IsVisible(MyVideoNav.xml) + !Integer.IsGreater(Container.TotalUnWatched,0) + !Window.IsVisible(DialogVideoInfo.xml)">[COLOR=$VAR[ColorHighlight]]$INFO[Container.CurrentItem] / $INFO[Container.NumItems,,[/COLOR] $LOCALIZE[31101]]</value>
+		<value condition="!String.IsEmpty(Container.NumItems) + !Window.IsVisible(home)  + !Window.IsVisible(DialogVideoInfo.xml)">[COLOR=$VAR[ColorHighlight]]$INFO[Container.CurrentItem] / $INFO[Container.NumItems,,[/COLOR] $LOCALIZE[31101]]</value>
+		<value condition="!String.IsEmpty(Container(9500).NumItems) + !Window.IsVisible(home) + !Window.IsVisible(DialogVideoInfo.xml)">[COLOR=$VAR[ColorHighlight]]$INFO[Container.CurrentItem] / $INFO[Container(9500).NumItems,,[/COLOR] $LOCALIZE[31101]]</value>
+		<value condition="Window.IsVisible(MyWeather.xml) + !String.IsEmpty(Window(Weather).Property(Location))">[COLOR=$VAR[ColorHighlight]]$INFO[Weather.Temperature,,[/COLOR] ]$INFO[Window(Weather).Property(Location)]</value>
+		<value condition="String.IsEmpty(Pvr.BackendChannels)">[COLOR=$VAR[ColorHighlight]]$INFO[Window(home).Property(Movies.Count)][/COLOR] $LOCALIZE[20342] • [COLOR=$VAR[ColorHighlight]]$INFO[Window(home).Property(TVShows.Count)][/COLOR] $LOCALIZE[20343] • [COLOR=$VAR[ColorHighlight]]$INFO[Window(home).Property(Music.AlbumsCount)][/COLOR] $LOCALIZE[132]</value>
+		<value>[COLOR=$VAR[ColorHighlight]]$INFO[Window(home).Property(Movies.Count)][/COLOR] $LOCALIZE[20342] • [COLOR=$VAR[ColorHighlight]]$INFO[Window(home).Property(TVShows.Count)][/COLOR] $LOCALIZE[20343] • [COLOR=$VAR[ColorHighlight]]$INFO[Window(home).Property(Music.AlbumsCount)][/COLOR] $LOCALIZE[132] • [COLOR=$VAR[ColorHighlight]]$INFO[Pvr.BackendChannels][/COLOR] $LOCALIZE[19019]</value>
+	</variable>
+	<include name="Furniture_Header">
+		<control type="group">
+			<visible>!Window.IsVisible(VideoFullScreen.xml) | [ Window.IsVisible(DialogFullScreenInfo.xml) | Player.Paused | !Integer.IsGreater(Player.Time,3) | Window.IsVisible(VideoOSD.xml)]</visible>
+			<control type="image">
+				<width>100%</width>
+				<texture colordiffuse="HeaderBG">common/white.png</texture>
+				<height>150</height>
+				<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
+			</control>
+			<!-- <control type="image">
+				<top>150</top>
+				<texture colordiffuse="HeaderBG">common/white.png</texture>
+				<height>90</height>
+				<visible>Window.IsVisible(Home) + !Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml) + !Window.IsVisible(DialogAddonInfo.xml)</visible>
+				<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
+			</control> -->
+			<control type="image" description="Background">
+				<width>100%</width>
+				<height>150</height>
+				<texture colordiffuse="Background">common/bg.jpg</texture>
+				<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
+				<visible>Window.IsVisible(VideoFullScreen.xml)</visible>
+			</control>
+			<control type="image">
+				<width>100%</width>
+				<texture colordiffuse="HeaderBG">common/white.png</texture>
+				<height>150</height>
+				<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
+				<visible>Window.IsVisible(VideoFullScreen.xml)</visible>
+			</control>
+			<control type="grouplist">
+				<top>40</top>
+				<left>20</left>
+				<include>Animation.FurnitureFadeInOut</include>
+				<orientation>horizontal</orientation>
+				<itemgap>24</itemgap>
+				<onleft condition="!Skin.HasSetting(global.kioskmode)">9000</onleft>
+				<ondown condition="Control.IsVisible(50)">50</ondown>
+				<ondown condition="Control.IsVisible(52)">52</ondown>
+				<ondown condition="Control.IsVisible(53) + Control.IsVisible(61)">61</ondown>
+				<ondown condition="Control.IsVisible(53) + !Control.IsVisible(61)">53</ondown>
+				<ondown condition="Control.IsVisible(55) + Control.IsVisible(61)">61</ondown>
+				<ondown condition="Control.IsVisible(55) + !Control.IsVisible(61)">55</ondown>
+				<ondown condition="Control.IsVisible(59)">59</ondown>
+				<ondown condition="Control.IsVisible(500)">500</ondown>
+				<ondown condition="Control.IsVisible(505) + Control.IsVisible(61)">61</ondown>
+				<ondown condition="Control.IsVisible(505) + !Control.IsVisible(61)">505</ondown>
+				<ondown condition="Control.IsVisible(506)">506</ondown>
+				<ondown condition="Control.IsVisible(517)">517</ondown>
+				<ondown condition="Control.IsVisible(4000)">4000</ondown>
+				<!-- onright -->
+				<onright condition="Player.HasMedia">7788</onright>
+				<control type="button" id="3634">
+					<width>80</width>
+					<height>80</height>
+					<onclick>Menu</onclick>
+					<font>Button</font>
+					<texturefocus colordiffuse="$VAR[ColorHighlight]">common/menu.png</texturefocus>
+					<texturenofocus>special://skin/extras/icons/menu.png</texturenofocus>
+					<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml) + !Window.IsVisible(DialogAddonInfo.xml) + !Window.IsVisible(script-globalsearch.xml)</visible>
+				</control>
+				<control type="button" id="3634">
+	                <width>80</width>
+					<height>80</height>
+					<onclick>Back</onclick>
+					<font>Button</font>
+					<ondown>990</ondown>
+	                <texturefocus colordiffuse="$VAR[ColorHighlight]">common/back.png</texturefocus>
+					<texturenofocus>special://skin/extras/icons/back.png</texturenofocus>
+	                <visible>Window.IsVisible(script-globalsearch.xml)</visible>
+	            </control>
+				<control type="group" description="iconbox">
+					<width>80</width>
+					<height>80</height>
+					<control type="image">
+						<width>80</width>
+						<height>80</height>
+						<texture colordiffuse="Panel" border="0">common/circle.png</texture>
+					</control>
+					<control id="8308" type="image">
+						<width>80</width>
+						<height>80</height>
+						<texture colordiffuse="HeaderIconFade" border="0" diffuse="common/circle.png" >$VAR[HeaderIcon]</texture>
+						<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
+						<aspectratio aligny="center">stretch</aspectratio>
+					</control>
+					<control type="label">
+						<centertop>39</centertop>
+						<centerleft>40</centerleft>
+						<width>80</width>
+						<height>80</height>
+						<font>LargeBold</font>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.SortLetter,[UPPERCASE],[/UPPERCASE]]</label>
+						<textcolor>PanelWhite100</textcolor>
+						<visible>Container.Scrolling</visible>
+						<visible>Window.IsVisible(DialogBusy.xml)</visible>
+						<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
+					</control>
+					<control type="button" id="8304">
+						<width>80</width>
+						<height>80</height>
+						<ondown>300</ondown>
+						<onclick>Menu</onclick>
+						<font>Button</font>
+						<texturefocus>common/null.png</texturefocus>
+						<texturenofocus>common/null.png</texturenofocus>
+					</control>
+				</control>
+				<control type="group">
+					<control type="label">
+						<centertop>24</centertop>
+						<width>1350</width>
+						<font>MediumBold</font>
+						<textcolor>Dark1</textcolor>
+						<label>$VAR[MainHeaderLabel]</label>
+					</control>
+					<control type="grouplist">
+						<top>44</top>
+						<height>32</height>
+						<width>1350</width>
+						<orientation>horizontal</orientation>
+						<itemgap>5</itemgap>
+						<control type="image">
+							<height>32</height>
+							<width>32</width>
+							<aspectratio aligny="center">keep</aspectratio>
+							<texture colordiffuse="Dark1">$VAR[SubHeaderIcon1]</texture>
+							<visible>!String.IsEmpty(Container.SortOrder) + !Window.IsActive(script-globalsearch.xml)</visible>
+						</control>
+						<control type="image">
+							<height>32</height>
+							<width>32</width>
+							<aspectratio aligny="center">keep</aspectratio>
+							<texture colordiffuse="Dark1">$VAR[SubHeaderIcon2]</texture>
+							<visible>!String.IsEmpty(Container.SortMethod) + !Window.IsActive(script-globalsearch.xml)</visible>
+						</control>
+						<!-- <control type="image">
+							<height>52</height>
+							<width>32</width>
+							<aspectratio aligny="center">keep</aspectratio>
+							<texture colordiffuse="Dark1">flags\sort\sort_watched.png</texture>
+							<visible>String.IsEqual(Control.GetLabel(10),$LOCALIZE[16101])</visible>
+						</control> -->
+						<control type="button" id="9874">
+							<width>32</width>
+							<height>32</height>
+							<ondown>300</ondown>
+							<onclick>Menu</onclick>
+							<font>Button</font>
+							<texturefocus colordiffuse="Dark1">flags\sort\sort_unwatched.png</texturefocus>
+							<texturenofocus colordiffuse="Dark1">flags\sort\sort_unwatched.png</texturenofocus>
+							<visible>String.IsEqual(Control.GetLabel(10),$LOCALIZE[16101]) + !Window.IsActive(script-globalsearch.xml)</visible>
+						</control>
+						<control type="button" id="9875">
+							<width>32</width>
+							<height>32</height>
+							<ondown>300</ondown>
+							<onclick>Menu</onclick>
+							<font>Button</font>
+							<texturefocus colordiffuse="Dark1">flags\sort\sort_watched.png</texturefocus>
+							<texturenofocus colordiffuse="Dark1">flags\sort\sort_watched.png</texturenofocus>
+							<visible>String.IsEqual(Control.GetLabel(10),$LOCALIZE[16102]) + !Window.IsActive(script-globalsearch.xml)</visible>
+						</control>
+						<control type="button" id="9876">
+							<width>32</width>
+							<height>32</height>
+							<ondown>300</ondown>
+							<onclick>Menu</onclick>
+							<font>Button</font>
+							<texturefocus colordiffuse="Dark1">flags\sort\filtered.png</texturefocus>
+							<texturenofocus colordiffuse="Dark1">flags\sort\filtered.png</texturenofocus>
+							<visible>Container.Filtered + !Window.IsActive(script-globalsearch.xml)</visible>
+						</control>
+						<control type="image">
+							<height>10</height>
+							<width>10</width>
+							<aspectratio>keep</aspectratio>
+							<texture>common\null.png</texture>
+							<visible>[!String.IsEmpty(Container.SortOrder) | Container.Filtered] + !Window.IsActive(script-globalsearch.xml)</visible>
+						</control>
+						<control type="label">
+							<height>32</height>
+							<font>Flag</font>
+							<width>auto</width>
+							<textcolor>Dark2</textcolor>
+							<label>$VAR[SubHeaderLabel]</label>
+						</control>
+					</control>
+					<control type="label">
+						<centertop>88</centertop>
+						<font>Flag</font>
+						<width>1350</width>
+						<textcolor>$VAR[ColorHighlight2]</textcolor>
+						<label>$VAR[EmbyEndTimeLabel,$LOCALIZE[19127]: ,]</label>
+						<visible>!Window.IsActive(script-globalsearch.xml) | [Window.IsActive(script-globalsearch.xml) + Control.HasFocus(50)]</visible>
+					</control>
+				</control>
+			</control>
+		</control>
+	</include>
+	<!-- <include name="Furniture_Back_Button">
+		<control type="button" id="3635">
+			<description>back button</description>
+			<width>80</width>
+			<height>80</height>
+			<onclick>Back</onclick>
+			<font>Button</font>
+			<texturefocus colordiffuse="$VAR[ColorHighlight]">common/back.png</texturefocus>
+			<texturenofocus>special://skin/extras/icons/back.png</texturenofocus>
+			<visible>[!Window.IsActive(Home.xml) | [Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml)]]</visible>
+		</control>
+	</include>
+	<include name="Furniture_Home_Button">
+		<control type="button" id="3635">
+			<description>Home button</description>
+			<width>80</width>
+			<height>80</height>
+			<onclick>ActivateWindow(home,return)</onclick>
+			<font>Button</font>
+			<texturefocus colordiffuse="$VAR[ColorHighlight]">special://skin/extras/icons/home.png</texturefocus>
+			<texturenofocus>special://skin/extras/icons/home.png</texturenofocus>
+			<visible>[!Window.IsActive(Home.xml) | [Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml)]]</visible>
+		</control>
+	</include>
+	<include name="Furniture_Menu_Button">
+		<control type="button" id="3634">
+			<description>Home button</description>
+			<width>80</width>
+			<height>80</height>
+			<onclick>Menu</onclick>
+			<font>Button</font>
+			<texturefocus colordiffuse="$VAR[ColorHighlight]">special://skin/extras/icons/menu.png</texturefocus>
+			<texturenofocus>special://skin/extras/icons/menu.png</texturenofocus>
+			<visible>[[Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml)]]</visible>
+		</control>
+	</include> -->
+	<include name="Furniture_Clock">
+		<control type="group">
+			<visible>!Window.IsVisible(VideoFullScreen.xml) | [ Window.IsVisible(DialogFullScreenInfo.xml) | Player.Paused | !Integer.IsGreater(Player.Time,3) | Window.IsVisible(VideoOSD.xml)]</visible>
+			<include>Animation.FadeIn</include>
+			<include>Animation.FadeOut</include>
+			<top>40</top>
+			<include>Animation.FurnitureFadeInOut</include>
+			<height>84</height>
+			<animation effect="slide" start="0" end="0,-10" time="150" condition="!String.IsEmpty(Weather.Temperature)">Conditional</animation>
+			<control type="label">
+				<centertop>24</centertop>
+				<right>130</right>
+				<align>right</align>
+				<font>LargeBold</font>
+				<textcolor>Dark1</textcolor>
+				<label>$INFO[System.Time(hh:mm)]</label>
+				<animation effect="slide" start="0" end="50" time="0" condition="String.IsEmpty(System.Time(xx))">Conditional</animation>
+			</control>
+			<control type="label">
+				<centertop>30</centertop>
+				<right>SidePad</right>
+				<font>SmallBold</font>
+				<textcolor>Dark3</textcolor>
+				<align>right</align>
+				<width>120</width>
+				<label>$INFO[System.Time(xx)]</label>
+				<visible>!String.IsEmpty(System.Time(xx))</visible>
+			</control>
+			<control type="label">
+				<centertop>64</centertop>
+				<right>SidePad</right>
+				<font>Flag</font>
+				<textcolor>Dark2</textcolor>
+				<align>right</align>
+				<width>50%</width>
+				<label>$INFO[System.Date(DDD)]$COMMA $INFO[System.Date(d MMM yyyy)]</label>
+			</control>
+			<control type="label">
+				<centertop>92</centertop>
+				<right>SidePad</right>
+				<font>Flag</font>
+				<textcolor>Dark3</textcolor>
+				<align>right</align>
+				<width>50%</width>
+				<visible>!String.IsEmpty(Weather.Temperature)</visible>
+				<label>[COLOR=$VAR[ColorHighlight]]$INFO[Weather.Temperature][/COLOR] $INFO[Weather.Conditions]</label>
+			</control>
+		</control>
+	</include>
+	<include name="Furniture_OverlayInfo">
+		<control type="group">
+			<control type="group">
+				<height>100%</height>
+				<width>100%</width>
+				<include>Animation.FadeIn</include>
+				<include>Animation.FadeOut</include>
+				<include>GlobalOverlay</include>
+			</control>
+			<visible>![Container.Content(songs) | Container.Content(albums)]</visible>
+			<visible>![!system.getbool(videolibrary.showunwatchedplots) + Container.Content(episodes) + [String.IsEqual(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]]</visible>
+			<visible>[!Window.IsVisible(DialogVideoInfo.xml) + System.IdleTime(5) + Skin.HasSetting(furniture.overlayinfo)] | [System.IdleTime(5) + Window.IsVisible(DialogVideoInfo.xml) + Control.HasFocus(132)]</visible>
+			<visible>![Window.IsVisible(script-skinshortcuts.xml) | Window.IsVisible(DialogSongInfo.xml) | Window.IsVisible(DialogPictureInfo.xml) | Window.IsVisible(FileBrowser.xml) | Window.IsVisible(DialogProgress.xml) | Window.IsVisible(DialogYesNo.xml) | Window.IsVisible(DialogOK.xml) | Window.IsVisible(DialogSelect.xml) | Window.IsVisible(DialogContextMenu.xml) | Window.IsVisible(DialogButtonMenu.xml) | ControlGroup(9000).HasFocus()]</visible>
+			<visible>[Container.Content(Sets) | String.StartsWith(ListItem.Path,videodb://movies/sets)] | !String.IsEmpty(ListItem.Plot)</visible>
+			<include>Animation.FadeIn.Slide</include>
+			<control type="group">
+				<left>10</left>
+				<top>10</top>
+				<width>613</width>
+				<height>920</height>
+				<control type="image">
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<texture background="true">$VAR[PosterImage]</texture>
+					<animation type="conditional" condition="true" reversible="false">
+						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
+					</animation>
+					<visible>!Container.Content(episodes)</visible>
+				</control>
+				<control type="group">
+					<control type="image">
+						<top>100</top>
+						<width>613</width>
+						<height>450</height>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<texture background="true">$INFO[ListItem.Icon]</texture>
+						<animation type="conditional" condition="true" reversible="false">
+							<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
+						</animation>
+					</control>
+					<control type="image">
+						<top>570</top>
+						<width>613</width>
+						<height>450</height>
+						<aspectratio scalediffuse="false">keep</aspectratio>
+						<texture background="true">$INFO[ListItem.Art(tvshow.landscape)]</texture>
+						<animation type="conditional" condition="true" reversible="false">
+							<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
+						</animation>
+					</control>
+					<visible>Container.Content(episodes)</visible>
+				</control>
+				<animation type="conditional" condition="true" reversible="false">
+					<effect type="zoom" start="100" end="94" time="200" center="auto" tween="quadratic" easing="out" />
+					<effect type="rotate" end="-1" time="200" center="auto" tween="quadratic" easing="out" />
+				</animation>
+			</control>
+			<control type="label">
+				<description>header label</description>
+				<top>100</top>
+				<left>643</left>
+				<right>30</right>
+				<font>EpisodeNumber</font>
+				<textcolor>white</textcolor>
+				<height>45</height>
+				<label>$VAR[LabelOverlayTitle]</label>
+				<scroll>true</scroll>
+			</control>
+			<control type="textbox">
+				<description>textarea</description>
+				<left>643</left>
+				<right>30</right>
+				<top>210</top>
+				<align>justify</align>
+				<font>Medium</font>
+				<textcolor>white</textcolor>
+				<label>$VAR[LabelOverlayPlot]</label>
+			</control>
+		</control>
+	</include>
+</includes>
