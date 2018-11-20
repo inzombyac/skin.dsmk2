@@ -3,12 +3,10 @@
 <includes>
 	<variable name="PercentWatched">
 		<value condition="ListItem.IsPlaying">indicator/poster-inprogress.png</value>
-		<!-- <value condition="!Skin.HasSetting(furniture.hideindicators) + ListItem.IsResumable + !Skin.HasSetting(furniture.hideresume)">indicator/poster-resume.png</value> -->
 		<value condition="!Skin.HasSetting(furniture.hideindicators) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)">indicator/checkmark.png</value>
 	</variable>
 	<variable name="PosterPercentWatched">
 		<value condition="!Skin.HasSetting(furniture.hideindicators) + ListItem.IsPlaying">indicator/poster-inprogress.png</value>
-		<!-- <value condition="!Skin.HasSetting(furniture.hideindicators) + ListItem.IsResumable + !Skin.HasSetting(furniture.hideresume)">indicator/poster-resume.png</value> -->
 		<value condition="Integer.IsGreater(ListItem.PlayCount,0)">indicator/checkmark.png</value>
 	</variable>
 	<variable name="PosterPercentWatchedHome">
@@ -16,7 +14,6 @@
 		<value condition="Integer.IsGreater(ListItem.PlayCount,0)">indicator/checkmark.png</value>
 	</variable>
 	<variable name="PercentWatched9500">
-		<value condition="!Skin.HasSetting(furniture.hideindicators) + !Skin.HasSetting(furniture.hideresume) + Container(9500).ListItem.IsResumable">indicator/inprogress.png</value>
 		<value condition="!Skin.HasSetting(furniture.hideindicators) + String.IsEqual(Container(9500).ListItem.Overlay,OverlayWatched.png)">indicator/checkmark.png</value>
 	</variable>
 	<variable name="PosterImage">

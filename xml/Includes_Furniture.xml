@@ -1526,6 +1526,7 @@
 	                <visible>Window.IsVisible(script-globalsearch.xml)</visible>
 	            </control>
 				<control type="group" description="iconbox">
+					<visible>!Window.IsVisible(DialogVideoInfo) + Window.IsVisible(DialogMusicInfo)</visible>
 					<width>80</width>
 					<height>80</height>
 					<control type="image">
@@ -1565,6 +1566,7 @@
 					</control>
 				</control>
 				<control type="group">
+					<visible>!Window.IsVisible(DialogVideoInfo) + Window.IsVisible(DialogMusicInfo)</visible>
 					<control type="label">
 						<centertop>24</centertop>
 						<width>1350</width>

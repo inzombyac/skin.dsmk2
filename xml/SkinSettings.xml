@@ -13,8 +13,8 @@
 			<include>Animation.Common</include>
 			<left>72</left>
 			<right>72</right>
-			<top>208</top>
-			<height>656</height>
+			<top>160</top>
+			<height>888</height>
 			<control type="image">
 				<width>100%</width>
 				<height>100%</height>
@@ -27,7 +27,7 @@
 				<bottom>8</bottom>
 				<control type="image">
 					<width>453</width>
-					<height>638</height>
+					<height>870</height>
 					<texture border="5" colordiffuse="Dark3">common/box.png</texture>
 				</control>
 				<!-- Left Group -->
@@ -66,18 +66,18 @@
 						<label>31152</label>
 						<onclick>Right</onclick>
 					</control>
-					<control type="togglebutton" id="9103" description="Visualisation">
+					<!-- <control type="togglebutton" id="9103" description="Visualisation">
 						<usealttexture>ControlGroup(9100).HasFocus(9103)</usealttexture>
 						<include>DefSettingsButton2</include>
 						<label>250</label>
 						<onclick>Right</onclick>
-					</control>
-					<control type="togglebutton" id="9107" description="Views">
+					</control> -->
+					<!-- <control type="togglebutton" id="9107" description="Views">
 						<usealttexture>ControlGroup(9100).HasFocus(9107)</usealttexture>
 						<include>DefSettingsButton2</include>
 						<label>$LOCALIZE[31194]</label>
 						<onclick>Right</onclick>
-					</control>
+					</control> -->
 					<control type="togglebutton" id="9108" description="Colors">
 						<usealttexture>ControlGroup(9100).HasFocus(9108)</usealttexture>
 						<include>DefSettingsButton2</include>
@@ -150,40 +150,10 @@
 					<width>6</width>
 					<height>70</height>
 					<texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
-					<visible>ControlGroup(9100).HasFocus(9103)</visible>
-				</control>
-				<control type="image">
-					<top>420</top>
-					<left>6</left>
-					<width>1</width>
-					<height>70</height>
-					<texture colordiffuse="Light1">common/black.png</texture>
-					<visible>ControlGroup(9100).HasFocus(9103)</visible>
-				</control>
-				<control type="image"> <!--focused background left edge -->
-					<top>490</top>
-					<width>6</width>
-					<height>70</height>
-					<texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
-					<visible>ControlGroup(9100).HasFocus(9107)</visible>
-				</control>
-				<control type="image">
-					<top>490</top>
-					<left>6</left>
-					<width>1</width>
-					<height>70</height>
-					<texture colordiffuse="Light1">common/black.png</texture>
-					<visible>ControlGroup(9100).HasFocus(9107)</visible>
-				</control>
-				<control type="image"> <!--focused background left edge -->
-					<top>560</top>
-					<width>6</width>
-					<height>70</height>
-					<texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
 					<visible>ControlGroup(9100).HasFocus(9108)</visible>
 				</control>
 				<control type="image">
-					<top>560</top>
+					<top>420</top>
 					<left>6</left>
 					<width>1</width>
 					<height>70</height>
@@ -302,31 +272,6 @@
 						<label2>[COLOR=$VAR[ColorHighlight2]]$INFO[Skin.String(weatherfanart.name)][/COLOR]</label2>
 						<onclick>RunScript(script.image.resource.select,property=weatherfanart&amp;type=resource.images.weatherfanart)</onclick>
 					</control>
-					<!-- Visualisation -->
-					<control type="radiobutton" id="9221" description="Show video in background">
-						<width>1310</width>
-						<visible>ControlGroup(9100).HasFocus(9103)</visible>
-						<include>DefSettingsButton2</include>
-						<label>31111</label>
-						<selected>Skin.HasSetting(global.showvideo)</selected>
-						<onclick>Skin.ToggleSetting(global.showvideo)</onclick>
-					</control>
-					<control type="radiobutton" id="9222" description="Show visualization in background">
-						<width>1310</width>
-						<visible>ControlGroup(9100).HasFocus(9103)</visible>
-						<include>DefSettingsButton2</include>
-						<label>31172</label>
-						<selected>Skin.HasSetting(global.showvisualisation)</selected>
-						<onclick>Skin.ToggleSetting(global.showvisualisation)</onclick>
-					</control>
-					<control type="radiobutton" id="9361" description="Plot Overlay">
-						<width>1310</width>
-						<visible>ControlGroup(9100).HasFocus(9103)</visible>
-						<include>DefSettingsButton2</include>
-						<label>31254</label>
-						<selected>Skin.HasSetting(furniture.overlayinfo)</selected>
-						<onclick>Skin.ToggleSetting(furniture.overlayinfo)</onclick>
-					</control>
 					<!-- Widgets -->
 					<control type="button" id="9246" description="Custom Widget 1">
 						<width>1310</width>
@@ -409,6 +354,30 @@
 						<onclick>Skin.SetString(CustomWidget10)</onclick>
 					</control>
 					<!-- Furniture -->
+					<control type="radiobutton" id="9221" description="Show video in background">
+						<width>1310</width>
+						<visible>ControlGroup(9100).HasFocus(9106)</visible>
+						<include>DefSettingsButton2</include>
+						<label>31111</label>
+						<selected>Skin.HasSetting(global.showvideo)</selected>
+						<onclick>Skin.ToggleSetting(global.showvideo)</onclick>
+					</control>
+					<control type="radiobutton" id="9222" description="Show visualization in background">
+						<width>1310</width>
+						<visible>ControlGroup(9100).HasFocus(9106)</visible>
+						<include>DefSettingsButton2</include>
+						<label>31172</label>
+						<selected>Skin.HasSetting(global.showvisualisation)</selected>
+						<onclick>Skin.ToggleSetting(global.showvisualisation)</onclick>
+					</control>
+					<control type="radiobutton" id="9361" description="Plot Overlay">
+						<width>1310</width>
+						<visible>ControlGroup(9100).HasFocus(9106)</visible>
+						<include>DefSettingsButton2</include>
+						<label>31254</label>
+						<selected>Skin.HasSetting(furniture.overlayinfo)</selected>
+						<onclick>Skin.ToggleSetting(furniture.overlayinfo)</onclick>
+					</control>
 					<control type="radiobutton" id="92615" description="Hide indicators">
 						<width>1310</width>
 						<visible>ControlGroup(9100).HasFocus(9106)</visible>
@@ -417,19 +386,9 @@
 						<selected>Skin.HasSetting(furniture.hideindicators)</selected>
 						<onclick>Skin.ToggleSetting(furniture.hideindicators)</onclick>
 					</control>
-					<control type="radiobutton" id="92612" description="Resume indicator">
-						<width>1310</width>
-						<visible>ControlGroup(9100).HasFocus(9106)</visible>
-						<include>DefSettingsButton2</include>
-						<label>Do not show resume indicator</label>
-						<visible>!Skin.HasSetting(furniture.hideindicators)</visible>
-						<selected>Skin.HasSetting(furniture.hideresume)</selected>
-						<onclick>Skin.ToggleSetting(furniture.hideresume)</onclick>
-					</control>
-					<!-- View Settings -->
 					<control type="radiobutton" id="9272" description="Kiosk Mode">
 						<width>1310</width>
-						<visible>ControlGroup(9100).HasFocus(9107)</visible>
+						<visible>ControlGroup(9100).HasFocus(9106)</visible>
 						<include>DefSettingsButton2</include>
 						<label>31199</label>
 						<selected>Skin.HasSetting(global.kioskmode)</selected>
@@ -437,7 +396,7 @@
 					</control>
 					<control type="radiobutton" id="9262" description="Debug mode">
 						<width>1310</width>
-						<visible>ControlGroup(9100).HasFocus(9107)</visible>
+						<visible>ControlGroup(9100).HasFocus(9106)</visible>
 						<include>DefSettingsButton2</include>
 						<label>Debug Mode</label>
 						<selected>Skin.HasSetting(DebugGrid)</selected>
@@ -449,7 +408,7 @@
 						<include>DefSettingsButton2</include>
 						<selected>Skin.HasSetting(ColorHighlight)</selected>
 						<onclick>Skin.ToggleSetting(ColorHighlight)</onclick>
-						<onclick>ReloadSkin()</onclick>
+						<!-- <onclick>ReloadSkin()</onclick> -->
 						<label>Change main highlight colour</label>
 						<visible>ControlGroup(9100).HasFocus(9108)</visible>
 					</control>
@@ -475,7 +434,7 @@
 						<include>DefSettingsButton2</include>
 						<selected>Skin.HasSetting(ColorHighlight2)</selected>
 						<onclick>Skin.ToggleSetting(ColorHighlight2)</onclick>
-						<onclick>ReloadSkin()</onclick>
+						<!-- <onclick>ReloadSkin()</onclick> -->
 						<label>Change second highlight colour</label>
 						<visible>ControlGroup(9100).HasFocus(9108)</visible>
 					</control>
@@ -501,7 +460,7 @@
 						<include>DefSettingsButton2</include>
 						<selected>Skin.HasSetting(ColourSelected)</selected>
 						<onclick>Skin.ToggleSetting(ColourSelected)</onclick>
-						<onclick>ReloadSkin()</onclick>
+						<!-- <onclick>ReloadSkin()</onclick> -->
 						<label>Change the selected colour</label>
 						<visible>ControlGroup(9100).HasFocus(9108)</visible>
 					</control>

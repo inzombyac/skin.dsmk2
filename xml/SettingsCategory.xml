@@ -5,15 +5,15 @@
     <menucontrol>9000</menucontrol>
     <controls>
         <include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
-        <include>Furniture_Clock</include>
         <include>Furniture_Header</include>
+        <include>Furniture_Clock</include>
         <include>Furniture_NowPlaying</include>
         <control type="group">
             <include>Animation.Common</include>
             <left>72</left>
             <right>72</right>
             <top>208</top>
-            <height>656</height>  
+            <height>808</height>  
             <control type="image">
                 <width>100%</width>
                 <height>100%</height>
@@ -24,6 +24,7 @@
                 <right>8</right>
                 <top>8</top>
                 <bottom>8</bottom>
+                <height>792</height>
                 <!-- Right Group -->
                 <control type="grouplist" id="5">
                     <description>Control Area</description>
@@ -33,16 +34,17 @@
                     <bottom>10</bottom>
                     <itemgap>0</itemgap>
                     <onleft>3</onleft>
-                    <onright>5</onright>
+                    <onright>60</onright>
                     <onup>5</onup>
                     <ondown>5</ondown>
                     <orientation>vertical</orientation>
+                    <pagecontrol>60</pagecontrol>
                 </control>
 
                 <!-- Left Group -->
                 <control type="image">
 					<width>445</width>
-					<height>638</height>
+					
 					<texture border="5" colordiffuse="Dark3">common/white.png</texture>
 				</control>
 				<control type="grouplist" id="3">
@@ -91,7 +93,19 @@
                 </control>
             </control>
         </control>
-       
+        <control type="scrollbar" id="60">
+            <onback>5</onback>
+            <centerright>60</centerright>
+            <top>PosterPad</top>
+            <height>790</height>
+            <width>8</width>
+            <onleft>5</onleft>
+            <texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
+            <texturesliderbar border="4" colordiffuse="$VAR[ColorHighlight]">scrollbar/scrollv.png</texturesliderbar>
+            <texturesliderbarfocus border="4" colordiffuse="$VAR[ColorHighlight]">scrollbar/scrollv.png</texturesliderbarfocus>
+            <animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
+            <animation effect="slide" end="5,0" time="400" condition="!Control.HasFocus(60)">Conditional</animation>
+        </control>
         <include>Def9000SettingsMenu</include>
         <control type="button" id="7">
             <description>Default Button</description>
