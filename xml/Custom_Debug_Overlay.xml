@@ -650,6 +650,11 @@
                 <label>$INFO[ListItem.Studio]</label>
 				<visible>Window.IsVisible(MyVideoNav.xml)</visible>
             </control>
+            <control type="label">
+                <include>ControlID5</include>
+                <label>Poster: $VAR[PosterImage]</label>
+                <visible>Window.IsVisible(MyPrograms.xml)</visible>
+            </control>
         </control>
     </controls>
 </window>

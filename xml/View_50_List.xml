@@ -360,7 +360,7 @@
 					<height>500</height>
 					<fadetime>100</fadetime>
 					<aspectratio align="left" aligny="center" scalediffuse="false">keep</aspectratio>
-					<texture>$VAR[PosterImage]</texture>
+					<texture background="true">$VAR[PosterImage]</texture>
 					<visible>!Container.Content(episodes)</visible>
 				</control>
 			</control>
