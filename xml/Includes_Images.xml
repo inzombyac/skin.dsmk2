@@ -215,4 +215,17 @@
 		<value condition="!String.IsEmpty(Skin.String(fanart.fallback))">$INFO[Skin.String(fanart.fallback)]</value>
 		<value>special://skin/extras/backgrounds/smoke.png</value>
 	</variable>
+	<variable name="EmbyHomeMovieThumb">
+		<value condition="!String.IsEmpty(Window(Home).Property(LatestMovie.1.Fanart))">$INFO[Window(Home).Property(LatestMovie.1.Fanart)]</value>
+		<value>special://skin/extras/backgrounds/Theater.jpg</value>
+	</variable>
+	<variable name="EmbyHomeTVThumb">
+		<value condition="!String.IsEmpty(Window(Home).Property(LatestEpisode.1.Fanart))">$INFO[Window(Home).Property(LatestEpisode.1.Fanart)]</value>
+		<value>special://skin/extras/backgrounds/tv.jpg</value>
+	</variable>
+	<variable name="EmbyHomeMusicThumb">
+		<value condition="!String.IsEmpty(Window(Home).Property(LatestSong.1.Fanart))">$INFO[Window(Home).Property(LatestSong.1.Fanart)]</value>
+		<value condition="!String.IsEmpty(Window(Home).Property(LatestAlbum.1.Fanart))">$INFO[Window(Home).Property(LatestAlbum.1.Fanart)]</value>
+		<value>special://skin/extras/backgrounds/music.jpg</value>
+	</variable>
 </includes>

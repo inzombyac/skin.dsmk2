@@ -186,6 +186,72 @@
     <widgetdefaultnode labelID="youtube" group="mainmenu" label="Popular on YouTube" type="video" path="plugin://plugin.video.youtube/special/popular_right_now/" target="">Popular on YouTube</widgetdefaultnode>
     <!-- Browse for Backgrounds -->
     <!-- <background label="::PLAYLIST::">playlistBackground</background> -->
+    
+    <background label="Latest Episode 1" condition="!String.IsEmpty(Window(Home).Property(LatestEpisode.1.Thumb))">$INFO[Window(Home).Property(LatestEpisode.1.Thumb)]</background>
+    <background label="Latest Episode 2" condition="!String.IsEmpty(Window(Home).Property(LatestEpisode.2.Thumb))">$INFO[Window(Home).Property(LatestEpisode.2.Thumb)]</background>
+    <background label="Latest Episode 3" condition="!String.IsEmpty(Window(Home).Property(LatestEpisode.3.Thumb))">$INFO[Window(Home).Property(LatestEpisode.3.Thumb)]</background>
+    <background label="Latest Episode 4" condition="!String.IsEmpty(Window(Home).Property(LatestEpisode.4.Thumb))">$INFO[Window(Home).Property(LatestEpisode.4.Thumb)]</background>
+    <background label="Latest Episode 5" condition="!String.IsEmpty(Window(Home).Property(LatestEpisode.5.Thumb))">$INFO[Window(Home).Property(LatestEpisode.5.Thumb)]</background>
+    <background label="Latest Episode 6" condition="!String.IsEmpty(Window(Home).Property(LatestEpisode.6.Thumb))">$INFO[Window(Home).Property(LatestEpisode.6.Thumb)]</background>
+    <background label="Latest Episode 7" condition="!String.IsEmpty(Window(Home).Property(LatestEpisode.7.Thumb))">$INFO[Window(Home).Property(LatestEpisode.7.Thumb)]</background>
+    <background label="Latest Episode 8" condition="!String.IsEmpty(Window(Home).Property(LatestEpisode.8.Thumb))">$INFO[Window(Home).Property(LatestEpisode.8.Thumb)]</background>
+    <background label="Latest Episode 9" condition="!String.IsEmpty(Window(Home).Property(LatestEpisode.9.Thumb))">$INFO[Window(Home).Property(LatestEpisode.9.Thumb)]</background>
+    <background label="Latest Episode 10" condition="!String.IsEmpty(Window(Home).Property(LatestEpisode.10.Thumb))">$INFO[Window(Home).Property(LatestEpisode.10.Thumb)]</background>
+    
+    <background label="Latest Show 1" condition="!String.IsEmpty(Window(Home).Property(LatestEpisode.1.Fanart))">$INFO[Window(Home).Property(LatestEpisode.1.Fanart)]</background>
+    <background label="Latest Show 2" condition="!String.IsEmpty(Window(Home).Property(LatestEpisode.2.Fanart))">$INFO[Window(Home).Property(LatestEpisode.2.Fanart)]</background>
+    <background label="Latest Show 3" condition="!String.IsEmpty(Window(Home).Property(LatestEpisode.3.Fanart))">$INFO[Window(Home).Property(LatestEpisode.3.Fanart)]</background>
+    <background label="Latest Show 4" condition="!String.IsEmpty(Window(Home).Property(LatestEpisode.4.Fanart))">$INFO[Window(Home).Property(LatestEpisode.4.Fanart)]</background>
+    <background label="Latest Show 5" condition="!String.IsEmpty(Window(Home).Property(LatestEpisode.5.Fanart))">$INFO[Window(Home).Property(LatestEpisode.5.Fanart)]</background>
+    <background label="Latest Show 6" condition="!String.IsEmpty(Window(Home).Property(LatestEpisode.6.Fanart))">$INFO[Window(Home).Property(LatestEpisode.6.Fanart)]</background>
+    <background label="Latest Show 7" condition="!String.IsEmpty(Window(Home).Property(LatestEpisode.7.Fanart))">$INFO[Window(Home).Property(LatestEpisode.7.Fanart)]</background>
+    <background label="Latest Show 8" condition="!String.IsEmpty(Window(Home).Property(LatestEpisode.8.Fanart))">$INFO[Window(Home).Property(LatestEpisode.8.Fanart)]</background>
+    <background label="Latest Show 9" condition="!String.IsEmpty(Window(Home).Property(LatestEpisode.9.Fanart))">$INFO[Window(Home).Property(LatestEpisode.9.Fanart)]</background>
+    <background label="Latest Show 10" condition="!String.IsEmpty(Window(Home).Property(LatestEpisode.10.Fanart))">$INFO[Window(Home).Property(LatestEpisode.10.Fanart)]</background>
+    
+    <background label="Latest Movie 1" condition="!String.IsEmpty(Window(Home).Property(LatestMovie.1.Fanart))">$INFO[Window(Home).Property(LatestMovie.1.Fanart)]</background>
+    <background label="Latest Movie 2" condition="!String.IsEmpty(Window(Home).Property(LatestMovie.2.Fanart))">$INFO[Window(Home).Property(LatestMovie.2.Fanart)]</background>
+    <background label="Latest Movie 3" condition="!String.IsEmpty(Window(Home).Property(LatestMovie.3.Fanart))">$INFO[Window(Home).Property(LatestMovie.3.Fanart)]</background>
+    <background label="Latest Movie 4" condition="!String.IsEmpty(Window(Home).Property(LatestMovie.4.Fanart))">$INFO[Window(Home).Property(LatestMovie.4.Fanart)]</background>
+    <background label="Latest Movie 5" condition="!String.IsEmpty(Window(Home).Property(LatestMovie.5.Fanart))">$INFO[Window(Home).Property(LatestMovie.5.Fanart)]</background>
+    <background label="Latest Movie 6" condition="!String.IsEmpty(Window(Home).Property(LatestMovie.6.Fanart))">$INFO[Window(Home).Property(LatestMovie.6.Fanart)]</background>
+    <background label="Latest Movie 7" condition="!String.IsEmpty(Window(Home).Property(LatestMovie.7.Fanart))">$INFO[Window(Home).Property(LatestMovie.7.Fanart)]</background>
+    <background label="Latest Movie 8" condition="!String.IsEmpty(Window(Home).Property(LatestMovie.8.Fanart))">$INFO[Window(Home).Property(LatestMovie.8.Fanart)]</background>
+    <background label="Latest Movie 9" condition="!String.IsEmpty(Window(Home).Property(LatestMovie.9.Fanart))">$INFO[Window(Home).Property(LatestMovie.9.Fanart)]</background>
+    <background label="Latest Movie 10" condition="!String.IsEmpty(Window(Home).Property(LatestMovie.10.Fanart))">$INFO[Window(Home).Property(LatestMovie.10.Fanart)]</background>
+
+    <background label="Latest Song 1" condition="!String.IsEmpty(Window(Home).Property(LatestSong.1.Fanart))">$INFO[Window(Home).Property(LatestSong.1.Fanart)]</background>
+    <background label="Latest Song 2" condition="!String.IsEmpty(Window(Home).Property(LatestSong.2.Fanart))">$INFO[Window(Home).Property(LatestSong.2.Fanart)]</background>
+    <background label="Latest Song 3" condition="!String.IsEmpty(Window(Home).Property(LatestSong.3.Fanart))">$INFO[Window(Home).Property(LatestSong.3.Fanart)]</background>
+    <background label="Latest Song 4" condition="!String.IsEmpty(Window(Home).Property(LatestSong.4.Fanart))">$INFO[Window(Home).Property(LatestSong.4.Fanart)]</background>
+    <background label="Latest Song 5" condition="!String.IsEmpty(Window(Home).Property(LatestSong.5.Fanart))">$INFO[Window(Home).Property(LatestSong.5.Fanart)]</background>
+    <background label="Latest Song 6" condition="!String.IsEmpty(Window(Home).Property(LatestSong.6.Fanart))">$INFO[Window(Home).Property(LatestSong.6.Fanart)]</background>
+    <background label="Latest Song 7" condition="!String.IsEmpty(Window(Home).Property(LatestSong.7.Fanart))">$INFO[Window(Home).Property(LatestSong.7.Fanart)]</background>
+    <background label="Latest Song 8" condition="!String.IsEmpty(Window(Home).Property(LatestSong.8.Fanart))">$INFO[Window(Home).Property(LatestSong.8.Fanart)]</background>
+    <background label="Latest Song 9" condition="!String.IsEmpty(Window(Home).Property(LatestSong.9.Fanart))">$INFO[Window(Home).Property(LatestSong.9.Fanart)]</background>
+    <background label="Latest Song 10" condition="!String.IsEmpty(Window(Home).Property(LatestSong.10.Fanart))">$INFO[Window(Home).Property(LatestSong.10.Fanart)]</background>
+
+    <background label="Latest Album 1" condition="!String.IsEmpty(Window(Home).Property(LatestAlbum.1.Fanart))">$INFO[Window(Home).Property(LatestAlbum.1.Fanart)]</background>
+    <background label="Latest Album 2" condition="!String.IsEmpty(Window(Home).Property(LatestAlbum.2.Fanart))">$INFO[Window(Home).Property(LatestAlbum.2.Fanart)]</background>
+    <background label="Latest Album 3" condition="!String.IsEmpty(Window(Home).Property(LatestAlbum.3.Fanart))">$INFO[Window(Home).Property(LatestAlbum.3.Fanart)]</background>
+    <background label="Latest Album 4" condition="!String.IsEmpty(Window(Home).Property(LatestAlbum.4.Fanart))">$INFO[Window(Home).Property(LatestAlbum.4.Fanart)]</background>
+    <background label="Latest Album 5" condition="!String.IsEmpty(Window(Home).Property(LatestAlbum.5.Fanart))">$INFO[Window(Home).Property(LatestAlbum.5.Fanart)]</background>
+    <background label="Latest Album 6" condition="!String.IsEmpty(Window(Home).Property(LatestAlbum.6.Fanart))">$INFO[Window(Home).Property(LatestAlbum.6.Fanart)]</background>
+    <background label="Latest Album 7" condition="!String.IsEmpty(Window(Home).Property(LatestAlbum.7.Fanart))">$INFO[Window(Home).Property(LatestAlbum.7.Fanart)]</background>
+    <background label="Latest Album 8" condition="!String.IsEmpty(Window(Home).Property(LatestAlbum.8.Fanart))">$INFO[Window(Home).Property(LatestAlbum.8.Fanart)]</background>
+    <background label="Latest Album 9" condition="!String.IsEmpty(Window(Home).Property(LatestAlbum.9.Fanart))">$INFO[Window(Home).Property(LatestAlbum.9.Fanart)]</background>
+    <background label="Latest Album 10" condition="!String.IsEmpty(Window(Home).Property(LatestAlbum.10.Fanart))">$INFO[Window(Home).Property(LatestAlbum.10.Fanart)]</background>
+
+    <background label="Latest Music Video 1" condition="!String.IsEmpty(Window(Home).Property(LatestMusicVideo.1.Fanart))">$INFO[Window(Home).Property(LatestMusicVideo.1.Fanart)]</background>
+    <background label="Latest Music Video 2" condition="!String.IsEmpty(Window(Home).Property(LatestMusicVideo.2.Fanart))">$INFO[Window(Home).Property(LatestMusicVideo.2.Fanart)]</background>
+    <background label="Latest Music Video 3" condition="!String.IsEmpty(Window(Home).Property(LatestMusicVideo.3.Fanart))">$INFO[Window(Home).Property(LatestMusicVideo.3.Fanart)]</background>
+    <background label="Latest Music Video 4" condition="!String.IsEmpty(Window(Home).Property(LatestMusicVideo.4.Fanart))">$INFO[Window(Home).Property(LatestMusicVideo.4.Fanart)]</background>
+    <background label="Latest Music Video 5" condition="!String.IsEmpty(Window(Home).Property(LatestMusicVideo.5.Fanart))">$INFO[Window(Home).Property(LatestMusicVideo.5.Fanart)]</background>
+    <background label="Latest Music Video 6" condition="!String.IsEmpty(Window(Home).Property(LatestMusicVideo.6.Fanart))">$INFO[Window(Home).Property(LatestMusicVideo.6.Fanart)]</background>
+    <background label="Latest Music Video 7" condition="!String.IsEmpty(Window(Home).Property(LatestMusicVideo.7.Fanart))">$INFO[Window(Home).Property(LatestMusicVideo.7.Fanart)]</background>
+    <background label="Latest Music Video 8" condition="!String.IsEmpty(Window(Home).Property(LatestMusicVideo.8.Fanart))">$INFO[Window(Home).Property(LatestMusicVideo.8.Fanart)]</background>
+    <background label="Latest Music Video 9" condition="!String.IsEmpty(Window(Home).Property(LatestMusicVideo.9.Fanart))">$INFO[Window(Home).Property(LatestMusicVideo.9.Fanart)]</background>
+    <background label="Latest Music Video 10" condition="!String.IsEmpty(Window(Home).Property(LatestMusicVideo.10.Fanart))">$INFO[Window(Home).Property(LatestMusicVideo.10.Fanart)]</background>
     <background label="Skin">||BROWSE||special://skin/extras/backgrounds</background>
     <!-- <backgroundBrowse default="special://skin/extras/backgrounds">Single</backgroundBrowse> -->
     <backgrounddefault defaultID="library">special://skin/extras/backgrounds/Channels2.jpg</backgrounddefault>

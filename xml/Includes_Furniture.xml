@@ -1373,6 +1373,8 @@
 		<value condition="Window.IsVisible(script-globalsearch.xml)">Search Results $INFO[Container.NumItems,(,)]</value>
 		<value condition="Window.IsVisible(DialogAddonInfo.xml)">$INFO[ListItem.Label]</value>
 		<value condition="Window.IsVisible(DialogSeekBar.xml)">$VAR[PlayerBigTitle]</value>
+		<value condition="Window.IsVisible(GameOSD.xml) + !String.IsEmpty(Player.Title)">$INFO[Player.Title]</value>
+		<value condition="Window.IsVisible(GameOSD.xml) + String.IsEmpty(Player.Title)">Game</value>
 		<value condition="Window.IsVisible(MusicVisualisation.xml)">$INFO[MusicPlayer.Artist]</value>
 		<value condition="Window.IsVisible(ColorPicker.xml)">Select a Color</value>
 		<value condition="Window.IsVisible(MyMusicPlaylistEditor.xml)">$LOCALIZE[20011]</value>
@@ -1426,6 +1428,7 @@
 		<value condition="Window.IsActive(script-globalsearch.xml)">$INFO[ListItem.Label]</value>
 		<value condition="Window.IsVisible(Home.xml)">$VAR[EmbyFooterLabel]</value>
 		<value condition="Window.IsVisible(DialogSeekBar.xml)">$VAR[PlayerTitle]</value>
+		<value condition="Window.IsVisible(GameOSD.xml)"></value>
 		<value condition="Window.IsVisible(MusicVisualisation.xml)">$INFO[MusicPlayer.TrackNumber,, • ]$INFO[MusicPlayer.Title]$INFO[MusicPlayer.Album, • ,]$INFO[MusicPlayer.Year, (,)]$INFO[MusicPlayer.Genre, • ,]</value>
 		<value condition="Window.IsVisible(Settings.xml)">$INFO[System.CurrentControl]</value>
 		<value condition="Window.IsVisible(DialogAddonInfo.xml)">[COLOR=Dark1]$INFO[ListItem.AddonVersion,Version: ,][/COLOR] by $INFO[ListItem.AddonCreator] $INFO[ListItem.Artist, • ]$INFO[ListItem.AddonType, • ,]</value>
@@ -1644,6 +1647,14 @@
 							<width>auto</width>
 							<textcolor>Dark2</textcolor>
 							<label>$VAR[SubHeaderLabel]</label>
+							<visible>!Window.IsVisible(GameOSD.xml)</visible>
+						</control>
+						<control type="label" id="1101">
+							<height>32</height>
+							<font>Flag</font>
+							<width>auto</width>
+							<textcolor>Dark2</textcolor>
+							<visible>Window.IsVisible(GameOSD.xml)</visible>
 						</control>
 					</control>
 					<control type="label">
@@ -1652,7 +1663,7 @@
 						<width>1350</width>
 						<textcolor>$VAR[ColorHighlight2]</textcolor>
 						<label>$VAR[EmbyEndTimeLabel,$LOCALIZE[19127]: ,]</label>
-						<visible>!Window.IsActive(script-globalsearch.xml) | [Window.IsActive(script-globalsearch.xml) + Control.HasFocus(50)]</visible>
+						<visible>[!Window.IsActive(script-globalsearch.xml) | [Window.IsActive(script-globalsearch.xml) + Control.HasFocus(50)]] + !Window.IsActive(FullScreenGame)</visible>
 					</control>
 				</control>
 			</control>

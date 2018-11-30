@@ -6,7 +6,7 @@
         <label2>Common Shortcut</label2>
         <icon>special://skin/extras/icons/tv.png</icon>
         <action>ActivateWindow(Videos,TVShowTitles,return)</action>
-        <thumb>special://skin/extras/backgrounds/tv.jpg</thumb>
+        <thumb>$VAR[EmbyHomeTVThumb]</thumb>
     </shortcut>
     <shortcut>
         <label>Movies</label>
@@ -14,15 +14,7 @@
         <defaultID>movies</defaultID>
         <icon>special://skin/extras/icons/film.png</icon>
         <action>ActivateWindow(Videos,MovieTitles,return)</action>
-        <thumb>special://skin/extras/backgrounds/Theater.jpg</thumb>
-    </shortcut>
-   <shortcut>
-        <label>Favorites</label>
-        <label2>favorite</label2>
-        <icon>special://skin/extras/icons/favorite.png</icon>
-        <thumb>special://skin/extras/backgrounds/favorites.jpg</thumb>
-        <action>ActivateWindow(Favourites)</action>
-        <visible>[Integer.IsGreater(Window(Home).Property(TVShows.Count),0) | Integer.IsGreater(Window(Home).Property(Movies.Count),0) | Integer.IsGreater(Window(Home).Property(Music.SongsCount),0)]</visible>
+        <thumb>$VAR[EmbyHomeMovieThumb]</thumb>
     </shortcut>
     <shortcut>
         <label>Collections</label>
@@ -38,7 +30,7 @@
         <label2>music</label2>
         <defaultID>music</defaultID>
         <icon>special://skin/extras/icons/songs.png</icon>
-        <thumb>special://skin/extras/backgrounds/music.jpg</thumb>
+        <thumb>$VAR[EmbyHomeMusicThumb]</thumb>
         <action>ActivateWindow(Music,musicdb://songs/,return)</action>
         <visible>Integer.IsGreater(Window(Home).Property(Music.SongsCount),0)</visible>
     </shortcut>
@@ -60,24 +52,40 @@
     </shortcut>
     <shortcut>
         <label>Videos</label>
-        <label2>videos</label2>
+        <label2>Video Library</label2>
         <defaultID>videos</defaultID>
         <thumb>special://skin/extras/backgrounds/orbs.jpg</thumb>
         <icon>special://skin/extras/icons/addons.png</icon>
         <action>ActivateWindow(Videos)</action>
     </shortcut>
     <shortcut>
+        <label>Favorites</label>
+        <label2>Favorite Items</label2>
+        <icon>special://skin/extras/icons/favorite.png</icon>
+        <thumb>special://skin/extras/backgrounds/favorites.jpg</thumb>
+        <action>ActivateWindow(Favourites)</action>
+        <visible>[Integer.IsGreater(Window(Home).Property(TVShows.Count),0) | Integer.IsGreater(Window(Home).Property(Movies.Count),0) | Integer.IsGreater(Window(Home).Property(Music.SongsCount),0)]</visible>
+    </shortcut>
+    <shortcut>
         <label>Programs</label>
-        <label2>programs</label2>
+        <label2>Program Library</label2>
         <defaultID>programs</defaultID>
         <thumb>special://skin/extras/backgrounds/programs.jpg</thumb>
         <icon>special://skin/extras/icons/rocket2.png</icon>
         <action>ActivateWindow(Programs,Addons,return)</action>
         <visible>!System.Platform.Android</visible>
     </shortcut>
+     <shortcut>
+        <label>Games</label>
+        <label2>Game Library</label2>
+        <defaultID>games</defaultID>
+        <thumb>special://skin/extras/backgrounds/Gamesystems.jpg</thumb>
+        <icon>special://skin/extras/icons/games.png</icon>
+        <action>ActivateWindow(Games)</action>
+    </shortcut>
     <shortcut>
         <label>Programs</label>
-        <label2>programs</label2>
+        <label2>Program Library</label2>
         <defaultID>programs</defaultID>
         <thumb>special://skin/extras/backgrounds/programs.jpg</thumb>
         <icon>special://skin/extras/icons/rocket2.png</icon>
@@ -85,25 +93,8 @@
         <visible>System.Platform.Android</visible>
     </shortcut>
     <shortcut>
-        <label>Games</label>
-        <label2>games</label2>
-        <defaultID>games</defaultID>
-        <thumb>special://skin/extras/backgrounds/Gamesystems.jpg</thumb>
-        <icon>special://skin/extras/icons/games.png</icon>
-        <action>ActivateWindow(Games)</action>
-    </shortcut>
-    <shortcut>
-        <label>Weather</label>
-        <label2>Common Shortcut</label2>
-        <defaultID>weather</defaultID>
-        <icon>special://skin/extras/icons/sun.png</icon>
-        <thumb>$VAR[HomeWeatherToday]</thumb>
-        <action>ActivateWindow(Weather)</action>
-        <visible>!String.IsEmpty(Weather.Conditions)</visible>
-    </shortcut>
-    <shortcut>
         <label>Settings</label>
-        <label2>Common Shortcut</label2>
+        <label2>Edit system settings</label2>
         <defaultID>settings</defaultID>
         <icon>special://skin/extras/icons/settings.png</icon>
         <thumb>special://skin/extras/backgrounds/Settings.jpg</thumb>
