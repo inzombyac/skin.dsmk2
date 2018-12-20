@@ -117,7 +117,7 @@
 		<value condition="Window.IsActive(script-skinshortcuts.xml) + String.IsEqual(Container(211).ListItem.Property(type),homevideos)">special://skin/extras/backgrounds/video.jpg</value>
 		<!-- Home Screen -->
 		<value condition="Window.IsActive(home) + !String.IsEmpty(Skin.String(fanart.fallback))">$INFO[Skin.String(fanart.fallback)]</value>
-		<value condition="Window.IsActive(home) + !String.IsEmpty(Container(300).ListItemAbsolute(0).Property(Background))">$INFO[Container(300).ListItemAbsolute(0).Property(Background)]</value>
+		<value condition="Window.IsActive(home) + !Control.HasFocus(4000)">$VAR[FanartImage]</value>
 		<value condition="Window.IsActive(home)">diffuse/home-loading.png</value>
 		<!-- Other windows -->
 		<value condition="Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRSearch.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRRecordings.xml)">special://skin/extras/backgrounds/Family.jpg</value>

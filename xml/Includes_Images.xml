@@ -152,7 +152,8 @@
 	</variable>
 	<variable name="SystemAvatar">
 		<value condition="Control.HasFocus(9265) | Control.HasFocus(9267) | Control.HasFocus(9094)">common/black.png</value>
-		<value condition="System.HasAddon(plugin.video.emby) + !String.IsEmpty(Window(Home).Property(EmbyUserImage))">$INFO[Window(Home).Property(EmbyUserImage)]</value>
+		<value condition="System.HasAddon(plugin.video.emby) + !String.IsEqual(Window(Home).Property(emby_online),true)">special://skin/extras/icons/emby_loading.png</value>
+		<value condition="System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)">$INFO[Window(Home).Property(EmbyUserImage)]</value>
 		<value condition="!String.IsEqual(System.ProfileThumb,DefaultUser.png)">$INFO[System.ProfileThumb]</value>
 		<value>special://skin/extras/icons/kodi.png</value>
 	</variable>

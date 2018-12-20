@@ -91,8 +91,13 @@
             </control>
             <control type="label">
                 <include>ControlID5</include>
-                <label>$VAR[Studio]</label>
+				<label>$INFO[Window(Home).Property(emby_online)]</label>
             </control>
+
+            <!-- <control type="label">
+                <include>ControlID5</include>
+                <label>$VAR[Studio]</label>
+            </control> -->
 		</control>
 	</include>
 	<include name="HomeEmbyWidgetInfo">
@@ -130,6 +135,8 @@
 					<onup condition="Player.HasMedia">7788</onup>
 					<onup condition="!Player.HasMedia">3634</onup>
 					<onleft>Control.SetFocus(300,0)</onleft>
+					<!-- <onright>ActivateWindow(shutdownmenu)</onright> -->
+					<onright>SetFocus(4000)</onright>
 					<ondown condition="Integer.IsGreater(Container(4001).NumItems,0)">4001</ondown>
 					<ondown condition="!Integer.IsGreater(Container(4001).NumItems,0) + Integer.IsGreater(Container(4002).NumItems,0)">4002</ondown>
 					<ondown condition="!Integer.IsGreater(Container(4001).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + Integer.IsGreater(Container(4003).NumItems,0)">4003</ondown>

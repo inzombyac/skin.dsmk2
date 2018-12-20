@@ -1697,6 +1697,16 @@
 		</content>
 	</include>
 	<include name="EmbyHomeWidgetDirections">
+		<onright condition="Control.HasFocus(4001)">SetFocus(4001)</onright>
+		<onright condition="Control.HasFocus(4002)">SetFocus(4002)</onright>
+		<onright condition="Control.HasFocus(4003)">SetFocus(4003)</onright>
+		<onright condition="Control.HasFocus(4004)">SetFocus(4004)</onright>
+		<onright condition="Control.HasFocus(4005)">SetFocus(4005)</onright>
+		<onright condition="Control.HasFocus(4006)">SetFocus(4006)</onright>
+		<onright condition="Control.HasFocus(4007)">SetFocus(4007)</onright>
+		<onright condition="Control.HasFocus(4008)">SetFocus(4008)</onright>
+		<onright condition="Control.HasFocus(4009)">SetFocus(4009)</onright>
+		<onright condition="Control.HasFocus(4010)">SetFocus(4010)</onright>
 		<!-- Widget 1 -->
 		<!-- Up -->
 		<onup   condition="Control.HasFocus(4001)">4000</onup>
