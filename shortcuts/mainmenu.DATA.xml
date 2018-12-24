@@ -28,7 +28,7 @@
         <label2>recent</label2>
         <defaultID>recent</defaultID>
         <icon>special://skin/extras/icons/film.png</icon>
-        <action>ActivateWindows(Videos,videodb://recentlyaddedmovies/,return)</action>
+        <action>ActivateWindow(Videos,videodb://recentlyaddedmovies/,return)</action>
         <visible>Integer.IsGreater(Window(Home).Property(Movies.Count),0) | Integer.IsGreater(Window(Home).Property(TVShows.Count),0)</visible>
     </shortcut>
     <shortcut>
