@@ -190,7 +190,7 @@
 					</control>
 					<!-- Widget -->
                     <control type="list" id="6000">
-                        <animation effect="slide" start="0,0" end="65,0" time="0" condition="String.IsEqual(Container(211).ListItem.Property(defaultID),movies) | String.IsEqual(Container(211).ListItem.Property(defaultID),recent) | String.IsEqual(Container(211).ListItem.Property(defaultID),latestembycon)">Conditional</animation>
+                        <animation effect="slide" start="0,0" end="65,0" time="0" condition="String.IsEqual(Container(211).ListItem.Property(widgetFormat),Poster)">Conditional</animation>
                         <autoscroll time="5000">true</autoscroll>
                         <top>69</top>
                         <left>45</left>
@@ -221,9 +221,9 @@
                             <param name="item_square_width">380</param>
                             <param name="widget_square_height">390</param>
                             <param name="item_square_height">380</param>
-                            <param name="movie_view">String.IsEqual(Container(211).ListItem.Property(defaultID),movies) | String.IsEqual(Container(211).ListItem.Property(defaultID),recent) | String.IsEqual(Container(211).ListItem.Property(defaultID),latestembycon)</param>
-                            <param name="square_view">String.IsEqual(Container(211).ListItem.Property(defaultID),music) | String.IsEqual(Container(211).ListItem.Property(defaultID),songs) | String.IsEqual(Container(211).ListItem.Property(defaultID),albums)</param>
-                            <param name="channel_view">String.IsEqual(Container(211).ListItem.Property(defaultID),livetv)</param>
+                            <param name="movie_view">String.IsEqual(Container(211).ListItem.Property(widgetFormat),Poster)</param>
+                            <param name="square_view">String.IsEqual(Container(211).ListItem.Property(widgetFormat),Square)</param>
+                            <param name="channel_view">String.IsEqual(Container(211).ListItem.Property(widgetFormat),LiveTV)</param>
                         </include>
                     </control>
                     <!-- background -->
@@ -313,6 +313,14 @@
                     <include>DefDialogButtons</include>
                     <visible>String.IsEqual(Container(211).ListItem.Label2,TVHub)</visible>
                     <onclick>RunScript(script.skinshortcuts,type=manage&amp;group=episodeshub)</onclick>
+                </control>
+                 <control type="button" id="1000" description="Set Widget View">
+                    <width>100%</width>
+                    <height>66</height>
+                    <label>View: $INFO[Container(211).ListItem.Property(widgetFormat)]</label>
+                    <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+                    <include>DefDialogButtons</include>
+                    <visible>!String.IsEmpty(Container(211).ListItem.Label) + String.IsEqual(Window.Property(groupname),mainmenu) + !String.IsEqual(Container(211).ListItem.Property(defaultID),Library)</visible>
                 </control>
                 <control type="button" id="303" description="Up">
                     <width>100%</width>

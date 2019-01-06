@@ -7,6 +7,7 @@
             <shortcut label="TV Hub" type="TVHub" grouping="common" icon="special://skin/extras/icons/tv.png">ActivateWindow(1102)</shortcut>
             <shortcut label="Movie Hub" type="MovieHub" grouping="common" icon="special://skin/extras/icons/film.png">ActivateWindow(1101)</shortcut>
             <shortcut label="Extended Info" type="extendedinfo" grouping="common" icon="special://skin/extras/icons/youtube.png">RunScript(script.extendedinfo)</shortcut>
+             <shortcut label="Recordings" condition="Pvr.HasTVChannels" type="pvr" icon="special://skin/extras/icons/timer.png" path="pvr://recordings/tv/active?view=flat">Recordings</shortcut>
         </node>
         <node label="32030">
             <content>video</content>
@@ -36,16 +37,7 @@
                 <content>upnp-music</content>
             </node>
         </node>
-        <node label="32017" condition="System.GetBool(pvrmanager.enabled)" version="13">
-            <content>pvr</content>
-            <node label="19023">
-                <content>pvr-tv</content>
-            </node>
-            <node label="19024">
-                <content>pvr-radio</content>
-            </node>
-        </node>
-        <node label="32017" condition="PVR.HasTVChannels">
+        <!-- <node label="32017" condition="PVR.HasTVChannels">
             <content>pvr</content>
             <node label="19023">
                 <content>pvr-tv</content>
@@ -56,7 +48,7 @@
             <node label="19024">
                 <content>pvr-radio</content>
             </node>
-        </node>
+        </node> -->
         <node label="32020">
             <content>picturesources</content>
         </node>
@@ -141,6 +133,7 @@
             </node>
         </node>
         <content>addon-program</content>
+        <!-- <widget label="Live TV" icon="special://skin/extras/icons/livetv.png" condition="Pvr.HasTVChannels" name="Live TV" type="videos" path="pvr://channels/tv/*" target="pvr://channels/tv/*">Live TV</widget> -->
         <node label="Custom Widgets">
             <shortcut label="$INFO[Skin.String(CustomWidget1)]" path="$INFO[Skin.String(CustomWidget1)]" condition="!String.IsEmpty(Skin.String(CustomWidget1))" icon="special://skin/extras/icons/bookmarks.png">Custom1</shortcut>
             <shortcut label="$INFO[Skin.String(CustomWidget2)]" path="$INFO[Skin.String(CustomWidget2)]" condition="!String.IsEmpty(Skin.String(CustomWidget2))" icon="special://skin/extras/icons/bookmarks.png">Custom2</shortcut>
@@ -154,7 +147,37 @@
             <shortcut label="$INFO[Skin.String(CustomWidget10)]" path="$INFO[Skin.String(CustomWidget10)]" condition="!String.IsEmpty(Skin.String(CustomWidget10))" icon="special://skin/extras/icons/bookmarks.png">Custom10</shortcut>
         </node>
 	</widget-groupings>
-	<!-- Type properties -->
+	<!-- Custom Propertoes -->
+    <propertydefault labelID="22020" property="widgetPath">pvr://channels/tv/*</propertydefault>
+    <propertydefault labelID="guide" property="widgetPath">pvr://channels/tv/*</propertydefault>
+    <propertydefault labelID="livetv" property="widgetPath">pvr://channels/tv/*</propertydefault>
+    <propertydefault labelID="channels" property="widgetPath">pvr://channels/tv/*</propertydefault>
+    <propertydefault labelID="livetv" property="widgetPath">pvr://channels/tv/*</propertydefault>
+
+    <propertydefault labelID="movies" property="widgetFormat">Poster</propertydefault>
+    <propertydefault labelID="sets" property="widgetFormat">Poster</propertydefault>
+    <propertydefault labelID="recent" property="widgetFormat">Poster</propertydefault>
+    <propertydefault labelID="collection" property="widgetFormat">Poster</propertydefault>
+    <propertydefault labelID="tvshows" property="widgetFormat">Poster</propertydefault>
+    <propertydefault labelID="embyconmovies" property="widgetFormat">Poster</propertydefault>
+    <propertydefault labelID="weather" property="widgetFormat">Weather</propertydefault>
+    <propertydefault labelID="music" property="widgetFormat">Square</propertydefault>
+    <propertydefault labelID="musicvideos" property="widgetFormat">Square</propertydefault>
+    <propertydefault labelID="10007" property="widgetFormat">System</propertydefault>
+    <propertydefault labelID="livetv" property="widgetFormat">LiveTV</propertydefault>
+    <propertydefault labelID="livetvchannels" property="widgetFormat">LiveTV</propertydefault>
+    <propertydefault labelID="channels" property="widgetFormat">LiveTV</propertydefault>
+    <propertyfallback property="widgetFormat">Thumbnail</propertyfallback>
+
+    <property property="widgetFormat" label="21371" icon="">Thumbnail</property>
+    <property property="widgetFormat" label="Movie Poster" icon="">Poster</property>
+    <property property="widgetFormat" label="Square" icon="">Square</property>
+    <property property="widgetFormat" label="Live TV" icon="">LiveTV</property>
+    <!-- <property property="widgetFormat" label="Weather" icon="">Weather</property> -->
+    <!-- <property property="widgetFormat" label="System Info" icon="">System</property> -->
+    <propertySettings property="widgetFormat" buttonID="1000" templateonly="False" title="Select Widget Type" showNone="False" imageBrowse="False" />
+
+    <!-- Type properties -->
 	<propertydefault labelID="movies" property="type">movie</propertydefault>
     <propertydefault labelID="tvshows" property="type">tvshows</propertydefault>
     <propertydefault labelID="livetv" property="type">livetv</propertydefault>
@@ -169,7 +192,6 @@
     <propertydefault labelID="power" property="type">power</propertydefault>
 	<propertydefault labelID="collection" property="type">collection</propertydefault>
     <propertydefault labelID="embyconmovies" property="type">movie</propertydefault>
-    <propertydefault labelID="latestembycon" property="type">movie</propertydefault>
     <propertydefault labelID="embycontv" property="type">tvshow</propertydefault>
     <propertydefault labelID="library" property="type">video</propertydefault>
     <propertydefault labelID="nextup" property="type">episode</propertydefault>
@@ -178,6 +200,9 @@
 	<propertyfallback property="type">videos</propertyfallback>
     <widgetdefaultnode labelID="episodeshub" group="mainmenu" label="Latest Episodes" type="episode" path="videodb://recentlyaddedepisodes/" target="">Latest Episodes</widgetdefaultnode>
     <widgetdefaultnode labelID="recordings" group="mainmenu" label="Recordings" type="video" path="pvr://recordings/tv/active?view=flat" target="">Recordings</widgetdefaultnode>
+    <widgetdefaultnode labelID="livetv" group="mainmenu" label="Live TV" type="video" path="pvr://channels/tv/*" target="">Live TV</widgetdefaultnode>
+    <widgetdefaultnode labelID="guide" group="mainmenu" label="Live TV" type="video" path="pvr://channels/tv/*" target="">Live TV</widgetdefaultnode>
+    <widgetdefaultnode labelID="channels" group="mainmenu" label="Live TV" type="video" path="pvr://channels/tv/*" target="">Live TV</widgetdefaultnode>
     <widgetdefaultnode labelID="nextup" group="mainmenu" label="In Progress Shows" type="episode" path="videodb://inprogresstvshows" target="">In Progress Shows</widgetdefaultnode>
     <widgetdefaultnode labelID="recent" group="mainmenu" label="Recent Movies" type="video" path="videodb://recentlyaddedmovies/" target="">Latest Movies</widgetdefaultnode>
     <widgetdefaultnode labelID="tvshows" group="mainmenu" label="In Progress Shows" type="tvshow" path="videodb://inprogresstvshows" target="">In Progress Shows</widgetdefaultnode>
@@ -276,7 +301,6 @@
     <!-- Icon Overrides -->
     <icon labelID="embycontv">special://skin/extras/icons/emby_diff.png</icon>
     <icon labelID="embyconmovies">special://skin/extras/icons/emby_diff.png</icon>
-    <icon labelID="latestembycon">special://skin/extras/icons/emby_diff.png</icon>	
 	<icon labelID="episodeshub">special://skin/extras/icons/tv.png</icon>
     <icon labelID="movieshub">special://skin/extras/icons/film.png</icon>
     <icon labelID="livetv">special://skin/extras/icons/livetv.png</icon>

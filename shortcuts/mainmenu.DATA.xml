@@ -59,6 +59,6 @@
         <defaultID>weather</defaultID>
         <icon>special://skin/extras/icons/sun.png</icon>
         <action>ActivateWindow(Weather)</action>
-        <visible>!String.IsEmpty(Weather.Temperature)</visible>
+        <visible>!String.IsEmpty(Weather.Temperature) + !String.IsEmpty(Weather.Location) + !String.Contains(Weather.Temperature,Busy)</visible>
     </shortcut>
 </shortcuts>

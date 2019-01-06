@@ -1749,7 +1749,7 @@
 				<textcolor>Dark3</textcolor>
 				<align>right</align>
 				<width>50%</width>
-				<visible>!String.IsEmpty(Weather.Temperature)</visible>
+				<visible>!String.IsEmpty(Weather.Temperature) + !String.IsEmpty(Weather.Location) + !String.Contains(Weather.Temperature,Busy)</visible>
 				<label>[COLOR=$VAR[ColorHighlight]]$INFO[Weather.Temperature][/COLOR] $INFO[Weather.Conditions]</label>
 			</control>
 		</control>

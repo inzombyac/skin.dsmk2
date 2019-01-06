@@ -1284,6 +1284,7 @@
 	</variable>
 	<variable name="EmbyHomeWidget4LiveTVContent">
 		<value condition="String.IsEqual(Container(300).ListItemAbsolute(4).Property(defaultID),livetv)">pvr://channels/tv/*</value>
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(4).Property(defaultID),22020)">pvr://channels/tv/*</value>
 	</variable>
 	<variable name="EmbyHomeWidget5ContinueEpisodesContent">
 		<value condition="String.IsEqual(Container(300).ListItemAbsolute(5).Property(defaultID),continue)">special://skin/extras/playlists/InProgress/InProgressEpisodes.xsp</value>

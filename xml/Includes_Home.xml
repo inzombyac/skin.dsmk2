@@ -32,71 +32,66 @@
             </control>
             <control type="label">
                 <include>ControlID3</include>
-                <label>Library type: $INFO[Container(4000).ListItem.Property(type)]/$INFO[Container(300).ListItemAbsolute(0).Property(defaultID)]</label>
+                <label>Library type: $INFO[Container(4000).ListItem.Property(type)]</label>
                 <visible>Control.HasFocus(4000)</visible>
             </control>
 			<control type="label">
                 <include>ControlID3</include>
-                <label>Widget 1 type: $INFO[Container(4001).ListItem.Property(type)]/$INFO[Container(300).ListItemAbsolute(1).Property(defaultID)]</label>
+                <label>Widget 1 type: $INFO[Container(300).ListItem(1).Property(widgetFormat)]</label>
                 <visible>Control.HasFocus(4001)</visible>
             </control>
             <control type="label">
                 <include>ControlID3</include>
-                <label>Widget 2 type: $INFO[Container(4002).ListItem.Property(type)]/$INFO[Container(300).ListItemAbsolute(2).Property(defaultID)]</label>
+                <label>Widget 2 type: $INFO[Container(300).ListItem(2).Property(widgetFormat)]</label>
                 <visible>Control.HasFocus(4002)</visible>
             </control>
             <control type="label">
                 <include>ControlID3</include>
-                <label>Widget 3 type: $INFO[Container(4003).ListItem.Property(type)]/$INFO[Container(300).ListItemAbsolute(3).Property(defaultID)]</label>
+                <label>Widget 3 type: $INFO[Container(300).ListItem(3).Property(widgetFormat)]</label>
                 <visible>Control.HasFocus(4003)</visible>
             </control>
             <control type="label">
                 <include>ControlID3</include>
-                <label>Widget 4 type: $INFO[Container(4004).ListItem.Property(type)]/$INFO[Container(300).ListItemAbsolute(4).Property(defaultID)]</label>
+                <label>Widget 4 type: $INFO[Container(300).ListItem(4).Property(widgetFormat)]</label>
                 <visible>Control.HasFocus(4004)</visible>
             </control>
             <control type="label">
                 <include>ControlID3</include>
-                <label>Widget 5 type: $INFO[Container(4005).ListItem.Property(type)]/$INFO[Container(300).ListItemAbsolute(5).Property(defaultID)]</label>
+                <label>Widget 5 type: $INFO[Container(300).ListItem(5).Property(widgetFormat)]</label>
                 <visible>Control.HasFocus(4005)</visible>
             </control>
             <control type="label">
                 <include>ControlID3</include>
-                <label>Widget 6 type: $INFO[Container(4006).ListItem.Property(type)]/$INFO[Container(300).ListItemAbsolute(6).Property(defaultID)]</label>
+                <label>Widget 6 type: $INFO[Container(300).ListItem(6).Property(widgetFormat)]</label>
                 <visible>Control.HasFocus(4006)</visible>
             </control>
             <control type="label">
                 <include>ControlID3</include>
-                <label>Widget 7 type: $INFO[Container(4007).ListItem.Property(type)]/$INFO[Container(300).ListItemAbsolute(7).Property(defaultID)]</label>
+                <label>Widget 7 type: $INFO[Container(300).ListItem(7).Property(widgetFormat)]</label>
                 <visible>Control.HasFocus(4007)</visible>
             </control>
             <control type="label">
                 <include>ControlID3</include>
-                <label>Widget 8 type: $INFO[Container(4008).ListItem.Property(type)]/$INFO[Container(300).ListItemAbsolute(8).Property(defaultID)]</label>
+                <label>Widget 8 type: $INFO[Container(300).ListItem(8).Property(widgetFormat)]</label>
                 <visible>Control.HasFocus(4008)</visible>
             </control>
             <control type="label">
                 <include>ControlID3</include>
-                <label>Widget 9 type: $INFO[Container(4009).ListItem.Property(type)]/$INFO[Container(300).ListItemAbsolute(9).Property(defaultID)]</label>
+                <label>Widget 9 type: $INFO[Container(300).ListItem(9).Property(widgetFormat)]</label>
                 <visible>Control.HasFocus(4009)</visible>
             </control>
             <control type="label">
                 <include>ControlID3</include>
-                <label>Widget 10 type: $INFO[Container(4010).ListItem.Property(type)]/$INFO[Container(300).ListItemAbsolute(10).Property(defaultID)]</label>
+                <label>Widget 10 type: $INFO[Container(300).ListItem(10).Property(widgetFormat)]</label>
                 <visible>Control.HasFocus(4010)</visible>
             </control>
-			<control type="label">
+			<!-- <control type="label">
                 <include>ControlID4</include>
 				<label>$INFO[ListItem.DBTYPE]</label>
-            </control>
-            <control type="label">
+            </control> -->
+           <!--  <control type="label">
                 <include>ControlID5</include>
 				<label>$INFO[Window(Home).Property(emby_online)]</label>
-            </control>
-
-            <!-- <control type="label">
-                <include>ControlID5</include>
-                <label>$VAR[Studio]</label>
             </control> -->
 		</control>
 	</include>
@@ -128,7 +123,7 @@
 		<param name="width" default="1774"/>
 		<param name="top" default="200"/>
 		<param name="left" default="SidePad"/>
-		<param name="height" default="260"/>
+		<param name="height" default="320"/>
 		<definition>
 			<control type="group">
 				<control type="panel" id="4000">
@@ -174,7 +169,7 @@
 		<param name="top" default="435"/>
 		<param name="label_top" default="395"/>
 		<param name="left" default="SidePad"/>
-		<param name="height" default="260"/>
+		<param name="height" default="320"/>
 		<definition>
 			<control type="group">
 				<animation effect="fade" end="100" start="0" time="500" delay="500" tween="cubic" easing="inout" reversible="false">WindowOpen</animation>
@@ -211,24 +206,38 @@
 					</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget1Content]</content>
 					<content limit="25" target="videos" sortby="random">$VAR[EmbyHomeWidget1LiveTVContent]</content>
-					<content limit="25" target="videos" sortby="random">$VAR[EmbyHomeWidget1LiveTVContent]</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget1ContinueEpisodesContent]</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget1ContinueMoviesContent]</content>
 					<include content="EmbyHomeLayout">
-						<param name="movie_view">String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),movies) | String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),recent) | String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),latestembycon)</param>
-						<param name="square_view">String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),music) | String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),songs) | String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),albums)</param>
-						<param name="channel_view">String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),livetv)</param>
+						<param name="movie_view">String.IsEqual(Container(300).ListItemAbsolute(1).Property(widgetFormat),Poster)</param>
+						<param name="square_view">String.IsEqual(Container(300).ListItemAbsolute(1).Property(widgetFormat),Square)</param>
+						<param name="channel_view">String.IsEqual(Container(300).ListItemAbsolute(1).Property(widgetFormat),LiveTV)</param>
 					</include>
 				</control>
+				<!-- More Arrow -->
 				<control type="image">
-					<aspectratio>scale</aspectratio>
+					<aspectratio>stretch</aspectratio>
 					<texture background="true" colordiffuse="HeaderBG">diffuse\embywidgetmore.png</texture>
 					<top>$PARAM[top]</top>
 					<height>240</height>
 					<width>355</width>
 					<right>0</right>
 					<include>Animation.FadeOut</include>
-					<visible>!String.IsEqual(Container(4001).CurrentItem,Container(4001).NumItems) + [[Integer.IsGreater(Container(4001).NumItems,4) + !String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),music)] | [Integer.IsGreater(Container(4001).NumItems,6) +  String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),music)] | [[String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),movies) | String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),recent) | String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),latestembycon)] + Integer.IsGreater(Container(4001).NumItems,8)]]</visible>
+					<include>Animation.FadeIn</include>
+					<visible>!String.IsEqual(Container(300).ListItemAbsolute(1).Property(widgetFormat),Poster)</visible>
+					<visible>!String.IsEqual(Container(4001).CurrentItem,Container(4002).NumItems) + [[Integer.IsGreater(Container(4001).NumItems,4) + !String.IsEqual(Container(300).ListItemAbsolute(1).Property(widgetFormat),Square)] | [Integer.IsGreater(Container(4001).NumItems,6) + String.IsEqual(Container(300).ListItemAbsolute(1).Property(widgetFormat),Square)]]</visible>
+				</control>
+				<control type="image">
+					<aspectratio>stretch</aspectratio>
+					<texture background="true" colordiffuse="HeaderBG">diffuse\embywidgetmore.png</texture>
+					<top>$PARAM[top]</top>
+					<height>310</height>
+					<width>355</width>
+					<right>0</right>
+					<include>Animation.FadeOut</include>
+					<include>Animation.FadeIn</include>
+					<visible>String.IsEqual(Container(300).ListItemAbsolute(1).Property(widgetFormat),Poster)</visible>
+					<visible>!String.IsEqual(Container(4001).CurrentItem,Container(4001).NumItems) + Integer.IsGreater(Container(4001).NumItems,8)</visible>
 				</control>
 			</control>
 		</definition>
@@ -238,12 +247,14 @@
 		<param name="top" default="730"/>
 		<param name="label_top" default="690"/>
 		<param name="left" default="SidePad"/>
-		<param name="height" default="260"/>
+		<param name="height" default="320"/>
 		<definition>
 			<control type="group">
 				<width>1840</width>
 				<animation effect="fade" end="100" start="0" time="500" delay="500" tween="cubic" easing="inout" reversible="false">WindowOpen</animation>
 				<animation condition="!Integer.IsGreater(Container(4001).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
+				<!-- Movie Offset -->
+				<animation condition="Integer.IsGreater(Container(4001).NumItems,0) + [String.IsEqual(Container(300).ListItemAbsolute(1).Property(widgetFormat),Poster)]" effect="slide" end="0,70" start="0,0" time="0">Conditional</animation>
 				<control type="label">
 					<left>SidePad</left>
 					<top>$PARAM[label_top]</top>
@@ -279,20 +290,35 @@
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget2ContinueEpisodesContent]</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget2ContinueMoviesContent]</content>
 					<include content="EmbyHomeLayout">
-						<param name="movie_view">String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),movies) | String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),recent) | String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),latestembycon)</param>
-						<param name="square_view">String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),music) | String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),songs) | String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),albums)</param>
-						<param name="channel_view">String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),livetv)</param>
+						<param name="movie_view">String.IsEqual(Container(300).ListItemAbsolute(2).Property(widgetFormat),Poster)</param>
+						<param name="square_view">String.IsEqual(Container(300).ListItemAbsolute(2).Property(widgetFormat),Square)</param>
+						<param name="channel_view">String.IsEqual(Container(300).ListItemAbsolute(2).Property(widgetFormat),LiveTV)</param>
 					</include>
 				</control>
+				<!-- More Arrow -->
 				<control type="image">
-					<aspectratio>scale</aspectratio>
+					<aspectratio>stretch</aspectratio>
 					<texture background="true" colordiffuse="HeaderBG">diffuse\embywidgetmore.png</texture>
 					<top>$PARAM[top]</top>
 					<height>240</height>
 					<width>355</width>
 					<right>0</right>
 					<include>Animation.FadeOut</include>
-					<visible>!String.IsEqual(Container(4002).CurrentItem,Container(4002).NumItems) + [[Integer.IsGreater(Container(4002).NumItems,4) + !String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),music)] | [Integer.IsGreater(Container(4002).NumItems,6) +  String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),music)] | [[String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),movies) | String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),recent) | String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),latestembycon)] + Integer.IsGreater(Container(4002).NumItems,8)]]</visible>
+					<include>Animation.FadeIn</include>
+					<visible>!String.IsEqual(Container(300).ListItemAbsolute(2).Property(widgetFormat),Poster)</visible>
+					<visible>!String.IsEqual(Container(4002).CurrentItem,Container(4002).NumItems) + [[Integer.IsGreater(Container(4002).NumItems,4) + !String.IsEqual(Container(300).ListItemAbsolute(2).Property(widgetFormat),Square)] | [Integer.IsGreater(Container(4002).NumItems,6) + String.IsEqual(Container(300).ListItemAbsolute(2).Property(widgetFormat),Square)]]</visible>
+				</control>
+				<control type="image">
+					<aspectratio>stretch</aspectratio>
+					<texture background="true" colordiffuse="HeaderBG">diffuse\embywidgetmore.png</texture>
+					<top>$PARAM[top]</top>
+					<height>310</height>
+					<width>355</width>
+					<right>0</right>
+					<include>Animation.FadeOut</include>
+					<include>Animation.FadeIn</include>
+					<visible>String.IsEqual(Container(300).ListItemAbsolute(2).Property(widgetFormat),Poster)</visible>
+					<visible>!String.IsEqual(Container(4002).CurrentItem,Container(4002).NumItems) + Integer.IsGreater(Container(4002).NumItems,8)</visible>
 				</control>
 			</control>
 		</definition>
@@ -302,28 +328,18 @@
 		<param name="top" default="1025"/>
 		<param name="label_top" default="985"/>
 		<param name="left" default="SidePad"/>
-		<param name="height" default="260"/>
+		<param name="height" default="320"/>
 		<definition>
 			<control type="group">
 				<width>1840</width>
 				<animation effect="fade" end="100" start="0" time="500" delay="500" tween="cubic" easing="inout" reversible="false">WindowOpen</animation>
 				<animation condition="!Integer.IsGreater(Container(4001).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
 				<animation condition="!Integer.IsGreater(Container(4002).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
+				<!-- Movie Offset -->
+				<animation condition="Integer.IsGreater(Container(4001).NumItems,0) + [String.IsEqual(Container(300).ListItemAbsolute(1).Property(widgetFormat),Poster)]" effect="slide" end="0,70" start="0,0" time="0">Conditional</animation>
+				<animation condition="Integer.IsGreater(Container(4002).NumItems,0) + [String.IsEqual(Container(300).ListItemAbsolute(2).Property(widgetFormat),Poster)]" effect="slide" end="0,70" start="0,0" time="0">Conditional</animation>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
-				<visible>
-					[!Integer.IsGreater(Container(4001).NumItems,0) | !Integer.IsGreater(Container(4002).NumItems,0)] | 
-					[Control.HasFocus(4001) | Integer.IsEqual(Container(300).Position,1)] | 
-					[Control.HasFocus(4002) | Integer.IsEqual(Container(300).Position,2)] | 
-					[Control.HasFocus(4003) | Integer.IsEqual(Container(300).Position,3)] | 
-					[Control.HasFocus(4004) | Integer.IsEqual(Container(300).Position,4)] | 
-					[Control.HasFocus(4005) | Integer.IsEqual(Container(300).Position,5)] | 
-					[Control.HasFocus(4006) | Integer.IsEqual(Container(300).Position,6)] | 
-					[Control.HasFocus(4007) | Integer.IsEqual(Container(300).Position,7)] | 
-					[Control.HasFocus(4008) | Integer.IsEqual(Container(300).Position,8)] | 
-					[Control.HasFocus(4009) | Integer.IsEqual(Container(300).Position,9)] | 
-					[Control.HasFocus(4010) | Integer.IsEqual(Container(300).Position,10)]
-				</visible>
 				<control type="label">
 					<left>SidePad</left>
 					<top>$PARAM[label_top]</top>
@@ -358,13 +374,14 @@
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget3ContinueEpisodesContent]</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget3ContinueMoviesContent]</content>
 					<include content="EmbyHomeLayout">
-						<param name="movie_view">String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),movies) | String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),recent) | String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),latestembycon)</param>
-						<param name="square_view">String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),music) | String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),songs) | String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),albums)</param>
-						<param name="channel_view">String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),livetv)</param>
+						<param name="movie_view">String.IsEqual(Container(300).ListItemAbsolute(3).Property(widgetFormat),Poster)</param>
+						<param name="square_view">String.IsEqual(Container(300).ListItemAbsolute(3).Property(widgetFormat),Square)</param>
+						<param name="channel_view">String.IsEqual(Container(300).ListItemAbsolute(3).Property(widgetFormat),LiveTV)</param>
 					</include>
 				</control>
+				<!-- More Arrow -->
 				<control type="image">
-					<aspectratio>scale</aspectratio>
+					<aspectratio>stretch</aspectratio>
 					<texture background="true" colordiffuse="HeaderBG">diffuse\embywidgetmore.png</texture>
 					<top>$PARAM[top]</top>
 					<height>240</height>
@@ -372,7 +389,20 @@
 					<right>0</right>
 					<include>Animation.FadeOut</include>
 					<include>Animation.FadeIn</include>
-					<visible>!String.IsEqual(Container(4003).CurrentItem,Container(4003).NumItems) + [[Integer.IsGreater(Container(4003).NumItems,4) + !String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),music)] | [Integer.IsGreater(Container(4003).NumItems,6) +  String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),music)] | [[String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),movies) | String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),recent) | String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),latestembycon)] + Integer.IsGreater(Container(4003).NumItems,8)]]</visible>
+					<visible>!String.IsEqual(Container(300).ListItemAbsolute(3).Property(widgetFormat),Poster)</visible>
+					<visible>!String.IsEqual(Container(4003).CurrentItem,Container(4003).NumItems) + [[Integer.IsGreater(Container(4003).NumItems,4) + !String.IsEqual(Container(300).ListItemAbsolute(3).Property(widgetFormat),Square)] | [Integer.IsGreater(Container(4003).NumItems,6) + String.IsEqual(Container(300).ListItemAbsolute(3).Property(widgetFormat),Square)]]</visible>
+				</control>
+				<control type="image">
+					<aspectratio>stretch</aspectratio>
+					<texture background="true" colordiffuse="HeaderBG">diffuse\embywidgetmore.png</texture>
+					<top>$PARAM[top]</top>
+					<height>310</height>
+					<width>355</width>
+					<right>0</right>
+					<include>Animation.FadeOut</include>
+					<include>Animation.FadeIn</include>
+					<visible>String.IsEqual(Container(300).ListItemAbsolute(3).Property(widgetFormat),Poster)</visible>
+					<visible>!String.IsEqual(Container(4003).CurrentItem,Container(4003).NumItems) + Integer.IsGreater(Container(4003).NumItems,8)</visible>
 				</control>
 			</control>
 		</definition>
@@ -382,7 +412,7 @@
 		<param name="top" default="1320"/>
 		<param name="label_top" default="1280"/>
 		<param name="left" default="SidePad"/>
-		<param name="height" default="260"/>
+		<param name="height" default="320"/>
 		<definition>
 			<control type="group">
 				<width>1840</width>
@@ -390,24 +420,12 @@
 				<animation condition="!Integer.IsGreater(Container(4001).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
 				<animation condition="!Integer.IsGreater(Container(4002).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
 				<animation condition="!Integer.IsGreater(Container(4003).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
+				<!-- Movie Offset -->
+				<animation condition="Integer.IsGreater(Container(4001).NumItems,0) + [String.IsEqual(Container(300).ListItemAbsolute(1).Property(widgetFormat),Poster)]" effect="slide" end="0,70" start="0,0" time="0">Conditional</animation>
+				<animation condition="Integer.IsGreater(Container(4002).NumItems,0) + [String.IsEqual(Container(300).ListItemAbsolute(2).Property(widgetFormat),Poster)]" effect="slide" end="0,70" start="0,0" time="0">Conditional</animation>
+				<animation condition="Integer.IsGreater(Container(4003).NumItems,0) + [String.IsEqual(Container(300).ListItemAbsolute(3).Property(widgetFormat),Poster)]" effect="slide" end="0,70" start="0,0" time="0">Conditional</animation>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
-				<visible>
-					[!Integer.IsGreater(Container(4001).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0)] | 
-					[!Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0)] | 
-					[!Integer.IsGreater(Container(4001).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0)] | 
-					[[Control.HasFocus(4001) | Integer.IsEqual(Container(300).Position,1)] + !Integer.IsGreater(Container(4002).NumItems,0)] |
-					[[Control.HasFocus(4001) | Integer.IsEqual(Container(300).Position,1)] + !Integer.IsGreater(Container(4003).NumItems,0)] |
-					[Control.HasFocus(4002) | Integer.IsEqual(Container(300).Position,2)] | 
-					[Control.HasFocus(4003) | Integer.IsEqual(Container(300).Position,3)] | 
-					[Control.HasFocus(4004) | Integer.IsEqual(Container(300).Position,4)] | 
-					[Control.HasFocus(4005) | Integer.IsEqual(Container(300).Position,5)] | 
-					[Control.HasFocus(4006) | Integer.IsEqual(Container(300).Position,6)] | 
-					[Control.HasFocus(4007) | Integer.IsEqual(Container(300).Position,7)] | 
-					[Control.HasFocus(4008) | Integer.IsEqual(Container(300).Position,8)] | 
-					[Control.HasFocus(4009) | Integer.IsEqual(Container(300).Position,9)] | 
-					[Control.HasFocus(4010) | Integer.IsEqual(Container(300).Position,10)]
-				</visible>
 				<control type="label">
 					<left>SidePad</left>
 					<top>$PARAM[label_top]</top>
@@ -442,13 +460,14 @@
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget4ContinueEpisodesContent]</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget4ContinueMoviesContent]</content>
 					<include content="EmbyHomeLayout">
-						<param name="movie_view">String.IsEqual(Container(300).ListItemAbsolute(4).Property(defaultID),movies) | String.IsEqual(Container(300).ListItemAbsolute(4).Property(defaultID),recent) | String.IsEqual(Container(300).ListItemAbsolute(4).Property(defaultID),latestembycon)</param>
-						<param name="square_view">String.IsEqual(Container(300).ListItemAbsolute(4).Property(defaultID),music) | String.IsEqual(Container(300).ListItemAbsolute(4).Property(defaultID),songs) | String.IsEqual(Container(300).ListItemAbsolute(4).Property(defaultID),albums)</param>
-						<param name="channel_view">String.IsEqual(Container(300).ListItemAbsolute(4).Property(defaultID),livetv)</param>
+						<param name="movie_view">String.IsEqual(Container(300).ListItemAbsolute(4).Property(widgetFormat),Poster)</param>
+						<param name="square_view">String.IsEqual(Container(300).ListItemAbsolute(4).Property(widgetFormat),Square)</param>
+						<param name="channel_view">String.IsEqual(Container(300).ListItemAbsolute(4).Property(widgetFormat),LiveTV)</param>
 					</include>
 				</control>
+				<!-- More Arrow -->
 				<control type="image">
-					<aspectratio>scale</aspectratio>
+					<aspectratio>stretch</aspectratio>
 					<texture background="true" colordiffuse="HeaderBG">diffuse\embywidgetmore.png</texture>
 					<top>$PARAM[top]</top>
 					<height>240</height>
@@ -456,7 +475,20 @@
 					<right>0</right>
 					<include>Animation.FadeOut</include>
 					<include>Animation.FadeIn</include>
-					<visible>!String.IsEqual(Container(4004).CurrentItem,Container(4004).NumItems) + [[Integer.IsGreater(Container(4004).NumItems,4) + !String.IsEqual(Container(300).ListItemAbsolute(4).Property(defaultID),music)] | [Integer.IsGreater(Container(4004).NumItems,6) +  String.IsEqual(Container(300).ListItemAbsolute(4).Property(defaultID),music)] | [[String.IsEqual(Container(300).ListItemAbsolute(4).Property(defaultID),movies) | String.IsEqual(Container(300).ListItemAbsolute(4).Property(defaultID),recent) | String.IsEqual(Container(300).ListItemAbsolute(4).Property(defaultID),latestembycon)] + Integer.IsGreater(Container(4004).NumItems,8)]]</visible>
+					<visible>!String.IsEqual(Container(300).ListItemAbsolute(4).Property(widgetFormat),Poster)</visible>
+					<visible>!String.IsEqual(Container(4004).CurrentItem,Container(4004).NumItems) + [[Integer.IsGreater(Container(4004).NumItems,4) + !String.IsEqual(Container(300).ListItemAbsolute(4).Property(widgetFormat),Square)] | [Integer.IsGreater(Container(4004).NumItems,6) + String.IsEqual(Container(300).ListItemAbsolute(4).Property(widgetFormat),Square)]]</visible>
+				</control>
+				<control type="image">
+					<aspectratio>stretch</aspectratio>
+					<texture background="true" colordiffuse="HeaderBG">diffuse\embywidgetmore.png</texture>
+					<top>$PARAM[top]</top>
+					<height>310</height>
+					<width>355</width>
+					<right>0</right>
+					<include>Animation.FadeOut</include>
+					<include>Animation.FadeIn</include>
+					<visible>String.IsEqual(Container(300).ListItemAbsolute(4).Property(widgetFormat),Poster)</visible>
+					<visible>!String.IsEqual(Container(4004).CurrentItem,Container(4004).NumItems) + Integer.IsGreater(Container(4004).NumItems,8)</visible>
 				</control>
 			</control>
 		</definition>
@@ -466,7 +498,7 @@
 		<param name="top" default="1615"/>
 		<param name="label_top" default="1575"/>
 		<param name="left" default="SidePad"/>
-		<param name="height" default="260"/>
+		<param name="height" default="320"/>
 		<definition>
 			<control type="group">
 				<width>1840</width>
@@ -475,28 +507,13 @@
 				<animation condition="!Integer.IsGreater(Container(4002).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
 				<animation condition="!Integer.IsGreater(Container(4003).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
 				<animation condition="!Integer.IsGreater(Container(4004).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
+				<!-- Movie Offset -->
+				<animation condition="Integer.IsGreater(Container(4001).NumItems,0) + [String.IsEqual(Container(300).ListItemAbsolute(1).Property(widgetFormat),Poster)]" effect="slide" end="0,70" start="0,0" time="0">Conditional</animation>
+				<animation condition="Integer.IsGreater(Container(4002).NumItems,0) + [String.IsEqual(Container(300).ListItemAbsolute(2).Property(widgetFormat),Poster)]" effect="slide" end="0,70" start="0,0" time="0">Conditional</animation>
+				<animation condition="Integer.IsGreater(Container(4003).NumItems,0) + [String.IsEqual(Container(300).ListItemAbsolute(3).Property(widgetFormat),Poster)]" effect="slide" end="0,70" start="0,0" time="0">Conditional</animation>
+				<animation condition="Integer.IsGreater(Container(4004).NumItems,0) + [String.IsEqual(Container(300).ListItemAbsolute(4).Property(widgetFormat),Poster)]" effect="slide" end="0,70" start="0,0" time="0">Conditional</animation>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
-				<visible>
-					[!Integer.IsGreater(Container(4001).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems)] |
-					[!Integer.IsGreater(Container(4001).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0)] |
-					[!Integer.IsGreater(Container(4001).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) ] | 
-					[!Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) ] | 
-					[!Integer.IsGreater(Container(4001).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) ] | 
-					[[Control.HasFocus(4001) | Integer.IsEqual(Container(300).Position,1)] + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0)] |
-					[[Control.HasFocus(4001) | Integer.IsEqual(Container(300).Position,1)] + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0)] |
-					[[Control.HasFocus(4001) | Integer.IsEqual(Container(300).Position,1)] + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0)] |
-					[[Control.HasFocus(4002) | Integer.IsEqual(Container(300).Position,2)] + !Integer.IsGreater(Container(4003).NumItems,0)] |
-					[[Control.HasFocus(4002) | Integer.IsEqual(Container(300).Position,2)] + !Integer.IsGreater(Container(4004).NumItems,0)] |
-					[Control.HasFocus(4003) | Integer.IsEqual(Container(300).Position,3)] | 
-					[Control.HasFocus(4004) | Integer.IsEqual(Container(300).Position,4)] | 
-					[Control.HasFocus(4005) | Integer.IsEqual(Container(300).Position,5)] | 
-					[Control.HasFocus(4006) | Integer.IsEqual(Container(300).Position,6)] | 
-					[Control.HasFocus(4007) | Integer.IsEqual(Container(300).Position,7)] | 
-					[Control.HasFocus(4008) | Integer.IsEqual(Container(300).Position,8)] | 
-					[Control.HasFocus(4009) | Integer.IsEqual(Container(300).Position,9)] | 
-					[Control.HasFocus(4010) | Integer.IsEqual(Container(300).Position,10)]
-				</visible>
 				<control type="label">
 					<left>SidePad</left>
 					<top>$PARAM[label_top]</top>
@@ -531,13 +548,14 @@
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget5ContinueEpisodesContent]</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget5ContinueMoviesContent]</content>
 					<include content="EmbyHomeLayout">
-						<param name="movie_view">String.IsEqual(Container(300).ListItemAbsolute(5).Property(defaultID),movies) | String.IsEqual(Container(300).ListItemAbsolute(5).Property(defaultID),recent) | String.IsEqual(Container(300).ListItemAbsolute(5).Property(defaultID),latestembycon)</param>
-						<param name="square_view">String.IsEqual(Container(300).ListItemAbsolute(5).Property(defaultID),music) | String.IsEqual(Container(300).ListItemAbsolute(5).Property(defaultID),songs) | String.IsEqual(Container(300).ListItemAbsolute(5).Property(defaultID),albums)</param>
-						<param name="channel_view">String.IsEqual(Container(300).ListItemAbsolute(5).Property(defaultID),livetv)</param>
+						<param name="movie_view">String.IsEqual(Container(300).ListItemAbsolute(5).Property(widgetFormat),Poster)</param>
+						<param name="square_view">String.IsEqual(Container(300).ListItemAbsolute(5).Property(widgetFormat),Square)</param>
+						<param name="channel_view">String.IsEqual(Container(300).ListItemAbsolute(5).Property(widgetFormat),LiveTV)</param>
 					</include>
 				</control>
+				<!-- More Arrow -->
 				<control type="image">
-					<aspectratio>scale</aspectratio>
+					<aspectratio>stretch</aspectratio>
 					<texture background="true" colordiffuse="HeaderBG">diffuse\embywidgetmore.png</texture>
 					<top>$PARAM[top]</top>
 					<height>240</height>
@@ -545,7 +563,20 @@
 					<right>0</right>
 					<include>Animation.FadeOut</include>
 					<include>Animation.FadeIn</include>
-					<visible>!String.IsEqual(Container(4005).CurrentItem,Container(4005).NumItems) + [[Integer.IsGreater(Container(4005).NumItems,4) + !String.IsEqual(Container(300).ListItemAbsolute(5).Property(defaultID),music)] | [Integer.IsGreater(Container(4005).NumItems,6) +  String.IsEqual(Container(300).ListItemAbsolute(5).Property(defaultID),music)] | [[String.IsEqual(Container(300).ListItemAbsolute(5).Property(defaultID),movies) | String.IsEqual(Container(300).ListItemAbsolute(5).Property(defaultID),recent) | String.IsEqual(Container(300).ListItemAbsolute(5).Property(defaultID),latestembycon)] + Integer.IsGreater(Container(4005).NumItems,8)]]</visible>
+					<visible>!String.IsEqual(Container(300).ListItemAbsolute(5).Property(widgetFormat),Poster)</visible>
+					<visible>!String.IsEqual(Container(4005).CurrentItem,Container(4005).NumItems) + [[Integer.IsGreater(Container(4005).NumItems,4) + !String.IsEqual(Container(300).ListItemAbsolute(5).Property(widgetFormat),Square)] | [Integer.IsGreater(Container(4005).NumItems,6) + String.IsEqual(Container(300).ListItemAbsolute(5).Property(widgetFormat),Square)]]</visible>
+				</control>
+				<control type="image">
+					<aspectratio>scale</aspectratio>
+					<texture background="true" colordiffuse="HeaderBG">diffuse\embywidgetmore.png</texture>
+					<top>$PARAM[top]</top>
+					<height>310</height>
+					<width>355</width>
+					<right>0</right>
+					<include>Animation.FadeOut</include>
+					<include>Animation.FadeIn</include>
+					<visible>String.IsEqual(Container(300).ListItemAbsolute(5).Property(widgetFormat),Poster)</visible>
+					<visible>!String.IsEqual(Container(4005).CurrentItem,Container(4005).NumItems) + Integer.IsGreater(Container(4005).NumItems,8)</visible>
 				</control>
 			</control>
 		</definition>
@@ -555,7 +586,7 @@
 		<param name="top" default="1910"/>
 		<param name="label_top" default="1870"/>
 		<param name="left" default="SidePad"/>
-		<param name="height" default="260"/>
+		<param name="height" default="320"/>
 		<definition>
 			<control type="group">
 				<width>1840</width>
@@ -565,37 +596,14 @@
 				<animation condition="!Integer.IsGreater(Container(4003).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
 				<animation condition="!Integer.IsGreater(Container(4004).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
 				<animation condition="!Integer.IsGreater(Container(4005).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
+				<!-- Movie Offset -->
+				<animation condition="Integer.IsGreater(Container(4001).NumItems,0) + [String.IsEqual(Container(300).ListItemAbsolute(1).Property(widgetFormat),Poster)]" effect="slide" end="0,70" start="0,0" time="0">Conditional</animation>
+				<animation condition="Integer.IsGreater(Container(4002).NumItems,0) + [String.IsEqual(Container(300).ListItemAbsolute(2).Property(widgetFormat),Poster)]" effect="slide" end="0,70" start="0,0" time="0">Conditional</animation>
+				<animation condition="Integer.IsGreater(Container(4003).NumItems,0) + [String.IsEqual(Container(300).ListItemAbsolute(3).Property(widgetFormat),Poster)]" effect="slide" end="0,70" start="0,0" time="0">Conditional</animation>
+				<animation condition="Integer.IsGreater(Container(4004).NumItems,0) + [String.IsEqual(Container(300).ListItemAbsolute(4).Property(widgetFormat),Poster)]" effect="slide" end="0,70" start="0,0" time="0">Conditional</animation>
+				<animation condition="Integer.IsGreater(Container(4005).NumItems,0) + [String.IsEqual(Container(300).ListItemAbsolute(5).Property(widgetFormat),Poster)]" effect="slide" end="0,70" start="0,0" time="0">Conditional</animation>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
-				<visible>
-					[!Integer.IsGreater(Container(4001).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0)] |
-
-					[!Integer.IsGreater(Container(4001).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0)] |
-					[!Integer.IsGreater(Container(4001).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0)] |
-					[!Integer.IsGreater(Container(4001).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0)] |
-					[!Integer.IsGreater(Container(4001).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0)] |
-					[!Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0)] |
-
-					[[Control.HasFocus(4001) | Integer.IsEqual(Container(300).Position,1)] + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0)] |
-					[[Control.HasFocus(4001) | Integer.IsEqual(Container(300).Position,1)] + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0)] |
-					[[Control.HasFocus(4001) | Integer.IsEqual(Container(300).Position,1)] + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0)] |
-					[[Control.HasFocus(4001) | Integer.IsEqual(Container(300).Position,1)] + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0)] |
-
-					[[Control.HasFocus(4002) | Integer.IsEqual(Container(300).Position,2)] + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0)] |
-					[[Control.HasFocus(4002) | Integer.IsEqual(Container(300).Position,2)] + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0)] |
-					[[Control.HasFocus(4002) | Integer.IsEqual(Container(300).Position,2)] + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0)] |
-
-					[[Control.HasFocus(4003) | Integer.IsEqual(Container(300).Position,3)] + !Integer.IsGreater(Container(4004).NumItems,0)] |
-					[[Control.HasFocus(4003) | Integer.IsEqual(Container(300).Position,3)] + !Integer.IsGreater(Container(4005).NumItems,0)] |
-
-					[Control.HasFocus(4004) | Integer.IsEqual(Container(300).Position,4)] | 
-					[Control.HasFocus(4005) | Integer.IsEqual(Container(300).Position,5)] | 
-					[Control.HasFocus(4006) | Integer.IsEqual(Container(300).Position,6)] | 
-					[Control.HasFocus(4007) | Integer.IsEqual(Container(300).Position,7)] | 
-					[Control.HasFocus(4008) | Integer.IsEqual(Container(300).Position,8)] | 
-					[Control.HasFocus(4009) | Integer.IsEqual(Container(300).Position,9)] | 
-					[Control.HasFocus(4010) | Integer.IsEqual(Container(300).Position,10)]
-				</visible>
 				<control type="label">
 					<left>SidePad</left>
 					<top>$PARAM[label_top]</top>
@@ -630,13 +638,14 @@
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget6ContinueEpisodesContent]</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget6ContinueMoviesContent]</content>
 					<include content="EmbyHomeLayout">
-						<param name="movie_view">String.IsEqual(Container(300).ListItemAbsolute(6).Property(defaultID),movies) | String.IsEqual(Container(300).ListItemAbsolute(6).Property(defaultID),recent) | String.IsEqual(Container(300).ListItemAbsolute(6).Property(defaultID),latestembycon)</param>
-						<param name="square_view">String.IsEqual(Container(300).ListItemAbsolute(6).Property(defaultID),music) | String.IsEqual(Container(300).ListItemAbsolute(6).Property(defaultID),songs) | String.IsEqual(Container(300).ListItemAbsolute(6).Property(defaultID),albums)</param>
-						<param name="channel_view">String.IsEqual(Container(300).ListItemAbsolute(6).Property(defaultID),livetv)</param>
+						<param name="movie_view">String.IsEqual(Container(300).ListItemAbsolute(6).Property(widgetFormat),Poster)</param>
+						<param name="square_view">String.IsEqual(Container(300).ListItemAbsolute(6).Property(widgetFormat),Square)</param>
+						<param name="channel_view">String.IsEqual(Container(300).ListItemAbsolute(6).Property(widgetFormat),LiveTV)</param>
 					</include>
 				</control>
+				<!-- More Arrow -->
 				<control type="image">
-					<aspectratio>scale</aspectratio>
+					<aspectratio>stretch</aspectratio>
 					<texture background="true" colordiffuse="HeaderBG">diffuse\embywidgetmore.png</texture>
 					<top>$PARAM[top]</top>
 					<height>240</height>
@@ -644,7 +653,20 @@
 					<right>0</right>
 					<include>Animation.FadeOut</include>
 					<include>Animation.FadeIn</include>
-					<visible>!String.IsEqual(Container(4006).CurrentItem,Container(4006).NumItems) + [[Integer.IsGreater(Container(4006).NumItems,4) + !String.IsEqual(Container(300).ListItemAbsolute(6).Property(defaultID),music)] | [Integer.IsGreater(Container(4006).NumItems,6) +  String.IsEqual(Container(300).ListItemAbsolute(6).Property(defaultID),music)] | [[String.IsEqual(Container(300).ListItemAbsolute(6).Property(defaultID),movies) | String.IsEqual(Container(300).ListItemAbsolute(6).Property(defaultID),recent) | String.IsEqual(Container(300).ListItemAbsolute(6).Property(defaultID),latestembycon)] + Integer.IsGreater(Container(4006).NumItems,8)]]</visible>
+					<visible>!String.IsEqual(Container(300).ListItemAbsolute(6).Property(widgetFormat),Poster)</visible>
+					<visible>!String.IsEqual(Container(4006).CurrentItem,Container(4006).NumItems) + [[Integer.IsGreater(Container(4006).NumItems,4) + !String.IsEqual(Container(300).ListItemAbsolute(6).Property(widgetFormat),Square)] | [Integer.IsGreater(Container(4006).NumItems,6) + String.IsEqual(Container(300).ListItemAbsolute(6).Property(widgetFormat),Square)]]</visible>
+				</control>
+				<control type="image">
+					<aspectratio>scale</aspectratio>
+					<texture background="true" colordiffuse="HeaderBG">diffuse\embywidgetmore.png</texture>
+					<top>$PARAM[top]</top>
+					<height>310</height>
+					<width>355</width>
+					<right>0</right>
+					<include>Animation.FadeOut</include>
+					<include>Animation.FadeIn</include>
+					<visible>String.IsEqual(Container(300).ListItemAbsolute(6).Property(widgetFormat),Poster)</visible>
+					<visible>!String.IsEqual(Container(4006).CurrentItem,Container(4006).NumItems) + Integer.IsGreater(Container(4006).NumItems,8)</visible>
 				</control>
 			</control>
 		</definition>
@@ -654,7 +676,7 @@
 		<param name="top" default="2205"/>
 		<param name="label_top" default="2165"/>
 		<param name="left" default="SidePad"/>
-		<param name="height" default="260"/>
+		<param name="height" default="320"/>
 		<definition>
 			<control type="group">
 				<width>1840</width>
@@ -667,40 +689,13 @@
 				<animation condition="!Integer.IsGreater(Container(4006).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
-				<visible>
-					[!Integer.IsGreater(Container(4001).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0)] |
-
-					[!Integer.IsGreater(Container(4001).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0)] |
-					[!Integer.IsGreater(Container(4001).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0)] |
-					[!Integer.IsGreater(Container(4001).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0)] |
-					[!Integer.IsGreater(Container(4001).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0)] |
-					[!Integer.IsGreater(Container(4001).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0)] |
-					[!Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0)] |
-
-					[[Control.HasFocus(4001) | Integer.IsEqual(Container(300).Position,1)] + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0)] |
-					[[Control.HasFocus(4001) | Integer.IsEqual(Container(300).Position,1)] + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0)] |
-					[[Control.HasFocus(4001) | Integer.IsEqual(Container(300).Position,1)] + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0)] |
-					[[Control.HasFocus(4001) | Integer.IsEqual(Container(300).Position,1)] + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0)] |
-					[[Control.HasFocus(4001) | Integer.IsEqual(Container(300).Position,1)] + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0)] |
-
-					[[Control.HasFocus(4002) | Integer.IsEqual(Container(300).Position,2)] + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0)] |
-					[[Control.HasFocus(4002) | Integer.IsEqual(Container(300).Position,2)] + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0)] |
-					[[Control.HasFocus(4002) | Integer.IsEqual(Container(300).Position,2)] + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0)] |
-					[[Control.HasFocus(4002) | Integer.IsEqual(Container(300).Position,2)] + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0)] |
-
-					[[Control.HasFocus(4003) | Integer.IsEqual(Container(300).Position,3)] + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0)] |
-					[[Control.HasFocus(4003) | Integer.IsEqual(Container(300).Position,3)] + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0)] |
-					[[Control.HasFocus(4003) | Integer.IsEqual(Container(300).Position,3)] + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0)] |
-
-					[[Control.HasFocus(4004) | Integer.IsEqual(Container(300).Position,4)] + !Integer.IsGreater(Container(4005).NumItems,0)] | 
-					[[Control.HasFocus(4004) | Integer.IsEqual(Container(300).Position,4)] + !Integer.IsGreater(Container(4006).NumItems,0)] | 
-					[Control.HasFocus(4005) | Integer.IsEqual(Container(300).Position,5)] | 
-					[Control.HasFocus(4006) | Integer.IsEqual(Container(300).Position,6)] | 
-					[Control.HasFocus(4007) | Integer.IsEqual(Container(300).Position,7)] | 
-					[Control.HasFocus(4008) | Integer.IsEqual(Container(300).Position,8)] | 
-					[Control.HasFocus(4009) | Integer.IsEqual(Container(300).Position,9)] | 
-					[Control.HasFocus(4010) | Integer.IsEqual(Container(300).Position,10)]
-				</visible>
+				<!-- Movie Offset -->
+				<animation condition="Integer.IsGreater(Container(4001).NumItems,0) + [String.IsEqual(Container(300).ListItemAbsolute(1).Property(widgetFormat),Poster)]" effect="slide" end="0,70" start="0,0" time="0">Conditional</animation>
+				<animation condition="Integer.IsGreater(Container(4002).NumItems,0) + [String.IsEqual(Container(300).ListItemAbsolute(2).Property(widgetFormat),Poster)]" effect="slide" end="0,70" start="0,0" time="0">Conditional</animation>
+				<animation condition="Integer.IsGreater(Container(4003).NumItems,0) + [String.IsEqual(Container(300).ListItemAbsolute(3).Property(widgetFormat),Poster)]" effect="slide" end="0,70" start="0,0" time="0">Conditional</animation>
+				<animation condition="Integer.IsGreater(Container(4004).NumItems,0) + [String.IsEqual(Container(300).ListItemAbsolute(4).Property(widgetFormat),Poster)]" effect="slide" end="0,70" start="0,0" time="0">Conditional</animation>
+				<animation condition="Integer.IsGreater(Container(4005).NumItems,0) + [String.IsEqual(Container(300).ListItemAbsolute(5).Property(widgetFormat),Poster)]" effect="slide" end="0,70" start="0,0" time="0">Conditional</animation>
+				<animation condition="Integer.IsGreater(Container(4006).NumItems,0) + [String.IsEqual(Container(300).ListItemAbsolute(6).Property(widgetFormat),Poster)]" effect="slide" end="0,70" start="0,0" time="0">Conditional</animation>
 				<control type="label">
 					<left>SidePad</left>
 					<top>$PARAM[label_top]</top>
@@ -735,13 +730,14 @@
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget7ContinueEpisodesContent]</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget7ContinueMoviesContent]</content>
 					<include content="EmbyHomeLayout">
-						<param name="movie_view">String.IsEqual(Container(300).ListItemAbsolute(7).Property(defaultID),movies) | String.IsEqual(Container(300).ListItemAbsolute(7).Property(defaultID),recent) | String.IsEqual(Container(300).ListItemAbsolute(7).Property(defaultID),latestembycon)</param>
-						<param name="square_view">String.IsEqual(Container(300).ListItemAbsolute(7).Property(defaultID),music) | String.IsEqual(Container(300).ListItemAbsolute(7).Property(defaultID),songs) | String.IsEqual(Container(300).ListItemAbsolute(7).Property(defaultID),albums)</param>
-						<param name="channel_view">String.IsEqual(Container(300).ListItemAbsolute(7).Property(defaultID),livetv)</param>
+						<param name="movie_view">String.IsEqual(Container(300).ListItemAbsolute(7).Property(widgetFormat),Poster)</param>
+						<param name="square_view">String.IsEqual(Container(300).ListItemAbsolute(7).Property(widgetFormat),Square)</param>
+						<param name="channel_view">String.IsEqual(Container(300).ListItemAbsolute(7).Property(widgetFormat),LiveTV)</param>
 					</include>
 				</control>
+				<!-- More Arrow -->
 				<control type="image">
-					<aspectratio>scale</aspectratio>
+					<aspectratio>stretch</aspectratio>
 					<texture background="true" colordiffuse="HeaderBG">diffuse\embywidgetmore.png</texture>
 					<top>$PARAM[top]</top>
 					<height>240</height>
@@ -749,7 +745,20 @@
 					<right>0</right>
 					<include>Animation.FadeOut</include>
 					<include>Animation.FadeIn</include>
-					<visible>!String.IsEqual(Container(4007).CurrentItem,Container(4007).NumItems) + [[Integer.IsGreater(Container(4007).NumItems,4) + !String.IsEqual(Container(300).ListItemAbsolute(7).Property(defaultID),music)] | [Integer.IsGreater(Container(4007).NumItems,6) +  String.IsEqual(Container(300).ListItemAbsolute(7).Property(defaultID),music)] | [[String.IsEqual(Container(300).ListItemAbsolute(7).Property(defaultID),movies) | String.IsEqual(Container(300).ListItemAbsolute(7).Property(defaultID),recent) | String.IsEqual(Container(300).ListItemAbsolute(7).Property(defaultID),latestembycon)] + Integer.IsGreater(Container(4007).NumItems,8)]]</visible>
+					<visible>!String.IsEqual(Container(300).ListItemAbsolute(7).Property(widgetFormat),Poster)</visible>
+					<visible>!String.IsEqual(Container(4007).CurrentItem,Container(4007).NumItems) + [[Integer.IsGreater(Container(4007).NumItems,4) + !String.IsEqual(Container(300).ListItemAbsolute(7).Property(widgetFormat),Square)] | [Integer.IsGreater(Container(4007).NumItems,6) + String.IsEqual(Container(300).ListItemAbsolute(7).Property(widgetFormat),Square)]]</visible>
+				</control>
+				<control type="image">
+					<aspectratio>scale</aspectratio>
+					<texture background="true" colordiffuse="HeaderBG">diffuse\embywidgetmore.png</texture>
+					<top>$PARAM[top]</top>
+					<height>310</height>
+					<width>355</width>
+					<right>0</right>
+					<include>Animation.FadeOut</include>
+					<include>Animation.FadeIn</include>
+					<visible>String.IsEqual(Container(300).ListItemAbsolute(7).Property(widgetFormat),Poster)</visible>
+					<visible>!String.IsEqual(Container(4007).CurrentItem,Container(4007).NumItems) + Integer.IsGreater(Container(4007).NumItems,8)</visible>
 				</control>
 			</control>
 		</definition>
@@ -759,7 +768,7 @@
 		<param name="top" default="2500"/>
 		<param name="label_top" default="2460"/>
 		<param name="left" default="SidePad"/>
-		<param name="height" default="260"/>
+		<param name="height" default="320"/>
 		<definition>
 			<control type="group">
 				<width>1840</width>
@@ -771,50 +780,16 @@
 				<animation condition="!Integer.IsGreater(Container(4005).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
 				<animation condition="!Integer.IsGreater(Container(4006).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
 				<animation condition="!Integer.IsGreater(Container(4007).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
+				<!-- Movie Offset -->
+				<animation condition="Integer.IsGreater(Container(4001).NumItems,0) + [String.IsEqual(Container(300).ListItemAbsolute(1).Property(widgetFormat),Poster)]" effect="slide" end="0,70" start="0,0" time="0">Conditional</animation>
+				<animation condition="Integer.IsGreater(Container(4002).NumItems,0) + [String.IsEqual(Container(300).ListItemAbsolute(2).Property(widgetFormat),Poster)]" effect="slide" end="0,70" start="0,0" time="0">Conditional</animation>
+				<animation condition="Integer.IsGreater(Container(4003).NumItems,0) + [String.IsEqual(Container(300).ListItemAbsolute(3).Property(widgetFormat),Poster)]" effect="slide" end="0,70" start="0,0" time="0">Conditional</animation>
+				<animation condition="Integer.IsGreater(Container(4004).NumItems,0) + [String.IsEqual(Container(300).ListItemAbsolute(4).Property(widgetFormat),Poster)]" effect="slide" end="0,70" start="0,0" time="0">Conditional</animation>
+				<animation condition="Integer.IsGreater(Container(4005).NumItems,0) + [String.IsEqual(Container(300).ListItemAbsolute(5).Property(widgetFormat),Poster)]" effect="slide" end="0,70" start="0,0" time="0">Conditional</animation>
+				<animation condition="Integer.IsGreater(Container(4006).NumItems,0) + [String.IsEqual(Container(300).ListItemAbsolute(6).Property(widgetFormat),Poster)]" effect="slide" end="0,70" start="0,0" time="0">Conditional</animation>
+				<animation condition="Integer.IsGreater(Container(4007).NumItems,0) + [String.IsEqual(Container(300).ListItemAbsolute(7).Property(widgetFormat),Poster)]" effect="slide" end="0,70" start="0,0" time="0">Conditional</animation>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
-				<visible>
-					[!Integer.IsGreater(Container(4001).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0)] |
-
-					[!Integer.IsGreater(Container(4001).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0)] |
-					[!Integer.IsGreater(Container(4001).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0)] |
-					[!Integer.IsGreater(Container(4001).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0)] |
-					[!Integer.IsGreater(Container(4001).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0)] |
-					[!Integer.IsGreater(Container(4001).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0)] |
-					[!Integer.IsGreater(Container(4001).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0)] |
-					[!Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0)] |
-
-					[[Control.HasFocus(4001) | Integer.IsEqual(Container(300).Position,1)] + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0)] |
-					[[Control.HasFocus(4001) | Integer.IsEqual(Container(300).Position,1)] + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0)] |
-					[[Control.HasFocus(4001) | Integer.IsEqual(Container(300).Position,1)] + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0)] |
-					[[Control.HasFocus(4001) | Integer.IsEqual(Container(300).Position,1)] + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0)] |
-					[[Control.HasFocus(4001) | Integer.IsEqual(Container(300).Position,1)] + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0)] |
-					[[Control.HasFocus(4001) | Integer.IsEqual(Container(300).Position,1)] + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0)] |
-					
-					[[Control.HasFocus(4002) | Integer.IsEqual(Container(300).Position,2)] + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0)] |
-					[[Control.HasFocus(4002) | Integer.IsEqual(Container(300).Position,2)] + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0)] |
-					[[Control.HasFocus(4002) | Integer.IsEqual(Container(300).Position,2)] + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0)] |
-					[[Control.HasFocus(4002) | Integer.IsEqual(Container(300).Position,2)] + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0)] |
-					[[Control.HasFocus(4002) | Integer.IsEqual(Container(300).Position,2)] + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0)] |
-
-					[[Control.HasFocus(4003) | Integer.IsEqual(Container(300).Position,3)] + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0)] |
-					[[Control.HasFocus(4003) | Integer.IsEqual(Container(300).Position,3)] + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0)] |
-					[[Control.HasFocus(4003) | Integer.IsEqual(Container(300).Position,3)] + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0)] |
-					[[Control.HasFocus(4003) | Integer.IsEqual(Container(300).Position,3)] + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0)] |
-
-					[[Control.HasFocus(4004) | Integer.IsEqual(Container(300).Position,4)] + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0)] | 
-					[[Control.HasFocus(4004) | Integer.IsEqual(Container(300).Position,4)] + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0)] | 
-					[[Control.HasFocus(4004) | Integer.IsEqual(Container(300).Position,4)] + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0)] | 
-
-					[[Control.HasFocus(4005) | Integer.IsEqual(Container(300).Position,5)] + !Integer.IsGreater(Container(4006).NumItems,0) ] | 
-					[[Control.HasFocus(4005) | Integer.IsEqual(Container(300).Position,5)] + !Integer.IsGreater(Container(4007).NumItems,0) ] | 
-
-					[Control.HasFocus(4006) | Integer.IsEqual(Container(300).Position,6)] | 
-					[Control.HasFocus(4007) | Integer.IsEqual(Container(300).Position,7)] | 
-					[Control.HasFocus(4008) | Integer.IsEqual(Container(300).Position,8)] | 
-					[Control.HasFocus(4009) | Integer.IsEqual(Container(300).Position,9)] | 
-					[Control.HasFocus(4010) | Integer.IsEqual(Container(300).Position,10)]
-				</visible>
 				<control type="label">
 					<left>SidePad</left>
 					<top>$PARAM[label_top]</top>
@@ -849,13 +824,14 @@
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget8ContinueEpisodesContent]</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget8ContinueMoviesContent]</content>
 					<include content="EmbyHomeLayout">
-						<param name="movie_view">String.IsEqual(Container(300).ListItemAbsolute(8).Property(defaultID),movies) | String.IsEqual(Container(300).ListItemAbsolute(8).Property(defaultID),recent) | String.IsEqual(Container(300).ListItemAbsolute(8).Property(defaultID),latestembycon)</param>
-						<param name="square_view">String.IsEqual(Container(300).ListItemAbsolute(8).Property(defaultID),music) | String.IsEqual(Container(300).ListItemAbsolute(8).Property(defaultID),songs) | String.IsEqual(Container(300).ListItemAbsolute(8).Property(defaultID),albums)</param>
-						<param name="channel_view">String.IsEqual(Container(300).ListItemAbsolute(8).Property(defaultID),livetv)</param>
+						<param name="movie_view">String.IsEqual(Container(300).ListItemAbsolute(8).Property(widgetFormat),Poster)</param>
+						<param name="square_view">String.IsEqual(Container(300).ListItemAbsolute(8).Property(widgetFormat),Square)</param>
+						<param name="channel_view">String.IsEqual(Container(300).ListItemAbsolute(8).Property(widgetFormat),LiveTV)</param>
 					</include>
 				</control>
+				<!-- More Arrow -->
 				<control type="image">
-					<aspectratio>scale</aspectratio>
+					<aspectratio>stretch</aspectratio>
 					<texture background="true" colordiffuse="HeaderBG">diffuse\embywidgetmore.png</texture>
 					<top>$PARAM[top]</top>
 					<height>240</height>
@@ -863,7 +839,20 @@
 					<right>0</right>
 					<include>Animation.FadeOut</include>
 					<include>Animation.FadeIn</include>
-					<visible>!String.IsEqual(Container(4008).CurrentItem,Container(4008).NumItems) + [[Integer.IsGreater(Container(4008).NumItems,4) + !String.IsEqual(Container(300).ListItemAbsolute(8).Property(defaultID),music)] | [Integer.IsGreater(Container(4008).NumItems,6) +  String.IsEqual(Container(300).ListItemAbsolute(8).Property(defaultID),music)] | [[String.IsEqual(Container(300).ListItemAbsolute(8).Property(defaultID),movies) | String.IsEqual(Container(300).ListItemAbsolute(8).Property(defaultID),recent) | String.IsEqual(Container(300).ListItemAbsolute(8).Property(defaultID),latestembycon)] + Integer.IsGreater(Container(4008).NumItems,8)]]</visible>
+					<visible>!String.IsEqual(Container(300).ListItemAbsolute(8).Property(widgetFormat),Poster)</visible>
+					<visible>!String.IsEqual(Container(4008).CurrentItem,Container(4008).NumItems) + [[Integer.IsGreater(Container(4008).NumItems,4) + !String.IsEqual(Container(300).ListItemAbsolute(8).Property(widgetFormat),Square)] | [Integer.IsGreater(Container(4008).NumItems,6) + String.IsEqual(Container(300).ListItemAbsolute(8).Property(widgetFormat),Square)]]</visible>
+				</control>
+				<control type="image">
+					<aspectratio>scale</aspectratio>
+					<texture background="true" colordiffuse="HeaderBG">diffuse\embywidgetmore.png</texture>
+					<top>$PARAM[top]</top>
+					<height>310</height>
+					<width>355</width>
+					<right>0</right>
+					<include>Animation.FadeOut</include>
+					<include>Animation.FadeIn</include>
+					<visible>String.IsEqual(Container(300).ListItemAbsolute(8).Property(widgetFormat),Poster)</visible>
+					<visible>!String.IsEqual(Container(4008).CurrentItem,Container(4008).NumItems) + Integer.IsGreater(Container(4008).NumItems,8)</visible>
 				</control>
 			</control>
 		</definition>
@@ -873,7 +862,7 @@
 		<param name="top" default="2795"/>
 		<param name="label_top" default="2755"/>
 		<param name="left" default="SidePad"/>
-		<param name="height" default="260"/>
+		<param name="height" default="320"/>
 		<definition>
 			<control type="group">
 				<width>1840</width>
@@ -886,59 +875,17 @@
 				<animation condition="!Integer.IsGreater(Container(4006).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
 				<animation condition="!Integer.IsGreater(Container(4007).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
 				<animation condition="!Integer.IsGreater(Container(4008).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
+				<!-- Movie Offset -->
+				<animation condition="Integer.IsGreater(Container(4001).NumItems,0) + [String.IsEqual(Container(300).ListItemAbsolute(1).Property(widgetFormat),Poster)]" effect="slide" end="0,70" start="0,0" time="0">Conditional</animation>
+				<animation condition="Integer.IsGreater(Container(4002).NumItems,0) + [String.IsEqual(Container(300).ListItemAbsolute(2).Property(widgetFormat),Poster)]" effect="slide" end="0,70" start="0,0" time="0">Conditional</animation>
+				<animation condition="Integer.IsGreater(Container(4003).NumItems,0) + [String.IsEqual(Container(300).ListItemAbsolute(3).Property(widgetFormat),Poster)]" effect="slide" end="0,70" start="0,0" time="0">Conditional</animation>
+				<animation condition="Integer.IsGreater(Container(4004).NumItems,0) + [String.IsEqual(Container(300).ListItemAbsolute(4).Property(widgetFormat),Poster)]" effect="slide" end="0,70" start="0,0" time="0">Conditional</animation>
+				<animation condition="Integer.IsGreater(Container(4005).NumItems,0) + [String.IsEqual(Container(300).ListItemAbsolute(5).Property(widgetFormat),Poster)]" effect="slide" end="0,70" start="0,0" time="0">Conditional</animation>
+				<animation condition="Integer.IsGreater(Container(4006).NumItems,0) + [String.IsEqual(Container(300).ListItemAbsolute(6).Property(widgetFormat),Poster)]" effect="slide" end="0,70" start="0,0" time="0">Conditional</animation>
+				<animation condition="Integer.IsGreater(Container(4007).NumItems,0) + [String.IsEqual(Container(300).ListItemAbsolute(7).Property(widgetFormat),Poster)]" effect="slide" end="0,70" start="0,0" time="0">Conditional</animation>
+				<animation condition="Integer.IsGreater(Container(4008).NumItems,0) + [String.IsEqual(Container(300).ListItemAbsolute(8).Property(widgetFormat),Poster)]" effect="slide" end="0,70" start="0,0" time="0">Conditional</animation>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
-				<visible>
-					[!Integer.IsGreater(Container(4001).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0)] |
-
-					[!Integer.IsGreater(Container(4001).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0)] |
-					[!Integer.IsGreater(Container(4001).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0)] |
-					[!Integer.IsGreater(Container(4001).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0)] |
-					[!Integer.IsGreater(Container(4001).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0)] |
-					[!Integer.IsGreater(Container(4001).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0)] |
-					[!Integer.IsGreater(Container(4001).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0)] |
-					[!Integer.IsGreater(Container(4001).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0)] |
-					[!Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0)] |
-					
-
-					[[Control.HasFocus(4001) | Integer.IsEqual(Container(300).Position,1)] + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0)] |
-					[[Control.HasFocus(4001) | Integer.IsEqual(Container(300).Position,1)] + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0)] |
-					[[Control.HasFocus(4001) | Integer.IsEqual(Container(300).Position,1)] + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0)] |
-					[[Control.HasFocus(4001) | Integer.IsEqual(Container(300).Position,1)] + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0)] |
-					[[Control.HasFocus(4001) | Integer.IsEqual(Container(300).Position,1)] + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0)] |
-					[[Control.HasFocus(4001) | Integer.IsEqual(Container(300).Position,1)] + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0)] |
-					[[Control.HasFocus(4001) | Integer.IsEqual(Container(300).Position,1)] + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0)] |
-					
-					[[Control.HasFocus(4002) | Integer.IsEqual(Container(300).Position,2)] + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0)] |
-					[[Control.HasFocus(4002) | Integer.IsEqual(Container(300).Position,2)] + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0)] |
-					[[Control.HasFocus(4002) | Integer.IsEqual(Container(300).Position,2)] + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0)] |
-					[[Control.HasFocus(4002) | Integer.IsEqual(Container(300).Position,2)] + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0)] |
-					[[Control.HasFocus(4002) | Integer.IsEqual(Container(300).Position,2)] + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0)] |
-					[[Control.HasFocus(4002) | Integer.IsEqual(Container(300).Position,2)] + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0)] |
-
-					[[Control.HasFocus(4003) | Integer.IsEqual(Container(300).Position,3)] + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0)] |
-					[[Control.HasFocus(4003) | Integer.IsEqual(Container(300).Position,3)] + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0)] |
-					[[Control.HasFocus(4003) | Integer.IsEqual(Container(300).Position,3)] + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0)] |
-					[[Control.HasFocus(4003) | Integer.IsEqual(Container(300).Position,3)] + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0)] |
-					[[Control.HasFocus(4003) | Integer.IsEqual(Container(300).Position,3)] + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0)] |
-
-					[[Control.HasFocus(4004) | Integer.IsEqual(Container(300).Position,4)] + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0)] | 
-					[[Control.HasFocus(4004) | Integer.IsEqual(Container(300).Position,4)] + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0)] | 
-					[[Control.HasFocus(4004) | Integer.IsEqual(Container(300).Position,4)] + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0)] |
-					[[Control.HasFocus(4004) | Integer.IsEqual(Container(300).Position,4)] + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0)] |
-
-					[[Control.HasFocus(4005) | Integer.IsEqual(Container(300).Position,5)] + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0)] | 
-					[[Control.HasFocus(4005) | Integer.IsEqual(Container(300).Position,5)] + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0)] |  
-					[[Control.HasFocus(4005) | Integer.IsEqual(Container(300).Position,5)] + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0)] | 
-
-					[[Control.HasFocus(4006) | Integer.IsEqual(Container(300).Position,6)] + !Integer.IsGreater(Container(4007).NumItems,0)] | 
-					[[Control.HasFocus(4006) | Integer.IsEqual(Container(300).Position,6)] + !Integer.IsGreater(Container(4008).NumItems,0)] | 
-
-					[Control.HasFocus(4007) | Integer.IsEqual(Container(300).Position,7)] | 
-					[Control.HasFocus(4008) | Integer.IsEqual(Container(300).Position,8)] | 
-					[Control.HasFocus(4009) | Integer.IsEqual(Container(300).Position,9)] | 
-					[Control.HasFocus(4010) | Integer.IsEqual(Container(300).Position,10)]
-				</visible>
 				<control type="label">
 					<left>SidePad</left>
 					<top>$PARAM[label_top]</top>
@@ -973,13 +920,14 @@
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget9ContinueEpisodesContent]</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget9ContinueMoviesContent]</content>
 					<include content="EmbyHomeLayout">
-						<param name="movie_view">String.IsEqual(Container(300).ListItemAbsolute(9).Property(defaultID),movies) | String.IsEqual(Container(300).ListItemAbsolute(9).Property(defaultID),recent) | String.IsEqual(Container(300).ListItemAbsolute(9).Property(defaultID),latestembycon)</param>
-						<param name="square_view">String.IsEqual(Container(300).ListItemAbsolute(9).Property(defaultID),music) | String.IsEqual(Container(300).ListItemAbsolute(9).Property(defaultID),songs) | String.IsEqual(Container(300).ListItemAbsolute(9).Property(defaultID),albums)</param>
-						<param name="channel_view">String.IsEqual(Container(300).ListItemAbsolute(9).Property(defaultID),livetv)</param>
+						<param name="movie_view">String.IsEqual(Container(300).ListItemAbsolute(9).Property(widgetFormat),Poster)</param>
+						<param name="square_view">String.IsEqual(Container(300).ListItemAbsolute(9).Property(widgetFormat),Square)</param>
+						<param name="channel_view">String.IsEqual(Container(300).ListItemAbsolute(9).Property(widgetFormat),LiveTV)</param>
 					</include>
 				</control>
+				<!-- More Arrow -->
 				<control type="image">
-					<aspectratio>scale</aspectratio>
+					<aspectratio>stretch</aspectratio>
 					<texture background="true" colordiffuse="HeaderBG">diffuse\embywidgetmore.png</texture>
 					<top>$PARAM[top]</top>
 					<height>240</height>
@@ -987,7 +935,20 @@
 					<right>0</right>
 					<include>Animation.FadeOut</include>
 					<include>Animation.FadeIn</include>
-					<visible>!String.IsEqual(Container(4009).CurrentItem,Container(4009).NumItems) + [[Integer.IsGreater(Container(4009).NumItems,4) + !String.IsEqual(Container(300).ListItemAbsolute(9).Property(defaultID),music)] | [Integer.IsGreater(Container(4009).NumItems,6) +  String.IsEqual(Container(300).ListItemAbsolute(9).Property(defaultID),music)] | [[String.IsEqual(Container(300).ListItemAbsolute(9).Property(defaultID),movies) | String.IsEqual(Container(300).ListItemAbsolute(9).Property(defaultID),recent) | String.IsEqual(Container(300).ListItemAbsolute(9).Property(defaultID),latestembycon)] + Integer.IsGreater(Container(4009).NumItems,8)]]</visible>
+					<visible>!String.IsEqual(Container(300).ListItemAbsolute(9).Property(widgetFormat),Poster)</visible>
+					<visible>!String.IsEqual(Container(4009).CurrentItem,Container(4009).NumItems) + [[Integer.IsGreater(Container(4009).NumItems,4) + !String.IsEqual(Container(300).ListItemAbsolute(9).Property(widgetFormat),Square)] | [Integer.IsGreater(Container(4009).NumItems,6) + String.IsEqual(Container(300).ListItemAbsolute(9).Property(widgetFormat),Square)]]</visible>
+				</control>
+				<control type="image">
+					<aspectratio>scale</aspectratio>
+					<texture background="true" colordiffuse="HeaderBG">diffuse\embywidgetmore.png</texture>
+					<top>$PARAM[top]</top>
+					<height>310</height>
+					<width>355</width>
+					<right>0</right>
+					<include>Animation.FadeOut</include>
+					<include>Animation.FadeIn</include>
+					<visible>String.IsEqual(Container(300).ListItemAbsolute(9).Property(widgetFormat),Poster)</visible>
+					<visible>!String.IsEqual(Container(4009).CurrentItem,Container(4009).NumItems) + Integer.IsGreater(Container(4009).NumItems,8)</visible>
 				</control>
 			</control>
 		</definition>
@@ -997,7 +958,7 @@
 		<param name="top" default="3090"/>
 		<param name="label_top" default="3050"/>
 		<param name="left" default="SidePad"/>
-		<param name="height" default="260"/>
+		<param name="height" default="320"/>
 		<definition>
 			<control type="group">
 				<width>1840</width>
@@ -1011,67 +972,18 @@
 				<animation condition="!Integer.IsGreater(Container(4007).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
 				<animation condition="!Integer.IsGreater(Container(4008).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
 				<animation condition="!Integer.IsGreater(Container(4009).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
+				<!-- Movie Offset -->
+				<animation condition="Integer.IsGreater(Container(4001).NumItems,0) + [String.IsEqual(Container(300).ListItemAbsolute(1).Property(widgetFormat),Poster)]" effect="slide" end="0,70" start="0,0" time="0">Conditional</animation>
+				<animation condition="Integer.IsGreater(Container(4002).NumItems,0) + [String.IsEqual(Container(300).ListItemAbsolute(2).Property(widgetFormat),Poster)]" effect="slide" end="0,70" start="0,0" time="0">Conditional</animation>
+				<animation condition="Integer.IsGreater(Container(4003).NumItems,0) + [String.IsEqual(Container(300).ListItemAbsolute(3).Property(widgetFormat),Poster)]" effect="slide" end="0,70" start="0,0" time="0">Conditional</animation>
+				<animation condition="Integer.IsGreater(Container(4004).NumItems,0) + [String.IsEqual(Container(300).ListItemAbsolute(4).Property(widgetFormat),Poster)]" effect="slide" end="0,70" start="0,0" time="0">Conditional</animation>
+				<animation condition="Integer.IsGreater(Container(4005).NumItems,0) + [String.IsEqual(Container(300).ListItemAbsolute(5).Property(widgetFormat),Poster)]" effect="slide" end="0,70" start="0,0" time="0">Conditional</animation>
+				<animation condition="Integer.IsGreater(Container(4006).NumItems,0) + [String.IsEqual(Container(300).ListItemAbsolute(6).Property(widgetFormat),Poster)]" effect="slide" end="0,70" start="0,0" time="0">Conditional</animation>
+				<animation condition="Integer.IsGreater(Container(4007).NumItems,0) + [String.IsEqual(Container(300).ListItemAbsolute(7).Property(widgetFormat),Poster)]" effect="slide" end="0,70" start="0,0" time="0">Conditional</animation>
+				<animation condition="Integer.IsGreater(Container(4008).NumItems,0) + [String.IsEqual(Container(300).ListItemAbsolute(8).Property(widgetFormat),Poster)]" effect="slide" end="0,70" start="0,0" time="0">Conditional</animation>
+				<animation condition="Integer.IsGreater(Container(4009).NumItems,0) + [String.IsEqual(Container(300).ListItemAbsolute(9).Property(widgetFormat),Poster)]" effect="slide" end="0,70" start="0,0" time="0">Conditional</animation>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
-				<visible>
-					[!Integer.IsGreater(Container(4001).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4009).NumItems,0)] |
-
-					[!Integer.IsGreater(Container(4001).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0)] |
-					[!Integer.IsGreater(Container(4001).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4009).NumItems,0)] |
-					[!Integer.IsGreater(Container(4001).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4009).NumItems,0)] |
-					[!Integer.IsGreater(Container(4001).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4009).NumItems,0)] |
-					[!Integer.IsGreater(Container(4001).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4009).NumItems,0)] |
-					[!Integer.IsGreater(Container(4001).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4009).NumItems,0)] |
-					[!Integer.IsGreater(Container(4001).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4009).NumItems,0)] |
-					[!Integer.IsGreater(Container(4001).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4009).NumItems,0)] |
-					[!Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4009).NumItems,0)] |
-					
-
-					[[Control.HasFocus(4001) | Integer.IsEqual(Container(300).Position,1)] + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0)] |
-					[[Control.HasFocus(4001) | Integer.IsEqual(Container(300).Position,1)] + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4009).NumItems,0)] |
-					[[Control.HasFocus(4001) | Integer.IsEqual(Container(300).Position,1)] + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4009).NumItems,0)] |
-					[[Control.HasFocus(4001) | Integer.IsEqual(Container(300).Position,1)] + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4009).NumItems,0)] |
-					[[Control.HasFocus(4001) | Integer.IsEqual(Container(300).Position,1)] + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4009).NumItems,0)] |
-					[[Control.HasFocus(4001) | Integer.IsEqual(Container(300).Position,1)] + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4009).NumItems,0)] |
-					[[Control.HasFocus(4001) | Integer.IsEqual(Container(300).Position,1)] + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4009).NumItems,0)] |
-					[[Control.HasFocus(4001) | Integer.IsEqual(Container(300).Position,1)] + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4009).NumItems,0)] |
-					
-					[[Control.HasFocus(4002) | Integer.IsEqual(Container(300).Position,2)] + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0)] |
-					[[Control.HasFocus(4002) | Integer.IsEqual(Container(300).Position,2)] + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4009).NumItems,0)] |
-					[[Control.HasFocus(4002) | Integer.IsEqual(Container(300).Position,2)] + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4009).NumItems,0)] |
-					[[Control.HasFocus(4002) | Integer.IsEqual(Container(300).Position,2)] + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4009).NumItems,0)] |
-					[[Control.HasFocus(4002) | Integer.IsEqual(Container(300).Position,2)] + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4009).NumItems,0)] |
-					[[Control.HasFocus(4002) | Integer.IsEqual(Container(300).Position,2)] + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4009).NumItems,0)] |
-					[[Control.HasFocus(4002) | Integer.IsEqual(Container(300).Position,2)] + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4009).NumItems,0)] |
-
-					[[Control.HasFocus(4003) | Integer.IsEqual(Container(300).Position,3)] + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0)] |
-					[[Control.HasFocus(4003) | Integer.IsEqual(Container(300).Position,3)] + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4009).NumItems,0)] |
-					[[Control.HasFocus(4003) | Integer.IsEqual(Container(300).Position,3)] + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4009).NumItems,0)] |
-					[[Control.HasFocus(4003) | Integer.IsEqual(Container(300).Position,3)] + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4009).NumItems,0)] |
-					[[Control.HasFocus(4003) | Integer.IsEqual(Container(300).Position,3)] + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4009).NumItems,0)] |
-					[[Control.HasFocus(4003) | Integer.IsEqual(Container(300).Position,3)] + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4009).NumItems,0)] |
-
-					[[Control.HasFocus(4004) | Integer.IsEqual(Container(300).Position,4)] + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0)] | 
-					[[Control.HasFocus(4004) | Integer.IsEqual(Container(300).Position,4)] + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4009).NumItems,0)] | 
-					[[Control.HasFocus(4004) | Integer.IsEqual(Container(300).Position,4)] + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4009).NumItems,0)] | 
-					[[Control.HasFocus(4004) | Integer.IsEqual(Container(300).Position,4)] + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4009).NumItems,0)] | 
-					[[Control.HasFocus(4004) | Integer.IsEqual(Container(300).Position,4)] + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4009).NumItems,0)] | 
-
-					[[Control.HasFocus(4005) | Integer.IsEqual(Container(300).Position,5)] + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0)] | 
-					[[Control.HasFocus(4005) | Integer.IsEqual(Container(300).Position,5)] + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4009).NumItems,0)] | 
-					[[Control.HasFocus(4005) | Integer.IsEqual(Container(300).Position,5)] + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4009).NumItems,0)] | 
-					[[Control.HasFocus(4005) | Integer.IsEqual(Container(300).Position,5)] + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4009).NumItems,0)] | 
-
-					[[Control.HasFocus(4006) | Integer.IsEqual(Container(300).Position,6)] + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0)] | 
-					[[Control.HasFocus(4006) | Integer.IsEqual(Container(300).Position,6)] + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4009).NumItems,0)] | 
-					[[Control.HasFocus(4006) | Integer.IsEqual(Container(300).Position,6)] + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4009).NumItems,0)] | 
-
-					[[Control.HasFocus(4007) | Integer.IsEqual(Container(300).Position,7)] + !Integer.IsGreater(Container(4008).NumItems,0)] | 
-					[[Control.HasFocus(4007) | Integer.IsEqual(Container(300).Position,7)] + !Integer.IsGreater(Container(4009).NumItems,0)] | 
-					[Control.HasFocus(4008) | Integer.IsEqual(Container(300).Position,8)] | 
-					[Control.HasFocus(4009) | Integer.IsEqual(Container(300).Position,9)] | 
-					[Control.HasFocus(4010) | Integer.IsEqual(Container(300).Position,10)]
-				</visible>
 				<control type="label">
 					<left>SidePad</left>
 					<top>$PARAM[label_top]</top>
@@ -1106,13 +1018,14 @@
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget10ContinueEpisodesContent]</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget10ContinueMoviesContent]</content>
 					<include content="EmbyHomeLayout">
-						<param name="movie_view">String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),movies) | String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),recent) | String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),latestembycon)</param>
-						<param name="square_view">String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),music) | String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),songs) | String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),albums)</param>
-						<param name="channel_view">String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),livetv)</param>
+						<param name="movie_view">String.IsEqual(Container(300).ListItemAbsolute(10).Property(widgetFormat),Poster)</param>
+						<param name="square_view">String.IsEqual(Container(300).ListItemAbsolute(10).Property(widgetFormat),Square)</param>
+						<param name="channel_view">String.IsEqual(Container(300).ListItemAbsolute(10).Property(widgetFormat),LiveTV)</param>
 					</include>
 				</control>
+				<!-- More Arrow -->
 				<control type="image">
-					<aspectratio>scale</aspectratio>
+					<aspectratio>stretch</aspectratio>
 					<texture background="true" colordiffuse="HeaderBG">diffuse\embywidgetmore.png</texture>
 					<top>$PARAM[top]</top>
 					<height>240</height>
@@ -1120,28 +1033,33 @@
 					<right>0</right>
 					<include>Animation.FadeOut</include>
 					<include>Animation.FadeIn</include>
-					<visible>!String.IsEqual(Container(4010).CurrentItem,Container(4010).NumItems) + [[Integer.IsGreater(Container(4010).NumItems,4) + !String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),music)] | [Integer.IsGreater(Container(4010).NumItems,6) +  String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),music)] | [[String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),movies) | String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),recent) | String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),latestembycon)] + Integer.IsGreater(Container(4010).NumItems,8)]]</visible>
+					<visible>!String.IsEqual(Container(300).ListItemAbsolute(10).Property(widgetFormat),Poster)</visible>
+					<visible>!String.IsEqual(Container(4010).CurrentItem,Container(4010).NumItems) + [[Integer.IsGreater(Container(4010).NumItems,4) + !String.IsEqual(Container(300).ListItemAbsolute(10).Property(widgetFormat),Square)] | [Integer.IsGreater(Container(4010).NumItems,6) + String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),music)]]</visible>
+				</control>
+				<control type="image">
+					<aspectratio>scale</aspectratio>
+					<texture background="true" colordiffuse="HeaderBG">diffuse\embywidgetmore.png</texture>
+					<top>$PARAM[top]</top>
+					<height>310</height>
+					<width>355</width>
+					<right>0</right>
+					<include>Animation.FadeOut</include>
+					<include>Animation.FadeIn</include>
+					<visible>String.IsEqual(Container(300).ListItemAbsolute(10).Property(widgetFormat),Poster)</visible>
+					<visible>!String.IsEqual(Container(4010).CurrentItem,Container(4010).NumItems) + Integer.IsGreater(Container(4010).NumItems,8)</visible>
 				</control>
 			</control>
 		</definition>
 	</include>
-	<!-- <param name="widget_height">368</param>
-	<param name="item_width">234</param>
-	<param name="item_height">352</param>
-	<param name="overlay_bottom">16</param>
-	<param name="widget_left" default="964"/>
-	<param name="widget_label_left" default="974"/>
-	<param name="scroll_left" default="1734"/>
-	<param name="scroll_left_2" default="1680"/> -->
 	<include name="EmbyHomeLayout">
 	  <param name="widget_width" default="455"/>
 	  <param name="item_width" default="395"/>
 	  <param name="widget_height" default="255"/>
 	  <param name="item_height" default="240"/>
-	  <param name="widget_movie_width" default="230"/>
-	  <param name="item_movie_width" default="150"/>
-	  <param name="widget_movie_height" default="255"/>
-	  <param name="item_movie_height" default="240"/>
+	  <param name="widget_movie_width" default="223"/>
+	  <param name="item_movie_width" default="200"/>
+	  <param name="widget_movie_height" default="325"/>
+	  <param name="item_movie_height" default="310"/>
 	  <param name="widget_square_width" default="304"/>
 	  <param name="item_square_width" default="240"/>
 	  <param name="widget_square_height" default="255"/>
@@ -1699,14 +1617,14 @@
 	</variable>
 	<include name="EmbyFooter">
 		<!-- Easy way to avoid visiblility on widgets -->
-		<!-- <control type="image" description="Background">
+		<control type="image" description="Background">
 			<width>1920</width>
 			<bottom>0</bottom>
-			<height>82</height>
-			<texture colordiffuse="Background">common/white.png</texture>
-			<animation effect="fade" start="100" end="75" time="200" condition="Player.HasVideo + Skin.HasSetting(global.showvideo) | Player.HasAudio + Skin.HasSetting(global.showvisualisation)">Conditional</animation>
+			<height>64</height>
+			<texture colordiffuse="HeaderBG">common/white.png</texture>
+			<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
 		</control>
-		<control type="multiimage" description="Fanart">
+		<!-- <control type="multiimage" description="Fanart">
  			<colordiffuse>$VAR[FanartFadeLabel]</colordiffuse>
 			<visible>!Player.HasMedia | [!Skin.HasSetting(global.showvideo) + Player.HasVideo] | [!Skin.HasSetting(global.showvisualisation) + Player.HasAudio]</visible>
 			<visible>!Skin.HasSetting(lights.out)</visible>
@@ -1718,7 +1636,7 @@
 			<imagepath background="true">$VAR[GlobalFanart]</imagepath>
 			<width>1920</width>
 			<bottom>0</bottom>
-			<height>82</height>
+			<height>64</height>
 		</control> -->
 		<control type="grouplist">
 			<visible>Control.HasFocus(4001) | Control.HasFocus(4002) | Control.HasFocus(4003) | Control.HasFocus(4004) | Control.HasFocus(4005) | Control.HasFocus(4006) | Control.HasFocus(4007) | Control.HasFocus(4008) | Control.HasFocus(4009) | Control.HasFocus(4010)</visible>

@@ -1,2 +1,5 @@
+1.0.1
+- Made widget formats a property so that users can change them.
+
 1.0.0
 - Cloned from bizarro
