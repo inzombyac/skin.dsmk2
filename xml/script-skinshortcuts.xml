@@ -290,7 +290,7 @@
 					<height>66</height>
 					<texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
 					<include>DefDialogButtons</include>
-					<visible>!String.IsEmpty(Container(211).ListItem.Label) + String.IsEqual(Window.Property(groupname),mainmenu) + !String.IsEqual(Container(211).ListItem.Property(defaultID),Library) + !String.IsEqual(Container(211).ListItem.Property(defaultID),weather) + !String.IsEqual(Container(211).ListItem.Property(defaultID),$LOCALIZE[10007]) + !String.IsEqual(Container(211).ListItem.Property(defaultID),livetv)  + !String.IsEqual(Container(211).ListItem.Property(defaultID),continue)</visible>
+					<visible>!String.IsEmpty(Container(211).ListItem.Label) + String.IsEqual(Window.Property(groupname),mainmenu) + !String.IsEqual(Container(211).ListItem.Property(defaultID),Library) + !String.IsEqual(Container(211).ListItem.Property(defaultID),weather) + !String.IsEqual(Container(211).ListItem.Property(defaultID),$LOCALIZE[10007]) + !String.IsEqual(Container(211).ListItem.Property(defaultID),continue)</visible>
 					<visible>Integer.IsLessOrEqual(Container(211).Position,10)</visible>
 					<onup>8780</onup>
 				</control>

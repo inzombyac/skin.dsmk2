@@ -4,10 +4,11 @@
     <groupings>
          <node label="32029">
             <content>common</content>
+            <shortcut label="Recordings" condition="Pvr.HasTVChannels" type="pvr" icon="special://skin/extras/icons/timer.png" path="pvr://recordings/tv/active?view=flat">Recordings</shortcut>
+            <shortcut label="Channels" condition="Pvr.HasTVChannels" type="pvr" icon="special://skin/extras/icons/antenna.png">ActivateWindow(TVChannels)</shortcut>
             <shortcut label="TV Hub" type="TVHub" grouping="common" icon="special://skin/extras/icons/tv.png">ActivateWindow(1102)</shortcut>
             <shortcut label="Movie Hub" type="MovieHub" grouping="common" icon="special://skin/extras/icons/film.png">ActivateWindow(1101)</shortcut>
             <shortcut label="Extended Info" type="extendedinfo" grouping="common" icon="special://skin/extras/icons/youtube.png">RunScript(script.extendedinfo)</shortcut>
-             <shortcut label="Recordings" condition="Pvr.HasTVChannels" type="pvr" icon="special://skin/extras/icons/timer.png" path="pvr://recordings/tv/active?view=flat">Recordings</shortcut>
         </node>
         <node label="32030">
             <content>video</content>
@@ -42,13 +43,13 @@
             <node label="19023">
                 <content>pvr-tv</content>
             </node>
-        </node>
+        </node> -->
         <node label="32087" condition="PVR.HasRadioChannels">
             <content>radio</content>
             <node label="19024">
                 <content>pvr-radio</content>
             </node>
-        </node> -->
+        </node>
         <node label="32020">
             <content>picturesources</content>
         </node>
@@ -92,7 +93,7 @@
     <!-- Playlist -->
     <widgetPlaylists>True</widgetPlaylists>
     <widget-groupings>
-        <node label="32030" icon="DefaultVideo.png">
+        <node label="32030" icon="special://skin/extras/icons/video.png">
             <content>video</content>
             <node label="32040">
                 <content>playlist-video</content>
@@ -105,6 +106,8 @@
                 <content>upnp-video</content>
             </node>
         </node>
+        <shortcut label="Live TV" condition="Pvr.HasTVChannels" type="livetv" widget="Channels" widgetName="Channels" icon="special://skin/extras/icons/livetv.png" widgetTarget="">pvr://channels/tv/*</shortcut>
+        <shortcut label="Recordings" condition="Pvr.HasTVChannels" type="recordings" widget="Recordings" widgetName="Recordings" icon="special://skin/extras/icons/timer.png" widgetTarget="">pvr://recordings/tv/active?view=flat</shortcut>
         <node label="32031">
             <content>music</content>
             <node label="32040">
@@ -125,15 +128,14 @@
         <node label="32007">
             <node label="32009">
                 <!--Lazy TV-->
-                <shortcut label="Lazy TV" condition="System.HasAddon(script.lazytv)" type="episodes" target="videos" path="special://profile/playlists/video/LazyTV.xsp" icon="special://skin/extras/icons/lazytv.png">Lazy TV</shortcut>
+                <shortcut label="Lazy TV" condition="System.HasAddon(script.lazytv)" type="episodes" target="videos" widgetName="LazyTV" icon="special://skin/extras/icons/lazytv.png">special://profile/playlists/video/LazyTV.xsp</shortcut>
                 <!--Advanced Launcher -->
-                <shortcut label="Advanced Launcher" condition="System.HasAddon(plugin.program.advanced.emulator.launcher)" type="programs" target="videos" path="plugin://plugin.program.advanced.emulator.launcher/?default" icon="special://skin/extras/icons/xbox.png">Launchers</shortcut>
+                <shortcut label="Advanced Launcher" condition="System.HasAddon(plugin.program.advanced.emulator.launcher)" type="programs" target="videos" widgetName="Launchers" icon="special://skin/extras/icons/xbox.png">plugin://plugin.program.advanced.emulator.launcher/?default</shortcut>
                 <!-- Custom Widgets -->
                 <content>addon-program</content>
             </node>
         </node>
         <content>addon-program</content>
-        <!-- <widget label="Live TV" icon="special://skin/extras/icons/livetv.png" condition="Pvr.HasTVChannels" name="Live TV" type="videos" path="pvr://channels/tv/*" target="pvr://channels/tv/*">Live TV</widget> -->
         <node label="Custom Widgets">
             <shortcut label="$INFO[Skin.String(CustomWidget1)]" path="$INFO[Skin.String(CustomWidget1)]" condition="!String.IsEmpty(Skin.String(CustomWidget1))" icon="special://skin/extras/icons/bookmarks.png">Custom1</shortcut>
             <shortcut label="$INFO[Skin.String(CustomWidget2)]" path="$INFO[Skin.String(CustomWidget2)]" condition="!String.IsEmpty(Skin.String(CustomWidget2))" icon="special://skin/extras/icons/bookmarks.png">Custom2</shortcut>
@@ -147,7 +149,7 @@
             <shortcut label="$INFO[Skin.String(CustomWidget10)]" path="$INFO[Skin.String(CustomWidget10)]" condition="!String.IsEmpty(Skin.String(CustomWidget10))" icon="special://skin/extras/icons/bookmarks.png">Custom10</shortcut>
         </node>
 	</widget-groupings>
-	<!-- Custom Propertoes -->
+    <!-- Custom Propertoes -->
     <propertydefault labelID="22020" property="widgetPath">pvr://channels/tv/*</propertydefault>
     <propertydefault labelID="guide" property="widgetPath">pvr://channels/tv/*</propertydefault>
     <propertydefault labelID="livetv" property="widgetPath">pvr://channels/tv/*</propertydefault>
@@ -160,27 +162,31 @@
     <propertydefault labelID="collection" property="widgetFormat">Poster</propertydefault>
     <propertydefault labelID="tvshows" property="widgetFormat">Poster</propertydefault>
     <propertydefault labelID="embyconmovies" property="widgetFormat">Poster</propertydefault>
-    <propertydefault labelID="weather" property="widgetFormat">Weather</propertydefault>
     <propertydefault labelID="music" property="widgetFormat">Square</propertydefault>
     <propertydefault labelID="musicvideos" property="widgetFormat">Square</propertydefault>
     <propertydefault labelID="10007" property="widgetFormat">System</propertydefault>
     <propertydefault labelID="livetv" property="widgetFormat">LiveTV</propertydefault>
     <propertydefault labelID="livetvchannels" property="widgetFormat">LiveTV</propertydefault>
     <propertydefault labelID="channels" property="widgetFormat">LiveTV</propertydefault>
+    <propertydefault labelID="19019" property="widgetFormat">LiveTV</propertydefault>
+    <propertydefault labelID="22020" property="widgetFormat">LiveTV</propertydefault>
+    <propertydefault labelID="weather" property="widgetFormat">Weather</propertydefault>
+    
     <propertyfallback property="widgetFormat">Thumbnail</propertyfallback>
 
-    <property property="widgetFormat" label="21371" icon="">Thumbnail</property>
-    <property property="widgetFormat" label="Movie Poster" icon="">Poster</property>
-    <property property="widgetFormat" label="Square" icon="">Square</property>
-    <property property="widgetFormat" label="Live TV" icon="">LiveTV</property>
-    <!-- <property property="widgetFormat" label="Weather" icon="">Weather</property> -->
-    <!-- <property property="widgetFormat" label="System Info" icon="">System</property> -->
+    <property property="widgetFormat" label="21371" icon="DefaultAddonVideo.png">Thumbnail</property>
+    <property property="widgetFormat" label="Movie Poster" icon="DefaultVideoCover.png">Poster</property>
+    <property property="widgetFormat" label="Square" icon="DefaultAlbumCover.png">Square</property>
+    <property property="widgetFormat" label="Live TV" icon="DefaultTVShows.png">LiveTV</property>
     <propertySettings property="widgetFormat" buttonID="1000" templateonly="False" title="Select Widget Type" showNone="False" imageBrowse="False" />
 
     <!-- Type properties -->
 	<propertydefault labelID="movies" property="type">movie</propertydefault>
     <propertydefault labelID="tvshows" property="type">tvshows</propertydefault>
     <propertydefault labelID="livetv" property="type">livetv</propertydefault>
+    <propertydefault labelID="channels" property="type">livetv</propertydefault>
+    <propertydefault labelID="guide" property="type">livetv</propertydefault>
+    <propertydefault labelID="32022" property="type">livetv</propertydefault>
     <propertydefault labelID="music" property="type">music</propertydefault>
 	<propertydefault labelID="radio" property="type">music</propertydefault>
     <propertydefault labelID="musicvideos" property="type">music</propertydefault>
@@ -203,6 +209,8 @@
     <widgetdefaultnode labelID="livetv" group="mainmenu" label="Live TV" type="video" path="pvr://channels/tv/*" target="">Live TV</widgetdefaultnode>
     <widgetdefaultnode labelID="guide" group="mainmenu" label="Live TV" type="video" path="pvr://channels/tv/*" target="">Live TV</widgetdefaultnode>
     <widgetdefaultnode labelID="channels" group="mainmenu" label="Live TV" type="video" path="pvr://channels/tv/*" target="">Live TV</widgetdefaultnode>
+    <widgetdefaultnode labelID="22020" group="mainmenu" label="Live TV" type="video" path="pvr://channels/tv/*" target="">Live TV</widgetdefaultnode>
+    <widgetdefaultnode labelID="19019" group="mainmenu" label="Live TV" type="video" path="pvr://channels/tv/*" target="">Live TV</widgetdefaultnode>
     <widgetdefaultnode labelID="nextup" group="mainmenu" label="In Progress Shows" type="episode" path="videodb://inprogresstvshows" target="">In Progress Shows</widgetdefaultnode>
     <widgetdefaultnode labelID="recent" group="mainmenu" label="Recent Movies" type="video" path="videodb://recentlyaddedmovies/" target="">Latest Movies</widgetdefaultnode>
     <widgetdefaultnode labelID="tvshows" group="mainmenu" label="In Progress Shows" type="tvshow" path="videodb://inprogresstvshows" target="">In Progress Shows</widgetdefaultnode>

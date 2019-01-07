@@ -1247,7 +1247,9 @@
 		<value>$INFO[Container(300).ListItemAbsolute(1).Property(widgetPath)]</value>
 	</variable>
 	<variable name="EmbyHomeWidget1LiveTVContent">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),livetv)">pvr://channels/tv/*</value>
+		<value condition="String.StartsWith(Container(300).ListItemAbsolute(1).Property(defaultID),livetv)">pvr://channels/tv/*</value>
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),22020)">pvr://channels/tv/*</value>
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),channels)">pvr://channels/tv/*</value>
 	</variable>
 	<variable name="EmbyHomeWidget2Content">
 		<value>$INFO[Container(300).ListItemAbsolute(2).Property(widgetPath)]</value>
@@ -1259,7 +1261,9 @@
 		<value condition="String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),continue)">special://skin/extras/playlists/InProgress/InProgressMovies.xsp</value>
 	</variable>
 	<variable name="EmbyHomeWidget2LiveTVContent">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),livetv)">pvr://channels/tv/*</value>
+		<value condition="String.StartsWith(Container(300).ListItemAbsolute(2).Property(defaultID),livetv)">pvr://channels/tv/*</value>
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),22020)">pvr://channels/tv/*</value>
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),channels)">pvr://channels/tv/*</value>
 	</variable>
 	<variable name="EmbyHomeWidget3ContinueEpisodesContent">
 		<value condition="String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),continue)">special://skin/extras/playlists/InProgress/InProgressEpisodes.xsp</value>
@@ -1271,7 +1275,9 @@
 		<value>$INFO[Container(300).ListItemAbsolute(3).Property(widgetPath)]</value>
 	</variable>
 	<variable name="EmbyHomeWidget3LiveTVContent">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),livetv)">pvr://channels/tv/*</value>
+		<value condition="String.StartsWith(Container(300).ListItemAbsolute(3).Property(defaultID),livetv)">pvr://channels/tv/*</value>
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),22020)">pvr://channels/tv/*</value>
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),channels)">pvr://channels/tv/*</value>
 	</variable>
 	<variable name="EmbyHomeWidget4ContinueEpisodesContent">
 		<value condition="String.IsEqual(Container(300).ListItemAbsolute(4).Property(defaultID),continue)">special://skin/extras/playlists/InProgress/InProgressEpisodes.xsp</value>
@@ -1283,8 +1289,9 @@
 		<value>$INFO[Container(300).ListItemAbsolute(4).Property(widgetPath)]</value>
 	</variable>
 	<variable name="EmbyHomeWidget4LiveTVContent">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(4).Property(defaultID),livetv)">pvr://channels/tv/*</value>
+		<value condition="String.StartsWith(Container(300).ListItemAbsolute(4).Property(defaultID),livetv)">pvr://channels/tv/*</value>
 		<value condition="String.IsEqual(Container(300).ListItemAbsolute(4).Property(defaultID),22020)">pvr://channels/tv/*</value>
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(4).Property(defaultID),channels)">pvr://channels/tv/*</value>
 	</variable>
 	<variable name="EmbyHomeWidget5ContinueEpisodesContent">
 		<value condition="String.IsEqual(Container(300).ListItemAbsolute(5).Property(defaultID),continue)">special://skin/extras/playlists/InProgress/InProgressEpisodes.xsp</value>
@@ -1296,7 +1303,9 @@
 		<value>$INFO[Container(300).ListItemAbsolute(5).Property(widgetPath)]</value>
 	</variable>
 	<variable name="EmbyHomeWidget5LiveTVContent">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(5).Property(defaultID),livetv)">pvr://channels/tv/*</value>
+		<value condition="String.StartsWith(Container(300).ListItemAbsolute(5).Property(defaultID),livetv)">pvr://channels/tv/*</value>
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(5).Property(defaultID),22020)">pvr://channels/tv/*</value>
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(5).Property(defaultID),channels)">pvr://channels/tv/*</value>
 	</variable>
 	<variable name="EmbyHomeWidget6ContinueEpisodesContent">
 		<value condition="String.IsEqual(Container(300).ListItemAbsolute(6).Property(defaultID),continue)">special://skin/extras/playlists/InProgress/InProgressEpisodes.xsp</value>
@@ -1308,7 +1317,9 @@
 		<value>$INFO[Container(300).ListItemAbsolute(6).Property(widgetPath)]</value>
 	</variable>
 	<variable name="EmbyHomeWidget6LiveTVContent">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(6).Property(defaultID),livetv)">pvr://channels/tv/*</value>
+		<value condition="String.StartsWith(Container(300).ListItemAbsolute(6).Property(defaultID),livetv)">pvr://channels/tv/*</value>
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(6).Property(defaultID),22020)">pvr://channels/tv/*</value>
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(6).Property(defaultID),channels)">pvr://channels/tv/*</value>
 	</variable>
 	<variable name="EmbyHomeWidget7ContinueEpisodesContent">
 		<value condition="String.IsEqual(Container(300).ListItemAbsolute(7).Property(defaultID),continue)">special://skin/extras/playlists/InProgress/InProgressEpisodes.xsp</value>
@@ -1320,7 +1331,9 @@
 		<value>$INFO[Container(300).ListItemAbsolute(7).Property(widgetPath)]</value>
 	</variable>
 	<variable name="EmbyHomeWidget7LiveTVContent">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(7).Property(defaultID),livetv)">pvr://channels/tv/*</value>
+		<value condition="String.StartsWith(Container(300).ListItemAbsolute(7).Property(defaultID),livetv)">pvr://channels/tv/*</value>
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(7).Property(defaultID),22020)">pvr://channels/tv/*</value>
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(7).Property(defaultID),channels)">pvr://channels/tv/*</value>
 	</variable>
 	<variable name="EmbyHomeWidget8ContinueEpisodesContent">
 		<value condition="String.IsEqual(Container(300).ListItemAbsolute(8).Property(defaultID),continue)">special://skin/extras/playlists/InProgress/InProgressEpisodes.xsp</value>
@@ -1332,7 +1345,9 @@
 		<value>$INFO[Container(300).ListItemAbsolute(8).Property(widgetPath)]</value>
 	</variable>
 	<variable name="EmbyHomeWidget8LiveTVContent">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(8).Property(defaultID),livetv)">pvr://channels/tv/*</value>
+		<value condition="String.StartsWith(Container(300).ListItemAbsolute(8).Property(defaultID),livetv)">pvr://channels/tv/*</value>
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(8).Property(defaultID),22020)">pvr://channels/tv/*</value>
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(8).Property(defaultID),channels)">pvr://channels/tv/*</value>
 	</variable>
 	<variable name="EmbyHomeWidget9ContinueEpisodesContent">
 		<value condition="String.IsEqual(Container(300).ListItemAbsolute(9).Property(defaultID),continue)">special://skin/extras/playlists/InProgress/InProgressEpisodes.xsp</value>
@@ -1344,7 +1359,9 @@
 		<value>$INFO[Container(300).ListItemAbsolute(9).Property(widgetPath)]</value>
 	</variable>
 	<variable name="EmbyHomeWidget9LiveTVContent">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(9).Property(defaultID),livetv)">pvr://channels/tv/*</value>
+		<value condition="String.StartsWith(Container(300).ListItemAbsolute(9).Property(defaultID),livetv)">pvr://channels/tv/*</value>
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(9).Property(defaultID),22020)">pvr://channels/tv/*</value>
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(9).Property(defaultID),channels)">pvr://channels/tv/*</value>
 	</variable>
 	<variable name="EmbyHomeWidget10ContinueEpisodesContent">
 		<value condition="String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),continue)">special://skin/extras/playlists/InProgress/InProgressEpisodes.xsp</value>
@@ -1356,10 +1373,14 @@
 		<value>$INFO[Container(300).ListItemAbsolute(10).Property(widgetPath)]</value>
 	</variable>
 	<variable name="EmbyHomeWidget10LiveTVContent">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),livetv)">pvr://channels/tv/*</value>
+		<value condition="String.StartsWith(Container(300).ListItemAbsolute(10).Property(defaultID),livetv)">pvr://channels/tv/*</value>
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),22020)">pvr://channels/tv/*</value>
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),channels)">pvr://channels/tv/*</value>
 	</variable>
 	<variable name="SkinShortcutsContent">
 		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),livetv)">pvr://channels/tv/*</value>
+		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),22020)">pvr://channels/tv/*</value>
+		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),channels)">pvr://channels/tv/*</value>
 		<value>$INFO[Container(211).ListItem.Property(widgetPath)]</value>
 	</variable>
 	<variable name="SkinShortcutsContinueEpisodes">
