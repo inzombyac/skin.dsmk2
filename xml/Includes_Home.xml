@@ -205,7 +205,6 @@
 						</include>
 					</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget1Content]</content>
-					<content limit="25" target="videos" sortby="random">$VAR[EmbyHomeWidget1LiveTVContent]</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget1ContinueEpisodesContent]</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget1ContinueMoviesContent]</content>
 					<include content="EmbyHomeLayout">
@@ -286,7 +285,6 @@
 						</include>
 					</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget2Content]</content>
-					<content limit="25" target="videos" sortby="random">$VAR[EmbyHomeWidget2LiveTVContent]</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget2ContinueEpisodesContent]</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget2ContinueMoviesContent]</content>
 					<include content="EmbyHomeLayout">
@@ -370,7 +368,6 @@
 						</include>
 					</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget3Content]</content>
-					<content limit="25" target="videos" sortby="random">$VAR[EmbyHomeWidget3LiveTVContent]</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget3ContinueEpisodesContent]</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget3ContinueMoviesContent]</content>
 					<include content="EmbyHomeLayout">
@@ -456,7 +453,6 @@
 						</include>
 					</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget4Content]</content>
-					<content limit="25" target="videos" sortby="random">$VAR[EmbyHomeWidget4LiveTVContent]</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget4ContinueEpisodesContent]</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget4ContinueMoviesContent]</content>
 					<include content="EmbyHomeLayout">
@@ -544,7 +540,6 @@
 						</include>
 					</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget5Content]</content>
-					<content limit="25" target="videos" sortby="random">$VAR[EmbyHomeWidget5LiveTVContent]</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget5ContinueEpisodesContent]</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget5ContinueMoviesContent]</content>
 					<include content="EmbyHomeLayout">
@@ -634,7 +629,6 @@
 						</include>
 					</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget6Content]</content>
-					<content limit="25" target="videos" sortby="random">$VAR[EmbyHomeWidget6LiveTVContent]</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget6ContinueEpisodesContent]</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget6ContinueMoviesContent]</content>
 					<include content="EmbyHomeLayout">
@@ -726,7 +720,6 @@
 						</include>
 					</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget7Content]</content>
-					<content limit="25" target="videos" sortby="random">$VAR[EmbyHomeWidget7LiveTVContent]</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget7ContinueEpisodesContent]</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget7ContinueMoviesContent]</content>
 					<include content="EmbyHomeLayout">
@@ -820,7 +813,6 @@
 						</include>
 					</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget8Content]</content>
-					<content limit="25" target="videos" sortby="random">$VAR[EmbyHomeWidget8LiveTVContent]</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget8ContinueEpisodesContent]</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget8ContinueMoviesContent]</content>
 					<include content="EmbyHomeLayout">
@@ -916,7 +908,6 @@
 						</include>
 					</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget9Content]</content>
-					<content limit="25" target="videos" sortby="random">$VAR[EmbyHomeWidget9LiveTVContent]</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget9ContinueEpisodesContent]</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget9ContinueMoviesContent]</content>
 					<include content="EmbyHomeLayout">
@@ -1014,7 +1005,6 @@
 						</include>
 					</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget10Content]</content>
-					<content limit="25" target="videos" sortby="random">$VAR[EmbyHomeWidget10LiveTVContent]</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget10ContinueEpisodesContent]</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget10ContinueMoviesContent]</content>
 					<include content="EmbyHomeLayout">
