@@ -1,3 +1,6 @@
+1.0.2
+- Version bump
+
 1.0.1
 - Made widget formats a property so that users can change them.
 
