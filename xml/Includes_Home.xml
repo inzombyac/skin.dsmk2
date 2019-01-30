@@ -85,10 +85,10 @@
                 <label>Widget 10 type: $INFO[Container(300).ListItemAbsolute(10).Property(widgetFormat)]</label>
                 <visible>Control.HasFocus(4010)</visible>
             </control>
-			<!-- <control type="label">
+			<control type="label">
                 <include>ControlID4</include>
-				<label>$INFO[ListItem.DBTYPE]</label>
-            </control> -->
+				<label>$INFO[ListItem.FolderPath]</label>
+            </control>
            <!--  <control type="label">
                 <include>ControlID5</include>
 				<label>$INFO[Window(Home).Property(emby_online)]</label>
