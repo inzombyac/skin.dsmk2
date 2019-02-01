@@ -303,7 +303,8 @@
     <backgrounddefault defaultID="videoaddons">special://skin/extras/backgrounds/orbs.jpg</backgrounddefault>
     <backgrounddefault defaultID="systeminformation">special://skin/extras/backgrounds/Motherboard.jpg</backgrounddefault>
     <backgrounddefault defaultID="power">special://skin/extras/backgrounds/kodi.jpg</backgrounddefault>
-	<backgrounddefault defaultID="collection" group="movies">special://skin/extras/backgrounds/sets.jpg</backgrounddefault>	
+	<backgrounddefault defaultID="collection" group="movies">special://skin/extras/backgrounds/sets.jpg</backgrounddefault>
+    <backgrounddefault defaultID="emby">special://skin/extras/backgrounds/Emby.jpg</backgrounddefault>
     <!-- Warning to Remove Settings -->
     <warn heading="31176" message="31177">ActivateWindow(Settings)</warn>
     <!-- Icon Overrides -->

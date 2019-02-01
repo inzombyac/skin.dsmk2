@@ -106,7 +106,7 @@
                      <control type="label">
                         <left>30</left>
                         <right>30</right>
-                        <label>$INFO[ListItem.Label]</label>
+                        <label>$VAR[SkinShortcutsShortcutLabel]</label>
 						<textcolor>$VAR[ColourSelected]</textcolor>
 						<top>-10</top>
                     </control>
@@ -258,24 +258,26 @@
                     <include>DefDialogButtons</include>
                     <onclick>RunScript(script.skinshortcuts,type=manage&amp;group=library)</onclick>
                 </control>
-                <control type="button" id="401" description="Alt chooser">
+                <control type="button" id="401" description="Select Shortcut">
                     <width>100%</width>
                     <height>66</height>
                     <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
                     <include>DefDialogButtons</include>
-                    <visible>!String.IsEqual(Container(211).ListItem.Label2,library)</visible>
+                    <visible>[String.IsEqual(Window.Property(groupname),mainmenu) + !String.IsEqual(Container(211).ListItem.Label2,library)] | [String.IsEqual(Window.Property(groupname),library) + !String.IsEqual(Container(211).ListItem.Label,Emby)]</visible>
                 </control>
-                <control type="button" id="307" description="Custom">
+                <control type="button" id="307" description="Change Action">
                     <width>100%</width>
                     <height>66</height>
                     <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
                     <include>DefDialogButtons</include>
+                    <visible>!String.IsEqual(Window.Property(groupname),library) | [String.IsEqual(Window.Property(groupname),library) + !String.IsEqual(Container(211).ListItem.Label,Emby)]</visible>
                 </control>
                 <control type="button" id="305" description="Set Label">
                     <width>100%</width>
                     <height>66</height>
                     <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
                     <include>DefDialogButtons</include>
+                    <visible>!String.IsEqual(Window.Property(groupname),library) | [String.IsEqual(Window.Property(groupname),library) + !String.IsEqual(Container(211).ListItem.Label,Emby)]</visible>
                 </control>
                 <control type="button" id="310" description="Background">
                     <width>100%</width>
@@ -283,6 +285,7 @@
                     <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
 					<visible>!String.IsEmpty(Container(211).ListItem.Label) + [[String.IsEqual(Window.Property(groupname),mainmenu) + !Integer.IsGreater(Container(211).Position,0)] | !String.IsEqual(Window.Property(groupname),mainmenu)]</visible>
                     <include>DefDialogButtons</include>
+                    <visible>!String.IsEqual(Window.Property(groupname),library) | [String.IsEqual(Window.Property(groupname),library) + !String.IsEqual(Container(211).ListItem.Label,Emby)]</visible>
                 </control>
                 <!-- Main widget -->
 				 <control type="button" id="312" description="Select Widget">
@@ -327,14 +330,14 @@
                     <height>66</height>
                     <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
                     <include>DefDialogButtons</include>
-                   <visible>!String.IsEqual(Window.Property(groupname),mainmenu) | [String.IsEqual(Window.Property(groupname),mainmenu) + Integer.IsGreater(Container(211).Position,1)]</visible>
+                    <visible>[String.IsEqual(Window.Property(groupname),mainmenu) + Integer.IsGreater(Container(211).Position,1)] | [String.IsEqual(Window.Property(groupname),library) + !System.HasAddon(plugin.video.emby)] | [ String.IsEqual(Window.Property(groupname),library) + System.HasAddon(plugin.video.emby) + Integer.IsGreater(Container(211).Position,1)]</visible>
                 </control>
                 <control type="button" id="304" description="Down">
                     <width>100%</width>
                     <height>66</height>
                     <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
                     <include>DefDialogButtons</include>
-                    <visible>!String.IsEqual(Container(211).ListItem.Label2,library) | !String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                    <visible>[String.IsEqual(Window.Property(groupname),mainmenu) + !String.IsEqual(Container(211).ListItem.Label2,library)] | [ String.IsEqual(Window.Property(groupname),library) + !String.IsEqual(Container(211).ListItem.Label,emby)]</visible>
                 </control>
                 <control type="button" id="301" description="Add">
                     <width>100%</width>
@@ -348,7 +351,7 @@
                     <height>66</height>
                     <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
                     <include>DefDialogButtons</include>
-                    <visible>!String.IsEqual(Container(211).ListItem.Label2,library) | !String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                    <visible>[String.IsEqual(Window.Property(groupname),mainmenu) + !String.IsEqual(Container(211).ListItem.Label2,library)] | [ !String.IsEqual(Window.Property(groupname),mainmenu) + !String.IsEqual(Container(211).ListItem.Label,emby)]</visible>
                 </control> 
             </control> 
         </control>

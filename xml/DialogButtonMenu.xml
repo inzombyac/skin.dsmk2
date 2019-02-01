@@ -168,15 +168,15 @@
                     <aligny>center</aligny>
                      <align>left</align>
                 </control>
-               <!--  <control type="button" id="9092" description="Emby Manual sync">
+                <control type="button" id="9092" description="Manage Emby Nodes">
                     <include>DefContextButton</include>
-                    <label>Manual Sync</label>
-                    <onclick>RunPlugin("plugin://plugin.video.emby/?mode=manualsync")</onclick>
+                    <label>Update Emby Libraries</label>
+                    <onclick>ActivateWindow(Videos,plugin://plugin.video.emby/?mode=managelibs, return)</onclick>
                     <onclick>left</onclick>
                     <aligny>center</aligny>
                     <align>left</align>
                     <visible>System.HasAddon(plugin.video.emby)</visible>
-                </control> -->
+                </control>
                 <control type="button" id ="9093" description="Update library">
                     <include>DefContextButton</include>
                     <label>$LOCALIZE[653]</label>
@@ -184,6 +184,7 @@
                     <onclick>left</onclick>
                     <aligny>center</aligny>
                     <align>left</align>
+                    <visible>!System.HasAddon(plugin.video.emby)</visible>
                 </control>    
                 <control type="button" id="3121">
                     <include>DefContextButton</include>

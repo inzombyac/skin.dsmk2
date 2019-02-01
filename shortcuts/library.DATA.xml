@@ -1,12 +1,22 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <shortcuts>
     <shortcut>
+        <label>Emby</label>
+        <label2>Video Addon</label2>
+        <defaultID>emby</defaultID>
+        <icon>special://skin/extras/icons/emby_diff.png</icon>
+        <thumb>special://skin/extras/backgrounds/Emby.jpg</thumb>
+        <action>ActivateWindow(Videos,plugin://plugin.video.emby, return)</action>
+        <visible>System.HasAddon(plugin.video.emby) + Window.IsActive(script-skinshortcuts.xml)</visible>
+    </shortcut>
+    <shortcut>
         <label>TV Shows</label>
         <defaultID>tvshows</defaultID>
         <label2>Common Shortcut</label2>
         <icon>special://skin/extras/icons/tv.png</icon>
         <action>ActivateWindow(Videos,TVShowTitles,return)</action>
         <thumb>$VAR[EmbyHomeTVThumb]</thumb>
+        <visible>!System.HasAddon(plugin.video.emby) | !String.IsEqual(Window(Home).Property(emby_online),true)</visible>
     </shortcut>
     <shortcut>
         <label>Movies</label>
@@ -15,6 +25,7 @@
         <icon>special://skin/extras/icons/film.png</icon>
         <action>ActivateWindow(Videos,MovieTitles,return)</action>
         <thumb>$VAR[EmbyHomeMovieThumb]</thumb>
+        <visible>!System.HasAddon(plugin.video.emby) | !String.IsEqual(Window(Home).Property(emby_online),true)</visible>
     </shortcut>
     <shortcut>
         <label>Collections</label>
@@ -23,7 +34,7 @@
         <icon>special://skin/extras/icons/shipping.png</icon>
         <thumb>special://skin/extras/backgrounds/sets.jpg</thumb>
         <action>ActivateWindow(Videos,videodb://movies/sets/,return)</action>
-        <visible>Integer.IsGreater(Window(Home).Property(Movies.Count),0)</visible>
+        <visible>Integer.IsGreater(Window(Home).Property(Movies.Count),0) + [!System.HasAddon(plugin.video.emby) | !String.IsEqual(Window(Home).Property(emby_online),true)]</visible>
     </shortcut>
     <shortcut>
         <label>Music</label>

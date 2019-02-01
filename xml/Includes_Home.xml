@@ -115,6 +115,7 @@
 				<include>EmbyWidgetPanel2</include>
 				<include>EmbyWidgetPanel1</include>
 				<include>EmbyLibraryPanel</include>
+				<include condition="System.HasAddon(plugin.video.emby)">EmbyHomeContentContainer</include>
 			</control>
 		</control>
 		<include>EmbyFooter</include>
@@ -158,6 +159,7 @@
 						<param name="item_height">175</param>
 					</include>
 					<content>
+						<include condition="System.HasAddon(plugin.video.emby)">EmbyNodeContent</include>
 						<include>skinshortcuts-group-library</include>
 					</content>
 				</control>
@@ -1041,6 +1043,14 @@
 			</control>
 		</definition>
 	</include>
+	<include name="EmbyHomeContentContainer">
+		<definition>
+			<control type="panel" id="4011">
+				<content target="videos">plugin://plugin.video.emby/?reload=$INFO[Window(Home).Property(emby_online)]</content>
+				<include content="EmbyHiddenItemLayout"></include>
+			</control>
+		</definition>
+	</include>
 	<include name="EmbyHomeLayout">
 	  <param name="widget_width" default="455"/>
 	  <param name="item_width" default="395"/>
@@ -1812,10 +1822,188 @@
 			</item>
 		</definition>
 	</include>
-	<!-- <include name="EmbyHiddenItemLayout">
+	<include name="EmbyNodeContent">
+		<definition>
+			<item>
+				<label>Emby</label>
+				<thumb>special://skin/extras/backgrounds/Emby.jpg</thumb>
+				<label2>Videos</label2>
+				<onclick>ActivateWindow(Videos,plugin://plugin.video.emby, return)</onclick>
+			</item>
+			<item>
+				<label>$INFO[Container(4011).ListItem(0).Label]</label>
+				<thumb>$INFO[Container(4011).ListItem(0).Thumb]</thumb>
+				<label2>Emby Library</label2>
+				<onclick>$VAR[EmbyNode00Path]</onclick>
+				<visible>String.StartsWith(Container(4011).ListItem(0).FolderPath,plugin://plugin.video.emby/?type=) | String.StartsWith(Container(4011).ListItem(0).FolderPath,library://video)</visible>
+				<visible>!String.StartsWith(Container(4011).ListItem(0).FolderPath,library://video/emby_Fav)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(4011).ListItem(1).Label]</label>
+				<thumb>$INFO[Container(4011).ListItem(1).Thumb]</thumb>
+				<label2>Emby Library</label2>
+				<onclick>$VAR[EmbyNode01Path]</onclick>
+				<visible>String.StartsWith(Container(4011).ListItem(1).FolderPath,plugin://plugin.video.emby/?type=) | String.StartsWith(Container(4011).ListItem(1).FolderPath,library://video)</visible>
+				<visible>!String.StartsWith(Container(4011).ListItem(1).FolderPath,library://video/emby_Fav)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(4011).ListItem(2).Label]</label>
+				<thumb>$INFO[Container(4011).ListItem(2).Thumb]</thumb>
+				<label2>Emby Library</label2>
+				<onclick>$VAR[EmbyNode02Path]</onclick>
+				<visible>String.StartsWith(Container(4011).ListItem(2).FolderPath,plugin://plugin.video.emby/?type=) | String.StartsWith(Container(4011).ListItem(2).FolderPath,library://video)</visible>
+				<visible>!String.StartsWith(Container(4011).ListItem(2).FolderPath,library://video/emby_Fav)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(4011).ListItem(3).Label]</label>
+				<thumb>$INFO[Container(4011).ListItem(3).Thumb]</thumb>
+				<label2>Emby Library</label2>
+				<onclick>$VAR[EmbyNode03Path]</onclick>
+				<visible>String.StartsWith(Container(4011).ListItem(3).FolderPath,plugin://plugin.video.emby/?type=) | String.StartsWith(Container(4011).ListItem(3).FolderPath,library://video)</visible>
+				<visible>!String.StartsWith(Container(4011).ListItem(3).FolderPath,library://video/emby_Fav)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(4011).ListItem(4).Label]</label>
+				<thumb>$INFO[Container(4011).ListItem(4).Thumb]</thumb>
+				<label2>Emby Library</label2>
+				<onclick>$VAR[EmbyNode04Path]</onclick>
+				<visible>String.StartsWith(Container(4011).ListItem(4).FolderPath,plugin://plugin.video.emby/?type=) | String.StartsWith(Container(4011).ListItem(4).FolderPath,library://video)</visible>
+				<visible>!String.StartsWith(Container(4011).ListItem(4).FolderPath,library://video/emby_Fav)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(4011).ListItem(5).Label]</label>
+				<thumb>$INFO[Container(4011).ListItem(5).Thumb]</thumb>
+				<label2>Emby Library</label2>
+				<onclick>$VAR[EmbyNode05Path]</onclick>
+				<visible>String.StartsWith(Container(4011).ListItem(5).FolderPath,plugin://plugin.video.emby/?type=) | String.StartsWith(Container(4011).ListItem(5).FolderPath,library://video)</visible>
+				<visible>!String.StartsWith(Container(4011).ListItem(5).FolderPath,library://video/emby_Fav)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(4011).ListItem(6).Label]</label>
+				<thumb>$INFO[Container(4011).ListItem(6).Thumb]</thumb>
+				<label2>Emby Library</label2>
+				<onclick>$VAR[EmbyNode06Path]</onclick>
+				<visible>String.StartsWith(Container(4011).ListItem(6).FolderPath,plugin://plugin.video.emby/?type=) | String.StartsWith(Container(4011).ListItem(6).FolderPath,library://video)</visible>
+				<visible>!String.StartsWith(Container(4011).ListItem(6).FolderPath,library://video/emby_Fav)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(4011).ListItem(7).Label]</label>
+				<thumb>$INFO[Container(4011).ListItem(7).Thumb]</thumb>
+				<label2>Emby Library</label2>
+				<onclick>$VAR[EmbyNode07Path]</onclick>
+				<visible>String.StartsWith(Container(4011).ListItem(7).FolderPath,plugin://plugin.video.emby/?type=) | String.StartsWith(Container(4011).ListItem(7).FolderPath,library://video)</visible>
+				<visible>!String.StartsWith(Container(4011).ListItem(7).FolderPath,library://video/emby_Fav)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(4011).ListItem(8).Label]</label>
+				<thumb>$INFO[Container(4011).ListItem(8).Thumb]</thumb>
+				<label2>Emby Library</label2>
+				<onclick>$VAR[EmbyNode08Path]</onclick>
+				<visible>String.StartsWith(Container(4011).ListItem(8).FolderPath,plugin://plugin.video.emby/?type=) | String.StartsWith(Container(4011).ListItem(8).FolderPath,library://video)</visible>
+				<visible>!String.StartsWith(Container(4011).ListItem(8).FolderPath,library://video/emby_Fav)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(4011).ListItem(9).Label]</label>
+				<thumb>$INFO[Container(4011).ListItem(9).Thumb]</thumb>
+				<label2>Emby Library</label2>
+				<onclick>$VAR[EmbyNode09Path]</onclick>
+				<visible>String.StartsWith(Container(4011).ListItem(9).FolderPath,plugin://plugin.video.emby/?type=) | String.StartsWith(Container(4011).ListItem(9).FolderPath,library://video)</visible>
+				<visible>!String.StartsWith(Container(4011).ListItem(9).FolderPath,library://video/emby_Fav)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(4011).ListItem(10).Label]</label>
+				<thumb>$INFO[Container(4011).ListItem(10).Thumb]</thumb>
+				<label2>Emby Library</label2>
+				<onclick>$VAR[EmbyNode10Path]</onclick>
+				<visible>String.StartsWith(Container(4011).ListItem(10).FolderPath,plugin://plugin.video.emby/?type=) | String.StartsWith(Container(4011).ListItem(10).FolderPath,library://video)</visible>
+				<visible>!String.StartsWith(Container(4011).ListItem(10).FolderPath,library://video/emby_Fav)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(4011).ListItem(11).Label]</label>
+				<thumb>$INFO[Container(4011).ListItem(11).Thumb]</thumb>
+				<label2>Emby Library</label2>
+				<onclick>$VAR[EmbyNode11Path]</onclick>
+				<visible>String.StartsWith(Container(4011).ListItem(11).FolderPath,plugin://plugin.video.emby/?type=) | String.StartsWith(Container(4011).ListItem(11).FolderPath,library://video)</visible>
+				<visible>!String.StartsWith(Container(4011).ListItem(11).FolderPath,library://video/emby_Fav)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(4011).ListItem(12).Label]</label>
+				<thumb>$INFO[Container(4011).ListItem(12).Thumb]</thumb>
+				<label2>Emby Library</label2>
+				<onclick>$VAR[EmbyNode12Path]</onclick>
+				<visible>String.StartsWith(Container(4011).ListItem(12).FolderPath,plugin://plugin.video.emby/?type=) | String.StartsWith(Container(4011).ListItem(12).FolderPath,library://video)</visible>
+				<visible>!String.StartsWith(Container(4011).ListItem(12).FolderPath,library://video/emby_Fav)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(4011).ListItem(13).Label]</label>
+				<thumb>$INFO[Container(4011).ListItem(13).Thumb]</thumb>
+				<label2>Emby Library</label2>
+				<onclick>$VAR[EmbyNode13Path]</onclick>
+				<visible>String.StartsWith(Container(4011).ListItem(13).FolderPath,plugin://plugin.video.emby/?type=) | String.StartsWith(Container(4011).ListItem(13).FolderPath,library://video)</visible>
+				<visible>!String.StartsWith(Container(4011).ListItem(13).FolderPath,library://video/emby_Fav)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(4011).ListItem(14).Label]</label>
+				<thumb>$INFO[Container(4011).ListItem(14).Thumb]</thumb>
+				<label2>Emby Library</label2>
+				<onclick>$VAR[EmbyNode14Path]</onclick>
+				<visible>String.StartsWith(Container(4011).ListItem(14).FolderPath,plugin://plugin.video.emby/?type=) | String.StartsWith(Container(4011).ListItem(14).FolderPath,library://video)</visible>
+				<visible>!String.StartsWith(Container(4011).ListItem(14).FolderPath,library://video/emby_Fav)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(4011).ListItem(15).Label]</label>
+				<thumb>$INFO[Container(4011).ListItem(15).Thumb]</thumb>
+				<label2>Emby Library</label2>
+				<onclick>$VAR[EmbyNode15Path]</onclick>
+				<visible>String.StartsWith(Container(4011).ListItem(15).FolderPath,plugin://plugin.video.emby/?type=) | String.StartsWith(Container(4011).ListItem(15).FolderPath,library://video)</visible>
+				<visible>!String.StartsWith(Container(4011).ListItem(15).FolderPath,library://video/emby_Fav)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(4011).ListItem(16).Label]</label>
+				<thumb>$INFO[Container(4011).ListItem(16).Thumb]</thumb>
+				<label2>Emby Library</label2>
+				<onclick>$VAR[EmbyNode16Path]</onclick>
+				<visible>String.StartsWith(Container(4011).ListItem(16).FolderPath,plugin://plugin.video.emby/?type=) | String.StartsWith(Container(4011).ListItem(16).FolderPath,library://video)</visible>
+				<visible>!String.StartsWith(Container(4011).ListItem(16).FolderPath,library://video/emby_Fav)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(4011).ListItem(17).Label]</label>
+				<thumb>$INFO[Container(4011).ListItem(17).Thumb]</thumb>
+				<label2>Emby Library</label2>
+				<onclick>$VAR[EmbyNode17Path]</onclick>
+				<visible>String.StartsWith(Container(4011).ListItem(17).FolderPath,plugin://plugin.video.emby/?type=) | String.StartsWith(Container(4011).ListItem(17).FolderPath,library://video)</visible>
+				<visible>!String.StartsWith(Container(4011).ListItem(17).FolderPath,library://video/emby_Fav)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(4011).ListItem(18).Label]</label>
+				<thumb>$INFO[Container(4011).ListItem(18).Thumb]</thumb>
+				<label2>Emby Library</label2>
+				<onclick>$VAR[EmbyNode18Path]</onclick>
+				<visible>String.StartsWith(Container(4011).ListItem(18).FolderPath,plugin://plugin.video.emby/?type=) | String.StartsWith(Container(4011).ListItem(18).FolderPath,library://video)</visible>
+				<visible>!String.StartsWith(Container(4011).ListItem(18).FolderPath,library://video/emby_Fav)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(4011).ListItem(19).Label]</label>
+				<thumb>$INFO[Container(4011).ListItem(19).Thumb]</thumb>
+				<label2>Emby Library</label2>
+				<onclick>$VAR[EmbyNode19Path]</onclick>
+				<visible>String.StartsWith(Container(4011).ListItem(19).FolderPath,plugin://plugin.video.emby/?type=) | String.StartsWith(Container(4011).ListItem(19).FolderPath,library://video)</visible>
+				<visible>!String.StartsWith(Container(4011).ListItem(19).FolderPath,library://video/emby_Fav)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(4011).ListItem(20).Label]</label>
+				<thumb>$INFO[Container(4011).ListItem(20).Thumb]</thumb>
+				<label2>Emby Library</label2>
+				<onclick>$VAR[EmbyNode20Path]</onclick>
+				<visible>String.StartsWith(Container(4011).ListItem(20).FolderPath,plugin://plugin.video.emby/?type=) | String.StartsWith(Container(4011).ListItem(20).FolderPath,library://video)</visible>
+				<visible>!String.StartsWith(Container(4011).ListItem(20).FolderPath,library://video/emby_Fav)</visible>
+			</item>
+		</definition>
+	</include>
+	<include name="EmbyHiddenItemLayout">
 		<itemlayout width="1" height="1">
 			<control type="button">
-				<onfocus>SetFocus(3999)</onfocus>
+				<onfocus>SetFocus(4000)</onfocus>
 			</control>
 			<control type="image">
 				<texture>$INFO[ListItem.Art(fanart)]</texture>
@@ -1831,7 +2019,7 @@
 		</itemlayout>
 		<focusedlayout width="1" height="1">
 			<control type="button">
-				<onfocus>SetFocus(3999)</onfocus>
+				<onfocus>SetFocus(4000)</onfocus>
 			</control>
 			<control type="image">
 				<texture>$INFO[ListItem.Art(fanart)]</texture>
@@ -1845,5 +2033,5 @@
 				<label>$INFO[ListItem.Duration]</label>
 			</control>
 		</focusedlayout>
-	</include> -->
+	</include>
 </includes>

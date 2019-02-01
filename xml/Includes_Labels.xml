@@ -430,4 +430,8 @@
     	<value condition="String.IsEqual(Window.Property(groupname),mainmenu) + Integer.IsGreater(Container(211).Position,0)">Widget</value>
     	<value>$LOCALIZE[33068]</value>
     </variable>
+    <variable name="SkinShortcutsShortcutLabel">
+    	<value condition="String.IsEqual(Window.Property(groupname),library) + String.IsEqual(Container(211).ListItem.Label,Emby)">Emby (including nodes)</value>
+    	<value>$INFO[ListItem.Label]</value>
+    </variable>
 </includes>
