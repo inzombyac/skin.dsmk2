@@ -1,3 +1,6 @@
+1.0.3
+- Add Emby library nodes to the library row in the homescreen
+
 1.0.2
 - Version bump
 
