@@ -1,3 +1,9 @@
+1.0.4
+- Add EmbyCon shortcuts and widgets for continue, nextup and recent movies
+- Update continue widget to use Emby and EmbyCon if addons exist
+- Fix custom widgets for advanced launcher, custom paths, lazytv and emby
+- Fix more arrow for movie widgets
+
 1.0.3
 - Add Emby library nodes to the library row in the homescreen
 
