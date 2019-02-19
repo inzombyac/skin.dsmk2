@@ -29,7 +29,7 @@
             <texture border="16" colordiffuse="DialogHeader">common/rounded-shadow8.png</texture>
         </control>
 	</include>
-	<include name="DefDialogInfoHeader">
+	<!-- <include name="DefDialogInfoHeader">
 		<left>30</left>
 		<right>320</right>
 		<posy>18</posy>
@@ -38,7 +38,7 @@
 		<textcolor>Black70</textcolor>
 		<textureradiofocus colordiffuse="Black70">buttons/radio-on.png</textureradiofocus>
 		<textureradionofocus colordiffuse="Black30">buttons/radio-off.png</textureradionofocus>
-	</include>
+	</include> -->
 	<include name="DefDialogHeader">
 		<description>header label</description>
 		<centerleft>50%</centerleft>
@@ -1236,12 +1236,6 @@
 		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),weather)">Weather</value>
 		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),$LOCALIZE[10007])">System Info</value>
 	</variable>
-	<variable name="EmbyHomeWidget1ContinueEpisodesContent">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),continue)">special://skin/extras/playlists/InProgress/InProgressEpisodes.xsp</value>
-	</variable>
-	<variable name="EmbyHomeWidget1ContinueMoviesContent">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),continue)">special://skin/extras/playlists/InProgress/InProgressMovies.xsp</value>
-	</variable>
 	<!-- New Emby widgets -->
 	<variable name="EmbyHomeWidget1Content">
 		<value>$INFO[Container(300).ListItemAbsolute(1).Property(widgetPath)]</value>
@@ -1249,92 +1243,199 @@
 	<variable name="EmbyHomeWidget2Content">
 		<value>$INFO[Container(300).ListItemAbsolute(2).Property(widgetPath)]</value>
 	</variable>
-	<variable name="EmbyHomeWidget2ContinueEpisodesContent">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),continue)">special://skin/extras/playlists/InProgress/InProgressEpisodes.xsp</value>
-	</variable>
-	<variable name="EmbyHomeWidget2ContinueMoviesContent">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),continue)">special://skin/extras/playlists/InProgress/InProgressMovies.xsp</value>
-	</variable>
-	<variable name="EmbyHomeWidget3ContinueEpisodesContent">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),continue)">special://skin/extras/playlists/InProgress/InProgressEpisodes.xsp</value>
-	</variable>
-	<variable name="EmbyHomeWidget3ContinueMoviesContent">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),continue)">special://skin/extras/playlists/InProgress/InProgressMovies.xsp</value>
-	</variable>
 	<variable name="EmbyHomeWidget3Content">
 		<value>$INFO[Container(300).ListItemAbsolute(3).Property(widgetPath)]</value>
-	</variable>
-	<variable name="EmbyHomeWidget4ContinueEpisodesContent">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(4).Property(defaultID),continue)">special://skin/extras/playlists/InProgress/InProgressEpisodes.xsp</value>
-	</variable>
-	<variable name="EmbyHomeWidget4ContinueMoviesContent">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(4).Property(defaultID),continue)">special://skin/extras/playlists/InProgress/InProgressMovies.xsp</value>
 	</variable>
 	<variable name="EmbyHomeWidget4Content">
 		<value>$INFO[Container(300).ListItemAbsolute(4).Property(widgetPath)]</value>
 	</variable>
-	<variable name="EmbyHomeWidget5ContinueEpisodesContent">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(5).Property(defaultID),continue)">special://skin/extras/playlists/InProgress/InProgressEpisodes.xsp</value>
-	</variable>
-	<variable name="EmbyHomeWidget5ContinueMoviesContent">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(5).Property(defaultID),continue)">special://skin/extras/playlists/InProgress/InProgressMovies.xsp</value>
-	</variable>
 	<variable name="EmbyHomeWidget5Content">
 		<value>$INFO[Container(300).ListItemAbsolute(5).Property(widgetPath)]</value>
-	</variable>
-	<variable name="EmbyHomeWidget6ContinueEpisodesContent">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(6).Property(defaultID),continue)">special://skin/extras/playlists/InProgress/InProgressEpisodes.xsp</value>
-	</variable>
-	<variable name="EmbyHomeWidget6ContinueMoviesContent">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(6).Property(defaultID),continue)">special://skin/extras/playlists/InProgress/InProgressMovies.xsp</value>
 	</variable>
 	<variable name="EmbyHomeWidget6Content">
 		<value>$INFO[Container(300).ListItemAbsolute(6).Property(widgetPath)]</value>
 	</variable>
-	<variable name="EmbyHomeWidget7ContinueEpisodesContent">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(7).Property(defaultID),continue)">special://skin/extras/playlists/InProgress/InProgressEpisodes.xsp</value>
-	</variable>
-	<variable name="EmbyHomeWidget7ContinueMoviesContent">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(7).Property(defaultID),continue)">special://skin/extras/playlists/InProgress/InProgressMovies.xsp</value>
-	</variable>
 	<variable name="EmbyHomeWidget7Content">
 		<value>$INFO[Container(300).ListItemAbsolute(7).Property(widgetPath)]</value>
-	</variable>
-	<variable name="EmbyHomeWidget8ContinueEpisodesContent">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(8).Property(defaultID),continue)">special://skin/extras/playlists/InProgress/InProgressEpisodes.xsp</value>
-	</variable>
-	<variable name="EmbyHomeWidget8ContinueMoviesContent">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(8).Property(defaultID),continue)">special://skin/extras/playlists/InProgress/InProgressMovies.xsp</value>
 	</variable>
 	<variable name="EmbyHomeWidget8Content">
 		<value>$INFO[Container(300).ListItemAbsolute(8).Property(widgetPath)]</value>
 	</variable>
-	<variable name="EmbyHomeWidget9ContinueEpisodesContent">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(9).Property(defaultID),continue)">special://skin/extras/playlists/InProgress/InProgressEpisodes.xsp</value>
-	</variable>
-	<variable name="EmbyHomeWidget9ContinueMoviesContent">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(9).Property(defaultID),continue)">special://skin/extras/playlists/InProgress/InProgressMovies.xsp</value>
-	</variable>
 	<variable name="EmbyHomeWidget9Content">
 		<value>$INFO[Container(300).ListItemAbsolute(9).Property(widgetPath)]</value>
-	</variable>
-	<variable name="EmbyHomeWidget10ContinueEpisodesContent">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),continue)">special://skin/extras/playlists/InProgress/InProgressEpisodes.xsp</value>
-	</variable>
-	<variable name="EmbyHomeWidget10ContinueMoviesContent">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),continue)">special://skin/extras/playlists/InProgress/InProgressMovies.xsp</value>
 	</variable>
 	<variable name="EmbyHomeWidget10Content">
 		<value>$INFO[Container(300).ListItemAbsolute(10).Property(widgetPath)]</value>
 	</variable>
+	<!-- Continue Widgets Content -->
+	<variable name="EmbyHomeWidget1ContinueEpisodesContent">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),continue) + ![System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)]">special://skin/extras/playlists/InProgress/InProgressEpisodes.xsp</value>
+	</variable>
+	<variable name="EmbyHomeWidget1ContinueMoviesContent">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),continue) + ![System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)]">special://skin/extras/playlists/InProgress/InProgressMovies.xsp</value>
+	</variable>
+	<variable name="EmbyHomeWidget1ContinueEmbyContent">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),continue) + System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)">plugin://plugin.video.emby/?folder=InProgress&amp;mode=browse&amp;server=None</value>
+	</variable>
+	<variable name="EmbyHomeWidget1ContinueEmbyConMovies">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),continue) + System.HasAddon(plugin.video.embycon)">plugin://plugin.video.embycon/?mode=WIDGET_CONTENT&amp;type=inprogress_movies&amp;reload=$INFO[Window(Home).Property(widgetreload-movies)]</value>
+	</variable>
+	<variable name="EmbyHomeWidget1ContinueEmbyConEpisodes">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),continue) + System.HasAddon(plugin.video.embycon)">plugin://plugin.video.embycon/?mode=WIDGET_CONTENT&amp;type=inprogress_episodes&amp;reload=$INFO[Window(Home).Property(widgetreload-episodes)]</value>
+	</variable>
+	<variable name="EmbyHomeWidget2ContinueEpisodesContent">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),continue) + ![System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)]">special://skin/extras/playlists/InProgress/InProgressEpisodes.xsp</value>
+	</variable>
+	<variable name="EmbyHomeWidget2ContinueMoviesContent">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),continue) + ![System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)]">special://skin/extras/playlists/InProgress/InProgressMovies.xsp</value>
+	</variable>
+	<variable name="EmbyHomeWidget2ContinueEmbyContent">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),continue) + System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)">plugin://plugin.video.emby/?folder=InProgress&amp;mode=browse&amp;server=None</value>
+	</variable>
+	<variable name="EmbyHomeWidget2ContinueEmbyConMovies">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),continue) + System.HasAddon(plugin.video.embycon)">plugin://plugin.video.embycon/?mode=WIDGET_CONTENT&amp;type=inprogress_movies&amp;reload=$INFO[Window(Home).Property(widgetreload-movies)]</value>
+	</variable>
+	<variable name="EmbyHomeWidget2ContinueEmbyConEpisodes">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),continue) + System.HasAddon(plugin.video.embycon)">plugin://plugin.video.embycon/?mode=WIDGET_CONTENT&amp;type=inprogress_episodes&amp;reload=$INFO[Window(Home).Property(widgetreload-episodes)]</value>
+	</variable>
+	<variable name="EmbyHomeWidget3ContinueEpisodesContent">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),continue) + ![System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)]">special://skin/extras/playlists/InProgress/InProgressEpisodes.xsp</value>
+	</variable>
+	<variable name="EmbyHomeWidget3ContinueMoviesContent">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),continue) + ![System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)]">special://skin/extras/playlists/InProgress/InProgressMovies.xsp</value>
+	</variable>
+	<variable name="EmbyHomeWidget3ContinueEmbyContent">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),continue) + System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)">plugin://plugin.video.emby/?folder=InProgress&amp;mode=browse&amp;server=None</value>
+	</variable>
+	<variable name="EmbyHomeWidget3ContinueEmbyConMovies">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),continue) + System.HasAddon(plugin.video.embycon)">plugin://plugin.video.embycon/?mode=WIDGET_CONTENT&amp;type=inprogress_movies&amp;reload=$INFO[Window(Home).Property(widgetreload-movies)]</value>
+	</variable>
+	<variable name="EmbyHomeWidget3ContinueEmbyConEpisodes">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),continue) + System.HasAddon(plugin.video.embycon)">plugin://plugin.video.embycon/?mode=WIDGET_CONTENT&amp;type=inprogress_episodes&amp;reload=$INFO[Window(Home).Property(widgetreload-episodes)]</value>
+	</variable>
+	<variable name="EmbyHomeWidget4ContinueEpisodesContent">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(4).Property(defaultID),continue) + ![System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)]">special://skin/extras/playlists/InProgress/InProgressEpisodes.xsp</value>
+	</variable>
+	<variable name="EmbyHomeWidget4ContinueMoviesContent">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(4).Property(defaultID),continue) + ![System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)]">special://skin/extras/playlists/InProgress/InProgressMovies.xsp</value>
+	</variable>
+	<variable name="EmbyHomeWidget4ContinueEmbyContent">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(4).Property(defaultID),continue) + System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)">plugin://plugin.video.emby/?folder=InProgress&amp;mode=browse&amp;server=None</value>
+	</variable>
+	<variable name="EmbyHomeWidget4ContinueEmbyConMovies">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(4).Property(defaultID),continue) + System.HasAddon(plugin.video.embycon)">plugin://plugin.video.embycon/?mode=WIDGET_CONTENT&amp;type=inprogress_movies&amp;reload=$INFO[Window(Home).Property(widgetreload-movies)]</value>
+	</variable>
+	<variable name="EmbyHomeWidget4ContinueEmbyConEpisodes">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(4).Property(defaultID),continue) + System.HasAddon(plugin.video.embycon)">plugin://plugin.video.embycon/?mode=WIDGET_CONTENT&amp;type=inprogress_episodes&amp;reload=$INFO[Window(Home).Property(widgetreload-episodes)]</value>
+	</variable>
+	<variable name="EmbyHomeWidget5ContinueEpisodesContent">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(5).Property(defaultID),continue) + ![System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)]">special://skin/extras/playlists/InProgress/InProgressEpisodes.xsp</value>
+	</variable>
+	<variable name="EmbyHomeWidget5ContinueMoviesContent">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(5).Property(defaultID),continue) + ![System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)]">special://skin/extras/playlists/InProgress/InProgressMovies.xsp</value>
+	</variable>
+	<variable name="EmbyHomeWidget5ContinueEmbyContent">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(5).Property(defaultID),continue) + System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)">plugin://plugin.video.emby/?folder=InProgress&amp;mode=browse&amp;server=None</value>
+	</variable>
+	<variable name="EmbyHomeWidget5ContinueEmbyConMovies">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(5).Property(defaultID),continue) + System.HasAddon(plugin.video.embycon)">plugin://plugin.video.embycon/?mode=WIDGET_CONTENT&amp;type=inprogress_movies&amp;reload=$INFO[Window(Home).Property(widgetreload-movies)]</value>
+	</variable>
+	<variable name="EmbyHomeWidget5ContinueEmbyConEpisodes">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(5).Property(defaultID),continue) + System.HasAddon(plugin.video.embycon)">plugin://plugin.video.embycon/?mode=WIDGET_CONTENT&amp;type=inprogress_episodes&amp;reload=$INFO[Window(Home).Property(widgetreload-episodes)]</value>
+	</variable>
+	<variable name="EmbyHomeWidget6ContinueEpisodesContent">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(6).Property(defaultID),continue) + ![System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)]">special://skin/extras/playlists/InProgress/InProgressEpisodes.xsp</value>
+	</variable>
+	<variable name="EmbyHomeWidget6ContinueMoviesContent">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(6).Property(defaultID),continue) + ![System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)]">special://skin/extras/playlists/InProgress/InProgressMovies.xsp</value>
+	</variable>
+	<variable name="EmbyHomeWidget6ContinueEmbyContent">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(6).Property(defaultID),continue) + System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)">plugin://plugin.video.emby/?folder=InProgress&amp;mode=browse&amp;server=None</value>
+	</variable>
+	<variable name="EmbyHomeWidget6ContinueEmbyConMovies">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(6).Property(defaultID),continue) + System.HasAddon(plugin.video.embycon)">plugin://plugin.video.embycon/?mode=WIDGET_CONTENT&amp;type=inprogress_movies&amp;reload=$INFO[Window(Home).Property(widgetreload-movies)]</value>
+	</variable>
+	<variable name="EmbyHomeWidget6ContinueEmbyConEpisodes">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(6).Property(defaultID),continue) + System.HasAddon(plugin.video.embycon)">plugin://plugin.video.embycon/?mode=WIDGET_CONTENT&amp;type=inprogress_episodes&amp;reload=$INFO[Window(Home).Property(widgetreload-episodes)]</value>
+	</variable>
+	<variable name="EmbyHomeWidget7ContinueEpisodesContent">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(7).Property(defaultID),continue) + ![System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)]">special://skin/extras/playlists/InProgress/InProgressEpisodes.xsp</value>
+	</variable>
+	<variable name="EmbyHomeWidget7ContinueMoviesContent">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(7).Property(defaultID),continue) + ![System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)]">special://skin/extras/playlists/InProgress/InProgressMovies.xsp</value>
+	</variable>
+	<variable name="EmbyHomeWidget7ContinueEmbyContent">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(7).Property(defaultID),continue) + System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)">plugin://plugin.video.emby/?folder=InProgress&amp;mode=browse&amp;server=None</value>
+	</variable>
+	<variable name="EmbyHomeWidget7ContinueEmbyConMovies">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(7).Property(defaultID),continue) + System.HasAddon(plugin.video.embycon)">plugin://plugin.video.embycon/?mode=WIDGET_CONTENT&amp;type=inprogress_movies&amp;reload=$INFO[Window(Home).Property(widgetreload-movies)]</value>
+	</variable>
+	<variable name="EmbyHomeWidget7ContinueEmbyConEpisodes">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(7).Property(defaultID),continue) + System.HasAddon(plugin.video.embycon)">plugin://plugin.video.embycon/?mode=WIDGET_CONTENT&amp;type=inprogress_episodes&amp;reload=$INFO[Window(Home).Property(widgetreload-episodes)]</value>
+	</variable>
+	<variable name="EmbyHomeWidget8ContinueEpisodesContent">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(8).Property(defaultID),continue) + ![System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)]">special://skin/extras/playlists/InProgress/InProgressEpisodes.xsp</value>
+	</variable>
+	<variable name="EmbyHomeWidget8ContinueMoviesContent">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(8).Property(defaultID),continue) + ![System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)]">special://skin/extras/playlists/InProgress/InProgressMovies.xsp</value>
+	</variable>
+	<variable name="EmbyHomeWidget8ContinueEmbyContent">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(8).Property(defaultID),continue) + System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)">plugin://plugin.video.emby/?folder=InProgress&amp;mode=browse&amp;server=None</value>
+	</variable>
+	<variable name="EmbyHomeWidget8ContinueEmbyConMovies">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(8).Property(defaultID),continue) + System.HasAddon(plugin.video.embycon)">plugin://plugin.video.embycon/?mode=WIDGET_CONTENT&amp;type=inprogress_movies&amp;reload=$INFO[Window(Home).Property(widgetreload-movies)]</value>
+	</variable>
+	<variable name="EmbyHomeWidget8ContinueEmbyConEpisodes">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(8).Property(defaultID),continue) + System.HasAddon(plugin.video.embycon)">plugin://plugin.video.embycon/?mode=WIDGET_CONTENT&amp;type=inprogress_episodes&amp;reload=$INFO[Window(Home).Property(widgetreload-episodes)]</value>
+	</variable>
+	<variable name="EmbyHomeWidget9ContinueEpisodesContent">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(9).Property(defaultID),continue) + ![System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)]">special://skin/extras/playlists/InProgress/InProgressEpisodes.xsp</value>
+	</variable>
+	<variable name="EmbyHomeWidget9ContinueMoviesContent">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(9).Property(defaultID),continue) + ![System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)]">special://skin/extras/playlists/InProgress/InProgressMovies.xsp</value>
+	</variable>
+	<variable name="EmbyHomeWidget9ContinueEmbyContent">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(9).Property(defaultID),continue) + System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)">plugin://plugin.video.emby/?folder=InProgress&amp;mode=browse&amp;server=None</value>
+	</variable>
+	<variable name="EmbyHomeWidget9ContinueEmbyConMovies">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(9).Property(defaultID),continue) + System.HasAddon(plugin.video.embycon)">plugin://plugin.video.embycon/?mode=WIDGET_CONTENT&amp;type=inprogress_movies&amp;reload=$INFO[Window(Home).Property(widgetreload-movies)]</value>
+	</variable>
+	<variable name="EmbyHomeWidget9ContinueEmbyConEpisodes">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(9).Property(defaultID),continue) + System.HasAddon(plugin.video.embycon)">plugin://plugin.video.embycon/?mode=WIDGET_CONTENT&amp;type=inprogress_episodes&amp;reload=$INFO[Window(Home).Property(widgetreload-episodes)]</value>
+	</variable>
+	<variable name="EmbyHomeWidget10ContinueEpisodesContent">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),continue) + ![System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)]">special://skin/extras/playlists/InProgress/InProgressEpisodes.xsp</value>
+	</variable>
+	<variable name="EmbyHomeWidget10ContinueMoviesContent">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),continue) + ![System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)]">special://skin/extras/playlists/InProgress/InProgressMovies.xsp</value>
+	</variable>
+	<variable name="EmbyHomeWidget10ContinueEmbyContent">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),continue) + System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)">plugin://plugin.video.emby/?folder=InProgress&amp;mode=browse&amp;server=None</value>
+	</variable>
+	<variable name="EmbyHomeWidget10ContinueEmbyConMovies">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),continue) + System.HasAddon(plugin.video.embycon)">plugin://plugin.video.embycon/?mode=WIDGET_CONTENT&amp;type=inprogress_movies&amp;reload=$INFO[Window(Home).Property(widgetreload-movies)]</value>
+	</variable>
+	<variable name="EmbyHomeWidget10ContinueEmbyConEpisodes">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),continue) + System.HasAddon(plugin.video.embycon)">plugin://plugin.video.embycon/?mode=WIDGET_CONTENT&amp;type=inprogress_episodes&amp;reload=$INFO[Window(Home).Property(widgetreload-episodes)]</value>
+	</variable>
+	<!-- Skin Shortcuts -->
 	<variable name="SkinShortcutsContent">
 		<value>$INFO[Container(211).ListItem.Property(widgetPath)]</value>
 	</variable>
 	<variable name="SkinShortcutsContinueEpisodes">
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),continue)">special://skin/extras/playlists/InProgress/InProgressEpisodes.xsp</value>
+		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),continue) + ![System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)]">special://skin/extras/playlists/InProgress/InProgressEpisodes.xsp</value>
 	</variable>
 	<variable name="SkinShortcutsContinueMovies">
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),continue)">special://skin/extras/playlists/InProgress/InProgressMovies.xsp</value>
+		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),continue) + ![System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)]">special://skin/extras/playlists/InProgress/InProgressMovies.xsp</value>
+	</variable>
+	<variable name="SkinShortcutsContinueEmby">
+		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),continue) + System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)">plugin://plugin.video.emby/?folder=InProgress&amp;mode=browse&amp;server=None</value>
+	</variable>
+	<variable name="SkinShortcutsContinueEmbyConMovies">
+		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),continue) + System.HasAddon(plugin.video.embycon)">plugin://plugin.video.embycon/?mode=WIDGET_CONTENT&amp;type=inprogress_movies&amp;reload=$INFO[Window(Home).Property(widgetreload-movies)]</value>
+	</variable>
+	<variable name="SkinShortcutsContinueEmbyConEpisodes">
+		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),continue) + System.HasAddon(plugin.video.embycon)">plugin://plugin.video.embycon/?mode=WIDGET_CONTENT&amp;type=inprogress_episodes&amp;reload=$INFO[Window(Home).Property(widgetreload-episodes)]</value>
 	</variable>
 	<include name="MusicInfoTracklist">
 		<content type="static">

@@ -68,6 +68,7 @@
         <thumb>special://skin/extras/backgrounds/orbs.jpg</thumb>
         <icon>special://skin/extras/icons/addons.png</icon>
         <action>ActivateWindow(Videos)</action>
+        <visible>!System.HasAddon(plugin.video.emby) | !String.IsEqual(Window(Home).Property(emby_online),true)</visible>
     </shortcut>
     <shortcut>
         <label>Favorites</label>
@@ -75,7 +76,7 @@
         <icon>special://skin/extras/icons/favorite.png</icon>
         <thumb>special://skin/extras/backgrounds/favorites.jpg</thumb>
         <action>ActivateWindow(Favourites)</action>
-        <visible>[Integer.IsGreater(Window(Home).Property(TVShows.Count),0) | Integer.IsGreater(Window(Home).Property(Movies.Count),0) | Integer.IsGreater(Window(Home).Property(Music.SongsCount),0)]</visible>
+        <visible>[Integer.IsGreater(Window(Home).Property(TVShows.Count),0) | Integer.IsGreater(Window(Home).Property(Movies.Count),0) | Integer.IsGreater(Window(Home).Property(Music.SongsCount),0)] + [!System.HasAddon(plugin.video.emby) | !String.IsEqual(Window(Home).Property(emby_online),true)]</visible>
     </shortcut>
     <shortcut>
         <label>Programs</label>

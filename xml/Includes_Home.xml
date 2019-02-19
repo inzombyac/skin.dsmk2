@@ -89,10 +89,10 @@
                 <include>ControlID4</include>
 				<label>$INFO[ListItem.FolderPath]</label>
             </control>
-           <!--  <control type="label">
+           <control type="label">
                 <include>ControlID5</include>
-				<label>$INFO[Window(Home).Property(emby_online)]</label>
-            </control> -->
+				<label>$INFO[Container(4011).NumItems]</label>
+            </control>
 		</control>
 	</include>
 	<include name="HomeEmbyWidgetInfo">
@@ -209,6 +209,9 @@
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget1Content]</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget1ContinueEpisodesContent]</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget1ContinueMoviesContent]</content>
+					<content limit="25" target="videos">$VAR[EmbyHomeWidget1ContinueEmbyConMovies]</content>
+					<content limit="25" target="videos">$VAR[EmbyHomeWidget1ContinueEmbyConEpisodes]</content>
+					<content limit="25" target="videos">$VAR[EmbyHomeWidget1ContinueEmbyContent]</content>
 					<include content="EmbyHomeLayout">
 						<param name="movie_view">String.IsEqual(Container(300).ListItemAbsolute(1).Property(widgetFormat),Poster)</param>
 						<param name="square_view">String.IsEqual(Container(300).ListItemAbsolute(1).Property(widgetFormat),Square)</param>
@@ -289,6 +292,9 @@
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget2Content]</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget2ContinueEpisodesContent]</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget2ContinueMoviesContent]</content>
+					<content limit="25" target="videos">$VAR[EmbyHomeWidget2ContinueEmbyConMovies]</content>
+					<content limit="25" target="videos">$VAR[EmbyHomeWidget2ContinueEmbyConEpisodes]</content>
+					<content limit="25" target="videos">$VAR[EmbyHomeWidget2ContinueEmbyContent]</content>
 					<include content="EmbyHomeLayout">
 						<param name="movie_view">String.IsEqual(Container(300).ListItemAbsolute(2).Property(widgetFormat),Poster)</param>
 						<param name="square_view">String.IsEqual(Container(300).ListItemAbsolute(2).Property(widgetFormat),Square)</param>
@@ -372,6 +378,9 @@
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget3Content]</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget3ContinueEpisodesContent]</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget3ContinueMoviesContent]</content>
+					<content limit="25" target="videos">$VAR[EmbyHomeWidget3ContinueEmbyConMovies]</content>
+					<content limit="25" target="videos">$VAR[EmbyHomeWidget3ContinueEmbyConEpisodes]</content>
+					<content limit="25" target="videos">$VAR[EmbyHomeWidget3ContinueEmbyContent]</content>
 					<include content="EmbyHomeLayout">
 						<param name="movie_view">String.IsEqual(Container(300).ListItemAbsolute(3).Property(widgetFormat),Poster)</param>
 						<param name="square_view">String.IsEqual(Container(300).ListItemAbsolute(3).Property(widgetFormat),Square)</param>
@@ -457,6 +466,9 @@
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget4Content]</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget4ContinueEpisodesContent]</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget4ContinueMoviesContent]</content>
+					<content limit="25" target="videos">$VAR[EmbyHomeWidget4ContinueEmbyConMovies]</content>
+					<content limit="25" target="videos">$VAR[EmbyHomeWidget4ContinueEmbyConEpisodes]</content>
+					<content limit="25" target="videos">$VAR[EmbyHomeWidget4ContinueEmbyContent]</content>
 					<include content="EmbyHomeLayout">
 						<param name="movie_view">String.IsEqual(Container(300).ListItemAbsolute(4).Property(widgetFormat),Poster)</param>
 						<param name="square_view">String.IsEqual(Container(300).ListItemAbsolute(4).Property(widgetFormat),Square)</param>
@@ -544,6 +556,9 @@
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget5Content]</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget5ContinueEpisodesContent]</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget5ContinueMoviesContent]</content>
+					<content limit="25" target="videos">$VAR[EmbyHomeWidget5ContinueEmbyConMovies]</content>
+					<content limit="25" target="videos">$VAR[EmbyHomeWidget5ContinueEmbyConEpisodes]</content>
+					<content limit="25" target="videos">$VAR[EmbyHomeWidget5ContinueEmbyContent]</content>
 					<include content="EmbyHomeLayout">
 						<param name="movie_view">String.IsEqual(Container(300).ListItemAbsolute(5).Property(widgetFormat),Poster)</param>
 						<param name="square_view">String.IsEqual(Container(300).ListItemAbsolute(5).Property(widgetFormat),Square)</param>
@@ -564,7 +579,7 @@
 					<visible>!String.IsEqual(Container(4005).CurrentItem,Container(4005).NumItems) + [[Integer.IsGreater(Container(4005).NumItems,4) + !String.IsEqual(Container(300).ListItemAbsolute(5).Property(widgetFormat),Square)] | [Integer.IsGreater(Container(4005).NumItems,6) + String.IsEqual(Container(300).ListItemAbsolute(5).Property(widgetFormat),Square)]]</visible>
 				</control>
 				<control type="image">
-					<aspectratio>scale</aspectratio>
+					<aspectratio>stretch</aspectratio>
 					<texture background="true" colordiffuse="HeaderBG">diffuse\embywidgetmore.png</texture>
 					<top>$PARAM[top]</top>
 					<height>310</height>
@@ -633,6 +648,9 @@
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget6Content]</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget6ContinueEpisodesContent]</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget6ContinueMoviesContent]</content>
+					<content limit="25" target="videos">$VAR[EmbyHomeWidget6ContinueEmbyConMovies]</content>
+					<content limit="25" target="videos">$VAR[EmbyHomeWidget6ContinueEmbyConEpisodes]</content>
+					<content limit="25" target="videos">$VAR[EmbyHomeWidget6ContinueEmbyContent]</content>
 					<include content="EmbyHomeLayout">
 						<param name="movie_view">String.IsEqual(Container(300).ListItemAbsolute(6).Property(widgetFormat),Poster)</param>
 						<param name="square_view">String.IsEqual(Container(300).ListItemAbsolute(6).Property(widgetFormat),Square)</param>
@@ -653,7 +671,7 @@
 					<visible>!String.IsEqual(Container(4006).CurrentItem,Container(4006).NumItems) + [[Integer.IsGreater(Container(4006).NumItems,4) + !String.IsEqual(Container(300).ListItemAbsolute(6).Property(widgetFormat),Square)] | [Integer.IsGreater(Container(4006).NumItems,6) + String.IsEqual(Container(300).ListItemAbsolute(6).Property(widgetFormat),Square)]]</visible>
 				</control>
 				<control type="image">
-					<aspectratio>scale</aspectratio>
+					<aspectratio>stretch</aspectratio>
 					<texture background="true" colordiffuse="HeaderBG">diffuse\embywidgetmore.png</texture>
 					<top>$PARAM[top]</top>
 					<height>310</height>
@@ -724,6 +742,9 @@
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget7Content]</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget7ContinueEpisodesContent]</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget7ContinueMoviesContent]</content>
+					<content limit="25" target="videos">$VAR[EmbyHomeWidget7ContinueEmbyConMovies]</content>
+					<content limit="25" target="videos">$VAR[EmbyHomeWidget7ContinueEmbyConEpisodes]</content>
+					<content limit="25" target="videos">$VAR[EmbyHomeWidget7ContinueEmbyContent]</content>
 					<include content="EmbyHomeLayout">
 						<param name="movie_view">String.IsEqual(Container(300).ListItemAbsolute(7).Property(widgetFormat),Poster)</param>
 						<param name="square_view">String.IsEqual(Container(300).ListItemAbsolute(7).Property(widgetFormat),Square)</param>
@@ -744,7 +765,7 @@
 					<visible>!String.IsEqual(Container(4007).CurrentItem,Container(4007).NumItems) + [[Integer.IsGreater(Container(4007).NumItems,4) + !String.IsEqual(Container(300).ListItemAbsolute(7).Property(widgetFormat),Square)] | [Integer.IsGreater(Container(4007).NumItems,6) + String.IsEqual(Container(300).ListItemAbsolute(7).Property(widgetFormat),Square)]]</visible>
 				</control>
 				<control type="image">
-					<aspectratio>scale</aspectratio>
+					<aspectratio>stretch</aspectratio>
 					<texture background="true" colordiffuse="HeaderBG">diffuse\embywidgetmore.png</texture>
 					<top>$PARAM[top]</top>
 					<height>310</height>
@@ -817,6 +838,9 @@
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget8Content]</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget8ContinueEpisodesContent]</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget8ContinueMoviesContent]</content>
+					<content limit="25" target="videos">$VAR[EmbyHomeWidget8ContinueEmbyConMovies]</content>
+					<content limit="25" target="videos">$VAR[EmbyHomeWidget8ContinueEmbyConEpisodes]</content>
+					<content limit="25" target="videos">$VAR[EmbyHomeWidget8ContinueEmbyContent]</content>
 					<include content="EmbyHomeLayout">
 						<param name="movie_view">String.IsEqual(Container(300).ListItemAbsolute(8).Property(widgetFormat),Poster)</param>
 						<param name="square_view">String.IsEqual(Container(300).ListItemAbsolute(8).Property(widgetFormat),Square)</param>
@@ -837,7 +861,7 @@
 					<visible>!String.IsEqual(Container(4008).CurrentItem,Container(4008).NumItems) + [[Integer.IsGreater(Container(4008).NumItems,4) + !String.IsEqual(Container(300).ListItemAbsolute(8).Property(widgetFormat),Square)] | [Integer.IsGreater(Container(4008).NumItems,6) + String.IsEqual(Container(300).ListItemAbsolute(8).Property(widgetFormat),Square)]]</visible>
 				</control>
 				<control type="image">
-					<aspectratio>scale</aspectratio>
+					<aspectratio>stretch</aspectratio>
 					<texture background="true" colordiffuse="HeaderBG">diffuse\embywidgetmore.png</texture>
 					<top>$PARAM[top]</top>
 					<height>310</height>
@@ -912,6 +936,9 @@
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget9Content]</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget9ContinueEpisodesContent]</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget9ContinueMoviesContent]</content>
+					<content limit="25" target="videos">$VAR[EmbyHomeWidget9ContinueEmbyConMovies]</content>
+					<content limit="25" target="videos">$VAR[EmbyHomeWidget9ContinueEmbyConEpisodes]</content>
+					<content limit="25" target="videos">$VAR[EmbyHomeWidget9ContinueEmbyContent]</content>
 					<include content="EmbyHomeLayout">
 						<param name="movie_view">String.IsEqual(Container(300).ListItemAbsolute(9).Property(widgetFormat),Poster)</param>
 						<param name="square_view">String.IsEqual(Container(300).ListItemAbsolute(9).Property(widgetFormat),Square)</param>
@@ -932,7 +959,7 @@
 					<visible>!String.IsEqual(Container(4009).CurrentItem,Container(4009).NumItems) + [[Integer.IsGreater(Container(4009).NumItems,4) + !String.IsEqual(Container(300).ListItemAbsolute(9).Property(widgetFormat),Square)] | [Integer.IsGreater(Container(4009).NumItems,6) + String.IsEqual(Container(300).ListItemAbsolute(9).Property(widgetFormat),Square)]]</visible>
 				</control>
 				<control type="image">
-					<aspectratio>scale</aspectratio>
+					<aspectratio>stretch</aspectratio>
 					<texture background="true" colordiffuse="HeaderBG">diffuse\embywidgetmore.png</texture>
 					<top>$PARAM[top]</top>
 					<height>310</height>
@@ -1009,6 +1036,9 @@
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget10Content]</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget10ContinueEpisodesContent]</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget10ContinueMoviesContent]</content>
+					<content limit="25" target="videos">$VAR[EmbyHomeWidget10ContinueEmbyConMovies]</content>
+					<content limit="25" target="videos">$VAR[EmbyHomeWidget10ContinueEmbyConEpisodes]</content>
+					<content limit="25" target="videos">$VAR[EmbyHomeWidget10ContinueEmbyContent]</content>
 					<include content="EmbyHomeLayout">
 						<param name="movie_view">String.IsEqual(Container(300).ListItemAbsolute(10).Property(widgetFormat),Poster)</param>
 						<param name="square_view">String.IsEqual(Container(300).ListItemAbsolute(10).Property(widgetFormat),Square)</param>
@@ -1029,7 +1059,7 @@
 					<visible>!String.IsEqual(Container(4010).CurrentItem,Container(4010).NumItems) + [[Integer.IsGreater(Container(4010).NumItems,4) + !String.IsEqual(Container(300).ListItemAbsolute(10).Property(widgetFormat),Square)] | [Integer.IsGreater(Container(4010).NumItems,6) + String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),music)]]</visible>
 				</control>
 				<control type="image">
-					<aspectratio>scale</aspectratio>
+					<aspectratio>stretch</aspectratio>
 					<texture background="true" colordiffuse="HeaderBG">diffuse\embywidgetmore.png</texture>
 					<top>$PARAM[top]</top>
 					<height>310</height>
@@ -1833,170 +1863,191 @@
 			<item>
 				<label>$INFO[Container(4011).ListItem(0).Label]</label>
 				<thumb>$INFO[Container(4011).ListItem(0).Thumb]</thumb>
-				<label2>Emby Library</label2>
+				<label2>Emby Library 0</label2>
 				<onclick>$VAR[EmbyNode00Path]</onclick>
 				<visible>String.StartsWith(Container(4011).ListItem(0).FolderPath,plugin://plugin.video.emby/?type=) | String.StartsWith(Container(4011).ListItem(0).FolderPath,library://video)</visible>
 				<visible>!String.StartsWith(Container(4011).ListItem(0).FolderPath,library://video/emby_Fav)</visible>
+				<visible>Integer.IsGreater(Container(4011).NumItems,0)</visible>
 			</item>
 			<item>
 				<label>$INFO[Container(4011).ListItem(1).Label]</label>
 				<thumb>$INFO[Container(4011).ListItem(1).Thumb]</thumb>
-				<label2>Emby Library</label2>
+				<label2>Emby Library 1</label2>
 				<onclick>$VAR[EmbyNode01Path]</onclick>
 				<visible>String.StartsWith(Container(4011).ListItem(1).FolderPath,plugin://plugin.video.emby/?type=) | String.StartsWith(Container(4011).ListItem(1).FolderPath,library://video)</visible>
 				<visible>!String.StartsWith(Container(4011).ListItem(1).FolderPath,library://video/emby_Fav)</visible>
+				<visible>Integer.IsGreater(Container(4011).NumItems,1)</visible>
 			</item>
 			<item>
 				<label>$INFO[Container(4011).ListItem(2).Label]</label>
 				<thumb>$INFO[Container(4011).ListItem(2).Thumb]</thumb>
-				<label2>Emby Library</label2>
+				<label2>Emby Library 2</label2>
 				<onclick>$VAR[EmbyNode02Path]</onclick>
 				<visible>String.StartsWith(Container(4011).ListItem(2).FolderPath,plugin://plugin.video.emby/?type=) | String.StartsWith(Container(4011).ListItem(2).FolderPath,library://video)</visible>
 				<visible>!String.StartsWith(Container(4011).ListItem(2).FolderPath,library://video/emby_Fav)</visible>
+				<visible>Integer.IsGreater(Container(4011).NumItems,2)</visible>
 			</item>
 			<item>
 				<label>$INFO[Container(4011).ListItem(3).Label]</label>
 				<thumb>$INFO[Container(4011).ListItem(3).Thumb]</thumb>
-				<label2>Emby Library</label2>
+				<label2>Emby Library 3</label2>
 				<onclick>$VAR[EmbyNode03Path]</onclick>
 				<visible>String.StartsWith(Container(4011).ListItem(3).FolderPath,plugin://plugin.video.emby/?type=) | String.StartsWith(Container(4011).ListItem(3).FolderPath,library://video)</visible>
 				<visible>!String.StartsWith(Container(4011).ListItem(3).FolderPath,library://video/emby_Fav)</visible>
+				<visible>Integer.IsGreater(Container(4011).NumItems,3)</visible>
 			</item>
 			<item>
 				<label>$INFO[Container(4011).ListItem(4).Label]</label>
 				<thumb>$INFO[Container(4011).ListItem(4).Thumb]</thumb>
-				<label2>Emby Library</label2>
+				<label2>Emby Library 4</label2>
 				<onclick>$VAR[EmbyNode04Path]</onclick>
 				<visible>String.StartsWith(Container(4011).ListItem(4).FolderPath,plugin://plugin.video.emby/?type=) | String.StartsWith(Container(4011).ListItem(4).FolderPath,library://video)</visible>
 				<visible>!String.StartsWith(Container(4011).ListItem(4).FolderPath,library://video/emby_Fav)</visible>
+				<visible>Integer.IsGreater(Container(4011).NumItems,4)</visible>
 			</item>
 			<item>
 				<label>$INFO[Container(4011).ListItem(5).Label]</label>
 				<thumb>$INFO[Container(4011).ListItem(5).Thumb]</thumb>
-				<label2>Emby Library</label2>
+				<label2>Emby Library 5</label2>
 				<onclick>$VAR[EmbyNode05Path]</onclick>
 				<visible>String.StartsWith(Container(4011).ListItem(5).FolderPath,plugin://plugin.video.emby/?type=) | String.StartsWith(Container(4011).ListItem(5).FolderPath,library://video)</visible>
 				<visible>!String.StartsWith(Container(4011).ListItem(5).FolderPath,library://video/emby_Fav)</visible>
+				<visible>Integer.IsGreater(Container(4011).NumItems,5)</visible>
 			</item>
 			<item>
 				<label>$INFO[Container(4011).ListItem(6).Label]</label>
 				<thumb>$INFO[Container(4011).ListItem(6).Thumb]</thumb>
-				<label2>Emby Library</label2>
+				<label2>Emby Library 6</label2>
 				<onclick>$VAR[EmbyNode06Path]</onclick>
 				<visible>String.StartsWith(Container(4011).ListItem(6).FolderPath,plugin://plugin.video.emby/?type=) | String.StartsWith(Container(4011).ListItem(6).FolderPath,library://video)</visible>
 				<visible>!String.StartsWith(Container(4011).ListItem(6).FolderPath,library://video/emby_Fav)</visible>
+				<visible>Integer.IsGreater(Container(4011).NumItems,6)</visible>
 			</item>
 			<item>
 				<label>$INFO[Container(4011).ListItem(7).Label]</label>
 				<thumb>$INFO[Container(4011).ListItem(7).Thumb]</thumb>
-				<label2>Emby Library</label2>
+				<label2>Emby Library 7</label2>
 				<onclick>$VAR[EmbyNode07Path]</onclick>
 				<visible>String.StartsWith(Container(4011).ListItem(7).FolderPath,plugin://plugin.video.emby/?type=) | String.StartsWith(Container(4011).ListItem(7).FolderPath,library://video)</visible>
 				<visible>!String.StartsWith(Container(4011).ListItem(7).FolderPath,library://video/emby_Fav)</visible>
+				<visible>Integer.IsGreater(Container(4011).NumItems,7)</visible>
 			</item>
 			<item>
 				<label>$INFO[Container(4011).ListItem(8).Label]</label>
 				<thumb>$INFO[Container(4011).ListItem(8).Thumb]</thumb>
-				<label2>Emby Library</label2>
+				<label2>Emby Library 8</label2>
 				<onclick>$VAR[EmbyNode08Path]</onclick>
 				<visible>String.StartsWith(Container(4011).ListItem(8).FolderPath,plugin://plugin.video.emby/?type=) | String.StartsWith(Container(4011).ListItem(8).FolderPath,library://video)</visible>
 				<visible>!String.StartsWith(Container(4011).ListItem(8).FolderPath,library://video/emby_Fav)</visible>
+				<visible>Integer.IsGreater(Container(4011).NumItems,8)</visible>
 			</item>
 			<item>
 				<label>$INFO[Container(4011).ListItem(9).Label]</label>
 				<thumb>$INFO[Container(4011).ListItem(9).Thumb]</thumb>
-				<label2>Emby Library</label2>
+				<label2>Emby Library 9</label2>
 				<onclick>$VAR[EmbyNode09Path]</onclick>
 				<visible>String.StartsWith(Container(4011).ListItem(9).FolderPath,plugin://plugin.video.emby/?type=) | String.StartsWith(Container(4011).ListItem(9).FolderPath,library://video)</visible>
 				<visible>!String.StartsWith(Container(4011).ListItem(9).FolderPath,library://video/emby_Fav)</visible>
+				<visible>Integer.IsGreater(Container(4011).NumItems,9)</visible>
 			</item>
 			<item>
 				<label>$INFO[Container(4011).ListItem(10).Label]</label>
 				<thumb>$INFO[Container(4011).ListItem(10).Thumb]</thumb>
-				<label2>Emby Library</label2>
+				<label2>Emby Library 10</label2>
 				<onclick>$VAR[EmbyNode10Path]</onclick>
 				<visible>String.StartsWith(Container(4011).ListItem(10).FolderPath,plugin://plugin.video.emby/?type=) | String.StartsWith(Container(4011).ListItem(10).FolderPath,library://video)</visible>
 				<visible>!String.StartsWith(Container(4011).ListItem(10).FolderPath,library://video/emby_Fav)</visible>
+				<visible>Integer.IsGreater(Container(4011).NumItems,10)</visible>
 			</item>
 			<item>
 				<label>$INFO[Container(4011).ListItem(11).Label]</label>
 				<thumb>$INFO[Container(4011).ListItem(11).Thumb]</thumb>
-				<label2>Emby Library</label2>
+				<label2>Emby Library 11</label2>
 				<onclick>$VAR[EmbyNode11Path]</onclick>
 				<visible>String.StartsWith(Container(4011).ListItem(11).FolderPath,plugin://plugin.video.emby/?type=) | String.StartsWith(Container(4011).ListItem(11).FolderPath,library://video)</visible>
 				<visible>!String.StartsWith(Container(4011).ListItem(11).FolderPath,library://video/emby_Fav)</visible>
+				<visible>Integer.IsGreater(Container(4011).NumItems,11)</visible>
 			</item>
 			<item>
 				<label>$INFO[Container(4011).ListItem(12).Label]</label>
 				<thumb>$INFO[Container(4011).ListItem(12).Thumb]</thumb>
-				<label2>Emby Library</label2>
+				<label2>Emby Library 12</label2>
 				<onclick>$VAR[EmbyNode12Path]</onclick>
-				<visible>String.StartsWith(Container(4011).ListItem(12).FolderPath,plugin://plugin.video.emby/?type=) | String.StartsWith(Container(4011).ListItem(12).FolderPath,library://video)</visible>
+				<visible>[String.StartsWith(Container(4011).ListItem(12).FolderPath,plugin://plugin.video.emby/?type=) | String.StartsWith(Container(4011).ListItem(12).FolderPath,library://video)]</visible>
 				<visible>!String.StartsWith(Container(4011).ListItem(12).FolderPath,library://video/emby_Fav)</visible>
+				<visible>Integer.IsGreater(Container(4011).NumItems,12)</visible>
 			</item>
 			<item>
 				<label>$INFO[Container(4011).ListItem(13).Label]</label>
 				<thumb>$INFO[Container(4011).ListItem(13).Thumb]</thumb>
-				<label2>Emby Library</label2>
+				<label2>Emby Library 13</label2>
 				<onclick>$VAR[EmbyNode13Path]</onclick>
 				<visible>String.StartsWith(Container(4011).ListItem(13).FolderPath,plugin://plugin.video.emby/?type=) | String.StartsWith(Container(4011).ListItem(13).FolderPath,library://video)</visible>
 				<visible>!String.StartsWith(Container(4011).ListItem(13).FolderPath,library://video/emby_Fav)</visible>
+				<visible>Integer.IsGreater(Container(4011).NumItems,13)</visible>
 			</item>
 			<item>
 				<label>$INFO[Container(4011).ListItem(14).Label]</label>
 				<thumb>$INFO[Container(4011).ListItem(14).Thumb]</thumb>
-				<label2>Emby Library</label2>
+				<label2>Emby Library 14</label2>
 				<onclick>$VAR[EmbyNode14Path]</onclick>
 				<visible>String.StartsWith(Container(4011).ListItem(14).FolderPath,plugin://plugin.video.emby/?type=) | String.StartsWith(Container(4011).ListItem(14).FolderPath,library://video)</visible>
 				<visible>!String.StartsWith(Container(4011).ListItem(14).FolderPath,library://video/emby_Fav)</visible>
+				<visible>Integer.IsGreater(Container(4011).NumItems,14)</visible>
 			</item>
 			<item>
 				<label>$INFO[Container(4011).ListItem(15).Label]</label>
 				<thumb>$INFO[Container(4011).ListItem(15).Thumb]</thumb>
-				<label2>Emby Library</label2>
+				<label2>Emby Library 15</label2>
 				<onclick>$VAR[EmbyNode15Path]</onclick>
 				<visible>String.StartsWith(Container(4011).ListItem(15).FolderPath,plugin://plugin.video.emby/?type=) | String.StartsWith(Container(4011).ListItem(15).FolderPath,library://video)</visible>
 				<visible>!String.StartsWith(Container(4011).ListItem(15).FolderPath,library://video/emby_Fav)</visible>
+				<visible>Integer.IsGreater(Container(4011).NumItems,15)</visible>
 			</item>
 			<item>
 				<label>$INFO[Container(4011).ListItem(16).Label]</label>
 				<thumb>$INFO[Container(4011).ListItem(16).Thumb]</thumb>
-				<label2>Emby Library</label2>
+				<label2>Emby Library 16</label2>
 				<onclick>$VAR[EmbyNode16Path]</onclick>
 				<visible>String.StartsWith(Container(4011).ListItem(16).FolderPath,plugin://plugin.video.emby/?type=) | String.StartsWith(Container(4011).ListItem(16).FolderPath,library://video)</visible>
 				<visible>!String.StartsWith(Container(4011).ListItem(16).FolderPath,library://video/emby_Fav)</visible>
+				<visible>Integer.IsGreater(Container(4011).NumItems,16)</visible>
 			</item>
 			<item>
 				<label>$INFO[Container(4011).ListItem(17).Label]</label>
 				<thumb>$INFO[Container(4011).ListItem(17).Thumb]</thumb>
-				<label2>Emby Library</label2>
+				<label2>Emby Library 17</label2>
 				<onclick>$VAR[EmbyNode17Path]</onclick>
 				<visible>String.StartsWith(Container(4011).ListItem(17).FolderPath,plugin://plugin.video.emby/?type=) | String.StartsWith(Container(4011).ListItem(17).FolderPath,library://video)</visible>
 				<visible>!String.StartsWith(Container(4011).ListItem(17).FolderPath,library://video/emby_Fav)</visible>
+				<visible>Integer.IsGreater(Container(4011).NumItems,17)</visible>
 			</item>
 			<item>
 				<label>$INFO[Container(4011).ListItem(18).Label]</label>
 				<thumb>$INFO[Container(4011).ListItem(18).Thumb]</thumb>
-				<label2>Emby Library</label2>
+				<label2>Emby Library 18</label2>
 				<onclick>$VAR[EmbyNode18Path]</onclick>
 				<visible>String.StartsWith(Container(4011).ListItem(18).FolderPath,plugin://plugin.video.emby/?type=) | String.StartsWith(Container(4011).ListItem(18).FolderPath,library://video)</visible>
 				<visible>!String.StartsWith(Container(4011).ListItem(18).FolderPath,library://video/emby_Fav)</visible>
+				<visible>Integer.IsGreater(Container(4011).NumItems,18)</visible>
 			</item>
 			<item>
 				<label>$INFO[Container(4011).ListItem(19).Label]</label>
 				<thumb>$INFO[Container(4011).ListItem(19).Thumb]</thumb>
-				<label2>Emby Library</label2>
+				<label2>Emby Library 19</label2>
 				<onclick>$VAR[EmbyNode19Path]</onclick>
 				<visible>String.StartsWith(Container(4011).ListItem(19).FolderPath,plugin://plugin.video.emby/?type=) | String.StartsWith(Container(4011).ListItem(19).FolderPath,library://video)</visible>
 				<visible>!String.StartsWith(Container(4011).ListItem(19).FolderPath,library://video/emby_Fav)</visible>
+				<visible>Integer.IsGreater(Container(4011).NumItems,19)</visible>
 			</item>
 			<item>
 				<label>$INFO[Container(4011).ListItem(20).Label]</label>
 				<thumb>$INFO[Container(4011).ListItem(20).Thumb]</thumb>
-				<label2>Emby Library</label2>
+				<label2>Emby Library 20</label2>
 				<onclick>$VAR[EmbyNode20Path]</onclick>
 				<visible>String.StartsWith(Container(4011).ListItem(20).FolderPath,plugin://plugin.video.emby/?type=) | String.StartsWith(Container(4011).ListItem(20).FolderPath,library://video)</visible>
 				<visible>!String.StartsWith(Container(4011).ListItem(20).FolderPath,library://video/emby_Fav)</visible>
+				<visible>Integer.IsGreater(Container(4011).NumItems,20)</visible>
 			</item>
 		</definition>
 	</include>
@@ -2013,9 +2064,6 @@
 				<texture>$INFO[ListItem.Icon]</texture>
 				<visible>!String.IsEmpty(ListItem.Icon)</visible>
 			</control>
-			<control type="label">
-				<label>$INFO[ListItem.Duration]</label>
-			</control>
 		</itemlayout>
 		<focusedlayout width="1" height="1">
 			<control type="button">
@@ -2028,9 +2076,6 @@
 			<control type="image">
 				<texture>$INFO[ListItem.Icon]</texture>
 				<visible>!String.IsEmpty(ListItem.Icon)</visible>
-			</control>
-			<control type="label">
-				<label>$INFO[ListItem.Duration]</label>
 			</control>
 		</focusedlayout>
 	</include>

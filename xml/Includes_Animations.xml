@@ -27,10 +27,10 @@
 		<animation effect="fade" start="0" end="100" time="350" tween="cubic" easing="inout">Visible</animation>
 		<animation effect="fade" start="0" end="100" time="350" tween="cubic" easing="inout">WindowOpen</animation>
 	</include>
-	<include name="Animation.DelayFadeIn">
+	<!-- <include name="Animation.DelayFadeIn">
 		<animation effect="fade" start="0" end="100" time="550" delay="250" tween="cubic" easing="inout">Visible</animation>
 		<animation effect="fade" start="0" end="100" time="550" delay="250" tween="cubic" easing="inout">WindowOpen</animation>
-	</include>
+	</include> -->
 	<!-- <include name="Animation.DelayVisibleFade">
 		<animation effect="fade" start="100" end="0" time="550" delay="5000" tween="cubic" reversible="false">Hidden</animation>
 		<animation effect="fade" start="100" end="0" time="550" delay="5000" tween="cubic" reversible="false">WindowOpen</animation>

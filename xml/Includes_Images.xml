@@ -46,6 +46,7 @@
 	</variable>
 	<variable name="FanartImage">
 		<value condition="String.StartsWith(ListItem.FolderPath,library://video/emby) + !String.StartsWith(ListItem.FolderPath,library://video/emby_Favorite)">$INFO[ListItem.Thumb]</value>
+		<value condition="String.StartsWith(ListItem.FolderPath,plugin://plugin.video.embycon) + String.StartsWith(ListItem.Label,Library)">$INFO[ListItem.Thumb]</value>
 		<value condition="String.StartsWith(ListItem.FolderPath,plugin://plugin.video.emby/?type=)">$INFO[ListItem.Thumb]</value>
 		<value condition="Window.IsVisible(Home.xml) + !String.IsEmpty(ListItem.Property(background))">$INFO[ListItem.Property(background)]</value>
 		<value condition="!system.getbool(videolibrary.showunwatchedplots)  + String.StartsWith(Container.FolderPath,plugin://plugin.video.emby) + String.Contains(Container.FolderPath,nextup)">$INFO[ListItem.Art(tvshow.landscape)]</value>

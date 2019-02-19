@@ -207,6 +207,9 @@
                         </content>
                         <content limit="25" target="videos" sortby="random">$VAR[SkinShortcutsContinueEpisodes]</content>
                         <content limit="25" target="videos" sortby="random">$VAR[SkinShortcutsContinueMovies]</content>
+                        <content limit="25" target="videos" sortby="random">$VAR[SkinShortcutsContinueEmbyConMovies]</content>
+                        <content limit="25" target="videos" sortby="random">$VAR[SkinShortcutsContinueEmbyConEpisodes]</content>
+                        <content limit="25" target="videos" sortby="random">$VAR[SkinShortcutsContinueEmby]</content>
                         <content limit="25" target="videos" sortby="random">$VAR[SkinShortcutsContent]</content>
                         <include content="EmbyHomeLayout">
                             <param name="widget_width">390</param>

@@ -13,7 +13,15 @@
         <defaultID>continue</defaultID>
         <icon>special://skin/extras/icons/kodi.png</icon>
         <action>ActivateWindow(Videos,special://skin/extras/playlists/InProgress)</action>
-        <visible>Integer.IsGreater(Window(Home).Property(Movies.Count),0) | Integer.IsGreater(Window(Home).Property(TVShows.Count),0)</visible>
+        <visible>!System.HasAddon(plugin.video.emby) | !String.IsEqual(Window(Home).Property(emby_online),true)</visible> 
+    </shortcut>
+    <shortcut>
+        <label>Continue Watching</label>
+        <label2>Continue</label2>
+        <defaultID>continue</defaultID>
+        <icon>special://skin/extras/icons/kodi.png</icon>
+        <action>ActivateWindow(Videos,plugin://plugin.video.emby/?folder=InProgress&amp;mode=browse&amp;server=None,return)</action>
+        <visible>System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)</visible> 
     </shortcut>
     <shortcut>
         <label>In Progress Shows</label>
@@ -29,7 +37,15 @@
         <defaultID>recent</defaultID>
         <icon>special://skin/extras/icons/film.png</icon>
         <action>ActivateWindow(Videos,videodb://recentlyaddedmovies/,return)</action>
-        <visible>Integer.IsGreater(Window(Home).Property(Movies.Count),0) | Integer.IsGreater(Window(Home).Property(TVShows.Count),0)</visible>
+        <visible>Integer.IsGreater(Window(Home).Property(Movies.Count),0)</visible>
+    </shortcut>
+    <shortcut>
+        <label>Latest Media</label>
+        <label2>recentemby</label2>
+        <defaultID>recentemby</defaultID>
+        <icon>special://skin/extras/icons/film.png</icon>
+        <action>ActivateWindow(Videos,plugin://plugin.video.emby/?folder=recentlyadded&amp;mode=browse&amp;server=None&amp;type=movies,return)</action>
+        <visible>!Integer.IsGreater(Window(Home).Property(Movies.Count),0) + System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)</visible> 
     </shortcut>
     <shortcut>
         <label>Live TV Channels</label>

@@ -127,38 +127,47 @@
         </node>
         <node label="32007">
             <node label="32009">
-                <!--Lazy TV-->
-                <shortcut label="Lazy TV" condition="System.HasAddon(script.lazytv)" type="episodes" target="videos" widgetName="LazyTV" icon="special://skin/extras/icons/lazytv.png">special://profile/playlists/video/LazyTV.xsp</shortcut>
-                <!--Advanced Launcher -->
-                <shortcut label="Advanced Launcher" condition="System.HasAddon(plugin.program.advanced.emulator.launcher)" type="programs" target="videos" widgetName="Launchers" icon="special://skin/extras/icons/xbox.png">plugin://plugin.program.advanced.emulator.launcher/?default</shortcut>
-                <!-- Custom Widgets -->
                 <content>addon-program</content>
             </node>
         </node>
         <content>addon-program</content>
-        <node label="Custom Widgets">
-            <shortcut label="$INFO[Skin.String(CustomWidget1)]" path="$INFO[Skin.String(CustomWidget1)]" condition="!String.IsEmpty(Skin.String(CustomWidget1))" icon="special://skin/extras/icons/bookmarks.png">Custom1</shortcut>
-            <shortcut label="$INFO[Skin.String(CustomWidget2)]" path="$INFO[Skin.String(CustomWidget2)]" condition="!String.IsEmpty(Skin.String(CustomWidget2))" icon="special://skin/extras/icons/bookmarks.png">Custom2</shortcut>
-            <shortcut label="$INFO[Skin.String(CustomWidget3)]" path="$INFO[Skin.String(CustomWidget3)]" condition="!String.IsEmpty(Skin.String(CustomWidget3))" icon="special://skin/extras/icons/bookmarks.png">Custom3</shortcut>
-            <shortcut label="$INFO[Skin.String(CustomWidget4)]" path="$INFO[Skin.String(CustomWidget4)]" condition="!String.IsEmpty(Skin.String(CustomWidget4))" icon="special://skin/extras/icons/bookmarks.png">Custom4</shortcut>
-            <shortcut label="$INFO[Skin.String(CustomWidget5)]" path="$INFO[Skin.String(CustomWidget5)]" condition="!String.IsEmpty(Skin.String(CustomWidget5))" icon="special://skin/extras/icons/bookmarks.png">Custom5</shortcut>
-            <shortcut label="$INFO[Skin.String(CustomWidget6)]" path="$INFO[Skin.String(CustomWidget6)]" condition="!String.IsEmpty(Skin.String(CustomWidget6))" icon="special://skin/extras/icons/bookmarks.png">Custom6</shortcut>
-            <shortcut label="$INFO[Skin.String(CustomWidget7)]" path="$INFO[Skin.String(CustomWidget7)]" condition="!String.IsEmpty(Skin.String(CustomWidget7))" icon="special://skin/extras/icons/bookmarks.png">Custom7</shortcut>
-            <shortcut label="$INFO[Skin.String(CustomWidget8)]" path="$INFO[Skin.String(CustomWidget8)]" condition="!String.IsEmpty(Skin.String(CustomWidget8))" icon="special://skin/extras/icons/bookmarks.png">Custom8</shortcut>
-            <shortcut label="$INFO[Skin.String(CustomWidget9)]" path="$INFO[Skin.String(CustomWidget9)]" condition="!String.IsEmpty(Skin.String(CustomWidget9))" icon="special://skin/extras/icons/bookmarks.png">Custom9</shortcut>
-            <shortcut label="$INFO[Skin.String(CustomWidget10)]" path="$INFO[Skin.String(CustomWidget10)]" condition="!String.IsEmpty(Skin.String(CustomWidget10))" icon="special://skin/extras/icons/bookmarks.png">Custom10</shortcut>
-        </node>
+        <content>widgets</content>
+        <!--<node label="Custom Widgets"></node> -->
 	</widget-groupings>
+    <!-- Widgets -->
+    <!--Lazy TV-->
+    <widget label="Lazy TV" condition="System.HasAddon(script.lazytv)" type="episodes" target="videos" icon="special://skin/extras/icons/lazytv.png" path="special://profile/playlists/video/LazyTV.xsp">LazyTV</widget>
+    <!--Advanced Launcher -->
+    <widget label="Advanced Launcher" condition="System.HasAddon(plugin.program.advanced.emulator.launcher)" type="programs" target="videos" icon="special://skin/extras/icons/xbox.png" Path="plugin://plugin.program.advanced.emulator.launcher/?default">launchers</widget>
+    <!-- Emby Widgets -->
+    <widget label="Next Episodes" condition="System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)" icon="special://skin/extras/icons/emby_diff.png" type="episodes" target="videos" path="plugin://plugin.video.emby/?limit=25&amp;mode=nextepisodes">nextepisodes</widget>
+    <widget label="Continue Watching" path="plugin://plugin.video.emby/?folder=InProgress&amp;mode=browse&amp;server=None" condition="System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)" icon="special://skin/extras/icons/emby_diff.png" target="videos">continuewatching</widget>
+    <!-- EmbyCon Widgets -->
+    <widget label="Resume Movies" path="plugin://plugin.video.embycon/?mode=WIDGET_CONTENT&amp;type=inprogress_movies&amp;reload=$INFO[Window(Home).Property(widgetreload-movies)]" condition="System.HasAddon(plugin.video.embycon)" icon="special://skin/extras/icons/emby_diff.png" target="videos">continuewatching</widget>
+    <widget label="Resume Episodes" path="plugin://plugin.video.embycon/?mode=WIDGET_CONTENT&amp;type=inprogress_episodes&amp;reload=$INFO[Window(Home).Property(widgetreload-episodes)]" condition="System.HasAddon(plugin.video.embycon)" icon="special://skin/extras/icons/emby_diff.png" target="videos">continuewatching</widget>
+    <!-- Custom Widgets -->
+    <widget label="Custom1" path="$INFO[Skin.String(CustomWidget1)]" condition="!String.IsEmpty(Skin.String(CustomWidget1))" icon="special://skin/extras/icons/bookmarks.png">Custom1</widget>
+    <widget label="Custom2" path="$INFO[Skin.String(CustomWidget2)]" condition="!String.IsEmpty(Skin.String(CustomWidget2))" icon="special://skin/extras/icons/bookmarks.png">Custom2</widget>
+    <widget label="Custom3" path="$INFO[Skin.String(CustomWidget3)]" condition="!String.IsEmpty(Skin.String(CustomWidget3))" icon="special://skin/extras/icons/bookmarks.png">Custom3</widget>
+    <widget label="Custom4" path="$INFO[Skin.String(CustomWidget4)]" condition="!String.IsEmpty(Skin.String(CustomWidget4))" icon="special://skin/extras/icons/bookmarks.png">Custom4</widget>
+    <widget label="Custom5" path="$INFO[Skin.String(CustomWidget5)]" condition="!String.IsEmpty(Skin.String(CustomWidget5))" icon="special://skin/extras/icons/bookmarks.png">Custom5</widget>
+    <widget label="Custom6" path="$INFO[Skin.String(CustomWidget6)]" condition="!String.IsEmpty(Skin.String(CustomWidget6))" icon="special://skin/extras/icons/bookmarks.png">Custom6</widget>
+    <widget label="Custom7" path="$INFO[Skin.String(CustomWidget7)]" condition="!String.IsEmpty(Skin.String(CustomWidget7))" icon="special://skin/extras/icons/bookmarks.png">Custom7</widget>
+    <widget label="Custom8" path="$INFO[Skin.String(CustomWidget8)]" condition="!String.IsEmpty(Skin.String(CustomWidget8))" icon="special://skin/extras/icons/bookmarks.png">Custom8</widget>
+    <widget label="Custom9" path="$INFO[Skin.String(CustomWidget9)]" condition="!String.IsEmpty(Skin.String(CustomWidget9))" icon="special://skin/extras/icons/bookmarks.png">Custom9</widget>
+    <widget label="Custom10" path="$INFO[Skin.String(CustomWidget10)]" condition="!String.IsEmpty(Skin.String(CustomWidget10))" icon="special://skin/extras/icons/bookmarks.png">Custom10</widget>
     <!-- Custom Propertoes -->
     <propertydefault labelID="22020" property="widgetPath">pvr://channels/tv/*</propertydefault>
     <propertydefault labelID="guide" property="widgetPath">pvr://channels/tv/*</propertydefault>
     <propertydefault labelID="livetv" property="widgetPath">pvr://channels/tv/*</propertydefault>
     <propertydefault labelID="channels" property="widgetPath">pvr://channels/tv/*</propertydefault>
     <propertydefault labelID="livetv" property="widgetPath">pvr://channels/tv/*</propertydefault>
+    <propertydefault labelID="nextepisodes" property="widgetPath">plugin://plugin.video.emby/?limit=25&amp;mode=nextepisodes</propertydefault>
 
     <propertydefault labelID="movies" property="widgetFormat">Poster</propertydefault>
     <propertydefault labelID="sets" property="widgetFormat">Poster</propertydefault>
     <propertydefault labelID="recent" property="widgetFormat">Poster</propertydefault>
+    <propertydefault labelID="recentemby" property="widgetFormat">Poster</propertydefault>
     <propertydefault labelID="collection" property="widgetFormat">Poster</propertydefault>
     <propertydefault labelID="tvshows" property="widgetFormat">Poster</propertydefault>
     <propertydefault labelID="embyconmovies" property="widgetFormat">Poster</propertydefault>
@@ -213,6 +222,7 @@
     <widgetdefaultnode labelID="19019" group="mainmenu" label="Live TV" type="video" path="pvr://channels/tv/*" target="">Live TV</widgetdefaultnode>
     <widgetdefaultnode labelID="nextup" group="mainmenu" label="In Progress Shows" type="episode" path="videodb://inprogresstvshows" target="">In Progress Shows</widgetdefaultnode>
     <widgetdefaultnode labelID="recent" group="mainmenu" label="Recent Movies" type="video" path="videodb://recentlyaddedmovies/" target="">Latest Movies</widgetdefaultnode>
+    <widgetdefaultnode labelID="recentemby" group="mainmenu" label="Latest Media" type="video" path="plugin://plugin.video.emby/?folder=recentlyadded&amp;mode=browse&amp;server=None&amp;type=movies" target="">Latest Media</widgetdefaultnode>
     <widgetdefaultnode labelID="tvshows" group="mainmenu" label="In Progress Shows" type="tvshow" path="videodb://inprogresstvshows" target="">In Progress Shows</widgetdefaultnode>
     <widgetdefaultnode labelID="music" group="mainmenu" label="Recent Albums" type="album" path="musicdb://recentlyaddedalbums/" target="">Recent Albums</widgetdefaultnode>
     <widgetdefaultnode labelID="programs" group="mainmenu" label="Programs" type="video" path="addons://sources/executable" target="">Programs</widgetdefaultnode>
@@ -305,9 +315,11 @@
     <backgrounddefault defaultID="power">special://skin/extras/backgrounds/kodi.jpg</backgrounddefault>
 	<backgrounddefault defaultID="collection" group="movies">special://skin/extras/backgrounds/sets.jpg</backgrounddefault>
     <backgrounddefault defaultID="emby">special://skin/extras/backgrounds/Emby.jpg</backgrounddefault>
+    <backgrounddefault defaultID="nextepisodes">special://skin/extras/backgrounds/Emby.jpg</backgrounddefault>
     <!-- Warning to Remove Settings -->
     <warn heading="31176" message="31177">ActivateWindow(Settings)</warn>
     <!-- Icon Overrides -->
+    <icon labelID="nextepisodes">special://skin/extras/icons/emby_diff.png</icon>
     <icon labelID="embycontv">special://skin/extras/icons/emby_diff.png</icon>
     <icon labelID="embyconmovies">special://skin/extras/icons/emby_diff.png</icon>
 	<icon labelID="episodeshub">special://skin/extras/icons/tv.png</icon>
