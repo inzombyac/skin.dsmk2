@@ -136,7 +136,7 @@
 	</widget-groupings>
     <!-- Widgets -->
     <!--Lazy TV-->
-    <widget label="Lazy TV" condition="System.HasAddon(script.lazytv)" type="episodes" target="videos" icon="special://skin/extras/icons/lazytv.png" path="special://profile/playlists/video/LazyTV.xsp">LazyTV</widget>
+    <widget label="Lazy TV" condition="System.HasAddon(script.lazytv)" type="episodes" target="videos" icon="special://skin/extras/icons/lazytv.png" path="special://profile/playlists/video/LazyTV.xsp">lazytv</widget>
     <!--Advanced Launcher -->
     <widget label="Advanced Launcher" condition="System.HasAddon(plugin.program.advanced.emulator.launcher)" type="programs" target="videos" icon="special://skin/extras/icons/xbox.png" Path="plugin://plugin.program.advanced.emulator.launcher/?default">launchers</widget>
     <!-- Emby Widgets -->
@@ -145,6 +145,8 @@
     <!-- EmbyCon Widgets -->
     <widget label="Resume Movies" path="plugin://plugin.video.embycon/?mode=WIDGET_CONTENT&amp;type=inprogress_movies&amp;reload=$INFO[Window(Home).Property(widgetreload-movies)]" condition="System.HasAddon(plugin.video.embycon)" icon="special://skin/extras/icons/emby_diff.png" target="videos">continuewatching</widget>
     <widget label="Resume Episodes" path="plugin://plugin.video.embycon/?mode=WIDGET_CONTENT&amp;type=inprogress_episodes&amp;reload=$INFO[Window(Home).Property(widgetreload-episodes)]" condition="System.HasAddon(plugin.video.embycon)" icon="special://skin/extras/icons/emby_diff.png" target="videos">continuewatching</widget>
+    <widget label="Next Episodes" path="plugin://plugin.video.embycon/?mode=WIDGET_CONTENT&amp;type=nextup_episodes&amp;reload=$INFO[Window(Home).Property(widgetreload-episodes)]" condition="System.HasAddon(plugin.video.embycon)" icon="special://skin/extras/icons/emby_diff.png" target="videos">nextepisodesembycon</widget>
+    <widget label="Latest Movies" path="plugin://plugin.video.embycon/?mode=WIDGET_CONTENT&amp;type=recent_movies&amp;reload=$INFO[Window(Home).Property(widgetreload-movies)]" condition="System.HasAddon(plugin.video.embycon)" icon="special://skin/extras/icons/emby_diff.png" target="videos">recentmoviesembycon</widget>
     <!-- Custom Widgets -->
     <widget label="Custom1" path="$INFO[Skin.String(CustomWidget1)]" condition="!String.IsEmpty(Skin.String(CustomWidget1))" icon="special://skin/extras/icons/bookmarks.png">Custom1</widget>
     <widget label="Custom2" path="$INFO[Skin.String(CustomWidget2)]" condition="!String.IsEmpty(Skin.String(CustomWidget2))" icon="special://skin/extras/icons/bookmarks.png">Custom2</widget>
@@ -162,7 +164,9 @@
     <propertydefault labelID="livetv" property="widgetPath">pvr://channels/tv/*</propertydefault>
     <propertydefault labelID="channels" property="widgetPath">pvr://channels/tv/*</propertydefault>
     <propertydefault labelID="livetv" property="widgetPath">pvr://channels/tv/*</propertydefault>
-    <propertydefault labelID="nextepisodes" property="widgetPath">plugin://plugin.video.emby/?limit=25&amp;mode=nextepisodes</propertydefault>
+    <propertydefault labelID="nextepisodes" property="widgetPath">plugin://plugin.video.emby/?limit=25&amp;mode=nextepisodes&amp;reload=$INFO[Window(Home).Property(widgetreload-episodes)]</propertydefault>
+    <propertydefault labelID="nextepisodesembycon" property="widgetPath">plugin://plugin.video.embycon/?mode=WIDGET_CONTENT&amp;type=nextup_episodes&amp;reload=$INFO[Window(Home).Property(widgetreload-episodes)]</propertydefault>
+    <propertydefault labelID="recentmoviesembycon" property="widgetPath">plugin://plugin.video.embycon/?mode=WIDGET_CONTENT&amp;type=recent_movies&amp;reload=$INFO[Window(Home).Property(widgetreload-movies)]</propertydefault>
 
     <propertydefault labelID="movies" property="widgetFormat">Poster</propertydefault>
     <propertydefault labelID="sets" property="widgetFormat">Poster</propertydefault>
@@ -170,7 +174,7 @@
     <propertydefault labelID="recentemby" property="widgetFormat">Poster</propertydefault>
     <propertydefault labelID="collection" property="widgetFormat">Poster</propertydefault>
     <propertydefault labelID="tvshows" property="widgetFormat">Poster</propertydefault>
-    <propertydefault labelID="embyconmovies" property="widgetFormat">Poster</propertydefault>
+    <propertydefault labelID="recentmoviesembycon" property="widgetFormat">Poster</propertydefault>
     <propertydefault labelID="music" property="widgetFormat">Square</propertydefault>
     <propertydefault labelID="musicvideos" property="widgetFormat">Square</propertydefault>
     <propertydefault labelID="10007" property="widgetFormat">System</propertydefault>
@@ -206,7 +210,7 @@
     <propertydefault labelID="10007" property="type">sysinfo</propertydefault>
     <propertydefault labelID="power" property="type">power</propertydefault>
 	<propertydefault labelID="collection" property="type">collection</propertydefault>
-    <propertydefault labelID="embyconmovies" property="type">movie</propertydefault>
+    <propertydefault labelID="recentmoviesembycon" property="type">movie</propertydefault>
     <propertydefault labelID="embycontv" property="type">tvshow</propertydefault>
     <propertydefault labelID="library" property="type">video</propertydefault>
     <propertydefault labelID="nextup" property="type">episode</propertydefault>
@@ -321,7 +325,7 @@
     <!-- Icon Overrides -->
     <icon labelID="nextepisodes">special://skin/extras/icons/emby_diff.png</icon>
     <icon labelID="embycontv">special://skin/extras/icons/emby_diff.png</icon>
-    <icon labelID="embyconmovies">special://skin/extras/icons/emby_diff.png</icon>
+    <icon labelID="recentmoviesembycon">special://skin/extras/icons/emby_diff.png</icon>
 	<icon labelID="episodeshub">special://skin/extras/icons/tv.png</icon>
     <icon labelID="movieshub">special://skin/extras/icons/film.png</icon>
     <icon labelID="livetv">special://skin/extras/icons/livetv.png</icon>
