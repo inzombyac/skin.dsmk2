@@ -17,7 +17,7 @@
                 <width>800</width>
                 <height>100</height>
                 <colordiffuse>Light1</colordiffuse>
-                <animation effect="fade" start="100" end="90" condition="[!Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation)]">Conditional</animation>
+                <animation effect="fade" start="100" end="90" condition="true">Conditional</animation>
                 <texture border="16">common/rounded-shadow8.png</texture>
             </control>
             <control type="group">          

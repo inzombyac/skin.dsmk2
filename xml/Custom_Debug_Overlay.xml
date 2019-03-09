@@ -249,6 +249,12 @@
 
                 <control type="label">
                     <include>DialogID</include>
+                    <label>DialogNotification.xml</label>
+                    <visible>Window.IsVisible(DialogNotification.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
                     <label>DialogKaraokeSongSelector.xml</label>
                     <visible>Window.IsVisible(DialogKaraokeSongSelector.xml)</visible>
                 </control>

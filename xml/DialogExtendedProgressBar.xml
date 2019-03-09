@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Foundation -->
 <window type="dialog">
-    <onload condition="Library.IsScanningVideo + Skin.HasSetting(UpdateArt.Enabled)">SetProperty(UpdateArt,1)</onload>
-    <onunload condition="!String.IsEmpty(Window.Property(UpdateArt)) + Skin.HasSetting(UpdateArt.Enabled)">XBMC.RunScript(script.artwork.downloader,mode=custom,silent=true,landscape,clearlogo,clearart)</onunload>
-    <onunload condition="!String.IsEmpty(Window.Property(UpdateArt)) + Skin.HasSetting(UpdateArt.Enabled)">ClearProperty(UpdateArt)</onunload>
     <controls>
         <control type="group">
             <top>10</top>
@@ -12,17 +9,19 @@
             <height>100</height>
             <include>Animation.FadeIn.Slide</include>
             <include>Animation.FadeOut</include>
-            <visible>!Window.IsActive(DialogKaiToast.xml)</visible>
+            <!--<visible>!Window.IsActive(DialogKaiToast.xml)</visible>-->
             <visible>!Window.IsVisible(fullscreenvideo)</visible>
             <visible>!Window.IsVisible(visualisation)</visible>
+            <animation effect="slide" start="0" end="0,110" time="150" condition="Window.IsActive(DialogNotification.xml) | Window.IsActive(DialogKaiToast.xml)">Conditional</animation>
             <control type="image">
                 <description>background image</description>
                 <posx>0</posx>
                 <posy>0</posy>
                 <width>800</width>
                 <height>100</height>
+                <colordiffuse>Light1</colordiffuse>
                 <animation effect="fade" start="100" end="90" condition="true">Conditional</animation>
-                <texture border="16" colordiffuse="Background">common/rounded-shadow8.png</texture>
+                <texture border="16">common/rounded-shadow8.png</texture>
             </control>
             <control type="group">
                 <control type="group">
