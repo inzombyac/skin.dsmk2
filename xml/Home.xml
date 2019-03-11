@@ -5,7 +5,7 @@
 	<menucontrol>9000</menucontrol>
 	<onload condition="System.HasAddon(script.favourites)">RunScript(script.favourites)</onload>
 	<onload condition="String.IsEmpty(Skin.String(focuscolor.name))">Skin.SetString(focuscolor.name,FF0fd39e)</onload>
-	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=300&amp;group=mainmenu|movieshub|episodeshub|library)</onload>
+	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=300&amp;group=mainmenu|movieshub|episodeshub)</onload>
 	<onload condition="Pvr.HasTimer + !Skin.HasSetting(recording.shown) + !Skin.HasSetting(login.reset)">Notification(Next Recording,$VAR[LabelNextRecording],1500,indicator/recording.png)</onload>
 	<controls>
 		<include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
