@@ -1,3 +1,7 @@
+1.0.5
+- Fix default control on the home page
+- Notification updates
+
 1.0.4
 - Add EmbyCon shortcuts and widgets for continue, nextup and recent movies
 - Update continue widget to use Emby and EmbyCon if addons exist
