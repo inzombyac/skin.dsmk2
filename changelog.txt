@@ -1,3 +1,6 @@
+1.0.6
+- Update Emby libraries to use the window properties - Allows for faster load and better images.
+
 1.0.5
 - Fix default control on the home page
 - Notification updates

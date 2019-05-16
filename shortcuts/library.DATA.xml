@@ -16,7 +16,7 @@
         <icon>special://skin/extras/icons/tv.png</icon>
         <action>ActivateWindow(Videos,TVShowTitles,return)</action>
         <thumb>$VAR[EmbyHomeTVThumb]</thumb>
-        <visible>!System.HasAddon(plugin.video.emby) | !String.IsEqual(Window(Home).Property(emby_online),true)</visible>
+        <visible>!System.HasAddon(plugin.video.emby) | String.IsEmpty(Window(home).Property(emby.nodes.0.path))</visible>
     </shortcut>
     <shortcut>
         <label>Movies</label>
@@ -25,7 +25,7 @@
         <icon>special://skin/extras/icons/film.png</icon>
         <action>ActivateWindow(Videos,MovieTitles,return)</action>
         <thumb>$VAR[EmbyHomeMovieThumb]</thumb>
-        <visible>!System.HasAddon(plugin.video.emby) | !String.IsEqual(Window(Home).Property(emby_online),true)</visible>
+        <visible>!System.HasAddon(plugin.video.emby) | String.IsEmpty(Window(home).Property(emby.nodes.0.path))</visible>
     </shortcut>
     <shortcut>
         <label>Collections</label>
@@ -34,7 +34,7 @@
         <icon>special://skin/extras/icons/shipping.png</icon>
         <thumb>special://skin/extras/backgrounds/sets.jpg</thumb>
         <action>ActivateWindow(Videos,videodb://movies/sets/,return)</action>
-        <visible>Integer.IsGreater(Window(Home).Property(Movies.Count),0) + [!System.HasAddon(plugin.video.emby) | !String.IsEqual(Window(Home).Property(emby_online),true)]</visible>
+        <visible>Integer.IsGreater(Window(Home).Property(Movies.Count),0) + [!System.HasAddon(plugin.video.emby) | String.IsEmpty(Window(home).Property(emby.nodes.0.path))]</visible>
     </shortcut>
     <shortcut>
         <label>Music</label>
@@ -68,7 +68,7 @@
         <thumb>special://skin/extras/backgrounds/orbs.jpg</thumb>
         <icon>special://skin/extras/icons/addons.png</icon>
         <action>ActivateWindow(Videos)</action>
-        <visible>!System.HasAddon(plugin.video.emby) | !String.IsEqual(Window(Home).Property(emby_online),true)</visible>
+        <visible>!System.HasAddon(plugin.video.emby) | String.IsEmpty(Window(home).Property(emby.nodes.0.path))</visible>
     </shortcut>
     <shortcut>
         <label>Favorites</label>
@@ -76,7 +76,7 @@
         <icon>special://skin/extras/icons/favorite.png</icon>
         <thumb>special://skin/extras/backgrounds/favorites.jpg</thumb>
         <action>ActivateWindow(Favourites)</action>
-        <visible>[Integer.IsGreater(Window(Home).Property(TVShows.Count),0) | Integer.IsGreater(Window(Home).Property(Movies.Count),0) | Integer.IsGreater(Window(Home).Property(Music.SongsCount),0)] + [!System.HasAddon(plugin.video.emby) | !String.IsEqual(Window(Home).Property(emby_online),true)]</visible>
+        <visible>[Integer.IsGreater(Window(Home).Property(TVShows.Count),0) | Integer.IsGreater(Window(Home).Property(Movies.Count),0) | Integer.IsGreater(Window(Home).Property(Music.SongsCount),0)] + [!System.HasAddon(plugin.video.emby) | String.IsEmpty(Window(home).Property(emby.nodes.0.path))]</visible>
     </shortcut>
     <shortcut>
         <label>Programs</label>

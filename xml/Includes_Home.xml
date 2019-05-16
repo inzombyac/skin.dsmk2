@@ -87,11 +87,22 @@
             </control>
 			<control type="label">
                 <include>ControlID4</include>
-				<label>$INFO[ListItem.FolderPath]</label>
+                <label>$INFO[Window(home).Property(emby.nodes.0.id)] </label>
+				<!-- 
+				<label>$INFO[Window(home).Property(emby.nodes.0.content)] </label>
+				<label>$INFO[Window(home).Property(emby.nodes.5.path)]</label> 
+				<label>$INFO[Window(home).Property(emby.nodes.0.path)] </label>
+				<label>$INFO[Window(home).Property(emby.nodes.0.artwork)] </label>
+				<label>$INFO[Window(home).Property(emby.nodes.0.title)] </label>
+				<label>$INFO[Window(home).Property(emby.nodes.14.type)] </label>
+				<label>$INFO[Window(home).Property(Emby.nodes.total)]</label>
+				<label>$INFO[Window(Home).Property(emby_online)]</label>
+				<label>$INFO[Window(home).Property(emby.nodes.0.id)] </label>
+				-->
             </control>
            <control type="label">
                 <include>ControlID5</include>
-				<label>$INFO[Container(4011).NumItems]</label>
+				<label>$INFO[Window(Home).Property(emby_online),Emby Online: ,]</label>
             </control>
 		</control>
 	</include>
@@ -115,7 +126,6 @@
 				<include>EmbyWidgetPanel2</include>
 				<include>EmbyWidgetPanel1</include>
 				<include>EmbyLibraryPanel</include>
-				<include condition="System.HasAddon(plugin.video.emby)">EmbyHomeContentContainer</include>
 			</control>
 		</control>
 		<include>EmbyFooter</include>
@@ -1073,14 +1083,6 @@
 			</control>
 		</definition>
 	</include>
-	<include name="EmbyHomeContentContainer">
-		<definition>
-			<control type="panel" id="4011">
-				<content target="videos">plugin://plugin.video.emby/?reload=$INFO[Window(Home).Property(emby_online)]</content>
-				<include content="EmbyHiddenItemLayout"></include>
-			</control>
-		</definition>
-	</include>
 	<include name="EmbyHomeLayout">
 	  <param name="widget_width" default="455"/>
 	  <param name="item_width" default="395"/>
@@ -1861,193 +1863,151 @@
 				<onclick>ActivateWindow(Videos,plugin://plugin.video.emby, return)</onclick>
 			</item>
 			<item>
-				<label>$INFO[Container(4011).ListItem(0).Label]</label>
-				<thumb>$INFO[Container(4011).ListItem(0).Thumb]</thumb>
-				<label2>Emby Library 0</label2>
+				<label>$INFO[Window(home).Property(emby.nodes.0.title)]</label>
+				<thumb>$INFO[Window(home).Property(emby.nodes.0.artwork)]</thumb>
+				<label2>$INFO[Window(home).Property(emby.nodes.0.type)]</label2>
 				<onclick>$VAR[EmbyNode00Path]</onclick>
-				<visible>String.StartsWith(Container(4011).ListItem(0).FolderPath,plugin://plugin.video.emby/?type=) | String.StartsWith(Container(4011).ListItem(0).FolderPath,library://video)</visible>
-				<visible>!String.StartsWith(Container(4011).ListItem(0).FolderPath,library://video/emby_Fav)</visible>
-				<visible>Integer.IsGreater(Container(4011).NumItems,0)</visible>
+				<visible>!String.IsEmpty(Window(home).Property(emby.nodes.0.path)) + !String.IsEqual(Window(home).Property(emby.nodes.0.type),favorites)</visible>
 			</item>
 			<item>
-				<label>$INFO[Container(4011).ListItem(1).Label]</label>
-				<thumb>$INFO[Container(4011).ListItem(1).Thumb]</thumb>
-				<label2>Emby Library 1</label2>
+				<label>$INFO[Window(home).Property(emby.nodes.1.title)]</label>
+				<thumb>$INFO[Window(home).Property(emby.nodes.1.artwork)]</thumb>
+				<label2>$INFO[Window(home).Property(emby.nodes.1.type)]</label2>
 				<onclick>$VAR[EmbyNode01Path]</onclick>
-				<visible>String.StartsWith(Container(4011).ListItem(1).FolderPath,plugin://plugin.video.emby/?type=) | String.StartsWith(Container(4011).ListItem(1).FolderPath,library://video)</visible>
-				<visible>!String.StartsWith(Container(4011).ListItem(1).FolderPath,library://video/emby_Fav)</visible>
-				<visible>Integer.IsGreater(Container(4011).NumItems,1)</visible>
+				<visible>!String.IsEmpty(Window(home).Property(emby.nodes.1.path)) + !String.IsEqual(Window(home).Property(emby.nodes.1.type),favorites)</visible>
 			</item>
 			<item>
-				<label>$INFO[Container(4011).ListItem(2).Label]</label>
-				<thumb>$INFO[Container(4011).ListItem(2).Thumb]</thumb>
-				<label2>Emby Library 2</label2>
+				<label>$INFO[Window(home).Property(emby.nodes.2.title)]</label>
+				<thumb>$INFO[Window(home).Property(emby.nodes.2.artwork)]</thumb>
+				<label2>$INFO[Window(home).Property(emby.nodes.2.type)]</label2>
 				<onclick>$VAR[EmbyNode02Path]</onclick>
-				<visible>String.StartsWith(Container(4011).ListItem(2).FolderPath,plugin://plugin.video.emby/?type=) | String.StartsWith(Container(4011).ListItem(2).FolderPath,library://video)</visible>
-				<visible>!String.StartsWith(Container(4011).ListItem(2).FolderPath,library://video/emby_Fav)</visible>
-				<visible>Integer.IsGreater(Container(4011).NumItems,2)</visible>
+				<visible>!String.IsEmpty(Window(home).Property(emby.nodes.2.path)) + !String.IsEqual(Window(home).Property(emby.nodes.2.type),favorites)</visible>
 			</item>
 			<item>
-				<label>$INFO[Container(4011).ListItem(3).Label]</label>
-				<thumb>$INFO[Container(4011).ListItem(3).Thumb]</thumb>
-				<label2>Emby Library 3</label2>
+				<label>$INFO[Window(home).Property(emby.nodes.3.title)]</label>
+				<thumb>$INFO[Window(home).Property(emby.nodes.3.artwork)]</thumb>
+				<label2>$INFO[Window(home).Property(emby.nodes.3.type)]</label2>
 				<onclick>$VAR[EmbyNode03Path]</onclick>
-				<visible>String.StartsWith(Container(4011).ListItem(3).FolderPath,plugin://plugin.video.emby/?type=) | String.StartsWith(Container(4011).ListItem(3).FolderPath,library://video)</visible>
-				<visible>!String.StartsWith(Container(4011).ListItem(3).FolderPath,library://video/emby_Fav)</visible>
-				<visible>Integer.IsGreater(Container(4011).NumItems,3)</visible>
+				<visible>!String.IsEmpty(Window(home).Property(emby.nodes.3.path)) + !String.IsEqual(Window(home).Property(emby.nodes.3.type),favorites)</visible>
 			</item>
 			<item>
-				<label>$INFO[Container(4011).ListItem(4).Label]</label>
-				<thumb>$INFO[Container(4011).ListItem(4).Thumb]</thumb>
-				<label2>Emby Library 4</label2>
+				<label>$INFO[Window(home).Property(emby.nodes.4.title)]</label>
+				<thumb>$INFO[Window(home).Property(emby.nodes.4.artwork)]</thumb>
+				<label2>$INFO[Window(home).Property(emby.nodes.4.type)]</label2>
 				<onclick>$VAR[EmbyNode04Path]</onclick>
-				<visible>String.StartsWith(Container(4011).ListItem(4).FolderPath,plugin://plugin.video.emby/?type=) | String.StartsWith(Container(4011).ListItem(4).FolderPath,library://video)</visible>
-				<visible>!String.StartsWith(Container(4011).ListItem(4).FolderPath,library://video/emby_Fav)</visible>
-				<visible>Integer.IsGreater(Container(4011).NumItems,4)</visible>
+				<visible>!String.IsEmpty(Window(home).Property(emby.nodes.4.path)) + !String.IsEqual(Window(home).Property(emby.nodes.4.type),favorites)</visible>
 			</item>
 			<item>
-				<label>$INFO[Container(4011).ListItem(5).Label]</label>
-				<thumb>$INFO[Container(4011).ListItem(5).Thumb]</thumb>
-				<label2>Emby Library 5</label2>
+				<label>$INFO[Window(home).Property(emby.nodes.5.title)]</label>
+				<thumb>$INFO[Window(home).Property(emby.nodes.5.artwork)]</thumb>
+				<label2>$INFO[Window(home).Property(emby.nodes.5.type)]</label2>
 				<onclick>$VAR[EmbyNode05Path]</onclick>
-				<visible>String.StartsWith(Container(4011).ListItem(5).FolderPath,plugin://plugin.video.emby/?type=) | String.StartsWith(Container(4011).ListItem(5).FolderPath,library://video)</visible>
-				<visible>!String.StartsWith(Container(4011).ListItem(5).FolderPath,library://video/emby_Fav)</visible>
-				<visible>Integer.IsGreater(Container(4011).NumItems,5)</visible>
+				<visible>!String.IsEmpty(Window(home).Property(emby.nodes.5.path)) + !String.IsEqual(Window(home).Property(emby.nodes.5.type),favorites)</visible>
 			</item>
 			<item>
-				<label>$INFO[Container(4011).ListItem(6).Label]</label>
-				<thumb>$INFO[Container(4011).ListItem(6).Thumb]</thumb>
-				<label2>Emby Library 6</label2>
+				<label>$INFO[Window(home).Property(emby.nodes.6.title)]</label>
+				<thumb>$INFO[Window(home).Property(emby.nodes.6.artwork)]</thumb>
+				<label2>$INFO[Window(home).Property(emby.nodes.6.type)]</label2>
 				<onclick>$VAR[EmbyNode06Path]</onclick>
-				<visible>String.StartsWith(Container(4011).ListItem(6).FolderPath,plugin://plugin.video.emby/?type=) | String.StartsWith(Container(4011).ListItem(6).FolderPath,library://video)</visible>
-				<visible>!String.StartsWith(Container(4011).ListItem(6).FolderPath,library://video/emby_Fav)</visible>
-				<visible>Integer.IsGreater(Container(4011).NumItems,6)</visible>
+				<visible>!String.IsEmpty(Window(home).Property(emby.nodes.6.path)) + !String.IsEqual(Window(home).Property(emby.nodes.6.type),favorites)</visible>
 			</item>
 			<item>
-				<label>$INFO[Container(4011).ListItem(7).Label]</label>
-				<thumb>$INFO[Container(4011).ListItem(7).Thumb]</thumb>
-				<label2>Emby Library 7</label2>
+				<label>$INFO[Window(home).Property(emby.nodes.7.title)]</label>
+				<thumb>$INFO[Window(home).Property(emby.nodes.7.artwork)]</thumb>
+				<label2>$INFO[Window(home).Property(emby.nodes.7.type)]</label2>
 				<onclick>$VAR[EmbyNode07Path]</onclick>
-				<visible>String.StartsWith(Container(4011).ListItem(7).FolderPath,plugin://plugin.video.emby/?type=) | String.StartsWith(Container(4011).ListItem(7).FolderPath,library://video)</visible>
-				<visible>!String.StartsWith(Container(4011).ListItem(7).FolderPath,library://video/emby_Fav)</visible>
-				<visible>Integer.IsGreater(Container(4011).NumItems,7)</visible>
+				<visible>!String.IsEmpty(Window(home).Property(emby.nodes.7.path)) + !String.IsEqual(Window(home).Property(emby.nodes.7.type),favorites)</visible>
 			</item>
 			<item>
-				<label>$INFO[Container(4011).ListItem(8).Label]</label>
-				<thumb>$INFO[Container(4011).ListItem(8).Thumb]</thumb>
-				<label2>Emby Library 8</label2>
+				<label>$INFO[Window(home).Property(emby.nodes.8.title)]</label>
+				<thumb>$INFO[Window(home).Property(emby.nodes.8.artwork)]</thumb>
+				<label2>$INFO[Window(home).Property(emby.nodes.8.type)]</label2>
 				<onclick>$VAR[EmbyNode08Path]</onclick>
-				<visible>String.StartsWith(Container(4011).ListItem(8).FolderPath,plugin://plugin.video.emby/?type=) | String.StartsWith(Container(4011).ListItem(8).FolderPath,library://video)</visible>
-				<visible>!String.StartsWith(Container(4011).ListItem(8).FolderPath,library://video/emby_Fav)</visible>
-				<visible>Integer.IsGreater(Container(4011).NumItems,8)</visible>
+				<visible>!String.IsEmpty(Window(home).Property(emby.nodes.8.path)) + !String.IsEqual(Window(home).Property(emby.nodes.8.type),favorites)</visible>
 			</item>
 			<item>
-				<label>$INFO[Container(4011).ListItem(9).Label]</label>
-				<thumb>$INFO[Container(4011).ListItem(9).Thumb]</thumb>
-				<label2>Emby Library 9</label2>
+				<label>$INFO[Window(home).Property(emby.nodes.9.title)]</label>
+				<thumb>$INFO[Window(home).Property(emby.nodes.9.artwork)]</thumb>
+				<label2>$INFO[Window(home).Property(emby.nodes.9.type)]</label2>
 				<onclick>$VAR[EmbyNode09Path]</onclick>
-				<visible>String.StartsWith(Container(4011).ListItem(9).FolderPath,plugin://plugin.video.emby/?type=) | String.StartsWith(Container(4011).ListItem(9).FolderPath,library://video)</visible>
-				<visible>!String.StartsWith(Container(4011).ListItem(9).FolderPath,library://video/emby_Fav)</visible>
-				<visible>Integer.IsGreater(Container(4011).NumItems,9)</visible>
+				<visible>!String.IsEmpty(Window(home).Property(emby.nodes.9.path)) + !String.IsEqual(Window(home).Property(emby.nodes.9.type),favorites)</visible>
 			</item>
 			<item>
-				<label>$INFO[Container(4011).ListItem(10).Label]</label>
-				<thumb>$INFO[Container(4011).ListItem(10).Thumb]</thumb>
-				<label2>Emby Library 10</label2>
+				<label>$INFO[Window(home).Property(emby.nodes.10.title)]</label>
+				<thumb>$INFO[Window(home).Property(emby.nodes.10.artwork)]</thumb>
+				<label2>$INFO[Window(home).Property(emby.nodes.10.type)]</label2>
 				<onclick>$VAR[EmbyNode10Path]</onclick>
-				<visible>String.StartsWith(Container(4011).ListItem(10).FolderPath,plugin://plugin.video.emby/?type=) | String.StartsWith(Container(4011).ListItem(10).FolderPath,library://video)</visible>
-				<visible>!String.StartsWith(Container(4011).ListItem(10).FolderPath,library://video/emby_Fav)</visible>
-				<visible>Integer.IsGreater(Container(4011).NumItems,10)</visible>
+				<visible>!String.IsEmpty(Window(home).Property(emby.nodes.10.path)) + !String.IsEqual(Window(home).Property(emby.nodes.10.type),favorites)</visible>
 			</item>
 			<item>
-				<label>$INFO[Container(4011).ListItem(11).Label]</label>
-				<thumb>$INFO[Container(4011).ListItem(11).Thumb]</thumb>
-				<label2>Emby Library 11</label2>
+				<label>$INFO[Window(home).Property(emby.nodes.11.title)]</label>
+				<thumb>$INFO[Window(home).Property(emby.nodes.11.artwork)]</thumb>
+				<label2>$INFO[Window(home).Property(emby.nodes.11.type)]</label2>
 				<onclick>$VAR[EmbyNode11Path]</onclick>
-				<visible>String.StartsWith(Container(4011).ListItem(11).FolderPath,plugin://plugin.video.emby/?type=) | String.StartsWith(Container(4011).ListItem(11).FolderPath,library://video)</visible>
-				<visible>!String.StartsWith(Container(4011).ListItem(11).FolderPath,library://video/emby_Fav)</visible>
-				<visible>Integer.IsGreater(Container(4011).NumItems,11)</visible>
+				<visible>!String.IsEmpty(Window(home).Property(emby.nodes.11.path)) + !String.IsEqual(Window(home).Property(emby.nodes.11.type),favorites)</visible>
 			</item>
 			<item>
-				<label>$INFO[Container(4011).ListItem(12).Label]</label>
-				<thumb>$INFO[Container(4011).ListItem(12).Thumb]</thumb>
-				<label2>Emby Library 12</label2>
+				<label>$INFO[Window(home).Property(emby.nodes.12.title)]</label>
+				<thumb>$INFO[Window(home).Property(emby.nodes.12.artwork)]</thumb>
+				<label2>$INFO[Window(home).Property(emby.nodes.12.type)]</label2>
 				<onclick>$VAR[EmbyNode12Path]</onclick>
-				<visible>[String.StartsWith(Container(4011).ListItem(12).FolderPath,plugin://plugin.video.emby/?type=) | String.StartsWith(Container(4011).ListItem(12).FolderPath,library://video)]</visible>
-				<visible>!String.StartsWith(Container(4011).ListItem(12).FolderPath,library://video/emby_Fav)</visible>
-				<visible>Integer.IsGreater(Container(4011).NumItems,12)</visible>
+				<visible>!String.IsEmpty(Window(home).Property(emby.nodes.12.path)) + !String.IsEqual(Window(home).Property(emby.nodes.12.type),favorites)</visible>
 			</item>
 			<item>
-				<label>$INFO[Container(4011).ListItem(13).Label]</label>
-				<thumb>$INFO[Container(4011).ListItem(13).Thumb]</thumb>
-				<label2>Emby Library 13</label2>
+				<label>$INFO[Window(home).Property(emby.nodes.13.title)]</label>
+				<thumb>$INFO[Window(home).Property(emby.nodes.13.artwork)]</thumb>
+				<label2>$INFO[Window(home).Property(emby.nodes.13.type)]</label2>
 				<onclick>$VAR[EmbyNode13Path]</onclick>
-				<visible>String.StartsWith(Container(4011).ListItem(13).FolderPath,plugin://plugin.video.emby/?type=) | String.StartsWith(Container(4011).ListItem(13).FolderPath,library://video)</visible>
-				<visible>!String.StartsWith(Container(4011).ListItem(13).FolderPath,library://video/emby_Fav)</visible>
-				<visible>Integer.IsGreater(Container(4011).NumItems,13)</visible>
+				<visible>!String.IsEmpty(Window(home).Property(emby.nodes.13.path)) + !String.IsEqual(Window(home).Property(emby.nodes.13.type),favorites)</visible>
 			</item>
 			<item>
-				<label>$INFO[Container(4011).ListItem(14).Label]</label>
-				<thumb>$INFO[Container(4011).ListItem(14).Thumb]</thumb>
-				<label2>Emby Library 14</label2>
+				<label>$INFO[Window(home).Property(emby.nodes.14.title)]</label>
+				<thumb>$INFO[Window(home).Property(emby.nodes.14.artwork)]</thumb>
+				<label2>$INFO[Window(home).Property(emby.nodes.14.type)]</label2>
 				<onclick>$VAR[EmbyNode14Path]</onclick>
-				<visible>String.StartsWith(Container(4011).ListItem(14).FolderPath,plugin://plugin.video.emby/?type=) | String.StartsWith(Container(4011).ListItem(14).FolderPath,library://video)</visible>
-				<visible>!String.StartsWith(Container(4011).ListItem(14).FolderPath,library://video/emby_Fav)</visible>
-				<visible>Integer.IsGreater(Container(4011).NumItems,14)</visible>
+				<visible>!String.IsEmpty(Window(home).Property(emby.nodes.14.path)) + !String.IsEqual(Window(home).Property(emby.nodes.14.type),favorites)</visible>
 			</item>
 			<item>
-				<label>$INFO[Container(4011).ListItem(15).Label]</label>
-				<thumb>$INFO[Container(4011).ListItem(15).Thumb]</thumb>
-				<label2>Emby Library 15</label2>
+				<label>$INFO[Window(home).Property(emby.nodes.15.title)]</label>
+				<thumb>$INFO[Window(home).Property(emby.nodes.15.artwork)]</thumb>
+				<label2>$INFO[Window(home).Property(emby.nodes.15.type)]</label2>
 				<onclick>$VAR[EmbyNode15Path]</onclick>
-				<visible>String.StartsWith(Container(4011).ListItem(15).FolderPath,plugin://plugin.video.emby/?type=) | String.StartsWith(Container(4011).ListItem(15).FolderPath,library://video)</visible>
-				<visible>!String.StartsWith(Container(4011).ListItem(15).FolderPath,library://video/emby_Fav)</visible>
-				<visible>Integer.IsGreater(Container(4011).NumItems,15)</visible>
+				<visible>!String.IsEmpty(Window(home).Property(emby.nodes.15.path)) + !String.IsEqual(Window(home).Property(emby.nodes.15.type),favorites)</visible>
 			</item>
 			<item>
-				<label>$INFO[Container(4011).ListItem(16).Label]</label>
-				<thumb>$INFO[Container(4011).ListItem(16).Thumb]</thumb>
-				<label2>Emby Library 16</label2>
+				<label>$INFO[Window(home).Property(emby.nodes.16.title)]</label>
+				<thumb>$INFO[Window(home).Property(emby.nodes.16.artwork)]</thumb>
+				<label2>$INFO[Window(home).Property(emby.nodes.16.type)]</label2>
 				<onclick>$VAR[EmbyNode16Path]</onclick>
-				<visible>String.StartsWith(Container(4011).ListItem(16).FolderPath,plugin://plugin.video.emby/?type=) | String.StartsWith(Container(4011).ListItem(16).FolderPath,library://video)</visible>
-				<visible>!String.StartsWith(Container(4011).ListItem(16).FolderPath,library://video/emby_Fav)</visible>
-				<visible>Integer.IsGreater(Container(4011).NumItems,16)</visible>
+				<visible>!String.IsEmpty(Window(home).Property(emby.nodes.16.path)) + !String.IsEqual(Window(home).Property(emby.nodes.16.type),favorites)</visible>
 			</item>
 			<item>
-				<label>$INFO[Container(4011).ListItem(17).Label]</label>
-				<thumb>$INFO[Container(4011).ListItem(17).Thumb]</thumb>
-				<label2>Emby Library 17</label2>
+				<label>$INFO[Window(home).Property(emby.nodes.17.title)]</label>
+				<thumb>$INFO[Window(home).Property(emby.nodes.17.artwork)]</thumb>
+				<label2>$INFO[Window(home).Property(emby.nodes.17.type)]</label2>
 				<onclick>$VAR[EmbyNode17Path]</onclick>
-				<visible>String.StartsWith(Container(4011).ListItem(17).FolderPath,plugin://plugin.video.emby/?type=) | String.StartsWith(Container(4011).ListItem(17).FolderPath,library://video)</visible>
-				<visible>!String.StartsWith(Container(4011).ListItem(17).FolderPath,library://video/emby_Fav)</visible>
-				<visible>Integer.IsGreater(Container(4011).NumItems,17)</visible>
+				<visible>!String.IsEmpty(Window(home).Property(emby.nodes.17.path)) + !String.IsEqual(Window(home).Property(emby.nodes.17.type),favorites)</visible>
 			</item>
 			<item>
-				<label>$INFO[Container(4011).ListItem(18).Label]</label>
-				<thumb>$INFO[Container(4011).ListItem(18).Thumb]</thumb>
-				<label2>Emby Library 18</label2>
+				<label>$INFO[Window(home).Property(emby.nodes.18.title)]</label>
+				<thumb>$INFO[Window(home).Property(emby.nodes.18.artwork)]</thumb>
+				<label2>$INFO[Window(home).Property(emby.nodes.18.type)]</label2>
 				<onclick>$VAR[EmbyNode18Path]</onclick>
-				<visible>String.StartsWith(Container(4011).ListItem(18).FolderPath,plugin://plugin.video.emby/?type=) | String.StartsWith(Container(4011).ListItem(18).FolderPath,library://video)</visible>
-				<visible>!String.StartsWith(Container(4011).ListItem(18).FolderPath,library://video/emby_Fav)</visible>
-				<visible>Integer.IsGreater(Container(4011).NumItems,18)</visible>
+				<visible>!String.IsEmpty(Window(home).Property(emby.nodes.18.path)) + !String.IsEqual(Window(home).Property(emby.nodes.18.type),favorites)</visible>
 			</item>
 			<item>
-				<label>$INFO[Container(4011).ListItem(19).Label]</label>
-				<thumb>$INFO[Container(4011).ListItem(19).Thumb]</thumb>
-				<label2>Emby Library 19</label2>
+				<label>$INFO[Window(home).Property(emby.nodes.19.title)]</label>
+				<thumb>$INFO[Window(home).Property(emby.nodes.19.artwork)]</thumb>
+				<label2>$INFO[Window(home).Property(emby.nodes.19.type)]</label2>
 				<onclick>$VAR[EmbyNode19Path]</onclick>
-				<visible>String.StartsWith(Container(4011).ListItem(19).FolderPath,plugin://plugin.video.emby/?type=) | String.StartsWith(Container(4011).ListItem(19).FolderPath,library://video)</visible>
-				<visible>!String.StartsWith(Container(4011).ListItem(19).FolderPath,library://video/emby_Fav)</visible>
-				<visible>Integer.IsGreater(Container(4011).NumItems,19)</visible>
+				<visible>!String.IsEmpty(Window(home).Property(emby.nodes.19.path)) + !String.IsEqual(Window(home).Property(emby.nodes.19.type),favorites)</visible>
 			</item>
 			<item>
-				<label>$INFO[Container(4011).ListItem(20).Label]</label>
-				<thumb>$INFO[Container(4011).ListItem(20).Thumb]</thumb>
-				<label2>Emby Library 20</label2>
+				<label>$INFO[Window(home).Property(emby.nodes.20.title)]</label>
+				<thumb>$INFO[Window(home).Property(emby.nodes.20.artwork)]</thumb>
+				<label2>$INFO[Window(home).Property(emby.nodes.20.type)]</label2>
 				<onclick>$VAR[EmbyNode20Path]</onclick>
-				<visible>String.StartsWith(Container(4011).ListItem(20).FolderPath,plugin://plugin.video.emby/?type=) | String.StartsWith(Container(4011).ListItem(20).FolderPath,library://video)</visible>
-				<visible>!String.StartsWith(Container(4011).ListItem(20).FolderPath,library://video/emby_Fav)</visible>
-				<visible>Integer.IsGreater(Container(4011).NumItems,20)</visible>
+				<visible>!String.IsEmpty(Window(home).Property(emby.nodes.20.path)) + !String.IsEqual(Window(home).Property(emby.nodes.20.type),favorites)</visible>
 			</item>
 		</definition>
 	</include>

@@ -1936,129 +1936,129 @@
 		<!-- <value condition="!String.IsEmpty(Window(home).Property(TVShowID))">plugin://script.extendedinfo?info=similartvshows&amp;&amp;dbid=$INFO[Window(home).Property(TVShowID)]</value> -->
 	</variable>
 	<variable name="EmbyNode00Path">
-		<value condition="String.StartsWith(Container(4011).ListItem(0).FolderPath,library://video)">ActivateWindow(Videos,$INFO[Container(4011).ListItem(0).FolderPath,,all.xml], return)</value>
-		<value condition="String.StartsWith(Container(4011).ListItem(0).FolderPath,plugin://plugin.video.emby/?type=photos)">ActivateWindow(Pictures,$INFO[Container(4011).ListItem(0).FolderPath], return)</value>
-		<value condition="String.StartsWith(Container(4011).ListItem(0).FolderPath,plugin://plugin.video.emby/?type=music)">ActivateWindow(Music,$INFO[Container(4011).ListItem(0).FolderPath], return)</value>
-		<value>ActivateWindow(Videos,$INFO[Container(4011).ListItem(0).FolderPath], return)</value>
+		<value condition="String.StartsWith(Window(home).Property(emby.nodes.0.path),ActivateWindow)">$INFO[Window(home).Property(emby.nodes.0.path)]</value>
+		<value condition="String.IsEqual(Window(home).Property(emby.nodes.0.type),photos)">ActivateWindow(Pictures,$INFO[Window(home).Property(emby.nodes.0.path)], return)</value>
+		<value condition="String.IsEqual(Window(home).Property(emby.nodes.0.type),music)">ActivateWindow(Music,$INFO[Window(home).Property(emby.nodes.0.path)], return)</value>
+		<value>ActivateWindow(Videos,$INFO[Window(home).Property(emby.nodes.0.path)], return)</value>
 	</variable>
 	<variable name="EmbyNode01Path">
-		<value condition="String.StartsWith(Container(4011).ListItem(1).FolderPath,library://video)">ActivateWindow(Videos,$INFO[Container(4011).ListItem(1).FolderPath,,all.xml], return)</value>
-		<value condition="String.StartsWith(Container(4011).ListItem(1).FolderPath,plugin://plugin.video.emby/?type=photos)">ActivateWindow(Pictures,$INFO[Container(4011).ListItem(1).FolderPath], return)</value>
-		<value condition="String.StartsWith(Container(4011).ListItem(1).FolderPath,plugin://plugin.video.emby/?type=music)">ActivateWindow(Music,$INFO[Container(4011).ListItem(1).FolderPath], return)</value>
-		<value>ActivateWindow(Videos,$INFO[Container(4011).ListItem(1).FolderPath], return)</value>
+		<value condition="String.StartsWith(Window(home).Property(emby.nodes.1.path),ActivateWindow)">$INFO[Window(home).Property(emby.nodes.1.path)]</value>
+		<value condition="String.IsEqual(Window(home).Property(emby.nodes.1.type),photos)">ActivateWindow(Pictures,$INFO[Window(home).Property(emby.nodes.1.path)], return)</value>
+		<value condition="String.IsEqual(Window(home).Property(emby.nodes.1.type),music)">ActivateWindow(Music,$INFO[Window(home).Property(emby.nodes.1.path)], return)</value>
+		<value>ActivateWindow(Videos,$INFO[Window(home).Property(emby.nodes.1.path)], return)</value>
 	</variable>
 	<variable name="EmbyNode02Path">
-		<value condition="String.StartsWith(Container(4011).ListItem(2).FolderPath,library://video)">ActivateWindow(Videos,$INFO[Container(4011).ListItem(2).FolderPath,,all.xml], return)</value>
-		<value condition="String.StartsWith(Container(4011).ListItem(2).FolderPath,plugin://plugin.video.emby/?type=photos)">ActivateWindow(Pictures,$INFO[Container(4011).ListItem(2).FolderPath], return)</value>
-		<value condition="String.StartsWith(Container(4011).ListItem(2).FolderPath,plugin://plugin.video.emby/?type=music)">ActivateWindow(Music,$INFO[Container(4011).ListItem(2).FolderPath], return)</value>
-		<value>ActivateWindow(Videos,$INFO[Container(4011).ListItem(2).FolderPath], return)</value>
+		<value condition="String.StartsWith(Window(home).Property(emby.nodes.2.path),ActivateWindow)">$INFO[Window(home).Property(emby.nodes.2.path)]</value>
+		<value condition="String.IsEqual(Window(home).Property(emby.nodes.2.type),photos)">ActivateWindow(Pictures,$INFO[Window(home).Property(emby.nodes.2.path)], return)</value>
+		<value condition="String.IsEqual(Window(home).Property(emby.nodes.2.type),music)">ActivateWindow(Music,$INFO[Window(home).Property(emby.nodes.2.path)], return)</value>
+		<value>ActivateWindow(Videos,$INFO[Window(home).Property(emby.nodes.2.path)], return)</value>
 	</variable>
 	<variable name="EmbyNode03Path">
-		<value condition="String.StartsWith(Container(4011).ListItem(3).FolderPath,library://video)">ActivateWindow(Videos,$INFO[Container(4011).ListItem(3).FolderPath,,all.xml], return)</value>
-		<value condition="String.StartsWith(Container(4011).ListItem(3).FolderPath,plugin://plugin.video.emby/?type=photos)">ActivateWindow(Pictures,$INFO[Container(4011).ListItem(3).FolderPath], return)</value>
-		<value condition="String.StartsWith(Container(4011).ListItem(3).FolderPath,plugin://plugin.video.emby/?type=music)">ActivateWindow(Music,$INFO[Container(4011).ListItem(3).FolderPath], return)</value>
-		<value>ActivateWindow(Videos,$INFO[Container(4011).ListItem(3).FolderPath], return)</value>
+		<value condition="String.StartsWith(Window(home).Property(emby.nodes.3.path),ActivateWindow)">$INFO[Window(home).Property(emby.nodes.3.path)]</value>
+		<value condition="String.IsEqual(Window(home).Property(emby.nodes.3.type),photos)">ActivateWindow(Pictures,$INFO[Window(home).Property(emby.nodes.3.path)], return)</value>
+		<value condition="String.IsEqual(Window(home).Property(emby.nodes.3.type),music)">ActivateWindow(Music,$INFO[Window(home).Property(emby.nodes.3.path)], return)</value>
+		<value>ActivateWindow(Videos,$INFO[Window(home).Property(emby.nodes.3.path)], return)</value>
 	</variable>
 	<variable name="EmbyNode04Path">
-		<value condition="String.StartsWith(Container(4011).ListItem(4).FolderPath,library://video)">ActivateWindow(Videos,$INFO[Container(4011).ListItem(4).FolderPath,,all.xml], return)</value>
-		<value condition="String.StartsWith(Container(4011).ListItem(4).FolderPath,plugin://plugin.video.emby/?type=photos)">ActivateWindow(Pictures,$INFO[Container(4011).ListItem(4).FolderPath], return)</value>
-		<value condition="String.StartsWith(Container(4011).ListItem(4).FolderPath,plugin://plugin.video.emby/?type=music)">ActivateWindow(Music,$INFO[Container(4011).ListItem(4).FolderPath], return)</value>
-		<value>ActivateWindow(Videos,$INFO[Container(4011).ListItem(4).FolderPath], return)</value>
+		<value condition="String.StartsWith(Window(home).Property(emby.nodes.4.path),ActivateWindow)">$INFO[Window(home).Property(emby.nodes.4.path)]</value>
+		<value condition="String.IsEqual(Window(home).Property(emby.nodes.4.type),photos)">ActivateWindow(Pictures,$INFO[Window(home).Property(emby.nodes.4.path)], return)</value>
+		<value condition="String.IsEqual(Window(home).Property(emby.nodes.4.type),music)">ActivateWindow(Music,$INFO[Window(home).Property(emby.nodes.4.path)], return)</value>
+		<value>ActivateWindow(Videos,$INFO[Window(home).Property(emby.nodes.4.path)], return)</value>
 	</variable>
 	<variable name="EmbyNode05Path">
-		<value condition="String.StartsWith(Container(4011).ListItem(5).FolderPath,library://video)">ActivateWindow(Videos,$INFO[Container(4011).ListItem(5).FolderPath,,all.xml], return)</value>
-		<value condition="String.StartsWith(Container(4011).ListItem(5).FolderPath,plugin://plugin.video.emby/?type=photos)">ActivateWindow(Pictures,$INFO[Container(4011).ListItem(5).FolderPath], return)</value>
-		<value condition="String.StartsWith(Container(4011).ListItem(5).FolderPath,plugin://plugin.video.emby/?type=music)">ActivateWindow(Music,$INFO[Container(4011).ListItem(5).FolderPath], return)</value>
-		<value>ActivateWindow(Videos,$INFO[Container(4011).ListItem(5).FolderPath], return)</value>
+		<value condition="String.StartsWith(Window(home).Property(emby.nodes.5.path),ActivateWindow)">$INFO[Window(home).Property(emby.nodes.5.path)]</value>
+		<value condition="String.IsEqual(Window(home).Property(emby.nodes.5.type),photos)">ActivateWindow(Pictures,$INFO[Window(home).Property(emby.nodes.5.path)], return)</value>
+		<value condition="String.IsEqual(Window(home).Property(emby.nodes.5.type),music)">ActivateWindow(Music,$INFO[Window(home).Property(emby.nodes.5.path)], return)</value>
+		<value>ActivateWindow(Videos,$INFO[Window(home).Property(emby.nodes.5.path)], return)</value>
 	</variable>
 	<variable name="EmbyNode06Path">
-		<value condition="String.StartsWith(Container(4011).ListItem(6).FolderPath,library://video)">ActivateWindow(Videos,$INFO[Container(4011).ListItem(6).FolderPath,,all.xml], return)</value>
-		<value condition="String.StartsWith(Container(4011).ListItem(6).FolderPath,plugin://plugin.video.emby/?type=photos)">ActivateWindow(Pictures,$INFO[Container(4011).ListItem(6).FolderPath], return)</value>
-		<value condition="String.StartsWith(Container(4011).ListItem(6).FolderPath,plugin://plugin.video.emby/?type=music)">ActivateWindow(Music,$INFO[Container(4011).ListItem(6).FolderPath], return)</value>
-		<value>ActivateWindow(Videos,$INFO[Container(4011).ListItem(6).FolderPath], return)</value>
+		<value condition="String.StartsWith(Window(home).Property(emby.nodes.6.path),ActivateWindow)">$INFO[Window(home).Property(emby.nodes.6.path)]</value>
+		<value condition="String.IsEqual(Window(home).Property(emby.nodes.6.type),photos)">ActivateWindow(Pictures,$INFO[Window(home).Property(emby.nodes.6.path)], return)</value>
+		<value condition="String.IsEqual(Window(home).Property(emby.nodes.6.type),music)">ActivateWindow(Music,$INFO[Window(home).Property(emby.nodes.6.path)], return)</value>
+		<value>ActivateWindow(Videos,$INFO[Window(home).Property(emby.nodes.6.path)], return)</value>
 	</variable>
 	<variable name="EmbyNode07Path">
-		<value condition="String.StartsWith(Container(4011).ListItem(7).FolderPath,library://video)">ActivateWindow(Videos,$INFO[Container(4011).ListItem(7).FolderPath,,all.xml], return)</value>
-		<value condition="String.StartsWith(Container(4011).ListItem(7).FolderPath,plugin://plugin.video.emby/?type=photos)">ActivateWindow(Pictures,$INFO[Container(4011).ListItem(7).FolderPath], return)</value>
-		<value condition="String.StartsWith(Container(4011).ListItem(7).FolderPath,plugin://plugin.video.emby/?type=music)">ActivateWindow(Music,$INFO[Container(4011).ListItem(7).FolderPath], return)</value>
-		<value>ActivateWindow(Videos,$INFO[Container(4011).ListItem(7).FolderPath], return)</value>
+		<value condition="String.StartsWith(Window(home).Property(emby.nodes.7.path),ActivateWindow)">$INFO[Window(home).Property(emby.nodes.7.path)]</value>
+		<value condition="String.IsEqual(Window(home).Property(emby.nodes.7.type),photos)">ActivateWindow(Pictures,$INFO[Window(home).Property(emby.nodes.7.path)], return)</value>
+		<value condition="String.IsEqual(Window(home).Property(emby.nodes.7.type),music)">ActivateWindow(Music,$INFO[Window(home).Property(emby.nodes.7.path)], return)</value>
+		<value>ActivateWindow(Videos,$INFO[Window(home).Property(emby.nodes.7.path)], return)</value>
 	</variable>
 	<variable name="EmbyNode08Path">
-		<value condition="String.StartsWith(Container(4011).ListItem(8).FolderPath,library://video)">ActivateWindow(Videos,$INFO[Container(4011).ListItem(8).FolderPath,,all.xml], return)</value>
-		<value condition="String.StartsWith(Container(4011).ListItem(8).FolderPath,plugin://plugin.video.emby/?type=photos)">ActivateWindow(Pictures,$INFO[Container(4011).ListItem(8).FolderPath], return)</value>
-		<value condition="String.StartsWith(Container(4011).ListItem(8).FolderPath,plugin://plugin.video.emby/?type=music)">ActivateWindow(Music,$INFO[Container(4011).ListItem(8).FolderPath], return)</value>
-		<value>ActivateWindow(Videos,$INFO[Container(4011).ListItem(8).FolderPath], return)</value>
+		<value condition="String.StartsWith(Window(home).Property(emby.nodes.8.path),ActivateWindow)">$INFO[Window(home).Property(emby.nodes.8.path)]</value>
+		<value condition="String.IsEqual(Window(home).Property(emby.nodes.8.type),photos)">ActivateWindow(Pictures,$INFO[Window(home).Property(emby.nodes.8.path)], return)</value>
+		<value condition="String.IsEqual(Window(home).Property(emby.nodes.8.type),music)">ActivateWindow(Music,$INFO[Window(home).Property(emby.nodes.8.path)], return)</value>
+		<value>ActivateWindow(Videos,$INFO[Window(home).Property(emby.nodes.8.path)], return)</value>
 	</variable>
 	<variable name="EmbyNode09Path">
-		<value condition="String.StartsWith(Container(4011).ListItem(9).FolderPath,library://video)">ActivateWindow(Videos,$INFO[Container(4011).ListItem(9).FolderPath,,all.xml], return)</value>
-		<value condition="String.StartsWith(Container(4011).ListItem(9).FolderPath,plugin://plugin.video.emby/?type=photos)">ActivateWindow(Pictures,$INFO[Container(4011).ListItem(9).FolderPath], return)</value>
-		<value condition="String.StartsWith(Container(4011).ListItem(9).FolderPath,plugin://plugin.video.emby/?type=music)">ActivateWindow(Music,$INFO[Container(4011).ListItem(9).FolderPath], return)</value>
-		<value>ActivateWindow(Videos,$INFO[Container(4011).ListItem(9).FolderPath], return)</value>
+		<value condition="String.StartsWith(Window(home).Property(emby.nodes.9.path),ActivateWindow)">$INFO[Window(home).Property(emby.nodes.9.path)]</value>
+		<value condition="String.IsEqual(Window(home).Property(emby.nodes.9.type),photos)">ActivateWindow(Pictures,$INFO[Window(home).Property(emby.nodes.9.path)], return)</value>
+		<value condition="String.IsEqual(Window(home).Property(emby.nodes.9.type),music)">ActivateWindow(Music,$INFO[Window(home).Property(emby.nodes.9.path)], return)</value>
+		<value>ActivateWindow(Videos,$INFO[Window(home).Property(emby.nodes.9.path)], return)</value>
 	</variable>
 	<variable name="EmbyNode10Path">
-		<value condition="String.StartsWith(Container(4011).ListItem(10).FolderPath,library://video)">ActivateWindow(Videos,$INFO[Container(4011).ListItem(10).FolderPath,,all.xml], return)</value>
-		<value condition="String.StartsWith(Container(4011).ListItem(10).FolderPath,plugin://plugin.video.emby/?type=photos)">ActivateWindow(Pictures,$INFO[Container(4011).ListItem(10).FolderPath], return)</value>
-		<value condition="String.StartsWith(Container(4011).ListItem(10).FolderPath,plugin://plugin.video.emby/?type=music)">ActivateWindow(Music,$INFO[Container(4011).ListItem(10).FolderPath], return)</value>
-		<value>ActivateWindow(Videos,$INFO[Container(4011).ListItem(10).FolderPath], return)</value>
+		<value condition="String.StartsWith(Window(home).Property(emby.nodes.10.path),ActivateWindow)">$INFO[Window(home).Property(emby.nodes.10.path)]</value>
+		<value condition="String.IsEqual(Window(home).Property(emby.nodes.10.type),photos)">ActivateWindow(Pictures,$INFO[Window(home).Property(emby.nodes.10.path)], return)</value>
+		<value condition="String.IsEqual(Window(home).Property(emby.nodes.10.type),music)">ActivateWindow(Music,$INFO[Window(home).Property(emby.nodes.10.path)], return)</value>
+		<value>ActivateWindow(Videos,$INFO[Window(home).Property(emby.nodes.10.path)], return)</value>
 	</variable>
 	<variable name="EmbyNode11Path">
-		<value condition="String.StartsWith(Container(4011).ListItem(11).FolderPath,library://video)">ActivateWindow(Videos,$INFO[Container(4011).ListItem(11).FolderPath,,all.xml], return)</value>
-		<value condition="String.StartsWith(Container(4011).ListItem(11).FolderPath,plugin://plugin.video.emby/?type=photos)">ActivateWindow(Pictures,$INFO[Container(4011).ListItem(11).FolderPath], return)</value>
-		<value condition="String.StartsWith(Container(4011).ListItem(11).FolderPath,plugin://plugin.video.emby/?type=music)">ActivateWindow(Music,$INFO[Container(4011).ListItem(11).FolderPath], return)</value>
-		<value>ActivateWindow(Videos,$INFO[Container(4011).ListItem(11).FolderPath], return)</value>
+		<value condition="String.StartsWith(Window(home).Property(emby.nodes.11.path),ActivateWindow)">$INFO[Window(home).Property(emby.nodes.11.path)]</value>
+		<value condition="String.IsEqual(Window(home).Property(emby.nodes.11.type),photos)">ActivateWindow(Pictures,$INFO[Window(home).Property(emby.nodes.11.path)], return)</value>
+		<value condition="String.IsEqual(Window(home).Property(emby.nodes.11.type),music)">ActivateWindow(Music,$INFO[Window(home).Property(emby.nodes.11.path)], return)</value>
+		<value>ActivateWindow(Videos,$INFO[Window(home).Property(emby.nodes.11.path)], return)</value>
 	</variable>
 	<variable name="EmbyNode12Path">
-		<value condition="String.StartsWith(Container(4011).ListItem(12).FolderPath,library://video)">ActivateWindow(Videos,$INFO[Container(4011).ListItem(12).FolderPath,,all.xml], return)</value>
-		<value condition="String.StartsWith(Container(4011).ListItem(12).FolderPath,plugin://plugin.video.emby/?type=photos)">ActivateWindow(Pictures,$INFO[Container(4011).ListItem(12).FolderPath], return)</value>
-		<value condition="String.StartsWith(Container(4011).ListItem(12).FolderPath,plugin://plugin.video.emby/?type=music)">ActivateWindow(Music,$INFO[Container(4011).ListItem(12).FolderPath], return)</value>
-		<value>ActivateWindow(Videos,$INFO[Container(4011).ListItem(12).FolderPath], return)</value>
+		<value condition="String.StartsWith(Window(home).Property(emby.nodes.12.path),ActivateWindow)">$INFO[Window(home).Property(emby.nodes.12.path)]</value>
+		<value condition="String.IsEqual(Window(home).Property(emby.nodes.12.type),photos)">ActivateWindow(Pictures,$INFO[Window(home).Property(emby.nodes.12.path)], return)</value>
+		<value condition="String.IsEqual(Window(home).Property(emby.nodes.12.type),music)">ActivateWindow(Music,$INFO[Window(home).Property(emby.nodes.12.path)], return)</value>
+		<value>ActivateWindow(Videos,$INFO[Window(home).Property(emby.nodes.12.path)], return)</value>
 	</variable>
 	<variable name="EmbyNode13Path">
-		<value condition="String.StartsWith(Container(4011).ListItem(13).FolderPath,library://video)">ActivateWindow(Videos,$INFO[Container(4011).ListItem(13).FolderPath,,all.xml], return)</value>
-		<value condition="String.StartsWith(Container(4011).ListItem(13).FolderPath,plugin://plugin.video.emby/?type=photos)">ActivateWindow(Pictures,$INFO[Container(4011).ListItem(13).FolderPath], return)</value>
-		<value condition="String.StartsWith(Container(4011).ListItem(13).FolderPath,plugin://plugin.video.emby/?type=music)">ActivateWindow(Music,$INFO[Container(4011).ListItem(13).FolderPath], return)</value>
-		<value>ActivateWindow(Videos,$INFO[Container(4011).ListItem(13).FolderPath], return)</value>
+		<value condition="String.StartsWith(Window(home).Property(emby.nodes.13.path),ActivateWindow)">$INFO[Window(home).Property(emby.nodes.13.path)]</value>
+		<value condition="String.IsEqual(Window(home).Property(emby.nodes.13.type),photos)">ActivateWindow(Pictures,$INFO[Window(home).Property(emby.nodes.13.path)], return)</value>
+		<value condition="String.IsEqual(Window(home).Property(emby.nodes.13.type),music)">ActivateWindow(Music,$INFO[Window(home).Property(emby.nodes.13.path)], return)</value>
+		<value>ActivateWindow(Videos,$INFO[Window(home).Property(emby.nodes.13.path)], return)</value>
 	</variable>
 	<variable name="EmbyNode14Path">
-		<value condition="String.StartsWith(Container(4011).ListItem(14).FolderPath,library://video)">ActivateWindow(Videos,$INFO[Container(4011).ListItem(14).FolderPath,,all.xml], return)</value>
-		<value condition="String.StartsWith(Container(4011).ListItem(14).FolderPath,plugin://plugin.video.emby/?type=photos)">ActivateWindow(Pictures,$INFO[Container(4011).ListItem(14).FolderPath], return)</value>
-		<value condition="String.StartsWith(Container(4011).ListItem(14).FolderPath,plugin://plugin.video.emby/?type=music)">ActivateWindow(Music,$INFO[Container(4011).ListItem(14).FolderPath], return)</value>
-		<value>ActivateWindow(Videos,$INFO[Container(4011).ListItem(14).FolderPath], return)</value>
+		<value condition="String.StartsWith(Window(home).Property(emby.nodes.14.path),ActivateWindow)">$INFO[Window(home).Property(emby.nodes.14.path)]</value>
+		<value condition="String.IsEqual(Window(home).Property(emby.nodes.14.type),photos)">ActivateWindow(Pictures,$INFO[Window(home).Property(emby.nodes.14.path)], return)</value>
+		<value condition="String.IsEqual(Window(home).Property(emby.nodes.14.type),music)">ActivateWindow(Music,$INFO[Window(home).Property(emby.nodes.14.path)], return)</value>
+		<value>ActivateWindow(Videos,$INFO[Window(home).Property(emby.nodes.14.path)], return)</value>
 	</variable>
 	<variable name="EmbyNode15Path">
-		<value condition="String.StartsWith(Container(4011).ListItem(15).FolderPath,library://video)">ActivateWindow(Videos,$INFO[Container(4011).ListItem(15).FolderPath,,all.xml], return)</value>
-		<value condition="String.StartsWith(Container(4011).ListItem(15).FolderPath,plugin://plugin.video.emby/?type=photos)">ActivateWindow(Pictures,$INFO[Container(4011).ListItem(15).FolderPath], return)</value>
-		<value condition="String.StartsWith(Container(4011).ListItem(15).FolderPath,plugin://plugin.video.emby/?type=music)">ActivateWindow(Music,$INFO[Container(4011).ListItem(15).FolderPath], return)</value>
-		<value>ActivateWindow(Videos,$INFO[Container(4011).ListItem(15).FolderPath], return)</value>
+		<value condition="String.StartsWith(Window(home).Property(emby.nodes.15.path),ActivateWindow)">$INFO[Window(home).Property(emby.nodes.15.path)]</value>
+		<value condition="String.IsEqual(Window(home).Property(emby.nodes.15.type),photos)">ActivateWindow(Pictures,$INFO[Window(home).Property(emby.nodes.15.path)], return)</value>
+		<value condition="String.IsEqual(Window(home).Property(emby.nodes.15.type),music)">ActivateWindow(Music,$INFO[Window(home).Property(emby.nodes.15.path)], return)</value>
+		<value>ActivateWindow(Videos,$INFO[Window(home).Property(emby.nodes.15.path)], return)</value>
 	</variable>
 	<variable name="EmbyNode16Path">
-		<value condition="String.StartsWith(Container(4011).ListItem(16).FolderPath,library://video)">ActivateWindow(Videos,$INFO[Container(4011).ListItem(16).FolderPath,,all.xml], return)</value>
-		<value condition="String.StartsWith(Container(4011).ListItem(16).FolderPath,plugin://plugin.video.emby/?type=photos)">ActivateWindow(Pictures,$INFO[Container(4011).ListItem(16).FolderPath], return)</value>
-		<value condition="String.StartsWith(Container(4011).ListItem(16).FolderPath,plugin://plugin.video.emby/?type=music)">ActivateWindow(Music,$INFO[Container(4011).ListItem(16).FolderPath], return)</value>
-		<value>ActivateWindow(Videos,$INFO[Container(4011).ListItem(16).FolderPath], return)</value>
+		<value condition="String.StartsWith(Window(home).Property(emby.nodes.16.path),ActivateWindow)">$INFO[Window(home).Property(emby.nodes.16.path)]</value>
+		<value condition="String.IsEqual(Window(home).Property(emby.nodes.16.type),photos)">ActivateWindow(Pictures,$INFO[Window(home).Property(emby.nodes.16.path)], return)</value>
+		<value condition="String.IsEqual(Window(home).Property(emby.nodes.16.type),music)">ActivateWindow(Music,$INFO[Window(home).Property(emby.nodes.16.path)], return)</value>
+		<value>ActivateWindow(Videos,$INFO[Window(home).Property(emby.nodes.16.path)], return)</value>
 	</variable>
 	<variable name="EmbyNode17Path">
-		<value condition="String.StartsWith(Container(4011).ListItem(17).FolderPath,library://video)">ActivateWindow(Videos,$INFO[Container(4011).ListItem(17).FolderPath,,all.xml], return)</value>
-		<value condition="String.StartsWith(Container(4011).ListItem(17).FolderPath,plugin://plugin.video.emby/?type=photos)">ActivateWindow(Pictures,$INFO[Container(4011).ListItem(17).FolderPath], return)</value>
-		<value condition="String.StartsWith(Container(4011).ListItem(17).FolderPath,plugin://plugin.video.emby/?type=music)">ActivateWindow(Music,$INFO[Container(4011).ListItem(17).FolderPath], return)</value>
-		<value>ActivateWindow(Videos,$INFO[Container(4011).ListItem(17).FolderPath], return)</value>
+		<value condition="String.StartsWith(Window(home).Property(emby.nodes.17.path),ActivateWindow)">$INFO[Window(home).Property(emby.nodes.17.path)]</value>
+		<value condition="String.IsEqual(Window(home).Property(emby.nodes.17.type),photos)">ActivateWindow(Pictures,$INFO[Window(home).Property(emby.nodes.17.path)], return)</value>
+		<value condition="String.IsEqual(Window(home).Property(emby.nodes.17.type),music)">ActivateWindow(Music,$INFO[Window(home).Property(emby.nodes.17.path)], return)</value>
+		<value>ActivateWindow(Videos,$INFO[Window(home).Property(emby.nodes.17.path)], return)</value>
 	</variable>
 	<variable name="EmbyNode18Path">
-		<value condition="String.StartsWith(Container(4011).ListItem(18).FolderPath,library://video)">ActivateWindow(Videos,$INFO[Container(4011).ListItem(18).FolderPath,,all.xml], return)</value>
-		<value condition="String.StartsWith(Container(4011).ListItem(18).FolderPath,plugin://plugin.video.emby/?type=photos)">ActivateWindow(Pictures,$INFO[Container(4011).ListItem(18).FolderPath], return)</value>
-		<value condition="String.StartsWith(Container(4011).ListItem(18).FolderPath,plugin://plugin.video.emby/?type=music)">ActivateWindow(Music,$INFO[Container(4011).ListItem(18).FolderPath], return)</value>
-		<value>ActivateWindow(Videos,$INFO[Container(4011).ListItem(18).FolderPath], return)</value>
+		<value condition="String.StartsWith(Window(home).Property(emby.nodes.18.path),ActivateWindow)">$INFO[Window(home).Property(emby.nodes.18.path)]</value>
+		<value condition="String.IsEqual(Window(home).Property(emby.nodes.18.type),photos)">ActivateWindow(Pictures,$INFO[Window(home).Property(emby.nodes.18.path)], return)</value>
+		<value condition="String.IsEqual(Window(home).Property(emby.nodes.18.type),music)">ActivateWindow(Music,$INFO[Window(home).Property(emby.nodes.18.path)], return)</value>
+		<value>ActivateWindow(Videos,$INFO[Window(home).Property(emby.nodes.18.path)], return)</value>
 	</variable>
 	<variable name="EmbyNode19Path">
-		<value condition="String.StartsWith(Container(4011).ListItem(19).FolderPath,library://video)">ActivateWindow(Videos,$INFO[Container(4011).ListItem(19).FolderPath,,all.xml], return)</value>
-		<value condition="String.StartsWith(Container(4011).ListItem(19).FolderPath,plugin://plugin.video.emby/?type=photos)">ActivateWindow(Pictures,$INFO[Container(4011).ListItem(19).FolderPath], return)</value>
-		<value condition="String.StartsWith(Container(4011).ListItem(19).FolderPath,plugin://plugin.video.emby/?type=music)">ActivateWindow(Music,$INFO[Container(4011).ListItem(19).FolderPath], return)</value>
-		<value>ActivateWindow(Videos,$INFO[Container(4011).ListItem(19).FolderPath], return)</value>
+		<value condition="String.StartsWith(Window(home).Property(emby.nodes.19.path),ActivateWindow)">$INFO[Window(home).Property(emby.nodes.19.path)]</value>
+		<value condition="String.IsEqual(Window(home).Property(emby.nodes.19.type),photos)">ActivateWindow(Pictures,$INFO[Window(home).Property(emby.nodes.19.path)], return)</value>
+		<value condition="String.IsEqual(Window(home).Property(emby.nodes.19.type),music)">ActivateWindow(Music,$INFO[Window(home).Property(emby.nodes.19.path)], return)</value>
+		<value>ActivateWindow(Videos,$INFO[Window(home).Property(emby.nodes.19.path)], return)</value>
 	</variable>
 	<variable name="EmbyNode20Path">
-		<value condition="String.StartsWith(Container(4011).ListItem(20).FolderPath,library://video)">ActivateWindow(Videos,$INFO[Container(4011).ListItem(20).FolderPath,,all.xml], return)</value>
-		<value condition="String.StartsWith(Container(4011).ListItem(20).FolderPath,plugin://plugin.video.emby/?type=photos)">ActivateWindow(Pictures,$INFO[Container(4011).ListItem(20).FolderPath], return)</value>
-		<value condition="String.StartsWith(Container(4011).ListItem(20).FolderPath,plugin://plugin.video.emby/?type=music)">ActivateWindow(Music,$INFO[Container(4011).ListItem(20).FolderPath], return)</value>
-		<value>ActivateWindow(Videos,$INFO[Container(4011).ListItem(20).FolderPath], return)</value>
+		<value condition="String.StartsWith(Window(home).Property(emby.nodes.20.path),ActivateWindow)">$INFO[Window(home).Property(emby.nodes.20.path)]</value>
+		<value condition="String.IsEqual(Window(home).Property(emby.nodes.20.type),photos)">ActivateWindow(Pictures,$INFO[Window(home).Property(emby.nodes.20.path)], return)</value>
+		<value condition="String.IsEqual(Window(home).Property(emby.nodes.20.type),music)">ActivateWindow(Music,$INFO[Window(home).Property(emby.nodes.20.path)], return)</value>
+		<value>ActivateWindow(Videos,$INFO[Window(home).Property(emby.nodes.20.path)], return)</value>
 	</variable>
 </includes>
