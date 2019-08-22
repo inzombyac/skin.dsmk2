@@ -1,3 +1,6 @@
+1.0.7
+- Move now playing widget down when there is a notification dialog.
+
 1.0.6
 - Update Emby libraries to use the window properties - Allows for faster load and better images.
 
