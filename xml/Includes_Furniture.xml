@@ -619,7 +619,8 @@
 			<include>Animation.FadeIn.Slide</include>
 			<include>Animation.FadeOut</include>
 			<visible>Player.HasMedia</visible>
-			<!-- <animation effect="zoom" start="100" end="85" condition="true">Conditional</animation> -->
+			<animation effect="slide" start="0" end="0,110" time="150" condition="Window.IsVisible(DialogNotification.xml) | Window.IsVisible(DialogKaiToast.xml)">Conditional</animation>
+			<animation effect="slide" start="0" end="0,110" time="150" condition="Window.IsVisible(DialogExtendedProgressBar.xml)">Conditional</animation>
 			<control type="image">
 				<description>background image</description>
 				<posx>0</posx>
