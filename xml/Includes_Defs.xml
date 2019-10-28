@@ -1267,6 +1267,67 @@
 	<variable name="EmbyHomeWidget10Content">
 		<value>$INFO[Container(300).ListItemAbsolute(10).Property(widgetPath)]</value>
 	</variable>
+	<!-- Watched widgets -->
+	<variable name="EmbyHomeWidget1WatchedMoviesContent">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),lastwatched)">special://skin/extras/playlists/Watched/LatestWatchedMovies.xsp</value>
+	</variable>
+	<variable name="EmbyHomeWidget1WatchedEpisodesContent">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),lastwatched)">special://skin/extras/playlists/Watched/LatestWatchedEpisodes.xsp</value>
+	</variable>
+	<variable name="EmbyHomeWidget2WatchedMoviesContent">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),lastwatched)">special://skin/extras/playlists/Watched/LatestWatchedMovies.xsp</value>
+	</variable>
+	<variable name="EmbyHomeWidget2WatchedEpisodesContent">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),lastwatched)">special://skin/extras/playlists/Watched/LatestWatchedEpisodes.xsp</value>
+	</variable>
+	<variable name="EmbyHomeWidget3WatchedMoviesContent">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),lastwatched)">special://skin/extras/playlists/Watched/LatestWatchedMovies.xsp</value>
+	</variable>
+	<variable name="EmbyHomeWidget3WatchedEpisodesContent">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),lastwatched)">special://skin/extras/playlists/Watched/LatestWatchedEpisodes.xsp</value>
+	</variable>
+	<variable name="EmbyHomeWidget4WatchedMoviesContent">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(4).Property(defaultID),lastwatched)">special://skin/extras/playlists/Watched/LatestWatchedMovies.xsp</value>
+	</variable>
+	<variable name="EmbyHomeWidget4WatchedEpisodesContent">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(4).Property(defaultID),lastwatched)">special://skin/extras/playlists/Watched/LatestWatchedEpisodes.xsp</value>
+	</variable>
+	<variable name="EmbyHomeWidget5WatchedMoviesContent">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(5).Property(defaultID),lastwatched)">special://skin/extras/playlists/Watched/LatestWatchedMovies.xsp</value>
+	</variable>
+	<variable name="EmbyHomeWidget5WatchedEpisodesContent">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(5).Property(defaultID),lastwatched)">special://skin/extras/playlists/Watched/LatestWatchedEpisodes.xsp</value>
+	</variable>
+	<variable name="EmbyHomeWidget6WatchedMoviesContent">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(6).Property(defaultID),lastwatched)">special://skin/extras/playlists/Watched/LatestWatchedMovies.xsp</value>
+	</variable>
+	<variable name="EmbyHomeWidget6WatchedEpisodesContent">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(6).Property(defaultID),lastwatched)">special://skin/extras/playlists/Watched/LatestWatchedEpisodes.xsp</value>
+	</variable>
+	<variable name="EmbyHomeWidget7WatchedMoviesContent">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(7).Property(defaultID),lastwatched)">special://skin/extras/playlists/Watched/LatestWatchedMovies.xsp</value>
+	</variable>
+	<variable name="EmbyHomeWidget7WatchedEpisodesContent">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(7).Property(defaultID),lastwatched)">special://skin/extras/playlists/Watched/LatestWatchedEpisodes.xsp</value>
+	</variable>
+	<variable name="EmbyHomeWidget8WatchedMoviesContent">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(8).Property(defaultID),lastwatched)">special://skin/extras/playlists/Watched/LatestWatchedMovies.xsp</value>
+	</variable>
+	<variable name="EmbyHomeWidget8WatchedEpisodesContent">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(8).Property(defaultID),lastwatched)">special://skin/extras/playlists/Watched/LatestWatchedEpisodes.xsp</value>
+	</variable>
+	<variable name="EmbyHomeWidget9WatchedMoviesContent">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(9).Property(defaultID),lastwatched)">special://skin/extras/playlists/Watched/LatestWatchedMovies.xsp</value>
+	</variable>
+	<variable name="EmbyHomeWidget9WatchedEpisodesContent">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(9).Property(defaultID),lastwatched)">special://skin/extras/playlists/Watched/LatestWatchedEpisodes.xsp</value>
+	</variable>
+	<variable name="EmbyHomeWidget10WatchedMoviesContent">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),lastwatched)">special://skin/extras/playlists/Watched/LatestWatchedMovies.xsp</value>
+	</variable>
+	<variable name="EmbyHomeWidget10WatchedEpisodesContent">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),lastwatched)">special://skin/extras/playlists/Watched/LatestWatchedEpisodes.xsp</value>
+	</variable>
 	<!-- Continue Widgets Content -->
 	<variable name="EmbyHomeWidget1ContinueEpisodesContent">
 		<value condition="String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),continue) + ![System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)]">special://skin/extras/playlists/InProgress/InProgressEpisodes.xsp</value>
@@ -1436,6 +1497,12 @@
 	</variable>
 	<variable name="SkinShortcutsContinueEmbyConEpisodes">
 		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),continue) + System.HasAddon(plugin.video.embycon)">plugin://plugin.video.embycon/?mode=WIDGET_CONTENT&amp;type=inprogress_episodes&amp;reload=$INFO[Window(Home).Property(widgetreload-episodes)]</value>
+	</variable>
+	<variable name="SkinShortcutsWatchedMoviesContent">
+		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),lastwatched)">special://skin/extras/playlists/Watched/LatestWatchedMovies.xsp</value>
+	</variable>
+	<variable name="SkinShortcutsWatchedEpisodesContent">
+		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),lastwatched)">special://skin/extras/playlists/Watched/LatestWatchedEpisodes.xsp</value>
 	</variable>
 	<include name="MusicInfoTracklist">
 		<content type="static">

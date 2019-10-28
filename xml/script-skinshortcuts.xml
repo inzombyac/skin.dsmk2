@@ -211,6 +211,8 @@
                         <content limit="25" target="videos" sortby="random">$VAR[SkinShortcutsContinueEmbyConEpisodes]</content>
                         <content limit="25" target="videos" sortby="random">$VAR[SkinShortcutsContinueEmby]</content>
                         <content limit="25" target="videos" sortby="random">$VAR[SkinShortcutsContent]</content>
+                        <content limit="25" target="videos" sortby="random">$VAR[SkinShortcutsWatchedMoviesContent]</content>
+                        <content limit="25" target="videos" sortby="random">$VAR[SkinShortcutsWatchedEpisodesContent]</content>
                         <include content="EmbyHomeLayout">
                             <param name="widget_width">390</param>
                             <param name="item_width">380</param>
@@ -296,7 +298,7 @@
 					<height>66</height>
 					<texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
 					<include>DefDialogButtons</include>
-					<visible>!String.IsEmpty(Container(211).ListItem.Label) + String.IsEqual(Window.Property(groupname),mainmenu) + !String.IsEqual(Container(211).ListItem.Property(defaultID),Library) + !String.IsEqual(Container(211).ListItem.Property(defaultID),weather) + !String.IsEqual(Container(211).ListItem.Property(defaultID),$LOCALIZE[10007]) + !String.IsEqual(Container(211).ListItem.Property(defaultID),continue)</visible>
+					<visible>!String.IsEmpty(Container(211).ListItem.Label) + String.IsEqual(Window.Property(groupname),mainmenu) + !String.IsEqual(Container(211).ListItem.Property(defaultID),Library) + !String.IsEqual(Container(211).ListItem.Property(defaultID),weather) + !String.IsEqual(Container(211).ListItem.Property(defaultID),$LOCALIZE[10007]) + !String.IsEqual(Container(211).ListItem.Property(defaultID),continue) + !String.IsEqual(Container(211).ListItem.Property(defaultID),lastwatched)</visible>
 					<visible>Integer.IsLessOrEqual(Container(211).Position,10)</visible>
 					<onup>8780</onup>
 				</control>

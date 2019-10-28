@@ -1,4 +1,7 @@
 1.0.7
+- Add last watched row on the home screen to display last 3 watched movies and last 5 watched episodes
+
+1.0.7
 - Move now playing widget down when there is a notification dialog.
 
 1.0.6
