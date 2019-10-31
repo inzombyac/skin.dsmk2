@@ -217,13 +217,13 @@
 						</include>
 					</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget1Content]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget1ContinueEpisodesContent]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget1ContinueMoviesContent]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget1ContinueEmbyConMovies]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget1ContinueEmbyConEpisodes]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget1ContinueEmbyContent]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget1WatchedMoviesContent]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget1WatchedEpisodesContent]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget1ContinueEpisodesContent]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget1ContinueMoviesContent]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget1ContinueEmbyConMovies]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget1ContinueEmbyConEpisodes]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget1ContinueEmbyContent]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget1WatchedMoviesContent]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget1WatchedEpisodesContent]</content>
 					<include content="EmbyHomeLayout">
 						<param name="movie_view">String.IsEqual(Container(300).ListItemAbsolute(1).Property(widgetFormat),Poster)</param>
 						<param name="square_view">String.IsEqual(Container(300).ListItemAbsolute(1).Property(widgetFormat),Square)</param>
@@ -302,13 +302,13 @@
 						</include>
 					</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget2Content]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget2ContinueEpisodesContent]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget2ContinueMoviesContent]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget2ContinueEmbyConMovies]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget2ContinueEmbyConEpisodes]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget2ContinueEmbyContent]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget2WatchedMoviesContent]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget2WatchedEpisodesContent]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget2ContinueEpisodesContent]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget2ContinueMoviesContent]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget2ContinueEmbyConMovies]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget2ContinueEmbyConEpisodes]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget2ContinueEmbyContent]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget2WatchedMoviesContent]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget2WatchedEpisodesContent]</content>
 					<include content="EmbyHomeLayout">
 						<param name="movie_view">String.IsEqual(Container(300).ListItemAbsolute(2).Property(widgetFormat),Poster)</param>
 						<param name="square_view">String.IsEqual(Container(300).ListItemAbsolute(2).Property(widgetFormat),Square)</param>
@@ -390,13 +390,13 @@
 						</include>
 					</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget3Content]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget3ContinueEpisodesContent]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget3ContinueMoviesContent]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget3ContinueEmbyConMovies]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget3ContinueEmbyConEpisodes]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget3ContinueEmbyContent]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget3WatchedMoviesContent]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget3WatchedEpisodesContent]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget3ContinueEpisodesContent]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget3ContinueMoviesContent]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget3ContinueEmbyConMovies]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget3ContinueEmbyConEpisodes]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget3ContinueEmbyContent]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget3WatchedMoviesContent]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget3WatchedEpisodesContent]</content>
 					<include content="EmbyHomeLayout">
 						<param name="movie_view">String.IsEqual(Container(300).ListItemAbsolute(3).Property(widgetFormat),Poster)</param>
 						<param name="square_view">String.IsEqual(Container(300).ListItemAbsolute(3).Property(widgetFormat),Square)</param>
@@ -480,13 +480,13 @@
 						</include>
 					</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget4Content]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget4ContinueEpisodesContent]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget4ContinueMoviesContent]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget4ContinueEmbyConMovies]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget4ContinueEmbyConEpisodes]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget4ContinueEmbyContent]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget4WatchedMoviesContent]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget4WatchedEpisodesContent]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget4ContinueEpisodesContent]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget4ContinueMoviesContent]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget4ContinueEmbyConMovies]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget4ContinueEmbyConEpisodes]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget4ContinueEmbyContent]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget4WatchedMoviesContent]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget4WatchedEpisodesContent]</content>
 					<include content="EmbyHomeLayout">
 						<param name="movie_view">String.IsEqual(Container(300).ListItemAbsolute(4).Property(widgetFormat),Poster)</param>
 						<param name="square_view">String.IsEqual(Container(300).ListItemAbsolute(4).Property(widgetFormat),Square)</param>
@@ -572,13 +572,13 @@
 						</include>
 					</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget5Content]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget5ContinueEpisodesContent]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget5ContinueMoviesContent]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget5ContinueEmbyConMovies]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget5ContinueEmbyConEpisodes]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget5ContinueEmbyContent]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget5WatchedMoviesContent]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget5WatchedEpisodesContent]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget5ContinueEpisodesContent]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget5ContinueMoviesContent]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget5ContinueEmbyConMovies]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget5ContinueEmbyConEpisodes]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget5ContinueEmbyContent]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget5WatchedMoviesContent]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget5WatchedEpisodesContent]</content>
 					<include content="EmbyHomeLayout">
 						<param name="movie_view">String.IsEqual(Container(300).ListItemAbsolute(5).Property(widgetFormat),Poster)</param>
 						<param name="square_view">String.IsEqual(Container(300).ListItemAbsolute(5).Property(widgetFormat),Square)</param>
@@ -666,13 +666,13 @@
 						</include>
 					</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget6Content]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget6ContinueEpisodesContent]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget6ContinueMoviesContent]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget6ContinueEmbyConMovies]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget6ContinueEmbyConEpisodes]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget6ContinueEmbyContent]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget6WatchedMoviesContent]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget6WatchedEpisodesContent]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget6ContinueEpisodesContent]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget6ContinueMoviesContent]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget6ContinueEmbyConMovies]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget6ContinueEmbyConEpisodes]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget6ContinueEmbyContent]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget6WatchedMoviesContent]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget6WatchedEpisodesContent]</content>
 					<include content="EmbyHomeLayout">
 						<param name="movie_view">String.IsEqual(Container(300).ListItemAbsolute(6).Property(widgetFormat),Poster)</param>
 						<param name="square_view">String.IsEqual(Container(300).ListItemAbsolute(6).Property(widgetFormat),Square)</param>
@@ -762,13 +762,13 @@
 						</include>
 					</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget7Content]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget7ContinueEpisodesContent]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget7ContinueMoviesContent]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget7ContinueEmbyConMovies]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget7ContinueEmbyConEpisodes]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget7ContinueEmbyContent]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget7WatchedMoviesContent]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget7WatchedEpisodesContent]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget7ContinueEpisodesContent]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget7ContinueMoviesContent]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget7ContinueEmbyConMovies]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget7ContinueEmbyConEpisodes]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget7ContinueEmbyContent]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget7WatchedMoviesContent]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget7WatchedEpisodesContent]</content>
 					<include content="EmbyHomeLayout">
 						<param name="movie_view">String.IsEqual(Container(300).ListItemAbsolute(7).Property(widgetFormat),Poster)</param>
 						<param name="square_view">String.IsEqual(Container(300).ListItemAbsolute(7).Property(widgetFormat),Square)</param>
@@ -860,13 +860,13 @@
 						</include>
 					</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget8Content]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget8ContinueEpisodesContent]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget8ContinueMoviesContent]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget8ContinueEmbyConMovies]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget8ContinueEmbyConEpisodes]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget8ContinueEmbyContent]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget8WatchedMoviesContent]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget8WatchedEpisodesContent]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget8ContinueEpisodesContent]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget8ContinueMoviesContent]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget8ContinueEmbyConMovies]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget8ContinueEmbyConEpisodes]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget8ContinueEmbyContent]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget8WatchedMoviesContent]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget8WatchedEpisodesContent]</content>
 					<include content="EmbyHomeLayout">
 						<param name="movie_view">String.IsEqual(Container(300).ListItemAbsolute(8).Property(widgetFormat),Poster)</param>
 						<param name="square_view">String.IsEqual(Container(300).ListItemAbsolute(8).Property(widgetFormat),Square)</param>
@@ -960,13 +960,13 @@
 						</include>
 					</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget9Content]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget9ContinueEpisodesContent]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget9ContinueMoviesContent]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget9ContinueEmbyConMovies]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget9ContinueEmbyConEpisodes]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget9ContinueEmbyContent]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget9WatchedMoviesContent]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget9WatchedEpisodesContent]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget9ContinueEpisodesContent]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget9ContinueMoviesContent]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget9ContinueEmbyConMovies]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget9ContinueEmbyConEpisodes]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget9ContinueEmbyContent]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget9WatchedMoviesContent]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget9WatchedEpisodesContent]</content>
 					<include content="EmbyHomeLayout">
 						<param name="movie_view">String.IsEqual(Container(300).ListItemAbsolute(9).Property(widgetFormat),Poster)</param>
 						<param name="square_view">String.IsEqual(Container(300).ListItemAbsolute(9).Property(widgetFormat),Square)</param>
@@ -1062,13 +1062,13 @@
 						</include>
 					</content>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget10Content]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget10ContinueEpisodesContent]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget10ContinueMoviesContent]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget10ContinueEmbyConMovies]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget10ContinueEmbyConEpisodes]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget10ContinueEmbyContent]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget10WatchedMoviesContent]</content>
-					<content limit="25" target="videos">$VAR[EmbyHomeWidget10WatchedEpisodesContent]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget10ContinueEpisodesContent]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget10ContinueMoviesContent]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget10ContinueEmbyConMovies]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget10ContinueEmbyConEpisodes]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget10ContinueEmbyContent]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget10WatchedMoviesContent]</content>
+					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidget10WatchedEpisodesContent]</content>
 					<include content="EmbyHomeLayout">
 						<param name="movie_view">String.IsEqual(Container(300).ListItemAbsolute(10).Property(widgetFormat),Poster)</param>
 						<param name="square_view">String.IsEqual(Container(300).ListItemAbsolute(10).Property(widgetFormat),Square)</param>
@@ -2030,33 +2030,5 @@
 				<visible>!String.IsEmpty(Window(home).Property(emby.nodes.20.path)) + !String.IsEqual(Window(home).Property(emby.nodes.20.type),favorites)</visible>
 			</item>
 		</definition>
-	</include>
-	<include name="EmbyHiddenItemLayout">
-		<itemlayout width="1" height="1">
-			<control type="button">
-				<onfocus>SetFocus(4000)</onfocus>
-			</control>
-			<control type="image">
-				<texture>$INFO[ListItem.Art(fanart)]</texture>
-				<visible>!String.IsEmpty(ListItem.Art(fanart))</visible>
-			</control>
-			<control type="image">
-				<texture>$INFO[ListItem.Icon]</texture>
-				<visible>!String.IsEmpty(ListItem.Icon)</visible>
-			</control>
-		</itemlayout>
-		<focusedlayout width="1" height="1">
-			<control type="button">
-				<onfocus>SetFocus(4000)</onfocus>
-			</control>
-			<control type="image">
-				<texture>$INFO[ListItem.Art(fanart)]</texture>
-				<visible>!String.IsEmpty(ListItem.Art(fanart))</visible>
-			</control>
-			<control type="image">
-				<texture>$INFO[ListItem.Icon]</texture>
-				<visible>!String.IsEmpty(ListItem.Icon)</visible>
-			</control>
-		</focusedlayout>
 	</include>
 </includes>
