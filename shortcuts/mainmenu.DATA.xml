@@ -13,7 +13,7 @@
         <defaultID>continue</defaultID>
         <icon>special://skin/extras/icons/play.png</icon>
         <action>ActivateWindow(Videos,special://skin/extras/playlists/InProgress)</action>
-        <visible>!System.HasAddon(plugin.video.emby) | !String.IsEqual(Window(Home).Property(emby_online),true)</visible> 
+        <visible>!System.HasAddon(plugin.video.emby)</visible> 
     </shortcut>
     <shortcut>
         <label>Continue Watching</label>
@@ -21,7 +21,7 @@
         <defaultID>continue</defaultID>
         <icon>special://skin/extras/icons/play.png</icon>
         <action>ActivateWindow(Videos,plugin://plugin.video.emby/?folder=InProgress&amp;mode=browse&amp;server=None,return)</action>
-        <visible>System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)</visible> 
+        <visible>System.HasAddon(plugin.video.emby)</visible> 
     </shortcut>
     <shortcut>
         <label>Next Episodes</label>

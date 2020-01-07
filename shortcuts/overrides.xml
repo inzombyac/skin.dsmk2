@@ -158,7 +158,7 @@
     <widget label="Custom8" path="$INFO[Skin.String(CustomWidget8)]" condition="!String.IsEmpty(Skin.String(CustomWidget8))" icon="special://skin/extras/icons/bookmarks.png">Custom8</widget>
     <widget label="Custom9" path="$INFO[Skin.String(CustomWidget9)]" condition="!String.IsEmpty(Skin.String(CustomWidget9))" icon="special://skin/extras/icons/bookmarks.png">Custom9</widget>
     <widget label="Custom10" path="$INFO[Skin.String(CustomWidget10)]" condition="!String.IsEmpty(Skin.String(CustomWidget10))" icon="special://skin/extras/icons/bookmarks.png">Custom10</widget>
-    <!-- Custom Propertoes -->
+    <!-- Custom Properties -->
     <propertydefault labelID="22020" property="widgetPath">pvr://channels/tv/*</propertydefault>
     <propertydefault labelID="guide" property="widgetPath">pvr://channels/tv/*</propertydefault>
     <propertydefault labelID="livetv" property="widgetPath">pvr://channels/tv/*</propertydefault>
@@ -302,6 +302,7 @@
     <background label="Skin">||BROWSE||special://skin/extras/backgrounds</background>
     <!-- <backgroundBrowse default="special://skin/extras/backgrounds">Single</backgroundBrowse> -->
     <backgrounddefault defaultID="library">special://skin/extras/backgrounds/Channels2.jpg</backgrounddefault>
+    <backgrounddefault defaultID="continue">special://skin/extras/backgrounds/channels.jpg</backgrounddefault>
     <backgrounddefault defaultID="movies">special://skin/extras/backgrounds/Theater.jpg</backgrounddefault>
     <backgrounddefault defaultID="tvshows">special://skin/extras/backgrounds/tv.jpg</backgrounddefault>
     <backgrounddefault defaultID="livetv">special://skin/extras/backgrounds/Channels.jpg</backgrounddefault>

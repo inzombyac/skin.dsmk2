@@ -4,6 +4,16 @@
     <defaultcontrol always="true">9100</defaultcontrol>
     <controls>
         <include>GlobalOverlay</include>
+        <control type="label">
+            <include>ControlID2</include>
+            <label>Left Pos: $INFO[Container(211).Position]</label>
+            <visible>Skin.HasSetting(DebugGrid)</visible>
+        </control>
+        <control type="label">
+            <include>ControlID3</include>
+            <label>Right Pos: $INFO[Container(9100).Position]</label>
+            <visible>Skin.HasSetting(DebugGrid)</visible>
+        </control>
         <control type="group">
             <include>Animation.FadeIn.Slide</include>
             <centerleft>50%</centerleft>
@@ -188,57 +198,355 @@
 						<label>$VAR[SkinShortcutsImageLabel]</label>
 						<visible>!String.IsEmpty(Container(211).ListItem.Label)</visible>
 					</control>
-					<!-- Widget -->
-                    <control type="list" id="6000">
-                        <animation effect="slide" start="0,0" end="65,0" time="0" condition="String.IsEqual(Container(211).ListItem.Property(widgetFormat),Poster)">Conditional</animation>
+                    <!-- Static Image for Library -->
+                    <control type="image">
+                        <top>69</top>
+                        <left>45</left>
+                        <height>230</height>
+                        <width>380</width>
+                        <aspectratio>scale</aspectratio>
+                        <texture>$VAR[SkinShortcutsBackground]</texture>
+                        <visible>[Integer.IsLess(Container(211).Position,2) + String.IsEqual(Window.Property(groupname),mainmenu)] | !String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                    </control>
+					<!-- Widget 1 -->
+                    <control type="list" id="6001">
                         <autoscroll time="5000">true</autoscroll>
                         <top>69</top>
                         <left>45</left>
                         <width>390</width>
-                        <content>
-                            <include content="WeatherWidget">
-                                <param name="is_weather">String.IsEqual(Container(211).ListItem.Property(defaultID),weather)</param>
-                            </include>
-                        </content>
-                        <content>
-                            <include content="SysInfoWidget">
-                                <param name="is_sys_info">String.IsEqual(Container(211).ListItem.Property(defaultID),$LOCALIZE[10007])</param>
-                            </include>
-                        </content>
-                        <content limit="25" target="videos" sortby="random">$VAR[SkinShortcutsContinueEpisodes]</content>
-                        <content limit="25" target="videos" sortby="random">$VAR[SkinShortcutsContinueMovies]</content>
-                        <content limit="25" target="videos" sortby="random">$VAR[SkinShortcutsContinueEmbyConMovies]</content>
-                        <content limit="25" target="videos" sortby="random">$VAR[SkinShortcutsContinueEmbyConEpisodes]</content>
-                        <content limit="25" target="videos" sortby="random">$VAR[SkinShortcutsContinueEmby]</content>
-                        <content limit="25" target="videos" sortby="random">$VAR[SkinShortcutsContent]</content>
-                        <content limit="25" target="videos" sortby="random">$VAR[SkinShortcutsWatchedMoviesContent]</content>
-                        <content limit="25" target="videos" sortby="random">$VAR[SkinShortcutsWatchedEpisodesContent]</content>
+                        <content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidgetContinueEpisodesContent]</content>
+                        <content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidgetContinueMoviesContent]</content>
+                        <content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidgetContinueEmbyConMovies]</content>
+                        <content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidgetContinueEmbyConEpisodes]</content>
+                        <content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidgetContinueEmbyContent]</content>
                         <include content="EmbyHomeLayout">
                             <param name="widget_width">390</param>
                             <param name="item_width">380</param>
                             <param name="widget_height">245</param>
                             <param name="item_height">230</param>
-                            <param name="widget_movie_height">430</param>
-                            <param name="item_movie_height">430</param>
+                            <param name="widget_movie_height">380</param>
+                            <param name="item_movie_height">380</param>
                             <param name="widget_movie_width">390</param>
                             <param name="item_movie_width">240</param>
                             <param name="widget_square_width">390</param>
                             <param name="item_square_width">380</param>
                             <param name="widget_square_height">390</param>
                             <param name="item_square_height">380</param>
-                            <param name="movie_view">String.IsEqual(Container(211).ListItem.Property(widgetFormat),Poster)</param>
-                            <param name="square_view">String.IsEqual(Container(211).ListItem.Property(widgetFormat),Square)</param>
-                            <param name="channel_view">String.IsEqual(Container(211).ListItem.Property(widgetFormat),LiveTV)</param>
                         </include>
+                        <visible>Integer.IsEqual(Container(211).Position,1) + String.IsEqual(Window.Property(groupname),mainmenu)</visible>
                     </control>
-                    <!-- background -->
-					<control type="image">
-						<top>69</top>
-						<height>220</height>
-						<aspectratio>keep</aspectratio>
-						<texture>$VAR[SkinShortcutsBackground]</texture>
-						<visible>!String.IsEqual(Window.Property(groupname),mainmenu) | !Integer.IsGreater(Container(211).Position,0)</visible>
-					</control>
+                    <!-- Widget 2 -->
+                    <control type="list" id="6002">
+                        <animation effect="slide" start="0,0" end="65,0" time="0" condition="String.IsEqual(Container(211).ListItemAbsolute(2).Property(widgetFormat),Poster)">Conditional</animation>
+                        <autoscroll time="5000">true</autoscroll>
+                        <top>69</top>
+                        <left>45</left>
+                        <width>390</width>
+                        <content>
+                            <include content="WeatherWidget">
+                                <param name="is_weather">String.IsEqual(Container(211).ListItemAbsolute(2).Property(defaultID),weather)</param>
+                            </include>
+                        </content>
+                        <content>
+                            <include content="SysInfoWidget">
+                                <param name="is_sys_info">String.IsEqual(Container(211).ListItemAbsolute(2).Property(defaultID),$LOCALIZE[10007])</param>
+                            </include>
+                        </content>
+                        <content limit="25" target="videos" sortby="random">$INFO[Container(211).ListItemAbsolute(2).Property(widgetPath)]</content>
+                        <content limit="25" target="videos" sortby="random">$VAR[SkinShortcutsWatchedMoviesContent2]</content>
+                        <content limit="25" target="videos" sortby="random">$VAR[SkinShortcutsWatchedEpisodesContent2]</content>
+                        <include content="EmbyHomeLayout">
+                            <param name="widget_width">390</param>
+                            <param name="item_width">380</param>
+                            <param name="widget_height">245</param>
+                            <param name="item_height">230</param>
+                            <param name="widget_movie_height">380</param>
+                            <param name="item_movie_height">380</param>
+                            <param name="widget_movie_width">390</param>
+                            <param name="item_movie_width">240</param>
+                            <param name="widget_square_width">390</param>
+                            <param name="item_square_width">380</param>
+                            <param name="widget_square_height">390</param>
+                            <param name="item_square_height">380</param>
+                            <param name="movie_view">String.IsEqual(Container(211).ListItemAbsolute(2).Property(widgetFormat),Poster)</param>
+                            <param name="square_view">String.IsEqual(Container(211).ListItemAbsolute(2).Property(widgetFormat),Square)</param>
+                            <param name="channel_view">String.IsEqual(Container(211).ListItemAbsolute(2).Property(widgetFormat),LiveTV)</param>
+                        </include>
+                        <visible>Integer.IsEqual(Container(211).Position,2) + String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                    </control>
+                    <!-- Widget 3 -->
+                    <control type="list" id="6003">
+                        <animation effect="slide" start="0,0" end="65,0" time="0" condition="String.IsEqual(Container(211).ListItemAbsolute(3).Property(widgetFormat),Poster)">Conditional</animation>
+                        <autoscroll time="5000">true</autoscroll>
+                        <top>69</top>
+                        <left>45</left>
+                        <width>390</width>
+                        <content>
+                            <include content="WeatherWidget">
+                                <param name="is_weather">String.IsEqual(Container(211).ListItemAbsolute(3).Property(defaultID),weather)</param>
+                            </include>
+                        </content>
+                        <content>
+                            <include content="SysInfoWidget">
+                                <param name="is_sys_info">String.IsEqual(Container(211).ListItemAbsolute(3).Property(defaultID),$LOCALIZE[10007])</param>
+                            </include>
+                        </content>
+                        <content limit="25" target="videos" sortby="random">$INFO[Container(211).ListItemAbsolute(3).Property(widgetPath)]</content>
+                        <content limit="25" target="videos" sortby="random">$VAR[SkinShortcutsWatchedMoviesContent3]</content>
+                        <content limit="25" target="videos" sortby="random">$VAR[SkinShortcutsWatchedEpisodesContent3]</content>
+                        <include content="EmbyHomeLayout">
+                            <param name="widget_width">390</param>
+                            <param name="item_width">380</param>
+                            <param name="widget_height">245</param>
+                            <param name="item_height">230</param>
+                            <param name="widget_movie_height">380</param>
+                            <param name="item_movie_height">380</param>
+                            <param name="widget_movie_width">390</param>
+                            <param name="item_movie_width">240</param>
+                            <param name="widget_square_width">390</param>
+                            <param name="item_square_width">380</param>
+                            <param name="widget_square_height">390</param>
+                            <param name="item_square_height">380</param>
+                            <param name="movie_view">String.IsEqual(Container(211).ListItemAbsolute(3).Property(widgetFormat),Poster)</param>
+                            <param name="square_view">String.IsEqual(Container(211).ListItemAbsolute(3).Property(widgetFormat),Square)</param>
+                            <param name="channel_view">String.IsEqual(Container(211).ListItemAbsolute(3).Property(widgetFormat),LiveTV)</param>
+                        </include>
+                        <visible>Integer.IsEqual(Container(211).Position,3) + String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                    </control>
+                    <!-- Widget 4 -->
+                    <control type="list" id="6004">
+                        <animation effect="slide" start="0,0" end="65,0" time="0" condition="String.IsEqual(Container(211).ListItemAbsolute(4).Property(widgetFormat),Poster)">Conditional</animation>
+                        <autoscroll time="5000">true</autoscroll>
+                        <top>69</top>
+                        <left>45</left>
+                        <width>390</width>
+                        <content>
+                            <include content="WeatherWidget">
+                                <param name="is_weather">String.IsEqual(Container(211).ListItemAbsolute(4).Property(defaultID),weather)</param>
+                            </include>
+                        </content>
+                        <content>
+                            <include content="SysInfoWidget">
+                                <param name="is_sys_info">String.IsEqual(Container(211).ListItemAbsolute(4).Property(defaultID),$LOCALIZE[10007])</param>
+                            </include>
+                        </content>
+                        <content limit="25" target="videos" sortby="random">$INFO[Container(211).ListItemAbsolute(4).Property(widgetPath)]</content>
+                        <content limit="25" target="videos" sortby="random">$VAR[SkinShortcutsWatchedMoviesContent4]</content>
+                        <content limit="25" target="videos" sortby="random">$VAR[SkinShortcutsWatchedEpisodesContent4]</content>
+                        <include content="EmbyHomeLayout">
+                            <param name="widget_width">390</param>
+                            <param name="item_width">380</param>
+                            <param name="widget_height">245</param>
+                            <param name="item_height">230</param>
+                            <param name="widget_movie_height">380</param>
+                            <param name="item_movie_height">380</param>
+                            <param name="widget_movie_width">390</param>
+                            <param name="item_movie_width">240</param>
+                            <param name="widget_square_width">390</param>
+                            <param name="item_square_width">380</param>
+                            <param name="widget_square_height">390</param>
+                            <param name="item_square_height">380</param>
+                            <param name="movie_view">String.IsEqual(Container(211).ListItemAbsolute(4).Property(widgetFormat),Poster)</param>
+                            <param name="square_view">String.IsEqual(Container(211).ListItemAbsolute(4).Property(widgetFormat),Square)</param>
+                            <param name="channel_view">String.IsEqual(Container(211).ListItemAbsolute(4).Property(widgetFormat),LiveTV)</param>
+                        </include>
+                        <visible>Integer.IsEqual(Container(211).Position,4) + String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                    </control>
+                    <!-- Widget 5 -->
+                    <control type="list" id="6005">
+                        <animation effect="slide" start="0,0" end="65,0" time="0" condition="String.IsEqual(Container(211).ListItemAbsolute(5).Property(widgetFormat),Poster)">Conditional</animation>
+                        <autoscroll time="5000">true</autoscroll>
+                        <top>69</top>
+                        <left>45</left>
+                        <width>390</width>
+                        <content>
+                            <include content="WeatherWidget">
+                                <param name="is_weather">String.IsEqual(Container(211).ListItemAbsolute(5).Property(defaultID),weather)</param>
+                            </include>
+                        </content>
+                        <content>
+                            <include content="SysInfoWidget">
+                                <param name="is_sys_info">String.IsEqual(Container(211).ListItemAbsolute(5).Property(defaultID),$LOCALIZE[10007])</param>
+                            </include>
+                        </content>
+                        <content limit="25" target="videos" sortby="random">$INFO[Container(211).ListItemAbsolute(5).Property(widgetPath)]</content>
+                        <content limit="25" target="videos" sortby="random">$VAR[SkinShortcutsWatchedMoviesContent5]</content>
+                        <content limit="25" target="videos" sortby="random">$VAR[SkinShortcutsWatchedEpisodesContent5]</content>
+                        <include content="EmbyHomeLayout">
+                            <param name="widget_width">390</param>
+                            <param name="item_width">380</param>
+                            <param name="widget_height">245</param>
+                            <param name="item_height">230</param>
+                            <param name="widget_movie_height">380</param>
+                            <param name="item_movie_height">380</param>
+                            <param name="widget_movie_width">390</param>
+                            <param name="item_movie_width">240</param>
+                            <param name="widget_square_width">390</param>
+                            <param name="item_square_width">380</param>
+                            <param name="widget_square_height">390</param>
+                            <param name="item_square_height">380</param>
+                            <param name="movie_view">String.IsEqual(Container(211).ListItemAbsolute(5).Property(widgetFormat),Poster)</param>
+                            <param name="square_view">String.IsEqual(Container(211).ListItemAbsolute(5).Property(widgetFormat),Square)</param>
+                            <param name="channel_view">String.IsEqual(Container(211).ListItemAbsolute(5).Property(widgetFormat),LiveTV)</param>
+                        </include>
+                        <visible>Integer.IsEqual(Container(211).Position,5) + String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                    </control>
+                    <!-- Widget 6 -->
+                    <control type="list" id="6006">
+                        <animation effect="slide" start="0,0" end="65,0" time="0" condition="String.IsEqual(Container(211).ListItemAbsolute(6).Property(widgetFormat),Poster)">Conditional</animation>
+                        <autoscroll time="5000">true</autoscroll>
+                        <top>69</top>
+                        <left>45</left>
+                        <width>390</width>
+                        <content>
+                            <include content="WeatherWidget">
+                                <param name="is_weather">String.IsEqual(Container(211).ListItemAbsolute(6).Property(defaultID),weather)</param>
+                            </include>
+                        </content>
+                        <content>
+                            <include content="SysInfoWidget">
+                                <param name="is_sys_info">String.IsEqual(Container(211).ListItemAbsolute(6).Property(defaultID),$LOCALIZE[10007])</param>
+                            </include>
+                        </content>
+                        <content limit="25" target="videos" sortby="random">$INFO[Container(211).ListItemAbsolute(6).Property(widgetPath)]</content>
+                        <content limit="25" target="videos" sortby="random">$VAR[SkinShortcutsWatchedMoviesContent6]</content>
+                        <content limit="25" target="videos" sortby="random">$VAR[SkinShortcutsWatchedEpisodesContent6]</content>
+                        <include content="EmbyHomeLayout">
+                            <param name="widget_width">390</param>
+                            <param name="item_width">380</param>
+                            <param name="widget_height">245</param>
+                            <param name="item_height">230</param>
+                            <param name="widget_movie_height">380</param>
+                            <param name="item_movie_height">380</param>
+                            <param name="widget_movie_width">390</param>
+                            <param name="item_movie_width">240</param>
+                            <param name="widget_square_width">390</param>
+                            <param name="item_square_width">380</param>
+                            <param name="widget_square_height">390</param>
+                            <param name="item_square_height">380</param>
+                            <param name="movie_view">String.IsEqual(Container(211).ListItemAbsolute(6).Property(widgetFormat),Poster)</param>
+                            <param name="square_view">String.IsEqual(Container(211).ListItemAbsolute(6).Property(widgetFormat),Square)</param>
+                            <param name="channel_view">String.IsEqual(Container(211).ListItemAbsolute(6).Property(widgetFormat),LiveTV)</param>
+                        </include>
+                        <visible>Integer.IsEqual(Container(211).Position,6) + String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                    </control>
+                    <!-- Widget 7 -->
+                    <control type="list" id="6007">
+                        <animation effect="slide" start="0,0" end="65,0" time="0" condition="String.IsEqual(Container(211).ListItemAbsolute(7).Property(widgetFormat),Poster)">Conditional</animation>
+                        <autoscroll time="5000">true</autoscroll>
+                        <top>69</top>
+                        <left>45</left>
+                        <width>390</width>
+                        <content>
+                            <include content="WeatherWidget">
+                                <param name="is_weather">String.IsEqual(Container(211).ListItemAbsolute(7).Property(defaultID),weather)</param>
+                            </include>
+                        </content>
+                        <content>
+                            <include content="SysInfoWidget">
+                                <param name="is_sys_info">String.IsEqual(Container(211).ListItemAbsolute(7).Property(defaultID),$LOCALIZE[10007])</param>
+                            </include>
+                        </content>
+                        <content limit="25" target="videos" sortby="random">$INFO[Container(211).ListItemAbsolute(7).Property(widgetPath)]</content>
+                        <content limit="25" target="videos" sortby="random">$VAR[SkinShortcutsWatchedMoviesContent7]</content>
+                        <content limit="25" target="videos" sortby="random">$VAR[SkinShortcutsWatchedEpisodesContent7]</content>
+                        <include content="EmbyHomeLayout">
+                            <param name="widget_width">390</param>
+                            <param name="item_width">380</param>
+                            <param name="widget_height">245</param>
+                            <param name="item_height">230</param>
+                            <param name="widget_movie_height">380</param>
+                            <param name="item_movie_height">380</param>
+                            <param name="widget_movie_width">390</param>
+                            <param name="item_movie_width">240</param>
+                            <param name="widget_square_width">390</param>
+                            <param name="item_square_width">380</param>
+                            <param name="widget_square_height">390</param>
+                            <param name="item_square_height">380</param>
+                            <param name="movie_view">String.IsEqual(Container(211).ListItemAbsolute(7).Property(widgetFormat),Poster)</param>
+                            <param name="square_view">String.IsEqual(Container(211).ListItemAbsolute(7).Property(widgetFormat),Square)</param>
+                            <param name="channel_view">String.IsEqual(Container(211).ListItemAbsolute(7).Property(widgetFormat),LiveTV)</param>
+                        </include>
+                        <visible>Integer.IsEqual(Container(211).Position,7) + String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                    </control>
+                    <!-- Widget 8 -->
+                    <control type="list" id="6008">
+                        <animation effect="slide" start="0,0" end="65,0" time="0" condition="String.IsEqual(Container(211).ListItemAbsolute(8).Property(widgetFormat),Poster)">Conditional</animation>
+                        <autoscroll time="5000">true</autoscroll>
+                        <top>69</top>
+                        <left>45</left>
+                        <width>390</width>
+                        <content>
+                            <include content="WeatherWidget">
+                                <param name="is_weather">String.IsEqual(Container(211).ListItemAbsolute(8).Property(defaultID),weather)</param>
+                            </include>
+                        </content>
+                        <content>
+                            <include content="SysInfoWidget">
+                                <param name="is_sys_info">String.IsEqual(Container(211).ListItemAbsolute(8).Property(defaultID),$LOCALIZE[10007])</param>
+                            </include>
+                        </content>
+                        <content limit="25" target="videos" sortby="random">$INFO[Container(211).ListItemAbsolute(8).Property(widgetPath)]</content>
+                        <content limit="25" target="videos" sortby="random">$VAR[SkinShortcutsWatchedMoviesContent8]</content>
+                        <content limit="25" target="videos" sortby="random">$VAR[SkinShortcutsWatchedEpisodesContent8]</content>
+                        <include content="EmbyHomeLayout">
+                            <param name="widget_width">390</param>
+                            <param name="item_width">380</param>
+                            <param name="widget_height">245</param>
+                            <param name="item_height">230</param>
+                            <param name="widget_movie_height">380</param>
+                            <param name="item_movie_height">380</param>
+                            <param name="widget_movie_width">390</param>
+                            <param name="item_movie_width">240</param>
+                            <param name="widget_square_width">390</param>
+                            <param name="item_square_width">380</param>
+                            <param name="widget_square_height">390</param>
+                            <param name="item_square_height">380</param>
+                            <param name="movie_view">String.IsEqual(Container(211).ListItemAbsolute(8).Property(widgetFormat),Poster)</param>
+                            <param name="square_view">String.IsEqual(Container(211).ListItemAbsolute(8).Property(widgetFormat),Square)</param>
+                            <param name="channel_view">String.IsEqual(Container(211).ListItemAbsolute(8).Property(widgetFormat),LiveTV)</param>
+                        </include>
+                        <visible>Integer.IsEqual(Container(211).Position,8) + String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                    </control>
+                    <!-- Widget 9 -->
+                    <control type="list" id="6009">
+                        <animation effect="slide" start="0,0" end="65,0" time="0" condition="String.IsEqual(Container(211).ListItemAbsolute(9).Property(widgetFormat),Poster)">Conditional</animation>
+                        <autoscroll time="5000">true</autoscroll>
+                        <top>69</top>
+                        <left>45</left>
+                        <width>390</width>
+                        <content>
+                            <include content="WeatherWidget">
+                                <param name="is_weather">String.IsEqual(Container(211).ListItemAbsolute(9).Property(defaultID),weather)</param>
+                            </include>
+                        </content>
+                        <content>
+                            <include content="SysInfoWidget">
+                                <param name="is_sys_info">String.IsEqual(Container(211).ListItemAbsolute(9).Property(defaultID),$LOCALIZE[10007])</param>
+                            </include>
+                        </content>
+                        <content limit="25" target="videos" sortby="random">$INFO[Container(211).ListItemAbsolute(9).Property(widgetPath)]</content>
+                        <content limit="25" target="videos" sortby="random">$VAR[SkinShortcutsWatchedMoviesContent9]</content>
+                        <content limit="25" target="videos" sortby="random">$VAR[SkinShortcutsWatchedEpisodesContent9]</content>
+                        <include content="EmbyHomeLayout">
+                            <param name="widget_width">390</param>
+                            <param name="item_width">380</param>
+                            <param name="widget_height">245</param>
+                            <param name="item_height">230</param>
+                            <param name="widget_movie_height">380</param>
+                            <param name="item_movie_height">380</param>
+                            <param name="widget_movie_width">390</param>
+                            <param name="item_movie_width">240</param>
+                            <param name="widget_square_width">390</param>
+                            <param name="item_square_width">380</param>
+                            <param name="widget_square_height">390</param>
+                            <param name="item_square_height">380</param>
+                            <param name="movie_view">String.IsEqual(Container(211).ListItemAbsolute(9).Property(widgetFormat),Poster)</param>
+                            <param name="square_view">String.IsEqual(Container(211).ListItemAbsolute(9).Property(widgetFormat),Square)</param>
+                            <param name="channel_view">String.IsEqual(Container(211).ListItemAbsolute(9).Property(widgetFormat),LiveTV)</param>
+                        </include>
+                        <visible>Integer.IsEqual(Container(211).Position,9) + String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                    </control>
 				</control>
 			</control>
             <!-- Right Buttons -->
@@ -258,7 +566,7 @@
                     <width>100%</width>
                     <height>66</height>
                     <label>Change Library Items</label>
-                    <visible>String.IsEqual(Window.Property(groupname),mainmenu) + String.IsEqual(Container(211).ListItem.Label2,library)</visible>
+                    <visible>String.IsEqual(Window.Property(groupname),mainmenu) + Integer.IsEqual(Container(211).Position,0)</visible>
                     <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
                     <include>DefDialogButtons</include>
                     <onclick>RunScript(script.skinshortcuts,type=manage&amp;group=library)</onclick>
@@ -268,29 +576,28 @@
                     <height>66</height>
                     <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
                     <include>DefDialogButtons</include>
-                    <visible>[String.IsEqual(Window.Property(groupname),mainmenu) + !String.IsEqual(Container(211).ListItem.Label2,library)] | [String.IsEqual(Window.Property(groupname),library) + !String.IsEqual(Container(211).ListItem.Label,Emby)]</visible>
+                    <visible>[String.IsEqual(Window.Property(groupname),mainmenu) + !Integer.IsEqual(Container(211).Position,0)] | [String.IsEqual(Window.Property(groupname),library) + !String.IsEqual(Container(211).ListItem.Label,Emby)]</visible>
                 </control>
                 <control type="button" id="307" description="Change Action">
                     <width>100%</width>
                     <height>66</height>
                     <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
                     <include>DefDialogButtons</include>
-                    <visible>!String.IsEqual(Window.Property(groupname),library) | [String.IsEqual(Window.Property(groupname),library) + !String.IsEqual(Container(211).ListItem.Label,Emby)]</visible>
+                    <visible>[String.IsEqual(Window.Property(groupname),mainmenu)] | [String.IsEqual(Window.Property(groupname),library) + !String.IsEqual(Container(211).ListItem.Label,Emby)]</visible>
                 </control>
                 <control type="button" id="305" description="Set Label">
                     <width>100%</width>
                     <height>66</height>
                     <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
                     <include>DefDialogButtons</include>
-                    <visible>!String.IsEqual(Window.Property(groupname),library) | [String.IsEqual(Window.Property(groupname),library) + !String.IsEqual(Container(211).ListItem.Label,Emby)]</visible>
+                    <visible>[String.IsEqual(Window.Property(groupname),mainmenu)] | [String.IsEqual(Window.Property(groupname),library) + !String.IsEqual(Container(211).ListItem.Label,Emby)]</visible>
                 </control>
                 <control type="button" id="310" description="Background">
                     <width>100%</width>
                     <height>66</height>
                     <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
-					<visible>!String.IsEmpty(Container(211).ListItem.Label) + [[String.IsEqual(Window.Property(groupname),mainmenu) + !Integer.IsGreater(Container(211).Position,0)] | !String.IsEqual(Window.Property(groupname),mainmenu)]</visible>
+					<visible>!String.IsEmpty(Container(211).ListItem.Label) + [[String.IsEqual(Window.Property(groupname),mainmenu) + Integer.IsEqual(Container(211).Position,0)] | !String.IsEqual(Window.Property(groupname),mainmenu)]</visible>
                     <include>DefDialogButtons</include>
-                    <visible>!String.IsEqual(Window.Property(groupname),library) | [String.IsEqual(Window.Property(groupname),library) + !String.IsEqual(Container(211).ListItem.Label,Emby)]</visible>
                 </control>
                 <!-- Main widget -->
 				 <control type="button" id="312" description="Select Widget">
@@ -298,8 +605,7 @@
 					<height>66</height>
 					<texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
 					<include>DefDialogButtons</include>
-					<visible>!String.IsEmpty(Container(211).ListItem.Label) + String.IsEqual(Window.Property(groupname),mainmenu) + !String.IsEqual(Container(211).ListItem.Property(defaultID),Library) + !String.IsEqual(Container(211).ListItem.Property(defaultID),weather) + !String.IsEqual(Container(211).ListItem.Property(defaultID),$LOCALIZE[10007]) + !String.IsEqual(Container(211).ListItem.Property(defaultID),continue) + !String.IsEqual(Container(211).ListItem.Property(defaultID),lastwatched)</visible>
-					<visible>Integer.IsLessOrEqual(Container(211).Position,10)</visible>
+					<visible>[String.IsEqual(Window.Property(groupname),mainmenu) + Integer.IsGreater(Container(211).Position,1) + !String.IsEqual(Container(211).ListItem.Property(defaultID),weather) + !String.IsEqual(Container(211).ListItem.Property(defaultID),$LOCALIZE[10007]) + !String.IsEmpty(Container(211).ListItem.Label) + !String.IsEqual(Container(211).ListItem.Property(defaultID),lastwatched)] |  [!String.IsEqual(Window.Property(groupname),mainmenu)]</visible>
 					<onup>8780</onup>
 				</control>
                 <control type="button" id="9301" description="Set MovieHub">
@@ -328,35 +634,35 @@
                     <label>View: $INFO[Container(211).ListItem.Property(widgetFormat)]</label>
                     <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
                     <include>DefDialogButtons</include>
-                    <visible>!String.IsEmpty(Container(211).ListItem.Label) + String.IsEqual(Window.Property(groupname),mainmenu) + !String.IsEqual(Container(211).ListItem.Property(defaultID),Library)</visible>
+                    <visible>!String.IsEmpty(Container(211).ListItem.Label) + String.IsEqual(Window.Property(groupname),mainmenu) + Integer.IsGreater(Container(211).Position,1)</visible>
                 </control>
                 <control type="button" id="303" description="Up">
                     <width>100%</width>
                     <height>66</height>
                     <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
                     <include>DefDialogButtons</include>
-                    <visible>[String.IsEqual(Window.Property(groupname),mainmenu) + Integer.IsGreater(Container(211).Position,1)] | [String.IsEqual(Window.Property(groupname),library) + !System.HasAddon(plugin.video.emby)] | [ String.IsEqual(Window.Property(groupname),library) + System.HasAddon(plugin.video.emby) + Integer.IsGreater(Container(211).Position,1)]</visible>
+                    <visible>[String.IsEqual(Window.Property(groupname),mainmenu) + Integer.IsGreater(Container(211).Position,2)] | [String.IsEqual(Window.Property(groupname),library) + !System.HasAddon(plugin.video.emby)] | [ String.IsEqual(Window.Property(groupname),library) + System.HasAddon(plugin.video.emby) + Integer.IsGreater(Container(211).Position,1)]</visible>
                 </control>
                 <control type="button" id="304" description="Down">
                     <width>100%</width>
                     <height>66</height>
                     <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
                     <include>DefDialogButtons</include>
-                    <visible>[String.IsEqual(Window.Property(groupname),mainmenu) + !String.IsEqual(Container(211).ListItem.Label2,library)] | [ String.IsEqual(Window.Property(groupname),library) + !String.IsEqual(Container(211).ListItem.Label,emby)]</visible>
+                    <visible>[String.IsEqual(Window.Property(groupname),mainmenu) + Integer.IsGreater(Container(211).Position,1)] | [ String.IsEqual(Window.Property(groupname),library) + !String.IsEqual(Container(211).ListItem.Label,emby)]</visible>
                 </control>
                 <control type="button" id="301" description="Add">
                     <width>100%</width>
                     <height>66</height>
                     <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
                     <include>DefDialogButtons</include>
-                    <visible>Integer.IsLessOrEqual(Container(211).NumItems, 10) | !String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                    <visible>[Integer.IsLessOrEqual(Container(211).NumItems, 10) + Integer.IsGreater(Container(211).Position,1)] | !String.IsEqual(Window.Property(groupname),mainmenu)</visible>
                 </control>
                 <control type="button" id="302" description="Delete">
                     <width>100%</width>
                     <height>66</height>
                     <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
                     <include>DefDialogButtons</include>
-                    <visible>[String.IsEqual(Window.Property(groupname),mainmenu) + !String.IsEqual(Container(211).ListItem.Label2,library)] | [ !String.IsEqual(Window.Property(groupname),mainmenu) + !String.IsEqual(Container(211).ListItem.Label,emby)]</visible>
+                    <visible>[String.IsEqual(Window.Property(groupname),mainmenu) + Integer.IsGreater(Container(211).Position,1)] | [ !String.IsEqual(Window.Property(groupname),mainmenu) + !String.IsEqual(Container(211).ListItem.Label,emby)]</visible>
                 </control> 
             </control> 
         </control>

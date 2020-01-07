@@ -164,6 +164,7 @@
 		<value>flags/rottentomatoes.png</value>
 	</variable>
 	<variable name="SkinShortcutsBackground">
+		<value condition="Integer.IsEqual(Container(211).Position,1) + String.IsEqual(Window.Property(groupname),mainmenu)">special://skin/extras/backgrounds/channels.jpg</value>
 		<value condition="!String.IsEmpty(Container(211).ListItem.Property(background))">$INFO[Container(211).ListItem.Property(background)]</value>
 		<value condition="!String.IsEmpty(Container(211).ListItem.Thumb)">$INFO[Container(211).ListItem.Thumb]</value>	
 	</variable>

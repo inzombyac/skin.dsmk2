@@ -475,8 +475,7 @@
 				<onright condition="Integer.IsEqual(Container(300).Position,8) + !Integer.IsGreater(Container(4008).NumItems,0)">3999</onright>
 				<onright condition="Integer.IsEqual(Container(300).Position,9) + Integer.IsGreater(Container(4009).NumItems,0)">4009</onright>
 				<onright condition="Integer.IsEqual(Container(300).Position,9) + !Integer.IsGreater(Container(4009).NumItems,0)">3999</onright>
-				<onright condition="Integer.IsGreater(Container(300).Position,9) + Integer.IsGreater(Container(4010).NumItems,0)">4010</onright>
-				<onright condition="Integer.IsGreater(Container(300).Position,9) + !Integer.IsGreater(Container(4010).NumItems,0)">3999</onright>
+				<onright condition="Integer.IsGreater(Container(300).Position,9) + !Integer.IsGreater(Container(4009).NumItems,0)">3999</onright>
 				<!-- Figure out list position -->
 				<orientation>vertical</orientation>
 				<scrolltime>200</scrolltime>
@@ -1237,9 +1236,6 @@
 		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),$LOCALIZE[10007])">System Info</value>
 	</variable>
 	<!-- New Emby widgets -->
-	<variable name="EmbyHomeWidget1Content">
-		<value>$INFO[Container(300).ListItemAbsolute(1).Property(widgetPath)]</value>
-	</variable>
 	<variable name="EmbyHomeWidget2Content">
 		<value>$INFO[Container(300).ListItemAbsolute(2).Property(widgetPath)]</value>
 	</variable>
@@ -1268,12 +1264,6 @@
 		<value>$INFO[Container(300).ListItemAbsolute(10).Property(widgetPath)]</value>
 	</variable>
 	<!-- Watched widgets -->
-	<variable name="EmbyHomeWidget1WatchedMoviesContent">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),lastwatched)">special://skin/extras/playlists/Watched/LatestWatchedMovies.xsp</value>
-	</variable>
-	<variable name="EmbyHomeWidget1WatchedEpisodesContent">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),lastwatched)">special://skin/extras/playlists/Watched/LatestWatchedEpisodes.xsp</value>
-	</variable>
 	<variable name="EmbyHomeWidget2WatchedMoviesContent">
 		<value condition="String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),lastwatched)">special://skin/extras/playlists/Watched/LatestWatchedMovies.xsp</value>
 	</variable>
@@ -1329,180 +1319,69 @@
 		<value condition="String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),lastwatched)">special://skin/extras/playlists/Watched/LatestWatchedEpisodes.xsp</value>
 	</variable>
 	<!-- Continue Widgets Content -->
-	<variable name="EmbyHomeWidget1ContinueEpisodesContent">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),continue) + ![System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)]">special://skin/extras/playlists/InProgress/InProgressEpisodes.xsp</value>
+	<variable name="EmbyHomeWidgetContinueEpisodesContent">
+		<value condition="![System.HasAddon(plugin.video.emby)]">special://skin/extras/playlists/InProgress/InProgressEpisodes.xsp</value>
 	</variable>
-	<variable name="EmbyHomeWidget1ContinueMoviesContent">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),continue) + ![System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)]">special://skin/extras/playlists/InProgress/InProgressMovies.xsp</value>
+	<variable name="EmbyHomeWidgetContinueMoviesContent">
+		<value condition="![System.HasAddon(plugin.video.emby)]">special://skin/extras/playlists/InProgress/InProgressMovies.xsp</value>
 	</variable>
-	<variable name="EmbyHomeWidget1ContinueEmbyContent">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),continue) + System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)">plugin://plugin.video.emby/?folder=InProgress&amp;mode=browse&amp;server=None</value>
+	<variable name="EmbyHomeWidgetContinueEmbyContent">
+		<value condition="System.HasAddon(plugin.video.emby)">plugin://plugin.video.emby/?folder=InProgress&amp;mode=browse&amp;server=None&amp;reload=$INFO[Window(Home).Property(emby_online)]]</value>
 	</variable>
-	<variable name="EmbyHomeWidget1ContinueEmbyConMovies">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),continue) + System.HasAddon(plugin.video.embycon)">plugin://plugin.video.embycon/?mode=WIDGET_CONTENT&amp;type=inprogress_movies&amp;reload=$INFO[Window(Home).Property(widgetreload-movies)]</value>
+	<variable name="EmbyHomeWidgetContinueEmbyConMovies">
+		<value condition="System.HasAddon(plugin.video.embycon)">plugin://plugin.video.embycon/?mode=WIDGET_CONTENT&amp;type=inprogress_movies&amp;reload=$INFO[Window(Home).Property(widgetreload-movies)]</value>
 	</variable>
-	<variable name="EmbyHomeWidget1ContinueEmbyConEpisodes">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),continue) + System.HasAddon(plugin.video.embycon)">plugin://plugin.video.embycon/?mode=WIDGET_CONTENT&amp;type=inprogress_episodes&amp;reload=$INFO[Window(Home).Property(widgetreload-episodes)]</value>
-	</variable>
-	<variable name="EmbyHomeWidget2ContinueEpisodesContent">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),continue) + ![System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)]">special://skin/extras/playlists/InProgress/InProgressEpisodes.xsp</value>
-	</variable>
-	<variable name="EmbyHomeWidget2ContinueMoviesContent">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),continue) + ![System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)]">special://skin/extras/playlists/InProgress/InProgressMovies.xsp</value>
-	</variable>
-	<variable name="EmbyHomeWidget2ContinueEmbyContent">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),continue) + System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)">plugin://plugin.video.emby/?folder=InProgress&amp;mode=browse&amp;server=None</value>
-	</variable>
-	<variable name="EmbyHomeWidget2ContinueEmbyConMovies">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),continue) + System.HasAddon(plugin.video.embycon)">plugin://plugin.video.embycon/?mode=WIDGET_CONTENT&amp;type=inprogress_movies&amp;reload=$INFO[Window(Home).Property(widgetreload-movies)]</value>
-	</variable>
-	<variable name="EmbyHomeWidget2ContinueEmbyConEpisodes">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),continue) + System.HasAddon(plugin.video.embycon)">plugin://plugin.video.embycon/?mode=WIDGET_CONTENT&amp;type=inprogress_episodes&amp;reload=$INFO[Window(Home).Property(widgetreload-episodes)]</value>
-	</variable>
-	<variable name="EmbyHomeWidget3ContinueEpisodesContent">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),continue) + ![System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)]">special://skin/extras/playlists/InProgress/InProgressEpisodes.xsp</value>
-	</variable>
-	<variable name="EmbyHomeWidget3ContinueMoviesContent">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),continue) + ![System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)]">special://skin/extras/playlists/InProgress/InProgressMovies.xsp</value>
-	</variable>
-	<variable name="EmbyHomeWidget3ContinueEmbyContent">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),continue) + System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)">plugin://plugin.video.emby/?folder=InProgress&amp;mode=browse&amp;server=None</value>
-	</variable>
-	<variable name="EmbyHomeWidget3ContinueEmbyConMovies">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),continue) + System.HasAddon(plugin.video.embycon)">plugin://plugin.video.embycon/?mode=WIDGET_CONTENT&amp;type=inprogress_movies&amp;reload=$INFO[Window(Home).Property(widgetreload-movies)]</value>
-	</variable>
-	<variable name="EmbyHomeWidget3ContinueEmbyConEpisodes">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),continue) + System.HasAddon(plugin.video.embycon)">plugin://plugin.video.embycon/?mode=WIDGET_CONTENT&amp;type=inprogress_episodes&amp;reload=$INFO[Window(Home).Property(widgetreload-episodes)]</value>
-	</variable>
-	<variable name="EmbyHomeWidget4ContinueEpisodesContent">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(4).Property(defaultID),continue) + ![System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)]">special://skin/extras/playlists/InProgress/InProgressEpisodes.xsp</value>
-	</variable>
-	<variable name="EmbyHomeWidget4ContinueMoviesContent">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(4).Property(defaultID),continue) + ![System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)]">special://skin/extras/playlists/InProgress/InProgressMovies.xsp</value>
-	</variable>
-	<variable name="EmbyHomeWidget4ContinueEmbyContent">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(4).Property(defaultID),continue) + System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)">plugin://plugin.video.emby/?folder=InProgress&amp;mode=browse&amp;server=None</value>
-	</variable>
-	<variable name="EmbyHomeWidget4ContinueEmbyConMovies">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(4).Property(defaultID),continue) + System.HasAddon(plugin.video.embycon)">plugin://plugin.video.embycon/?mode=WIDGET_CONTENT&amp;type=inprogress_movies&amp;reload=$INFO[Window(Home).Property(widgetreload-movies)]</value>
-	</variable>
-	<variable name="EmbyHomeWidget4ContinueEmbyConEpisodes">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(4).Property(defaultID),continue) + System.HasAddon(plugin.video.embycon)">plugin://plugin.video.embycon/?mode=WIDGET_CONTENT&amp;type=inprogress_episodes&amp;reload=$INFO[Window(Home).Property(widgetreload-episodes)]</value>
-	</variable>
-	<variable name="EmbyHomeWidget5ContinueEpisodesContent">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(5).Property(defaultID),continue) + ![System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)]">special://skin/extras/playlists/InProgress/InProgressEpisodes.xsp</value>
-	</variable>
-	<variable name="EmbyHomeWidget5ContinueMoviesContent">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(5).Property(defaultID),continue) + ![System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)]">special://skin/extras/playlists/InProgress/InProgressMovies.xsp</value>
-	</variable>
-	<variable name="EmbyHomeWidget5ContinueEmbyContent">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(5).Property(defaultID),continue) + System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)">plugin://plugin.video.emby/?folder=InProgress&amp;mode=browse&amp;server=None</value>
-	</variable>
-	<variable name="EmbyHomeWidget5ContinueEmbyConMovies">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(5).Property(defaultID),continue) + System.HasAddon(plugin.video.embycon)">plugin://plugin.video.embycon/?mode=WIDGET_CONTENT&amp;type=inprogress_movies&amp;reload=$INFO[Window(Home).Property(widgetreload-movies)]</value>
-	</variable>
-	<variable name="EmbyHomeWidget5ContinueEmbyConEpisodes">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(5).Property(defaultID),continue) + System.HasAddon(plugin.video.embycon)">plugin://plugin.video.embycon/?mode=WIDGET_CONTENT&amp;type=inprogress_episodes&amp;reload=$INFO[Window(Home).Property(widgetreload-episodes)]</value>
-	</variable>
-	<variable name="EmbyHomeWidget6ContinueEpisodesContent">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(6).Property(defaultID),continue) + ![System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)]">special://skin/extras/playlists/InProgress/InProgressEpisodes.xsp</value>
-	</variable>
-	<variable name="EmbyHomeWidget6ContinueMoviesContent">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(6).Property(defaultID),continue) + ![System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)]">special://skin/extras/playlists/InProgress/InProgressMovies.xsp</value>
-	</variable>
-	<variable name="EmbyHomeWidget6ContinueEmbyContent">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(6).Property(defaultID),continue) + System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)">plugin://plugin.video.emby/?folder=InProgress&amp;mode=browse&amp;server=None</value>
-	</variable>
-	<variable name="EmbyHomeWidget6ContinueEmbyConMovies">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(6).Property(defaultID),continue) + System.HasAddon(plugin.video.embycon)">plugin://plugin.video.embycon/?mode=WIDGET_CONTENT&amp;type=inprogress_movies&amp;reload=$INFO[Window(Home).Property(widgetreload-movies)]</value>
-	</variable>
-	<variable name="EmbyHomeWidget6ContinueEmbyConEpisodes">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(6).Property(defaultID),continue) + System.HasAddon(plugin.video.embycon)">plugin://plugin.video.embycon/?mode=WIDGET_CONTENT&amp;type=inprogress_episodes&amp;reload=$INFO[Window(Home).Property(widgetreload-episodes)]</value>
-	</variable>
-	<variable name="EmbyHomeWidget7ContinueEpisodesContent">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(7).Property(defaultID),continue) + ![System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)]">special://skin/extras/playlists/InProgress/InProgressEpisodes.xsp</value>
-	</variable>
-	<variable name="EmbyHomeWidget7ContinueMoviesContent">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(7).Property(defaultID),continue) + ![System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)]">special://skin/extras/playlists/InProgress/InProgressMovies.xsp</value>
-	</variable>
-	<variable name="EmbyHomeWidget7ContinueEmbyContent">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(7).Property(defaultID),continue) + System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)">plugin://plugin.video.emby/?folder=InProgress&amp;mode=browse&amp;server=None</value>
-	</variable>
-	<variable name="EmbyHomeWidget7ContinueEmbyConMovies">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(7).Property(defaultID),continue) + System.HasAddon(plugin.video.embycon)">plugin://plugin.video.embycon/?mode=WIDGET_CONTENT&amp;type=inprogress_movies&amp;reload=$INFO[Window(Home).Property(widgetreload-movies)]</value>
-	</variable>
-	<variable name="EmbyHomeWidget7ContinueEmbyConEpisodes">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(7).Property(defaultID),continue) + System.HasAddon(plugin.video.embycon)">plugin://plugin.video.embycon/?mode=WIDGET_CONTENT&amp;type=inprogress_episodes&amp;reload=$INFO[Window(Home).Property(widgetreload-episodes)]</value>
-	</variable>
-	<variable name="EmbyHomeWidget8ContinueEpisodesContent">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(8).Property(defaultID),continue) + ![System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)]">special://skin/extras/playlists/InProgress/InProgressEpisodes.xsp</value>
-	</variable>
-	<variable name="EmbyHomeWidget8ContinueMoviesContent">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(8).Property(defaultID),continue) + ![System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)]">special://skin/extras/playlists/InProgress/InProgressMovies.xsp</value>
-	</variable>
-	<variable name="EmbyHomeWidget8ContinueEmbyContent">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(8).Property(defaultID),continue) + System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)">plugin://plugin.video.emby/?folder=InProgress&amp;mode=browse&amp;server=None</value>
-	</variable>
-	<variable name="EmbyHomeWidget8ContinueEmbyConMovies">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(8).Property(defaultID),continue) + System.HasAddon(plugin.video.embycon)">plugin://plugin.video.embycon/?mode=WIDGET_CONTENT&amp;type=inprogress_movies&amp;reload=$INFO[Window(Home).Property(widgetreload-movies)]</value>
-	</variable>
-	<variable name="EmbyHomeWidget8ContinueEmbyConEpisodes">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(8).Property(defaultID),continue) + System.HasAddon(plugin.video.embycon)">plugin://plugin.video.embycon/?mode=WIDGET_CONTENT&amp;type=inprogress_episodes&amp;reload=$INFO[Window(Home).Property(widgetreload-episodes)]</value>
-	</variable>
-	<variable name="EmbyHomeWidget9ContinueEpisodesContent">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(9).Property(defaultID),continue) + ![System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)]">special://skin/extras/playlists/InProgress/InProgressEpisodes.xsp</value>
-	</variable>
-	<variable name="EmbyHomeWidget9ContinueMoviesContent">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(9).Property(defaultID),continue) + ![System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)]">special://skin/extras/playlists/InProgress/InProgressMovies.xsp</value>
-	</variable>
-	<variable name="EmbyHomeWidget9ContinueEmbyContent">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(9).Property(defaultID),continue) + System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)">plugin://plugin.video.emby/?folder=InProgress&amp;mode=browse&amp;server=None</value>
-	</variable>
-	<variable name="EmbyHomeWidget9ContinueEmbyConMovies">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(9).Property(defaultID),continue) + System.HasAddon(plugin.video.embycon)">plugin://plugin.video.embycon/?mode=WIDGET_CONTENT&amp;type=inprogress_movies&amp;reload=$INFO[Window(Home).Property(widgetreload-movies)]</value>
-	</variable>
-	<variable name="EmbyHomeWidget9ContinueEmbyConEpisodes">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(9).Property(defaultID),continue) + System.HasAddon(plugin.video.embycon)">plugin://plugin.video.embycon/?mode=WIDGET_CONTENT&amp;type=inprogress_episodes&amp;reload=$INFO[Window(Home).Property(widgetreload-episodes)]</value>
-	</variable>
-	<variable name="EmbyHomeWidget10ContinueEpisodesContent">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),continue) + ![System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)]">special://skin/extras/playlists/InProgress/InProgressEpisodes.xsp</value>
-	</variable>
-	<variable name="EmbyHomeWidget10ContinueMoviesContent">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),continue) + ![System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)]">special://skin/extras/playlists/InProgress/InProgressMovies.xsp</value>
-	</variable>
-	<variable name="EmbyHomeWidget10ContinueEmbyContent">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),continue) + System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)">plugin://plugin.video.emby/?folder=InProgress&amp;mode=browse&amp;server=None</value>
-	</variable>
-	<variable name="EmbyHomeWidget10ContinueEmbyConMovies">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),continue) + System.HasAddon(plugin.video.embycon)">plugin://plugin.video.embycon/?mode=WIDGET_CONTENT&amp;type=inprogress_movies&amp;reload=$INFO[Window(Home).Property(widgetreload-movies)]</value>
-	</variable>
-	<variable name="EmbyHomeWidget10ContinueEmbyConEpisodes">
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),continue) + System.HasAddon(plugin.video.embycon)">plugin://plugin.video.embycon/?mode=WIDGET_CONTENT&amp;type=inprogress_episodes&amp;reload=$INFO[Window(Home).Property(widgetreload-episodes)]</value>
+	<variable name="EmbyHomeWidgetContinueEmbyConEpisodes">
+		<value condition="System.HasAddon(plugin.video.embycon)">plugin://plugin.video.embycon/?mode=WIDGET_CONTENT&amp;type=inprogress_episodes&amp;reload=$INFO[Window(Home).Property(widgetreload-episodes)]</value>
 	</variable>
 	<!-- Skin Shortcuts -->
-	<variable name="SkinShortcutsContent">
-		<value>$INFO[Container(211).ListItem.Property(widgetPath)]</value>
+	<variable name="SkinShortcutsWatchedMoviesContent2">
+		<value condition="String.IsEqual(Container(211).ListItemAbsolute(2).Property(defaultID),lastwatched)">special://skin/extras/playlists/Watched/LatestWatchedMovies.xsp</value>
 	</variable>
-	<variable name="SkinShortcutsContinueEpisodes">
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),continue) + ![System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)]">special://skin/extras/playlists/InProgress/InProgressEpisodes.xsp</value>
+	<variable name="SkinShortcutsWatchedMoviesContent3">
+		<value condition="String.IsEqual(Container(211).ListItemAbsolute(3).Property(defaultID),lastwatched)">special://skin/extras/playlists/Watched/LatestWatchedMovies.xsp</value>
 	</variable>
-	<variable name="SkinShortcutsContinueMovies">
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),continue) + ![System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)]">special://skin/extras/playlists/InProgress/InProgressMovies.xsp</value>
+	<variable name="SkinShortcutsWatchedMoviesContent4">
+		<value condition="String.IsEqual(Container(211).ListItemAbsolute(4).Property(defaultID),lastwatched)">special://skin/extras/playlists/Watched/LatestWatchedMovies.xsp</value>
 	</variable>
-	<variable name="SkinShortcutsContinueEmby">
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),continue) + System.HasAddon(plugin.video.emby) + String.IsEqual(Window(Home).Property(emby_online),true)">plugin://plugin.video.emby/?folder=InProgress&amp;mode=browse&amp;server=None</value>
+	<variable name="SkinShortcutsWatchedMoviesContent5">
+		<value condition="String.IsEqual(Container(211).ListItemAbsolute(5).Property(defaultID),lastwatched)">special://skin/extras/playlists/Watched/LatestWatchedMovies.xsp</value>
 	</variable>
-	<variable name="SkinShortcutsContinueEmbyConMovies">
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),continue) + System.HasAddon(plugin.video.embycon)">plugin://plugin.video.embycon/?mode=WIDGET_CONTENT&amp;type=inprogress_movies&amp;reload=$INFO[Window(Home).Property(widgetreload-movies)]</value>
+	<variable name="SkinShortcutsWatchedMoviesContent6">
+		<value condition="String.IsEqual(Container(211).ListItemAbsolute(6).Property(defaultID),lastwatched)">special://skin/extras/playlists/Watched/LatestWatchedMovies.xsp</value>
 	</variable>
-	<variable name="SkinShortcutsContinueEmbyConEpisodes">
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),continue) + System.HasAddon(plugin.video.embycon)">plugin://plugin.video.embycon/?mode=WIDGET_CONTENT&amp;type=inprogress_episodes&amp;reload=$INFO[Window(Home).Property(widgetreload-episodes)]</value>
+	<variable name="SkinShortcutsWatchedMoviesContent7">
+		<value condition="String.IsEqual(Container(211).ListItemAbsolute(7).Property(defaultID),lastwatched)">special://skin/extras/playlists/Watched/LatestWatchedMovies.xsp</value>
 	</variable>
-	<variable name="SkinShortcutsWatchedMoviesContent">
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),lastwatched)">special://skin/extras/playlists/Watched/LatestWatchedMovies.xsp</value>
+	<variable name="SkinShortcutsWatchedMoviesContent8">
+		<value condition="String.IsEqual(Container(211).ListItemAbsolute(8).Property(defaultID),lastwatched)">special://skin/extras/playlists/Watched/LatestWatchedMovies.xsp</value>
 	</variable>
-	<variable name="SkinShortcutsWatchedEpisodesContent">
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),lastwatched)">special://skin/extras/playlists/Watched/LatestWatchedEpisodes.xsp</value>
+	<variable name="SkinShortcutsWatchedMoviesContent9">
+		<value condition="String.IsEqual(Container(211).ListItemAbsolute(9).Property(defaultID),lastwatched)">special://skin/extras/playlists/Watched/LatestWatchedMovies.xsp</value>
+	</variable>
+	<variable name="SkinShortcutsWatchedEpisodesContent2">
+		<value condition="String.IsEqual(Container(211).ListItemAbsolute(2).Property(defaultID),lastwatched)">special://skin/extras/playlists/Watched/LatestWatchedEpisodes.xsp</value>
+	</variable>
+	<variable name="SkinShortcutsWatchedEpisodesContent3">
+		<value condition="String.IsEqual(Container(211).ListItemAbsolute(3).Property(defaultID),lastwatched)">special://skin/extras/playlists/Watched/LatestWatchedEpisodes.xsp</value>
+	</variable>
+	<variable name="SkinShortcutsWatchedEpisodesContent4">
+		<value condition="String.IsEqual(Container(211).ListItemAbsolute(4).Property(defaultID),lastwatched)">special://skin/extras/playlists/Watched/LatestWatchedEpisodes.xsp</value>
+	</variable>
+	<variable name="SkinShortcutsWatchedEpisodesContent5">
+		<value condition="String.IsEqual(Container(211).ListItemAbsolute(5).Property(defaultID),lastwatched)">special://skin/extras/playlists/Watched/LatestWatchedEpisodes.xsp</value>
+	</variable>
+	<variable name="SkinShortcutsWatchedEpisodesContent6">
+		<value condition="String.IsEqual(Container(211).ListItemAbsolute(6).Property(defaultID),lastwatched)">special://skin/extras/playlists/Watched/LatestWatchedEpisodes.xsp</value>
+	</variable>
+	<variable name="SkinShortcutsWatchedEpisodesContent7">
+		<value condition="String.IsEqual(Container(211).ListItemAbsolute(7).Property(defaultID),lastwatched)">special://skin/extras/playlists/Watched/LatestWatchedEpisodes.xsp</value>
+	</variable>
+	<variable name="SkinShortcutsWatchedEpisodesContent8">
+		<value condition="String.IsEqual(Container(211).ListItemAbsolute(8).Property(defaultID),lastwatched)">special://skin/extras/playlists/Watched/LatestWatchedEpisodes.xsp</value>
+	</variable>
+	<variable name="SkinShortcutsWatchedEpisodesContent9">
+		<value condition="String.IsEqual(Container(211).ListItemAbsolute(9).Property(defaultID),lastwatched)">special://skin/extras/playlists/Watched/LatestWatchedEpisodes.xsp</value>
 	</variable>
 	<include name="MusicInfoTracklist">
 		<content type="static">
@@ -1843,7 +1722,6 @@
 		<onright condition="Control.HasFocus(4007)">SetFocus(4007)</onright>
 		<onright condition="Control.HasFocus(4008)">SetFocus(4008)</onright>
 		<onright condition="Control.HasFocus(4009)">SetFocus(4009)</onright>
-		<onright condition="Control.HasFocus(4010)">SetFocus(4010)</onright>
 		<!-- Widget 1 -->
 		<!-- Up -->
 		<onup   condition="Control.HasFocus(4001)">4000</onup>
@@ -1856,7 +1734,6 @@
 		<ondown condition="Control.HasFocus(4001) + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + Integer.IsGreater(Container(4007).NumItems,0)">4007</ondown>
 		<ondown condition="Control.HasFocus(4001) + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + Integer.IsGreater(Container(4008).NumItems,0)">4008</ondown>
 		<ondown condition="Control.HasFocus(4001) + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + Integer.IsGreater(Container(4009).NumItems,0)">4009</ondown>
-		<ondown condition="Control.HasFocus(4001) + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4009).NumItems,0) Integer.IsGreater(Container(4010).NumItems,0)">4010</ondown>
 		<!-- Left -->
 		<onleft condition="Control.HasFocus(4001)">Control.SetFocus(300,1)</onleft>
 		<!-- Widget 2 -->
@@ -1871,7 +1748,6 @@
 		<ondown condition="Control.HasFocus(4002) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + Integer.IsGreater(Container(4007).NumItems,0)">4007</ondown>
 		<ondown condition="Control.HasFocus(4002) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + Integer.IsGreater(Container(4008).NumItems,0)">4008</ondown>
 		<ondown condition="Control.HasFocus(4002) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + Integer.IsGreater(Container(4009).NumItems,0)">4009</ondown>
-		<ondown condition="Control.HasFocus(4002) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4009).NumItems,0) + Integer.IsGreater(Container(4010).NumItems,0)">4010</ondown>
 		<!-- Left -->
 		<onleft condition="Control.HasFocus(4002)">Control.SetFocus(300,2)</onleft>
 		<!-- Widget 3 -->
@@ -1886,7 +1762,6 @@
 		<ondown condition="Control.HasFocus(4003) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + Integer.IsGreater(Container(4007).NumItems,0)">4007</ondown>
 		<ondown condition="Control.HasFocus(4003) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + Integer.IsGreater(Container(4008).NumItems,0)">4008</ondown>
 		<ondown condition="Control.HasFocus(4003) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + Integer.IsGreater(Container(4009).NumItems,0)">4009</ondown>
-		<ondown condition="Control.HasFocus(4003) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4009).NumItems,0)  + Integer.IsGreater(Container(4010).NumItems,0)">4010</ondown>
 		<!-- Left -->
 		<onleft condition="Control.HasFocus(4003)">Control.SetFocus(300,3)</onleft>
 		<!-- Widget 4 -->
@@ -1901,7 +1776,6 @@
 		<ondown condition="Control.HasFocus(4004) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + Integer.IsGreater(Container(4007).NumItems,0)">4007</ondown>
 		<ondown condition="Control.HasFocus(4004) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + Integer.IsGreater(Container(4008).NumItems,0)">4008</ondown>
 		<ondown condition="Control.HasFocus(4004) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + Integer.IsGreater(Container(4009).NumItems,0)">4009</ondown>
-		<ondown condition="Control.HasFocus(4004) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4009).NumItems,0) + Integer.IsGreater(Container(4010).NumItems,0)">4010</ondown>
 		<!-- Left -->
 		<onleft condition="Control.HasFocus(4004)">Control.SetFocus(300,4)</onleft>
 		<!-- Widget 5 -->
@@ -1916,7 +1790,6 @@
 		<ondown condition="Control.HasFocus(4005) + !Integer.IsGreater(Container(4006).NumItems,0) + Integer.IsGreater(Container(4007).NumItems,0)">4007</ondown>
 		<ondown condition="Control.HasFocus(4005) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + Integer.IsGreater(Container(4008).NumItems,0)">4008</ondown>
 		<ondown condition="Control.HasFocus(4005) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + Integer.IsGreater(Container(4009).NumItems,0)">4009</ondown>
-		<ondown condition="Control.HasFocus(4005) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4009).NumItems,0) + Integer.IsGreater(Container(4010).NumItems,0)">4010</ondown>
 		<!-- Left -->
 		<onleft condition="Control.HasFocus(4005)">Control.SetFocus(300,5)</onleft>
 		<!-- Widget 6 -->
@@ -1931,7 +1804,6 @@
 		<ondown condition="Control.HasFocus(4006) + Integer.IsGreater(Container(4007).NumItems,0)">4007</ondown>
 		<ondown condition="Control.HasFocus(4006) + !Integer.IsGreater(Container(4007).NumItems,0) + Integer.IsGreater(Container(4008).NumItems,0)">4008</ondown>
 		<ondown condition="Control.HasFocus(4006) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + Integer.IsGreater(Container(4009).NumItems,0)">4009</ondown>
-		<ondown condition="Control.HasFocus(4006) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4009).NumItems,0) + Integer.IsGreater(Container(4010).NumItems,0)">4010</ondown>
 		<!-- Left -->
 		<onleft condition="Control.HasFocus(4006)">Control.SetFocus(300,6)</onleft>
 		<!-- Widget 7 -->
@@ -1946,7 +1818,6 @@
 		<!-- Down -->
 		<ondown condition="Control.HasFocus(4007) + Integer.IsGreater(Container(4008).NumItems,0)">4008</ondown>
 		<ondown condition="Control.HasFocus(4007) + !Integer.IsGreater(Container(4008).NumItems,0) + Integer.IsGreater(Container(4009).NumItems,0)">4009</ondown>
-		<ondown condition="Control.HasFocus(4007) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4009).NumItems,0) + Integer.IsGreater(Container(4010).NumItems,0)">4010</ondown>
 		<!-- Left -->
 		<onleft condition="Control.HasFocus(4007)">Control.SetFocus(300,7)</onleft>
 		<!-- Widget 8 -->
@@ -1961,7 +1832,6 @@
 		<onup   condition="Control.HasFocus(4008) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4001).NumItems,0)">4000</onup>
 		<!-- Down -->
 		<ondown condition="Control.HasFocus(4008) + Integer.IsGreater(Container(4009).NumItems,0)">4009</ondown>
-		<ondown condition="Control.HasFocus(4008) + !Integer.IsGreater(Container(4009).NumItems,0) + Integer.IsGreater(Container(4010).NumItems,0)">4010</ondown>
 		<!-- Left -->
 		<onleft condition="Control.HasFocus(4008)">Control.SetFocus(300,8)</onleft>
 		<!-- Widget 9 -->
@@ -1976,25 +1846,9 @@
 		<onup   condition="Control.HasFocus(4009) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + Integer.IsGreater(Container(4001).NumItems,0)">4001</onup>
 		<onup   condition="Control.HasFocus(4009) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4001).NumItems,0)">4000</onup>
 		<!-- Down -->
-		<ondown condition="Control.HasFocus(4009) + Integer.IsGreater(Container(4010).NumItems,0)">4010</ondown>
+		<ondown>4009</ondown>
 		<!-- Left -->
 		<onleft condition="Control.HasFocus(4009)">Control.SetFocus(300,9)</onleft>
-		<!-- Widget 10 -->
-		<!-- Up -->
-		<onup   condition="Control.HasFocus(4010) + Integer.IsGreater(Container(4009).NumItems,0)">4009</onup>
-		<onup   condition="Control.HasFocus(4010) + !Integer.IsGreater(Container(4009).NumItems,0) + Integer.IsGreater(Container(4008).NumItems,0)">4008</onup>
-		<onup   condition="Control.HasFocus(4010) + !Integer.IsGreater(Container(4009).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + Integer.IsGreater(Container(4007).NumItems,0)">4007</onup>
-		<onup   condition="Control.HasFocus(4010) + !Integer.IsGreater(Container(4009).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + Integer.IsGreater(Container(4006).NumItems,0)">4006</onup>
-		<onup   condition="Control.HasFocus(4010) + !Integer.IsGreater(Container(4009).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + Integer.IsGreater(Container(4005).NumItems,0)">4005</onup>
-		<onup   condition="Control.HasFocus(4010) + !Integer.IsGreater(Container(4009).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + Integer.IsGreater(Container(4004).NumItems,0)">4004</onup>
-		<onup   condition="Control.HasFocus(4010) + !Integer.IsGreater(Container(4009).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + Integer.IsGreater(Container(4003).NumItems,0)">4003</onup>
-		<onup   condition="Control.HasFocus(4010) + !Integer.IsGreater(Container(4009).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + Integer.IsGreater(Container(4002).NumItems,0)">4002</onup>
-		<onup   condition="Control.HasFocus(4010) + !Integer.IsGreater(Container(4009).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + Integer.IsGreater(Container(4001).NumItems,0)">4001</onup>
-		<onup   condition="Control.HasFocus(4010) + !Integer.IsGreater(Container(4009).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4001).NumItems,0)">4000</onup>
-		<!-- Down -->
-		<ondown>4010</ondown>
-		<!-- Left -->
-		<onleft condition="Control.HasFocus(4010)">Control.SetFocus(300,10)</onleft>
 	</include>
 	<variable name="SimilarVideos">
 		<value condition="!String.IsEmpty(ListItem.DBID) + Container.Content(movies)">plugin://script.extendedinfo?info=similarmovies&amp;&amp;id=$INFO[ListItem.DBID]</value>
