@@ -8,7 +8,7 @@
         <action>ActivateWindow(Videos,return)</action>
     </shortcut>
     <shortcut>
-        <label>Continue Watching</label>
+        <label>Play Next</label>
         <label2>Continue</label2>
         <defaultID>continue</defaultID>
         <icon>special://skin/extras/icons/play.png</icon>
@@ -16,28 +16,12 @@
         <visible>!System.HasAddon(plugin.video.emby)</visible> 
     </shortcut>
     <shortcut>
-        <label>Continue Watching</label>
+        <label>Play Next</label>
         <label2>Continue</label2>
         <defaultID>continue</defaultID>
         <icon>special://skin/extras/icons/play.png</icon>
         <action>ActivateWindow(Videos,plugin://plugin.video.emby/?folder=InProgress&amp;mode=browse&amp;server=None,return)</action>
         <visible>System.HasAddon(plugin.video.emby)</visible> 
-    </shortcut>
-    <shortcut>
-        <label>Next Episodes</label>
-        <label2>nextepisodes</label2>
-        <defaultID>nextepisodesembycon</defaultID>
-        <icon>special://skin/extras/icons/tv.png</icon>
-        <action>ActivateWindow(Videos,plugin://plugin.video.embycon/?mode=WIDGET_CONTENT&amp;type=nextup_episodes,return)</action>
-        <visible>System.HasAddon(plugin.video.embycon)</visible>
-    </shortcut>
-    <shortcut>
-        <label>In Progress Shows</label>
-        <label2>nextup</label2>
-        <defaultID>nextup</defaultID>
-        <icon>special://skin/extras/icons/tv.png</icon>
-        <action>ActivateWindow(Videos,videodb://inprogresstvshows,return)</action>
-        <visible>Integer.IsGreater(Window(Home).Property(TVShows.Count),0)</visible>
     </shortcut>
     <shortcut>
         <label>Latest Movies</label>

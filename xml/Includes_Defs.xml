@@ -1334,6 +1334,10 @@
 	<variable name="EmbyHomeWidgetContinueEmbyConEpisodes">
 		<value condition="System.HasAddon(plugin.video.embycon)">plugin://plugin.video.embycon/?mode=WIDGET_CONTENT&amp;type=inprogress_episodes&amp;reload=$INFO[Window(Home).Property(widgetreload-episodes)]</value>
 	</variable>
+	<variable name="EmbyHomeWidgetNextUp">
+		<value condition="System.HasAddon(plugin.video.embycon)">plugin://plugin.video.embycon/?mode=WIDGET_CONTENT&amp;type=nextup_episodes&amp;reload=$INFO[Window(Home).Property(widgetreload-episodes)]</value>
+		<value condition="Integer.IsGreater(Window(Home).Property(TVShows.Count),0)">videodb://inprogresstvshows</value>
+	</variable>
 	<!-- Skin Shortcuts -->
 	<variable name="SkinShortcutsWatchedMoviesContent2">
 		<value condition="String.IsEqual(Container(211).ListItemAbsolute(2).Property(defaultID),lastwatched)">special://skin/extras/playlists/Watched/LatestWatchedMovies.xsp</value>
@@ -1713,6 +1717,24 @@
 		</content>
 	</include>
 	<include name="EmbyHomeWidgetDirections">
+		<!-- Main Menu -->
+		<!-- Up -->
+		<onup condition="Control.HasFocus(4000) + Player.HasMedia">7788</onup>
+		<onup condition="Control.HasFocus(4000) + !Player.HasMedia">3634</onup>
+		<!-- Left -->
+		<onleft condition="Control.HasFocus(4000)">Control.SetFocus(300,0)</onleft>
+		<!-- Down -->
+		<ondown condition="Control.HasFocus(4000) + Integer.IsGreater(Container(4001).NumItems,0)">4001</ondown>
+		<ondown condition="Control.HasFocus(4000) + !Integer.IsGreater(Container(4001).NumItems,0) + Integer.IsGreater(Container(4002).NumItems,0)">4002</ondown>
+		<ondown condition="Control.HasFocus(4000) + !Integer.IsGreater(Container(4001).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + Integer.IsGreater(Container(4003).NumItems,0)">4003</ondown>
+		<ondown condition="Control.HasFocus(4000) + !Integer.IsGreater(Container(4001).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + Integer.IsGreater(Container(4004).NumItems,0)">4004</ondown>
+		<ondown condition="Control.HasFocus(4000) + !Integer.IsGreater(Container(4001).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + Integer.IsGreater(Container(4005).NumItems,0)">4005</ondown>
+		<ondown condition="Control.HasFocus(4000) + !Integer.IsGreater(Container(4001).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + Integer.IsGreater(Container(4006).NumItems,0)">4006</ondown>
+		<ondown condition="Control.HasFocus(4000) + !Integer.IsGreater(Container(4001).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + Integer.IsGreater(Container(4007).NumItems,0)">4007</ondown>
+		<ondown condition="Control.HasFocus(4000) + !Integer.IsGreater(Container(4001).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + Integer.IsGreater(Container(4008).NumItems,0)">4008</ondown>
+		<ondown condition="Control.HasFocus(4000) + !Integer.IsGreater(Container(4001).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + Integer.IsGreater(Container(4009).NumItems,0)">4009</ondown>
+		<!-- General -->
+		<onright condition="Control.HasFocus(4000)">SetFocus(4000)</onright>
 		<onright condition="Control.HasFocus(4001)">SetFocus(4001)</onright>
 		<onright condition="Control.HasFocus(4002)">SetFocus(4002)</onright>
 		<onright condition="Control.HasFocus(4003)">SetFocus(4003)</onright>
