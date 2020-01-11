@@ -193,4 +193,47 @@
 		<animation condition="[Control.HasFocus(4009) | Integer.IsEqual(Container(300).Position,9)] + Integer.IsGreater(Container(4007).NumItems,0)" effect="slide" end="0,-295" start="0,0" time="200">Conditional</animation>
 		<animation condition="[Control.HasFocus(4009) | Integer.IsEqual(Container(300).Position,9)] + Integer.IsGreater(Container(4008).NumItems,0)" effect="slide" end="0,-295" start="0,0" time="200">Conditional</animation>
 	</include>
+	<include name="Animation.EmbyWidgetPanel1">
+		<animation effect="fade" end="100" start="0" time="500" delay="500" tween="cubic" easing="inout" reversible="false">WindowOpen</animation>
+	</include>
+	<include name="Animation.EmbyWidgetPanel2">
+		<animation condition="!Integer.IsGreater(Container(4001).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
+		<!-- Movie Offset -->
+		<animation condition="Integer.IsGreater(Container(4001).NumItems,0) + [String.IsEqual(Container(300).ListItemAbsolute(1).Property(widgetFormat),Poster)]" effect="slide" end="0,70" start="0,0" time="0">Conditional</animation>
+	</include>
+	<include name="Animation.EmbyWidgetPanel3">
+		<animation condition="!Integer.IsGreater(Container(4002).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
+		<!-- Movie Offset -->
+		<animation condition="Integer.IsGreater(Container(4002).NumItems,0) + [String.IsEqual(Container(300).ListItemAbsolute(2).Property(widgetFormat),Poster)]" effect="slide" end="0,70" start="0,0" time="0">Conditional</animation>
+	</include>
+	<include name="Animation.EmbyWidgetPanel4">
+		<animation condition="!Integer.IsGreater(Container(4003).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
+		<!-- Movie Offset -->
+		<animation condition="Integer.IsGreater(Container(4003).NumItems,0) + [String.IsEqual(Container(300).ListItemAbsolute(3).Property(widgetFormat),Poster)]" effect="slide" end="0,70" start="0,0" time="0">Conditional</animation>
+	</include>
+	<include name="Animation.EmbyWidgetPanel5">
+		<animation condition="!Integer.IsGreater(Container(4004).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
+		<!-- Movie Offset -->
+		<animation condition="Integer.IsGreater(Container(4004).NumItems,0) + [String.IsEqual(Container(300).ListItemAbsolute(4).Property(widgetFormat),Poster)]" effect="slide" end="0,70" start="0,0" time="0">Conditional</animation>
+	</include>
+	<include name="Animation.EmbyWidgetPanel6">
+		<animation condition="!Integer.IsGreater(Container(4005).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
+		<!-- Movie Offset -->
+		<animation condition="Integer.IsGreater(Container(4005).NumItems,0) + [String.IsEqual(Container(300).ListItemAbsolute(5).Property(widgetFormat),Poster)]" effect="slide" end="0,70" start="0,0" time="0">Conditional</animation>
+	</include>
+	<include name="Animation.EmbyWidgetPanel7">
+		<animation condition="!Integer.IsGreater(Container(4006).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
+		<!-- Movie Offset -->
+		<animation condition="Integer.IsGreater(Container(4006).NumItems,0) + [String.IsEqual(Container(300).ListItemAbsolute(6).Property(widgetFormat),Poster)]" effect="slide" end="0,70" start="0,0" time="0">Conditional</animation>
+	</include>
+	<include name="Animation.EmbyWidgetPanel8">
+		<animation condition="!Integer.IsGreater(Container(4007).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
+		<!-- Movie Offset -->
+		<animation condition="Integer.IsGreater(Container(4007).NumItems,0) + [String.IsEqual(Container(300).ListItemAbsolute(7).Property(widgetFormat),Poster)]" effect="slide" end="0,70" start="0,0" time="0">Conditional</animation>
+	</include>
+	<include name="Animation.EmbyWidgetPanel9">
+		<animation condition="!Integer.IsGreater(Container(4008).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
+		<!-- Movie Offset -->
+		<animation condition="Integer.IsGreater(Container(4008).NumItems,0) + [String.IsEqual(Container(300).ListItemAbsolute(8).Property(widgetFormat),Poster)]" effect="slide" end="0,70" start="0,0" time="0">Conditional</animation>
+	</include>
 </includes>

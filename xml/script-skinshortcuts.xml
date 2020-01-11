@@ -655,7 +655,7 @@
                     <height>66</height>
                     <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
                     <include>DefDialogButtons</include>
-                    <visible>[Integer.IsLessOrEqual(Container(211).NumItems, 10) + Integer.IsGreater(Container(211).Position,1)] | !String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                    <visible>[Integer.IsLessOrEqual(Container(211).NumItems, 9) + Integer.IsGreater(Container(211).Position,1)] | !String.IsEqual(Window.Property(groupname),mainmenu)</visible>
                 </control>
                 <control type="button" id="302" description="Delete">
                     <width>100%</width>

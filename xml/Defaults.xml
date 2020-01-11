@@ -19,6 +19,8 @@
     <constant name="ListPosterW">345</constant>
     <constant name="ListPosterShadowH">384</constant>
     <constant name="ListPosterShadowW">387</constant>
+    <constant name="EmbyPanelWidth">1840</constant>
+    <constant name="EmbyPanelHeight">320</constant>
     <default type="label">
         <height>66</height>
         <aligny>center</aligny>
