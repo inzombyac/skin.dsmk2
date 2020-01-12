@@ -1,4 +1,7 @@
-1.0.7
+1.0.9
+- Refactor home screen to remove extra row and use parameterized widgets
+
+1.0.8
 - Add last watched row on the home screen to display last 2 watched movies and last 5 watched episodes
 
 1.0.7
