@@ -82,7 +82,8 @@
             </control>
 			<control type="label">
                 <include>ControlID4</include>
-                <label>Container 4004 type: $INFO[Container(4004).ListItem(1).Art(tvshow.landscape)]</label>
+                <!-- <label>Container 4004 type: $INFO[Container(4004).ListItem(1).Art(tvshow.landscape)]</label> -->
+                <label>$INFO[ListItem.DBTYPE,Type: ,]</label>
                 <!-- <label>$INFO[Window(home).Property(emby.nodes.0.id)] / $INFO[Window(home).Property(emby.nodes.0.type)]</label> -->
                 <!-- <label>$INFO[Container(4002).Position] / $INFO[Container(4002).CurrentItem]</label> -->
                 <!-- <label>$INFO[Container(4002).Position] / $INFO[Container(4002).NumItems] / $INFO[Container(4002).ListItemNoWrap(4).Label]</label> -->
@@ -101,7 +102,8 @@
             </control>
            <control type="label">
                 <include>ControlID5</include>
-				<label>$INFO[Window(Home).Property(emby_online),Emby Online: ,]</label>
+				<!-- <label>$INFO[Window(Home).Property(emby_online),Emby Online: ,]</label> -->
+				<label>$VAR[LandscapeImage] </label>
             </control>
 		</control>
 	</include>
@@ -857,7 +859,6 @@
 	  <param name="item_square_width" default="240"/>
 	  <param name="widget_square_height" default="255"/>
 	  <param name="item_square_height" default="240"/>
-	  <param name="image_type" default="$VAR[FanartImage]"/>
 	  <param name="aspect" default="scale"/>
 	  <param name="movie_view" default="false"/>
 	  <param name="square_view" default="false"/>
@@ -892,7 +893,9 @@
 				<include>Animation.FadeOut</include>
 				<height>$PARAM[item_square_height]</height>
 				<width>$PARAM[item_square_width]</width>
-				<include>EmbyStandardWidgetLayout</include>
+				<include content="EmbyStandardWidgetLayout">
+					<param name="square_view">true</param>
+				</include>
 			</control>
 		</itemlayout>
 		<itemlayout width="$PARAM[widget_width]" height="$PARAM[widget_height]" condition="!$PARAM[channel_view] + !$PARAM[movie_view] + !$PARAM[channel_view]">
@@ -922,7 +925,7 @@
 				<control type="button">
 					<texturefocus></texturefocus>
 					<texturenofocus></texturenofocus>
-					<onfocus>Skin.SetString(LastIcon,$PARAM[image_type])</onfocus>
+					<onfocus>Skin.SetString(LastIcon,$VAR[PosterImage])</onfocus>
 				</control>
 				<include>EmbyMovieWidgetLayout</include>
 				<control type="image">
@@ -935,13 +938,14 @@
 			<control type="group">
 				<height>$PARAM[item_square_height]</height>
 				<width>$PARAM[item_square_width]</width>
-				<include>EmbyStandardWidgetLayout</include>
+				<include content="EmbyStandardWidgetLayout">
+					<param name="square_view">true</param>
+				</include>
 				<control type="button">
 					<texturefocus></texturefocus>
 					<texturenofocus></texturenofocus>
-					<onfocus>Skin.SetString(LastIcon,$PARAM[image_type])</onfocus>
+					<onfocus>Skin.SetString(LastIcon,$VAR[ThumbImage])</onfocus>
 				</control>
-				<include>EmbyStandardWidgetLayout</include>
 				<control type="image">
 					<texture colordiffuse="$VAR[ColorHighlight]" border="15" diffuse="diffuse/home-fanart.png">common/selectbox.png</texture>
 					<visible>!Window.IsActive(script-skinshortcuts.xml)</visible>
@@ -955,7 +959,7 @@
 				<control type="button">
 					<texturefocus></texturefocus>
 					<texturenofocus></texturenofocus>
-					<onfocus>Skin.SetString(LastIcon,$PARAM[image_type])</onfocus>
+					<onfocus>Skin.SetString(LastIcon,$VAR[ThumbImage])</onfocus>
 				</control>
 				<include>EmbyStandardWidgetLayout</include>
 				<control type="image">
@@ -967,71 +971,80 @@
 		</definition>
 	</include>
 	<include name="EmbyStandardWidgetLayout">
-		<control type="image">
-			<texture border="15" colordiffuse="Overlay" diffuse="diffuse/home-fanart.png">common/opaque2.png</texture>
-		</control>
-		<control type="image">
-			<aspectratio aligny="top">scale</aspectratio>
-			<texture background="true" fallback="common/null.png" diffuse="diffuse/home-fanart.png">$VAR[FanartImage]</texture>
-		</control>
-		<control type="image">
-			<right>18</right>
-			<centertop>32</centertop>
-			<width>32</width>
-			<height>32</height>
-			<aspectratio aligny="top">keep</aspectratio>
-			<texture background="true" colordiffuse="$VAR[ColorHighlight2]">$VAR[PosterPercentWatchedHome]</texture>
-			<visible>!Integer.IsGreater(ListItem.Property(UnwatchedEpisodes),0)</visible>
-		</control>
-		<control type="image">
-			<description>Title overlay</description>
-			<bottom>0</bottom>
-			<height>40</height>
-			<texture border="15" colordiffuse="Overlay">common/opaque.png</texture>
-		</control>
-		<control type="label">
-			<bottom>0</bottom>
-			<align>left</align>
-			<height>40</height>
-			<font>Tiny</font>
-			<textcolor>Dark1</textcolor>
-			<selectedcolor>Dark1</selectedcolor>
-			<label>$VAR[EmbyWidget1ContentLabel]</label>
-		</control>
-		<control type="progress">
-			<bottom>40</bottom>
-			<height>8</height>
-			<info>ListItem.PercentPlayed</info>
-			<overlaytexture></overlaytexture>
-			<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
-			<lefttexture colordiffuse="$VAR[ColorHighlight]">osd/progress-end.png</lefttexture>
-			<midtexture colordiffuse="$VAR[ColorHighlight]">osd/progress-end.png</midtexture>
-			<righttexture colordiffuse="Dark1">osd/progress-end.png</righttexture>
-			<include>Animation.LongDelayFadeIn</include>
-			<visible>Integer.IsGreater(ListItem.PercentPlayed,0)</visible>
-		</control>
-		<control type="group">
-			<visible>Integer.IsGreater(ListItem.Property(UnwatchedEpisodes),0)</visible>
+		<param name="square_view" default="false"/>
+	  	<definition>
 			<control type="image">
-				<right>15</right>
-				<centertop>30</centertop>
-				<height>30</height>
-				<width>30</width>
-				<texture colordiffuse="$VAR[ColorHighlight2]">common/circle.png</texture>
-				<aspectratio align="center" aligny="center">keep</aspectratio>
+				<texture border="15" colordiffuse="Overlay" diffuse="diffuse/home-fanart.png">common/opaque2.png</texture>
+			</control>
+			<control type="image">
+				<aspectratio aligny="center">scale</aspectratio>
+				<texture background="true" fallback="common/null.png" diffuse="diffuse/home-fanart.png">$VAR[ThumbImage]</texture>
+				<visible>$PARAM[square_view]</visible>
+			</control>
+			<control type="image">
+				<aspectratio aligny="top">stretch</aspectratio>
+				<texture background="true" fallback="common/null.png" diffuse="diffuse/home-fanart.png">$VAR[LandscapeImage]</texture>
+				<visible>!$PARAM[square_view]</visible>
+			</control>
+			<control type="image">
+				<right>18</right>
+				<centertop>32</centertop>
+				<width>32</width>
+				<height>32</height>
+				<aspectratio aligny="top">keep</aspectratio>
+				<texture background="true" colordiffuse="$VAR[ColorHighlight2]">$VAR[PosterPercentWatchedHome]</texture>
+				<visible>!Integer.IsGreater(ListItem.Property(UnwatchedEpisodes),0)</visible>
+			</control>
+			<control type="image">
+				<description>Title overlay</description>
+				<bottom>0</bottom>
+				<height>40</height>
+				<texture border="15" colordiffuse="Overlay">common/opaque.png</texture>
 			</control>
 			<control type="label">
-				<right>15</right>
-				<centertop>30</centertop>
-				<height>30</height>
-				<width>30</width>
-				<align>center</align>
-				<aligny>center</aligny>
-				<label>$INFO[ListItem.Property(UnwatchedEpisodes)]</label>
-				<font>Micro</font>
-				<textcolor>White</textcolor>
+				<bottom>0</bottom>
+				<align>left</align>
+				<height>40</height>
+				<font>Tiny</font>
+				<textcolor>Dark1</textcolor>
+				<selectedcolor>Dark1</selectedcolor>
+				<label>$VAR[EmbyWidget1ContentLabel]</label>
 			</control>
-		</control>
+			<control type="progress">
+				<bottom>40</bottom>
+				<height>8</height>
+				<info>ListItem.PercentPlayed</info>
+				<overlaytexture/>
+				<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
+				<lefttexture colordiffuse="$VAR[ColorHighlight]">osd/progress-end.png</lefttexture>
+				<midtexture colordiffuse="$VAR[ColorHighlight]">osd/progress-end.png</midtexture>
+				<righttexture colordiffuse="Dark1">osd/progress-end.png</righttexture>
+				<include>Animation.LongDelayFadeIn</include>
+				<visible>Integer.IsGreater(ListItem.PercentPlayed,0)</visible>
+			</control>
+			<control type="group">
+				<visible>Integer.IsGreater(ListItem.Property(UnwatchedEpisodes),0)</visible>
+				<control type="image">
+					<right>15</right>
+					<centertop>30</centertop>
+					<height>30</height>
+					<width>30</width>
+					<texture colordiffuse="$VAR[ColorHighlight2]">common/circle.png</texture>
+					<aspectratio align="center" aligny="center">keep</aspectratio>
+				</control>
+				<control type="label">
+					<right>15</right>
+					<centertop>30</centertop>
+					<height>30</height>
+					<width>30</width>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Property(UnwatchedEpisodes)]</label>
+					<font>Micro</font>
+					<textcolor>White</textcolor>
+				</control>
+			</control>
+		</definition>
 	</include>
 	<include name="EmbyMovieWidgetLayout">
 		<control type="image">
@@ -1116,11 +1129,11 @@
 			<selectedcolor>Dark1</selectedcolor>
 			<label>$INFO[ListItem.StartTime]$INFO[ListItem.EndTime, - , ]</label>
 		</control>
-		<control type="progress">
+		<!-- <control type="progress">
 			<right>10</right>
 			<width>60</width>
 			<height>20</height>
-			<bottom>22</bottom>
+			<bottom>10</bottom>
 			<reveal>true</reveal>
 			<texturebg>pvr/progress-back.png</texturebg>
 			<lefttexture colordiffuse="$VAR[ColorHighlight]">pvr/progress-leftright.png</lefttexture>
@@ -1128,6 +1141,18 @@
 			<righttexture colordiffuse="$VAR[ColorHighlight]">pvr/progress-leftright.png</righttexture>
 			<info>ListItem.Progress</info>
 			<colordiffuse>Dark1</colordiffuse>
+		</control> -->
+		<control type="progress">
+			<bottom>40</bottom>
+			<height>8</height>
+			<info>ListItem.Progress</info>
+			<overlaytexture/>
+			<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
+			<lefttexture colordiffuse="$VAR[ColorHighlight]">osd/progress-end.png</lefttexture>
+			<midtexture colordiffuse="$VAR[ColorHighlight]">osd/progress-end.png</midtexture>
+			<righttexture colordiffuse="Dark1">osd/progress-end.png</righttexture>
+			<include>Animation.LongDelayFadeIn</include>
+			<visible>Integer.IsGreater(ListItem.Progress,5)</visible>
 		</control>
 		<control type="label">
 			<left>10</left>

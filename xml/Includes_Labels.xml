@@ -67,9 +67,8 @@
 		<value condition="!String.IsEmpty(ListItem.Property(Album_Description))">$INFO[ListItem.Property(Album_Description)]</value>
 		<value condition="!String.IsEmpty(ListItem.AddonDescription)">$INFO[ListItem.AddonDescription]</value>
 		<value condition="Container.Content(songs)">$INFO[ListItem.Artist,[B],[/B][CR]]$INFO[ListItem.Album]$INFO[ListItem.Year, (,)]</value>
-		<value condition="Container.Content(episodes) + system.getbool(videolibrary.showunwatchedplots) ">$INFO[ListItem.Title,[B],[/B][CR],]$INFO[ListItem.Plot]</value>
-		<value condition="!String.IsEmpty(ListItem.Plot) + !system.getbool(videolibrary.showunwatchedplots)  + Container.Content(episodes) + [String.IsEqual(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]">$INFO[ListItem.Title,[B],[/B][CR],]...</value>
-		<value condition="!String.IsEmpty(ListItem.Plot) + !system.getbool(videolibrary.showunwatchedplots)  + Container.Content(episodes) + ![String.IsEqual(ListItem.Overlay,OverlayUnWatched.png) + ListItem.IsResumable]">$INFO[ListItem.Title,[B],[/B][CR],]$INFO[ListItem.Plot]</value>
+		<value condition="String.IsEqual(ListItem.Plot,$LOCALIZE[20370]) ">$INFO[ListItem.Title,[B],[/B][CR],]...</value>
+		<value condition="Container.Content(episodes)">$INFO[ListItem.Title,[B],[/B][CR],]$INFO[ListItem.Plot]</value>
 		<value condition="!String.IsEmpty(ListItem.Plot)">$INFO[ListItem.Plot]</value>
 		<value condition="!String.IsEmpty(ListItem.AddonSummary)">$INFO[ListItem.AddonSummary]</value>
 	</variable>

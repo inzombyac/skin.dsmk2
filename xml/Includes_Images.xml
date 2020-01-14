@@ -49,12 +49,9 @@
 		<value condition="String.StartsWith(ListItem.FolderPath,plugin://plugin.video.embycon) + String.StartsWith(ListItem.Label,Library)">$INFO[ListItem.Thumb]</value>
 		<value condition="String.StartsWith(ListItem.FolderPath,plugin://plugin.video.emby/?type=)">$INFO[ListItem.Thumb]</value>
 		<value condition="Window.IsVisible(Home.xml) + !String.IsEmpty(ListItem.Property(background))">$INFO[ListItem.Property(background)]</value>
-		<value condition="!system.getbool(videolibrary.showunwatchedplots)  + String.StartsWith(Container.FolderPath,plugin://plugin.video.emby) + String.Contains(Container.FolderPath,nextup)">$INFO[ListItem.Art(tvshow.landscape)]</value>
-		<value condition="!system.getbool(videolibrary.showunwatchedplots)  + String.StartsWith(Container.FolderPath,plugin://plugin.video.emby) + String.Contains(Container.FolderPath,episode)">$INFO[ListItem.Art(tvshow.landscape)]</value>
-		<value condition="String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.)">$INFO[ListItem.Icon]</value>
-		<value condition="Container.Content(episodes) + [system.getbool(videolibrary.showunwatchedplots)  | [!system.getbool(videolibrary.showunwatchedplots)  + String.IsEqual(ListItem.Overlay,OverlayWatched.png)]]">$INFO[ListItem.Icon]</value>
-		<value condition="!system.getbool(videolibrary.showunwatchedplots)  + Container.Content(episodes) + [String.IsEqual(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]">$INFO[ListItem.Art(tvshow.landscape)]</value>
-		<value condition="!system.getbool(videolibrary.showunwatchedplots)  + Container.Content(episodes) + ![String.IsEqual(ListItem.Overlay,OverlayUnWatched.png) + ListItem.IsResumable]">$INFO[ListItem.Icon]</value>
+		<value condition="String.StartsWith(Container.FolderPath,plugin://plugin.video.emby) + String.Contains(Container.FolderPath,nextup)">$INFO[ListItem.Art(tvshow.landscape)]</value>
+		<value condition="String.StartsWith(Container.FolderPath,plugin://plugin.video.emby) + String.Contains(Container.FolderPath,episode)">$INFO[ListItem.Art(tvshow.landscape)]</value>
+		<value condition="String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.)">$INFO[ListItem.Icon]</value>		
 		<value condition="!String.IsEmpty(ListItem.Art(fanart)) + !Container.Content(episodes)">$INFO[ListItem.Art(fanart)]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(landscape)) + !Container.Content(episodes)">$INFO[ListItem.Art(landscape)]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(tvshow.landscape)) + !Container.Content(episodes)">$INFO[ListItem.Art(tvshow.landscape)]</value>
@@ -63,19 +60,19 @@
 		<value condition="Container.Content(genres) + Window.IsVisible(MyVideoNav.xml)">resource://resource.images.moviegenreicons.coloured/$INFO[Listitem.Label,,.jpg]</value>
 		<value condition="Container.Content(genres) + Window.IsVisible(MyMusicNav.xml)">resource://resource.images.musicgenreicons.text/$INFO[Listitem.Label,,.jpg]</value>
 		<value condition="Window.IsVisible(Home.xml)">common/null.png</value>
+		<value condition="!String.IsEqual(ListItem.Icon,OverlaySpoiler.png)">$INFO[ListItem.Icon]</value>
 		<value>$INFO[ListItem.Icon]</value>
 	</variable>
 	<variable name="LandscapeImage">
+		<value condition="Window.IsVisible(Home.xml) + String.IsEqual(ListItem.DBTYPE,episode) + !String.IsEqual(ListItem.Thumb,OverlaySpoiler.png)">$INFO[ListItem.Thumb]</value>
 		<value condition="String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.)">$INFO[ListItem.Icon]</value>
-		<value condition="Container.Content(episodes) + [system.getbool(videolibrary.showunwatchedplots)  | [!system.getbool(videolibrary.showunwatchedplots)  + String.IsEqual(ListItem.Overlay,OverlayWatched.png)]]">$INFO[ListItem.Icon]</value>
-		<value condition="!system.getbool(videolibrary.showunwatchedplots)  + Container.Content(episodes) + [String.IsEqual(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]">$INFO[ListItem.Art(tvshow.landscape)]</value>
-		<value condition="!system.getbool(videolibrary.showunwatchedplots)  + Container.Content(episodes) + ![String.IsEqual(ListItem.Overlay,OverlayUnWatched.png) + ListItem.IsResumable]">$INFO[ListItem.Icon]</value>
-		<value condition="!String.IsEmpty(ListItem.Art(landscape)) + !Container.Content(episodes)">$INFO[ListItem.Art(landscape)]</value>
-		<value condition="!String.IsEmpty(ListItem.Art(tvshow.landscape)) + !Container.Content(episodes)">$INFO[ListItem.Art(tvshow.landscape)]</value>
+		<value condition="Container.Content(episodes) + !String.IsEqual(ListItem.Icon,OverlaySpoiler.png)">$INFO[ListItem.Icon]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(landscape))">$INFO[ListItem.Art(landscape)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(tvshow.landscape))">$INFO[ListItem.Art(tvshow.landscape)]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(fanart)) + !Container.Content(episodes)">$INFO[ListItem.Art(fanart)]</value>
-		<value condition="!String.IsEmpty(ListItem.Thumb) + !Container.Content(episodes)">$INFO[ListItem.Thumb]</value>
 		<value condition="Container.Content(genres) + Window.IsVisible(MyVideoNav.xml)">resource://resource.images.moviegenreicons.coloured/$INFO[Listitem.Label,,.jpg]</value>
 		<value condition="Container.Content(genres) + Window.IsVisible(MyMusicNav.xml)">resource://resource.images.musicgenreicons.text/$INFO[Listitem.Label,,.jpg]</value>
+		<value condition="!String.IsEmpty(ListItem.Thumb) + !String.IsEqual(ListItem.Thumb,OverlaySpoiler.png)">$INFO[ListItem.Thumb]</value>
 		<value>$INFO[ListItem.Icon]</value>
 	</variable>
 	<variable name="ClearLogoBanner">

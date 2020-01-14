@@ -653,7 +653,7 @@
             </control>
 			<control type="label">
                 <include>ControlID5</include>
-                <label>$INFO[ListItem.Studio]</label>
+                <label>$INFO[ListItem.Icon]</label>
 				<visible>Window.IsVisible(MyVideoNav.xml)</visible>
             </control>
             <control type="label">
