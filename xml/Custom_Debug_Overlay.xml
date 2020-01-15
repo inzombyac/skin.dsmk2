@@ -643,7 +643,8 @@
             </control>
 			<control type="label">
                 <include>ControlID4</include>
-                <label>TV: $INFO[ListItem.TVShowTitle],$INFO[Window(home).Property(TVShowID)] / CON: $INFO[Container.Content] / IMDB: $INFO[ListItem.IMDBNumber]</label>
+                <!-- <label>TV: $INFO[ListItem.TVShowTitle],$INFO[Window(home).Property(TVShowID)] / CON: $INFO[Container.Content] / IMDB: $INFO[ListItem.IMDBNumber]</label> -->
+                <label>Content: $INFO[Container.Content]</label>
 				<visible>Window.IsVisible(MyVideoNav.xml)  | Window.IsVisible(DialogVideoInfo.xml)</visible>
             </control>
 			<control type="label">
@@ -653,7 +654,7 @@
             </control>
 			<control type="label">
                 <include>ControlID5</include>
-                <label>$INFO[ListItem.Icon]</label>
+                <label> $INFO[ListItem.DBID, DBID: ,] $INFO[ListItem.DBTYPE, Type: ,]</label>
 				<visible>Window.IsVisible(MyVideoNav.xml)</visible>
             </control>
             <control type="label">
