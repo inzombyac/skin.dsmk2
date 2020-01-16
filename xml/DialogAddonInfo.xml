@@ -111,13 +111,6 @@
 			<left>540</left>
 			<top>230</top>
 			<width>1300</width>
-			<control type="image">
-				<width>450</width>
-				<height>274</height>
-				<texture border="2" background="true">$INFO[ListItem.Art(fanart)]</texture>
-				<aspectratio>scale</aspectratio>
-				<visible>!Integer.IsGreater(Container(50).NumItems,0)</visible>
-			</control>
 			<control type="fixedlist" id="50">
 				<left>30</left>
                 <width>1515</width>
