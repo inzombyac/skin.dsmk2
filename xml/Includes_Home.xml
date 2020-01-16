@@ -230,7 +230,6 @@
 					<width>EmbyPanelWidth</width>
 					<height>EmbyPanelHeight</height>
 					<include>EmbyHomeWidgetDirections</include>
-					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidgetContinueEpisodesContent]</content>
 					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidgetContinueMoviesContent]</content>
 					<content sortby="lastplayed" sortorder="descending" limit="25" target="videos">$VAR[EmbyHomeWidgetNextUp]</content>
 					<include content="EmbyHomeLayout"/>

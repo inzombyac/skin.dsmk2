@@ -21,8 +21,8 @@
 				<onright condition="![Window.IsVisible(tvguide) | Window.IsActive(SettingsCategory.xml)]">50</onright>
 				<onright condition="Window.IsVisible(tvguide)">10</onright>
 				<onright condition="Window.IsActive(SettingsCategory.xml)">3</onright>
-				<onup>9000</onup>
-				<ondown>9000</ondown>
+				<onup>9099</onup>
+				<ondown>1</ondown>
 				<onback>ClearProperty(MediaMenu,Home)</onback>
 				<onback>50</onback>
 				<itemgap>0</itemgap>

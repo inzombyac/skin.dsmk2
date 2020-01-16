@@ -12,8 +12,8 @@
         <label2>Continue</label2>
         <defaultID>continue</defaultID>
         <icon>special://skin/extras/icons/play.png</icon>
-        <action>ActivateWindow(Videos,special://skin/extras/playlists/InProgress)</action>
-        <visible>!System.HasAddon(plugin.video.emby)</visible> 
+        <action>ActivateWindow(Videos,plugin://plugin.video.playnext)</action>
+        <visible>System.HasAddon(plugin.video.playnext)</visible> 
     </shortcut>
     <shortcut>
         <label>Play Next</label>
@@ -21,7 +21,15 @@
         <defaultID>continue</defaultID>
         <icon>special://skin/extras/icons/play.png</icon>
         <action>ActivateWindow(Videos,plugin://plugin.video.emby/?folder=InProgress&amp;mode=browse&amp;server=None,return)</action>
-        <visible>System.HasAddon(plugin.video.emby)</visible> 
+        <visible>System.HasAddon(plugin.video.emby) + !System.HasAddon(plugin.video.playnext)</visible> 
+    </shortcut>
+    <shortcut>
+        <label>Play Next</label>
+        <label2>Continue</label2>
+        <defaultID>continue</defaultID>
+        <icon>special://skin/extras/icons/play.png</icon>
+        <action>ActivateWindow(Videos,special://skin/extras/playlists/InProgress)</action>
+        <visible>!System.HasAddon(plugin.video.emby) + !System.HasAddon(plugin.video.playnext)</visible> 
     </shortcut>
     <shortcut>
         <label>Latest Movies</label>

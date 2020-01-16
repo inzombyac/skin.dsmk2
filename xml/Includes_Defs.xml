@@ -415,7 +415,6 @@
 				<height>70</height>
 				<onclick>RunScript(script.globalsearch)</onclick>
 				<ondown>9000</ondown>
-				<onup condition="Window.IsVisible(Home.xml)">9267</onup>
 				<onup condition="!Window.IsVisible(Home.xml)">9091</onup>
 				<onright condition="Window.IsVisible(Home.xml)">3999</onright>
 				<onright condition="![Window.IsVisible(tvguide) | Window.IsActive(SettingsCategory.xml)] + !Window.IsVisible(Home.xml)">50</onright>
@@ -424,6 +423,20 @@
 				<font>Button</font>
 				<texturefocus colordiffuse="$VAR[ColorHighlight]">common/search.png</texturefocus>
 				<texturenofocus>special://skin/extras/icons/search.png</texturenofocus>
+				<visible>!Window.IsActive(MyPVRGuide.xml) + !Window.IsActive(MyPVRChannels.xml) + !Window.IsActive(MyPVRRecordings.xml) + !Window.IsActive(MyPVRTimers.xml) + !Window.IsActive(MyPVRSearch.xml)</visible>
+			</control>
+			<control type="button" id="9099">
+				<left>370</left>
+				<top>25</top>
+				<width>70</width>
+				<height>70</height>
+				<onclick>ActivateWindow(TVSearch)</onclick>
+				<ondown>9000</ondown>
+				<onright condition="Window.IsVisible(tvguide)">10</onright>
+				<font>Button</font>
+				<texturefocus colordiffuse="$VAR[ColorHighlight]">common/search.png</texturefocus>
+				<texturenofocus>special://skin/extras/icons/search.png</texturenofocus>
+				<visible>Window.IsActive(MyPVRGuide.xml) | Window.IsActive(MyPVRChannels.xml) | Window.IsActive(MyPVRRecordings.xml) | Window.IsActive(MyPVRTimers.xml) | Window.IsActive(MyPVRSearch.xml)</visible>
 			</control>
 		</control>
 	</include>
@@ -525,6 +538,7 @@
                 <onclick>3999</onclick>
                 <onclick>RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)</onclick>
                 <align>left</align>
+                <onup>300</onup>
             </control>
 			<control type="button" id="9265">
 				<onclick>ActivateWindow(settings)</onclick>
@@ -539,11 +553,7 @@
 				<onclick>ActivateWindow(shutdownmenu)</onclick>
 				<align>left</align>
 			</control>
-			<control type="button" id ="9269">
-				<description>Go to top</description>
-				<onfocus>Control.Move(300,1)</onfocus>
-				<onfocus>Control.SetFocus(300)</onfocus>
-			</control> 
+			
 		</control>
 	</include>
 	<include name="Def9000MediaMenuTop">
@@ -556,8 +566,8 @@
 		<onright condition="![Window.IsVisible(tvguide) | Window.IsActive(SettingsCategory.xml)]">50</onright>
 		<onright condition="Window.IsVisible(tvguide)">10</onright>
 		<onright condition="Window.IsActive(SettingsCategory.xml)">3</onright>
-		<onup>9000</onup>
-		<ondown>9000</ondown>
+		<onup>9091</onup>
+		<ondown>11</ondown>
 		<onback>ClearProperty(MediaMenu,Home)</onback>
 		<onback>50</onback>
 		<itemgap>0</itemgap>
@@ -695,12 +705,11 @@
 			<align>left</align>
 			<label>653</label>
 			<include>DefContextButton2</include>
-			<visible>!System.HasAddon(plugin.video.emby)</visible>
 		</control>
-		<control type="button" id="9093" description="Emby Manual sync">
+		<control type="button" id="9093" description="Manage Emby Libraries">
 			<include>DefContextButton2</include>
 			<label>653</label>
-			<onclick>RunPlugin("plugin://plugin.video.emby/?mode=manualsync")</onclick>
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.emby/?mode=managelibs",return)</onclick>
 			<align>left</align>
 			<visible>System.HasAddon(plugin.video.emby)</visible>
 		</control>
@@ -722,8 +731,8 @@
 		<onleft>9000</onleft>
 		<onright>ClearProperty(MediaMenu,Home)</onright>
 		<onright>50</onright>
-		<onup>9000</onup>
-		<ondown>9000</ondown>
+		<onup>9091</onup>
+		<ondown>11</ondown>
 		<onback>ClearProperty(MediaMenu,Home)</onback>
 		<onback>50</onback>
 		<itemgap>0</itemgap>
@@ -849,8 +858,8 @@
 		<onright condition="![Window.IsVisible(tvguide) | Window.IsActive(SettingsCategory.xml)]">50</onright>
 		<onright condition="Window.IsVisible(tvguide)">10</onright>
 		<onright condition="Window.IsActive(SettingsCategory.xml)">3</onright>
-		<onup>9000</onup>
-		<ondown>9000</ondown>
+		<onup>9091</onup>
+		<ondown>11</ondown>
 		<onback>ClearProperty(MediaMenu,Home)</onback>
 		<onback>50</onback>
 		<itemgap>0</itemgap>
@@ -988,12 +997,11 @@
 			<align>left</align>
 			<label>653</label>
 			<include>DefContextButton2</include>
-			<!-- <visible>!System.HasAddon(plugin.video.emby)</visible> -->
 		</control>
-		<control type="button" id="9093" description="Emby Manual sync">
+		<control type="button" id="9093" description="Manage Emby Libraries">
 			<include>DefContextButton2</include>
 			<label>31797</label>
-			<onclick>RunPlugin("plugin://plugin.video.emby/?mode=manualsync")</onclick>
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.emby/?mode=managelibs",return)</onclick>
 			<align>left</align>
 			<visible>System.HasAddon(plugin.video.emby)</visible>
 		</control>
@@ -1134,8 +1142,8 @@
 		<onright condition="![Window.IsVisible(tvguide) | Window.IsActive(SettingsCategory.xml)]">50</onright>
 		<onright condition="Window.IsVisible(tvguide)">10</onright>
 		<onright condition="Window.IsActive(SettingsCategory.xml)">3</onright>
-		<onup>9000</onup>
-		<ondown>9000</ondown>
+		<onup>9091</onup>
+		<ondown>11</ondown>
 		<onback>ClearProperty(MediaMenu,Home)</onback>
 		<onback>50</onback>
 		<itemgap>0</itemgap>
@@ -1303,19 +1311,15 @@
 		<value condition="String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),lastwatched)">special://skin/extras/playlists/Watched/LatestWatchedEpisodes.xsp</value>
 	</variable>
 	<!-- Continue Widgets Content -->
-	<variable name="EmbyHomeWidgetContinueEpisodesContent">
-		<value condition="System.HasAddon(plugin.video.embycon)">plugin://plugin.video.embycon/?mode=WIDGET_CONTENT&amp;type=inprogress_episodes&amp;reload=$INFO[Window(Home).Property(widgetreload-episodes)]</value>
-		<value condition="![System.HasAddon(plugin.video.emby)]">special://skin/extras/playlists/InProgress/InProgressEpisodes.xsp</value>
-	</variable>
 	<variable name="EmbyHomeWidgetContinueMoviesContent">
 		<value condition="System.HasAddon(plugin.video.embycon)">plugin://plugin.video.embycon/?mode=WIDGET_CONTENT&amp;type=inprogress_movies&amp;reload=$INFO[Window(Home).Property(widgetreload-movies)]</value>
-		<value condition="System.HasAddon(plugin.video.emby)">plugin://plugin.video.emby/?folder=InProgress&amp;mode=browse&amp;server=None&amp;reload=$INFO[Window(Home).Property(emby_online)]]</value>
+		<value condition="System.HasAddon(plugin.video.emby)">plugin://plugin.video.emby/?folder=InProgress&amp;mode=browse&amp;type=movies&amp;server=None&amp;reload=$INFO[Window(Home).Property(emby_online)]</value>
 		<value>special://skin/extras/playlists/InProgress/InProgressMovies.xsp</value>
 	</variable>
 	<variable name="EmbyHomeWidgetNextUp">
 		<value condition="System.HasAddon(plugin.video.embycon)">plugin://plugin.video.embycon/?mode=WIDGET_CONTENT&amp;type=nextup_episodes&amp;reload=$INFO[Window(Home).Property(widgetreload-episodes)]</value>
-		<value condition="Integer.IsGreater(Window(Home).Property(TVShows.Count),0) + !System.HasAddon(plugin.video.emby)">videodb://inprogresstvshows</value>
-		<value condition="Integer.IsGreater(Window(Home).Property(TVShows.Count),0) + System.HasAddon(plugin.video.emby)">videodb://inprogresstvshows</value>
+		<value condition="System.HasAddon(plugin.video.playnext)">plugin://plugin.video.playnext/?reload=$INFO[Window(Home).Property(widgetreload-episodes)]</value>
+		<value condition="Integer.IsGreater(Window(Home).Property(TVShows.Count),0)">videodb://inprogresstvshows/?reload=$INFO[Window(Home).Property(widgetreload-episodes)]</value>
 	</variable>
 	<!--<content target="videos">plugin://plugin.video.emby/?limit=25&amp;mode=nextepisodes&amp;id=$INFO[Window(home).Property(emby.nodes.0.id)]</content>-->
 	<!-- Skin Shortcuts -->

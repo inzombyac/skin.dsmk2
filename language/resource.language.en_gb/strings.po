@@ -695,5 +695,5 @@ msgstr ""
 
 # Include_Defs.xml 1172
 msgctxt "#31797"
-msgid "Emby Manual Sync"
+msgid "Manage Emby Libraries"
 msgstr ""
