@@ -1,3 +1,6 @@
+1.0.10
+- Add new playnext plugin to get next episodes
+
 1.0.9
 - Refactor home screen to remove extra row and use parameterized widgets
 
