@@ -13,8 +13,8 @@
 					<height>820</height>
 					<left>ListX</left>
 					<right>120</right>
-					<onleft condition="[[container.content(movies) | container.content(sets) | container.content(tvshows) | container.content(seasons) | container.content(albums) | container.content(artists) | container.content(songs) | Container.content(episodes) | Container.content(programs) | Container.content(addons)] | !String.IsEmpty(ListItem.Trailer)]">65</onleft>
-					<onleft condition="![[container.content(movies) | container.content(sets) | container.content(tvshows) | container.content(seasons) | container.content(albums) | container.content(artists) | container.content(songs) | Container.content(episodes) | Container.content(programs) | Container.content(addons)] | !String.IsEmpty(ListItem.Trailer)]">9000</onleft>
+					<onleft condition="[[container.content(movies) | container.content(sets) | container.content(tvshows) | container.content(seasons) | container.content(albums) | container.content(artists) | container.content(songs) | Container.content(episodes) | Container.content(programs) | Container.content(addons) | String.StartsWith(Container.FolderPath,plugin://plugin.video.playnext)] | !String.IsEmpty(ListItem.Trailer)]">65</onleft>
+					<onleft condition="![[container.content(movies) | container.content(sets) | container.content(tvshows) | container.content(seasons) | container.content(albums) | container.content(artists) | container.content(songs) | Container.content(episodes) | Container.content(programs) | Container.content(addons) | String.StartsWith(Container.FolderPath,plugin://plugin.video.playnext)] | !String.IsEmpty(ListItem.Trailer)]">9000</onleft>
 					<onright condition="String.IsEqual(Container.SortMethod, $LOCALIZE[369]) | String.IsEqual(Container.SortMethod, $LOCALIZE[551]) | String.IsEqual(Container.SortMethod, $LOCALIZE[36918]) | String.IsEqual(Container.SortMethod, $LOCALIZE[36916])">61</onright>
 					<onright condition="!String.IsEqual(Container.SortMethod, $LOCALIZE[369]) + !String.IsEqual(Container.SortMethod, $LOCALIZE[551]) + !String.IsEqual(Container.SortMethod, $LOCALIZE[36918]) + !String.IsEqual(Container.SortMethod, $LOCALIZE[36916])">61</onright>
 					<onup condition="Player.HasMedia">7788</onup>
@@ -107,7 +107,7 @@
 			<selectedcolor>Light1</selectedcolor>
 			<label>$VAR[LabelListDetails]</label>
 			<animation effect="slide" start="0" end="-70" time="0" condition="Container.Content(tvshows) | Container.Content(seasons)">Conditional</animation>
-			<animation effect="slide" start="0" end="-100" time="0" condition="Container.Content(movies) | Container.Content(files)">Conditional</animation>
+			<animation effect="slide" start="0" end="-100" time="0" condition="Container.Content(movies) | Container.Content(files) | Container.Content(videos)">Conditional</animation>
 		</control>
 		<control type="progress">
 			<centerright>36</centerright>
@@ -227,7 +227,7 @@
 			<selectedcolor>Dark1</selectedcolor>
 			<label>$VAR[LabelListDetails]</label>
 			<animation effect="slide" start="0" end="-70" time="0" condition="Container.Content(tvshows) | Container.Content(seasons)">Conditional</animation>
-			<animation effect="slide" start="0" end="-100" time="0" condition="Container.Content(movies) | Container.Content(files)">Conditional</animation>
+			<animation effect="slide" start="0" end="-100" time="0" condition="Container.Content(movies) | Container.Content(files) | Container.Content(videos)">Conditional</animation>
 		</control>
 		<control type="progress">
 			<centerright>36</centerright>
@@ -329,7 +329,7 @@
 					<height>500</height>
 					<aspectratio align="left" aligny="bottom" scalediffuse="false">keep</aspectratio>
 					<texture background="true">$VAR[LandscapeImage]</texture>
-					<visible>Container.Content(episodes)</visible>
+					<visible>Container.Content(episodes) | String.IsEqual(ListItem.DBTYPE,episode)</visible>
 					<animation effect="slide" start="0" end="-40,0" time="0" condition="true">Conditional</animation>
 				</control>
 				<control type="image">
@@ -342,7 +342,7 @@
 					<texture flipy="true" diffuse="diffuse/listposter-ref.png">$VAR[PosterImage]</texture>
 					<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
 					<visible>Skin.HasSetting(show.reflections)</visible>
-					<visible>!Container.Content(episodes)</visible>
+					<visible>!Container.Content(episodes) + !String.IsEqual(ListItem.DBTYPE,episode)</visible>
 				</control>
 				<control type="image">
 					<left>40</left>
@@ -351,7 +351,7 @@
 					<height>48</height>
 					<aspectratio align="left" scalediffuse="false">stretch</aspectratio>
 					<texture background="true">diffuse/shadowspot.png</texture>
-					<visible>Container.Content(tvshows) | Container.Content(movies) | Container.Content(seasons)</visible>
+					<visible>[Container.Content(tvshows) | Container.Content(movies) | Container.Content(seasons)] + !String.IsEqual(ListItem.DBTYPE,episode)</visible>
 					<visible>!String.IsEqual(ListItem.Label,..)</visible>
 				</control>
 				<control type="image">
@@ -361,14 +361,14 @@
 					<fadetime>100</fadetime>
 					<aspectratio align="left" aligny="center" scalediffuse="false">keep</aspectratio>
 					<texture background="true">$VAR[PosterImage]</texture>
-					<visible>!Container.Content(episodes)</visible>
+					<visible>!Container.Content(episodes) + !String.IsEqual(ListItem.DBTYPE,episode)</visible>
 				</control>
 			</control>
 		</control>
 	</include>
 	<include name="50PanelButtons">
 		<control type="grouplist" id="65">
-			<visible>[Control.IsVisible(50) | Control.IsVisible(517)] + [[container.content(movies) | container.content(sets)| container.content(tvshows) | container.content(seasons) | container.content(albums) | container.content(artists) | container.content(songs) | Container.content(episodes) | Container.content(programs) | Container.content(addons)] | !String.IsEmpty(ListItem.Trailer)]</visible>
+			<visible>[Control.IsVisible(50) | Control.IsVisible(517)] + [[container.content(movies) | container.content(sets)| container.content(tvshows) | container.content(seasons) | container.content(albums) | container.content(artists) | container.content(songs) | Container.content(episodes) | Container.content(programs) | Container.content(addons) | String.StartsWith(Container.FolderPath,plugin://plugin.video.playnext)] | !String.IsEmpty(ListItem.Trailer)]</visible>
 			<visible>!String.IsEmpty(ListItem.Label) + !String.IsEqual(ListItem.Label,..) + !String.IsEqual(ListItem.Label,Update all)</visible>
 			<visible>!Skin.HasSetting(furniture.hidemediabuttons)</visible>
 			<animation effect="fade" start="25" end="100" delay="25" time="150" reversible="false">Visible</animation>

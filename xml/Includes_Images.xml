@@ -66,7 +66,7 @@
 	<variable name="LandscapeImage">
 		<value condition="Window.IsVisible(Home.xml) + String.IsEqual(ListItem.DBTYPE,episode) + !String.IsEqual(ListItem.Thumb,OverlaySpoiler.png)">$INFO[ListItem.Thumb]</value>
 		<value condition="String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.)">$INFO[ListItem.Icon]</value>
-		<value condition="Container.Content(episodes) + !String.IsEqual(ListItem.Icon,OverlaySpoiler.png)">$INFO[ListItem.Icon]</value>
+		<value condition="[Container.Content(episodes) | String.IsEqual(ListItem.DBTYPE,episode)] + !String.IsEqual(ListItem.Icon,OverlaySpoiler.png)">$INFO[ListItem.Icon]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(landscape))">$INFO[ListItem.Art(landscape)]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(tvshow.landscape))">$INFO[ListItem.Art(tvshow.landscape)]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(fanart)) + !Container.Content(episodes)">$INFO[ListItem.Art(fanart)]</value>

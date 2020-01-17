@@ -39,8 +39,9 @@
 		<value condition="Container.Content(albums)">$INFO[ListItem.Artist]</value>
 		<value condition="Container.Content(artists)">$INFO[ListItem.Artist]</value>
 		<value condition="Container.Content(tvshows) + String.IsEmpty(ListItem.TvShowTitle)">$INFO[ListItem.Label]</value>
-		<value condition="Container.Content(episodes) | Container.Content(seasons) | Container.Content(tvshows)">$INFO[ListItem.TvShowTitle]</value>
+		<value condition="Container.Content(episodes) | Container.Content(seasons) | Container.Content(tvshows) | !String.IsEmpty(ListItem.TvShowTitle)">$INFO[ListItem.TvShowTitle]</value>
 		<value condition="String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.)">$INFO[ListItem.Label]</value>
+		<value condition="String.StartsWith(Container.FolderPath,plugin://plugin.video.playnext)">$INFO[ListItem.Label]</value>
 		<value condition="!String.IsEmpty(ListItem.Director)">$INFO[ListItem.Director]</value>
 		<value condition="!String.IsEmpty(Window(home).Property(Set.Movies.Director))">$INFO[Window(home).Property(Set.Movies.Director)]</value>
 		<value condition="Window.IsVisible(DialogBusy.xml)"></value>
